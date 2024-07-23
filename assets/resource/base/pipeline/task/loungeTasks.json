@@ -1,0 +1,17 @@
+{
+    "loungeTasks": {
+        "next": [
+            "整备室",
+            "loungeButton"
+        ]
+    },
+    "loungeButton": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "整备室/休息室按钮.png",
+        "action": "Click",
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}

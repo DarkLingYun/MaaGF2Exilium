@@ -1,0 +1,19 @@
+{
+    "startGF2Game": {
+        "next": [
+            "click_Start",
+            "Sub_StartUp"
+        ]
+    },
+    "Sub_StartUp": {
+        "is_sub": true,
+        "action": "StartApp",
+        "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity"
+    },
+    "click_Start": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "点击开始",
+        "action": "Click"
+    }
+}
