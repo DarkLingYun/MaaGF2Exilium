@@ -1,5 +1,6 @@
 {
     "returnToHomePage": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/主页按钮_gray.png",
@@ -8,11 +9,14 @@
         "action": "Click"
     },
     "battleStart": {
+        "is_sub": true,
         "recognition": "OCR",
         "expected": "作战开始",
         "action": "Click"
     },
     "autoBattleEnabled": {
+        "is_sub": true,
+        "times_limit": 1,
         "recognition": "TemplateMatch",
         "template": "公用按钮组件/自动战斗_off.png",
         "action": "Click"
@@ -20,8 +24,36 @@
     "announcementClosed": {
         "recognition": "TemplateMatch",
         "template": [
-            "公用按钮组件/关闭按钮_gray.png"
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png",
+            "公用按钮组件/智能导航光屏关闭按钮_gray.png"
         ],
-        "action": "Click"
+        "roi": [
+            1170,
+            0,
+            100,
+            105
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        },
+        "next": [
+            "announcementClosed",
+            "HomePage"
+        ]
+    },
+    "HomePage": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "roi": [
+            50,
+            660,
+            84,
+            25
+        ],
+        "expected": "指挥官等级",
+        "action": "StopTask"
     }
 }

@@ -1,19 +1,30 @@
 {
-    "startGF2Game": {
+    "StartGF2Game": {
+        "action": "StartApp",
+        "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity",
+        "post_delay": 20000,
         "next": [
-            "click_Start",
-            "Sub_StartUp"
+            "click_Start"
         ]
     },
-    "Sub_StartUp": {
-        "is_sub": true,
-        "action": "StartApp",
-        "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity"
-    },
     "click_Start": {
-        "is_sub": true,
         "recognition": "OCR",
         "expected": "点击开始",
-        "action": "Click"
+        "action": "Click",
+        "post_delay": 9000,
+        "next": [
+            "HomePage",
+            "dailyRewards",
+            "click_Start"
+        ]
+    },
+    "dailyRewards": {
+        "recognition": "OCR",
+        "expected": "空白",
+        "action": "Click",
+        "next": [
+            "announcementClosed",
+            "dailyRewards"
+        ]
     }
 }

@@ -1,5 +1,5 @@
 {
-    "dailyTaskClaim": {
+    "DailyTaskClaim": {
         "next": [
             "委托",
             "dailyTaskClaimButton",

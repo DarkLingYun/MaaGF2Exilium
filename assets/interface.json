@@ -25,19 +25,23 @@
     "task": [
         {
             "name": "启动少女前线",
-            "entry": "startGF2Game"
+            "entry": "StartGF2Game"
+        },
+        {
+            "name": "领取邮件",
+            "entry": "GetNewEmails"
         },
         {
             "name": "实兵演习",
-            "entry": "liveTroopExercise"
+            "entry": "LiveTroopExercise"
         },
         {
             "name": "进入休息室",
-            "entry": "loungeTasks"
+            "entry": "LoungeTasks"
         },
         {
             "name": "每日任务一键领取",
-            "entry": "dailyTaskClaim"
+            "entry": "DailyTaskClaim"
         }
     ]
 }
