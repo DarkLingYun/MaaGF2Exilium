@@ -40,8 +40,16 @@
             "entry": "LoungeTasks"
         },
         {
+            "name": "人形常规招募(单抽，暂不支持抽到新装备)",
+            "entry": "RegularHumanoidRecruitment"
+        },
+        {
             "name": "每日任务一键领取",
             "entry": "DailyTaskClaim"
+        },
+        {
+            "name": "通行证领取",
+            "entry": "ClaimPassport"
         }
     ]
 }

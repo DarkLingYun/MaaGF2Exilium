@@ -18,7 +18,7 @@
     "waitingOperationButton": {
         "recognition": "DirectHit",
         "post_wait_freezes": {
-            "time": 5000,
+            "time": 2000,
             "threshold": 0.7
         },
         "next": [
@@ -41,6 +41,7 @@
         "recognition": "OCR",
         "expected": "任务完成",
         "action": "Click",
+        "post_delay": 1500,
         "next": [
             "levelUpNotificationClose",
             "确认"

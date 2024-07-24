@@ -4,8 +4,8 @@
             "委托",
             "dailyTaskClaimButton",
             "claimAllButton",
-            "dailyTaskClaim_receiveReward",
-            "returnToHomePage"
+            "dailyTaskClaimReceiveReward",
+            "allItemsClaimed"
         ]
     },
     "dailyTaskClaimButton": {
@@ -20,10 +20,19 @@
         "expected": "领取全部",
         "action": "Click"
     },
-    "dailyTaskClaim_receiveReward": {
+    "dailyTaskClaimReceiveReward": {
         "is_sub": true,
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click"
+    },
+    "allItemsClaimed": {
+        "recognition": "OCR",
+        "expected": "已全部领取",
+        "action": "Click",
+        "next": [
+            "returnToHomePage",
+            "stopTask"
+        ]
     }
 }
