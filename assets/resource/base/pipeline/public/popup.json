@@ -1,0 +1,80 @@
+{
+    "nonScrollablePopupConfirm": {
+        "is_sub": true,
+        "roi": [
+            260,
+            120,
+            760,
+            480
+        ],
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click"
+    },
+    "ScrollablePopupConfirm": {
+        "is_sub": true,
+        "roi": [
+            260,
+            108,
+            760,
+            502
+        ],
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click"
+    },
+    "nonScrollablePopupCancel": {
+        "is_sub": true,
+        "roi": [
+            260,
+            120,
+            760,
+            480
+        ],
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click"
+    },
+    "ScrollablePopupCancel": {
+        "is_sub": true,
+        "roi": [
+            260,
+            108,
+            760,
+            502
+        ],
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click"
+    },
+    "nonScrollablePopupClose": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "roi": [
+            940,
+            120,
+            80,
+            60
+        ],
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click"
+    },
+    "ScrollablePopupClose": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "roi": [
+            940,
+            110,
+            80,
+            60
+        ],
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click"
+    }
+}

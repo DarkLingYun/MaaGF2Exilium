@@ -1,12 +1,23 @@
 {
     "returnToHomePage": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/主页按钮_gray.png",
             "公用按钮组件/主页按钮_black.png"
         ],
         "action": "Click"
+    },
+    "returnToHomePageSub": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_gray.png",
+            "公用按钮组件/主页按钮_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "stopTask"
+        ]
     },
     "battleStart": {
         "is_sub": true,
@@ -22,6 +33,7 @@
         "action": "Click"
     },
     "announcementClosed": {
+        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/关闭按钮_gray.png",
@@ -38,14 +50,9 @@
         "post_wait_freezes": {
             "time": 500,
             "threshold": 0.8
-        },
-        "next": [
-            "announcementClosed",
-            "HomePage"
-        ]
+        }
     },
     "HomePage": {
-        "is_sub": true,
         "recognition": "OCR",
         "roi": [
             50,
@@ -55,5 +62,26 @@
         ],
         "expected": "指挥官等级",
         "action": "StopTask"
+    },
+    "resourcesLoading": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "资源加载中"
+    },
+    "backPage": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            200,
+            70
+        ],
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000
     }
 }

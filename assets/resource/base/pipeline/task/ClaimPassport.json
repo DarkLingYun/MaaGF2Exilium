@@ -51,8 +51,7 @@
         "action": "Click",
         "next": [
             "clickPassportLevelClaimButton",
-            "returnToHomePage",
-            "stopTask"
+            "returnToHomePage"
         ]
     },
     "clickPassportLevelClaimButton": {
@@ -83,8 +82,7 @@
         "expected": "点击空白处关闭",
         "action": "Click",
         "next": [
-            "returnToHomePage",
-            "stopTask"
+            "returnToHomePage"
         ]
     }
 }

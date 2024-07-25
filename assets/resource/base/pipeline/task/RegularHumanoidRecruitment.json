@@ -58,6 +58,7 @@
         "recognition": "OCR",
         "expected": "跳过动画",
         "action": "Click",
+        "post_delay": 1500,
         "next": [
             "regularRecruitResultClose"
         ]
@@ -71,7 +72,6 @@
             29,
             29
         ],
-        "pre_delay": 1500,
         "action": "Click",
         "next": [
             "regularRecruitButtonClick"
@@ -92,8 +92,7 @@
         ],
         "action": "Click",
         "next": [
-            "returnToHomePage",
-            "stopTask"
+            "returnToHomePage"
         ]
     }
 }

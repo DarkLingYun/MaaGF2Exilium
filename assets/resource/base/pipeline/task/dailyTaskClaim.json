@@ -11,7 +11,7 @@
     "dailyTaskClaimButton": {
         "is_sub": true,
         "recognition": "OCR",
-        "expected": "一键领取",
+        "expected": "键领取",
         "action": "Click"
     },
     "claimAllButton": {
@@ -31,8 +31,7 @@
         "expected": "已全部领取",
         "action": "Click",
         "next": [
-            "returnToHomePage",
-            "stopTask"
+            "returnToHomePage"
         ]
     }
 }

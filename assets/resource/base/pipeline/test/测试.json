@@ -1,0 +1,35 @@
+{
+    "挑战": {
+        "next": [
+            "resourcesLoading",
+            "点击挑战按钮",
+            "点击关卡",
+            "battleTask"
+        ]
+    },
+    "点击挑战按钮": {
+        "is_sub": true,
+        "roi": [
+            950,
+            635,
+            270,
+            55
+        ],
+        "recognition": "OCR",
+        "expected": [
+            "挑战",
+            "开始作战"
+        ],
+        "action": "Click",
+        "next": [
+            "resourcesLoading",
+            "挑战"
+        ]
+    },
+    "点击关卡": {
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "template": "测试文件夹/关卡.png",
+        "action": "Click"
+    }
+}

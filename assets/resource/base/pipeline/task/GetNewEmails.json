@@ -28,8 +28,7 @@
         "recognition": "OCR",
         "expected": "无可领取物品",
         "next": [
-            "returnToHomePage",
-            "stopTask"
+            "returnToHomePage"
         ]
     }
 }
