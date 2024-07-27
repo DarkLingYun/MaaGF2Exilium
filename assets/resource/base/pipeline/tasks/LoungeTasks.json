@@ -1,7 +1,10 @@
 {
     "LoungeTasks": {
+        "recognition": "OCR",
+        "expected": "整备室",
+        "action": "Click",
+        "post_delay": 1500,
         "next": [
-            "整备室",
             "loungeButton"
         ]
     },

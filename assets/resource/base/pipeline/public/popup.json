@@ -11,7 +11,8 @@
         "expected": "确认",
         "action": "Click"
     },
-    "ScrollablePopupConfirm": {
+    "scrollablePopupConfirm": {
+        "comments": "滑动条的弹窗用于自律，兑换物品的滑动弹窗不应该由脚本完成，因此点击确认后延迟3秒",
         "is_sub": true,
         "roi": [
             260,
@@ -21,7 +22,8 @@
         ],
         "recognition": "OCR",
         "expected": "确认",
-        "action": "Click"
+        "action": "Click",
+        "post_delay": 4000
     },
     "nonScrollablePopupCancel": {
         "is_sub": true,
@@ -35,7 +37,7 @@
         "expected": "取消",
         "action": "Click"
     },
-    "ScrollablePopupCancel": {
+    "scrollablePopupCancel": {
         "is_sub": true,
         "roi": [
             260,
@@ -62,7 +64,7 @@
         ],
         "action": "Click"
     },
-    "ScrollablePopupClose": {
+    "scrollablePopupClose": {
         "is_sub": true,
         "recognition": "TemplateMatch",
         "roi": [
@@ -76,5 +78,108 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click"
+    },
+    "sliderColorDetection": {
+        "comments": "滑动条颜色检测，检测到红色，值-1",
+        "roi": [
+            260,
+            108,
+            760,
+            502
+        ],
+        "upper": [
+            255,
+            129,
+            113
+        ],
+        "lower": [
+            200,
+            95,
+            64
+        ],
+        "recognition": "ColorMatch",
+        "next": [
+            "decreaseSlider"
+        ]
+    },
+    "increaseSlider": {
+        "comments": "增加自律次数",
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "roi": [
+            260,
+            108,
+            760,
+            502
+        ],
+        "template": [
+            "公用按钮组件/滑动条值增加.png"
+        ],
+        "threshold": 0.9,
+        "action": "Click"
+    },
+    "decreaseSlider": {
+        "comments": "减少自律次数",
+        "recognition": "TemplateMatch",
+        "roi": [
+            260,
+            108,
+            760,
+            502
+        ],
+        "template": [
+            "公用按钮组件/滑动条值减少.png"
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 0,
+        "next": [
+            "scrollablePopupConfirm",
+            "resultRecognition"
+        ]
+    },
+    "resultRecognition": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "post_delay": 1500,
+        "next": [
+            "ClickResultRecognition"
+        ]
+    },
+    "ClickResultRecognition": {
+        "target": [
+            340,
+            430,
+            600,
+            260
+        ],
+        "action": "Click",
+        "next": [
+            "clickAutoSweepBattleSupplyOperationButton"
+        ]
+    },
+    "increaseSliderMax": {
+        "comments": "检测滑动条是否最大值,配件精研不适用",
+        "roi": [
+            845,
+            376,
+            33,
+            32
+        ],
+        "upper": [
+            129,
+            131,
+            135
+        ],
+        "lower": [
+            129,
+            131,
+            135
+        ],
+        "recognition": "ColorMatch",
+        "next": [
+            "scrollablePopupConfirm",
+            "resultRecognition"
+        ]
     }
 }

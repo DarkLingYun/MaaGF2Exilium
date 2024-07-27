@@ -1,18 +1,11 @@
 {
     "StartGF2Game": {
         "next": [
-            "HomePage",
-            "nonScrollablePopupClose",
-            "ScrollablePopupClose",
-            "returnToHomePage",
-            "backPage",
-            "announcementClosed",
-            "dailyRewards",
             "restartGF2Game",
             "unzipResources",
             "downloadResource",
-            "resourcesLoading",
             "clickStart",
+            "HomePage",
             "openGF2GameApp"
         ]
     },
@@ -20,13 +13,29 @@
         "is_sub": true,
         "action": "StartApp",
         "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity",
-        "post_delay": 5000
+        "post_delay": 15000
     },
     "clickStart": {
         "is_sub": true,
         "recognition": "OCR",
         "expected": "点击开始",
-        "action": "Click"
+        "post_delay": 5500,
+        "action": "Click",
+        "next": [
+            "resourcesLoading",
+            "dismissToMain"
+        ]
+    },
+    "dismissToMain": {
+        "next": [
+            "nonScrollablePopupClose",
+            "scrollablePopupClose",
+            "returnToHomePage",
+            "backPage",
+            "announcementClosed",
+            "dailyRewards",
+            "HomePage"
+        ]
     },
     "downloadResource": {
         "is_sub": true,

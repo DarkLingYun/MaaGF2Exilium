@@ -1,8 +1,11 @@
 {
     "ClaimPassport": {
+        "comments": "领取通行证奖励",
+        "recognition": "OCR",
+        "expected": "巡录",
+        "action": "Click",
         "next": [
-            "switchPassportTasksTag",
-            "巡录"
+            "switchPassportTasksTag"
         ]
     },
     "switchPassportTasksTag": {
@@ -72,7 +75,7 @@
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 2000,
         "next": [
             "passportLevelClaimResultPage"
         ]

@@ -1,7 +1,9 @@
 {
     "DailyTaskClaim": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "Click",
         "next": [
-            "委托",
             "dailyTaskClaimButton",
             "claimAllButton",
             "dailyTaskClaimReceiveReward",

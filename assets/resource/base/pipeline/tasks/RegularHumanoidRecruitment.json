@@ -1,16 +1,15 @@
 {
     "RegularHumanoidRecruitment": {
+        "recognition": "OCR",
+        "expected": "招募",
+        "action": "Click",
         "next": [
-            "招募",
             "recruitTagSwipe"
         ]
     },
     "recruitTagSwipe": {
         "recognition": "OCR",
         "expected": [
-            "访问详细",
-            "商城",
-            "访问一次",
             "访问十次"
         ],
         "action": "Swipe",
@@ -46,7 +45,7 @@
             510,
             110
         ],
-        "expected": "访问一次",
+        "expected": "^访问一次$",
         "pre_delay": 1500,
         "action": "Click",
         "next": [
@@ -73,6 +72,7 @@
             29
         ],
         "action": "Click",
+        "post_delay": 1500,
         "next": [
             "regularRecruitButtonClick"
         ]
@@ -91,6 +91,7 @@
             "取消"
         ],
         "action": "Click",
+        "post_delay": 1500,
         "next": [
             "returnToHomePage"
         ]

@@ -24,7 +24,7 @@
     ],
     "task": [
         {
-            "name": "启动少女前线",
+            "name": "启动少女前线2",
             "entry": "StartGF2Game"
         },
         {
@@ -32,16 +32,34 @@
             "entry": "GetNewEmails"
         },
         {
-            "name": "实兵演习",
-            "entry": "LiveTroopExercise"
+            "name": "领取体力",
+            "entry": "ClaimStamina"
+        },
+        {
+            "name": "使用完体力药水",
+            "entry": "StaminaReplenishment"
         },
         {
             "name": "进入休息室",
             "entry": "LoungeTasks"
         },
         {
-            "name": "人形常规招募(单抽，暂不支持抽到新装备)",
-            "entry": "RegularHumanoidRecruitment"
+            "name": "实兵演习",
+            "entry": "LiveTroopExercise"
+        },
+        {
+            "name": "自律补给作战",
+            "entry": "AutoSweepBattle",
+            "option": [
+                "补给资源："
+            ]
+        },
+        {
+            "name": "人形常规招募(抽到新装备还未测试)",
+            "entry": "RegularHumanoidRecruitment",
+            "option": [
+                "招募方式："
+            ]
         },
         {
             "name": "每日任务一键领取",
@@ -51,5 +69,71 @@
             "name": "通行证领取",
             "entry": "ClaimPassport"
         }
-    ]
+    ],
+    "option": {
+        "招募方式：": {
+            "cases": [
+                {
+                    "name": "访问一次（直到没有常规访问许可停止）",
+                    "param": {
+                        "regularRecruitButtonClick": {
+                            "expected": "^访问一次$"
+                        }
+                    }
+                },
+                {
+                    "name": "访问十次（直到常规访问许可不足十次）",
+                    "param": {
+                        "regularRecruitButtonClick": {
+                            "expected": "^访问十次$"
+                        }
+                    }
+                }
+            ]
+        },
+        "补给资源：": {
+            "cases": [
+                {
+                    "name": "战争报告_人形升级",
+                    "param": {
+                        "supplyOperationType": {
+                            "expected": "深度搜索"
+                        }
+                    }
+                },
+                {
+                    "name": "解析图纸_武器升级",
+                    "param": {
+                        "supplyOperationType": {
+                            "expected": "军备解析"
+                        }
+                    }
+                },
+                {
+                    "name": "增域存量条_提升人形等级上限",
+                    "param": {
+                        "supplyOperationType": {
+                            "expected": "决策构象"
+                        }
+                    }
+                },
+                {
+                    "name": "武器配件",
+                    "param": {
+                        "supplyOperationType": {
+                            "expected": "定向精研"
+                        }
+                    }
+                },
+                {
+                    "name": "萨狄斯金_配件精调及心智螺旋",
+                    "param": {
+                        "supplyOperationType": {
+                            "expected": "定向精研"
+                        }
+                    }
+                }
+            ]
+        }
+    }
 }

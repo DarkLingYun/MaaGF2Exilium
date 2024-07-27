@@ -6,6 +6,12 @@
         ]
     },
     "clickEmailsButton": {
+        "roi": [
+            40,
+            400,
+            110,
+            200
+        ],
         "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
