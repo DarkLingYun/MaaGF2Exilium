@@ -19,6 +19,7 @@
 1. 推荐使用MuMu模拟器12运行游戏，[模拟器支持情况](https://maa.plus/docs/zh-cn/manual/device/windows.html)请查看官方文档。
 2. 模拟器建议设置为`16:9`的比例的分辨率，该比例典型的分辨率有`3840*2160 (4K)`、`2560*1440 (2K)`、`1920*1080 (1080P)`、`1280*720 (720P)`。
 ## 使用方式
+(改天写
 ## 已有功能
 * [x] 启动游戏
 * [x] 领取邮件
@@ -42,7 +43,7 @@
 
 本项目由 **[MaaFramework](https://github.com/MaaXYZ/MaaFramework)** 强力驱动！
 
-感谢以下开发者对本项目作出的贡献:
+感谢以下开发者对本作出的贡献:
 
 <a href="https://github.com/DarkLingYun/MaaGF2Exilium/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=DarkLingYun/MaaGF2Exilium" />
