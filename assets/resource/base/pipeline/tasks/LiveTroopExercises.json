@@ -20,9 +20,28 @@
         "recognition": "OCR",
         "expected": "实兵演习",
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "next": [
+            "NoOffensiveOperationButton",
             "clickOffensiveOperation"
         ]
+    },
+    "NoOffensiveOperationButton": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭",
+            "点击任意位置继续",
+            "点击屏幕任意位置继续"
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        }
     },
     "clickOffensiveOperation": {
         "comments": "点击进攻后，进入战斗对象选择，先判断是否有战斗成功成员，有的话刷新",
