@@ -25,7 +25,8 @@
         "post_delay": 1000,
         "next": [
             "clickClaimStaminaButton",
-            "dismissToMain"
+            "announcementClosed",
+            "HomePage"
         ]
     },
     "clickClaimStaminaButton": {
@@ -38,12 +39,12 @@
         ]
     },
     "claimStaminaResult": {
-        "is_sub": true,
         "recognition": "OCR",
         "expected": "点击",
         "action": "Click",
         "next": [
-            "dismissToMain"
+            "announcementClosed",
+            "HomePage"
         ]
     }
 }
