@@ -28,7 +28,7 @@
         "recognition": "OCR",
         "expected": "领取",
         "post_wait_freezes": {
-            "time": 2000,
+            "time": 1000,
             "threshold": 0.95
         },
         "action": "Click"
