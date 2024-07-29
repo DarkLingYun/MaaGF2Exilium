@@ -21,8 +21,7 @@
         "expected": "实兵演习",
         "action": "Click",
         "post_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.95
+            "time": 1000
         },
         "next": [
             "NoOffensiveOperationButton",
