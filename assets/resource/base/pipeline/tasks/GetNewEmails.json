@@ -12,7 +12,6 @@
             110,
             200
         ],
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/邮件_主页.png"
@@ -27,13 +26,24 @@
         "expected": "领取全部",
         "action": "Click",
         "next": [
-            "noUnclaimedItems"
+            "noUnclaimedItems",
+            "closeClaimAllEmailsPopup"
         ]
     },
     "noUnclaimedItems": {
         "recognition": "OCR",
         "expected": "无可领取物品",
         "next": [
+            "noUnclaimedItems",
+            "returnToHomePage"
+        ]
+    },
+    "closeClaimAllEmailsPopup": {
+        "recognition": "OCR",
+        "expected": "点击",
+        "action": "Click",
+        "next": [
+            "closeClaimAllEmailsPopup",
             "returnToHomePage"
         ]
     }
