@@ -25,7 +25,8 @@
         "post_delay": 1000,
         "next": [
             "clickClaimStaminaButton",
-            "dismissToMain"
+            "announcementClosed",
+            "HomePage"
         ]
     },
     "clickClaimStaminaButton": {
@@ -43,7 +44,8 @@
         "expected": "点击",
         "action": "Click",
         "next": [
-            "dismissToMain"
+            "announcementClosed",
+            "HomePage"
         ]
     }
 }
