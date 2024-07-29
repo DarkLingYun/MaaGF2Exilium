@@ -1,33 +1,48 @@
 {
     "StartGF2Game": {
         "next": [
-            "restartGF2Game",
-            "unzipResources",
-            "downloadResource",
-            "clickStart",
+            "nonScrollablePopupClose",
+            "scrollablePopupClose",
+            "returnToHomePage",
+            "backPage",
+            "announcementClosed",
+            "dailyRewards",
             "HomePage",
+            "clickStart",
+            "healthGameAdvice",
+            "SunbornGameLogo",
             "openGF2GameApp"
         ]
     },
-    "openGF2GameApp": {
-        "is_sub": true,
-        "action": "StartApp",
-        "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity",
-        "post_delay": 15000
-    },
-    "clickStart": {
-        "is_sub": true,
-        "recognition": "OCR",
-        "expected": "点击开始",
-        "post_delay": 5500,
-        "action": "Click",
+    "SunbornGameLogo": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            338,
+            215,
+            268,
+            272
+        ],
+        "template": "启动游戏/SunbornGameLogo.png",
         "next": [
-            "resourcesLoading",
-            "dismissToMain"
+            "SunbornGameLogo",
+            "healthGameAdvice"
         ]
     },
-    "dismissToMain": {
+    "healthGameAdvice": {
+        "recognition": "OCR",
+        "expected": "健康游戏忠告",
         "next": [
+            "healthGameAdvice",
+            "clickStart"
+        ]
+    },
+    "clickStart": {
+        "recognition": "OCR",
+        "expected": "点击开始",
+        "action": "Click",
+        "next": [
+            "clickStart",
+            "resourcesLoading",
             "nonScrollablePopupClose",
             "scrollablePopupClose",
             "returnToHomePage",
@@ -36,6 +51,11 @@
             "dailyRewards",
             "HomePage"
         ]
+    },
+    "openGF2GameApp": {
+        "is_sub": true,
+        "action": "StartApp",
+        "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity"
     },
     "downloadResource": {
         "is_sub": true,
