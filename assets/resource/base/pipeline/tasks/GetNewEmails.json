@@ -1,0 +1,50 @@
+{
+    "GetNewEmails": {
+        "next": [
+            "clickEmailsButton",
+            "stopTask"
+        ]
+    },
+    "clickEmailsButton": {
+        "roi": [
+            40,
+            400,
+            110,
+            200
+        ],
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/邮件_主页.png"
+        ],
+        "action": "Click",
+        "next": [
+            "claimAllEmails"
+        ]
+    },
+    "claimAllEmails": {
+        "recognition": "OCR",
+        "expected": "领取全部",
+        "action": "Click",
+        "next": [
+            "noUnclaimedItems",
+            "closeClaimAllEmailsPopup"
+        ]
+    },
+    "noUnclaimedItems": {
+        "recognition": "OCR",
+        "expected": "无可领取物品",
+        "next": [
+            "noUnclaimedItems",
+            "returnToHomePage"
+        ]
+    },
+    "closeClaimAllEmailsPopup": {
+        "recognition": "OCR",
+        "expected": "点击",
+        "action": "Click",
+        "next": [
+            "closeClaimAllEmailsPopup",
+            "returnToHomePage"
+        ]
+    }
+}

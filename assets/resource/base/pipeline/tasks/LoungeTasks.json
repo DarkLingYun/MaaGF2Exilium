@@ -1,0 +1,20 @@
+{
+    "LoungeTasks": {
+        "recognition": "OCR",
+        "expected": "整备室",
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "loungeButton"
+        ]
+    },
+    "loungeButton": {
+        "recognition": "TemplateMatch",
+        "template": "整备室/休息室按钮.png",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}

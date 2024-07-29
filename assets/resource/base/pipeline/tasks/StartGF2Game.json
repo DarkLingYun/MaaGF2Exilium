@@ -1,0 +1,84 @@
+{
+    "StartGF2Game": {
+        "next": [
+            "nonScrollablePopupClose",
+            "scrollablePopupClose",
+            "returnToHomePage",
+            "backPage",
+            "announcementClosed",
+            "dailyRewards",
+            "HomePage",
+            "clickStart",
+            "healthGameAdvice",
+            "SunbornGameLogo",
+            "openGF2GameApp"
+        ]
+    },
+    "SunbornGameLogo": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            338,
+            215,
+            268,
+            272
+        ],
+        "template": "启动游戏/SunbornGameLogo.png",
+        "next": [
+            "SunbornGameLogo",
+            "healthGameAdvice"
+        ]
+    },
+    "healthGameAdvice": {
+        "recognition": "OCR",
+        "expected": "健康游戏忠告",
+        "next": [
+            "healthGameAdvice",
+            "clickStart"
+        ]
+    },
+    "clickStart": {
+        "recognition": "OCR",
+        "expected": "点击开始",
+        "action": "Click",
+        "next": [
+            "clickStart",
+            "resourcesLoading",
+            "nonScrollablePopupClose",
+            "scrollablePopupClose",
+            "returnToHomePage",
+            "backPage",
+            "announcementClosed",
+            "dailyRewards",
+            "HomePage"
+        ]
+    },
+    "openGF2GameApp": {
+        "is_sub": true,
+        "action": "StartApp",
+        "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity"
+    },
+    "downloadResource": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "下载",
+        "action": "Click"
+    },
+    "unzipResources": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "解压",
+        "action": "Click"
+    },
+    "restartGF2Game": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click"
+    },
+    "dailyRewards": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "空白",
+        "action": "Click"
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "DailyTaskClaim": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "Click",
+        "next": [
+            "dailyTaskClaimButton",
+            "claimAllButton",
+            "dailyTaskClaimReceiveReward",
+            "allItemsClaimed"
+        ]
+    },
+    "dailyTaskClaimButton": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "键领取",
+        "action": "Click"
+    },
+    "claimAllButton": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "领取全部",
+        "action": "Click"
+    },
+    "dailyTaskClaimReceiveReward": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click"
+    },
+    "allItemsClaimed": {
+        "recognition": "OCR",
+        "expected": "已全部领取",
+        "action": "Click",
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}

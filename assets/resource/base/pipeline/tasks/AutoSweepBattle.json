@@ -1,0 +1,203 @@
+{
+    "AutoSweepBattle": {
+        "recognition": "OCR",
+        "expected": "战役推进",
+        "action": "Click",
+        "next": [
+            "supplyOperation"
+        ]
+    },
+    "supplyOperation": {
+        "recognition": "OCR",
+        "expected": "补给作战",
+        "action": "Click",
+        "next": [
+            "supplyOperationPageRightSwip"
+        ]
+    },
+    "supplyOperationPageRightSwip": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": [
+            60,
+            300,
+            100,
+            100
+        ],
+        "end": [
+            1094,
+            300,
+            100,
+            100
+        ],
+        "next": [
+            "supplyOperationType",
+            "supplyOperationPageLeftSwip"
+        ]
+    },
+    "supplyOperationPageLeftSwip": {
+        "is_sub": true,
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": [
+            1094,
+            300,
+            100,
+            100
+        ],
+        "end": [
+            60,
+            300,
+            100,
+            100
+        ]
+    },
+    "supplyOperationType": {
+        "recognition": "OCR",
+        "expected": "深度搜索",
+        "action": "Click",
+        "next": [
+            "supplyOperationTypeIsSaridisjinToken",
+            "supplyOperationTypeIsAccessories",
+            "supplyOperationLevelPageTopSwip"
+        ]
+    },
+    "supplyOperationLevelPageTopSwip": {
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": [
+            400,
+            600,
+            100,
+            100
+        ],
+        "end": [
+            10,
+            300,
+            100,
+            100
+        ],
+        "next": [
+            "selectHighestSupplyOperationLevel",
+            "supplyOperationLevelPageDownSwip"
+        ]
+    },
+    "supplyOperationLevelPageDownSwip": {
+        "is_sub": true,
+        "recognition": "DirectHit",
+        "duration": 500,
+        "action": "Swipe",
+        "begin": [
+            400,
+            300,
+            40,
+            12
+        ],
+        "end": [
+            400,
+            490,
+            40,
+            12
+        ]
+    },
+    "selectHighestSupplyOperationLevel": {
+        "recognition": "OCR",
+        "roi": [
+            43,
+            216,
+            101,
+            470
+        ],
+        "order_by": "Vertical",
+        "expected": "^[0-1][0-9]$",
+        "index": -1,
+        "action": "Click",
+        "next": [
+            "supplyOperationAutoSweepButtonDisabled",
+            "clickAutoSweepBattleSupplyOperationButton"
+        ]
+    },
+    "supplyOperationAutoSweepButtonDisabled": {
+        "comments": "检测自律按钮是否不可用",
+        "roi": [
+            840,
+            625,
+            127,
+            55
+        ],
+        "upper": [
+            144,
+            144,
+            148
+        ],
+        "lower": [
+            140,
+            140,
+            140
+        ],
+        "count": 100,
+        "connected": true,
+        "recognition": "ColorMatch",
+        "next": [
+            "supplyOperationLevelLastTwo",
+            "supplyOperationLevelPageDownSwip"
+        ]
+    },
+    "supplyOperationLevelLastTwo": {
+        "recognition": "OCR",
+        "roi": [
+            43,
+            216,
+            101,
+            470
+        ],
+        "order_by": "Vertical",
+        "expected": "^[0-1][0-9]$",
+        "index": -2,
+        "action": "Click",
+        "next": [
+            "clickAutoSweepBattleSupplyOperationButton"
+        ]
+    },
+    "clickAutoSweepBattleSupplyOperationButton": {
+        "comments": "点击自律按钮后，这里由两种结果：自律准备和情报拼图补充",
+        "recognition": "OCR",
+        "expected": "^自律$",
+        "action": "Click",
+        "next": [
+            "AutoSweepBattleSupplyOperationPrepareInsufficient",
+            "AutoSweepBattleSupplyOperationPrepare"
+        ]
+    },
+    "AutoSweepBattleSupplyOperationPrepareInsufficient": {
+        "comments": "体力不足",
+        "recognition": "OCR",
+        "expected": "^情报拼图补充$",
+        "next": [
+            "nonScrollablePopupCancel",
+            "returnToHomePage"
+        ]
+    },
+    "AutoSweepBattleSupplyOperationPrepare": {
+        "comments": "先判断是否是红色，-1后 然后判断是否是最大值",
+        "recognition": "OCR",
+        "expected": "^自律准备$",
+        "next": [
+            "sliderColorDetection",
+            "increaseSliderMax",
+            "increaseSlider"
+        ]
+    },
+    "supplyOperationTypeIsAccessories": {
+        "comments": "精研类型选择暂时没写 2024年7月26日 20点37分",
+        "recognition": "OCR",
+        "expected": "^定向精研$",
+        "action": "DoNothing"
+    },
+    "supplyOperationTypeIsSaridisjinToken": {
+        "comments": "标准同调选择暂时没写 2024年7月26日 20点37分",
+        "recognition": "OCR",
+        "expected": "^标准同调$",
+        "action": "DoNothing"
+    }
+}

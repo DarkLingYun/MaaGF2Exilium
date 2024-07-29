@@ -1,0 +1,91 @@
+{
+    "ClaimPassport": {
+        "comments": "领取通行证奖励",
+        "recognition": "OCR",
+        "expected": "巡录",
+        "action": "Click",
+        "next": [
+            "switchPassportTasksTag"
+        ]
+    },
+    "switchPassportTasksTag": {
+        "recognition": "OCR",
+        "roi": [
+            440,
+            0,
+            400,
+            60
+        ],
+        "expected": "沿途",
+        "action": "Click",
+        "next": [
+            "clickPassportTasksClaimButton",
+            "switchToPassportWeeklyTasks"
+        ]
+    },
+    "clickPassportTasksClaimButton": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "领取",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "action": "Click"
+    },
+    "switchToPassportWeeklyTasks": {
+        "recognition": "OCR",
+        "expected": "每周行动",
+        "action": "Click",
+        "next": [
+            "clickPassportTasksClaimButton",
+            "switchPassportLevelTag"
+        ]
+    },
+    "switchPassportLevelTag": {
+        "recognition": "OCR",
+        "roi": [
+            440,
+            0,
+            400,
+            60
+        ],
+        "expected": "远航",
+        "action": "Click",
+        "next": [
+            "clickPassportLevelClaimButton",
+            "returnToHomePage"
+        ]
+    },
+    "clickPassportLevelClaimButton": {
+        "recognition": "OCR",
+        "roi": [
+            1090,
+            365,
+            100,
+            25
+        ],
+        "expected": "一键领取",
+        "action": "Click",
+        "next": [
+            "clickPassportLevelClaimConfirmButton"
+        ]
+    },
+    "clickPassportLevelClaimConfirmButton": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "passportLevelClaimResultPage"
+        ]
+    },
+    "passportLevelClaimResultPage": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}

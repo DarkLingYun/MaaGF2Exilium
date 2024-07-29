@@ -1,0 +1,42 @@
+{
+    "battleTask": {
+        "is_sub": true,
+        "next": [
+            "resourcesLoading",
+            "waitingBattleStartButton"
+        ]
+    },
+    "waitingBattleStartButton": {
+        "recognition": "DirectHit",
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.7
+        },
+        "next": [
+            "确认",
+            "levelUpNotificationClose",
+            "battleTaskSuccess",
+            "autoBattleEnabled",
+            "battleStart",
+            "waitingBattleStartButton"
+        ]
+    },
+    "battleTaskSuccess": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "任务完成",
+        "action": "Click",
+        "post_delay": 1500
+    },
+    "确认": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click"
+    },
+    "levelUpNotificationClose": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "点击屏幕任意位置继续",
+        "action": "Click"
+    }
+}

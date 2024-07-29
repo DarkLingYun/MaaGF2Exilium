@@ -1,0 +1,24 @@
+{
+    "StaminaReplenishment": {
+        "recognition": "DirectHit",
+        "target": [
+            185,
+            665,
+            67,
+            17
+        ],
+        "action": "Click",
+        "next": [
+            "staminaItemsInsufficient",
+            "nonScrollablePopupConfirm"
+        ]
+    },
+    "staminaItemsInsufficient": {
+        "recognition": "OCR",
+        "expected": "接入密钥不足",
+        "next": [
+            "nonScrollablePopupCancel",
+            "HomePage"
+        ]
+    }
+}

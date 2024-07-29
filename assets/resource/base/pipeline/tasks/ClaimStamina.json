@@ -1,0 +1,50 @@
+{
+    "ClaimStamina": {
+        "comments": "领取体力",
+        "recognition": "OCR",
+        "expected": "活动",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "clickClaimStaminaTag",
+            "announcementClosed",
+            "HomePage"
+        ]
+    },
+    "clickClaimStaminaTag": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "roi": [
+            46,
+            77,
+            310,
+            570
+        ],
+        "expected": "情报补给",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "clickClaimStaminaButton",
+            "announcementClosed",
+            "HomePage"
+        ]
+    },
+    "clickClaimStaminaButton": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "^领取$",
+        "action": "Click",
+        "next": [
+            "claimStaminaResult"
+        ]
+    },
+    "claimStaminaResult": {
+        "recognition": "OCR",
+        "expected": "点击",
+        "action": "Click",
+        "next": [
+            "announcementClosed",
+            "HomePage"
+        ]
+    }
+}
