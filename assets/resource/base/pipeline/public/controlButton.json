@@ -75,7 +75,8 @@
     "resourcesLoading": {
         "is_sub": true,
         "recognition": "OCR",
-        "expected": "资源加载中"
+        "expected": "资源加载中",
+        "post_delay": 2500
     },
     "backPage": {
         "is_sub": true,
