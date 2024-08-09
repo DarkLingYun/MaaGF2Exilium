@@ -4,6 +4,7 @@
         "recognition": "OCR",
         "expected": "巡录",
         "action": "Click",
+        "post_delay": 1500,
         "next": [
             "switchPassportTasksTag"
         ]
@@ -16,7 +17,7 @@
             400,
             60
         ],
-        "expected": "沿途",
+        "expected": "^沿途行动$",
         "action": "Click",
         "next": [
             "clickPassportTasksClaimButton",
@@ -50,7 +51,7 @@
             400,
             60
         ],
-        "expected": "远航",
+        "expected": "^远航巡录$",
         "action": "Click",
         "next": [
             "clickPassportLevelClaimButton",
