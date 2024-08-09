@@ -37,19 +37,12 @@
         ]
     },
     "clickStart": {
+        "is_sub": true,
         "recognition": "OCR",
         "expected": "点击开始",
         "action": "Click",
         "next": [
-            "clickStart",
-            "resourcesLoading",
-            "nonScrollablePopupClose",
-            "scrollablePopupClose",
-            "returnToHomePage",
-            "backPage",
-            "announcementClosed",
-            "dailyRewards",
-            "HomePage"
+            "StartGF2Game"
         ]
     },
     "openGF2GameApp": {

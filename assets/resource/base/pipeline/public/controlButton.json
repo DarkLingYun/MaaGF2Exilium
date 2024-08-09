@@ -62,13 +62,7 @@
     },
     "HomePage": {
         "recognition": "OCR",
-        "roi": [
-            50,
-            660,
-            84,
-            25
-        ],
-        "expected": "指挥官等级",
+        "expected": "战役推进",
         "pre_delay": 2500,
         "action": "StopTask"
     },
