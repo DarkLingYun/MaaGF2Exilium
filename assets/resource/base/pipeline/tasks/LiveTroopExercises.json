@@ -21,7 +21,7 @@
         "expected": "实兵演习",
         "action": "Click",
         "post_wait_freezes": {
-            "time": 1000
+            "time": 500
         },
         "next": [
             "NoOffensiveOperationButton",
@@ -54,7 +54,7 @@
         ]
     },
     "combatValueRecognition": {
-        "comments": "识别前三个人的战斗力，找出100~22500的人(不包含22500)，从识别结果选择从左开始第一个",
+        "comments": "识别前三个人的战斗力，找出100~22500的人(不包含22999)，从识别结果选择从左开始第一个",
         "roi": [
             0,
             400,
