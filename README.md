@@ -34,7 +34,7 @@
         * [x] 增域存量条_提升人形等级上限
         * [ ] 武器配件
         * [ ] 萨狄斯金_配件精调及心智螺旋
-* [x] 人形常规招募(抽到新装备还未测试)
+* [x] 人形常规招募(抽到新装备还未测试,未来可能取消此功能) 
     - 支持选择访问方式为单抽还是十连，直到访问资源不足为止
 * [x] 每日任务一键领取
 * [x] 通行证领取
@@ -48,4 +48,4 @@
 <a href="https://github.com/DarkLingYun/MaaGF2Exilium/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=DarkLingYun/MaaGF2Exilium" />
 </a>
-
+Made with [contrib.rocks](https://contrib.rocks)
