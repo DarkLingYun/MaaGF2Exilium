@@ -12,7 +12,7 @@
         "action": "Click"
     },
     "scrollablePopupConfirm": {
-        "comments": "滑动条的弹窗用于自律，兑换物品的滑动弹窗不应该由脚本完成，因此点击确认后延迟3秒",
+        "comments": "滑动条的弹窗用于自律，活动兑换物品的滑动弹窗不应该由脚本完成，因此点击确认后延迟3秒",
         "is_sub": true,
         "roi": [
             260,

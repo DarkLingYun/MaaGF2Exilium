@@ -53,8 +53,9 @@
         ]
     },
     "supplyOperationType": {
+        "comments": "可通过命令行选项改变类型",
         "recognition": "OCR",
-        "expected": "深度搜索",
+        "expected": "定向精研",
         "action": "Click",
         "next": [
             "supplyOperationTypeIsSaridisjinToken",
@@ -160,13 +161,91 @@
         ]
     },
     "clickAutoSweepBattleSupplyOperationButton": {
-        "comments": "点击自律按钮后，这里由两种结果：自律准备和情报拼图补充",
+        "comments": "点击自律按钮后，这里有三种结果：自律准备和情报拼图补充，和定向精研的自律准备",
         "recognition": "OCR",
         "expected": "^自律$",
         "action": "Click",
         "next": [
             "AutoSweepBattleSupplyOperationPrepareInsufficient",
+            "AutoSweepBattleSupplyOperationPrepareIsAccessories",
             "AutoSweepBattleSupplyOperationPrepare"
+        ]
+    },
+    "AutoSweepBattleSupplyOperationPrepareIsAccessories": {
+        "comments": "确认是否为配件自律页面",
+        "recognition": "OCR",
+        "expected": [
+            "^下一步$"
+        ],
+        "begin": [
+            158,
+            257,
+            256,
+            14
+        ],
+        "end": [
+            158,
+            513,
+            256,
+            14
+        ],
+        "action": "Swipe",
+        "next": [
+            "selectedEffectsCombination",
+            "selectedEffectsCombinationPageTopSwip"
+        ]
+    },
+    "selectedEffectsCombinationPageTopSwip": {
+        "comments": "向上滑动4个效果组合",
+        "is_sub": true,
+        "recognition": "DirectHit",
+        "duration": 500,
+        "action": "Swipe",
+        "begin": [
+            158,
+            513,
+            256,
+            14
+        ],
+        "end": [
+            158,
+            359,
+            256,
+            14
+        ],
+        "post_delay": 1000
+    },
+    "selectedEffectsCombination": {
+        "comments": "选择效果组合",
+        "recognition": "OCR",
+        "roi": [
+            173,
+            225,
+            336,
+            340
+        ],
+        "expected": "^实弹增幅$",
+        "action": "Click",
+        "next": [
+            "selectedEffectsCombinationNextButtonClick"
+        ]
+    },
+    "selectedEffectsCombinationNextButtonClick": {
+        "recognition": "OCR",
+        "expected": "^下一步$",
+        "action": "Click",
+        "next": [
+            "AutoSweepBattleSupplyOperationPrepareAccessories"
+        ]
+    },
+    "AutoSweepBattleSupplyOperationPrepareAccessories": {
+        "comments": "定向精研弹窗的逻辑",
+        "recognition": "OCR",
+        "expected": "^自律准备$",
+        "next": [
+            "sliderColorDetectionAccessories",
+            "increaseSliderMaxAccessories",
+            "increaseSliderAccessories"
         ]
     },
     "AutoSweepBattleSupplyOperationPrepareInsufficient": {
@@ -179,7 +258,7 @@
         ]
     },
     "AutoSweepBattleSupplyOperationPrepare": {
-        "comments": "先判断是否是红色，-1后 然后判断是否是最大值",
+        "comments": "先判断是否是红色，-1后 然后判断是否是最大值(非定向精研)",
         "recognition": "OCR",
         "expected": "^自律准备$",
         "next": [
@@ -189,10 +268,20 @@
         ]
     },
     "supplyOperationTypeIsAccessories": {
-        "comments": "精研类型选择暂时没写 2024年7月26日 20点37分",
         "recognition": "OCR",
         "expected": "^定向精研$",
-        "action": "DoNothing"
+        "action": "DoNothing",
+        "next": [
+            "switchAccessoriesTag"
+        ]
+    },
+    "switchAccessoriesTag": {
+        "recognition": "OCR",
+        "expected": "^手枪$",
+        "action": "Click",
+        "next": [
+            "supplyOperationLevelPageTopSwip"
+        ]
     },
     "supplyOperationTypeIsSaridisjinToken": {
         "comments": "标准同调选择暂时没写 2024年7月26日 20点37分",

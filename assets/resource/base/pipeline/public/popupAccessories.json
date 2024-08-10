@@ -1,0 +1,119 @@
+{
+    "sliderColorDetectionAccessories": {
+        "comments": "滑动条颜色检测，检测到红色，值-1",
+        "roi": [
+            538,
+            444,
+            206,
+            109
+        ],
+        "upper": [
+            255,
+            129,
+            113
+        ],
+        "lower": [
+            200,
+            95,
+            64
+        ],
+        "recognition": "ColorMatch",
+        "next": [
+            "decreaseSliderAccessories"
+        ]
+    },
+    "increaseSliderAccessories": {
+        "comments": "增加自律次数",
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "roi": [
+            122,
+            88,
+            1037,
+            954
+        ],
+        "template": [
+            "公用按钮组件/滑动条值增加.png"
+        ],
+        "threshold": 0.9,
+        "action": "Click"
+    },
+    "decreaseSliderAccessories": {
+        "comments": "减少自律次数",
+        "recognition": "TemplateMatch",
+        "roi": [
+            122,
+            88,
+            1037,
+            954
+        ],
+        "template": [
+            "公用按钮组件/滑动条值减少.png"
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 0,
+        "next": [
+            "scrollablePopupConfirmAccessories",
+            "resultRecognitionAccessories"
+        ]
+    },
+    "resultRecognitionAccessories": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "post_delay": 1500,
+        "next": [
+            "ClickResultRecognitionAccessories"
+        ]
+    },
+    "ClickResultRecognitionAccessories": {
+        "target": [
+            340,
+            430,
+            600,
+            260
+        ],
+        "action": "Click",
+        "next": [
+            "clickAutoSweepBattleSupplyOperationButton"
+        ]
+    },
+    "increaseSliderMaxAccessories": {
+        "comments": "检测滑动条是否最大值,配件精研不适用",
+        "roi": [
+            922,
+            428,
+            34,
+            34
+        ],
+        "upper": [
+            129,
+            131,
+            135
+        ],
+        "lower": [
+            129,
+            131,
+            135
+        ],
+        "recognition": "ColorMatch",
+        "next": [
+            "scrollablePopupConfirmAccessories",
+            "resultRecognitionAccessories"
+        ]
+    },
+    "scrollablePopupConfirmAccessories": {
+        "comments": "滑动条的弹窗用于自律，活动兑换物品的滑动弹窗不应该由脚本完成，因此点击确认后延迟3秒",
+        "is_sub": true,
+        "roi": [
+            122,
+            88,
+            1037,
+            954
+        ],
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_delay": 4000
+    }
+}

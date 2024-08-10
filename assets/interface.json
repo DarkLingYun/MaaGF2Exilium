@@ -48,11 +48,32 @@
             "entry": "LiveTroopExercise"
         },
         {
+            "name": "————————————下列二选一————————————",
+            "entry": ""
+        },
+        {
+            "name": "定向精研（武器配件刷取）",
+            "entry": "AutoSweepBattle",
+            "param": {
+                "supplyOperationType": {
+                    "expected": "定向精研"
+                }
+            },
+            "option": [
+                "配件类型：",
+                "配件效果："
+            ]
+        },
+        {
             "name": "自律补给作战",
             "entry": "AutoSweepBattle",
             "option": [
                 "补给资源："
             ]
+        },
+        {
+            "name": "——————————————————————————————",
+            "entry": ""
         },
         {
             "name": "人形常规招募(抽到新装备还未测试)",
@@ -118,18 +139,146 @@
                     }
                 },
                 {
-                    "name": "武器配件",
+                    "name": "萨狄斯金_配件精调及心智螺旋",
                     "param": {
                         "supplyOperationType": {
-                            "expected": "定向精研"
+                            "expected": "标准同调"
+                        }
+                    }
+                }
+            ]
+        },
+        "配件类型：": {
+            "cases": [
+                {
+                    "name": "突击与霰弹枪",
+                    "param": {
+                        "switchAccessoriesTag": {
+                            "expected": "^突击与霰弹枪$"
                         }
                     }
                 },
                 {
-                    "name": "萨狄斯金_配件精调及心智螺旋",
+                    "name": "冲锋枪与机枪",
                     "param": {
-                        "supplyOperationType": {
-                            "expected": "定向精研"
+                        "switchAccessoriesTag": {
+                            "expected": "^冲锋枪与机枪$"
+                        }
+                    }
+                },
+                {
+                    "name": "狙击枪与刀",
+                    "param": {
+                        "switchAccessoriesTag": {
+                            "expected": "^狙击枪与刀$"
+                        }
+                    }
+                },
+                {
+                    "name": "手枪",
+                    "param": {
+                        "switchAccessoriesTag": {
+                            "expected": "^手枪$"
+                        }
+                    }
+                }
+            ]
+        },
+        "配件效果：": {
+            "cases": [
+                {
+                    "name": "制胜追进",
+                    "param": {
+                        "selectedEffectsCombination": {
+                            "expected": "^制胜追进$"
+                        }
+                    }
+                },
+                {
+                    "name": "双重对策",
+                    "param": {
+                        "selectedEffectsCombination": {
+                            "expected": "^双重对策$"
+                        }
+                    }
+                },
+                {
+                    "name": "异位打击",
+                    "param": {
+                        "selectedEffectsCombination": {
+                            "expected": "^异位打击$"
+                        }
+                    }
+                },
+                {
+                    "name": "异位提振",
+                    "param": {
+                        "selectedEffectsCombination": {
+                            "expected": "^异位提振$"
+                        }
+                    }
+                },
+                {
+                    "name": "应急修复",
+                    "param": {
+                        "selectedEffectsCombination": {
+                            "expected": "^应急修复$"
+                        }
+                    }
+                },
+                {
+                    "name": "减伤支援",
+                    "param": {
+                        "selectedEffectsCombination": {
+                            "expected": "^减伤支援$"
+                        }
+                    }
+                },
+                {
+                    "name": "实弹增幅",
+                    "param": {
+                        "selectedEffectsCombination": {
+                            "expected": "^实弹增幅$"
+                        }
+                    }
+                },
+                {
+                    "name": "炙热增幅",
+                    "param": {
+                        "selectedEffectsCombination": {
+                            "expected": "^炙热增幅$"
+                        }
+                    }
+                },
+                {
+                    "name": "冰点增幅",
+                    "param": {
+                        "selectedEffectsCombination": {
+                            "expected": "^冰点增幅$"
+                        }
+                    }
+                },
+                {
+                    "name": "强蚀增幅",
+                    "param": {
+                        "selectedEffectsCombination": {
+                            "expected": "^强蚀增幅$"
+                        }
+                    }
+                },
+                {
+                    "name": "电场增幅",
+                    "param": {
+                        "selectedEffectsCombination": {
+                            "expected": "^电场增幅$"
+                        }
+                    }
+                },
+                {
+                    "name": "激流增幅",
+                    "param": {
+                        "selectedEffectsCombination": {
+                            "expected": "^激流增幅$"
                         }
                     }
                 }
