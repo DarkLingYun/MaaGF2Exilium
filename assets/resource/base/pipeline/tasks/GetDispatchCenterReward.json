@@ -1,0 +1,54 @@
+{
+    "GetDispatchCenterReward": {
+        "recognition": "DirectHit",
+        "pre_delay": 2000,
+        "next": [
+            "PublicArea",
+            "DispatchCenter",
+            "RewardGet",
+            "DispatchCenterSendAgain",
+            "NoRewardGet"
+        ]
+    },
+    "PublicArea": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "公共区",
+        "action": "Click",
+        "post_delay": 1500
+    },
+    "DispatchCenter": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "调度室",
+        "action": "Click",
+        "post_delay": 2500
+    },
+    "NoRewardGet": {
+        "is_sub": true,
+        "inverse": true,
+        "recognition": "OCR",
+        "expected": "一键领取",
+        "post_delay": 1500,
+        "next": [
+            "returnToHomePageSub"
+        ]
+    },
+    "RewardGet": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "一键领取",
+        "action": "Click",
+        "post_delay": 1500
+    },
+    "DispatchCenterSendAgain": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "再次派遣",
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "returnToHomePageSub"
+        ]
+    }
+}
