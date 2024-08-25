@@ -57,6 +57,7 @@
         "recognition": "OCR",
         "expected": "定向精研",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "supplyOperationTypeIsSaridisjinToken",
             "supplyOperationTypeIsAccessories",
