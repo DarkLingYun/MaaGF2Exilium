@@ -10,11 +10,11 @@
             "HomePage",
             "clickStart",
             "healthGameAdvice",
-            "SunbornGameLogo",
+            "sunbornGameLogo",
             "openGF2GameApp"
         ]
     },
-    "SunbornGameLogo": {
+    "sunbornGameLogo": {
         "recognition": "TemplateMatch",
         "roi": [
             338,
@@ -24,7 +24,7 @@
         ],
         "template": "启动游戏/SunbornGameLogo.png",
         "next": [
-            "SunbornGameLogo",
+            "sunbornGameLogo",
             "healthGameAdvice"
         ]
     },
@@ -33,6 +33,9 @@
         "expected": "健康游戏忠告",
         "next": [
             "healthGameAdvice",
+            "restartGF2Game",
+            "unzipResources",
+            "downloadResource",
             "clickStart"
         ]
     },
@@ -53,7 +56,7 @@
     "downloadResource": {
         "is_sub": true,
         "recognition": "OCR",
-        "expected": "下载",
+        "expected": "下载资源",
         "action": "Click"
     },
     "unzipResources": {
