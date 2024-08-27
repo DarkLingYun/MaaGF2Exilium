@@ -28,12 +28,16 @@
             "entry": "StartGF2Game"
         },
         {
+            "name": "调度室每日任务",
+            "entry": "GetDispatchCenterReward"
+        },
+        {
             "name": "领取邮件",
             "entry": "GetNewEmails"
         },
         {
-            "name": "领取体力",
-            "entry": "ClaimStamina"
+            "name": "领取活动奖励",
+            "entry": "ClaimEventRewards"
         },
         {
             "name": "使用完体力药水",
