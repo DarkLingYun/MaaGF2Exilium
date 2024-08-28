@@ -4,7 +4,7 @@
         "recognition": "OCR",
         "expected": "活动",
         "action": "Click",
-        "post_delay": 1000,
+        "post_wait_freezes": 500,
         "next": [
             "clickClaimEventRewardsTag_1",
             "announcementClosed",
@@ -56,6 +56,7 @@
         "expected": "点击",
         "action": "Click",
         "next": [
+            "ClaimEventRewardsResult",
             "clickClaimEventRewardsTag_2"
         ]
     },
@@ -79,6 +80,7 @@
         "recognition": "OCR",
         "expected": "前往",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "clickClaimEventRewardsButton_2_phaseRewards",
             "clickClaimEventRewardsButton_2_claim",
