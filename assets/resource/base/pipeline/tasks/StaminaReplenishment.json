@@ -9,6 +9,14 @@
         ],
         "action": "Click",
         "next": [
+            "staminaRefillType"
+        ]
+    },
+    "staminaRefillType": {
+        "recognition": "FeatureMatch",
+        "template": "体力兑换/体力兑换.png",
+        "action": "Click",
+        "next": [
             "staminaItemsInsufficient",
             "nonScrollablePopupConfirm"
         ]
