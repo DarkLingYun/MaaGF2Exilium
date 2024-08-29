@@ -1,6 +1,6 @@
 {
     "enterLoungeAction": {
-        "enabled": true,
+        "enabled": false,
         "next": [
             "loungeButtonClick"
         ]
