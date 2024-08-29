@@ -1,0 +1,13 @@
+{
+    "PublicAreaDailyTasks": {
+        "recognition": "OCR",
+        "expected": "^公共区$",
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "enterLoungeAction",
+            "enterDispatchCenterAction",
+            "returnToHomePage"
+        ]
+    }
+}

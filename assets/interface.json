@@ -28,8 +28,12 @@
             "entry": "StartGF2Game"
         },
         {
-            "name": "调度室每日任务",
-            "entry": "GetDispatchCenterReward"
+            "name": "公共区日常",
+            "entry": "PublicAreaDailyTasks",
+            "option": [
+                "访问休息室",
+                "调度室派遣任务"
+            ]
         },
         {
             "name": "领取邮件",
@@ -44,19 +48,11 @@
             "entry": "StaminaReplenishment"
         },
         {
-            "name": "进入休息室",
-            "entry": "LoungeTasks"
-        },
-        {
             "name": "实兵演习",
             "entry": "LiveTroopExercise"
         },
         {
-            "name": "————————————下列二选一————————————",
-            "entry": ""
-        },
-        {
-            "name": "定向精研（武器配件刷取）",
+            "name": "定向精研（武器配件刷取）[二选一]",
             "entry": "AutoSweepBattle",
             "param": {
                 "supplyOperationType": {
@@ -69,15 +65,11 @@
             ]
         },
         {
-            "name": "自律补给作战",
+            "name": "自律补给作战[二选一]",
             "entry": "AutoSweepBattle",
             "option": [
                 "补给资源："
             ]
-        },
-        {
-            "name": "——————————————————————————————",
-            "entry": ""
         },
         {
             "name": "人形常规招募(抽到新装备还未测试)",
@@ -96,6 +88,46 @@
         }
     ],
     "option": {
+        "访问休息室": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "param": {
+                        "enterLoungeAction": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "param": {
+                        "enterLoungeAction": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "调度室派遣任务": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "param": {
+                        "enterDispatchCenterAction": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "param": {
+                        "enterDispatchCenterAction": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
         "招募方式：": {
             "cases": [
                 {
