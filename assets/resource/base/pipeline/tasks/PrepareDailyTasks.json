@@ -1,0 +1,10 @@
+{
+    "PrepareDailyTasks": {
+        "next": [
+            "getNewEmails",
+            "staminaReplenishment",
+            "enterGameStoreAction",
+            "HomePage"
+        ]
+    }
+}

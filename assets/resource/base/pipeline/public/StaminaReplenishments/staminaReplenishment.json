@@ -1,6 +1,6 @@
 {
-    "StaminaReplenishment": {
-        "recognition": "DirectHit",
+    "staminaReplenishment": {
+        "enabled": true,
         "target": [
             185,
             665,
@@ -26,6 +26,7 @@
         "expected": "接入密钥不足",
         "next": [
             "nonScrollablePopupCancel",
+            "enterGameStoreAction",
             "HomePage"
         ]
     }

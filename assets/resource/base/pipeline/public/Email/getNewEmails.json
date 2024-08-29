@@ -1,8 +1,10 @@
 {
-    "GetNewEmails": {
+    "getNewEmails": {
+        "enabled": true,
         "next": [
             "clickEmailsButton",
-            "stopTask"
+            "staminaReplenishment",
+            "enterGameStoreAction"
         ]
     },
     "clickEmailsButton": {
@@ -35,7 +37,21 @@
         "expected": "无可领取物品",
         "next": [
             "noUnclaimedItems",
-            "returnToHomePage"
+            "exitEmails"
+        ]
+    },
+    "exitEmails": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_gray.png",
+            "公用按钮组件/主页按钮_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "staminaReplenishment",
+            "enterGameStoreAction",
+            "HomePage"
         ]
     },
     "closeClaimAllEmailsPopup": {
@@ -44,7 +60,7 @@
         "action": "Click",
         "next": [
             "closeClaimAllEmailsPopup",
-            "returnToHomePage"
+            "exitEmails"
         ]
     }
 }
