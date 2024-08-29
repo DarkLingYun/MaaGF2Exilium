@@ -1,0 +1,70 @@
+{
+    "enterGameStoreAction": {
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": "^商城$",
+        "post_wait_freezes": 200,
+        "action": "Click",
+        "next": [
+            "clickQualitySelection"
+        ]
+    },
+    "clickQualitySelection": {
+        "recognition": "OCR",
+        "expected": "^品质甄选$",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "clickPermanentGiftPackage"
+        ]
+    },
+    "clickPermanentGiftPackage": {
+        "recognition": "OCR",
+        "expected": "^常驻礼包$",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "clickDailySupplyBox",
+            "exitGameStore"
+        ]
+    },
+    "clickDailySupplyBox": {
+        "recognition": "OCR",
+        "expected": "每日补给箱",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "confirmSupplyBoxPurchase"
+        ]
+    },
+    "confirmSupplyBoxPurchase": {
+        "recognition": "OCR",
+        "expected": "^确认$",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "closeSupplyBoxPurchaseResultPage"
+        ]
+    },
+    "closeSupplyBoxPurchaseResultPage": {
+        "recognition": "OCR",
+        "expected": "点击",
+        "action": "Click",
+        "next": [
+            "closeSupplyBoxPurchaseResultPage",
+            "exitGameStore"
+        ]
+    },
+    "exitGameStore": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_gray.png",
+            "公用按钮组件/主页按钮_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "HomePage"
+        ]
+    }
+}
