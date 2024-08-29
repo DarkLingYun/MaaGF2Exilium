@@ -28,6 +28,15 @@
             "entry": "StartGF2Game"
         },
         {
+            "name": "日常任务前准备",
+            "entry": "PrepareDailyTasks",
+            "option": [
+                "领取邮件",
+                "使用完体力药水",
+                "商城免费每日补给箱购买"
+            ]
+        },
+        {
             "name": "公共区日常",
             "entry": "PublicAreaDailyTasks",
             "option": [
@@ -36,23 +45,11 @@
             ]
         },
         {
-            "name": "领取邮件",
-            "entry": "GetNewEmails"
-        },
-        {
-            "name": "领取活动奖励",
-            "entry": "ClaimEventRewards"
-        },
-        {
-            "name": "使用完体力药水",
-            "entry": "StaminaReplenishment"
-        },
-        {
             "name": "实兵演习",
             "entry": "LiveTroopExercise"
         },
         {
-            "name": "定向精研（武器配件刷取）[二选一]",
+            "name": "定向精研[二选一]",
             "entry": "AutoSweepBattle",
             "param": {
                 "supplyOperationType": {
@@ -65,7 +62,7 @@
             ]
         },
         {
-            "name": "自律补给作战[二选一]",
+            "name": "补给作战[二选一]",
             "entry": "AutoSweepBattle",
             "option": [
                 "补给资源："
@@ -79,6 +76,10 @@
             ]
         },
         {
+            "name": "领取活动奖励",
+            "entry": "ClaimEventRewards"
+        },
+        {
             "name": "每日任务一键领取",
             "entry": "DailyTaskClaim"
         },
@@ -88,6 +89,26 @@
         }
     ],
     "option": {
+        "领取邮件": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "param": {
+                        "getNewEmails": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "param": {
+                        "getNewEmails": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
         "访问休息室": {
             "cases": [
                 {
@@ -122,6 +143,46 @@
                     "name": "NO",
                     "param": {
                         "enterDispatchCenterAction": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "使用完体力药水": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "param": {
+                        "staminaReplenishment": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "param": {
+                        "staminaReplenishment": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "商城免费每日补给箱购买": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "param": {
+                        "enterGameStoreAction": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "param": {
+                        "enterGameStoreAction": {
                             "enabled": false
                         }
                     }
