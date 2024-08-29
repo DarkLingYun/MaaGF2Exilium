@@ -204,6 +204,16 @@
 
 
 ## 开发相关
+### 致谢
+
+- [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 自动化测试框架
+
+- [MaaPracticeBoilerplate](https://github.com/MaaXYZ/MaaPracticeBoilerplate) MaaFramework项目模板
+
+- [MFAWPF](https://github.com/SweetSmellFox/MFAWPF) Pipeline协议项目的通用GUI
+- [MFATools](https://github.com/SweetSmellFox/MFATools) 开发工具
+- [maa-support-extension](https://github.com/neko-para/maa-support-extension) VSCode扩展
+### 规范
 > 如果要参与开发，请查看以下规范文档。方便更好的开发和管理。
 
 - [Json规划说明](/docs/Json文件说明.md)
