@@ -2,7 +2,7 @@
     "ClaimEventRewards": {
         "comments": "领取活动物品",
         "recognition": "OCR",
-        "expected": "活动",
+        "expected": "^活动$",
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
@@ -20,6 +20,7 @@
             310,
             570
         ],
+        "post_wait_freezes": 500,
         "expected": "日行迹",
         "action": "Click",
         "next": [
@@ -71,16 +72,16 @@
         ],
         "expected": "彻夜",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
-            "clickClaimEventRewardsButton_2",
-            "clickClaimEventRewardsTag_2"
+            "clickClaimEventRewardsButton_2"
         ]
     },
     "clickClaimEventRewardsButton_2": {
         "recognition": "OCR",
         "expected": "前往",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 200,
         "next": [
             "clickClaimEventRewardsButton_2_phaseRewards",
             "clickClaimEventRewardsButton_2_claim",
