@@ -90,7 +90,7 @@
     },
     "clickClaimEventRewardsButton_2_claim": {
         "recognition": "OCR",
-        "expected": "领取",
+        "expected": "^领取$",
         "action": "Click",
         "next": [
             "ClaimEventRewardsResult_2",
