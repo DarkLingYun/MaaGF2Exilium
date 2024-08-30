@@ -20,16 +20,13 @@
         "recognition": "OCR",
         "expected": "实兵演习",
         "action": "Click",
-        "post_wait_freezes": {
-            "time": 500
-        },
+        "post_wait_freezes": 500,
         "next": [
             "NoOffensiveOperationButton",
             "clickOffensiveOperation"
         ]
     },
     "NoOffensiveOperationButton": {
-        "is_sub": true,
         "recognition": "OCR",
         "expected": [
             "点击空白处关闭",
@@ -40,40 +37,25 @@
         "post_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
-        }
+        },
+        "next": [
+            "NoOffensiveOperationButton",
+            "clickOffensiveOperation"
+        ]
     },
     "clickOffensiveOperation": {
-        "comments": "点击进攻后，进入战斗对象选择，先判断是否有战斗成功成员，有的话刷新",
+        "comments": "点击进攻后，两种情况 有挑战成功的 战力值不符合的 ",
         "recognition": "OCR",
         "expected": "进攻",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "challengeSuccess",
             "combatValueRecognition",
-            "subRefreshData"
-        ]
-    },
-    "combatValueRecognition": {
-        "comments": "识别前三个人的战斗力，找出100~22500的人(不包含22999)，从识别结果选择从左开始第一个",
-        "roi": [
-            0,
-            400,
-            640,
-            30
-        ],
-        "recognition": "OCR",
-        "expected": "^[1-9][0-9]{2}$|^[1-9][0-9]{3}$|^[1-2][0-2][0-9]{3}$",
-        "post_delay": 1000,
-        "action": "Click",
-        "next": [
-            "challengeSuccess",
-            "insufficientAttempts",
-            "startOffensive",
-            "liveTroopExerciseBattle"
+            "refreshData"
         ]
     },
     "challengeSuccess": {
-        "is_sub": true,
         "recognition": "OCR",
         "expected": "挑战成功",
         "target": [
@@ -87,29 +69,70 @@
             "refreshData"
         ]
     },
+    "refreshData": {
+        "roi": [
+            1164,
+            656,
+            45,
+            26
+        ],
+        "recognition": "OCR",
+        "expected": "刷新",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "combatValueRecognition",
+            "refreshData"
+        ]
+    },
+    "combatValueRecognition": {
+        "comments": "识别前三个人的战斗力，找出100~22999的人，从识别结果选择从左开始第一个",
+        "roi": [
+            0,
+            400,
+            640,
+            30
+        ],
+        "recognition": "OCR",
+        "expected": "^[1-9][0-9]{2}$|^[1-9][0-9]{3}$|^[1-2][0-2][0-9]{3}$",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "startOffensive"
+        ]
+    },
     "insufficientAttempts": {
         "comments": "打满后的任务",
-        "is_sub": true,
         "recognition": "OCR",
         "expected": "无法参与实兵演习",
+        "next": [
+            "clickAnywhere"
+        ]
+    },
+    "clickAnywhere": {
+        "recognition": "OCR",
+        "expected": "点击任意位置继续",
+        "action": "Click",
         "next": [
             "clickAnywhere",
             "leftTopBackButton"
         ]
     },
-    "clickAnywhere": {
-        "is_sub": true,
-        "recognition": "OCR",
-        "expected": "点击任意位置继续",
-        "action": "Click"
-    },
     "leftTopBackButton": {
-        "comments": "判断领取，无论是否领取，都要返回主页打断子任务",
-        "recognition": "OCR",
-        "expected": [
-            "刷新"
+        "recognition": "ColorMatch",
+        "connected": true,
+        "count": 55,
+        "upper": [
+            210,
+            210,
+            210
         ],
-        "target": [
+        "lower": [
+            150,
+            150,
+            150
+        ],
+        "roi": [
             35,
             25,
             30,
@@ -123,7 +146,6 @@
     },
     "unclaimed": {
         "comments": "点击领取后有2秒的动画，因此要延迟2秒",
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "roi": [
             400,
@@ -138,14 +160,6 @@
             "claimedClick"
         ]
     },
-    "claimedClick": {
-        "recognition": "OCR",
-        "expected": "点击空白处关闭",
-        "action": "Click",
-        "next": [
-            "returnToHomePageSub"
-        ]
-    },
     "claimed": {
         "recognition": "TemplateMatch",
         "roi": [
@@ -156,20 +170,27 @@
         ],
         "template": "实兵演习/演习补给已领取.png",
         "next": [
-            "returnToHomePageSub"
+            "returnToHomePage"
+        ]
+    },
+    "claimedClick": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "returnToHomePage"
         ]
     },
     "liveTroopExerciseBattle": {
         "comments": "该任务会进入战斗前和战斗结束后继续战斗的循环，因此要在战斗前和战斗结束后判断加载页",
         "next": [
             "resourcesLoading",
-            "combatValueRecognition",
+            "challengeSuccess",
             "battleTask"
         ]
     },
     "startOffensive": {
         "comments": "开始进攻进入战斗",
-        "is_sub": true,
         "roi": [
             1049,
             545,
@@ -178,18 +199,11 @@
         ],
         "recognition": "OCR",
         "expected": "进攻",
-        "action": "Click"
-    },
-    "refreshData": {
-        "roi": [
-            1164,
-            656,
-            45,
-            26
-        ],
-        "recognition": "OCR",
-        "expected": "刷新",
-        "action": "Click"
+        "action": "Click",
+        "next": [
+            "insufficientAttempts",
+            "liveTroopExerciseBattle"
+        ]
     },
     "subRefreshData": {
         "is_sub": true,
