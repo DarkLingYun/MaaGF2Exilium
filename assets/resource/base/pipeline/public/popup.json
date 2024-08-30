@@ -98,6 +98,7 @@
             64
         ],
         "recognition": "ColorMatch",
+        "post_delay": 100,
         "next": [
             "decreaseSlider"
         ]
@@ -116,6 +117,7 @@
             "公用按钮组件/滑动条值增加.png"
         ],
         "threshold": 0.9,
+        "post_delay": 100,
         "action": "Click"
     },
     "decreaseSlider": {
@@ -132,7 +134,7 @@
         ],
         "threshold": 0.9,
         "action": "Click",
-        "post_delay": 0,
+        "post_delay": 100,
         "next": [
             "scrollablePopupConfirm",
             "resultRecognition"
@@ -177,6 +179,7 @@
             135
         ],
         "recognition": "ColorMatch",
+        "post_delay": 100,
         "next": [
             "scrollablePopupConfirm",
             "resultRecognition"
