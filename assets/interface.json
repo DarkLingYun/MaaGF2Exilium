@@ -45,7 +45,7 @@
             ]
         },
         {
-            "name": "实兵演习",
+            "name": "实兵演习(即将废弃)",
             "entry": "LiveTroopExercise"
         },
         {
@@ -66,6 +66,15 @@
             "entry": "AutoSweepBattle",
             "option": [
                 "补给资源："
+            ]
+        },
+        {
+            "name": "模拟作战日常",
+            "entry": "SimulatedCombat",
+            "option": [
+                "首领挑战自律",
+                "自动实兵演习",
+                "自动兵棋推演"
             ]
         },
         {
@@ -376,6 +385,66 @@
                     "param": {
                         "selectedEffectsCombination": {
                             "expected": "^激流增幅$"
+                        }
+                    }
+                }
+            ]
+        },
+        "首领挑战自律": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "param": {
+                        "enterBossChallengeTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "param": {
+                        "enterBossChallengeTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "自动实兵演习": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "param": {
+                        "enterLiveDrillTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "param": {
+                        "enterLiveDrillTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "自动兵棋推演": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "param": {
+                        "enterWarGameSimulationTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "param": {
+                        "enterWarGameSimulationTask": {
+                            "enabled": false
                         }
                     }
                 }
