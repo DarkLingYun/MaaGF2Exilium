@@ -25,7 +25,7 @@
  0. 从 [Releases] (https://github.com/DarkLingYun/MaaGF2Exilium/releases)下载压缩包名为 `MaaGF2Exilium-win-x86_64-with-gui-v0.x.x.zip
 ` 的GUI版本。
  1. 解压下载好的压缩包
- 2. 双击或右键运行解压目录下的 `MFAWPF.exe` 文件即可(确保[MuMu模拟器](https://mumu.163.com/)已运行)
+ 2. 双击或右键运行解压目录下的 `MFAWPF.exe` 文件即可 **确保[MuMu模拟器](https://mumu.163.com/)已运行)**
 
 ## 已有功能
 > 定向精研（武器配件刷取）由于逻辑比较复杂，写到自律补给作战里面作为选项比较麻烦，因此单独写成一个功能供用户使用。
