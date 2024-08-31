@@ -7,6 +7,7 @@
             "dailyTaskClaimButton",
             "claimAllButton",
             "dailyTaskClaimReceiveReward",
+            "noClaimButton",
             "allItemsClaimed"
         ]
     },
@@ -27,6 +28,14 @@
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click"
+    },
+    "noClaimButton": {
+        "is_sub": true,
+        "recognition": "OCR",
+        "expected": "^领取$",
+        "next": [
+            "returnToHomePageSub"
+        ]
     },
     "allItemsClaimed": {
         "recognition": "OCR",
