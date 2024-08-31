@@ -1,0 +1,231 @@
+{
+    "enterLiveDrillTask": {
+        "next": [
+            "clickEnterLiveDrillPage"
+        ]
+    },
+    "clickEnterLiveDrillPage": {
+        "recognition": "OCR",
+        "expected": "实兵演习",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "liveTroopExerciseWeeklySettlement",
+            "insufficientPermissionsForLiveDrill",
+            "clickButtonToEnterOpponentSelection"
+        ]
+    },
+    "liveTroopExerciseWeeklySettlement": {
+        "comments": "实兵演习每周结算",
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭",
+            "点击任意位置继续",
+            "点击屏幕任意位置继续"
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
+        "next": [
+            "liveTroopExerciseWeeklySettlement",
+            "clickButtonToEnterOpponentSelection"
+        ]
+    },
+    "clickButtonToEnterOpponentSelection": {
+        "comments": "点击进攻进入演习对象选择页面(需要判断是否有已经挑战成功的、战力值识别失败的,挑战权限不足的)",
+        "recognition": "OCR",
+        "expected": "进攻",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "confirmLiveDrillOpponentListPage"
+        ]
+    },
+    "confirmLiveDrillOpponentListPage": {
+        "comments": "确认实兵演习对象列表页",
+        "recognition": "OCR",
+        "roi": [
+            1030,
+            325,
+            110,
+            180
+        ],
+        "expected": [
+            "作战效能",
+            "当前积分"
+        ],
+        "next": [
+            "insufficientPermissionsForLiveDrill",
+            "hasChallengeSuccessfulObject",
+            "challengeOpponentSelection",
+            "refreshOpponentList"
+        ]
+    },
+    "hasChallengeSuccessfulObject": {
+        "comments": "有挑战成功对象",
+        "recognition": "OCR",
+        "expected": "挑战成功",
+        "target": [
+            1164,
+            656,
+            45,
+            26
+        ],
+        "post_delay": 1500,
+        "next": [
+            "refreshOpponentList"
+        ]
+    },
+    "refreshOpponentList": {
+        "comments": "刷新演习对手列表",
+        "roi": [
+            1164,
+            656,
+            45,
+            26
+        ],
+        "recognition": "OCR",
+        "expected": "刷新",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "challengeOpponentSelection",
+            "refreshOpponentList"
+        ]
+    },
+    "challengeOpponentSelection": {
+        "comments": "挑战对象选择，选择作战效能从左到右在 100~22999 范围内第一个符合条件的后点击",
+        "roi": [
+            0,
+            400,
+            640,
+            30
+        ],
+        "recognition": "OCR",
+        "expected": "^[1-9][0-9]{2}$|^[1-9][0-9]{3}$|^[1-2][0-2][0-9]{3}$",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "confirmChallengeWithOpponent"
+        ]
+    },
+    "confirmChallengeWithOpponent": {
+        "comments": "确认与对手挑战",
+        "roi": [
+            1049,
+            545,
+            49,
+            26
+        ],
+        "recognition": "OCR",
+        "expected": "进攻",
+        "action": "Click",
+        "next": [
+            "enterLiveDrillCombatResourceLoading"
+        ]
+    },
+    "enterLiveDrillCombatResourceLoading": {
+        "comments": "进入实兵演习战斗前的资源加载",
+        "recognition": "OCR",
+        "expected": "资源加载中",
+        "next": [
+            "enterLiveDrillCombatResourceLoading",
+            "clickLiveDrillStartCombatButton"
+        ]
+    },
+    "insufficientPermissionsForLiveDrill": {
+        "comments": "实兵演习权限不足(不足有两种页面：实兵演习首页，挑战对象选择页)",
+        "recognition": "OCR",
+        "expected": "0/3",
+        "roi": [
+            1186,
+            11,
+            74,
+            58
+        ],
+        "next": [
+            "exitChallengeOpponentSelection",
+            "exitLiveDrillPage"
+        ]
+    },
+    "exitChallengeOpponentSelection": {
+        "comments": "演习对象选择页返回(一般是自律3次后达到次数，因此需要判断奖励领取情况)",
+        "roi": [
+            1164,
+            656,
+            45,
+            26
+        ],
+        "recognition": "OCR",
+        "expected": "刷新",
+        "target": [
+            27,
+            23,
+            41,
+            41
+        ],
+        "action": "Click",
+        "next": [
+            "claimLiveDrillRewards",
+            "exitLiveDrillPage"
+        ]
+    },
+    "claimLiveDrillRewards": {
+        "comments": "领取实兵演习奖励，要求演习进度为满",
+        "recognition": "TemplateMatch",
+        "roi": [
+            400,
+            610,
+            60,
+            60
+        ],
+        "template": "实兵演习/演习补给待领取.png",
+        "action": "Click",
+        "next": [
+            "closeLiveDrillRewardClaimResultPage"
+        ]
+    },
+    "closeLiveDrillRewardClaimResultPage": {
+        "comments": "关闭实兵演习奖励领取结果页(由于识别太快可能点击无效果，需要调用自身)",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "liveDrillRewardProgressNotMet",
+            "closeLiveDrillRewardClaimResultPage",
+            "exitLiveDrillPage"
+        ]
+    },
+    "liveDrillRewardProgressNotMet": {
+        "comments": "实兵演习奖励进度未满",
+        "recognition": "TemplateMatch",
+        "roi": [
+            400,
+            610,
+            60,
+            60
+        ],
+        "template": "实兵演习/演习补给已领取.png",
+        "next": [
+            "exitLiveDrillPage"
+        ]
+    },
+    "exitLiveDrillPage": {
+        "comments": "实兵演习页返回",
+        "recognition": "OCR",
+        "expected": "演习记录",
+        "target": [
+            27,
+            23,
+            41,
+            41
+        ],
+        "action": "Click",
+        "next": [
+            "enterWarGameSimulationTask",
+            "returnToHomePage"
+        ]
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "SimulatedCombat": {
+        "comments": "模拟作战",
+        "recognition": "OCR",
+        "expected": "^战役推进$",
+        "action": "Click",
+        "post_wait_freezes": 100,
+        "next": [
+            "clickEnterSimulatedCombatPage"
+        ]
+    },
+    "clickEnterSimulatedCombatPage": {
+        "recognition": "OCR",
+        "expected": "^模拟作战$",
+        "action": "Click",
+        "next": [
+            "enterBossChallengeTask",
+            "enterLiveDrillTask",
+            "enterWarGameSimulationTask",
+            "returnToHomePage"
+        ]
+    }
+}

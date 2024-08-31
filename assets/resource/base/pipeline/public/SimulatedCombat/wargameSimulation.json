@@ -1,0 +1,106 @@
+{
+    "enterWarGameSimulationTask": {
+        "action": "Swipe",
+        "begin": [
+            1124,
+            372,
+            1,
+            1
+        ],
+        "end": [
+            209,
+            380,
+            1,
+            1
+        ],
+        "next": [
+            "clickEnterWarGameSimulationPage"
+        ]
+    },
+    "clickEnterWarGameSimulationPage": {
+        "comments": "点击进入兵棋推演界面",
+        "recognition": "OCR",
+        "expected": "兵棋推演",
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "confirmWarGameSimulationPage"
+        ]
+    },
+    "confirmWarGameSimulationPage": {
+        "comments": "确认为兵棋推演页面",
+        "recognition": "OCR",
+        "expected": "秩序构演",
+        "next": [
+            "insufficientPermissionsForWarGameSimulation",
+            "startWarGameMatching"
+        ]
+    },
+    "insufficientPermissionsForWarGameSimulation": {
+        "comments": "兵棋推演权限不足",
+        "recognition": "OCR",
+        "expected": "0/5$",
+        "roi": [
+            1157,
+            25,
+            63,
+            29
+        ],
+        "next": [
+            "exitWarGameSimulation"
+        ]
+    },
+    "startWarGameMatching": {
+        "recognition": "OCR",
+        "expected": "^匹配$",
+        "action": "Click",
+        "next": [
+            "warGameMatchingInProgress"
+        ]
+    },
+    "warGameMatchingInProgress": {
+        "recognition": "OCR",
+        "expected": "匹配中",
+        "action": "Click",
+        "next": [
+            "warGameMatchingInProgress",
+            "warGameMatchSuccess"
+        ]
+    },
+    "warGameMatchSuccess": {
+        "recognition": "OCR",
+        "expected": "匹配成功",
+        "action": "Click",
+        "next": [
+            "enterWarGameCombatResourceLoading"
+        ]
+    },
+    "enterWarGameCombatResourceLoading": {
+        "comments": "兵棋推演资源加载中",
+        "recognition": "OCR",
+        "expected": "读取中",
+        "action": "Click",
+        "next": [
+            "enterWarGameCombatResourceLoading",
+            "clickWarGameCombatButton"
+        ]
+    },
+    "exitWarGameSimulation": {
+        "comments": "退出兵棋推演页面",
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            200,
+            70
+        ],
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}

@@ -1,0 +1,94 @@
+{
+    "clickLiveDrillStartCombatButton": {
+        "comments": "点击实兵演习战斗开始按钮",
+        "recognition": "OCR",
+        "expected": "作战开始",
+        "target": [
+            493,
+            616,
+            291,
+            44
+        ],
+        "action": "Click",
+        "next": [
+            "enableLiveDrillAutoCombat",
+            "clickLiveDrillStartCombatButton"
+        ]
+    },
+    "enableLiveDrillAutoCombat": {
+        "comments": "点击实兵演习自动战斗按钮",
+        "recognition": "ColorMatch",
+        "connected": true,
+        "count": 55,
+        "roi": [
+            1069,
+            25,
+            35,
+            27
+        ],
+        "upper": [
+            210,
+            210,
+            210
+        ],
+        "lower": [
+            150,
+            150,
+            150
+        ],
+        "action": "Click",
+        "next": [
+            "waitingForLiveDrillAutoCombatToEnd"
+        ]
+    },
+    "waitingForLiveDrillAutoCombatToEnd": {
+        "comments": "等待实兵演习自动战斗结束",
+        "post_wait_freezes": {
+            "time": 2500,
+            "threshold": 0.8
+        },
+        "next": [
+            "liveDrillTaskCompleted",
+            "waitingForLiveDrillAutoCombatToEnd"
+        ]
+    },
+    "liveDrillTaskCompleted": {
+        "comments": "实兵演习任务完成",
+        "recognition": "OCR",
+        "expected": "任务完成",
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "confirmLevelPromotionForLiveDrill",
+            "clickConfirmButtonToExitLiveDrill"
+        ]
+    },
+    "confirmLevelPromotionForLiveDrill": {
+        "comments": "确认实兵演习等级晋级",
+        "recognition": "OCR",
+        "expected": "点击屏幕任意位置继续",
+        "action": "Click",
+        "next": [
+            "confirmLevelPromotionForLiveDrill",
+            "clickConfirmButtonToExitLiveDrill"
+        ]
+    },
+    "clickConfirmButtonToExitLiveDrill": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "next": [
+            "clickConfirmButtonToExitLiveDrill",
+            "exitLiveDrillCombatResourceLoading"
+        ]
+    },
+    "exitLiveDrillCombatResourceLoading": {
+        "comments": "退出实兵演习战斗后的资源加载",
+        "recognition": "OCR",
+        "expected": "资源加载中",
+        "next": [
+            "exitLiveDrillCombatResourceLoading",
+            "confirmLiveDrillOpponentListPage"
+        ]
+    }
+}

@@ -1,0 +1,93 @@
+{
+    "clickWarGameCombatButton": {
+        "comments": "点击实兵演习战斗开始按钮",
+        "recognition": "OCR",
+        "expected": "作战开始",
+        "target": [
+            493,
+            616,
+            291,
+            44
+        ],
+        "action": "Click",
+        "next": [
+            "enableWarGameAutoCombat",
+            "clickWarGameCombatButton"
+        ]
+    },
+    "enableWarGameAutoCombat": {
+        "comments": "点击兵棋推演自动战斗按钮",
+        "recognition": "ColorMatch",
+        "connected": true,
+        "count": 55,
+        "roi": [
+            1069,
+            25,
+            35,
+            27
+        ],
+        "upper": [
+            210,
+            210,
+            210
+        ],
+        "lower": [
+            150,
+            150,
+            150
+        ],
+        "action": "Click",
+        "next": [
+            "waitingForWarGameAutoCombatToEnd"
+        ]
+    },
+    "waitingForWarGameAutoCombatToEnd": {
+        "comments": "等待兵棋推演自动战斗结束",
+        "post_wait_freezes": {
+            "time": 2500,
+            "threshold": 0.8
+        },
+        "next": [
+            "warGameAutoCombatFailed",
+            "warGameTaskCompleted",
+            "waitingForWarGameAutoCombatToEnd"
+        ]
+    },
+    "warGameTaskCompleted": {
+        "comments": "兵棋推演任务完成",
+        "recognition": "OCR",
+        "expected": "任务完成",
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "clickConfirmButtonToExitWarGame"
+        ]
+    },
+    "clickConfirmButtonToExitWarGame": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "next": [
+            "exitWarGameCombatResourceLoading"
+        ]
+    },
+    "warGameAutoCombatFailed": {
+        "comments": "兵棋推演自动战斗失败",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "warGameAutoCombatFailed",
+            "exitWarGameCombatResourceLoading"
+        ]
+    },
+    "exitWarGameCombatResourceLoading": {
+        "comments": "退出兵棋推演战斗资源加载",
+        "recognition": "OCR",
+        "expected": "资源加载中",
+        "next": [
+            "exitWarGameCombatResourceLoading",
+            "confirmWarGameSimulationPage"
+        ]
+    }
+}

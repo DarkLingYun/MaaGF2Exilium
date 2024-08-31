@@ -1,0 +1,65 @@
+{
+    "enterBossChallengeTask": {
+        "next": [
+            "clickEnterBossChallengePage"
+        ]
+    },
+    "clickEnterBossChallengePage": {
+        "recognition": "OCR",
+        "expected": "^首领挑战$",
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "enterBossRoutineChallenge"
+        ]
+    },
+    "enterBossRoutineChallenge": {
+        "recognition": "OCR",
+        "expected": "^常规挑战$",
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "insufficientPermissionsForBossChallenge",
+            "clickBossChallengeAutonomyButton"
+        ]
+    },
+    "insufficientPermissionsForBossChallenge": {
+        "comments": "首领挑战权限不足",
+        "recognition": "OCR",
+        "expected": "0/1$",
+        "roi": [
+            923,
+            576,
+            332,
+            54
+        ],
+        "next": [
+            "exitBossChallenge"
+        ]
+    },
+    "exitBossChallenge": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            200,
+            70
+        ],
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "enterLiveDrillTask",
+            "enterWarGameSimulationTask",
+            "returnToHomePage"
+        ]
+    },
+    "clickBossChallengeAutonomyButton": {
+        "recognition": "OCR",
+        "expected": "^自律$",
+        "action": "Click",
+        "next": []
+    }
+}
