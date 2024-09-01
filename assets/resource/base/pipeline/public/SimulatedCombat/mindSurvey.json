@@ -1,0 +1,245 @@
+{
+    "enterMindSurveyTask": {
+        "next": [
+            "enterMindSurveyPage"
+        ]
+    },
+    "enterMindSurveyPage": {
+        "recognition": "OCR",
+        "expected": "^心智勘测$",
+        "action": "Click",
+        "next": [
+            "selectMindSurveyMaterialType",
+            "mindSurveyMaterialTypePaging"
+        ]
+    },
+    "selectMindSurveyMaterialType": {
+        "recognition": "TemplateMatch",
+        "template": "心智勘测\\06星点光芒闪耀时.png",
+        "action": "Click",
+        "next": [
+            "mindSurveyNotSelfDisciplined",
+            "enterMindSurveySelfDisciplinePreparation"
+        ]
+    },
+    "mindSurveyMaterialTypePaging": {
+        "recognition": "ColorMatch",
+        "roi": [
+            [
+                1234,
+                315,
+                35,
+                55
+            ],
+            [
+                13,
+                315,
+                32,
+                48
+            ]
+        ],
+        "upper": [
+            226,
+            226,
+            228
+        ],
+        "lower": [
+            208,
+            208,
+            211
+        ],
+        "post_delay": 100,
+        "action": "Click",
+        "next": [
+            "selectMindSurveyMaterialType",
+            "mindSurveyMaterialTypePaging"
+        ]
+    },
+    "mindSurveyNotSelfDisciplined": {
+        "comments": "心智勘测不可自律",
+        "recognition": "ColorMatch",
+        "roi": [
+            892,
+            637,
+            31,
+            53
+        ],
+        "upper": [
+            102,
+            106,
+            111
+        ],
+        "lower": [
+            92,
+            96,
+            102
+        ],
+        "next": [
+            "selectSecondToLastMindSurveyLevel"
+        ]
+    },
+    "selectSecondToLastMindSurveyLevel": {
+        "comments": "选择倒数第二个心智勘测关卡",
+        "recognition": "OCR",
+        "roi": [
+            61,
+            157,
+            84,
+            487
+        ],
+        "expected": "^.-[1-6]{1}$",
+        "order_by": "Vertical",
+        "index": -2,
+        "action": "Click",
+        "next": [
+            "enterMindSurveySelfDisciplinePreparation"
+        ]
+    },
+    "enterMindSurveySelfDisciplinePreparation": {
+        "comments": "进入心智勘测自律准备",
+        "recognition": "OCR",
+        "expected": "^自律$",
+        "action": "Click",
+        "next": [
+            "insufficientStaminaForMindSurvey",
+            "increaseSelfDisciplineCountForMindSurvey"
+        ]
+    },
+    "insufficientStaminaForMindSurvey": {
+        "comments": "心智勘测体力不足",
+        "recognition": "OCR",
+        "expected": "^情报拼图补充$",
+        "next": [
+            "cancelStaminaReplenishmentForMindSurvey"
+        ]
+    },
+    "cancelStaminaReplenishmentForMindSurvey": {
+        "comments": "取消心智勘测体力补充",
+        "roi": [
+            260,
+            120,
+            760,
+            480
+        ],
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "increaseSelfDisciplineCountForMindSurvey": {
+        "comments": "增加自律次数",
+        "recognition": "TemplateMatch",
+        "roi": [
+            260,
+            108,
+            760,
+            502
+        ],
+        "template": [
+            "公用按钮组件/滑动条值增加.png"
+        ],
+        "threshold": 0.9,
+        "post_delay": 100,
+        "action": "Click",
+        "next": [
+            "ExceededSelfDisciplineLimitForMindSurvey",
+            "maxSelfDisciplineCountForMindSurvey",
+            "increaseSelfDisciplineCountForMindSurvey"
+        ]
+    },
+    "ExceededSelfDisciplineLimitForMindSurvey": {
+        "comments": "超出体力最大允许自律次数",
+        "roi": [
+            260,
+            108,
+            760,
+            502
+        ],
+        "upper": [
+            255,
+            129,
+            113
+        ],
+        "lower": [
+            200,
+            95,
+            64
+        ],
+        "recognition": "ColorMatch",
+        "post_delay": 100,
+        "next": [
+            "decreaseSelfDisciplineCountForMindSurvey"
+        ]
+    },
+    "maxSelfDisciplineCountForMindSurvey": {
+        "comments": "心智勘测自律次数达到最大值",
+        "recognition": "ColorMatch",
+        "roi": [
+            845,
+            376,
+            33,
+            32
+        ],
+        "upper": [
+            129,
+            131,
+            135
+        ],
+        "lower": [
+            129,
+            131,
+            135
+        ],
+        "post_delay": 100,
+        "next": [
+            "confirmMindSurveySelfDiscipline"
+        ]
+    },
+    "decreaseSelfDisciplineCountForMindSurvey": {
+        "comments": "减少自律次数",
+        "recognition": "TemplateMatch",
+        "roi": [
+            260,
+            108,
+            760,
+            502
+        ],
+        "template": [
+            "公用按钮组件/滑动条值减少.png"
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_delay": 100,
+        "next": [
+            "confirmMindSurveySelfDiscipline"
+        ]
+    },
+    "confirmMindSurveySelfDiscipline": {
+        "comments": "确认进行心智勘测自律",
+        "roi": [
+            260,
+            108,
+            760,
+            502
+        ],
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "closeMindSurveyResultsPage"
+        ]
+    },
+    "closeMindSurveyResultsPage": {
+        "comments": "关闭心智勘测结果页",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "closeMindSurveyResultsPage",
+            "enterMindSurveySelfDisciplinePreparation"
+        ]
+    }
+}
