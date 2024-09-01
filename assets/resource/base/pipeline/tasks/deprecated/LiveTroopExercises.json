@@ -51,6 +51,7 @@
         "post_wait_freezes": 500,
         "next": [
             "challengeSuccess",
+            "challengeFail",
             "combatValueRecognition",
             "refreshData"
         ]
@@ -58,6 +59,20 @@
     "challengeSuccess": {
         "recognition": "OCR",
         "expected": "挑战成功",
+        "target": [
+            1164,
+            656,
+            45,
+            26
+        ],
+        "post_delay": 1500,
+        "next": [
+            "refreshData"
+        ]
+    },
+    "challengeFail": {
+        "recognition": "OCR",
+        "expected": "挑战失败",
         "target": [
             1164,
             656,
