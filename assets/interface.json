@@ -49,7 +49,7 @@
             "entry": "LiveTroopExercise"
         },
         {
-            "name": "定向精研[二选一]",
+            "name": "定向精研[三选一]",
             "entry": "AutoSweepBattle",
             "param": {
                 "supplyOperationType": {
@@ -62,10 +62,17 @@
             ]
         },
         {
-            "name": "补给作战[二选一]",
+            "name": "补给作战[三选一]",
             "entry": "AutoSweepBattle",
             "option": [
                 "补给资源："
+            ]
+        },
+        {
+            "name": "心智勘测[三选一]",
+            "entry": "MindSurveyTask",
+            "option": [
+                "转录序体："
             ]
         },
         {
@@ -385,6 +392,58 @@
                     "param": {
                         "selectedEffectsCombination": {
                             "expected": "^激流增幅$"
+                        }
+                    }
+                }
+            ]
+        },
+        "转录序体：": {
+            "cases": [
+                {
+                    "name": "序六",
+                    "param": {
+                        "selectMindSurveyMaterialType": {
+                            "template": "心智勘测\\06星点光芒闪耀时.png"
+                        }
+                    }
+                },
+                {
+                    "name": "序五",
+                    "param": {
+                        "selectMindSurveyMaterialType": {
+                            "template": "心智勘测\\05乘于裙摆之上.png"
+                        }
+                    }
+                },
+                {
+                    "name": "序四",
+                    "param": {
+                        "selectMindSurveyMaterialType": {
+                            "template": "心智勘测\\04最后的命令.png"
+                        }
+                    }
+                },
+                {
+                    "name": "序三",
+                    "param": {
+                        "selectMindSurveyMaterialType": {
+                            "template": "心智勘测\\03限时替身.png"
+                        }
+                    }
+                },
+                {
+                    "name": "序二",
+                    "param": {
+                        "selectMindSurveyMaterialType": {
+                            "template": "心智勘测\\02流浪的人.png"
+                        }
+                    }
+                },
+                {
+                    "name": "序一",
+                    "param": {
+                        "selectMindSurveyMaterialType": {
+                            "template": "心智勘测\\01守望者.png"
                         }
                     }
                 }
