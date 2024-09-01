@@ -30,7 +30,7 @@
     "confirmWarGameSimulationPage": {
         "comments": "确认为兵棋推演页面",
         "recognition": "OCR",
-        "expected": "秩序构演",
+        "expected": "匹配记录",
         "next": [
             "insufficientPermissionsForWarGameSimulation",
             "startWarGameMatching"
