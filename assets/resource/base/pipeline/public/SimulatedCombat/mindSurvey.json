@@ -17,6 +17,7 @@
         "recognition": "TemplateMatch",
         "template": "心智勘测\\06星点光芒闪耀时.png",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "mindSurveyNotSelfDisciplined",
             "enterMindSurveySelfDisciplinePreparation"
@@ -48,7 +49,7 @@
             208,
             211
         ],
-        "post_delay": 100,
+        "post_delay": 500,
         "action": "Click",
         "next": [
             "selectMindSurveyMaterialType",

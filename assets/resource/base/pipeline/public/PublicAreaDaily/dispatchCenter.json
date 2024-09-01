@@ -56,6 +56,12 @@
     "claimDispatchCenterDispatchCountReward": {
         "recognition": "TemplateMatch",
         "template": "公用按钮组件\\提醒.png",
+        "roi": [
+            19,
+            472,
+            459,
+            129
+        ],
         "action": "Click",
         "post_wait_freezes": 300,
         "next": [
