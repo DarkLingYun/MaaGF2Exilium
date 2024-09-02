@@ -85,7 +85,11 @@
             ]
         },
         {
-            "name": "人形常规招募(抽到新装备还未测试)",
+            "name": "班组日常",
+            "entry": "GuildTasks"
+        },
+        {
+            "name": "人形常规招募(可能要废弃)",
             "entry": "RegularHumanoidRecruitment",
             "option": [
                 "招募方式："
