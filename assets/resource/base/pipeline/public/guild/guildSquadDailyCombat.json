@@ -1,0 +1,61 @@
+{
+    "enterGuildSquadDailyCombatTask": {
+        "next": [
+            "enterGuildSquadDailyCombatPage"
+        ]
+    },
+    "enterGuildSquadDailyCombatPage": {
+        "comments": "进入班组每日要务页",
+        "recognition": "OCR",
+        "expected": "^要务$",
+        "action": "Click",
+        "next": [
+            "guildSquadDailyCombatCompleted",
+            "guildSquadDailyCombatStart"
+        ]
+    },
+    "guildSquadDailyCombatCompleted": {
+        "comments": "每日要务已完成",
+        "recognition": "OCR",
+        "expected": "^每日要务已完成$",
+        "next": [
+            "closeGuildSquadDailyCombatPage"
+        ]
+    },
+    "guildSquadDailyCombatStart": {
+        "comments": "班组要务作战开始",
+        "recognition": "OCR",
+        "expected": "开始作战",
+        "action": "Click",
+        "next": [
+            "enterGuildSquadDailyCombatResourceLoading"
+        ]
+    },
+    "enterGuildSquadDailyCombatResourceLoading": {
+        "comments": "进入班组要务战斗资源加载",
+        "recognition": "OCR",
+        "expected": "资源加载中",
+        "next": [
+            "enterGuildSquadDailyCombatResourceLoading",
+            "clickGuildSquadDailyCombatStartButton"
+        ]
+    },
+    "closeGuildSquadDailyCombatPage": {
+        "comments": "关闭每日要务页面",
+        "recognition": "TemplateMatch",
+        "roi": [
+            1157,
+            86,
+            55,
+            60
+        ],
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}

@@ -1,0 +1,93 @@
+{
+    "clickGuildSquadDailyCombatStartButton": {
+        "comments": "点击班组要务战斗开始按钮",
+        "recognition": "OCR",
+        "expected": "作战开始",
+        "target": [
+            493,
+            616,
+            291,
+            44
+        ],
+        "action": "Click",
+        "next": [
+            "enableGuildSquadDailyCombatAutoBattle",
+            "clickGuildSquadDailyCombatStartButton"
+        ]
+    },
+    "enableGuildSquadDailyCombatAutoBattle": {
+        "comments": "点击班组要务自动战斗按钮",
+        "recognition": "ColorMatch",
+        "connected": true,
+        "count": 55,
+        "roi": [
+            1069,
+            25,
+            35,
+            27
+        ],
+        "upper": [
+            210,
+            210,
+            210
+        ],
+        "lower": [
+            150,
+            150,
+            150
+        ],
+        "action": "Click",
+        "next": [
+            "waitForGuildSquadDailyCombatToEnd"
+        ]
+    },
+    "waitForGuildSquadDailyCombatToEnd": {
+        "comments": "等待班组日常要务自动战斗结束",
+        "post_wait_freezes": {
+            "time": 2500,
+            "threshold": 0.8
+        },
+        "next": [
+            "guildSquadDailyCombatTaskCompleted",
+            "guildSquadDailyCombatTaskFailed",
+            "waitForGuildSquadDailyCombatToEnd"
+        ]
+    },
+    "guildSquadDailyCombatTaskCompleted": {
+        "comments": "班组日常任务完成",
+        "recognition": "OCR",
+        "expected": "任务完成",
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "clickConfirmButtonToExitGuildDailyCombat"
+        ]
+    },
+    "guildSquadDailyCombatTaskFailed": {
+        "comments": "班组日常任务失败",
+        "recognition": "OCR",
+        "expected": "任务失败",
+        "next": [
+            "clickConfirmButtonToExitGuildDailyCombat"
+        ]
+    },
+    "clickConfirmButtonToExitGuildDailyCombat": {
+        "comments": "点击确认退出",
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "next": [
+            "clickConfirmButtonToExitGuildDailyCombat",
+            "exitGuildSquadDailyCombatResourceLoading"
+        ]
+    },
+    "exitGuildSquadDailyCombatResourceLoading": {
+        "comments": "退出班组要务战斗后的资源加载",
+        "recognition": "OCR",
+        "expected": "资源加载中",
+        "next": [
+            "exitGuildSquadDailyCombatResourceLoading",
+            "closeGuildSquadDailyCombatPage"
+        ]
+    }
+}

@@ -1,0 +1,64 @@
+{
+    "enterGuildSquadDailySupplyTask": {
+        "next": [
+            "enterGuildSquadDailySupplyPage"
+        ]
+    },
+    "enterGuildSquadDailySupplyPage": {
+        "comments": "进入班组每日补给页",
+        "recognition": "OCR",
+        "expected": "^补给$",
+        "action": "Click",
+        "next": [
+            "claimGuildSquadDailySupply",
+            "noClaimGuildSquadDailySupply"
+        ]
+    },
+    "noClaimGuildSquadDailySupply": {
+        "comments": "无领取班组每日补给按钮",
+        "inverse": true,
+        "recognition": "OCR",
+        "expected": "^领取全部$",
+        "next": [
+            "guildSquadDailySupplyBackPage"
+        ]
+    },
+    "claimGuildSquadDailySupply": {
+        "comments": "领取班组每日补给",
+        "recognition": "OCR",
+        "expected": "^领取全部$",
+        "action": "Click",
+        "next": [
+            "closeDailySupplyResultPage"
+        ]
+    },
+    "closeDailySupplyResultPage": {
+        "comments": "关闭每日补给结果页面",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "closeDailySupplyResultPage",
+            "guildSquadDailySupplyBackPage"
+        ]
+    },
+    "guildSquadDailySupplyBackPage": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            200,
+            70
+        ],
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "enterGuildSquadDailyCombatTask",
+            "returnToHomePage"
+        ]
+    }
+}

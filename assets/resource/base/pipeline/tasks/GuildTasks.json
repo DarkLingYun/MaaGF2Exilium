@@ -1,0 +1,14 @@
+{
+    "GuildTasks": {
+        "comments": "工会任务",
+        "recognition": "OCR",
+        "expected": "^班组$",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "enterGuildSquadDailySupplyTask",
+            "enterGuildSquadDailyCombatTask",
+            "returnToHomePage"
+        ]
+    }
+}
