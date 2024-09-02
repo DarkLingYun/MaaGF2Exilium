@@ -60,6 +60,78 @@
         "recognition": "OCR",
         "expected": "^自律$",
         "action": "Click",
-        "next": []
+        "next": [
+            "increaseSelfDisciplineCountForBossChallenge"
+        ]
+    },
+    "increaseSelfDisciplineCountForBossChallenge": {
+        "comments": "增加自律次数",
+        "recognition": "TemplateMatch",
+        "roi": [
+            260,
+            108,
+            760,
+            502
+        ],
+        "template": [
+            "公用按钮组件/滑动条值增加.png"
+        ],
+        "threshold": 0.9,
+        "post_delay": 100,
+        "action": "Click",
+        "next": [
+            "maxSelfDisciplineCountForBossChallenge",
+            "increaseSelfDisciplineCountForBossChallenge"
+        ]
+    },
+    "maxSelfDisciplineCountForBossChallenge": {
+        "comments": "首领挑战自律次数达到最大值",
+        "recognition": "ColorMatch",
+        "roi": [
+            845,
+            376,
+            33,
+            32
+        ],
+        "upper": [
+            129,
+            131,
+            135
+        ],
+        "lower": [
+            129,
+            131,
+            135
+        ],
+        "post_delay": 100,
+        "next": [
+            "confirmBossChallengeSelfDiscipline"
+        ]
+    },
+    "confirmBossChallengeSelfDiscipline": {
+        "comments": "确认进行BOSS挑战自律",
+        "roi": [
+            260,
+            108,
+            760,
+            502
+        ],
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "closeBossChallengeResultsPage"
+        ]
+    },
+    "closeBossChallengeResultsPage": {
+        "comments": "关闭心智勘测结果页",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "closeBossChallengeResultsPage",
+            "insufficientPermissionsForBossChallenge"
+        ]
     }
 }
