@@ -8,7 +8,7 @@
         "recognition": "OCR",
         "expected": "实兵演习",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_delay": 2500,
         "next": [
             "liveTroopExerciseWeeklySettlement",
             "insufficientPermissionsForLiveDrill",
@@ -24,10 +24,7 @@
             "点击屏幕任意位置继续"
         ],
         "action": "Click",
-        "post_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.95
-        },
+        "post_delay": 2500,
         "next": [
             "liveTroopExerciseWeeklySettlement",
             "clickButtonToEnterOpponentSelection"
