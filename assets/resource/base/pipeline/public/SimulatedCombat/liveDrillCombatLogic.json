@@ -70,6 +70,7 @@
         "action": "Click",
         "next": [
             "confirmLevelPromotionForLiveDrill",
+            "confirmLiveDrillOpponentListPage",
             "clickConfirmButtonToExitLiveDrill"
         ]
     },
@@ -88,6 +89,7 @@
         "expected": "资源加载中",
         "next": [
             "exitLiveDrillCombatResourceLoading",
+            "confirmLevelPromotionForLiveDrill",
             "confirmLiveDrillOpponentListPage"
         ]
     }
