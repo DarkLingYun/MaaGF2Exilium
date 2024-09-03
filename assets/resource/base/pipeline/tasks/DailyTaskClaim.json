@@ -31,6 +31,7 @@
     },
     "noClaimButton": {
         "is_sub": true,
+        "inverse": true,
         "recognition": "OCR",
         "expected": "^领取$",
         "next": [
