@@ -1,0 +1,9 @@
+{
+    "ClaimRewardTasks": {
+        "comments": "领取奖励",
+        "next": [
+            "enterCommissionToClaimTask",
+            "returnToHomePage"
+        ]
+    }
+}
