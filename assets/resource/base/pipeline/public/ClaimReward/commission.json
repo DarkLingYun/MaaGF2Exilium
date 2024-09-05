@@ -1,0 +1,66 @@
+{
+    "enterCommissionToClaimTask": {
+        "comments": "进入委托领取任务",
+        "recognition": "OCR",
+        "expected": "^委托$",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "oneKeyClaimCommissionReward",
+            "noCommissionRewardsToClaim"
+        ]
+    },
+    "oneKeyClaimCommissionReward": {
+        "comments": "一键领取委托奖励",
+        "recognition": "OCR",
+        "expected": "键领取",
+        "action": "Click",
+        "next": [
+            "claimDailyActiveCommissionReward",
+            "exitCommissionPage"
+        ]
+    },
+    "claimDailyActiveCommissionReward": {
+        "comments": "领取委托日活跃报酬",
+        "expected": "领取全部",
+        "action": "Click",
+        "next": [
+            "closeCommissionRewardResultPage"
+        ]
+    },
+    "closeCommissionRewardResultPage": {
+        "comments": "关闭领取委托奖励结果页",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "closeCommissionRewardResultPage",
+            "exitCommissionPage"
+        ]
+    },
+    "noCommissionRewardsToClaim": {
+        "comments": "无可领取委托奖励",
+        "inverse": true,
+        "recognition": "OCR",
+        "expected": [
+            "^领取$",
+            "^领取全部$"
+        ],
+        "next": [
+            "exitCommissionPage"
+        ]
+    },
+    "exitCommissionPage": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_gray.png",
+            "公用按钮组件/主页按钮_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "enterPassToClaimTask",
+            "HomePage"
+        ]
+    }
+}

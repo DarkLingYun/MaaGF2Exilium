@@ -1,0 +1,40 @@
+{
+    "enterPassToClaimTask": {
+        "comments": "进入巡录领取任务",
+        "recognition": "OCR",
+        "expected": "^巡录$",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "switchToDailyPassRewardPage"
+        ]
+    },
+    "switchToDailyPassRewardPage": {
+        "comments": "切换到沿途行动",
+        "recognition": "OCR",
+        "expected": "^沿途行动$",
+        "roi": [
+            439,
+            1,
+            411,
+            73
+        ],
+        "action": "Click",
+        "next": [
+            "claimDailyPassReward"
+        ]
+    },
+    "claimDailyPassReward": {
+        "comments": "切换到沿途行动",
+        "recognition": "OCR",
+        "expected": "^一键领取$",
+        "next": [
+            "closePassClaimResultPage"
+        ]
+    },
+    "closePassClaimResultPage": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click"
+    }
+}
