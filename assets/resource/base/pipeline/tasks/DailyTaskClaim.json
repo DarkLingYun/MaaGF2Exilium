@@ -36,6 +36,7 @@
         "recognition": "OCR",
         "expected": "^领取$",
         "next": [
+            "dailyTaskClaimReceiveReward",
             "returnToHomePageSub"
         ]
     },
