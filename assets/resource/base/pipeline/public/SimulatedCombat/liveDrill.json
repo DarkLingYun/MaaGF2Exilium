@@ -37,7 +37,8 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "confirmLiveDrillOpponentListPage"
+            "confirmLiveDrillOpponentListPage",
+            "liveTroopExerciseWeeklySettlement"
         ]
     },
     "confirmLiveDrillOpponentListPage": {
