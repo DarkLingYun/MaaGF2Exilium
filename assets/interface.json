@@ -45,10 +45,6 @@
             ]
         },
         {
-            "name": "实兵演习(即将废弃)",
-            "entry": "LiveTroopExercise"
-        },
-        {
             "name": "定向精研[三选一]",
             "entry": "AutoSweepBattle",
             "param": {
@@ -89,23 +85,27 @@
             "entry": "GuildTasks"
         },
         {
-            "name": "人形常规招募(可能要废弃)",
-            "entry": "RegularHumanoidRecruitment",
-            "option": [
-                "招募方式："
-            ]
-        },
-        {
-            "name": "领取活动奖励",
-            "entry": "ClaimEventRewards"
-        },
-        {
             "name": "每日任务一键领取",
             "entry": "DailyTaskClaim"
         },
         {
             "name": "通行证领取",
             "entry": "ClaimPassport"
+        },
+        {
+            "name": "领取活动奖励(无活动奖励请勿勾选)",
+            "entry": "ClaimEventRewards"
+        },
+        {
+            "name": "实兵演习(即将废弃)",
+            "entry": "LiveTroopExercise"
+        },
+        {
+            "name": "人形常规招募(废弃)",
+            "entry": "RegularHumanoidRecruitment",
+            "option": [
+                "招募方式："
+            ]
         }
     ],
     "option": {
