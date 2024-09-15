@@ -32,6 +32,7 @@
             "entry": "PrepareDailyTasks",
             "option": [
                 "领取邮件",
+                "领取活动页情报补给体力(限时)",
                 "使用完体力药水",
                 "商城免费每日补给箱购买"
             ]
@@ -117,6 +118,26 @@
                     "name": "NO",
                     "param": {
                         "getNewEmails": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "领取活动页情报补给体力(限时)": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "param": {
+                        "领取情报补给体力(限时)": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "param": {
+                        "领取情报补给体力(限时)": {
                             "enabled": false
                         }
                     }

@@ -3,6 +3,7 @@
         "enabled": true,
         "next": [
             "clickEmailsButton",
+            "领取情报补给体力(限时)",
             "staminaReplenishment",
             "enterGameStoreAction"
         ]
