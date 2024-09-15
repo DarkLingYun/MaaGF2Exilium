@@ -36,6 +36,7 @@
         "post_delay": 1000,
         "next": [
             "enterDispatchCenterAction",
+            "enterSchedulingGainsAction",
             "returnToHomePage"
         ]
     }

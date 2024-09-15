@@ -26,6 +26,7 @@
         "post_delay": 1500,
         "next": [
             "claimDispatchCenterDispatchCountReward",
+            "enterSchedulingGainsAction",
             "returnToHomePage"
         ]
     },
@@ -49,6 +50,7 @@
         "post_delay": 1500,
         "next": [
             "claimDispatchCenterDispatchCountReward",
+            "enterSchedulingGainsAction",
             "returnToHomePage"
         ]
     },
@@ -73,6 +75,7 @@
         "action": "Click",
         "next": [
             "closeDispatchCenterDispatchCountRewardClaimResultPage",
+            "enterSchedulingGainsAction",
             "returnToHomePage"
         ]
     }

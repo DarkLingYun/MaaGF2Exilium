@@ -41,7 +41,8 @@
             "entry": "PublicAreaDailyTasks",
             "option": [
                 "访问休息室",
-                "调度室派遣任务"
+                "调度室派遣任务",
+                "调度收益领取"
             ]
         },
         {
@@ -156,6 +157,26 @@
                     "name": "NO",
                     "param": {
                         "enterDispatchCenterAction": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "调度收益领取": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "param": {
+                        "enterSchedulingGainsAction": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "param": {
+                        "enterSchedulingGainsAction": {
                             "enabled": false
                         }
                     }

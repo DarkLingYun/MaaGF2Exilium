@@ -1,0 +1,76 @@
+{
+    "enterSchedulingGainsAction": {
+        "comments": "进入调度收益",
+        "recognition": "OCR",
+        "expected": "调度收益",
+        "roi": [
+            718,
+            612,
+            257,
+            62
+        ],
+        "action": "Click",
+        "next": [
+            "clickMaxStaminaReserveButton"
+        ]
+    },
+    "clickMaxStaminaReserveButton": {
+        "recognition": "OCR",
+        "expected": "最大",
+        "roi": [
+            1063,
+            548,
+            94,
+            38
+        ],
+        "action": "Click",
+        "next": [
+            "clickExtractStaminaButton"
+        ]
+    },
+    "clickExtractStaminaButton": {
+        "recognition": "OCR",
+        "expected": "^取出$",
+        "roi": [
+            624,
+            589,
+            305,
+            71
+        ],
+        "action": "Click",
+        "next": [
+            "enterResourceProductionPage"
+        ]
+    },
+    "enterResourceProductionPage": {
+        "comments": "进入资源生产页",
+        "recognition": "OCR",
+        "expected": "资源生产",
+        "action": "Click",
+        "next": [
+            "clickResourceProductionCollectionButton"
+        ]
+    },
+    "clickResourceProductionCollectionButton": {
+        "comments": "点击资源生产收取按钮",
+        "recognition": "OCR",
+        "expected": "^收取$",
+        "action": "Click",
+        "next": [
+            "closeResourceCollectionResultPage"
+        ]
+    },
+    "closeResourceCollectionResultPage": {
+        "comments": "关闭资源收取结果页面",
+        "recognition": "OCR",
+        "expected": [
+            "空白",
+            "暂无可收取"
+        ],
+        "action": "Click",
+        "next": [
+            "closeResourceCollectionResultPage",
+            "returnToHomePage"
+        ]
+    }
+}
