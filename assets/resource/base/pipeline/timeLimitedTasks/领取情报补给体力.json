@@ -34,7 +34,10 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
+        "post_delay": 2500,
         "next": [
+            "staminaReplenishment",
+            "enterGameStoreAction",
             "HomePage"
         ]
     },
