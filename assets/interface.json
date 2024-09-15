@@ -99,13 +99,6 @@
         {
             "name": "实兵演习(即将废弃)",
             "entry": "LiveTroopExercise"
-        },
-        {
-            "name": "人形常规招募(废弃)",
-            "entry": "RegularHumanoidRecruitment",
-            "option": [
-                "招募方式："
-            ]
         }
     ],
     "option": {
