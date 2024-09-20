@@ -79,6 +79,7 @@
             "option": [
                 "首领挑战自律",
                 "自动实兵演习",
+                "实兵演习对象战力值范围",
                 "自动兵棋推演"
             ]
         },
@@ -523,6 +524,34 @@
                     "param": {
                         "enterLiveDrillTask": {
                             "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "实兵演习对象战力值范围": {
+            "cases": [
+                {
+                    "name": "23000以下",
+                    "param": {
+                        "challengeOpponentSelection": {
+                            "expected": "^[1-9]{0,1}[0-9]{1,2}$|^[1-9][0-9]{3}$|^[1][0-9]{4}$|^[2][0-2][0-9]{3}$"
+                        }
+                    }
+                },
+                {
+                    "name": "15000以下",
+                    "param": {
+                        "challengeOpponentSelection": {
+                            "expected": "^[1-9]{0,1}[0-9]{1,3}$|^[1][0-4][0-9]{3}$"
+                        }
+                    }
+                },
+                {
+                    "name": "8000以下",
+                    "param": {
+                        "challengeOpponentSelection": {
+                            "expected": "^[1-7][0-9]{1,3}$"
                         }
                     }
                 }
