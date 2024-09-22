@@ -24,6 +24,28 @@
         "action": "Click",
         "post_wait_freezes": 300,
         "next": [
+            "warGameSeasonSettlement",
+            "confirmWarGameSimulationPage"
+        ]
+    },
+    "warGameSeasonSettlement": {
+        "comments": "兵棋推演赛季结算",
+        "recognition": "OCR",
+        "expected": [
+            "赛季结算",
+            "新赛季",
+            "点击"
+        ],
+        "target": [
+            475,
+            485,
+            329,
+            207
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "warGameSeasonSettlement",
             "confirmWarGameSimulationPage"
         ]
     },
@@ -33,7 +55,8 @@
         "expected": "匹配记录",
         "next": [
             "insufficientPermissionsForWarGameSimulation",
-            "startWarGameMatching"
+            "startWarGameMatching",
+            "warGameSeasonSettlement"
         ]
     },
     "insufficientPermissionsForWarGameSimulation": {
@@ -55,7 +78,8 @@
         "expected": "^匹配$",
         "action": "Click",
         "next": [
-            "warGameMatchingInProgress"
+            "warGameMatchingInProgress",
+            "warGameSeasonSettlement"
         ]
     },
     "warGameMatchingInProgress": {
