@@ -1,6 +1,6 @@
 {
     "GuildTasks": {
-        "comments": "工会任务",
+        "doc": "工会任务",
         "recognition": "OCR",
         "expected": "^班组$",
         "action": "Click",

@@ -1,6 +1,6 @@
 {
     "clickWarGameCombatButton": {
-        "comments": "点击实兵演习战斗开始按钮",
+        "doc": "点击实兵演习战斗开始按钮",
         "recognition": "OCR",
         "expected": "作战开始",
         "target": [
@@ -16,7 +16,7 @@
         ]
     },
     "enableWarGameAutoCombat": {
-        "comments": "点击兵棋推演自动战斗按钮",
+        "doc": "点击兵棋推演自动战斗按钮",
         "recognition": "ColorMatch",
         "connected": true,
         "count": 55,
@@ -42,7 +42,7 @@
         ]
     },
     "waitingForWarGameAutoCombatToEnd": {
-        "comments": "等待兵棋推演自动战斗结束",
+        "doc": "等待兵棋推演自动战斗结束",
         "post_wait_freezes": {
             "time": 2500,
             "threshold": 0.8
@@ -54,7 +54,7 @@
         ]
     },
     "warGameTaskCompleted": {
-        "comments": "兵棋推演任务完成",
+        "doc": "兵棋推演任务完成",
         "recognition": "OCR",
         "expected": "任务完成",
         "action": "Click",
@@ -72,7 +72,7 @@
         ]
     },
     "warGameAutoCombatFailed": {
-        "comments": "兵棋推演自动战斗失败",
+        "doc": "兵棋推演自动战斗失败",
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
@@ -82,7 +82,7 @@
         ]
     },
     "exitWarGameCombatResourceLoading": {
-        "comments": "退出兵棋推演战斗资源加载",
+        "doc": "退出兵棋推演战斗资源加载",
         "recognition": "OCR",
         "expected": "资源加载中",
         "next": [

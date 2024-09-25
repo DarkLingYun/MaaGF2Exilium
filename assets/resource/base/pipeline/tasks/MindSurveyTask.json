@@ -1,6 +1,6 @@
 {
     "MindSurveyTask": {
-        "comments": "心智勘测任务",
+        "doc": "心智勘测任务",
         "recognition": "OCR",
         "expected": "^战役推进$",
         "action": "Click",

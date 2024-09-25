@@ -1,6 +1,6 @@
 {
     "SimulatedCombat": {
-        "comments": "模拟作战",
+        "doc": "模拟作战",
         "recognition": "OCR",
         "expected": "^战役推进$",
         "action": "Click",

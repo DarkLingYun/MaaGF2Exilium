@@ -1,6 +1,6 @@
 {
     "enterSchedulingGainsAction": {
-        "comments": "进入调度收益",
+        "doc": "进入调度收益",
         "recognition": "OCR",
         "expected": "调度收益",
         "roi": [
@@ -43,7 +43,7 @@
         ]
     },
     "enterResourceProductionPage": {
-        "comments": "进入资源生产页",
+        "doc": "进入资源生产页",
         "recognition": "OCR",
         "expected": "资源生产",
         "action": "Click",
@@ -52,7 +52,7 @@
         ]
     },
     "clickResourceProductionCollectionButton": {
-        "comments": "点击资源生产收取按钮",
+        "doc": "点击资源生产收取按钮",
         "recognition": "OCR",
         "expected": "^收取$",
         "action": "Click",
@@ -61,7 +61,7 @@
         ]
     },
     "closeResourceCollectionResultPage": {
-        "comments": "关闭资源收取结果页面",
+        "doc": "关闭资源收取结果页面",
         "recognition": "OCR",
         "expected": [
             "空白",

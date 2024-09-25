@@ -1,6 +1,6 @@
 {
     "clickGuildSquadDailyCombatStartButton": {
-        "comments": "点击班组要务战斗开始按钮",
+        "doc": "点击班组要务战斗开始按钮",
         "recognition": "OCR",
         "expected": "作战开始",
         "target": [
@@ -16,7 +16,7 @@
         ]
     },
     "enableGuildSquadDailyCombatAutoBattle": {
-        "comments": "点击班组要务自动战斗按钮",
+        "doc": "点击班组要务自动战斗按钮",
         "recognition": "ColorMatch",
         "connected": true,
         "count": 55,
@@ -42,7 +42,7 @@
         ]
     },
     "waitForGuildSquadDailyCombatToEnd": {
-        "comments": "等待班组日常要务自动战斗结束",
+        "doc": "等待班组日常要务自动战斗结束",
         "post_wait_freezes": {
             "time": 2500,
             "threshold": 0.8
@@ -54,7 +54,7 @@
         ]
     },
     "guildSquadDailyCombatTaskCompleted": {
-        "comments": "班组日常任务完成",
+        "doc": "班组日常任务完成",
         "recognition": "OCR",
         "expected": "任务完成",
         "action": "Click",
@@ -64,7 +64,7 @@
         ]
     },
     "guildSquadDailyCombatTaskFailed": {
-        "comments": "班组日常任务失败",
+        "doc": "班组日常任务失败",
         "recognition": "OCR",
         "expected": "任务失败",
         "next": [
@@ -72,7 +72,7 @@
         ]
     },
     "clickConfirmButtonToExitGuildDailyCombat": {
-        "comments": "点击确认退出",
+        "doc": "点击确认退出",
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
@@ -82,7 +82,7 @@
         ]
     },
     "exitGuildSquadDailyCombatResourceLoading": {
-        "comments": "退出班组要务战斗后的资源加载",
+        "doc": "退出班组要务战斗后的资源加载",
         "recognition": "OCR",
         "expected": "资源加载中",
         "next": [

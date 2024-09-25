@@ -1,6 +1,6 @@
 {
     "enterPassToClaimTask": {
-        "comments": "进入巡录领取任务",
+        "doc": "进入巡录领取任务",
         "recognition": "OCR",
         "expected": "^巡录$",
         "action": "Click",
@@ -10,7 +10,7 @@
         ]
     },
     "switchToDailyPassRewardPage": {
-        "comments": "切换到沿途行动",
+        "doc": "切换到沿途行动",
         "recognition": "OCR",
         "expected": "^沿途行动$",
         "post_wait_freezes": 500,
@@ -27,7 +27,7 @@
         ]
     },
     "claimDailyPassReward": {
-        "comments": "领取沿途行动奖励",
+        "doc": "领取沿途行动奖励",
         "recognition": "OCR",
         "expected": [
             "^一键领取$",
@@ -40,7 +40,7 @@
         ]
     },
     "switchToPassLevelRewardPage": {
-        "comments": "切换到远航巡逻",
+        "doc": "切换到远航巡逻",
         "recognition": "OCR",
         "expected": "^远航巡录$",
         "roi": [
@@ -57,7 +57,7 @@
         ]
     },
     "claimPassLevelReward": {
-        "comments": "领取通行证等级奖励",
+        "doc": "领取通行证等级奖励",
         "recognition": "OCR",
         "expected": [
             "^一键领取$",
@@ -69,7 +69,7 @@
         ]
     },
     "confirmPassRewardContent": {
-        "comments": "通行证奖励内容确认",
+        "doc": "通行证奖励内容确认",
         "recognition": "OCR",
         "expected": "^确认$",
         "action": "Click",
@@ -80,7 +80,7 @@
         ]
     },
     "selectPassSupplyCrateReward": {
-        "comments": "选择通行证补给箱奖励",
+        "doc": "选择通行证补给箱奖励",
         "recognition": "OCR",
         "expected": [
             "坍塌晶条",
@@ -100,7 +100,7 @@
         ]
     },
     "closePassClaimResultPage": {
-        "comments": "关闭通行证领取结果页面",
+        "doc": "关闭通行证领取结果页面",
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",

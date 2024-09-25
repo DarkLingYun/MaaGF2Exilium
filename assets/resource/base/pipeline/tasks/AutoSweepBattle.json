@@ -53,7 +53,7 @@
         ]
     },
     "supplyOperationType": {
-        "comments": "可通过命令行选项改变类型",
+        "doc": "可通过命令行选项改变类型",
         "recognition": "OCR",
         "expected": "定向精研",
         "action": "Click",
@@ -120,7 +120,7 @@
         ]
     },
     "supplyOperationAutoSweepButtonDisabled": {
-        "comments": "检测自律按钮是否不可用",
+        "doc": "检测自律按钮是否不可用",
         "roi": [
             840,
             625,
@@ -162,7 +162,7 @@
         ]
     },
     "clickAutoSweepBattleSupplyOperationButton": {
-        "comments": "点击自律按钮后，这里有三种结果：自律准备和情报拼图补充，和定向精研的自律准备",
+        "doc": "点击自律按钮后，这里有三种结果：自律准备和情报拼图补充，和定向精研的自律准备",
         "recognition": "OCR",
         "expected": "^自律$",
         "action": "Click",
@@ -173,7 +173,7 @@
         ]
     },
     "AutoSweepBattleSupplyOperationPrepareIsAccessories": {
-        "comments": "确认是否为配件自律页面",
+        "doc": "确认是否为配件自律页面",
         "recognition": "OCR",
         "expected": [
             "^下一步$"
@@ -197,7 +197,7 @@
         ]
     },
     "selectedEffectsCombinationPageTopSwip": {
-        "comments": "向上滑动4个效果组合",
+        "doc": "向上滑动4个效果组合",
         "is_sub": true,
         "recognition": "DirectHit",
         "duration": 500,
@@ -217,7 +217,7 @@
         "post_delay": 1000
     },
     "selectedEffectsCombination": {
-        "comments": "选择效果组合",
+        "doc": "选择效果组合",
         "recognition": "OCR",
         "roi": [
             173,
@@ -240,7 +240,7 @@
         ]
     },
     "AutoSweepBattleSupplyOperationPrepareAccessories": {
-        "comments": "定向精研弹窗的逻辑",
+        "doc": "定向精研弹窗的逻辑",
         "recognition": "OCR",
         "expected": "^自律准备$",
         "next": [
@@ -250,7 +250,7 @@
         ]
     },
     "AutoSweepBattleSupplyOperationPrepareInsufficient": {
-        "comments": "体力不足",
+        "doc": "体力不足",
         "recognition": "OCR",
         "expected": "^情报拼图补充$",
         "next": [
@@ -259,7 +259,7 @@
         ]
     },
     "AutoSweepBattleSupplyOperationPrepare": {
-        "comments": "先判断是否是红色，-1后 然后判断是否是最大值(非定向精研)",
+        "doc": "先判断是否是红色，-1后 然后判断是否是最大值(非定向精研)",
         "recognition": "OCR",
         "expected": "^自律准备$",
         "next": [
@@ -285,7 +285,7 @@
         ]
     },
     "supplyOperationTypeIsSaridisjinToken": {
-        "comments": "标准同调选择暂时没写 2024年7月26日 20点37分",
+        "doc": "标准同调选择暂时没写 2024年7月26日 20点37分",
         "recognition": "OCR",
         "expected": "^标准同调$",
         "action": "DoNothing"

@@ -1,6 +1,6 @@
 {
     "ClaimEventRewards": {
-        "comments": "领取活动物品",
+        "doc": "领取活动物品",
         "recognition": "OCR",
         "expected": "^活动$",
         "action": "Click",
@@ -12,7 +12,7 @@
         ]
     },
     "clickClaimEventRewardsTag_1": {
-        "comments": "日行迹标签切换任务",
+        "doc": "日行迹标签切换任务",
         "recognition": "OCR",
         "roi": [
             46,
@@ -62,7 +62,7 @@
         ]
     },
     "clickClaimEventRewardsTag_2": {
-        "comments": "彻夜急行标签切换任务",
+        "doc": "彻夜急行标签切换任务",
         "recognition": "OCR",
         "roi": [
             46,

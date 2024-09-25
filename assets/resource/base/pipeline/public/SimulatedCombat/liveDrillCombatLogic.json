@@ -1,6 +1,6 @@
 {
     "clickLiveDrillStartCombatButton": {
-        "comments": "点击实兵演习战斗开始按钮",
+        "doc": "点击实兵演习战斗开始按钮",
         "recognition": "OCR",
         "expected": "作战开始",
         "target": [
@@ -16,7 +16,7 @@
         ]
     },
     "enableLiveDrillAutoCombat": {
-        "comments": "点击实兵演习自动战斗按钮",
+        "doc": "点击实兵演习自动战斗按钮",
         "recognition": "ColorMatch",
         "connected": true,
         "count": 55,
@@ -42,7 +42,7 @@
         ]
     },
     "waitingForLiveDrillAutoCombatToEnd": {
-        "comments": "等待实兵演习自动战斗结束",
+        "doc": "等待实兵演习自动战斗结束",
         "post_wait_freezes": {
             "time": 2500,
             "threshold": 0.8
@@ -53,7 +53,7 @@
         ]
     },
     "liveDrillTaskCompleted": {
-        "comments": "实兵演习任务完成",
+        "doc": "实兵演习任务完成",
         "recognition": "OCR",
         "expected": "任务完成",
         "action": "Click",
@@ -64,7 +64,7 @@
         ]
     },
     "confirmLevelPromotionForLiveDrill": {
-        "comments": "确认实兵演习等级晋级",
+        "doc": "确认实兵演习等级晋级",
         "recognition": "OCR",
         "expected": "点击屏幕任意位置继续",
         "action": "Click",
@@ -84,7 +84,7 @@
         ]
     },
     "exitLiveDrillCombatResourceLoading": {
-        "comments": "退出实兵演习战斗后的资源加载",
+        "doc": "退出实兵演习战斗后的资源加载",
         "recognition": "OCR",
         "expected": "资源加载中",
         "next": [

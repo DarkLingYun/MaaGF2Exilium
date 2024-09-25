@@ -24,7 +24,7 @@
         ]
     },
     "insufficientPermissionsForBossChallenge": {
-        "comments": "首领挑战权限不足",
+        "doc": "首领挑战权限不足",
         "recognition": "OCR",
         "expected": "0/1$",
         "roi": [
@@ -65,7 +65,7 @@
         ]
     },
     "increaseSelfDisciplineCountForBossChallenge": {
-        "comments": "增加自律次数",
+        "doc": "增加自律次数",
         "recognition": "TemplateMatch",
         "roi": [
             260,
@@ -85,7 +85,7 @@
         ]
     },
     "maxSelfDisciplineCountForBossChallenge": {
-        "comments": "首领挑战自律次数达到最大值",
+        "doc": "首领挑战自律次数达到最大值",
         "recognition": "ColorMatch",
         "roi": [
             845,
@@ -109,7 +109,7 @@
         ]
     },
     "confirmBossChallengeSelfDiscipline": {
-        "comments": "确认进行BOSS挑战自律",
+        "doc": "确认进行BOSS挑战自律",
         "roi": [
             260,
             108,
@@ -125,7 +125,7 @@
         ]
     },
     "closeBossChallengeResultsPage": {
-        "comments": "关闭心智勘测结果页",
+        "doc": "关闭心智勘测结果页",
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",

@@ -1,6 +1,6 @@
 {
     "PrepareDailyTasks": {
-        "comments": "日常任务前准备",
+        "doc": "日常任务前准备",
         "next": [
             "getNewEmails",
             "staminaReplenishment",

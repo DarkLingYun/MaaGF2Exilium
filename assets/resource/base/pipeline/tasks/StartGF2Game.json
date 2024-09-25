@@ -1,6 +1,6 @@
 {
     "StartGF2Game": {
-        "comments": "启动游戏",
+        "doc": "启动游戏",
         "next": [
             "nonScrollablePopupClose",
             "scrollablePopupClose",

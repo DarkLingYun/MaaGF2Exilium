@@ -16,7 +16,7 @@
         ]
     },
     "liveTroopExerciseWeeklySettlement": {
-        "comments": "实兵演习每周结算",
+        "doc": "实兵演习每周结算",
         "recognition": "OCR",
         "expected": [
             "点击空白处关闭",
@@ -31,7 +31,7 @@
         ]
     },
     "clickButtonToEnterOpponentSelection": {
-        "comments": "点击进攻进入演习对象选择页面(需要判断是否有已经挑战成功的、战力值识别失败的,挑战权限不足的)",
+        "doc": "点击进攻进入演习对象选择页面(需要判断是否有已经挑战成功的、战力值识别失败的,挑战权限不足的)",
         "recognition": "OCR",
         "expected": "进攻",
         "action": "Click",
@@ -42,7 +42,7 @@
         ]
     },
     "confirmLiveDrillOpponentListPage": {
-        "comments": "确认实兵演习对象列表页",
+        "doc": "确认实兵演习对象列表页",
         "recognition": "OCR",
         "roi": [
             1030,
@@ -62,7 +62,7 @@
         ]
     },
     "hasChallengeSuccessfulObject": {
-        "comments": "有挑战成功对象",
+        "doc": "有挑战成功对象",
         "recognition": "OCR",
         "expected": "挑战成功",
         "target": [
@@ -77,7 +77,7 @@
         ]
     },
     "refreshOpponentList": {
-        "comments": "刷新演习对手列表",
+        "doc": "刷新演习对手列表",
         "roi": [
             1164,
             656,
@@ -94,7 +94,7 @@
         ]
     },
     "challengeOpponentSelection": {
-        "comments": "挑战对象选择，选择作战效能从左到右在 100~22999 范围内第一个符合条件的后点击",
+        "doc": "挑战对象选择，选择作战效能从左到右在 100~22999 范围内第一个符合条件的后点击",
         "roi": [
             0,
             400,
@@ -110,7 +110,7 @@
         ]
     },
     "confirmChallengeWithOpponent": {
-        "comments": "确认与对手挑战",
+        "doc": "确认与对手挑战",
         "roi": [
             1049,
             545,
@@ -125,7 +125,7 @@
         ]
     },
     "enterLiveDrillCombatResourceLoading": {
-        "comments": "进入实兵演习战斗前的资源加载",
+        "doc": "进入实兵演习战斗前的资源加载",
         "recognition": "OCR",
         "expected": "资源加载中",
         "next": [
@@ -134,7 +134,7 @@
         ]
     },
     "insufficientPermissionsForLiveDrill": {
-        "comments": "实兵演习权限不足(不足有两种页面：实兵演习首页，挑战对象选择页)",
+        "doc": "实兵演习权限不足(不足有两种页面：实兵演习首页，挑战对象选择页)",
         "recognition": "OCR",
         "expected": "0/3",
         "roi": [
@@ -149,7 +149,7 @@
         ]
     },
     "exitChallengeOpponentSelection": {
-        "comments": "演习对象选择页返回(一般是自律3次后达到次数，因此需要判断奖励领取情况)",
+        "doc": "演习对象选择页返回(一般是自律3次后达到次数，因此需要判断奖励领取情况)",
         "roi": [
             1164,
             656,
@@ -171,7 +171,7 @@
         ]
     },
     "claimLiveDrillRewards": {
-        "comments": "领取实兵演习奖励，要求演习进度为满",
+        "doc": "领取实兵演习奖励，要求演习进度为满",
         "recognition": "TemplateMatch",
         "roi": [
             400,
@@ -186,7 +186,7 @@
         ]
     },
     "closeLiveDrillRewardClaimResultPage": {
-        "comments": "关闭实兵演习奖励领取结果页(由于识别太快可能点击无效果，需要调用自身)",
+        "doc": "关闭实兵演习奖励领取结果页(由于识别太快可能点击无效果，需要调用自身)",
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
@@ -197,7 +197,7 @@
         ]
     },
     "liveDrillRewardProgressNotMet": {
-        "comments": "实兵演习奖励进度未满",
+        "doc": "实兵演习奖励进度未满",
         "recognition": "TemplateMatch",
         "roi": [
             400,
@@ -211,7 +211,7 @@
         ]
     },
     "exitLiveDrillPage": {
-        "comments": "实兵演习页返回",
+        "doc": "实兵演习页返回",
         "recognition": "OCR",
         "expected": "演习记录",
         "target": [

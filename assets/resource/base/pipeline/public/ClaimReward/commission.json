@@ -1,6 +1,6 @@
 {
     "enterCommissionToClaimTask": {
-        "comments": "进入委托领取任务",
+        "doc": "进入委托领取任务",
         "recognition": "OCR",
         "expected": "^委托$",
         "action": "Click",
@@ -11,7 +11,7 @@
         ]
     },
     "oneKeyClaimCommissionReward": {
-        "comments": "一键领取委托奖励",
+        "doc": "一键领取委托奖励",
         "recognition": "OCR",
         "expected": "键领取",
         "action": "Click",
@@ -21,7 +21,7 @@
         ]
     },
     "claimDailyActiveCommissionReward": {
-        "comments": "领取委托日活跃报酬",
+        "doc": "领取委托日活跃报酬",
         "expected": "领取全部",
         "action": "Click",
         "next": [
@@ -29,7 +29,7 @@
         ]
     },
     "closeCommissionRewardResultPage": {
-        "comments": "关闭领取委托奖励结果页",
+        "doc": "关闭领取委托奖励结果页",
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
@@ -39,7 +39,7 @@
         ]
     },
     "noCommissionRewardsToClaim": {
-        "comments": "无可领取委托奖励",
+        "doc": "无可领取委托奖励",
         "inverse": true,
         "recognition": "OCR",
         "expected": [
