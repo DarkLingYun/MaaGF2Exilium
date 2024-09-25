@@ -26,18 +26,10 @@
     "mindSurveyMaterialTypePaging": {
         "recognition": "ColorMatch",
         "roi": [
-            [
-                1234,
-                315,
-                35,
-                55
-            ],
-            [
-                13,
-                315,
-                32,
-                48
-            ]
+            1234,
+            315,
+            35,
+            55
         ],
         "upper": [
             226,
