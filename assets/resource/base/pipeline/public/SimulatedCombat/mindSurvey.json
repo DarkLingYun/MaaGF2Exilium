@@ -8,6 +8,7 @@
         "recognition": "OCR",
         "expected": "^心智勘测$",
         "action": "Click",
+        "post_delay": 2000,
         "next": [
             "selectMindSurveyMaterialType",
             "mindSurveyMaterialTypePaging"
