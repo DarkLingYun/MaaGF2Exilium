@@ -88,20 +88,8 @@
             "entry": "GuildTasks"
         },
         {
-            "name": "每日任务一键领取",
-            "entry": "DailyTaskClaim"
-        },
-        {
-            "name": "通行证领取",
-            "entry": "ClaimPassport"
-        },
-        {
-            "name": "领取活动奖励(无活动奖励请勿勾选)",
-            "entry": "ClaimEventRewards"
-        },
-        {
-            "name": "实兵演习(即将废弃)",
-            "entry": "LiveTroopExercise"
+            "name": "领取奖励(日常和通行证)",
+            "entry": "ClaimRewardTasks"
         }
     ],
     "option": {

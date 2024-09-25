@@ -13,6 +13,7 @@
         "comments": "切换到沿途行动",
         "recognition": "OCR",
         "expected": "^沿途行动$",
+        "post_wait_freezes": 500,
         "roi": [
             439,
             1,
@@ -21,20 +22,103 @@
         ],
         "action": "Click",
         "next": [
-            "claimDailyPassReward"
+            "claimDailyPassReward",
+            "switchToPassLevelRewardPage"
         ]
     },
     "claimDailyPassReward": {
-        "comments": "切换到沿途行动",
+        "comments": "领取沿途行动奖励",
         "recognition": "OCR",
-        "expected": "^一键领取$",
+        "expected": [
+            "^一键领取$",
+            "键领取$"
+        ],
+        "action": "Click",
+        "post_delay": 5000,
+        "next": [
+            "switchToPassLevelRewardPage"
+        ]
+    },
+    "switchToPassLevelRewardPage": {
+        "comments": "切换到远航巡逻",
+        "recognition": "OCR",
+        "expected": "^远航巡录$",
+        "roi": [
+            439,
+            1,
+            411,
+            73
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "claimPassLevelReward",
+            "exitPassSystemPage"
+        ]
+    },
+    "claimPassLevelReward": {
+        "comments": "领取通行证等级奖励",
+        "recognition": "OCR",
+        "expected": [
+            "^一键领取$",
+            "键领取$"
+        ],
+        "action": "Click",
+        "next": [
+            "confirmPassRewardContent"
+        ]
+    },
+    "confirmPassRewardContent": {
+        "comments": "通行证奖励内容确认",
+        "recognition": "OCR",
+        "expected": "^确认$",
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "selectPassSupplyCrateReward",
+            "closePassClaimResultPage"
+        ]
+    },
+    "selectPassSupplyCrateReward": {
+        "comments": "选择通行证补给箱奖励",
+        "recognition": "OCR",
+        "expected": [
+            "坍塌晶条",
+            "晶条"
+        ],
+        "action": "Click",
+        "next": [
+            "openPassSupplyCrateReward"
+        ]
+    },
+    "openPassSupplyCrateReward": {
+        "recognition": "OCR",
+        "expected": "^开启$",
+        "action": "Click",
         "next": [
             "closePassClaimResultPage"
         ]
     },
     "closePassClaimResultPage": {
+        "comments": "关闭通行证领取结果页面",
         "recognition": "OCR",
         "expected": "点击空白处关闭",
-        "action": "Click"
+        "action": "Click",
+        "next": [
+            "closePassClaimResultPage",
+            "exitPassSystemPage"
+        ]
+    },
+    "exitPassSystemPage": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_gray.png",
+            "公用按钮组件/主页按钮_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "HomePage"
+        ]
     }
 }
