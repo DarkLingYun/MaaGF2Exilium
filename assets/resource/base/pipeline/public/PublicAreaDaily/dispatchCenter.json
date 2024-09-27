@@ -23,7 +23,7 @@
             "一键领取",
             "键领取"
         ],
-        "post_delay": 1500,
+        "post_delay": 2500,
         "next": [
             "claimDispatchCenterDispatchCountReward",
             "enterSchedulingGainsAction",
@@ -38,7 +38,7 @@
             "键领取"
         ],
         "action": "Click",
-        "post_delay": 1500,
+        "post_delay": 2500,
         "next": [
             "dispatchCenterSendAgain"
         ]
@@ -47,7 +47,7 @@
         "recognition": "OCR",
         "expected": "再次派遣",
         "action": "Click",
-        "post_delay": 1500,
+        "post_delay": 4000,
         "next": [
             "claimDispatchCenterDispatchCountReward",
             "enterSchedulingGainsAction",
