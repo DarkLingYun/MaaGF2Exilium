@@ -66,7 +66,11 @@
     "confirmLevelPromotionForLiveDrill": {
         "doc": "确认实兵演习等级晋级",
         "recognition": "OCR",
-        "expected": "点击屏幕任意位置继续",
+        "expected": [
+            "点击屏幕任意位置继续",
+            "您已晋升",
+            "已晋升"
+        ],
         "action": "Click",
         "next": [
             "confirmLevelPromotionForLiveDrill",
