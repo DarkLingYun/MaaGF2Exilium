@@ -34,6 +34,7 @@
         ]
     },
     "noUnclaimedItems": {
+        "rate_limit": 200,
         "recognition": "OCR",
         "expected": "无可领取物品",
         "next": [
@@ -50,6 +51,7 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
+            "领取情报补给体力(限时)",
             "staminaReplenishment",
             "enterGameStoreAction",
             "HomePage"
