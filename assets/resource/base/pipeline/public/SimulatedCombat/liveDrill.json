@@ -182,6 +182,7 @@
         "template": "实兵演习/演习补给待领取.png",
         "action": "Click",
         "next": [
+            "claimLiveDrillRewards",
             "closeLiveDrillRewardClaimResultPage"
         ]
     },
