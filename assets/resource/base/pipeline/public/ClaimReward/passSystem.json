@@ -84,7 +84,8 @@
         "recognition": "OCR",
         "expected": [
             "坍塌晶条",
-            "晶条"
+            "晶条",
+            "野兔"
         ],
         "action": "Click",
         "next": [
@@ -93,9 +94,13 @@
     },
     "openPassSupplyCrateReward": {
         "recognition": "OCR",
-        "expected": "^开启$",
+        "expected": [
+            "^开启$",
+            "^下一个$"
+        ],
         "action": "Click",
         "next": [
+            "selectPassSupplyCrateReward",
             "closePassClaimResultPage"
         ]
     },
