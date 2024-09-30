@@ -99,6 +99,7 @@
             "^下一个$"
         ],
         "action": "Click",
+        "post_delay": 2000,
         "next": [
             "selectPassSupplyCrateReward",
             "closePassClaimResultPage"
