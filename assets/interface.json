@@ -383,10 +383,10 @@
                     }
                 },
                 {
-                    "name": "炙热增幅",
+                    "name": "灼热增幅",
                     "pipeline_override": {
                         "selectedEffectsCombination": {
-                            "expected": "^炙热增幅$"
+                            "expected": "^灼热增幅$"
                         }
                     }
                 },
