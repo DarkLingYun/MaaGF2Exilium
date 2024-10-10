@@ -1,6 +1,8 @@
 {
     "StartGF2Game": {
         "doc": "启动游戏",
+        "action": "StartApp",
+        "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity",
         "next": [
             "nonScrollablePopupClose",
             "scrollablePopupClose",
@@ -45,6 +47,7 @@
         "recognition": "OCR",
         "expected": "点击开始",
         "action": "Click",
+        "timeout": 30000,
         "next": [
             "StartGF2Game"
         ]
