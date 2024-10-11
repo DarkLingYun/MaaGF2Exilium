@@ -157,6 +157,7 @@
         ],
         "action": "Click",
         "next": [
+            "supplyOperationSaridisjinTokenInsufficientPermission",
             "clickAutoSweepBattleSupplyOperationButton"
         ]
     },
@@ -169,7 +170,7 @@
             32
         ],
         "upper": [
-            129,
+            130,
             131,
             135
         ],
