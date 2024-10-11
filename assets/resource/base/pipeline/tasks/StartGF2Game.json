@@ -4,18 +4,131 @@
         "action": "StartApp",
         "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity",
         "next": [
-            "nonScrollablePopupClose",
-            "scrollablePopupClose",
-            "returnToHomePage",
-            "backPage",
-            "announcementClosed",
-            "dailyRewards",
-            "HomePage",
-            "clickStart",
-            "healthGameAdvice",
+            "StartGame_clickCancel",
+            "StartGame_HomePage",
             "sunbornGameLogo",
+            "StartGame_nonScrollablePopupClose",
+            "StartGame_scrollablePopupClose",
+            "StartGame_announcementClosed",
+            "StartGame_backPage",
+            "StartGame_returnToHomePage",
+            "StartGame_clickStart",
+            "StartGame_dailyRewards"
+        ],
+        "interrupt": [
             "openGF2GameApp"
         ]
+    },
+    "StartGame_HomePage": {
+        "recognition": "OCR",
+        "expected": "战役推进",
+        "pre_delay": 1000
+    },
+    "StartGame_clickCancel": {
+        "recognition": "OCR",
+        "expected": [
+            "^取消$",
+            "^上一步$"
+        ],
+        "action": "Click",
+        "next": [
+            "StartGame_returnToHomePage",
+            "StartGame_HomePage"
+        ]
+    },
+    "StartGame_nonScrollablePopupClose": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            940,
+            120,
+            80,
+            60
+        ],
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "StartGame_returnToHomePage"
+        ]
+    },
+    "StartGame_scrollablePopupClose": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            940,
+            110,
+            80,
+            60
+        ],
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "StartGame_returnToHomePage"
+        ]
+    },
+    "StartGame_returnToHomePage": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_gray.png",
+            "公用按钮组件/主页按钮_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "StartGame_HomePage"
+        ]
+    },
+    "StartGame_backPage": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            200,
+            70
+        ],
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "StartGame_returnToHomePage",
+            "StartGame_backPage",
+            "StartGame_HomePage"
+        ]
+    },
+    "StartGame_announcementClosed": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png",
+            "公用按钮组件/智能导航光屏关闭按钮_gray.png"
+        ],
+        "roi": [
+            1170,
+            0,
+            100,
+            105
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        },
+        "next": [
+            "StartGame_announcementClosed",
+            "StartGame_HomePage"
+        ]
+    },
+    "StartGame_dailyRewards": {
+        "recognition": "OCR",
+        "expected": "空白",
+        "action": "Click"
     },
     "sunbornGameLogo": {
         "recognition": "TemplateMatch",
@@ -33,52 +146,57 @@
     },
     "healthGameAdvice": {
         "recognition": "OCR",
-        "expected": "健康游戏忠告",
+        "expected": [
+            "健康",
+            "健康游戏",
+            "忠告"
+        ],
         "next": [
             "healthGameAdvice",
+            "StartGame_clickStart"
+        ],
+        "interrupt": [
             "restartGF2Game",
             "unzipResources",
-            "downloadResource",
-            "clickStart"
+            "downloadResource"
         ]
     },
-    "clickStart": {
-        "is_sub": true,
+    "StartGame_clickStart": {
         "recognition": "OCR",
         "expected": "点击开始",
         "action": "Click",
         "timeout": 30000,
         "next": [
+            "StartGame_clickStart",
             "StartGF2Game"
         ]
     },
     "openGF2GameApp": {
-        "is_sub": true,
         "action": "StartApp",
         "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity"
     },
     "downloadResource": {
-        "is_sub": true,
         "recognition": "OCR",
         "expected": "下载资源",
-        "action": "Click"
+        "next": [
+            "downloadResource",
+            "unzipResources"
+        ]
     },
     "unzipResources": {
-        "is_sub": true,
         "recognition": "OCR",
         "expected": "解压",
-        "action": "Click"
+        "next": [
+            "unzipResources",
+            "restartGF2Game"
+        ]
     },
     "restartGF2Game": {
-        "is_sub": true,
         "recognition": "OCR",
         "expected": "确认",
-        "action": "Click"
-    },
-    "dailyRewards": {
-        "is_sub": true,
-        "recognition": "OCR",
-        "expected": "空白",
-        "action": "Click"
+        "action": "Click",
+        "next": [
+            "StartGF2Game"
+        ]
     }
 }
