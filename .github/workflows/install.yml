@@ -235,7 +235,7 @@ jobs:
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, windows, ubuntu, macos, android]
+    needs: [meta, windows, ubuntu, macos, android, gui]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
@@ -245,7 +245,7 @@ jobs:
       - run: |
           cd assets
           for f in *; do
-            (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
+            (cd $f && zip -0r ../$f-${{ needs.meta.outputs.tag }}.zip .)
           done
       - uses: softprops/action-gh-release@v2
         with:
