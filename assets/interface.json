@@ -46,11 +46,18 @@
             ]
         },
         {
-            "name": "定向精研[三选一]",
+            "name": "标准同调(金币本)",
+            "entry": "AutoSweepBattle"
+        },
+        {
+            "name": "定向精研(刷配件)[三选一]",
             "entry": "AutoSweepBattle",
             "pipeline_override": {
                 "supplyOperationType": {
                     "expected": "定向精研"
+                },
+                "enterSaridisjinTokenTask": {
+                    "enabled": false
                 }
             },
             "option": [
@@ -59,11 +66,16 @@
             ]
         },
         {
-            "name": "补给作战[三选一]",
+            "name": "补给作战(人形培养)[三选一]",
             "entry": "AutoSweepBattle",
             "option": [
                 "补给资源："
-            ]
+            ],
+            "pipeline_override": {
+                "enterSaridisjinTokenTask": {
+                    "enabled": false
+                }
+            }
         },
         {
             "name": "心智勘测[三选一]",
@@ -275,14 +287,6 @@
                     "pipeline_override": {
                         "supplyOperationType": {
                             "expected": "决策构象"
-                        }
-                    }
-                },
-                {
-                    "name": "萨狄斯金_配件精调及心智螺旋",
-                    "pipeline_override": {
-                        "supplyOperationType": {
-                            "expected": "标准同调"
                         }
                     }
                 }
