@@ -11,11 +11,14 @@
         "recognition": "OCR",
         "expected": "补给作战",
         "action": "Click",
+        "post_delay": 1500,
         "next": [
+            "enterSaridisjinTokenTask",
             "supplyOperationPageRightSwip"
         ]
     },
     "supplyOperationPageRightSwip": {
+        "doc": "从左往右滑动",
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": [
@@ -35,7 +38,49 @@
             "supplyOperationPageLeftSwip"
         ]
     },
+    "enterSaridisjinTokenTask": {
+        "doc": "进入标准同调",
+        "next": [
+            "dailySaridisjinTokenTask",
+            "supplyOperationPageLeftSwip"
+        ]
+    },
+    "dailySaridisjinTokenTask": {
+        "doc": "识别并进入",
+        "recognition": "OCR",
+        "expected": "^标准同调$",
+        "action": "Click",
+        "next": [
+            "supplyOperationTypeIsSaridisjinToken"
+        ]
+    },
+    "supplyOperationTypeIsSaridisjinToken": {
+        "recognition": "OCR",
+        "expected": "^标准同调$",
+        "action": "DoNothing",
+        "post_delay": 1500,
+        "next": [
+            "supplyOperationSaridisjinTokenInsufficientPermission",
+            "supplyOperationLevelPageTopSwip"
+        ]
+    },
+    "supplyOperationSaridisjinTokenInsufficientPermission": {
+        "doc": "标准同调权限不足",
+        "recognition": "OCR",
+        "expected": "^0/2$",
+        "roi": [
+            145,
+            157,
+            46,
+            38
+        ],
+        "action": "Click",
+        "next": [
+            "returnToHomePage"
+        ]
+    },
     "supplyOperationPageLeftSwip": {
+        "doc": "从右往左滑动",
         "is_sub": true,
         "recognition": "DirectHit",
         "action": "Swipe",
@@ -59,12 +104,12 @@
         "action": "Click",
         "post_delay": 1000,
         "next": [
-            "supplyOperationTypeIsSaridisjinToken",
             "supplyOperationTypeIsAccessories",
             "supplyOperationLevelPageTopSwip"
         ]
     },
     "supplyOperationLevelPageTopSwip": {
+        "doc": "从下向上滑动",
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": [
@@ -162,7 +207,7 @@
         ]
     },
     "clickAutoSweepBattleSupplyOperationButton": {
-        "doc": "点击自律按钮后，这里有三种结果：自律准备和情报拼图补充，和定向精研的自律准备",
+        "doc": "点击自律按钮后，这里有三种结果：自律准备和情报拼图补充，和定向精研的自律准备，以及萨秋斯金权限不足",
         "recognition": "OCR",
         "expected": "^自律$",
         "action": "Click",
@@ -283,11 +328,5 @@
         "next": [
             "supplyOperationLevelPageTopSwip"
         ]
-    },
-    "supplyOperationTypeIsSaridisjinToken": {
-        "doc": "标准同调选择暂时没写 2024年7月26日 20点37分",
-        "recognition": "OCR",
-        "expected": "^标准同调$",
-        "action": "DoNothing"
     }
 }
