@@ -101,6 +101,10 @@
         {
             "name": "领取奖励(日常和通行证)",
             "entry": "ClaimRewardTasks"
+        },
+        {
+            "name": "关闭游戏",
+            "entry": "CloseGF2Game"
         }
     ],
     "option": {
