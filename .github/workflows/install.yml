@@ -49,6 +49,61 @@ jobs:
       tag: ${{ steps.set_tag.outputs.tag }}
       is_release: ${{ steps.set_tag.outputs.is_release }}
 
+  update:
+    needs: meta
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+    
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: update
+        shell: bash
+        run: |
+          mkdir -p ./update
+          rsync -av --exclude='MaaCommonAssets' ./assets/ ./update/
+
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: update(更新资源包)
+          path: "update"
+
+  gui:
+    needs: meta
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+          
+      - name: Download Latest MFAWPF  
+        uses: robinraju/release-downloader@v1  
+        with:  
+             repository: SweetSmellFox/MFAWPF  
+             fileName: MFAWPF*
+             latest: true  
+             out-file-path: gui  
+             extract: true  
+  
+      - name: gui resources          
+        shell: bash
+        run: |  
+           rm -f ./gui/*.zip
+           cp -r ./assets/resource/* ./gui/Resource/
+           jq --arg version_name "少前2追放自动化助手" --arg url "https://github.com/DarkLingYun/MaaGF2Exilium" --arg version ${{ needs.meta.outputs.tag }} '. + {"name": $version_name, "url": $url,"version": $version}' ./assets/interface.json > ./gui/interface.json
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MaaGF2Exilium-win-x86_64-with-GUI(图形化版本)
+          path: "gui"
+
   windows:
     needs: meta
     runs-on: windows-latest
@@ -145,9 +200,42 @@ jobs:
           name: MaaGF2Exilium-macos-${{ matrix.arch }}
           path: "install"
 
+  android:
+    needs: meta
+    runs-on: macos-latest
+    strategy:
+      matrix:
+        arch: [aarch64, x86_64]
+      fail-fast: false
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Download MaaFramework
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: MaaXYZ/MaaFramework
+          fileName: "MAA-android-${{ matrix.arch }}*"
+          latest: true
+          
+          out-file-path: "deps"
+          extract: true
+
+      - name: Install
+        shell: bash
+        run: |
+          python ./install.py ${{ needs.meta.outputs.tag }}
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: MaaGF2Exilium-android-${{ matrix.arch }}
+          path: "install"
+
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, windows, ubuntu, macos]
+    needs: [meta, windows, ubuntu, macos, android, gui, update]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
@@ -157,7 +245,7 @@ jobs:
       - run: |
           cd assets
           for f in *; do
-            (cd $f && zip -r ../$f-${{ needs.meta.outputs.tag }}.zip .)
+             (cd "$f" && 7z a -tzip ../"$f-${{ needs.meta.outputs.tag }}.zip" .)
           done
       - uses: softprops/action-gh-release@v2
         with:
