@@ -1,0 +1,6 @@
+{
+    "CloseGF2Game": {
+        "action": "StopApp",
+        "package": "com.Sunborn.SnqxExilium"
+    }
+}
