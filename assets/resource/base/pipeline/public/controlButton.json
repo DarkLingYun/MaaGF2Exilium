@@ -63,8 +63,7 @@
     "HomePage": {
         "recognition": "OCR",
         "expected": "战役推进",
-        "pre_delay": 2500,
-        "action": "StopTask"
+        "pre_delay": 2500
     },
     "resourcesLoading": {
         "is_sub": true,
