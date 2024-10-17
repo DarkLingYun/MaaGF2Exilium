@@ -152,12 +152,14 @@
         ]
     },
     "healthGameAdvice": {
+        "doc": "健康游戏忠告到点击开始之间的时间较长，建议识别超时设置时间多一些",
         "recognition": "OCR",
         "expected": [
             "健康",
             "健康游戏",
             "忠告"
         ],
+        "timeout": 35000,
         "next": [
             "healthGameAdvice",
             "StartGame_clickStart"
@@ -172,7 +174,7 @@
         "recognition": "OCR",
         "expected": "点击开始",
         "action": "Click",
-        "timeout": 30000,
+        "timeout": 35000,
         "next": [
             "StartGame_clickStart",
             "StartGame"
