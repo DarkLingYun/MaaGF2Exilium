@@ -1,5 +1,15 @@
 {
     "AutoSweepBattle": {
+        "doc": "标准同调、定向精研、补给作战",
+        "next": [
+            "enterAutoSweepBattleTask"
+        ],
+        "interrupt": [
+            "StartGame"
+        ]
+    },
+    "enterAutoSweepBattleTask": {
+        "doc": "正式进入标准同调、定向精研、补给作战任务",
         "recognition": "OCR",
         "expected": "战役推进",
         "action": "Click",

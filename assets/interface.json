@@ -24,7 +24,7 @@
     "task": [
         {
             "name": "启动少女前线2",
-            "entry": "StartGF2Game"
+            "entry": "StartGame"
         },
         {
             "name": "日常任务前准备",
@@ -104,7 +104,7 @@
         },
         {
             "name": "关闭游戏",
-            "entry": "CloseGF2Game"
+            "entry": "StopGame"
         }
     ],
     "option": {

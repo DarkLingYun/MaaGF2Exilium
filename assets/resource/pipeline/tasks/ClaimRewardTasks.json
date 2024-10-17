@@ -2,8 +2,10 @@
     "ClaimRewardTasks": {
         "doc": "领取奖励",
         "next": [
-            "enterCommissionToClaimTask",
-            "returnToHomePage"
+            "enterCommissionToClaimTask"
+        ],
+        "interrupt": [
+            "StartGame"
         ]
     }
 }

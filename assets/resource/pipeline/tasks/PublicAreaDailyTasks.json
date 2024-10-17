@@ -1,5 +1,14 @@
 {
     "PublicAreaDailyTasks": {
+        "doc": "公共区日常",
+        "next": [
+            "clickPublicAreaDailyButton"
+        ],
+        "interrupt": [
+            "StartGame"
+        ]
+    },
+    "clickPublicAreaDailyButton": {
         "recognition": "OCR",
         "expected": "^公共区$",
         "action": "Click",

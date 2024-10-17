@@ -6,6 +6,9 @@
             "staminaReplenishment",
             "enterGameStoreAction",
             "HomePage"
+        ],
+        "interrupt": [
+            "StartGame"
         ]
     }
 }

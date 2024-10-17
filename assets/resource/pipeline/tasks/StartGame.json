@@ -1,5 +1,5 @@
 {
-    "StartGF2Game": {
+    "StartGame": {
         "doc": "启动游戏",
         "action": "StartApp",
         "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity",
@@ -134,7 +134,7 @@
         "action": "Click",
         "post_delay": 3000,
         "next": [
-            "StartGF2Game"
+            "StartGame"
         ]
     },
     "StartGame_sunbornGameLogo": {
@@ -175,7 +175,7 @@
         "timeout": 30000,
         "next": [
             "StartGame_clickStart",
-            "StartGF2Game"
+            "StartGame"
         ]
     },
     "openGF2GameApp": {
@@ -203,7 +203,7 @@
         "expected": "确认",
         "action": "Click",
         "next": [
-            "StartGF2Game"
+            "StartGame"
         ]
     }
 }

@@ -1,9 +1,4 @@
 {
-    "enterMindSurveyTask": {
-        "next": [
-            "enterMindSurveyPage"
-        ]
-    },
     "enterMindSurveyPage": {
         "recognition": "OCR",
         "expected": "^心智勘测$",

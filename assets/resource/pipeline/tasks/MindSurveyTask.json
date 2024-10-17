@@ -1,6 +1,15 @@
 {
     "MindSurveyTask": {
         "doc": "心智勘测任务",
+        "next": [
+            "enterMindSurveyTask"
+        ],
+        "interrupt": [
+            "StartGame"
+        ]
+    },
+    "enterMindSurveyTask": {
+        "doc": "正式进入心智勘测任务",
         "recognition": "OCR",
         "expected": "^战役推进$",
         "action": "Click",
@@ -14,7 +23,7 @@
         "expected": "^模拟作战$",
         "action": "Click",
         "next": [
-            "enterMindSurveyTask"
+            "enterMindSurveyPage"
         ]
     }
 }

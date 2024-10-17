@@ -1,5 +1,14 @@
 {
     "GuildTasks": {
+        "doc": "班组日常",
+        "next": [
+            "clickGuildButton"
+        ],
+        "interrupt": [
+            "StartGame"
+        ]
+    },
+    "clickGuildButton": {
         "doc": "工会任务",
         "recognition": "OCR",
         "expected": "^班组$",

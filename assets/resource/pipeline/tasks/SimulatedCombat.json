@@ -1,6 +1,15 @@
 {
     "SimulatedCombat": {
-        "doc": "模拟作战",
+        "doc": "模拟作战日常",
+        "next": [
+            "enterSimulatedCombatTask"
+        ],
+        "interrupt": [
+            "StartGame"
+        ]
+    },
+    "enterSimulatedCombatTask": {
+        "doc": "正式进入模拟作战日常任务",
         "recognition": "OCR",
         "expected": "^战役推进$",
         "action": "Click",
