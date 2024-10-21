@@ -53,9 +53,12 @@
         ]
     },
     "liveDrillTaskCompleted": {
-        "doc": "实兵演习任务完成",
+        "doc": "实兵演习任务完成或失败",
         "recognition": "OCR",
-        "expected": "任务完成",
+        "expected": [
+            "任务完成",
+            "对战失败"
+        ],
         "action": "Click",
         "post_wait_freezes": 300,
         "next": [

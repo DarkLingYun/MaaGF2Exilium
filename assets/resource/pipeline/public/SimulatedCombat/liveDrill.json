@@ -62,9 +62,12 @@
         ]
     },
     "hasChallengeSuccessfulObject": {
-        "doc": "有挑战成功对象",
+        "doc": "有挑战成功对象或挑战失败对象",
         "recognition": "OCR",
-        "expected": "挑战成功",
+        "expected": [
+            "挑战成功",
+            "挑战失败"
+        ],
         "target": [
             1164,
             656,
