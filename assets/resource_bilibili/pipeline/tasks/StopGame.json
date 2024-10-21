@@ -1,0 +1,7 @@
+{
+    "StopGame": {
+        "doc": "关闭游戏",
+        "action": "StopApp",
+        "package": "com.Sunborn.SnqxExilium.bilibili"
+    }
+}

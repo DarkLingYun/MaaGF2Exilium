@@ -1,0 +1,8 @@
+{
+    "StartGame": {
+        "package": "com.Sunborn.SnqxExilium.bilibili/.ExiliumMainActivity"
+    },
+    "openGF2GameApp": {
+        "package": "com.Sunborn.SnqxExilium.bilibili/.ExiliumMainActivity"
+    }
+}
