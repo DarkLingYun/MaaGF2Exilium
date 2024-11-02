@@ -82,13 +82,17 @@
     "refreshOpponentList": {
         "doc": "刷新演习对手列表",
         "roi": [
-            1164,
-            656,
-            45,
-            26
+            1115,
+            652,
+            139,
+            41
         ],
         "recognition": "OCR",
-        "expected": "刷新",
+        "expected": [
+            "^刷新$",
+            "^刷",
+            "新$"
+        ],
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
@@ -154,10 +158,10 @@
     "exitChallengeOpponentSelection": {
         "doc": "演习对象选择页返回(一般是自律3次后达到次数，因此需要判断奖励领取情况)",
         "roi": [
-            1164,
-            656,
-            45,
-            26
+            1115,
+            652,
+            139,
+            41
         ],
         "recognition": "OCR",
         "expected": [

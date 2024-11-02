@@ -87,6 +87,7 @@
         "action": "Click",
         "next": [
             "clickConfirmButtonToExitLiveDrill",
+            "confirmLevelPromotionForLiveDrill",
             "exitLiveDrillCombatResourceLoading"
         ]
     },
