@@ -77,7 +77,7 @@
     "supplyOperationSaridisjinTokenInsufficientPermission": {
         "doc": "标准同调权限不足",
         "recognition": "OCR",
-        "expected": "^0/2$",
+        "expected": "^0/4$",
         "roi": [
             145,
             157,
@@ -134,6 +134,7 @@
             100,
             100
         ],
+        "post_delay": 1500,
         "next": [
             "selectHighestSupplyOperationLevel",
             "supplyOperationLevelPageDownSwip"
@@ -155,7 +156,8 @@
             490,
             40,
             12
-        ]
+        ],
+        "post_delay": 1000
     },
     "selectHighestSupplyOperationLevel": {
         "recognition": "OCR",
@@ -333,7 +335,7 @@
     },
     "switchAccessoriesTag": {
         "recognition": "OCR",
-        "expected": "^手枪$",
+        "expected": "^突击",
         "action": "Click",
         "next": [
             "supplyOperationLevelPageTopSwip"
