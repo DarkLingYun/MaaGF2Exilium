@@ -92,7 +92,7 @@
         "action": "Click",
         "next": [
             "insufficientStaminaForMindSurvey",
-            "increaseSelfDisciplineCountForMindSurvey"
+            "confirmMindSurveySelfDisciplinePage"
         ]
     },
     "insufficientStaminaForMindSurvey": {
@@ -101,6 +101,30 @@
         "expected": "^情报拼图补充$",
         "next": [
             "cancelStaminaReplenishmentForMindSurvey"
+        ]
+    },
+    "confirmMindSurveySelfDisciplinePage": {
+        "doc": "确认为心智勘测自律页",
+        "recognition": "OCR",
+        "expected": "^自律准备$",
+        "next": [
+            "userSetMindSurveyCount",
+            "increaseSelfDisciplineCountForMindSurvey"
+        ]
+    },
+    "userSetMindSurveyCount": {
+        "doc": "是否达到用户设置次数，达到后直接自律",
+        "enabled": false,
+        "recognition": "OCR",
+        "roi": [
+            574,
+            282,
+            136,
+            45
+        ],
+        "expected": "1",
+        "next": [
+            "confirmMindSurveySelfDiscipline"
         ]
     },
     "cancelStaminaReplenishmentForMindSurvey": {
@@ -114,6 +138,13 @@
         "recognition": "OCR",
         "expected": "取消",
         "action": "Click",
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "exitMindSurveyTask": {
+        "doc": "退出心智勘测任务",
+        "enabled": false,
         "next": [
             "returnToHomePage"
         ]
@@ -135,6 +166,7 @@
         "action": "Click",
         "next": [
             "ExceededSelfDisciplineLimitForMindSurvey",
+            "userSetMindSurveyCount",
             "maxSelfDisciplineCountForMindSurvey",
             "increaseSelfDisciplineCountForMindSurvey"
         ]
@@ -229,6 +261,7 @@
         "action": "Click",
         "next": [
             "closeMindSurveyResultsPage",
+            "exitMindSurveyTask",
             "enterMindSurveySelfDisciplinePreparation"
         ]
     }

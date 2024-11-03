@@ -149,6 +149,7 @@
         ]
     },
     "ClickResultRecognition": {
+        "doc": "有指定次数和没指定次数的情况，指定次数的时候，开启退出任务到主页，未指定的时候关闭退出任务到主页",
         "target": [
             340,
             430,
@@ -158,7 +159,30 @@
         "action": "Click",
         "next": [
             "supplyOperationSaridisjinTokenInsufficientPermission",
+            "exitAutoSweepBattleTask",
             "clickAutoSweepBattleSupplyOperationButton"
+        ]
+    },
+    "exitAutoSweepBattleTask": {
+        "doc": "退出自律作战任务",
+        "enabled": true,
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "UserSetSliderValue": {
+        "enabled": true,
+        "recognition": "OCR",
+        "roi": [
+            574,
+            282,
+            136,
+            45
+        ],
+        "expected": "1",
+        "next": [
+            "scrollablePopupConfirm",
+            "resultRecognition"
         ]
     },
     "increaseSliderMax": {

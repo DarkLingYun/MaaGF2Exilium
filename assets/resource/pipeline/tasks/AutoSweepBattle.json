@@ -302,6 +302,7 @@
         "expected": "^自律准备$",
         "next": [
             "sliderColorDetectionAccessories",
+            "UserSetSliderValueAccessories",
             "increaseSliderMaxAccessories",
             "increaseSliderAccessories"
         ]
@@ -321,6 +322,7 @@
         "expected": "^自律准备$",
         "next": [
             "sliderColorDetection",
+            "UserSetSliderValue",
             "increaseSliderMax",
             "increaseSlider"
         ]

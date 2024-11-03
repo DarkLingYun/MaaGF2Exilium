@@ -78,7 +78,23 @@
         "action": "Click",
         "next": [
             "supplyOperationSaridisjinTokenInsufficientPermission",
+            "exitAutoSweepBattleTask",
             "clickAutoSweepBattleSupplyOperationButton"
+        ]
+    },
+    "UserSetSliderValueAccessories": {
+        "enabled": true,
+        "recognition": "OCR",
+        "roi": [
+            570,
+            343,
+            141,
+            49
+        ],
+        "expected": "1",
+        "next": [
+            "scrollablePopupConfirmAccessories",
+            "resultRecognitionAccessories"
         ]
     },
     "increaseSliderMaxAccessories": {
