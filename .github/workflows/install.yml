@@ -69,40 +69,8 @@ jobs:
 
       - uses: actions/upload-artifact@v4
         with:
-          name: update(更新资源包)
+          name: update
           path: "update"
-
-  gui:
-    needs: meta
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-          
-      - name: Download Latest MFAWPF  
-        uses: robinraju/release-downloader@v1  
-        with:  
-             repository: SweetSmellFox/MFAWPF  
-             fileName: MFAWPF*
-             latest: true  
-             out-file-path: gui  
-             extract: true  
-  
-      - name: gui resources          
-        shell: bash
-        run: |  
-           rm -f ./gui/*.zip
-           cp -r ./assets/resource/* ./gui/Resource/
-           jq --arg version_name "少前2追放自动化助手" --arg url "https://github.com/DarkLingYun/MaaGF2Exilium" --arg version ${{ needs.meta.outputs.tag }} '. + {"name": $version_name, "url": $url,"version": $version}' ./assets/interface.json > ./gui/interface.json
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: MaaGF2Exilium-win-x86_64-with-GUI(图形化版本)
-          path: "gui"
 
   windows:
     needs: meta
@@ -126,14 +94,26 @@ jobs:
           out-file-path: "deps"
           extract: true
 
+      - name: Download MFAWPF
+        uses: robinraju/release-downloader@v1
+        with:
+          repository: SweetSmellFox/MFAWPF
+          filename: MFAWPF*
+          tag: 1.2.1.7  # 指定版本号
+          out-file-path: "MFA"
+          extract: true
+
       - name: Install
         shell: bash
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
+          cp ./MFA/MFAWPF.exe ./install/MaaGF2Exilium.exe
+          # url项示例  https://github.com/SweetSmellFox/MFAWPF
+          jq --arg version_name "纪念日礼赞" --arg url ""https://github.com/DarkLingYun/MaaGF2Exilium"" --arg version ${{ needs.meta.outputs.tag }} '. + {"name": $version_name, "url": $url,"version": $version}' ./assets/interface.json > ./install/interface.json
 
       - uses: actions/upload-artifact@v4
         with:
-          name: MaaGF2Exilium-win-${{ matrix.arch }}
+          name: MaaGF2ExiliumGUI-win-${{ matrix.arch }}
           path: "install"
 
   ubuntu:
@@ -235,7 +215,7 @@ jobs:
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, windows, ubuntu, macos, android, gui, update]
+    needs: [meta, windows, ubuntu, macos, android]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
@@ -245,7 +225,7 @@ jobs:
       - run: |
           cd assets
           for f in *; do
-             (cd "$f" && 7z a -tzip ../"$f-${{ needs.meta.outputs.tag }}.zip" .)
+            (cd "$f" && 7z a -tzip ../"$f-${{ needs.meta.outputs.tag }}.zip" .)
           done
       - uses: softprops/action-gh-release@v2
         with:
