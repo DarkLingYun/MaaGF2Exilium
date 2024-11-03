@@ -31,7 +31,8 @@
     "task": [
         {
             "name": "启动少女前线2",
-            "entry": "StartGame"
+            "entry": "StartGame",
+            "checked": true
         },
         {
             "name": "日常任务前准备",
@@ -41,7 +42,8 @@
                 "领取活动页情报补给体力(限时)",
                 "使用完体力药水",
                 "商城免费每日补给箱购买"
-            ]
+            ],
+            "doc": "领取邮件需要主界面背景为人形"
         },
         {
             "name": "公共区日常",
@@ -54,42 +56,44 @@
         },
         {
             "name": "标准同调(金币本)",
-            "entry": "AutoSweepBattle"
+            "entry": "AutoSweepBattle",
+            "option": [
+                "同调次数："
+            ],
+            "doc": "标准同调体力值每次消耗20"
         },
         {
             "name": "定向精研(刷配件)[三选一]",
             "entry": "AutoSweepBattle",
-            "pipeline_override": {
-                "supplyOperationType": {
-                    "expected": "定向精研"
-                },
-                "enterSaridisjinTokenTask": {
-                    "enabled": false
-                }
-            },
             "option": [
                 "配件类型：",
-                "配件效果："
-            ]
+                "配件效果：",
+                "配件刷取次数："
+            ],
+            "doc": "定向精研体力值每次消耗30"
         },
         {
             "name": "补给作战(人形培养)[三选一]",
             "entry": "AutoSweepBattle",
             "option": [
-                "补给资源："
+                "补给资源：",
+                "补给次数："
             ],
             "pipeline_override": {
                 "enterSaridisjinTokenTask": {
                     "enabled": false
                 }
-            }
+            },
+            "doc": "补给作战体力值存量条每次消耗20，其他均为10"
         },
         {
             "name": "心智勘测[三选一]",
             "entry": "MindSurveyTask",
             "option": [
-                "转录序体："
-            ]
+                "转录序体：",
+                "勘测次数："
+            ],
+            "doc": "心智勘测体力值每次消耗30"
         },
         {
             "name": "模拟作战日常",
@@ -215,7 +219,72 @@
                 }
             ]
         },
+        "同调次数：": {
+            "default_case": "x2",
+            "cases": [
+                {
+                    "name": "x1",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^1$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x2",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^2$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x3",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^3$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x4",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^4$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "All(耗尽体力)",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": false
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
         "使用完体力药水": {
+            "default_case": "NO",
             "cases": [
                 {
                     "name": "YES",
@@ -255,26 +324,6 @@
                 }
             ]
         },
-        "招募方式：": {
-            "cases": [
-                {
-                    "name": "访问一次（直到没有常规访问许可停止）",
-                    "pipeline_override": {
-                        "regularRecruitButtonClick": {
-                            "expected": "^访问一次$"
-                        }
-                    }
-                },
-                {
-                    "name": "访问十次（直到常规访问许可不足十次）",
-                    "pipeline_override": {
-                        "regularRecruitButtonClick": {
-                            "expected": "^访问十次$"
-                        }
-                    }
-                }
-            ]
-        },
         "补给资源：": {
             "cases": [
                 {
@@ -303,13 +352,155 @@
                 }
             ]
         },
+        "补给次数：": {
+            "default_case": "x2",
+            "cases": [
+                {
+                    "name": "x1",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^1$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x2",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^2$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x3",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^3$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x4",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^4$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x5",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^5$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x6",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^6$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x7",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^7$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x8",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^8$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x9",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^9$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x10",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": true,
+                            "expected": "^10$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "All(耗尽体力)",
+                    "pipeline_override": {
+                        "UserSetSliderValue": {
+                            "enabled": false
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
         "配件类型：": {
             "cases": [
                 {
                     "name": "突击与霰弹枪",
                     "pipeline_override": {
                         "switchAccessoriesTag": {
-                            "expected": "^突击与霰弹枪$"
+                            "expected": "^突击"
+                        },
+                        "supplyOperationType": {
+                            "expected": "定向精研"
+                        },
+                        "enterSaridisjinTokenTask": {
+                            "enabled": false
                         }
                     }
                 },
@@ -317,7 +508,13 @@
                     "name": "冲锋枪与机枪",
                     "pipeline_override": {
                         "switchAccessoriesTag": {
-                            "expected": "^冲锋枪与机枪$"
+                            "expected": "^冲锋枪"
+                        },
+                        "supplyOperationType": {
+                            "expected": "定向精研"
+                        },
+                        "enterSaridisjinTokenTask": {
+                            "enabled": false
                         }
                     }
                 },
@@ -325,7 +522,13 @@
                     "name": "狙击枪与刀",
                     "pipeline_override": {
                         "switchAccessoriesTag": {
-                            "expected": "^狙击枪与刀$"
+                            "expected": "^狙击枪"
+                        },
+                        "supplyOperationType": {
+                            "expected": "定向精研"
+                        },
+                        "enterSaridisjinTokenTask": {
+                            "enabled": false
                         }
                     }
                 },
@@ -333,7 +536,13 @@
                     "name": "手枪",
                     "pipeline_override": {
                         "switchAccessoriesTag": {
-                            "expected": "^手枪$"
+                            "expected": "^手枪"
+                        },
+                        "supplyOperationType": {
+                            "expected": "定向精研"
+                        },
+                        "enterSaridisjinTokenTask": {
+                            "enabled": false
                         }
                     }
                 }
@@ -439,6 +648,142 @@
                 }
             ]
         },
+        "配件刷取次数：": {
+            "default_case": "x2",
+            "cases": [
+                {
+                    "name": "x1",
+                    "pipeline_override": {
+                        "UserSetSliderValueAccessories": {
+                            "enabled": true,
+                            "expected": "^1$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x2",
+                    "pipeline_override": {
+                        "UserSetSliderValueAccessories": {
+                            "enabled": true,
+                            "expected": "^2$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x3",
+                    "pipeline_override": {
+                        "UserSetSliderValueAccessories": {
+                            "enabled": true,
+                            "expected": "^3$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x4",
+                    "pipeline_override": {
+                        "UserSetSliderValueAccessories": {
+                            "enabled": true,
+                            "expected": "^4$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x5",
+                    "pipeline_override": {
+                        "UserSetSliderValueAccessories": {
+                            "enabled": true,
+                            "expected": "^5$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x6",
+                    "pipeline_override": {
+                        "UserSetSliderValueAccessories": {
+                            "enabled": true,
+                            "expected": "^6$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x7",
+                    "pipeline_override": {
+                        "UserSetSliderValueAccessories": {
+                            "enabled": true,
+                            "expected": "^7$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x8",
+                    "pipeline_override": {
+                        "UserSetSliderValueAccessories": {
+                            "enabled": true,
+                            "expected": "^8$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x9",
+                    "pipeline_override": {
+                        "UserSetSliderValueAccessories": {
+                            "enabled": true,
+                            "expected": "^9$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x10",
+                    "pipeline_override": {
+                        "UserSetSliderValueAccessories": {
+                            "enabled": true,
+                            "expected": "^10$"
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "All(耗尽体力)",
+                    "pipeline_override": {
+                        "UserSetSliderValueAccessories": {
+                            "enabled": false
+                        },
+                        "exitAutoSweepBattleTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
         "转录序体：": {
             "cases": [
                 {
@@ -486,6 +831,142 @@
                     "pipeline_override": {
                         "selectMindSurveyMaterialType": {
                             "template": "心智勘测\\01守望者.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "勘测次数：": {
+            "default_case": "x3",
+            "cases": [
+                {
+                    "name": "x1",
+                    "pipeline_override": {
+                        "userSetMindSurveyCount": {
+                            "enabled": true,
+                            "expected": "^1$"
+                        },
+                        "exitMindSurveyTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x2",
+                    "pipeline_override": {
+                        "userSetMindSurveyCount": {
+                            "enabled": true,
+                            "expected": "^2$"
+                        },
+                        "exitMindSurveyTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x3",
+                    "pipeline_override": {
+                        "userSetMindSurveyCount": {
+                            "enabled": true,
+                            "expected": "^3$"
+                        },
+                        "exitMindSurveyTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x4",
+                    "pipeline_override": {
+                        "userSetMindSurveyCount": {
+                            "enabled": true,
+                            "expected": "^4$"
+                        },
+                        "exitMindSurveyTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x5",
+                    "pipeline_override": {
+                        "userSetMindSurveyCount": {
+                            "enabled": true,
+                            "expected": "^5$"
+                        },
+                        "exitMindSurveyTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x6",
+                    "pipeline_override": {
+                        "userSetMindSurveyCount": {
+                            "enabled": true,
+                            "expected": "^6$"
+                        },
+                        "exitMindSurveyTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x7",
+                    "pipeline_override": {
+                        "userSetMindSurveyCount": {
+                            "enabled": true,
+                            "expected": "^7$"
+                        },
+                        "exitMindSurveyTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x8",
+                    "pipeline_override": {
+                        "userSetMindSurveyCount": {
+                            "enabled": true,
+                            "expected": "^8$"
+                        },
+                        "exitMindSurveyTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x9",
+                    "pipeline_override": {
+                        "userSetMindSurveyCount": {
+                            "enabled": true,
+                            "expected": "^9$"
+                        },
+                        "exitMindSurveyTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "x10",
+                    "pipeline_override": {
+                        "userSetMindSurveyCount": {
+                            "enabled": true,
+                            "expected": "^10$"
+                        },
+                        "exitMindSurveyTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "All(耗尽体力)",
+                    "pipeline_override": {
+                        "userSetMindSurveyCount": {
+                            "enabled": false
+                        },
+                        "exitMindSurveyTask": {
+                            "enabled": false
                         }
                     }
                 }
