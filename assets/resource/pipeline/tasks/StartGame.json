@@ -130,7 +130,10 @@
     },
     "StartGame_dailyRewards": {
         "recognition": "OCR",
-        "expected": "空白",
+        "expected": [
+            "空白",
+            "点击"
+        ],
         "action": "Click",
         "post_delay": 3000,
         "next": [
