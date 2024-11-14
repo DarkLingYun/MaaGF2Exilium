@@ -2,6 +2,7 @@
     "PrepareDailyTasks": {
         "doc": "日常任务前准备",
         "next": [
+            "timeLimitedTask",
             "getNewEmails",
             "staminaReplenishment",
             "enterGameStoreAction",

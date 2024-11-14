@@ -1,0 +1,25 @@
+{
+    "timeLimitedTask": {
+        "doc": "该任务用于集中调用限时任务，限时任务将显示在日常任务前准备的子选项中，该next列表的限时任务后应该写上调用该任务的后续任务",
+        "recognition": "OCR",
+        "expected": "战役推进",
+        "enabled": true,
+        "next": [
+            "领取情报补给体力任务(限时)",
+            "领取七日签到资源任务(限时)",
+            "exiTtimeLimitedTask"
+        ],
+        "interrupt": [
+            "StartGame"
+        ]
+    },
+    "exiTtimeLimitedTask": {
+        "doc": "该 next 列表的任务顺序与子选项限时任务后的非限时任务呈现顺序一致，且如果都未开启则判断是否为主页后结束本进程任务。",
+        "next": [
+            "getNewEmails",
+            "staminaReplenishment",
+            "enterGameStoreAction",
+            "HomePage"
+        ]
+    }
+}

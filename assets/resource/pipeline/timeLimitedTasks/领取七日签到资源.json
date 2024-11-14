@@ -1,35 +1,35 @@
 {
-    "领取情报补给体力任务(限时)": {
-        "doc": "限时任务次序：1",
+    "领取七日签到资源任务(限时)": {
+        "doc": "限时任务次序：2",
         "enabled": true,
         "recognition": "OCR",
         "expected": "^活动$",
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "点击情报补给标签",
-            "没有情报补给标签"
+            "点击七日签到标签",
+            "没有七日签到标签"
         ]
     },
-    "没有情报补给标签": {
+    "没有七日签到标签": {
         "inverse": true,
         "recognition": "OCR",
-        "expected": "^情报补给$",
+        "expected": "^战前补给$",
         "next": [
-            "没有领取按钮"
+            "七日签到无领取按钮"
         ]
     },
-    "点击情报补给标签": {
+    "点击七日签到标签": {
         "recognition": "OCR",
-        "expected": "^情报补给$",
+        "expected": "^战前补给$",
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "点击体力领取按钮",
-            "没有领取按钮"
+            "点击七日签到领取按钮",
+            "七日签到无领取按钮"
         ]
     },
-    "没有领取按钮": {
+    "七日签到无领取按钮": {
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/关闭按钮_gray.png",
@@ -38,30 +38,29 @@
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "领取七日签到资源任务(限时)",
             "getNewEmails",
             "staminaReplenishment",
             "enterGameStoreAction",
             "HomePage"
         ]
     },
-    "点击体力领取按钮": {
+    "点击七日签到领取按钮": {
         "recognition": "OCR",
         "expected": "^领取$",
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "关闭体力领取结果页"
+            "关闭七日签到领取结果页"
         ]
     },
-    "关闭体力领取结果页": {
+    "关闭七日签到领取结果页": {
         "recognition": "OCR",
         "expected": "空白",
         "action": "Click",
         "next": [
-            "关闭体力领取结果页",
-            "点击体力领取按钮",
-            "没有领取按钮"
+            "关闭七日签到领取结果页",
+            "点击七日签到领取按钮",
+            "七日签到无领取按钮"
         ]
     }
 }

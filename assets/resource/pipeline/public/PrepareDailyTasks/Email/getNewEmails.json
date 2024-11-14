@@ -6,9 +6,9 @@
         "expected": "战役推进",
         "next": [
             "clickEmailsButton",
-            "领取情报补给体力(限时)",
             "staminaReplenishment",
-            "enterGameStoreAction"
+            "enterGameStoreAction",
+            "HomePage"
         ]
     },
     "clickEmailsButton": {
@@ -54,7 +54,6 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "领取情报补给体力(限时)",
             "staminaReplenishment",
             "enterGameStoreAction",
             "HomePage"
@@ -62,7 +61,7 @@
     },
     "closeClaimAllEmailsPopup": {
         "recognition": "OCR",
-        "expected": "点击",
+        "expected": "点击空白",
         "action": "Click",
         "next": [
             "closeClaimAllEmailsPopup",

@@ -38,8 +38,9 @@
             "name": "日常任务前准备",
             "entry": "PrepareDailyTasks",
             "option": [
+                "领取情报补给体力(限时)",
+                "领取七日签到资源(限时)",
                 "领取邮件",
-                "领取活动页情报补给体力(限时)",
                 "使用完体力药水",
                 "商城免费每日补给箱购买"
             ],
@@ -119,6 +120,46 @@
         }
     ],
     "option": {
+        "领取情报补给体力(限时)": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "领取情报补给体力任务(限时)": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "领取情报补给体力任务(限时)": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "领取七日签到资源(限时)": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "领取七日签到资源任务(限时)": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "领取七日签到资源任务(限时)": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
         "领取邮件": {
             "cases": [
                 {
@@ -139,12 +180,33 @@
                 }
             ]
         },
-        "领取活动页情报补给体力(限时)": {
+        "使用完体力药水": {
+            "default_case": "NO",
+            "cases": [
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "staminaReplenishment": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "staminaReplenishment": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "商城免费每日补给箱购买": {
             "cases": [
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "领取情报补给体力(限时)": {
+                        "enterGameStoreAction": {
                             "enabled": true
                         }
                     }
@@ -152,7 +214,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "领取情报补给体力(限时)": {
+                        "enterGameStoreAction": {
                             "enabled": false
                         }
                     }
@@ -277,47 +339,6 @@
                             "enabled": false
                         },
                         "exitAutoSweepBattleTask": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "使用完体力药水": {
-            "default_case": "NO",
-            "cases": [
-                {
-                    "name": "YES",
-                    "pipeline_override": {
-                        "staminaReplenishment": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "NO",
-                    "pipeline_override": {
-                        "staminaReplenishment": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "商城免费每日补给箱购买": {
-            "cases": [
-                {
-                    "name": "YES",
-                    "pipeline_override": {
-                        "enterGameStoreAction": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "NO",
-                    "pipeline_override": {
-                        "enterGameStoreAction": {
                             "enabled": false
                         }
                     }
