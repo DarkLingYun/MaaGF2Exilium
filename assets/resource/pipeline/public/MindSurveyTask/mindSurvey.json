@@ -21,6 +21,7 @@
         ]
     },
     "mindSurveyMaterialTypePaging": {
+        "doc": "翻页功能",
         "recognition": "ColorMatch",
         "roi": [
             1234,

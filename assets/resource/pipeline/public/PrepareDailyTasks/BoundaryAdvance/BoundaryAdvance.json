@@ -1,0 +1,144 @@
+{
+    "enterBoundaryAdvanceAction": {
+        "doc": "边界派遣",
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": "^限时开启$",
+        "post_wait_freezes": 200,
+        "action": "Click",
+        "next": [
+            "clickBoundaryAdvanceTagButton"
+        ]
+    },
+    "clickBoundaryAdvanceTagButton": {
+        "doc": "点击边界推进标签按钮,循环调用来自动关闭弹窗",
+        "recognition": "OCR",
+        "expected": "推进",
+        "roi": [
+            1085,
+            154,
+            136,
+            54
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "clickBoundaryAdvanceTagButton",
+            "clickBoundaryAdvanceDelegateButton"
+        ]
+    },
+    "clickBoundaryAdvanceDelegateButton": {
+        "doc": "点击边界推进委托按钮",
+        "recognition": "OCR",
+        "roi": [
+            722,
+            620,
+            156,
+            52
+        ],
+        "expected": [
+            "^晶源采集$",
+            "采集$",
+            "^晶源"
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "boundaryAdvanceDelegateOneClickDispatch",
+            "boundaryAdvanceDelegateOneClickClaim",
+            "boundaryAdvanceDelegateNotClaimable"
+        ]
+    },
+    "boundaryAdvanceDelegateOneClickDispatch": {
+        "doc": "边界推进委托一键派遣",
+        "recognition": "OCR",
+        "roi": [
+            660,
+            635,
+            275,
+            45
+        ],
+        "expected": [
+            "^一键派遣$",
+            "派遣$",
+            "^一键"
+        ],
+        "action": "Click",
+        "next": [
+            "boundaryAdvanceDelegateOneClickDispatch",
+            "boundaryAdvanceDelegateOneClickClaim",
+            "boundaryAdvanceDelegateNotClaimable"
+        ]
+    },
+    "boundaryAdvanceDelegateOneClickClaim": {
+        "doc": "边界推进委托一键领取",
+        "recognition": "ColorMatch",
+        "roi": [
+            957,
+            638,
+            269,
+            38
+        ],
+        "upper": [
+            228,
+            89,
+            40
+        ],
+        "lower": [
+            196,
+            76,
+            34
+        ],
+        "action": "Click",
+        "next": [
+            "boundaryAdvanceDelegateRewardClaimResultPage"
+        ]
+    },
+    "boundaryAdvanceDelegateRewardClaimResultPage": {
+        "doc": "边界推进委托奖励领取结果页关闭",
+        "recognition": "OCR",
+        "expected": "点击",
+        "action": "Click",
+        "next": [
+            "boundaryAdvanceDelegateRewardClaimResultPage",
+            "exitBoundaryAdvance"
+        ]
+    },
+    "boundaryAdvanceDelegateNotClaimable": {
+        "doc": "边界推进委托不可领取",
+        "recognition": "ColorMatch",
+        "roi": [
+            957,
+            638,
+            269,
+            38
+        ],
+        "upper": [
+            40,
+            41,
+            41
+        ],
+        "lower": [
+            39,
+            39,
+            40
+        ],
+        "action": "Click",
+        "post_delay": 100,
+        "next": [
+            "exitBoundaryAdvance"
+        ]
+    },
+    "exitBoundaryAdvance": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_gray.png",
+            "公用按钮组件/主页按钮_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "HomePage"
+        ]
+    }
+}

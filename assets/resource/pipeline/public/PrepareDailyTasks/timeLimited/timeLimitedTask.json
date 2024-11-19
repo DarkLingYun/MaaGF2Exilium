@@ -7,18 +7,19 @@
         "next": [
             "领取情报补给体力任务(限时)",
             "领取七日签到资源任务(限时)",
-            "exiTtimeLimitedTask"
+            "exitTimeLimitedTask"
         ],
         "interrupt": [
             "StartGame"
         ]
     },
-    "exiTtimeLimitedTask": {
-        "doc": "该 next 列表的任务顺序与子选项限时任务后的非限时任务呈现顺序一致，且如果都未开启则判断是否为主页后结束本进程任务。",
+    "exitTimeLimitedTask": {
+        "doc": "该 next 列表的任务顺序与调用 timeLimitedTask 后续任务呈现顺序一致，且如果都未开启则判断是否为主页后结束本进程任务。",
         "next": [
             "getNewEmails",
             "staminaReplenishment",
             "enterGameStoreAction",
+            "enterBoundaryAdvanceAction",
             "HomePage"
         ]
     }

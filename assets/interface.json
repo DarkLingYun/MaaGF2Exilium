@@ -42,7 +42,8 @@
                 "领取七日签到资源(限时)",
                 "领取邮件",
                 "使用完体力药水",
-                "商城免费每日补给箱购买"
+                "商城免费每日补给箱购买",
+                "边界推进委托领取"
             ],
             "doc": "领取邮件需要主界面背景为人形"
         },
@@ -215,6 +216,26 @@
                     "name": "NO",
                     "pipeline_override": {
                         "enterGameStoreAction": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "边界推进委托领取": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterBoundaryAdvanceAction": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterBoundaryAdvanceAction": {
                             "enabled": false
                         }
                     }

@@ -6,6 +6,7 @@
             "getNewEmails",
             "staminaReplenishment",
             "enterGameStoreAction",
+            "enterBoundaryAdvanceAction",
             "HomePage"
         ],
         "interrupt": [
