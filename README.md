@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
-<img alt="logo2" src="https://gf2-cn.cdn.sunborngame.com/website/official_zf/pc/image/VECTOR_274aa15d5f.png" width="256"/>
+<img alt="logo2" src="https://gf2-cn.cdn.sunborngame.com/website/official_zf/pc/image/ANDORIS_23282881c2.png" width="256"/>
 </p>
 
 <div align="center">
@@ -16,7 +16,13 @@
 
 ## 联系方式
 
-如果有不懂的地方，抑或是想要添加的功能，或者你也想一起开发，甚至是划水聊天~~催更~~。欢迎加入交流QQ群：904823072。
+如果有不懂的地方，抑或是想要添加的功能，或者你也想一起开发，甚至是划水聊天~~催更~~。
+
+欢迎扫码加入**QQ交流群：904823072**。
+<p align="center">
+<img alt="logo2" src="./imgs/1.jpg" width="400"/>
+</p>
+
 
 ## 使用前提
 
@@ -37,10 +43,13 @@
 * [x] 启动游戏
 
 * [x] 日常任务前准备
+  * [x] 领取情报体力(限时)
+  * [x] 领取七日签到资源(限时)
   * [x] 领取邮件
   * [x] 领取活动页情报补给体力
   * [x] 使用完体力药水
   * [x] 商城购买每日免费补给箱
+  * [x] 边界推进晶源采集派遣与领取
 
 * [x] 公共区日常
   * [x] 访问休息室
