@@ -112,6 +112,14 @@
             "entry": "GuildTasks"
         },
         {
+            "name": "版本活动日常",
+            "entry": "VersionActivityTask",
+            "option": [
+                "物资模式自律",
+                "物资商品兑换"
+            ]
+        },
+        {
             "name": "领取奖励(日常和通行证)",
             "entry": "ClaimRewardTasks"
         },
@@ -1096,6 +1104,50 @@
                     "name": "NO",
                     "pipeline_override": {
                         "enterWarGameSimulationTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "物资模式自律": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterVersionActivityResourceSweep": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterVersionActivityResourceSweep": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "物资商品兑换": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterVersionActivityItemExchange": {
+                            "enabled": true,
+                            "expected": [
+                                "后勤支持",
+                                "共诉隐匿时"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterVersionActivityItemExchange": {
                             "enabled": false
                         }
                     }

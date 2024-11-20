@@ -1,0 +1,124 @@
+{
+    "enterVersionActivityItemExchange": {
+        "doc": "版本活动商品兑换",
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": [
+            "后勤支持"
+        ],
+        "index": -1,
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "selectExchangeItem",
+            "enterVersionActivityItemExchange"
+        ]
+    },
+    "selectExchangeItem": {
+        "doc": "选择兑换商品",
+        "roi": [
+            294,
+            104,
+            476,
+            239
+        ],
+        "recognition": "OCR",
+        "expected": [
+            "晶条",
+            "许可",
+            "共键",
+            "信息核",
+            "涂装",
+            "特别",
+            "内存条",
+            "转录",
+            "补给箱",
+            "金",
+            "解析图纸",
+            "战争报告"
+        ],
+        "order_by": "Vertical",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "itemNotPurchasable",
+            "selectExchangeItemQuantity"
+        ]
+    },
+    "itemNotPurchasable": {
+        "doc": "商品不可购买",
+        "recognition": "ColorMatch",
+        "roi": [
+            673,
+            346,
+            20,
+            27
+        ],
+        "upper": [
+            253,
+            114,
+            91
+        ],
+        "lower": [
+            246,
+            101,
+            73
+        ],
+        "next": [
+            "exitVersionActivityItemExchange"
+        ]
+    },
+    "selectExchangeItemQuantity": {
+        "doc": "选择商品兑换数量",
+        "recognition": "OCR",
+        "expected": "^当前购买",
+        "action": "Swipe",
+        "begin": [
+            451,
+            397,
+            1,
+            1
+        ],
+        "end": [
+            921,
+            398,
+            1,
+            1
+        ],
+        "next": [
+            "confirmPurchaseItem"
+        ]
+    },
+    "confirmPurchaseItem": {
+        "doc": "确认购买商品",
+        "recognition": "OCR",
+        "expected": "^确认$",
+        "action": "Click",
+        "next": [
+            "closeItemPurchaseResultPage"
+        ]
+    },
+    "closeItemPurchaseResultPage": {
+        "doc": "关闭商品购买结果页",
+        "recognition": "OCR",
+        "expected": "^点击",
+        "action": "Click",
+        "next": [
+            "closeItemPurchaseResultPage",
+            "selectExchangeItem"
+        ]
+    },
+    "exitVersionActivityItemExchange": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_gray.png",
+            "公用按钮组件/主页按钮_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "exitVersionActivityItemExchange",
+            "HomePage"
+        ]
+    }
+}

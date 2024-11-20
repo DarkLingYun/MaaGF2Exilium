@@ -1,0 +1,40 @@
+{
+    "VersionActivityTask": {
+        "doc": "版本活动日常",
+        "next": [
+            "enterVersionActivityTask"
+        ],
+        "interrupt": [
+            "StartGame"
+        ]
+    },
+    "enterVersionActivityTask": {
+        "doc": "正式进入版本活动任务，先验证是否在首页，然后判断是否存在活动标签，不存在就识别主页结束任务",
+        "recognition": "OCR",
+        "expected": "^战役推进$",
+        "post_wait_freezes": 100,
+        "next": [
+            "clickVersionActivityTagButton",
+            "HomePage"
+        ]
+    },
+    "clickVersionActivityTagButton": {
+        "doc": "点击版本活动标签按钮,版本更新后更改识别字段",
+        "recognition": "OCR",
+        "roi": [
+            33,
+            37,
+            277,
+            234
+        ],
+        "expected": [
+            "共诉隐匿时"
+        ],
+        "action": "Click",
+        "next": [
+            "enterVersionActivityResourceSweep",
+            "enterVersionActivityItemExchange",
+            "returnToHomePage"
+        ]
+    }
+}
