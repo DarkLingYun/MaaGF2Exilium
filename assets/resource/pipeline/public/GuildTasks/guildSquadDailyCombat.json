@@ -55,7 +55,19 @@
         ],
         "action": "Click",
         "next": [
-            "returnToHomePage"
+            "exitGuildSquadDailyCombat"
+        ]
+    },
+    "exitGuildSquadDailyCombat": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_gray.png",
+            "公用按钮组件/主页按钮_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "HomePage"
         ]
     }
 }
