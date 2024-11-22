@@ -31,6 +31,7 @@
             "共诉隐匿时"
         ],
         "action": "Click",
+        "post_delay": 2000,
         "next": [
             "enterVersionActivityResourceSweep",
             "enterVersionActivityItemExchange",
