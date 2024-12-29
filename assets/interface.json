@@ -840,7 +840,7 @@
                     "name": "序六",
                     "pipeline_override": {
                         "selectMindSurveyMaterialType": {
-                            "template": "心智勘测\\06星点光芒闪耀时.png"
+                            "template": "心智勘测/06星点光芒闪耀时.png"
                         }
                     }
                 },
@@ -848,7 +848,7 @@
                     "name": "序五",
                     "pipeline_override": {
                         "selectMindSurveyMaterialType": {
-                            "template": "心智勘测\\05乘于裙摆之上.png"
+                            "template": "心智勘测/05乘于裙摆之上.png"
                         }
                     }
                 },
@@ -856,7 +856,7 @@
                     "name": "序四",
                     "pipeline_override": {
                         "selectMindSurveyMaterialType": {
-                            "template": "心智勘测\\04最后的命令.png"
+                            "template": "心智勘测/04最后的命令.png"
                         }
                     }
                 },
@@ -864,7 +864,7 @@
                     "name": "序三",
                     "pipeline_override": {
                         "selectMindSurveyMaterialType": {
-                            "template": "心智勘测\\03限时替身.png"
+                            "template": "心智勘测/03限时替身.png"
                         }
                     }
                 },
@@ -872,7 +872,7 @@
                     "name": "序二",
                     "pipeline_override": {
                         "selectMindSurveyMaterialType": {
-                            "template": "心智勘测\\02流浪的人.png"
+                            "template": "心智勘测/02流浪的人.png"
                         }
                     }
                 },
@@ -880,7 +880,7 @@
                     "name": "序一",
                     "pipeline_override": {
                         "selectMindSurveyMaterialType": {
-                            "template": "心智勘测\\01守望者.png"
+                            "template": "心智勘测/01守望者.png"
                         }
                     }
                 }

@@ -101,7 +101,7 @@
     },
     "clickClaimEventRewardsButton_2_phaseRewards": {
         "recognition": "TemplateMatch",
-        "template": "活动页\\活动_彻夜疾行.png",
+        "template": "活动页/活动_彻夜疾行.png",
         "index": -1,
         "action": "Click",
         "next": [

@@ -11,7 +11,7 @@
     },
     "selectMindSurveyMaterialType": {
         "recognition": "TemplateMatch",
-        "template": "心智勘测\\06星点光芒闪耀时.png",
+        "template": "心智勘测/06星点光芒闪耀时.png",
         "action": "Click",
         "post_wait_freezes": 500,
         "post_delay": 1500,
