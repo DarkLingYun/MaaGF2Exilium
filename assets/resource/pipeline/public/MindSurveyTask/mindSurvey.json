@@ -16,7 +16,6 @@
         "post_wait_freezes": 500,
         "post_delay": 1500,
         "next": [
-            "mindSurveyNotSelfDisciplined",
             "enterMindSurveySelfDisciplinePreparation"
         ]
     },
@@ -48,23 +47,15 @@
     },
     "mindSurveyNotSelfDisciplined": {
         "doc": "心智勘测不可自律",
-        "recognition": "ColorMatch",
+        "recognition": "OCR",
+        "expected": "解锁自律作战$",
         "roi": [
-            892,
-            637,
-            31,
+            685,
+            319,
+            169,
             53
         ],
-        "upper": [
-            102,
-            106,
-            111
-        ],
-        "lower": [
-            92,
-            96,
-            102
-        ],
+        "action": "Click",
         "next": [
             "selectSecondToLastMindSurveyLevel"
         ]
@@ -92,6 +83,7 @@
         "expected": "^自律$",
         "action": "Click",
         "next": [
+            "mindSurveyNotSelfDisciplined",
             "insufficientStaminaForMindSurvey",
             "confirmMindSurveySelfDisciplinePage"
         ]
