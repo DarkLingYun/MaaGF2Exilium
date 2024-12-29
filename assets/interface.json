@@ -311,7 +311,6 @@
             ]
         },
         "同调次数：": {
-            "default_case": "x2",
             "cases": [
                 {
                     "name": "x1",
@@ -403,7 +402,6 @@
             ]
         },
         "补给次数：": {
-            "default_case": "x2",
             "cases": [
                 {
                     "name": "x1",
@@ -699,7 +697,6 @@
             ]
         },
         "配件刷取次数：": {
-            "default_case": "x2",
             "cases": [
                 {
                     "name": "x1",
@@ -887,7 +884,6 @@
             ]
         },
         "勘测次数：": {
-            "default_case": "x3",
             "cases": [
                 {
                     "name": "x1",
