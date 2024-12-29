@@ -99,7 +99,7 @@ jobs:
         with:
           repository: SweetSmellFox/MFAWPF
           filename: MFAWPF*
-          tag: 1.2.1.7  # 指定版本号
+          tag: 1.2.3.5  # 指定版本号
           out-file-path: "MFA"
           extract: true
 
@@ -108,9 +108,8 @@ jobs:
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
           cp ./MFA/MFAWPF.exe ./install/MaaGF2Exilium.exe
-          # url项示例  https://github.com/SweetSmellFox/MFAWPF
-          jq --arg version_name "共诉隐匿时" --arg url ""https://github.com/DarkLingYun/MaaGF2Exilium"" --arg version ${{ needs.meta.outputs.tag }} '. + {"name": $version_name, "url": $url,"version": $version}' ./assets/interface.json > ./install/interface.json
-
+          jq --arg url "https://github.com/DarkLingYun/MaaGF2Exilium" --arg version "${{ needs.meta.outputs.tag }}" '. + {"url": $url, "version": $version}' ./assets/interface.json > ./install/interface.json
+          
       - uses: actions/upload-artifact@v4
         with:
           name: MaaGF2ExiliumGUI-win-${{ matrix.arch }}
