@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
-<img alt="logo2" src="https://gf2-cn.cdn.sunborngame.com/website/official_zf/pc/image/ANDORIS_23282881c2.png" width="256"/>
+<img alt="logo2" src="https://gf2-cn.cdn.sunborngame.com/website/official_zf/pc/image/Springfield.png" width="256"/>
 </p>
 
 <div align="center">
@@ -10,9 +10,6 @@
 </div>
 
 本项目基于 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供的项目模板进行开发的少女前线2：追放的自动化助手。
-
-> **MaaFramework** 是基于图像识别技术、运用 [MAA](https://github.com/MaaAssistantArknights/MaaAssistantArknights) 开发经验去芜存菁、完全重写的新一代自动化黑盒测试框架。
-> 低代码的同时仍拥有高扩展性，旨在打造一款丰富、领先、且实用的开源库，助力开发者轻松编写出更好的黑盒测试程序，并推广普及。
 
 ## 联系方式
 
@@ -25,18 +22,23 @@
 
 
 ## 使用前提
-
+> 大部分测试都是在 Windows 系统上测试的，因此其他插座系统若有运行问题，请提 Issue 或加群讨论。
 0. 默认用户的操作系统为 Windows 系统(其他操作系统未测试过)。
 1. 推荐使用MuMu模拟器12运行游戏，[模拟器支持情况](https://maa.plus/docs/zh-cn/manual/device/windows.html)请查看官方文档。
 2. 模拟器建议设置为`16:9`的比例的分辨率，该比例典型的分辨率有`3840*2160 (4K)`、`2560*1440 (2K)`、`1920*1080 (1080P)`、`1280*720 (720P)`。
 
 ## 使用方式
 
- > 现已发布测试版，下载测试版之后即可使用
-
  0. 从 [Releases](https://github.com/DarkLingYun/MaaGF2Exilium/releases)下载压缩包名为 `MaaGF2ExiliumGUI-win-x86_64-v0.x.x.zip` 的GUI版本。
  1. 解压下载好的压缩包
  2. 双击或右键运行解压目录下的 `MaaGF2Exilium.exe` 文件即可 **(确保[MuMu模拟器](https://mumu.163.com/)已运行)**
+
+<br>
+ <p align="center">
+  <img alt="logo2" src="./imgs/界面图片.png" width="500"/>
+  <br>
+  <span>软件界面图</span>
+</p>
 
 ## 已有功能
 
