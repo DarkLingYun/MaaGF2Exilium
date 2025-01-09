@@ -3,7 +3,11 @@
         "doc": "边界派遣",
         "enabled": true,
         "recognition": "OCR",
-        "expected": "^限时开启$",
+        "expected": [
+            "^限时开启$",
+            "限时开启$",
+            "^限时开启"
+        ],
         "post_wait_freezes": 200,
         "action": "Click",
         "next": [
