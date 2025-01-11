@@ -219,14 +219,33 @@
         ]
     },
     "clickAutoSweepBattleSupplyOperationButton": {
-        "doc": "点击自律按钮后，这里有三种结果：自律准备和情报拼图补充，和定向精研的自律准备，以及萨秋斯金权限不足",
+        "doc": "点击自律按钮后，这里有三种结果：自律准备和情报拼图补充，和定向精研的自律准备，以及萨秋斯金权限不足，以及配件达到上限",
         "recognition": "OCR",
         "expected": "^自律$",
         "action": "Click",
         "next": [
+            "AutoSweepBattleSupplyOperationPrepareAccessoriesLimit",
             "AutoSweepBattleSupplyOperationPrepareInsufficient",
             "AutoSweepBattleSupplyOperationPrepareIsAccessories",
             "AutoSweepBattleSupplyOperationPrepare"
+        ]
+    },
+    "AutoSweepBattleSupplyOperationPrepareAccessoriesLimit": {
+        "doc": "自律扫荡配件达到上限",
+        "recognition": "OCR",
+        "roi": [
+            278,
+            193,
+            726,
+            298
+        ],
+        "expected": [
+            "清理库存",
+            "存储上限"
+        ],
+        "next": [
+            "nonScrollablePopupCancel",
+            "returnToHomePage"
         ]
     },
     "AutoSweepBattleSupplyOperationPrepareIsAccessories": {
