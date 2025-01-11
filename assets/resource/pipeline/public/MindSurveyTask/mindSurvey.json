@@ -165,7 +165,7 @@
         ]
     },
     "ExceededSelfDisciplineLimitForMindSurvey": {
-        "doc": "超出体力最大允许自律次数",
+        "doc": "超出体力最大允许自律次数,滑动条下方体力变红",
         "roi": [
             260,
             108,
@@ -228,6 +228,7 @@
         "action": "Click",
         "post_delay": 100,
         "next": [
+            "ExceededSelfDisciplineLimitForMindSurvey",
             "confirmMindSurveySelfDiscipline"
         ]
     },

@@ -136,6 +136,7 @@
         "action": "Click",
         "post_delay": 100,
         "next": [
+            "sliderColorDetection",
             "scrollablePopupConfirm",
             "resultRecognition"
         ]
