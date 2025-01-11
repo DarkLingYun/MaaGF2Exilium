@@ -73,6 +73,7 @@
         "recognition": "OCR",
         "expected": "空白",
         "action": "Click",
+        "post_delay": 1500,
         "next": [
             "closeDispatchCenterDispatchCountRewardClaimResultPage",
             "enterSchedulingGainsAction",
