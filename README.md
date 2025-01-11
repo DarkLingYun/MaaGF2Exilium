@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
-<img alt="logo2" src="https://gf2-cn.cdn.sunborngame.com/website/official_zf/pc/image/Springfield.png" width="256"/>
+<img alt="logo2" src="https://gf2-cn.cdn.sunborngame.com/website/official_zf/pc/image/Peri_f28e420cd1.png" width="256"/>
 </p>
 
 <div align="center">
