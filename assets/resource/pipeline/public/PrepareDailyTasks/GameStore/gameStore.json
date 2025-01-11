@@ -50,6 +50,7 @@
         "recognition": "OCR",
         "expected": "点击",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "closeSupplyBoxPurchaseResultPage",
             "exitGameStore"
