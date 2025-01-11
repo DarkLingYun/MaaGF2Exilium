@@ -43,6 +43,7 @@
             100,
             100
         ],
+        "post_delay": 1500,
         "next": [
             "supplyOperationType",
             "supplyOperationPageLeftSwip"
@@ -105,7 +106,8 @@
             300,
             100,
             100
-        ]
+        ],
+        "post_delay": 1500
     },
     "supplyOperationType": {
         "doc": "可通过命令行选项改变类型",
