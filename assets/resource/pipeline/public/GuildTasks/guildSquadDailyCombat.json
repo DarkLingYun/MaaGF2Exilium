@@ -10,6 +10,7 @@
         "expected": "^要务$",
         "action": "Click",
         "next": [
+            "enterGuildSquadDailyCombatPage",
             "guildSquadDailyCombatCompleted",
             "guildSquadDailyCombatStart"
         ]

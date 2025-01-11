@@ -7,10 +7,17 @@
     "enterGuildSquadDailySupplyPage": {
         "doc": "进入班组每日补给页",
         "recognition": "OCR",
+        "roi": [
+            516,
+            567,
+            754,
+            136
+        ],
         "expected": "^补给$",
         "action": "Click",
         "post_delay": 2000,
         "next": [
+            "enterGuildSquadDailySupplyPage",
             "claimGuildSquadDailySupply",
             "noClaimGuildSquadDailySupply"
         ]
