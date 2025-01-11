@@ -22,7 +22,7 @@
     "clickEnterWarGameSimulationPage": {
         "doc": "点击进入兵棋推演界面",
         "recognition": "OCR",
-        "expected": "兵棋推演1",
+        "expected": "兵棋推演",
         "action": "Click",
         "post_wait_freezes": 300,
         "next": [
