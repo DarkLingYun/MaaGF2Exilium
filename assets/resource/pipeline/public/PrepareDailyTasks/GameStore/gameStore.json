@@ -39,7 +39,7 @@
     },
     "confirmSupplyBoxPurchase": {
         "recognition": "OCR",
-        "expected": "^确认$",
+        "expected": "^购买$",
         "action": "Click",
         "post_wait_freezes": 200,
         "next": [
