@@ -1,18 +1,17 @@
 {
+    "resource": "官服",
     "controller": {
         "name": "安卓端"
     },
-    "resource": "官服",
-    "task": [],
     "adb": {
-        "adb_path": "C:/Game/MuMu Player 12/shell/adb.exe",
+        "adb_path": "E:/Game/MuMu Player 12/shell/adb.exe",
         "address": "127.0.0.1:16384",
         "config": {
             "extras": {
                 "mumu": {
                     "enable": true,
                     "index": 0,
-                    "path": "C:/Game/MuMu Player 12"
+                    "path": "E:/Game/MuMu Player 12"
                 }
             }
         }
