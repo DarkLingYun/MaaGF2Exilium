@@ -123,6 +123,16 @@
 
 
 ## 开发相关
+### 本地构建方式
+1. 使用 `git clone --recurse-submodules https://github.com/xxx/xxx.git` 克隆仓库，确保包含了子模块
+2. 使用 `pip install -r requirements.txt` 安装依赖
+3. 使用 `python scripts\download_deps.py` 下载依赖
+4. 执行 `python install.py v0.0.0`
+5. 把 `MFA/MFAWPF.exe` 复制到 `install` 文件夹中，并改名为 `MaaGF2Exilium.exe`
+6. 执行 `jq --arg url "https://github.com/xxx/xxx" --arg version "v0.0.0" '. + {"url": $url, "version": $version}' ./assets/interface.json > ./install/interface.json`
+7. 现在构建好的文件夹就是 `install`
+
+
 ### 致谢
 
 - [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 自动化测试框架
