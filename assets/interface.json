@@ -140,7 +140,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "领取情报补给体力任务(限时)": {
+                        "claimIntelligenceSupplyStaminaTaskTimed": {
                             "enabled": true
                         }
                     }
@@ -148,7 +148,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "领取情报补给体力任务(限时)": {
+                        "claimIntelligenceSupplyStaminaTaskTimed": {
                             "enabled": false
                         }
                     }
@@ -160,7 +160,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "领取七日签到资源任务(限时)": {
+                        "claimSevenDayCheckInResourceTaskTimed": {
                             "enabled": true
                         }
                     }
@@ -168,7 +168,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "领取七日签到资源任务(限时)": {
+                        "claimSevenDayCheckInResourceTaskTimed": {
                             "enabled": false
                         }
                     }
@@ -1168,8 +1168,7 @@
                         "enterVersionActivityItemExchange": {
                             "enabled": true,
                             "expected": [
-                                "后勤支持",
-                                "共诉隐匿时"
+                                "积分找换所"
                             ]
                         }
                     }

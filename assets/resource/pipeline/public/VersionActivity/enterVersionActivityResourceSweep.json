@@ -36,10 +36,10 @@
         "doc": "物资模式扫荡次数不足",
         "recognition": "OCR",
         "roi": [
-            1186,
-            20,
-            65,
-            30
+            1082,
+            0,
+            197,
+            74
         ],
         "expected": [
             "^0$",
@@ -54,14 +54,14 @@
     "exitVersionActivityResourceSweep": {
         "recognition": "TemplateMatch",
         "template": [
-            "公用按钮组件/主页按钮_gray.png",
-            "公用按钮组件/主页按钮_black.png"
+            "公用按钮组件/返回上一页_black.png",
+            "公用按钮组件/返回上一页_gray.png"
         ],
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "exitVersionActivityResourceSweep",
             "enterVersionActivityItemExchange",
+            "exitVersionActivityResourceSweep",
             "HomePage"
         ]
     },

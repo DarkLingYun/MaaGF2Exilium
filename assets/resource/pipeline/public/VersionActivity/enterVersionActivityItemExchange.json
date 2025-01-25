@@ -4,7 +4,7 @@
         "enabled": true,
         "recognition": "OCR",
         "expected": [
-            "后勤支持"
+            "积分找换所"
         ],
         "index": -1,
         "action": "Click",
@@ -49,10 +49,10 @@
         "doc": "商品不可购买",
         "recognition": "ColorMatch",
         "roi": [
-            673,
-            346,
-            20,
-            27
+            550,
+            395,
+            178,
+            119
         ],
         "upper": [
             253,
@@ -71,20 +71,8 @@
     "selectExchangeItemQuantity": {
         "doc": "选择商品兑换数量",
         "recognition": "OCR",
-        "expected": "^当前购买",
-        "action": "Swipe",
-        "begin": [
-            451,
-            397,
-            1,
-            1
-        ],
-        "end": [
-            921,
-            398,
-            1,
-            1
-        ],
+        "expected": "最大",
+        "action": "Click",
         "next": [
             "confirmPurchaseItem"
         ]
@@ -92,7 +80,7 @@
     "confirmPurchaseItem": {
         "doc": "确认购买商品",
         "recognition": "OCR",
-        "expected": "^确认$",
+        "expected": "^购买$",
         "action": "Click",
         "next": [
             "closeItemPurchaseResultPage"
