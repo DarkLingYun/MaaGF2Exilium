@@ -446,4 +446,5 @@ install
 
 # Tools
 tools/ImageCropper/**/*.png
-.nicegui/storage-general.json
+.nicegui
+storage-general.json
