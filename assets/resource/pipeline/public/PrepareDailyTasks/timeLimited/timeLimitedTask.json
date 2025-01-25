@@ -5,8 +5,8 @@
         "expected": "战役推进",
         "enabled": true,
         "next": [
-            "领取情报补给体力任务(限时)",
-            "领取七日签到资源任务(限时)",
+            "claimIntelligenceSupplyStaminaTaskTimed",
+            "claimSevenDayCheckInResourceTaskTimed",
             "exitTimeLimitedTask"
         ],
         "interrupt": [

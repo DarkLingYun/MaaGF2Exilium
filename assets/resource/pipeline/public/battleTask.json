@@ -28,7 +28,7 @@
         "action": "Click",
         "post_delay": 1500
     },
-    "确认": {
+    "confirm": {
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click"

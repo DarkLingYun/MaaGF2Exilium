@@ -1,35 +1,35 @@
 {
-    "领取情报补给体力任务(限时)": {
-        "doc": "限时任务次序：1",
+    "claimSevenDayCheckInResourceTaskTimed": {
+        "doc": "限时任务次序：2 领取七日签到资源任务(限时)",
         "enabled": true,
         "recognition": "OCR",
         "expected": "^活动$",
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "点击情报补给标签",
-            "没有情报补给标签"
+            "clickSevenDayCheckInTab",
+            "noSevenDayCheckInTab"
         ]
     },
-    "没有情报补给标签": {
+    "noSevenDayCheckInTab": {
         "inverse": true,
         "recognition": "OCR",
-        "expected": "^情报补给$",
+        "expected": "^战前补给$",
         "next": [
-            "没有领取按钮"
+            "noClaimButtonInSevenDayCheckIn"
         ]
     },
-    "点击情报补给标签": {
+    "clickSevenDayCheckInTab": {
         "recognition": "OCR",
-        "expected": "^情报补给$",
+        "expected": "^战前补给$",
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "点击体力领取按钮",
-            "没有领取按钮"
+            "clickSevenDayCheckInClaimButton",
+            "noClaimButtonInSevenDayCheckIn"
         ]
     },
-    "没有领取按钮": {
+    "noClaimButtonInSevenDayCheckIn": {
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/关闭按钮_gray.png",
@@ -38,7 +38,6 @@
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "领取七日签到资源任务(限时)",
             "getNewEmails",
             "staminaReplenishment",
             "enterGameStoreAction",
@@ -46,23 +45,23 @@
             "HomePage"
         ]
     },
-    "点击体力领取按钮": {
+    "clickSevenDayCheckInClaimButton": {
         "recognition": "OCR",
         "expected": "^领取$",
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "关闭体力领取结果页"
+            "closeSevenDayCheckInClaimResultPage"
         ]
     },
-    "关闭体力领取结果页": {
+    "closeSevenDayCheckInClaimResultPage": {
         "recognition": "OCR",
         "expected": "空白",
         "action": "Click",
         "next": [
-            "关闭体力领取结果页",
-            "点击体力领取按钮",
-            "没有领取按钮"
+            "closeSevenDayCheckInClaimResultPage",
+            "clickSevenDayCheckInClaimButton",
+            "noClaimButtonInSevenDayCheckIn"
         ]
     }
 }
