@@ -1,0 +1,115 @@
+{
+    "Enter_Shop": {
+        "recognition": "OCR",
+        "expected": [
+            "商城"
+        ],
+        "roi": [
+            1136,
+            456,
+            105,
+            60
+        ],
+        "action": "Click",
+        "next": [
+            "PinZhiZhenXuan"
+        ]
+    },
+    "PinZhiZhenXuan": {
+        "recognition": "OCR",
+        "expected": [
+            "品质甄选"
+        ],
+        "roi": [
+            52,
+            287,
+            118,
+            68
+        ],
+        "action": "Click",
+        "next": [
+            "ChangZhuLiBao"
+        ]
+    },
+    "ChangZhuLiBao": {
+        "recognition": "OCR",
+        "expected": [
+            "常驻礼包"
+        ],
+        "roi": [
+            945,
+            93,
+            212,
+            54
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "Daily_Supply",
+            "Shop_BackToMain_2"
+        ]
+    },
+    "Daily_Supply": {
+        "recognition": "TemplateMatch",
+        "template": "./商城/每日补给箱.png",
+        "roi": [
+            273,
+            174,
+            223,
+            211
+        ],
+        "action": "Click",
+        "next": [
+            "Confirm_Purchase"
+        ]
+    },
+    "Confirm_Purchase": {
+        "recognition": "OCR",
+        "expected": [
+            "每日补给箱"
+        ],
+        "roi": [
+            774,
+            546,
+            0,
+            0
+        ],
+        "action": "Click",
+        "target": [
+            719,
+            527,
+            209,
+            49
+        ],
+        "next": [
+            "Shop_Click_Anywhere_To_Close"
+        ]
+    },
+    "Shop_Click_Anywhere_To_Close": {
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭"
+        ],
+        "roi": [
+            545,
+            598,
+            184,
+            61
+        ],
+        "action": "Click",
+        "next": [
+            "Shop_BackToMain_2"
+        ]
+    },
+    "Shop_BackToMain_2": {
+        "recognition": "TemplateMatch",
+        "template": "./公用按钮组件/主页按钮_gray.png",
+        "roi": [
+            86,
+            6,
+            70,
+            72
+        ],
+        "action": "Click"
+    }
+}
