@@ -28,6 +28,9 @@
             ]
         }
     ],
+    "name": "少女前线2：追放自动化助手",
+    "custom_title": "密米尔的反演",
+    "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "task": [
         {
             "name": "启动少女前线2",
@@ -107,7 +110,8 @@
                 "自动实兵演习",
                 "演习次数",
                 "实兵演习对象战力值范围",
-                "自动兵棋推演"
+                "自动兵棋推演",
+                "推演次数"
             ],
             "check": true
         },
@@ -1140,6 +1144,64 @@
                 }
             ]
         },
+        "推演次数": {
+            "cases": [
+                {
+                    "name": "x1",
+                    "pipeline_override": {
+                        "insufficientPermissionsForWarGameSimulation": {
+                            "expected": [
+                                "4/5$",
+                                "0/5$"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "x2",
+                    "pipeline_override": {
+                        "insufficientPermissionsForWarGameSimulation": {
+                            "expected": [
+                                "3/5$",
+                                "0/5$"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "x3",
+                    "pipeline_override": {
+                        "insufficientPermissionsForWarGameSimulation": {
+                            "expected": [
+                                "2/5$",
+                                "0/5$"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "x4",
+                    "pipeline_override": {
+                        "insufficientPermissionsForWarGameSimulation": {
+                            "expected": [
+                                "1/5$",
+                                "0/5$"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "x5",
+                    "pipeline_override": {
+                        "insufficientPermissionsForWarGameSimulation": {
+                            "expected": [
+                                "0/5$"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "物资模式自律": {
             "cases": [
                 {
@@ -1183,8 +1245,5 @@
                 }
             ]
         }
-    },
-    "name": "少女前线2：追放自动化助手",
-    "custom_title": "密米尔的反演",
-    "url": "https://github.com/DarkLingYun/MaaGF2Exilium"
+    }
 }
