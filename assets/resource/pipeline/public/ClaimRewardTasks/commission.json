@@ -4,6 +4,17 @@
         "recognition": "OCR",
         "expected": "^委托$",
         "action": "Click",
+        "next": [
+            "confirmEntrustedClaimPage"
+        ]
+    },
+    "confirmEntrustedClaimPage": {
+        "doc": "确认进入委托领取页面",
+        "recognition": "OCR",
+        "expected": [
+            "日活跃",
+            "每日订单"
+        ],
         "post_delay": 1500,
         "next": [
             "oneKeyClaimCommissionReward",
