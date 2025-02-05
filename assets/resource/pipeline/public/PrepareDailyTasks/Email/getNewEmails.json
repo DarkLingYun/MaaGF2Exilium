@@ -2,8 +2,14 @@
     "getNewEmails": {
         "doc": "领取邮件任务",
         "enabled": true,
-        "recognition": "OCR",
-        "expected": "战役推进",
+        "action": "Click",
+        "target": [
+            61,
+            526,
+            36,
+            34
+        ],
+        "post_delay": 2000,
         "next": [
             "clickEmailsButton",
             "staminaReplenishment",
@@ -14,16 +20,19 @@
     },
     "clickEmailsButton": {
         "roi": [
-            40,
+            1000,
+            120,
             400,
-            110,
-            200
+            100
         ],
         "recognition": "TemplateMatch",
         "template": [
-            "公用按钮组件/邮件_主页.png"
+            "公用按钮组件/邮件.png"
         ],
+        "threshold": 0.4,
         "action": "Click",
+        "target": true,
+        "post_delay": 200,
         "next": [
             "claimAllEmails"
         ]
