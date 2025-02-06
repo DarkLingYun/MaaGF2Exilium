@@ -42,6 +42,7 @@
             "staminaReplenishment",
             "enterGameStoreAction",
             "enterBoundaryAdvanceAction",
+            "organizeWarehouse",
             "HomePage"
         ]
     },

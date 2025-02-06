@@ -1,0 +1,111 @@
+{
+    "weaponAccessories": {
+        "doc": "武器配件",
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": "武器配件",
+        "action": "Click",
+        "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "enterDisassemblyInterface"
+        ]
+    },
+    "enterDisassemblyInterface": {
+        "doc": "进入拆解界面",
+        "recognition": "TemplateMatch",
+        "template": [
+            "仓库/拆解界面.png"
+        ],
+        "action": "Click",
+        "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "selectAccessoriesLevel"
+        ]
+    },
+    "selectAccessoriesLevel": {
+        "doc": "选择配件等级",
+        "recognition": "OCR",
+        "expected": "及以下未培养",
+        "action": "Click",
+        "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "chooseTopLevel"
+        ]
+    },
+    "chooseTopLevel": {
+        "doc": "选择精密级",
+        "recognition": "OCR",
+        "expected": "精密级",
+        "action": "Click",
+        "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "quickSelect"
+        ]
+    },
+    "quickSelect": {
+        "doc": "快捷选择",
+        "recognition": "OCR",
+        "expected": "快捷选择",
+        "action": "Click",
+        "target": true,
+        "next": [
+            "noAccessoriesToDisassemble",
+            "disassembly"
+        ]
+    },
+    "disassembly":{
+        "doc": "点击拆解键",
+        "recognition": "TemplateMatch",
+        "template": [
+            "仓库/拆解按钮.png"
+        ],
+        "threshold": 0.9,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "closeByClickingBlank",
+            "resultClosed"
+        ]
+    },
+    "closeByClickingBlank": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "resultClosed"
+        ]
+    },
+    "resultClosed": {
+        "recognition": "OCR",
+        "expected": "请选择需要拆解的道具",
+        "post_wait_freezes": 500,
+        "next": [
+            "quickSelect"
+        ]
+    },
+    "noAccessoriesToDisassemble": {
+        "recognition": "OCR",
+        "expected": "无符合筛选条件的物品",
+        "post_wait_freezes": 500,
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "exitweaponAccessories": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_gray.png",
+            "公用按钮组件/主页按钮_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 2500,
+        "next": [
+            "organizeWarehouseCompleted"
+        ]
+    }
+}

@@ -46,7 +46,8 @@
                 "领取邮件",
                 "使用完体力药水",
                 "商城免费每日补给箱购买",
-                "边界推进委托领取"
+                "边界推进委托领取",
+                "整理仓库"
             ],
             "doc": "领取邮件需要主界面背景为人形",
             "check": true
@@ -254,6 +255,26 @@
                     "name": "NO",
                     "pipeline_override": {
                         "enterBoundaryAdvanceAction": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "整理仓库":{
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "organizeWarehouse": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "organizeWarehouse": {
                             "enabled": false
                         }
                     }

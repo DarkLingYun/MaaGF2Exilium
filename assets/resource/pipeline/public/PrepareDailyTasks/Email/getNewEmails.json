@@ -9,6 +9,7 @@
             "staminaReplenishment",
             "enterGameStoreAction",
             "enterBoundaryAdvanceAction",
+            "organizeWarehouse",
             "HomePage"
         ]
     },
@@ -38,13 +39,24 @@
         ]
     },
     "noUnclaimedItems": {
-        "rate_limit": 200,
         "recognition": "OCR",
         "expected": "无可领取物品",
         "next": [
-            "noUnclaimedItems",
+            "findSurveyEmail",
             "exitEmails"
         ]
+    },
+    "findSurveyEmail": {
+        "doc": "查找是否有调研邀请邮件，有的话在日志里打印或者弹出通知 TODO",
+        "recognition": "OCR",
+        "expected": "调研邀请",
+        "next": [
+            "exitEmails"
+        ],
+        "focus": true,
+        "focus_tip": "查找是否有调研邀请邮件，有的话在日志里打印",
+        "focus_succeeded_color": "red",
+        "focus_succeeded": "发现调研邀请邮件，请手动填写"
     },
     "exitEmails": {
         "recognition": "TemplateMatch",
@@ -58,6 +70,7 @@
             "staminaReplenishment",
             "enterGameStoreAction",
             "enterBoundaryAdvanceAction",
+            "organizeWarehouse",
             "HomePage"
         ]
     },
