@@ -262,7 +262,7 @@
                 }
             ]
         },
-        "拆解武器配件":{
+        "拆解武器配件": {
             "cases": [
                 {
                     "name": "NO",
@@ -275,6 +275,9 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
+                        "organizeWarehouse": {
+                            "enabled": true
+                        },
                         "weaponAccessories": {
                             "enabled": true
                         }
@@ -282,7 +285,7 @@
                 }
             ]
         },
-        "拆解武器配件等级":{
+        "拆解武器配件等级": {
             "cases": [
                 {
                     "name": "工业级及以下未培养",
