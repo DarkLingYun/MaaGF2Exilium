@@ -66,6 +66,7 @@
         "post_delay": 2500,
         "next": [
             "enterBoundaryAdvanceAction",
+            "organizeWarehouse",
             "HomePage"
         ]
     }

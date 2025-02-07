@@ -32,6 +32,7 @@
             "nonScrollablePopupCancel",
             "enterGameStoreAction",
             "enterBoundaryAdvanceAction",
+            "organizeWarehouse",
             "HomePage"
         ]
     }
