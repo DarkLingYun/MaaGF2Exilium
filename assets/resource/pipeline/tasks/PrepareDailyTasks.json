@@ -1,5 +1,7 @@
 {
     "PrepareDailyTasks": {
+        "focus":true,
+        "focus_toast": "日常任务前准备",
         "doc": "日常任务前准备",
         "next": [
             "timeLimitedTask",

@@ -44,6 +44,7 @@
                 "领取情报补给体力(限时)",
                 "领取七日签到资源(限时)",
                 "领取邮件",
+                "通知调研邀请邮件",
                 "使用完体力药水",
                 "商城免费每日补给箱购买",
                 "边界推进委托领取",
@@ -195,6 +196,31 @@
                     "name": "NO",
                     "pipeline_override": {
                         "getNewEmails": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "通知调研邀请邮件": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "findSurveyEmail": {
+                            "enabled": true
+                        },
+                        "surveyEmailFound": {
+                            "focus": true,
+                            "focus_tip": "发现调研邀请邮件，请手动处理",
+                            "focus_toast": "发现调研邀请邮件，请手动处理"
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "findSurveyEmail": {
                             "enabled": false
                         }
                     }
