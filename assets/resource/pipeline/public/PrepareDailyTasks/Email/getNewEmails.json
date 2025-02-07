@@ -9,6 +9,7 @@
             "staminaReplenishment",
             "enterGameStoreAction",
             "enterBoundaryAdvanceAction",
+            "organizeWarehouse",
             "HomePage"
         ]
     },
@@ -58,6 +59,7 @@
             "staminaReplenishment",
             "enterGameStoreAction",
             "enterBoundaryAdvanceAction",
+            "organizeWarehouse",
             "HomePage"
         ]
     },
