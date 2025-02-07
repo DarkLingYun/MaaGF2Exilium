@@ -1,16 +1,16 @@
 {
     "organizeWarehouse": {
         "doc": "整理仓库",
-        "enabled": true,
+        "enabled": false,
         "recognition": "OCR",
         "expected": "战役推进",
         "next": [
             "openScreen"
         ]
     },
-    "openScreen":{
+    "openScreen": {
         "doc": "打开智能导航光屏",
-        "next":[
+        "next": [
             "enterWarehouse"
         ],
         "enabled": true,
@@ -28,7 +28,7 @@
         "expected": "仓库",
         "action": "Click",
         "target": true,
-        "post_wait_freezes": 500,
+        "post_delay": 1500,
         "next": [
             "weaponAccessories"
         ]

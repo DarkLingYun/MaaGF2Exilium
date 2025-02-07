@@ -38,7 +38,7 @@
     "chooseLevel": {
         "doc": "选择需要拆解的级别",
         "recognition": "OCR",
-        "expected": "精密级及以下未培养",
+        "expected": "工业级及以下未培养",
         "action": "Click",
         "target": true,
         "post_wait_freezes": 500,
@@ -57,7 +57,7 @@
             "disassembly"
         ]
     },
-    "disassembly":{
+    "disassembly": {
         "doc": "点击拆解键",
         "recognition": "TemplateMatch",
         "template": [
