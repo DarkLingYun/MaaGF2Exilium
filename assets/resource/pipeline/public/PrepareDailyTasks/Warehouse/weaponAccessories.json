@@ -32,13 +32,13 @@
         "target": true,
         "post_wait_freezes": 500,
         "next": [
-            "chooseTopLevel"
+            "chooseLevel"
         ]
     },
-    "chooseTopLevel": {
-        "doc": "选择精密级",
+    "chooseLevel": {
+        "doc": "选择需要拆解的级别",
         "recognition": "OCR",
-        "expected": "精密级",
+        "expected": "精密级及以下未培养",
         "action": "Click",
         "target": true,
         "post_wait_freezes": 500,

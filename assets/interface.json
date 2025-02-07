@@ -47,7 +47,8 @@
                 "使用完体力药水",
                 "商城免费每日补给箱购买",
                 "边界推进委托领取",
-                "整理仓库"
+                "拆解武器配件",
+                "拆解武器配件等级"
             ],
             "doc": "领取邮件需要主界面背景为人形",
             "check": true
@@ -261,21 +262,49 @@
                 }
             ]
         },
-        "整理仓库":{
+        "拆解武器配件":{
             "cases": [
                 {
-                    "name": "YES",
+                    "name": "NO",
                     "pipeline_override": {
-                        "organizeWarehouse": {
-                            "enabled": true
+                        "weaponAccessories": {
+                            "enabled": false
                         }
                     }
                 },
                 {
-                    "name": "NO",
+                    "name": "YES",
                     "pipeline_override": {
-                        "organizeWarehouse": {
-                            "enabled": false
+                        "weaponAccessories": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "拆解武器配件等级":{
+            "cases": [
+                {
+                    "name": "工业级及以下未培养",
+                    "pipeline_override": {
+                        "chooseLevel": {
+                            "expected": "工业级及以下未培养"
+                        }
+                    }
+                },
+                {
+                    "name": "军用级及以下未培养",
+                    "pipeline_override": {
+                        "chooseLevel": {
+                            "expected": "军用级及以下未培养"
+                        }
+                    }
+                },
+                {
+                    "name": "精密级及以下未培养",
+                    "pipeline_override": {
+                        "chooseLevel": {
+                            "expected": "精密级及以下未培养"
                         }
                     }
                 }
