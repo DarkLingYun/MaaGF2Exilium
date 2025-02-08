@@ -1,7 +1,7 @@
 {
     "staminaReplenishment": {
         "doc": "用光全部体力",
-        "enabled": true,
+        "enabled": false,
         "recognition": "OCR",
         "expected": "战役推进",
         "target": [
