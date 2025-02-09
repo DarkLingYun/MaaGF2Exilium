@@ -1,7 +1,5 @@
 {
     "claimIntelligenceSupplyStaminaTaskTimed": {
-        "focus": true,
-        "focus_tip": "限时任务次序：1 领取情报补给体力任务(限时)",
         "doc": "限时任务次序：1 领取情报补给体力任务(限时)",
         "enabled": true,
         "recognition": "OCR",
