@@ -41,9 +41,9 @@
             "claimSevenDayCheckInResourceTaskTimed",
             "getNewEmails",
             "staminaReplenishment",
-            "enterGameStoreAction",
+            "enterShop",
             "enterBoundaryAdvanceAction",
-            "organizeWarehouse",
+            "organizeStoreroom",
             "HomePage"
         ]
     },
