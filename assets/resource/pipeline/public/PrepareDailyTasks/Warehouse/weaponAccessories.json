@@ -1,5 +1,5 @@
 {
-    "weaponAccessories": {
+    "weaponAttachments": {
         "doc": "武器配件",
         "enabled": true,
         "recognition": "OCR",
@@ -96,7 +96,7 @@
             "returnToHomePage"
         ]
     },
-    "exitweaponAccessories": {
+    "exitweaponAttachments": {
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/主页按钮_gray.png",
@@ -105,7 +105,7 @@
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "organizeWarehouseCompleted"
+            "organizeStoreroomCompleted"
         ]
     }
 }

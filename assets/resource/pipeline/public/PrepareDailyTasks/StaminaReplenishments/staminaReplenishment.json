@@ -12,27 +12,28 @@
         ],
         "action": "Click",
         "next": [
-            "staminaRefillType"
+            "consumeAccessKey"
         ]
     },
-    "staminaRefillType": {
+    "consumeAccessKey": {
+        "doc": "消耗接入密钥",
         "recognition": "FeatureMatch",
         "template": "体力兑换/体力兑换.png",
         "action": "Click",
         "next": [
-            "staminaItemsInsufficient",
+            "accessKeyInsufficient",
             "nonScrollablePopupConfirm"
         ]
     },
-    "staminaItemsInsufficient": {
+    "accessKeyInsufficient": {
         "rate_limit": 200,
         "recognition": "OCR",
         "expected": "接入密钥不足",
         "next": [
             "nonScrollablePopupCancel",
-            "enterGameStoreAction",
+            "enterShop",
             "enterBoundaryAdvanceAction",
-            "organizeWarehouse",
+            "organizeStoreroom",
             "HomePage"
         ]
     }

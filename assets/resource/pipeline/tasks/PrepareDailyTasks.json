@@ -5,9 +5,9 @@
             "timeLimitedTask",
             "getNewEmails",
             "staminaReplenishment",
-            "enterGameStoreAction",
+            "enterShop",
             "enterBoundaryAdvanceAction",
-            "organizeWarehouse",
+            "organizeStoreroom",
             "HomePage"
         ],
         "interrupt": [

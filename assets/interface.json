@@ -227,7 +227,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "enterGameStoreAction": {
+                        "enterShop": {
                             "enabled": true
                         }
                     }
@@ -235,7 +235,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "enterGameStoreAction": {
+                        "enterShop": {
                             "enabled": false
                         }
                     }
@@ -267,7 +267,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "weaponAccessories": {
+                        "weaponAttachments": {
                             "enabled": false
                         }
                     }
@@ -275,10 +275,10 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "organizeWarehouse": {
+                        "organizeStoreroom": {
                             "enabled": true
                         },
-                        "weaponAccessories": {
+                        "weaponAttachments": {
                             "enabled": true
                         }
                     }
