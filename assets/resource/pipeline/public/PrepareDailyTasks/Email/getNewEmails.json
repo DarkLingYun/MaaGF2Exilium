@@ -58,6 +58,7 @@
         ]
     },
     "surveyEmailFound": {
+        "doc": "中间节点，用于触发 mfawpf 的通知",
         "next": [
             "exitEmails"
         ]
@@ -84,6 +85,7 @@
         "action": "Click",
         "next": [
             "closeClaimAllEmailsPopup",
+            "findSurveyEmail",
             "exitEmails"
         ]
     }
