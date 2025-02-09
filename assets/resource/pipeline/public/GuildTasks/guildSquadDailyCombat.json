@@ -29,6 +29,7 @@
         "expected": "开始作战",
         "action": "Click",
         "next": [
+            "guildSquadDailyCombatStart",
             "enterGuildSquadDailyCombatResourceLoading"
         ]
     },

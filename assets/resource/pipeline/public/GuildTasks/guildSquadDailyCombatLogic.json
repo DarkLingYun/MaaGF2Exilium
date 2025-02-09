@@ -11,8 +11,8 @@
         ],
         "action": "Click",
         "next": [
-            "enableGuildSquadDailyCombatAutoBattle",
-            "clickGuildSquadDailyCombatStartButton"
+            "clickGuildSquadDailyCombatStartButton",
+            "enableGuildSquadDailyCombatAutoBattle"
         ]
     },
     "enableGuildSquadDailyCombatAutoBattle": {
@@ -38,6 +38,7 @@
         ],
         "action": "Click",
         "next": [
+            "enableGuildSquadDailyCombatAutoBattle",
             "waitForGuildSquadDailyCombatToEnd"
         ]
     },
@@ -60,7 +61,8 @@
         "action": "Click",
         "post_wait_freezes": 300,
         "next": [
-            "clickConfirmButtonToExitGuildDailyCombat"
+            "clickConfirmButtonToExitGuildDailyCombat",
+            "guildSquadDailyCombatTaskCompleted"
         ]
     },
     "guildSquadDailyCombatTaskFailed": {
@@ -68,7 +70,8 @@
         "recognition": "OCR",
         "expected": "任务失败",
         "next": [
-            "clickConfirmButtonToExitGuildDailyCombat"
+            "clickConfirmButtonToExitGuildDailyCombat",
+            "guildSquadDailyCombatTaskFailed"
         ]
     },
     "clickConfirmButtonToExitGuildDailyCombat": {
