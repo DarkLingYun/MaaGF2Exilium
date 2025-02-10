@@ -44,6 +44,22 @@
         "expected": "无可领取物品",
         "next": [
             "noUnclaimedItems",
+            "findSurveyEmail",
+            "exitEmails"
+        ]
+    },
+    "findSurveyEmail": {
+        "doc": "查找是否有调研邀请邮件，有的话弹出通知，该邮件会自动置顶，所以无需向下滑动",
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": "调研邀请",
+        "next": [
+            "surveyEmailFound"
+        ]
+    },
+    "surveyEmailFound": {
+        "doc": "中间节点，用于触发 mfawpf 的通知",
+        "next": [
             "exitEmails"
         ]
     },
@@ -69,6 +85,7 @@
         "action": "Click",
         "next": [
             "closeClaimAllEmailsPopup",
+            "findSurveyEmail",
             "exitEmails"
         ]
     }
