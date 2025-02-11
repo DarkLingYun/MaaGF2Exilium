@@ -1,0 +1,8 @@
+{
+    "CommunityDailyHelper": {
+        "doc": "完成社区每日操作，包括每日签到、每日任务、每日兑换。",
+        "action": "Custom",
+        "custom_action": "CommunityDailyAction",
+        "next": []
+    }
+}
