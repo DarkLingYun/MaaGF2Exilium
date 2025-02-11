@@ -4,7 +4,7 @@
         "enabled": true,
         "recognition": "OCR",
         "expected": [
-            "积分找换所"
+            "冬日礼品铺"
         ],
         "index": -1,
         "action": "Click",
