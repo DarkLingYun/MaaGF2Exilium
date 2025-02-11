@@ -1,0 +1,8 @@
+{
+    "confirmPassRewardContent": {
+        "expected": "^点击空白处关闭$",
+        "next": [
+            "exitPassSystemPage"
+        ]
+    }
+}

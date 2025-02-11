@@ -26,6 +26,13 @@
                 "{PROJECT_DIR}/resource",
                 "{PROJECT_DIR}/resource/resource_bilibili"
             ]
+        },
+        {
+            "name": "美服",
+            "path": [
+                "{PROJECT_DIR}/resource",
+                "{PROJECT_DIR}/resource/resource_en"
+            ]
         }
     ],
     "name": "少女前线2：追放自动化助手",

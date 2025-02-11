@@ -1,0 +1,32 @@
+{
+    "StartGame": {
+        "package": "com.Sunborn.SnqxExilium.Glo/.ExiliumMainActivity"
+    },
+    "StartGame_sunbornGameLogo": {
+        "template": "启动游戏/SunbornGameLogo.png",
+        "next": [
+            "StartGame_sunbornGameLogo",
+            "StartGame_copyright"
+        ]
+    },
+    "StartGame_copyright": {
+        "doc": "加载进度条下的版权信息",
+        "recognition": "OCR",
+        "expected": [
+            "^Copyright"
+        ],
+        "timeout": 35000,
+        "next": [
+            "StartGame_clickStart",
+            "StartGame_copyright"
+        ],
+        "interrupt": [
+            "restartGF2Game",
+            "unzipResources",
+            "downloadResource"
+        ]
+    },
+    "openGF2GameApp": {
+        "package": "com.Sunborn.SnqxExilium.Glo/.ExiliumMainActivity"
+    }
+}
