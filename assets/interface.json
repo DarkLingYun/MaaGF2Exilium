@@ -688,6 +688,14 @@
         "配件效果：": {
             "cases": [
                 {
+                    "name": "异位打击",
+                    "pipeline_override": {
+                        "selectedEffectsCombination": {
+                            "expected": "^异位打击$"
+                        }
+                    }
+                },
+                {
                     "name": "制胜追进",
                     "pipeline_override": {
                         "selectedEffectsCombination": {
@@ -700,14 +708,6 @@
                     "pipeline_override": {
                         "selectedEffectsCombination": {
                             "expected": "^双重对策$"
-                        }
-                    }
-                },
-                {
-                    "name": "异位打击",
-                    "pipeline_override": {
-                        "selectedEffectsCombination": {
-                            "expected": "^异位打击$"
                         }
                     }
                 },

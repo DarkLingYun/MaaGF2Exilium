@@ -303,7 +303,7 @@
             336,
             340
         ],
-        "expected": "^实弹增幅$",
+        "expected": "^异位打击$",
         "action": "Click",
         "next": [
             "selectedEffectsCombinationNextButtonClick"
