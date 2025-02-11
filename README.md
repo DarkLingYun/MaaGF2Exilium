@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
-<img alt="logo2" src="https://gf2-cn.cdn.sunborngame.com/website/official_zf/pc/image/Qiuhua_bcbd1efac7.png" width="256"/>
+<img alt="logo2" src="https://gf2.mcc.wiki/image/doll/Avatar_Half_YooHeeSSR.png" width="256"/>
 </p>
 
 <div align="center">
@@ -44,7 +44,6 @@
 * [ ] 通用版本活动(大小型活动通用)
   * [ ] 物资模式自律
   * [ ] 物资商品兑换功能
-* [x] 武器配件分解功能
 * [ ] 商城易物所集中兑换
   * [ ] 兑换优先级
     * [ ] 优先兑换基原信息核
@@ -55,7 +54,10 @@
     * [ ] 公共区调度商店
     * [ ] 讯段交易(每周首领挑战)
     * [ ] 人形堆栈商店兑换
+* [ ] 仓库
+  * [ ] 开箱子
 * [ ] 构建覆盖现有 `install` 目录
+* [ ] GUI 迁移到 electron，支持跨平台（macos）
   
 ## 已有功能
 
@@ -69,7 +71,8 @@
   * [x] 使用完体力药水
   * [x] 商城购买每日免费补给箱
   * [x] 边界推进晶源采集派遣与领取
-  * [x] 拆解武器配件(支持选择拆解类型) *默认关闭*
+  * [ ] 仓库
+    * [x] 拆解武器配件(支持选择拆解类型) *默认关闭*
 
 * [x] 公共区日常
   * [x] 访问休息室
@@ -125,30 +128,7 @@
 
 
 ## 开发相关
-### 本地构建方式
-1. 使用 `git clone --recurse-submodules https://github.com/xxx/xxx.git` 克隆仓库，确保包含了子模块
-2. 使用 `pip install -r requirements.txt` 安装依赖
-3. 使用 `python scripts/download_deps.py` 下载依赖
-4. 执行 `python install.py v0.0.0`
-5. 把 `MFA/MFAWPF.exe` 复制到 `install` 文件夹中
-6. 执行 `jq --arg url "https://github.com/xxx/xxx" --arg version "v0.0.0" '. + {"url": $url, "version": $version}' ./assets/interface.json > ./install/interface.json`
-7. 现在构建好的文件夹就是 `install`
-
-
-### 致谢
-
-- [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 自动化测试框架
-
-- [MaaPracticeBoilerplate](https://github.com/MaaXYZ/MaaPracticeBoilerplate) MaaFramework项目模板
-
-- [MFAWPF](https://github.com/SweetSmellFox/MFAWPF) Pipeline协议项目的通用GUI
-- [MFATools](https://github.com/SweetSmellFox/MFATools) 开发工具
-- [maa-support-extension](https://github.com/neko-para/maa-support-extension) VSCode扩展
-### 规范
-> 如果要参与开发，请查看以下规范文档。方便更好的开发和管理。
-
-- [Json规划说明](/docs/Json文件说明.md)
-- [Git提交前缀](/docs/Git提交前缀.md)  ~~给自己看的~~
+请参考[文档](docs/开发相关.md)
 
 ## 鸣谢
 
