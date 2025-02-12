@@ -25,15 +25,17 @@ public class LoginPayload
     [JsonPropertyName("passwd")]
     public string Password { get; set; }
     [JsonPropertyName("source")]
-    public string Source { get; set; }
+    public string? Source { get; set; }
 }
 
 public class LoginResponse
 {
     [JsonPropertyName("Code")]
     public int Code { get; set; }
+    [JsonPropertyName("Message")]
+    public string Message { get; set; }
     [JsonPropertyName("data")]
-    public LoginResponseData Data { get; set; }
+    public object Data { get; set; }
 }
 
 public class LoginResponseData
@@ -72,7 +74,7 @@ public class ExchangeRequestBody
     public int ExchangeId { get; set; }
 }
 
-public static class DailyTasks
+public static class CommunityDailyHelper
 {
     public static async Task DelayAsync(int milliseconds)
     {
@@ -87,34 +89,45 @@ public static class DailyTasks
             var url = "https://gf2-bbs-api.sunborngame.com/login/account";
             var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
 
-            // First attempt
+            payload.Source = payload.AccountName.Contains("@") ? "mail" : "phone";
+
+            // 首次尝试
             var jsonPayload = JsonSerializer.Serialize(payload);
             var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
             var response = await httpClient.PostAsync(url, content);
             var responseBody = await response.Content.ReadAsStringAsync();
 
-            var data = JsonSerializer.Deserialize<LoginResponse>(responseBody, options);
+            var loginResponse = JsonSerializer.Deserialize<LoginResponse>(responseBody, options);
 
-            if (data.Code == 0)
+            if (loginResponse.Code == 0)
             {
-                return data.Data.Account.Token;
+                var data = JsonSerializer.Deserialize<LoginResponseData>(JsonSerializer.Serialize(loginResponse.Data));
+                return data.Account.Token;
             }
 
-            // Second attempt with mail source
-            payload.Source = "mail";
+            // 再次尝试
+            payload.Source = payload.Source == "mail" ? "phone" : "mail";
             jsonPayload = JsonSerializer.Serialize(payload);
             content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
             response = await httpClient.PostAsync(url, content);
             responseBody = await response.Content.ReadAsStringAsync();
-            data = JsonSerializer.Deserialize<LoginResponse>(responseBody, options);
 
-            return data.Data.Account.Token;
+            loginResponse = JsonSerializer.Deserialize<LoginResponse>(responseBody, options);
+
+            if (loginResponse.Code == 0)
+            {
+                var data = JsonSerializer.Deserialize<LoginResponseData>(JsonSerializer.Serialize(loginResponse.Data));
+                return data.Account.Token;
+            }
+
+            // 两种方式都不行, 抛出
+            throw new ArgumentException($"用户名或密码错误. 请检查 `config/secret.json` 是否正确填写. `config/secret.json` 要填入两个字段: account_name 对应账户名称(可以是邮箱或手机号), passwd 对应账户密码.");
         }
         catch (Exception ex)
         {
-            return ex.Message;
+            throw;
         }
     }
 
@@ -167,7 +180,7 @@ public static class DailyTasks
         }
         catch (Exception ex)
         {
-            LoggerService.LogError($"社区每日操作: 登录失败, {ex.Message}");
+            LoggerService.LogError($"社区每日操作: 登录失败, {ex}");
             throw;
         }
     }
@@ -264,7 +277,7 @@ public static class DailyTasks
             }
             catch (Exception ex)
             {
-                LoggerService.LogError($"社区每日操作: 兑换失败, {ex.Message}");
+                LoggerService.LogError($"社区每日操作: 兑换失败, {ex}");
             }
         }
         catch (Exception ex)
@@ -280,7 +293,7 @@ public static class PasswordHelper
     {
         if (string.IsNullOrEmpty(password))
         {
-            throw new ArgumentException("社区每日操作: 密码不能为空");
+            throw new ArgumentException("密码不能为空, 请检查 `config/secret.json` 内的 passwd 字段是否正确设置");
         }
 
         using (MD5 md5 = MD5.Create())
@@ -307,7 +320,7 @@ public class CommunityDailyAction : IMaaCustomAction
         try
         {
             var basePath = Path.GetDirectoryName(AppContext.BaseDirectory)
-                ?? throw new DirectoryNotFoundException("Unable to find the base directory of the application.");
+                ?? throw new DirectoryNotFoundException("找不到应用根目录.");
 
             // 文件初始化
             string secretDir = Path.Combine(basePath, "config");
@@ -318,9 +331,8 @@ public class CommunityDailyAction : IMaaCustomAction
                 Directory.CreateDirectory(secretDir);
                 var initialContent = new
                 {
-                    account_name = "source='phone',这里填手机号;source='mail',这里填邮箱",
-                    passwd = "",
-                    source = "phone"
+                    account_name = "手机号或邮箱",
+                    passwd = ""
                 };
                 string json = JsonSerializer.Serialize(initialContent, new JsonSerializerOptions { WriteIndented = true });
                 json = System.Text.RegularExpressions.Regex.Unescape(json);
@@ -331,10 +343,8 @@ public class CommunityDailyAction : IMaaCustomAction
             string jsonContent = File.ReadAllText(secretFilePath);
             LoginPayload payload = JsonSerializer.Deserialize<LoginPayload>(jsonContent, options)
                 ?? throw new InvalidDataException("反序列化结果为 null");
-
-            LoggerService.LogInfo(payload.Password);
-            payload.Password = PasswordHelper.GetMD5HashedPassword(payload.Password);
-            DailyTasks.ExecuteDailyTaskAsync(payload).GetAwaiter().GetResult();
+            payload.Password = PasswordHelper.GetMD5HashedPassword(payload.Password); // MD5加密后再发送给社区服务器
+            CommunityDailyHelper.ExecuteDailyTaskAsync(payload).GetAwaiter().GetResult();
 
             LoggerService.LogInfo("社区每日操作: 执行成功");
             return true;
@@ -342,7 +352,7 @@ public class CommunityDailyAction : IMaaCustomAction
         catch (Exception ex)
         {
             LoggerService.LogError($"社区每日操作: 执行失败, {ex}");
-            GrowlHelper.ErrorGlobal($"社区每日操作: 执行失败, 请检查 `config/secret.json` 文件是否存在。\n初次报错时，默认会在 `config` 目录下创建模板 `secret.json` 文件。如果未创建，也可以手动创建。\n`secret.json`需要填入三个字段：`account_name`, `passwd`, `source`。`account_name`对应账号名；`passwd`对应密码；`source`取值为'phone'或'mail'，对应所用账号是手机号还是邮箱。");
+            GrowlHelper.ErrorGlobal($"社区每日操作: 执行失败, {ex.Message}");
             return false;
         }
     }
