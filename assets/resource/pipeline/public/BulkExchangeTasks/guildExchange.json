@@ -42,6 +42,7 @@
         "next": [
             "GuildItemNotPurchasable",
             "GuildSelectExchangeItemQuantity",
+            "GuildConfirmPurchaseItem",
             "selectGuildItem",
             "GuildBackToPreviousPage"
         ]

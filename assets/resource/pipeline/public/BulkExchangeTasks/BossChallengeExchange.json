@@ -47,6 +47,7 @@
         "next": [
             "BossChallengeItemNotPurchasable",
             "BossChallengeSelectExchangeItemQuantity",
+            "BossChallengeConfirmPurchaseItem",
             "selectBossChallengeItem",
             "BossChallengeBackToPreviousPage"
         ]

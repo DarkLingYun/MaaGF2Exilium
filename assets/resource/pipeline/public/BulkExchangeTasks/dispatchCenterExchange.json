@@ -49,6 +49,7 @@
         "next": [
             "dispatchCenterItemNotPurchasable",
             "dispatchCenterSelectExchangeItemQuantity",
+            "dispatchCenterConfirmPurchaseItem",
             "selectdispatchCenterItem",
             "dispatchCenterBackToPreviousPage"
         ]
