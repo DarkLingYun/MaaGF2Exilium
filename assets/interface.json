@@ -132,7 +132,7 @@
             "name": "版本活动日常",
             "entry": "VersionActivityTask",
             "option": [
-                "物资模式自律",
+                "物资模式活动选择",
                 "物资商品兑换"
             ]
         },
@@ -1295,21 +1295,20 @@
                 }
             ]
         },
-        "物资模式自律": {
+        "物资模式活动选择": {
             "cases": [
                 {
-                    "name": "YES",
+                    "name": "素银匿信",
                     "pipeline_override": {
-                        "enterVersionActivityResourceSweep": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "NO",
-                    "pipeline_override": {
-                        "enterVersionActivityResourceSweep": {
-                            "enabled": false
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "素银匿信"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "冬日礼品铺"
+                            ]
                         }
                     }
                 }
@@ -1321,10 +1320,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "enterVersionActivityItemExchange": {
-                            "enabled": true,
-                            "expected": [
-                                "冬日礼品铺"
-                            ]
+                            "enabled": true
                         }
                     }
                 },
