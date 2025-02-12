@@ -137,6 +137,15 @@
             ]
         },
         {
+            "name": "易物所商店兑换",
+            "entry": "BulkExchange",
+            "option": [
+                "班组商店兑换",
+                "调度商店兑换",
+                "讯段交易兑换"
+            ]
+        },
+        {
             "name": "领取奖励(日常和通行证)",
             "entry": "ClaimRewardTasks",
             "check": true
@@ -1323,6 +1332,66 @@
                     "name": "NO",
                     "pipeline_override": {
                         "enterVersionActivityItemExchange": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "班组商店兑换": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterGuildExchangeTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterGuildExchangeTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "调度商店兑换": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterdispatchCenterExchangeTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterdispatchCenterExchangeTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "讯段交易兑换": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterBossChallengeExchangeTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterBossChallengeExchangeTask": {
                             "enabled": false
                         }
                     }

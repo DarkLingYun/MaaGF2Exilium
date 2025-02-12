@@ -1,0 +1,62 @@
+{
+    "BulkExchange": {
+        "doc": "批量兑换",
+        "next": [
+            "enterBulkExchangeTask"
+        ],
+        "interrupt": [
+            "StartGame"
+        ]
+    },
+    "enterBulkExchangeTask": {
+        "doc": "正式进入批量兑换任务",
+        "recognition": "OCR",
+        "expected": "战役推进",
+        "next": [
+            "bulkExchangeTaskClickShopButton"
+        ]
+    },
+    "bulkExchangeTaskClickShopButton": {
+        "recognition": "OCR",
+        "expected": "^商城$",
+        "post_wait_freezes": 200,
+        "post_delay": 1500,
+        "action": "Click",
+        "next": [
+            "enterBulkExchangeTaskPageBottomSwip"
+        ]
+    },
+    "enterBulkExchangeTaskPageBottomSwip": {
+        "doc": "进入批量兑换任务页面底部滑动",
+        "recognition": "OCR",
+        "expected": "个性",
+        "action": "Swipe",
+        "begin": [
+            109,
+            496,
+            1,
+            1
+        ],
+        "end": [
+            109,
+            416,
+            1,
+            1
+        ],
+        "next": [
+            "enterBulkExchangeTaskPage"
+        ]
+    },
+    "enterBulkExchangeTaskPage": {
+        "doc": "进入批量兑换任务页面",
+        "recognition": "OCR",
+        "expected": "易物所",
+        "action": "Click",
+        "next": [
+            "enterGuildExchangeTask",
+            "enterdispatchCenterExchangeTask",
+            "enterBossChallengeExchangeTask",
+            "returnToHomePage"
+        ]
+    }
+}

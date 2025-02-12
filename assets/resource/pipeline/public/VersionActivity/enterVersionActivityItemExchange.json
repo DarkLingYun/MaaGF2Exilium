@@ -43,6 +43,7 @@
         "next": [
             "itemNotPurchasable",
             "selectExchangeItemQuantity",
+            "confirmPurchaseItem",
             "selectExchangeItem"
         ]
     },

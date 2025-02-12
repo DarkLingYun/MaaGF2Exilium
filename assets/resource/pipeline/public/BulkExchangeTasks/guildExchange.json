@@ -1,0 +1,137 @@
+{
+    "enterGuildExchangeTask": {
+        "doc": "进入公会兑换任务",
+        "enabled": true,
+        "next": [
+            "clickGuildExchangeTaskButton"
+        ]
+    },
+    "clickGuildExchangeTaskButton": {
+        "doc": "点击公会兑换任务按钮",
+        "recognition": "OCR",
+        "expected": "^班组商店$",
+        "action": "Click",
+        "roi": [
+            242,
+            91,
+            1009,
+            623
+        ],
+        "post_wait_freezes": 300,
+        "next": [
+            "clickGuildExchangeTaskButton",
+            "selectGuildItem",
+            "GuildBackToPreviousPage"
+        ]
+    },
+    "selectGuildItem": {
+        "doc": "选择公会兑换商品",
+        "recognition": "TemplateMatch",
+        "template": [
+            "集中兑换/班组商店/战场报告.png"
+        ],
+        "threshold": 0.87,
+        "roi": [
+            270,
+            108,
+            945,
+            611
+        ],
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "GuildItemNotPurchasable",
+            "GuildSelectExchangeItemQuantity",
+            "selectGuildItem",
+            "GuildBackToPreviousPage"
+        ]
+    },
+    "GuildItemNotPurchasable": {
+        "doc": "商品不可购买",
+        "recognition": "ColorMatch",
+        "roi": [
+            550,
+            395,
+            178,
+            119
+        ],
+        "upper": [
+            253,
+            114,
+            91
+        ],
+        "lower": [
+            246,
+            101,
+            73
+        ],
+        "next": [
+            "GuildExitItemExchange"
+        ]
+    },
+    "GuildExitItemExchange": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "GuildBackToPreviousPage"
+        ]
+    },
+    "GuildBackToPreviousPage": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            200,
+            70
+        ],
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "exitGuildExchange"
+        ]
+    },
+    "GuildSelectExchangeItemQuantity": {
+        "doc": "选择商品兑换数量为最大",
+        "recognition": "OCR",
+        "expected": "最大",
+        "action": "Click",
+        "next": [
+            "GuildConfirmPurchaseItem"
+        ]
+    },
+    "GuildConfirmPurchaseItem": {
+        "doc": "确认购买商品",
+        "recognition": "OCR",
+        "expected": "^购买$",
+        "action": "Click",
+        "next": [
+            "GuildCloseItemPurchaseResultPage"
+        ]
+    },
+    "GuildCloseItemPurchaseResultPage": {
+        "doc": "关闭商品购买结果页",
+        "recognition": "OCR",
+        "expected": "^点击",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "GuildCloseItemPurchaseResultPage",
+            "selectGuildItem",
+            "GuildBackToPreviousPage"
+        ]
+    },
+    "exitGuildExchange": {
+        "doc": "结束任务,调用后续任务",
+        "next": [
+            "enterdispatchCenterExchangeTask",
+            "enterBossChallengeExchangeTask",
+            "returnToHomePage"
+        ]
+    }
+}

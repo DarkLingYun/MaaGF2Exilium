@@ -1,0 +1,143 @@
+{
+    "enterdispatchCenterExchangeTask": {
+        "doc": "进入调度商店兑换任务",
+        "enabled": true,
+        "next": [
+            "clickdispatchCenterExchangeTaskButton"
+        ]
+    },
+    "clickdispatchCenterExchangeTaskButton": {
+        "doc": "点击调度商店兑换任务按钮",
+        "recognition": "OCR",
+        "expected": "^调度商店$",
+        "action": "Click",
+        "roi": [
+            242,
+            91,
+            1009,
+            623
+        ],
+        "post_wait_freezes": 300,
+        "next": [
+            "clickdispatchCenterExchangeTaskButton",
+            "selectdispatchCenterItem",
+            "dispatchCenterBackToPreviousPage"
+        ]
+    },
+    "selectdispatchCenterItem": {
+        "doc": "选择调度商店兑换商品",
+        "recognition": "TemplateMatch",
+        "template": [
+            "集中兑换/调度商店/访问许可.png",
+            "集中兑换/调度商店/心意礼盒.png",
+            "集中兑换/调度商店/存量条T2.png",
+            "集中兑换/调度商店/存量条T3.png",
+            "集中兑换/调度商店/存量条T4.png",
+            "集中兑换/调度商店/战场报告.png",
+            "集中兑换/调度商店/萨狄斯金.png",
+            "集中兑换/调度商店/解析图纸.png"
+        ],
+        "threshold": 0.87,
+        "roi": [
+            270,
+            108,
+            945,
+            611
+        ],
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "dispatchCenterItemNotPurchasable",
+            "dispatchCenterSelectExchangeItemQuantity",
+            "selectdispatchCenterItem",
+            "dispatchCenterBackToPreviousPage"
+        ]
+    },
+    "dispatchCenterItemNotPurchasable": {
+        "doc": "商品不可购买",
+        "recognition": "ColorMatch",
+        "roi": [
+            550,
+            395,
+            178,
+            119
+        ],
+        "upper": [
+            253,
+            114,
+            91
+        ],
+        "lower": [
+            246,
+            101,
+            73
+        ],
+        "next": [
+            "dispatchCenterExitItemExchange"
+        ]
+    },
+    "dispatchCenterExitItemExchange": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "dispatchCenterBackToPreviousPage"
+        ]
+    },
+    "dispatchCenterBackToPreviousPage": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            200,
+            70
+        ],
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "exitdispatchCenterExchange"
+        ]
+    },
+    "dispatchCenterSelectExchangeItemQuantity": {
+        "doc": "选择商品兑换数量为最大",
+        "recognition": "OCR",
+        "expected": "最大",
+        "action": "Click",
+        "next": [
+            "dispatchCenterConfirmPurchaseItem"
+        ]
+    },
+    "dispatchCenterConfirmPurchaseItem": {
+        "doc": "确认购买商品",
+        "recognition": "OCR",
+        "expected": "^购买$",
+        "action": "Click",
+        "next": [
+            "dispatchCenterCloseItemPurchaseResultPage"
+        ]
+    },
+    "dispatchCenterCloseItemPurchaseResultPage": {
+        "doc": "关闭商品购买结果页",
+        "recognition": "OCR",
+        "expected": "^点击",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "dispatchCenterCloseItemPurchaseResultPage",
+            "selectdispatchCenterItem",
+            "dispatchCenterBackToPreviousPage"
+        ]
+    },
+    "exitdispatchCenterExchange": {
+        "doc": "结束任务,调用后续任务",
+        "next": [
+            "enterBossChallengeExchangeTask",
+            "returnToHomePage"
+        ]
+    }
+}
