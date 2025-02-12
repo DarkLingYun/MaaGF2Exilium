@@ -33,6 +33,11 @@
     "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "task": [
         {
+            "name": "社区每日操作",
+            "entry": "CommunityDailyHelper",
+            "check": false
+        },
+        {
             "name": "启动少女前线2",
             "entry": "StartGame",
             "check": true
