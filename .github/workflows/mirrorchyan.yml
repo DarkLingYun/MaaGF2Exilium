@@ -1,0 +1,22 @@
+name: mirrorchyan
+
+on:
+  workflow_dispatch:
+
+jobs:
+  mirrorchyan:
+    runs-on: macos-latest
+    steps:
+      - id: uploading
+        uses: MirrorChyan/uploading-action@v1
+        with:
+          filetype: latest-release
+          filename: "MaaGF2ExiliumGUI-win-x86_64-*.zip"
+          pick_files: '["resource", "interface.json"]'
+          exclude_files: '["*model/ocr/**"]'
+          mirrorchyan_rid: MaaGF2Exilium
+
+          owner: DarkLingYun
+          repo: MaaGF2Exilium
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          upload_token: ${{ secrets.MirrorChyanUploadToken }}
