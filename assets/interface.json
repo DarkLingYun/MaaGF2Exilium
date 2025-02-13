@@ -1337,18 +1337,18 @@
         "班组商店兑换": {
             "cases": [
                 {
-                    "name": "YES",
-                    "pipeline_override": {
-                        "enterGuildExchangeTask": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
                     "name": "NO",
                     "pipeline_override": {
                         "enterGuildExchangeTask": {
                             "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterGuildExchangeTask": {
+                            "enabled": true
                         }
                     }
                 }
