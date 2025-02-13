@@ -36,9 +36,14 @@
         }
     ],
     "name": "少女前线2：追放自动化助手",
-    "custom_title": "密米尔的反演",
+    "custom_title": "素银匿信",
     "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "task": [
+        {
+            "name": "社区每日操作",
+            "entry": "CommunityDailyHelper",
+            "check": false
+        },
         {
             "name": "启动少女前线2",
             "entry": "StartGame",
@@ -134,12 +139,21 @@
             "name": "版本活动日常",
             "entry": "VersionActivityTask",
             "option": [
-                "物资模式自律",
+                "物资模式活动选择",
                 "物资商品兑换"
             ]
         },
         {
-            "name": "领取奖励(日常和通行证)",
+            "name": "易物所商店兑换",
+            "entry": "BulkExchange",
+            "option": [
+                "班组商店兑换",
+                "调度商店兑换",
+                "讯段交易兑换"
+            ]
+        },
+        {
+            "name": "领取奖励(日常，通行证和助战)",
             "entry": "ClaimRewardTasks",
             "check": true
         },
@@ -1288,21 +1302,20 @@
                 }
             ]
         },
-        "物资模式自律": {
+        "物资模式活动选择": {
             "cases": [
                 {
-                    "name": "YES",
+                    "name": "素银匿信",
                     "pipeline_override": {
-                        "enterVersionActivityResourceSweep": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "NO",
-                    "pipeline_override": {
-                        "enterVersionActivityResourceSweep": {
-                            "enabled": false
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "素银匿信"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "冬日礼品铺"
+                            ]
                         }
                     }
                 }
@@ -1314,10 +1327,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "enterVersionActivityItemExchange": {
-                            "enabled": true,
-                            "expected": [
-                                "积分找换所"
-                            ]
+                            "enabled": true
                         }
                     }
                 },
@@ -1325,6 +1335,66 @@
                     "name": "NO",
                     "pipeline_override": {
                         "enterVersionActivityItemExchange": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "班组商店兑换": {
+            "cases": [
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterGuildExchangeTask": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterGuildExchangeTask": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "调度商店兑换": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterdispatchCenterExchangeTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterdispatchCenterExchangeTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "讯段交易兑换": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterBossChallengeExchangeTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterBossChallengeExchangeTask": {
                             "enabled": false
                         }
                     }

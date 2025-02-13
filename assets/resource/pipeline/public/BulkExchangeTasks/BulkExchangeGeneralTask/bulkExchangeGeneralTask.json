@@ -1,0 +1,92 @@
+{
+    "bulkExchangeGeneralTask": {
+        "doc": "批量兑换的通用逻辑任务(参考任务，不参与调用)",
+        "next": [
+            "generalItemNotPurchasable",
+            "generalSelectExchangeItemQuantity",
+            "exitGeneralTask"
+        ]
+    },
+    "generalItemNotPurchasable": {
+        "doc": "商品不可购买",
+        "recognition": "ColorMatch",
+        "roi": [
+            550,
+            395,
+            178,
+            119
+        ],
+        "upper": [
+            253,
+            114,
+            91
+        ],
+        "lower": [
+            246,
+            101,
+            73
+        ],
+        "next": [
+            "generalExitItemExchange"
+        ]
+    },
+    "generalExitItemExchange": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "generalBackToPreviousPage"
+        ]
+    },
+    "generalBackToPreviousPage": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            200,
+            70
+        ],
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "exitGeneralTask"
+        ]
+    },
+    "generalSelectExchangeItemQuantity": {
+        "doc": "选择商品兑换数量为最大",
+        "recognition": "OCR",
+        "expected": "最大",
+        "action": "Click",
+        "next": [
+            "generalConfirmPurchaseItem"
+        ]
+    },
+    "generalConfirmPurchaseItem": {
+        "doc": "确认购买商品",
+        "recognition": "OCR",
+        "expected": "^购买$",
+        "action": "Click",
+        "next": [
+            "generalCloseItemPurchaseResultPage"
+        ]
+    },
+    "generalCloseItemPurchaseResultPage": {
+        "doc": "关闭商品购买结果页",
+        "recognition": "OCR",
+        "expected": "^点击",
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "generalCloseItemPurchaseResultPage",
+            "exitGeneralTask"
+        ]
+    },
+    "exitGeneralTask": {
+        "doc": "结束任务"
+    }
+}

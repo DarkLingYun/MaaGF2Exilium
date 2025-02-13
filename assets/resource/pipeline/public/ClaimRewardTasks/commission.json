@@ -74,6 +74,7 @@
         "post_delay": 1500,
         "next": [
             "enterPassToClaimTask",
+            "enterPersonalInformationPage",
             "HomePage"
         ]
     }

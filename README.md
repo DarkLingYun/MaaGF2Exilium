@@ -20,9 +20,12 @@
 <img alt="logo2" src="./imgs/1.jpg" width="400"/>
 </p>
 
-
 ## 使用前提
-> 大部分测试都是在 Windows 系统上测试的，因此其他操作系统若有运行问题，请提 Issues 或加群讨论。
+
+> [!NOTE]  
+> 大部分测试都是在 Windows 系统上测试的，因此其他操作系统若有运行问题，请提 Issues 或加群讨论。  
+> 开发是基于 MuMu12 模拟器测试的，因此推荐使用 MuMu12 运行游戏。其他模拟器若出现问题，请第一时间把脚本根目录下`debug\maa.log` 文件保存并截图进行反馈。  
+
 0. 默认用户的操作系统为 Windows 系统。
 1. 推荐使用MuMu模拟器12运行游戏，[模拟器支持情况](https://maa.plus/docs/zh-cn/manual/device/windows.html)请查看官方文档。
 2. 模拟器建议设置为`16:9`的比例的分辨率，该比例典型的分辨率有`3840*2160 (4K)`、`2560*1440 (2K)`、`1920*1080 (1080P)`、`1280*720 (720P)`。
@@ -41,6 +44,7 @@
 </p>
 
 ## 待开发功能
+
 * [ ] 通用版本活动(大小型活动通用)
   * [ ] 物资模式自律
   * [ ] 物资商品兑换功能
@@ -56,7 +60,7 @@
     * [ ] 人形堆栈商店兑换
 * [ ] 仓库
   * [ ] 开箱子
-* [ ] 个人主页领取助战金币
+* [ ] 个人主页自动兑换
 * [ ] 构建覆盖现有 `install` 目录
 * [ ] GUI 迁移到 electron，支持跨平台（macos）
   
@@ -103,8 +107,7 @@
     * [x] 支持自动自律
     * [ ] 讯段交易(这个真的要写吗。。。)
   * [x] 自动实兵演习
-  * [x] 自动兵棋推演
-    - 暂不支持自动领取推演奖励
+  * [x] 自动兵棋推演(暂不支持自动领取推演奖励)
 
 * [ ] 班组日常
   * [x] 补给领取
@@ -120,6 +123,7 @@
     * [x] 沿途行动周期奖励(每日/每周任务奖励)
     * [x] 等级奖励领取
     * [x] 等级补给箱确认(付费通行证未测试)
+  * [x] 个人信息页助战奖励
 
 * [ ] 暗香赠礼
   * [ ] 铁玫瑰和火玫瑰补给箱开启
@@ -127,8 +131,8 @@
 
 * [x] 关闭游戏
 
-
 ## 开发相关
+
 请参考[文档](docs/开发相关.md)
 
 ## 鸣谢
@@ -138,7 +142,7 @@
 感谢以下开发者对本作出的贡献:
 
 <a href="https://github.com/DarkLingYun/MaaGF2Exilium/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=DarkLingYun/MaaGF2Exilium" />
+  <img src="https://contrib.rocks/image?repo=DarkLingYun/MaaGF2Exilium" alt="贡献者" />
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks)

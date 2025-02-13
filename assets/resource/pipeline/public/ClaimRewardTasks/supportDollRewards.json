@@ -1,0 +1,61 @@
+{
+    "enterPersonalInformationPage": {
+        "doc": "进入个人信息",
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/个人信息.png",
+        "action": "Click",
+        "next": [
+            "personalInformationPageEntered",
+            "enterPersonalInformationPage"
+        ]
+    },
+    "personalInformationPageEntered": {
+        "doc": "已进入个人信息",
+        "recognition": "OCR",
+        "expected": "个人信息",
+        "next": [
+            "claimSupportDollRewards",
+            "exitPersonalInformationPage"
+        ]
+    },
+    "claimSupportDollRewards": {
+        "doc": "领取助战人形奖励",
+        "recognition": "TemplateMatch",
+        "template": "个人信息/领取.png",
+        "action": "Click",
+        "next": [
+            "closeClaimResult",
+            "claimSupportDollRewards"
+        ]
+    },
+    "closeClaimResult":{
+        "doc": "关闭领取结果",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "claimResultClosed",
+            "closeClaimResult"
+        ]
+    },
+    "claimResultClosed":{
+        "doc": "结果关闭，已回到个人信息页",
+        "recognition": "OCR",
+        "expected": "个人信息",
+        "next": [
+            "exitPersonalInformationPage"
+        ]
+    },
+    "exitPersonalInformationPage": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_gray.png",
+            "公用按钮组件/主页按钮_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "HomePage",
+            "exitPersonalInformationPage"
+        ]
+    }
+}

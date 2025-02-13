@@ -1,0 +1,140 @@
+{
+    "enterBossChallengeExchangeTask": {
+        "doc": "进入讯段交易兑换任务",
+        "enabled": true,
+        "next": [
+            "clickBossChallengeExchangeTaskButton"
+        ]
+    },
+    "clickBossChallengeExchangeTaskButton": {
+        "doc": "点击讯段交易兑换任务按钮",
+        "recognition": "OCR",
+        "expected": "^讯段交易$",
+        "action": "Click",
+        "roi": [
+            242,
+            91,
+            1009,
+            623
+        ],
+        "post_wait_freezes": 300,
+        "next": [
+            "clickBossChallengeExchangeTaskButton",
+            "selectBossChallengeItem",
+            "BossChallengeBackToPreviousPage"
+        ]
+    },
+    "selectBossChallengeItem": {
+        "doc": "选择讯段交易兑换商品",
+        "recognition": "TemplateMatch",
+        "template": [
+            "集中兑换/讯段交易/塞布丽娜心智存档.png",
+            "集中兑换/讯段交易/访问许可.png",
+            "集中兑换/讯段交易/基原信息核.png",
+            "集中兑换/讯段交易/次世代内存条.png",
+            "集中兑换/讯段交易/萨狄斯金.png"
+        ],
+        "threshold": 0.87,
+        "roi": [
+            270,
+            108,
+            945,
+            611
+        ],
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "BossChallengeItemNotPurchasable",
+            "BossChallengeSelectExchangeItemQuantity",
+            "BossChallengeConfirmPurchaseItem",
+            "selectBossChallengeItem",
+            "BossChallengeBackToPreviousPage"
+        ]
+    },
+    "BossChallengeItemNotPurchasable": {
+        "doc": "商品不可购买",
+        "recognition": "ColorMatch",
+        "roi": [
+            550,
+            395,
+            178,
+            119
+        ],
+        "upper": [
+            253,
+            114,
+            91
+        ],
+        "lower": [
+            246,
+            101,
+            73
+        ],
+        "next": [
+            "BossChallengeExitItemExchange"
+        ]
+    },
+    "BossChallengeExitItemExchange": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "BossChallengeBackToPreviousPage"
+        ]
+    },
+    "BossChallengeBackToPreviousPage": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            200,
+            70
+        ],
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "exitBossChallengeExchange"
+        ]
+    },
+    "BossChallengeSelectExchangeItemQuantity": {
+        "doc": "选择商品兑换数量为最大",
+        "recognition": "OCR",
+        "expected": "最大",
+        "action": "Click",
+        "next": [
+            "BossChallengeConfirmPurchaseItem"
+        ]
+    },
+    "BossChallengeConfirmPurchaseItem": {
+        "doc": "确认购买商品",
+        "recognition": "OCR",
+        "expected": "^购买$",
+        "action": "Click",
+        "next": [
+            "BossChallengeCloseItemPurchaseResultPage"
+        ]
+    },
+    "BossChallengeCloseItemPurchaseResultPage": {
+        "doc": "关闭商品购买结果页",
+        "recognition": "OCR",
+        "expected": "^点击",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "BossChallengeCloseItemPurchaseResultPage",
+            "selectBossChallengeItem",
+            "BossChallengeBackToPreviousPage"
+        ]
+    },
+    "exitBossChallengeExchange": {
+        "doc": "结束任务,调用后续任务",
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}
