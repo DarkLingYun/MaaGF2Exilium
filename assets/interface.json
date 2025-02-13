@@ -1319,6 +1319,21 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "驻足之地（美服）",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "驻足之地"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "物资小摊"
+                            ]
+                        }
+                    }
                 }
             ]
         },
