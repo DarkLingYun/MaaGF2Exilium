@@ -1,0 +1,5 @@
+{
+    "confirmSupplyBoxPurchase": {
+        "expected": "^(购买|确认)$"
+    }
+}
