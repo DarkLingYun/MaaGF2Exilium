@@ -3,16 +3,11 @@
         "doc": "点击班组要务战斗开始按钮",
         "recognition": "OCR",
         "expected": "作战开始",
-        "target": [
-            493,
-            616,
-            291,
-            44
-        ],
         "action": "Click",
         "next": [
             "clickGuildSquadDailyCombatStartButton",
-            "enableGuildSquadDailyCombatAutoBattle"
+            "enableGuildSquadDailyCombatAutoBattle",
+            "waitForGuildSquadDailyCombatToEnd"
         ]
     },
     "enableGuildSquadDailyCombatAutoBattle": {
@@ -51,6 +46,7 @@
         "next": [
             "guildSquadDailyCombatTaskCompleted",
             "guildSquadDailyCombatTaskFailed",
+            "enableGuildSquadDailyCombatAutoBattle",
             "waitForGuildSquadDailyCombatToEnd"
         ]
     },
