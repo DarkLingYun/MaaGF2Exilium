@@ -45,7 +45,6 @@
         },
         "next": [
             "gunsmokeFrontlineCombatTaskCompleted",
-            "gunsmokeFrontlineCombatTaskFailed",
             "enableGunsmokeFrontlineCombatAutoBattle",
             "waitForGunsmokeFrontlineCombatToEnd"
         ]
@@ -59,15 +58,6 @@
         "next": [
             "clickConfirmButtonToExitGunsmokeFrontlineCombat",
             "gunsmokeFrontlineCombatTaskCompleted"
-        ]
-    },
-    "gunsmokeFrontlineCombatTaskFailed": {
-        "doc": "尘烟前线日常任务失败",
-        "recognition": "OCR",
-        "expected": "任务失败",
-        "next": [
-            "clickConfirmButtonToExitGunsmokeFrontlineCombat",
-            "gunsmokeFrontlineCombatTaskFailed"
         ]
     },
     "clickConfirmButtonToExitGunsmokeFrontlineCombat": {
