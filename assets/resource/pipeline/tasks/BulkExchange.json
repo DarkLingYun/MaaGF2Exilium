@@ -53,7 +53,7 @@
         "expected": "易物所",
         "action": "Click",
         "next": [
-            "enterGuildExchangeTask",
+            "enterPlatoonExchangeTask",
             "enterdispatchCenterExchangeTask",
             "enterBossChallengeExchangeTask",
             "returnToHomePage"

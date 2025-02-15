@@ -133,7 +133,7 @@
         },
         {
             "name": "班组日常",
-            "entry": "GuildTasks",
+            "entry": "PlatoonTasks",
             "check": true
         },
         {
@@ -1363,7 +1363,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "enterGuildExchangeTask": {
+                        "enterPlatoonExchangeTask": {
                             "enabled": true
                         }
                     }
@@ -1371,7 +1371,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "enterGuildExchangeTask": {
+                        "enterPlatoonExchangeTask": {
                             "enabled": false
                         }
                     }

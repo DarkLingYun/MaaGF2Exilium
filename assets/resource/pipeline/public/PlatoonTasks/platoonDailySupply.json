@@ -1,10 +1,10 @@
 {
-    "enterGuildSquadDailySupplyTask": {
+    "enterPlatoonDailySupplyTask": {
         "next": [
-            "enterGuildSquadDailySupplyPage"
+            "enterPlatoonDailySupplyPage"
         ]
     },
-    "enterGuildSquadDailySupplyPage": {
+    "enterPlatoonDailySupplyPage": {
         "doc": "进入班组每日补给页",
         "recognition": "OCR",
         "roi": [
@@ -17,21 +17,21 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "enterGuildSquadDailySupplyPage",
-            "claimGuildSquadDailySupply",
-            "noClaimGuildSquadDailySupply"
+            "enterPlatoonDailySupplyPage",
+            "claimPlatoonDailySupply",
+            "noClaimPlatoonDailySupply"
         ]
     },
-    "noClaimGuildSquadDailySupply": {
+    "noClaimPlatoonDailySupply": {
         "doc": "无领取班组每日补给按钮",
         "inverse": true,
         "recognition": "OCR",
         "expected": "^领取全部$",
         "next": [
-            "guildSquadDailySupplyBackPage"
+            "platoonSquadDailySupplyBackPage"
         ]
     },
-    "claimGuildSquadDailySupply": {
+    "claimPlatoonDailySupply": {
         "doc": "领取班组每日补给",
         "recognition": "OCR",
         "expected": "^领取全部$",
@@ -47,10 +47,10 @@
         "action": "Click",
         "next": [
             "closeDailySupplyResultPage",
-            "guildSquadDailySupplyBackPage"
+            "platoonSquadDailySupplyBackPage"
         ]
     },
-    "guildSquadDailySupplyBackPage": {
+    "platoonSquadDailySupplyBackPage": {
         "recognition": "TemplateMatch",
         "roi": [
             0,
@@ -65,7 +65,7 @@
         "action": "Click",
         "post_delay": 1000,
         "next": [
-            "enterGuildSquadDailyCombatTask",
+            "enterPlatoonDailyCombatTask",
             "returnToHomePage"
         ]
     }
