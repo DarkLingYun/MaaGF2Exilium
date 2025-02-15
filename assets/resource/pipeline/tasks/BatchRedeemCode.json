@@ -1,0 +1,17 @@
+{
+    "BatchRedeemCodePreAction": {
+        "doc": "进入个人信息",
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/个人信息.png",
+        "action": "Click",
+        "next": [
+            "BatchRedeemCode"
+        ]
+    },
+    "BatchRedeemCode": {
+        "doc": "拉取兑换码列表，批量完成兑换操作。",
+        "action": "Custom",
+        "custom_action": "BatchRedeemCodeAction",
+        "next": []
+    }
+}
