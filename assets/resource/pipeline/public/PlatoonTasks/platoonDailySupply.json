@@ -28,7 +28,7 @@
         "recognition": "OCR",
         "expected": "^领取全部$",
         "next": [
-            "platoonSquadDailySupplyBackPage"
+            "platoonDailySupplyBackPage"
         ]
     },
     "claimPlatoonDailySupply": {
@@ -47,10 +47,10 @@
         "action": "Click",
         "next": [
             "closeDailySupplyResultPage",
-            "platoonSquadDailySupplyBackPage"
+            "platoonDailySupplyBackPage"
         ]
     },
-    "platoonSquadDailySupplyBackPage": {
+    "platoonDailySupplyBackPage": {
         "recognition": "TemplateMatch",
         "roi": [
             0,

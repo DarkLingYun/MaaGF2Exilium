@@ -11,11 +11,11 @@
         "action": "Click",
         "next": [
             "enterPlatoonDailyCombatPage",
-            "platoonSquadDailyCombatCompleted",
-            "platoonSquadDailyCombatStart"
+            "platoonDailyCombatCompleted",
+            "platoonDailyCombatStart"
         ]
     },
-    "platoonSquadDailyCombatCompleted": {
+    "platoonDailyCombatCompleted": {
         "doc": "每日要务已完成",
         "recognition": "OCR",
         "expected": "^每日要务已完成$",
@@ -23,13 +23,13 @@
             "closePlatoonDailyCombatPage"
         ]
     },
-    "platoonSquadDailyCombatStart": {
+    "platoonDailyCombatStart": {
         "doc": "班组要务作战开始",
         "recognition": "OCR",
         "expected": "开始作战",
         "action": "Click",
         "next": [
-            "platoonSquadDailyCombatStart",
+            "platoonDailyCombatStart",
             "enterPlatoonDailyCombatResourceLoading"
         ]
     },
@@ -57,6 +57,7 @@
         ],
         "action": "Click",
         "next": [
+            "enterGunsmokeFrontlineTask",
             "exitPlatoonDailyCombat"
         ]
     },

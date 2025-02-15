@@ -44,13 +44,13 @@
             "threshold": 0.8
         },
         "next": [
-            "platoonSquadDailyCombatTaskCompleted",
-            "platoonSquadDailyCombatTaskFailed",
+            "platoonDailyCombatTaskCompleted",
+            "platoonDailyCombatTaskFailed",
             "enablePlatoonDailyCombatAutoBattle",
             "waitForPlatoonDailyCombatToEnd"
         ]
     },
-    "platoonSquadDailyCombatTaskCompleted": {
+    "platoonDailyCombatTaskCompleted": {
         "doc": "班组日常任务完成",
         "recognition": "OCR",
         "expected": "任务完成",
@@ -58,16 +58,16 @@
         "post_wait_freezes": 300,
         "next": [
             "clickConfirmButtonToExitPlatoonDailyCombat",
-            "platoonSquadDailyCombatTaskCompleted"
+            "platoonDailyCombatTaskCompleted"
         ]
     },
-    "platoonSquadDailyCombatTaskFailed": {
+    "platoonDailyCombatTaskFailed": {
         "doc": "班组日常任务失败",
         "recognition": "OCR",
         "expected": "任务失败",
         "next": [
             "clickConfirmButtonToExitPlatoonDailyCombat",
-            "platoonSquadDailyCombatTaskFailed"
+            "platoonDailyCombatTaskFailed"
         ]
     },
     "clickConfirmButtonToExitPlatoonDailyCombat": {
