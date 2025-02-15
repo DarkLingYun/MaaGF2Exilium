@@ -86,7 +86,7 @@
         "expected": "资源加载中",
         "next": [
             "exitGunsmokeFrontlineCombatResourceLoading",
-            "SelectGunsmokeFrontlineCombatType"
+            "selectGunsmokeFrontlineCombatType"
         ]
     }
 }

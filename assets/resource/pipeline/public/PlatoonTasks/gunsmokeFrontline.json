@@ -19,19 +19,19 @@
         "action": "Click",
         "next": [
             "enterGunsmokeFrontlinePage",
-            "SelectGunsmokeFrontlineCombatType"
+            "selectGunsmokeFrontlineCombatType"
         ]
     },
-    "SelectGunsmokeFrontlineCombatType": {
+    "selectGunsmokeFrontlineCombatType": {
         "doc": "选择战斗类型",
         "recognition": "OCR",
-        "expected": "攻坚战",
+        "expected": "前哨战",
         "action": "Click",
         "next": [
             "gunsmokeFrontlineCombatInsufficientAttempts",
             "clickGunsmokeFrontlineStartButton",
             "SelectGunsmokeFrontlineCombatTypeTwo",
-            "SelectGunsmokeFrontlineCombatType"
+            "selectGunsmokeFrontlineCombatType"
         ]
     },
     "gunsmokeFrontlineCombatInsufficientAttempts": {
