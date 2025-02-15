@@ -134,6 +134,10 @@
         {
             "name": "班组日常",
             "entry": "PlatoonTasks",
+            "option": [
+                "尘烟前线自动作战",
+                "作战模式"
+            ],
             "check": true
         },
         {
@@ -1299,6 +1303,46 @@
                             "expected": [
                                 "0/5$"
                             ]
+                        }
+                    }
+                }
+            ]
+        },
+        "尘烟前线自动作战": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterGunsmokeFrontlineTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterGunsmokeFrontlineTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "作战模式": {
+            "cases": [
+                {
+                    "name": "前哨战",
+                    "pipeline_override": {
+                        "selectGunsmokeFrontlineCombatType": {
+                            "expected": "前哨战"
+                        }
+                    }
+                },
+                {
+                    "name": "攻坚战",
+                    "pipeline_override": {
+                        "selectGunsmokeFrontlineCombatType": {
+                            "expected": "攻坚战"
                         }
                     }
                 }
