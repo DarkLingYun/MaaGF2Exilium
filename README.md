@@ -88,7 +88,7 @@
 
 ### 个人主页批量使用兑换码
 
-兑换码存放在Gitee仓库：[GuiLuan/GF2_RedeemCode](https://gitee.com/guiluan/GF2_RedeemCode)，你可以访问[这个页面](https://gitee.com/guiluan/GF2_RedeemCode/raw/master/redeemCode.json)来查看当前已有的兑换码。
+兑换码存放在Gitee仓库：[GuiLuan/GF2_RedeemCode](https://gitee.com/guiluan/GF2_RedeemCode)，你可以访问 [这个页面](https://gitee.com/guiluan/GF2_RedeemCode/blob/master/redeemCode.json) 来查看当前已有的兑换码。
 
 >[!CAUTION]
 >云端仓库的兑换码来自个人搜集和用户上传，不保证兑换码全部可用。
