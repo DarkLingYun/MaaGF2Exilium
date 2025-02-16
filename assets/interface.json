@@ -52,7 +52,7 @@
         },
         {
             "name": "批量使用兑换码",
-            "entry": "BatchRedeemCodeAction",
+            "entry": "BatchRedeemCode",
             "check": false,
             "doc": "自动从远端仓库拉取兑换码（不保证兑换码全部可用）"
         },
