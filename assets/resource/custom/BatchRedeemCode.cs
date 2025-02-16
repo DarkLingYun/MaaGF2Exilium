@@ -183,12 +183,30 @@ namespace MFAWPF.Custom
 
             var localContext = context;
 
-            // 从个人界面返回主界面(需处于个人主页)
-            bool BackMainView()
+            // 从主界面进入个人界面(需处于主界面)
+            Func<bool> enterPersonView = () =>
             {
+                Task.Delay(1000).Wait();
                 IMaaImageBuffer image = new MaaImageBuffer();
                 localContext.GetImage(ref image);
                 RecognitionDetail detail;
+
+                if (localContext.TemplateMatch("公用按钮组件/个人信息.png", image, out detail, 0.7, 0, 0, 0, 0))
+                {
+                    localContext.Click(detail.HitBox.X, detail.HitBox.Y);
+                    return true;
+                }
+                return false;
+            };
+
+            // 从个人界面返回主界面(需处于个人主页)
+            Func<bool> backMainView = () =>
+            {
+                Task.Delay(1000).Wait();
+                IMaaImageBuffer image = new MaaImageBuffer();
+                localContext.GetImage(ref image);
+                RecognitionDetail detail;
+
                 if (localContext.TemplateMatch("公用按钮组件/主页按钮_black.png", image, out detail, 0.7, 6, 6, 194, 72))
                 {
                     localContext.Click(detail.HitBox.X, detail.HitBox.Y);
@@ -200,27 +218,27 @@ namespace MFAWPF.Custom
                     return true;
                 }
                 return false;
-            }
+            };
 
             // 打开兑换申请表(需处于个人主页)
-            bool OpenRedeemForm()
+            Func<bool> openRedeemForm = () =>
             {
+                Task.Delay(1000).Wait();
+                IMaaImageBuffer image = new MaaImageBuffer();
+                localContext.GetImage(ref image);
+                RecognitionDetail detail;
+                if (localContext.OCR("兑换码", image, out detail, 961, 625, 284, 71))
                 {
-                    IMaaImageBuffer image = new MaaImageBuffer();
-                    localContext.GetImage(ref image);
-                    RecognitionDetail detail;
-                    if (localContext.OCR("兑换码", image, out detail, 961, 625, 284, 71))
-                    {
-                        localContext.Click(detail.HitBox.X, detail.HitBox.Y);
-                        return true;
-                    }
-                    return false;
+                    localContext.Click(detail.HitBox.X, detail.HitBox.Y);
+                    return true;
                 }
-            }
+                return false;
+            };
 
             // 关闭兑换申请表(需处于申请表打开页面)
-            bool CloseRedeemForm()
+            Func<bool> closeRedeemForm = () =>
             {
+                Task.Delay(1000).Wait();
                 IMaaImageBuffer image = new MaaImageBuffer();
                 localContext.GetImage(ref image);
                 RecognitionDetail detail;
@@ -235,9 +253,9 @@ namespace MFAWPF.Custom
                     return true;
                 }
                 return false;
-            }
+            };
 
-            // 单次兑换(需处于申请表打开页面)
+            // 单次兑换(需处于兑换表打开页面)
             bool SingleExchange(string redeemCode)
             {
                 IMaaImageBuffer image = new MaaImageBuffer();
@@ -246,10 +264,10 @@ namespace MFAWPF.Custom
                 if (localContext.OCR("请输入兑换码", image, out detail, 255, 89, 771, 504))
                 {
                     localContext.Click(detail.HitBox.X, detail.HitBox.Y); // 进入编辑状态
-                    Task.Delay(700).Wait();
+                    Task.Delay(1200).Wait();
                     localContext.InputText(redeemCode);
                     localContext.Click(detail.HitBox.X, detail.HitBox.Y); // 退出编辑状态
-                    Task.Delay(700).Wait();
+                    Task.Delay(1200).Wait();
                     if (localContext.OCR("申请", image, out detail, 471, 493, 335, 86))
                     {
                         localContext.Click(detail.HitBox.X, detail.HitBox.Y); // 提交申请
@@ -278,17 +296,17 @@ namespace MFAWPF.Custom
 
                 foreach (string redeemCode in availableCodes)
                 {
-                    OpenRedeemForm();
-                    Task.Delay(700).Wait();
-                    if (SingleExchange(redeemCode))
+                    openRedeemForm.Until();
+                    // 利用闭包特性传递参数
+                    Func<bool> singleExchange = () => SingleExchange(redeemCode);
+                    if (singleExchange.Until())
                     {
                         data.RedeemCodes.Add(redeemCode);
+                        // 每次成功输入后保存结果，防止重复使用兑换码
+                        JsonHelper.JsonFileHandler.SaveToFile(filePath, data);
                     }
-                    Task.Delay(700).Wait();
-                    CloseRedeemForm();
-                    Task.Delay(700).Wait();
+                    closeRedeemForm.Until();
                 }
-                JsonHelper.JsonFileHandler.SaveToFile(filePath, data);
                 return true;
             }
 
@@ -303,9 +321,10 @@ namespace MFAWPF.Custom
                     return false;
                 }
 
+                enterPersonView.Until();
                 BatchExchange(redeemCodes);
                 LoggerService.LogInfo("兑换码已经全部自动兑换，任务退出，回到主页面");
-                BackMainView();
+                backMainView.Until();
                 return true;
             }
             catch (RedeemCodeService.RedeemCodeException ex)
