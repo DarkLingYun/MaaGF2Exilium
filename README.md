@@ -90,10 +90,10 @@
 
 兑换码存放在Gitee仓库：[GuiLuan/GF2_RedeemCode](https://gitee.com/guiluan/GF2_RedeemCode)，你可以访问[这个页面](https://gitee.com/guiluan/GF2_RedeemCode/raw/master/redeemCode.json)来查看当前已有的兑换码。
 
->[!CAUTION] 不保证兑换码全部可用
->云端仓库的兑换码来自个人搜集和用户上传，不保证兑换码一定是时限内、有剩余使用次数、正确格式的。
+>[!CAUTION]
+>云端仓库的兑换码来自个人搜集和用户上传，不保证兑换码全部可用。
 >
->截至2025/02/16，仓库内可用兑换码。
+>截至2025/02/16，仓库内**无**可用兑换码。
 
 在运行该任务时，脚本会在 `config/redeemCode.json` 中保存已经在本地使用过的兑换码，防止重复使用兑换码；也因此，当你更新资源时，建议不要删除该文件。
 
