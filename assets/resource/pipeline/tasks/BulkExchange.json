@@ -43,6 +43,7 @@
             1,
             1
         ],
+        "post_delay": 1000,
         "next": [
             "enterBulkExchangeTaskPage"
         ]
