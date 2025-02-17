@@ -1,22 +1,22 @@
 {
-    "GuildTasks": {
+    "PlatoonTasks": {
         "doc": "班组日常",
         "next": [
-            "clickGuildButton"
+            "clickPlatoonButton"
         ],
         "interrupt": [
             "StartGame"
         ]
     },
-    "clickGuildButton": {
+    "clickPlatoonButton": {
         "doc": "工会任务",
         "recognition": "OCR",
         "expected": "^班组$",
         "action": "Click",
         "post_delay": 1000,
         "next": [
-            "enterGuildSquadDailySupplyTask",
-            "enterGuildSquadDailyCombatTask",
+            "enterPlatoonDailySupplyTask",
+            "enterPlatoonDailyCombatTask",
             "returnToHomePage"
         ]
     }
