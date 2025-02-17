@@ -17,9 +17,13 @@
             169
         ],
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "rate_limit": 100
+        },
         "next": [
-            "enterGunsmokeFrontlinePage",
-            "selectGunsmokeFrontlineCombatType"
+            "selectGunsmokeFrontlineCombatType",
+            "enterGunsmokeFrontlinePage"
         ]
     },
     "selectGunsmokeFrontlineCombatType": {
@@ -53,7 +57,6 @@
             95,
             64
         ],
-        "post_delay": 100,
         "next": [
             "claimGunsmokeFrontlineRewards",
             "returnToHomePage"
@@ -100,7 +103,7 @@
         "recognition": "OCR",
         "expected": "一键领取",
         "action": "Click",
-        "post_delay": 1500,
+        "post_wait_freezes": 1500,
         "next": [
             "closeGunsmokeFrontlineRewardClaimResultPage",
             "switchGunsmokeFrontlineRewardsType",
@@ -227,169 +230,280 @@
             147
         ],
         "next": [
-            "chooseGunsmokeFrontlineDollOneX1",
-            "chooseGunsmokeFrontlineDollTwoX1"
+            "chooseGunsmokeFrontlineDollX1"
         ]
     },
-    "chooseGunsmokeFrontlineDollOneX1": {
+    "chooseGunsmokeFrontlineDollX1": {
         "doc": "选择人形1-1",
-        "recognition": "TemplateMatch",
+        "recognition": "OCR",
+        "expected": "选择人形",
         "roi": [
+            38,
+            247,
+            125,
+            44
+        ],
+        "target": [
             53,
             345,
             99,
             96
         ],
-        "template": "班组/双生效.png",
-        "threshold": 0.8,
-        "order_by": "Vertical",
         "action": "Click",
-        "green_mask": true,
         "next": [
-            "chooseGunsmokeFrontlineDollOneX2",
-            "chooseGunsmokeFrontlineDollTwoX2"
+            "chooseGunsmokeFrontlineDollX2"
         ]
     },
-    "chooseGunsmokeFrontlineDollOneX2": {
+    "chooseGunsmokeFrontlineDollX2": {
         "doc": "选择人形1-2",
-        "recognition": "TemplateMatch",
+        "recognition": "OCR",
+        "expected": "选择人形",
         "roi": [
+            38,
+            247,
+            125,
+            44
+        ],
+        "target": [
             165,
             348,
             97,
             95
         ],
-        "template": "班组/双生效.png",
-        "threshold": 0.8,
-        "order_by": "Vertical",
         "action": "Click",
-        "green_mask": true,
         "next": [
-            "chooseGunsmokeFrontlineDollOneX3",
-            "chooseGunsmokeFrontlineDollTwoX3"
+            "chooseGunsmokeFrontlineDollX3"
         ]
     },
-    "chooseGunsmokeFrontlineDollOneX3": {
+    "chooseGunsmokeFrontlineDollX3": {
+        "roi": [
+            38,
+            247,
+            125,
+            44
+        ],
         "doc": "选择人形1-3",
-        "recognition": "TemplateMatch",
-        "roi": [
+        "recognition": "OCR",
+        "expected": "选择人形",
+        "target": [
             280,
             346,
             98,
             97
         ],
-        "template": "班组/双生效.png",
-        "threshold": 0.8,
-        "order_by": "Vertical",
         "action": "Click",
-        "green_mask": true,
         "next": [
-            "chooseGunsmokeFrontlineDollOneX4",
-            "chooseGunsmokeFrontlineDollTwoX4"
+            "chooseGunsmokeFrontlineDollX4"
         ]
     },
-    "chooseGunsmokeFrontlineDollOneX4": {
+    "chooseGunsmokeFrontlineDollX4": {
         "doc": "选择人形1-4",
-        "recognition": "TemplateMatch",
+        "recognition": "OCR",
+        "expected": "选择人形",
         "roi": [
+            38,
+            247,
+            125,
+            44
+        ],
+        "target": [
             394,
             345,
             96,
             100
         ],
-        "template": "班组/双生效.png",
-        "threshold": 0.8,
-        "order_by": "Vertical",
         "action": "Click",
-        "green_mask": true,
         "next": [
-            "gunsmokeFrontlineCombatStart"
+            "enterGunsmokeFrontlineSupportDoll"
         ]
     },
-    "chooseGunsmokeFrontlineDollTwoX1": {
-        "doc": "选择人形2-1",
-        "recognition": "TemplateMatch",
+    "enterGunsmokeFrontlineSupportDoll": {
+        "doc": "选择支援人形任务",
+        "recognition": "OCR",
+        "expected": "助战",
         "roi": [
-            53,
-            345,
-            99,
-            96
-        ],
-        "template": [
-            "班组/本期生效1.png",
-            "班组/本期生效2.png"
-        ],
-        "threshold": 0.8,
-        "order_by": "Vertical",
-        "action": "Click",
-        "green_mask": true,
-        "next": [
-            "chooseGunsmokeFrontlineDollOneX2",
-            "chooseGunsmokeFrontlineDollTwoX2"
-        ]
-    },
-    "chooseGunsmokeFrontlineDollTwoX2": {
-        "doc": "选择人形2-2",
-        "recognition": "TemplateMatch",
-        "roi": [
-            165,
-            348,
+            1103,
+            561,
             97,
-            95
+            35
         ],
-        "template": [
-            "班组/本期生效1.png",
-            "班组/本期生效2.png"
-        ],
-        "threshold": 0.8,
-        "order_by": "Vertical",
         "action": "Click",
-        "green_mask": true,
         "next": [
-            "chooseGunsmokeFrontlineDollOneX3",
-            "chooseGunsmokeFrontlineDollTwoX3"
+            "chooseGunsmokeFrontlineSupportDollX1"
         ]
     },
-    "chooseGunsmokeFrontlineDollTwoX3": {
-        "doc": "选择人形2-3",
-        "recognition": "TemplateMatch",
+    "chooseGunsmokeFrontlineSupportDollX1": {
+        "doc": "选择支援人形1-1",
+        "recognition": "OCR",
+        "expected": "尖兵$",
         "roi": [
-            280,
-            346,
-            98,
-            97
+            584,
+            130,
+            107,
+            39
         ],
-        "template": [
-            "班组/本期生效1.png",
-            "班组/本期生效2.png"
+        "target": [
+            232,
+            245,
+            139,
+            72
         ],
-        "threshold": 0.8,
-        "order_by": "Vertical",
         "action": "Click",
-        "green_mask": true,
         "next": [
-            "chooseGunsmokeFrontlineDollOneX4",
-            "chooseGunsmokeFrontlineDollTwoX4"
+            "confirmGunsmokeFrontlineSupportDollX1"
         ]
     },
-    "chooseGunsmokeFrontlineDollTwoX4": {
-        "doc": "选择人形2-4",
+    "chooseGunsmokeFrontlineSupportDollX2": {
+        "doc": "选择支援人形1-2",
+        "recognition": "OCR",
+        "expected": "尖兵$",
+        "roi": [
+            584,
+            130,
+            107,
+            39
+        ],
+        "target": [
+            572,
+            243,
+            117,
+            75
+        ],
+        "action": "Click",
+        "next": [
+            "confirmGunsmokeFrontlineSupportDollX2"
+        ]
+    },
+    "chooseGunsmokeFrontlineSupportDollX3": {
+        "doc": "选择支援人形1-3",
+        "recognition": "OCR",
+        "expected": "尖兵$",
+        "roi": [
+            584,
+            130,
+            107,
+            39
+        ],
+        "target": [
+            908,
+            249,
+            108,
+            68
+        ],
+        "action": "Click",
+        "next": [
+            "confirmGunsmokeFrontlineSupportDollX3"
+        ]
+    },
+    "confirmGunsmokeFrontlineSupportDollX1": {
+        "doc": "确认支援人形1",
+        "recognition": "OCR",
+        "expected": "入队",
+        "roi": [
+            843,
+            591,
+            305,
+            64
+        ],
+        "action": "Click",
+        "next": [
+            "gunsmokeFrontlineCombatStart",
+            "cancelGunsmokeFrontlineSupportDollX1"
+        ]
+    },
+    "confirmGunsmokeFrontlineSupportDollX2": {
+        "doc": "确认支援人形2",
+        "recognition": "OCR",
+        "expected": "入队",
+        "roi": [
+            843,
+            591,
+            305,
+            64
+        ],
+        "action": "Click",
+        "next": [
+            "gunsmokeFrontlineCombatStart",
+            "cancelGunsmokeFrontlineSupportDollX2"
+        ]
+    },
+    "confirmGunsmokeFrontlineSupportDollX3": {
+        "doc": "确认支援人形3",
+        "recognition": "OCR",
+        "expected": "入队",
+        "roi": [
+            843,
+            591,
+            305,
+            64
+        ],
+        "action": "Click",
+        "next": [
+            "gunsmokeFrontlineCombatStart",
+            "cancelGunsmokeFrontlineSupportDollX3"
+        ]
+    },
+    "cancelGunsmokeFrontlineSupportDollX1": {
+        "doc": "取消支援人形1",
+        "recognition": "OCR",
+        "expected": "^取消$",
+        "roi": [
+            311,
+            509,
+            316,
+            66
+        ],
+        "action": "Click",
+        "next": [
+            "chooseGunsmokeFrontlineSupportDollX2"
+        ]
+    },
+    "cancelGunsmokeFrontlineSupportDollX2": {
+        "doc": "取消支援人形2",
+        "recognition": "OCR",
+        "expected": "^取消$",
+        "roi": [
+            311,
+            509,
+            316,
+            66
+        ],
+        "action": "Click",
+        "next": [
+            "chooseGunsmokeFrontlineSupportDollX3"
+        ]
+    },
+    "cancelGunsmokeFrontlineSupportDollX3": {
+        "doc": "取消支援人形3",
+        "recognition": "OCR",
+        "expected": "^取消$",
+        "roi": [
+            311,
+            509,
+            316,
+            66
+        ],
+        "action": "Click",
+        "next": [
+            "exitChooseGunsmokeFrontlineSupportDoll"
+        ]
+    },
+    "exitChooseGunsmokeFrontlineSupportDoll": {
+        "doc": "退出支援人形选择",
         "recognition": "TemplateMatch",
         "roi": [
-            394,
-            345,
-            96,
-            100
+            1115,
+            49,
+            51,
+            41
         ],
         "template": [
-            "班组/本期生效1.png",
-            "班组/本期生效2.png"
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
         ],
-        "threshold": 0.8,
-        "order_by": "Vertical",
         "action": "Click",
-        "green_mask": true,
         "next": [
+            "exitChooseGunsmokeFrontlineSupportDoll",
             "gunsmokeFrontlineCombatStart"
         ]
     },
@@ -405,7 +519,8 @@
         ],
         "action": "Click",
         "next": [
-            "confirmGunsmokeFrontlineCombatStart"
+            "confirmGunsmokeFrontlineCombatStart",
+            "enterGunsmokeFrontlineCombatResourceLoading"
         ]
     },
     "confirmGunsmokeFrontlineCombatStart": {
