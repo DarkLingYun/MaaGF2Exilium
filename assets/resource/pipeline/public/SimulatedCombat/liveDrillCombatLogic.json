@@ -11,7 +11,7 @@
         ],
         "action": "Click",
         "next": [
-            "enableLiveDrillAutoCombat",
+            "ableToChangeSpeed",
             "clickLiveDrillStartCombatButton"
         ]
     },
@@ -39,6 +39,103 @@
         "action": "Click",
         "next": [
             "waitingForLiveDrillAutoCombatToEnd"
+        ]
+    },
+    "ableToChangeSpeed": {
+        "doc": "实兵演习战斗速度按钮可用",
+        "recognition": "ColorMatch",
+        "connected": true,
+        "count": 55,
+        "roi": [
+            1069,
+            25,
+            35,
+            27
+        ],
+        "upper": [
+            210,
+            210,
+            210
+        ],
+        "lower": [
+            150,
+            150,
+            150
+        ],
+        "next": [
+            "changeSpeed"
+        ]
+    },
+    "changeSpeed": {
+        "doc": "改变实兵演习战斗速度，只在这里改变，因为战斗速度会继承到别的战斗中，而这里是每日任务中最早的战斗",
+        "next": [
+            "current3xSpeed",
+            "current2xSpeed",
+            "current1xSpeed"
+        ]
+    },
+    "current1xSpeed": {
+        "doc": "当前实兵演习战斗速度为 1 倍，这里因为背景的变化，老是识别不到，就直接无脑进入这个节点了",
+        "next": [
+            "clickChangeSpeedButtonTo2xSpeed"
+        ]
+    },
+    "current2xSpeed": {
+        "doc": "当前实兵演习战斗速度为 2 倍",
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/2倍速.png",
+        "roi": [
+            1139,
+            39,
+            19,
+            12
+        ],
+        "threshold": 0.9,
+        "next": [
+            "clickChangeSpeedButtonTo3xSpeed"
+        ]
+    },
+    "current3xSpeed": {
+        "doc": "当前实兵演习战斗速度为 3 倍",
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/3倍速.png",
+        "roi": [
+            1139,
+            39,
+            19,
+            12
+        ],
+        "threshold": 0.9,
+        "next": [
+            "enableLiveDrillAutoCombat"
+        ]
+    },
+    "clickChangeSpeedButtonTo2xSpeed": {
+        "doc": "点击实兵演习战斗速度按钮切换到 2 倍速",
+        "target": [
+            1144,
+            28,
+            27,
+            22
+        ],
+        "action": "Click",
+        "next": [
+            "current2xSpeed",
+            "clickChangeSpeedButtonTo2xSpeed"
+        ]
+    },
+    "clickChangeSpeedButtonTo3xSpeed": {
+        "doc": "点击实兵演习战斗速度按钮切换到 3 倍速",
+        "target": [
+            1144,
+            28,
+            27,
+            22
+        ],
+        "action": "Click",
+        "next": [
+            "current3xSpeed",
+            "clickChangeSpeedButtonTo3xSpeed"
         ]
     },
     "waitingForLiveDrillAutoCombatToEnd": {
