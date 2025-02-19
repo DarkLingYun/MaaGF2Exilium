@@ -14,6 +14,8 @@ def json_to_mermaid(json_file_path):
     for key, obj in data.items():
         # 取出 doc，如果没有 doc，就用空字符串或其他占位
         doc_str = obj.get("doc", "")
+        # mermaid 不支持中文逗号，替换成英文逗号
+        doc_str = doc_str.replace("，", ",")
 
         # 构造节点名称：键|doc
         # 如果 doc 为空，就不显示 -doc 部分
@@ -24,7 +26,7 @@ def json_to_mermaid(json_file_path):
             for i, next_key in enumerate(obj["next"]):
                 # 找到 next_key 的 doc
                 next_obj = data.get(next_key, {})
-                next_doc_str = next_obj.get("doc", "")
+                next_doc_str = next_obj.get("doc", "").replace("，", ",")
                 next_node_label = (
                     f"{next_key}-{next_doc_str}" if next_doc_str else next_key
                 )
