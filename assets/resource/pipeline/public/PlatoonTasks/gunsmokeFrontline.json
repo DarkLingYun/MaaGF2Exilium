@@ -3,7 +3,26 @@
         "doc": "进入尘烟前线任务",
         "enabled": true,
         "next": [
+            "checkGunsmokeFrontlineState",
             "enterGunsmokeFrontlinePage"
+        ]
+    },
+    "checkGunsmokeFrontlineState": {
+        "doc": "未开启状态",
+        "recognition": "OCR",
+        "expected": "开启$",
+        "roi": [
+            506,
+            550,
+            773,
+            169
+        ],
+        "post_wait_freezes": {
+            "time": 500,
+            "rate_limit": 100
+        },
+        "next": [
+            "exitGunsmokeFrontlineTask"
         ]
     },
     "enterGunsmokeFrontlinePage": {
