@@ -185,10 +185,10 @@
         "doc": "领取实兵演习奖励，要求演习进度为满",
         "recognition": "TemplateMatch",
         "roi": [
-            400,
-            610,
-            60,
-            60
+            438,
+            599,
+            28,
+            28
         ],
         "template": "实兵演习/演习补给待领取.png",
         "action": "Click",
