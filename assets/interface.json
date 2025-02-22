@@ -242,11 +242,6 @@
                     "pipeline_override": {
                         "findSurveyEmail": {
                             "enabled": true
-                        },
-                        "surveyEmailFound": {
-                            "focus": true,
-                            "focus_tip": "发现调研邀请邮件，请手动处理",
-                            "focus_toast": "发现调研邀请邮件，请手动处理"
                         }
                     }
                 },
