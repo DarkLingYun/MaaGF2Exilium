@@ -1,21 +1,21 @@
 {
-    "enterLiveDrillTask": {
+    "enterCombatExercise": {
         "next": [
-            "clickEnterLiveDrillPage"
+            "clickEnterCombatExercisePage"
         ]
     },
-    "clickEnterLiveDrillPage": {
+    "clickEnterCombatExercisePage": {
         "recognition": "OCR",
         "expected": "实兵演习",
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "liveTroopExerciseWeeklySettlement",
-            "insufficientPermissionsForLiveDrill",
+            "combatExerciseWeeklySettlement",
+            "insufficientPassesForCombatExercise",
             "clickButtonToEnterOpponentSelection"
         ]
     },
-    "liveTroopExerciseWeeklySettlement": {
+    "combatExerciseWeeklySettlement": {
         "doc": "实兵演习每周结算",
         "recognition": "OCR",
         "expected": [
@@ -26,7 +26,7 @@
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "liveTroopExerciseWeeklySettlement",
+            "combatExerciseWeeklySettlement",
             "clickButtonToEnterOpponentSelection"
         ]
     },
@@ -37,11 +37,11 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "confirmLiveDrillOpponentListPage",
-            "liveTroopExerciseWeeklySettlement"
+            "confirmCombatExerciseOpponentListPage",
+            "combatExerciseWeeklySettlement"
         ]
     },
-    "confirmLiveDrillOpponentListPage": {
+    "confirmCombatExerciseOpponentListPage": {
         "doc": "确认实兵演习对象列表页",
         "recognition": "OCR",
         "roi": [
@@ -55,7 +55,7 @@
             "当前积分"
         ],
         "next": [
-            "insufficientPermissionsForLiveDrill",
+            "insufficientPassesForCombatExercise",
             "hasChallengeSuccessfulObject",
             "challengeOpponentSelection",
             "refreshOpponentList"
@@ -137,10 +137,10 @@
         "expected": "资源加载中",
         "next": [
             "enterLiveDrillCombatResourceLoading",
-            "clickLiveDrillStartCombatButton"
+            "clickCombatExerciseStartCombatButton"
         ]
     },
-    "insufficientPermissionsForLiveDrill": {
+    "insufficientPassesForCombatExercise": {
         "doc": "实兵演习权限不足(不足有两种页面：实兵演习首页，挑战对象选择页)",
         "recognition": "OCR",
         "expected": "0/3",
@@ -152,7 +152,7 @@
         ],
         "next": [
             "exitChallengeOpponentSelection",
-            "exitLiveDrillPage"
+            "exitCombatExercisePage"
         ]
     },
     "exitChallengeOpponentSelection": {
@@ -177,11 +177,11 @@
         ],
         "action": "Click",
         "next": [
-            "claimLiveDrillRewards",
-            "exitLiveDrillPage"
+            "claimCombatExerciseRewards",
+            "exitCombatExercisePage"
         ]
     },
-    "claimLiveDrillRewards": {
+    "claimCombatExerciseRewards": {
         "doc": "领取实兵演习奖励，要求演习进度为满",
         "recognition": "TemplateMatch",
         "roi": [
@@ -193,22 +193,22 @@
         "template": "实兵演习/演习补给待领取.png",
         "action": "Click",
         "next": [
-            "claimLiveDrillRewards",
-            "closeLiveDrillRewardClaimResultPage"
+            "claimCombatExerciseRewards",
+            "closeCombatExerciseRewardClaimResultPage"
         ]
     },
-    "closeLiveDrillRewardClaimResultPage": {
+    "closeCombatExerciseRewardClaimResultPage": {
         "doc": "关闭实兵演习奖励领取结果页(由于识别太快可能点击无效果，需要调用自身)",
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
         "next": [
-            "liveDrillRewardProgressNotMet",
-            "closeLiveDrillRewardClaimResultPage",
-            "exitLiveDrillPage"
+            "combatExerciseRewardProgressNotMet",
+            "closeCombatExerciseRewardClaimResultPage",
+            "exitCombatExercisePage"
         ]
     },
-    "liveDrillRewardProgressNotMet": {
+    "combatExerciseRewardProgressNotMet": {
         "doc": "实兵演习奖励进度未满",
         "recognition": "TemplateMatch",
         "roi": [
@@ -219,10 +219,10 @@
         ],
         "template": "实兵演习/演习补给已领取.png",
         "next": [
-            "exitLiveDrillPage"
+            "exitCombatExercisePage"
         ]
     },
-    "exitLiveDrillPage": {
+    "exitCombatExercisePage": {
         "doc": "实兵演习页返回",
         "recognition": "OCR",
         "expected": "演习记录",
@@ -234,7 +234,7 @@
         ],
         "action": "Click",
         "next": [
-            "enterWarGameSimulationTask",
+            "enterMilitarySimulationTask",
             "returnToHomePage"
         ]
     }

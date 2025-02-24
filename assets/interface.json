@@ -126,7 +126,7 @@
         },
         {
             "name": "模拟作战日常",
-            "entry": "SimulatedCombat",
+            "entry": "CombatSimulations",
             "option": [
                 "首领挑战自律",
                 "自动实兵演习",
@@ -1145,7 +1145,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "enterBossChallengeTask": {
+                        "enterBossFightTask": {
                             "enabled": true
                         }
                     }
@@ -1153,7 +1153,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "enterBossChallengeTask": {
+                        "enterBossFightTask": {
                             "enabled": false
                         }
                     }
@@ -1165,7 +1165,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "enterLiveDrillTask": {
+                        "enterCombatExercise": {
                             "enabled": true
                         }
                     }
@@ -1173,7 +1173,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "enterLiveDrillTask": {
+                        "enterCombatExercise": {
                             "enabled": false
                         }
                     }
@@ -1185,7 +1185,7 @@
                 {
                     "name": "x1",
                     "pipeline_override": {
-                        "insufficientPermissionsForLiveDrill": {
+                        "insufficientPassesForCombatExercise": {
                             "expected": "2/3"
                         }
                     }
@@ -1193,7 +1193,7 @@
                 {
                     "name": "x2",
                     "pipeline_override": {
-                        "insufficientPermissionsForLiveDrill": {
+                        "insufficientPassesForCombatExercise": {
                             "expected": "1/3"
                         }
                     }
@@ -1201,7 +1201,7 @@
                 {
                     "name": "x3",
                     "pipeline_override": {
-                        "insufficientPermissionsForLiveDrill": {
+                        "insufficientPassesForCombatExercise": {
                             "expected": "0/3"
                         }
                     }
@@ -1241,7 +1241,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "enterWarGameSimulationTask": {
+                        "enterMilitarySimulationTask": {
                             "enabled": true
                         }
                     }
@@ -1249,7 +1249,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "enterWarGameSimulationTask": {
+                        "enterMilitarySimulationTask": {
                             "enabled": false
                         }
                     }

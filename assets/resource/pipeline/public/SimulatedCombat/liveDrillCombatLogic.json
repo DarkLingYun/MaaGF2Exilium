@@ -1,5 +1,5 @@
 {
-    "clickLiveDrillStartCombatButton": {
+    "clickCombatExerciseStartCombatButton": {
         "doc": "点击实兵演习战斗开始按钮",
         "recognition": "OCR",
         "expected": "作战开始",
@@ -12,10 +12,10 @@
         "action": "Click",
         "next": [
             "ableToChangeSpeed",
-            "clickLiveDrillStartCombatButton"
+            "clickCombatExerciseStartCombatButton"
         ]
     },
-    "enableLiveDrillAutoCombat": {
+    "enableCombatExerciseAutoCombat": {
         "doc": "点击实兵演习自动战斗按钮",
         "recognition": "ColorMatch",
         "connected": true,
@@ -38,7 +38,7 @@
         ],
         "action": "Click",
         "next": [
-            "waitingForLiveDrillAutoCombatToEnd"
+            "waitingForCombatExerciseAutoCombatToEnd"
         ]
     },
     "ableToChangeSpeed": {
@@ -107,7 +107,7 @@
         ],
         "threshold": 0.9,
         "next": [
-            "enableLiveDrillAutoCombat"
+            "enableCombatExerciseAutoCombat"
         ]
     },
     "clickChangeSpeedButtonTo2xSpeed": {
@@ -138,18 +138,18 @@
             "clickChangeSpeedButtonTo3xSpeed"
         ]
     },
-    "waitingForLiveDrillAutoCombatToEnd": {
+    "waitingForCombatExerciseAutoCombatToEnd": {
         "doc": "等待实兵演习自动战斗结束",
         "post_wait_freezes": {
             "time": 2500,
             "threshold": 0.8
         },
         "next": [
-            "liveDrillTaskCompleted",
-            "waitingForLiveDrillAutoCombatToEnd"
+            "combatExerciseTaskCompleted",
+            "waitingForCombatExerciseAutoCombatToEnd"
         ]
     },
-    "liveDrillTaskCompleted": {
+    "combatExerciseTaskCompleted": {
         "doc": "实兵演习任务完成或失败",
         "recognition": "OCR",
         "expected": [
@@ -159,11 +159,11 @@
         "action": "Click",
         "post_wait_freezes": 300,
         "next": [
-            "confirmLevelPromotionForLiveDrill",
-            "clickConfirmButtonToExitLiveDrill"
+            "confirmLevelPromotionForCombatExercise",
+            "clickConfirmButtonToExitCombatExercise"
         ]
     },
-    "confirmLevelPromotionForLiveDrill": {
+    "confirmLevelPromotionForCombatExercise": {
         "doc": "确认实兵演习等级晋级",
         "recognition": "OCR",
         "expected": [
@@ -173,18 +173,18 @@
         ],
         "action": "Click",
         "next": [
-            "confirmLevelPromotionForLiveDrill",
-            "confirmLiveDrillOpponentListPage",
-            "clickConfirmButtonToExitLiveDrill"
+            "confirmLevelPromotionForCombatExercise",
+            "confirmCombatExerciseOpponentListPage",
+            "clickConfirmButtonToExitCombatExercise"
         ]
     },
-    "clickConfirmButtonToExitLiveDrill": {
+    "clickConfirmButtonToExitCombatExercise": {
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
         "next": [
-            "clickConfirmButtonToExitLiveDrill",
-            "confirmLevelPromotionForLiveDrill",
+            "clickConfirmButtonToExitCombatExercise",
+            "confirmLevelPromotionForCombatExercise",
             "exitLiveDrillCombatResourceLoading"
         ]
     },
@@ -194,8 +194,8 @@
         "expected": "资源加载中",
         "next": [
             "exitLiveDrillCombatResourceLoading",
-            "confirmLevelPromotionForLiveDrill",
-            "confirmLiveDrillOpponentListPage"
+            "confirmLevelPromotionForCombatExercise",
+            "confirmCombatExerciseOpponentListPage"
         ]
     }
 }
