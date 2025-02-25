@@ -1,5 +1,5 @@
 {
-    "enterWarGameSimulationTask": {
+    "enterMilitarySimulationTask": {
         "action": "Swipe",
         "begin": [
             1124,
@@ -15,11 +15,11 @@
         ],
         "post_delay": 1000,
         "next": [
-            "clickEnterWarGameSimulationPage",
-            "enterWarGameSimulationTask"
+            "clickEnterMilitarySimulationPage",
+            "enterMilitarySimulationTask"
         ]
     },
-    "clickEnterWarGameSimulationPage": {
+    "clickEnterMilitarySimulationPage": {
         "doc": "点击进入兵棋推演界面",
         "recognition": "OCR",
         "expected": "兵棋推演",

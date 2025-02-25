@@ -1,29 +1,29 @@
 {
-    "enterBossChallengeTask": {
+    "enterBossFightTask": {
         "next": [
-            "clickEnterBossChallengePage"
+            "clickEnterBossFightPage"
         ]
     },
-    "clickEnterBossChallengePage": {
+    "clickEnterBossFightPage": {
         "recognition": "OCR",
         "expected": "^首领挑战$",
         "action": "Click",
         "post_wait_freezes": 300,
         "next": [
-            "enterBossRoutineChallenge"
+            "enterBossStandardBattle"
         ]
     },
-    "enterBossRoutineChallenge": {
+    "enterBossStandardBattle": {
         "recognition": "OCR",
         "expected": "^常规挑战$",
         "action": "Click",
         "post_wait_freezes": 300,
         "next": [
-            "insufficientPermissionsForBossChallenge",
-            "clickBossChallengeAutonomyButton"
+            "insufficientAccessForBossFight",
+            "clickBossFightAutoButton"
         ]
     },
-    "insufficientPermissionsForBossChallenge": {
+    "insufficientAccessForBossFight": {
         "doc": "首领挑战权限不足",
         "recognition": "OCR",
         "expected": "0/1$",
@@ -34,10 +34,10 @@
             54
         ],
         "next": [
-            "exitBossChallenge"
+            "exitBossFight"
         ]
     },
-    "exitBossChallenge": {
+    "exitBossFight": {
         "recognition": "TemplateMatch",
         "roi": [
             0,
@@ -51,20 +51,20 @@
         ],
         "action": "Click",
         "next": [
-            "enterLiveDrillTask",
-            "enterWarGameSimulationTask",
+            "enterCombatExercise",
+            "enterMilitarySimulationTask",
             "returnToHomePage"
         ]
     },
-    "clickBossChallengeAutonomyButton": {
+    "clickBossFightAutoButton": {
         "recognition": "OCR",
         "expected": "^自律$",
         "action": "Click",
         "next": [
-            "increaseSelfDisciplineCountForBossChallenge"
+            "increaseAutoBattleCountForBossFight"
         ]
     },
-    "increaseSelfDisciplineCountForBossChallenge": {
+    "increaseAutoBattleCountForBossFight": {
         "doc": "增加自律次数",
         "recognition": "TemplateMatch",
         "roi": [
@@ -80,11 +80,11 @@
         "post_delay": 100,
         "action": "Click",
         "next": [
-            "maxSelfDisciplineCountForBossChallenge",
-            "increaseSelfDisciplineCountForBossChallenge"
+            "maxAutoBattleCountForBossFight",
+            "increaseAutoBattleCountForBossFight"
         ]
     },
-    "maxSelfDisciplineCountForBossChallenge": {
+    "maxAutoBattleCountForBossFight": {
         "doc": "首领挑战自律次数达到最大值",
         "recognition": "ColorMatch",
         "roi": [
@@ -105,10 +105,10 @@
         ],
         "post_delay": 100,
         "next": [
-            "confirmBossChallengeSelfDiscipline"
+            "confirmBossFightSelfDiscipline"
         ]
     },
-    "confirmBossChallengeSelfDiscipline": {
+    "confirmBossFightSelfDiscipline": {
         "doc": "确认进行BOSS挑战自律",
         "roi": [
             260,
@@ -121,17 +121,17 @@
         "action": "Click",
         "post_wait_freezes": 300,
         "next": [
-            "closeBossChallengeResultsPage"
+            "closeBossFightResultsPage"
         ]
     },
-    "closeBossChallengeResultsPage": {
+    "closeBossFightResultsPage": {
         "doc": "关闭心智勘测结果页",
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
         "next": [
-            "closeBossChallengeResultsPage",
-            "insufficientPermissionsForBossChallenge"
+            "closeBossFightResultsPage",
+            "insufficientAccessForBossFight"
         ]
     }
 }
