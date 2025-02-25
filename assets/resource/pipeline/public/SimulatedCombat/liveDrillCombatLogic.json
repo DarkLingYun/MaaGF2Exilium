@@ -10,9 +10,27 @@
             44
         ],
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "ableToChangeSpeed",
+            "clickCombatExerciseStartCombatConfirmButton",
             "clickCombatExerciseStartCombatButton"
+        ]
+    },
+    "clickCombatExerciseStartCombatConfirmButton": {
+        "doc": "还有可部署人形提示时，点击确认开始",
+        "recognition": "OCR",
+        "expected": "^确认$",
+        "roi": [
+            261,
+            119,
+            760,
+            480
+        ],
+        "action": "Click",
+        "next": [
+            "ableToChangeSpeed",
+            "clickCombatExerciseStartCombatConfirmButton"
         ]
     },
     "enableCombatExerciseAutoCombat": {
