@@ -52,7 +52,8 @@
         ],
         "recognition": "ColorMatch",
         "focus": true,
-        "focus_succeeded": "物资扫荡不足",
+        "focus_succeeded": "扫荡券不足",
+        "focus_succeeded_color": "#f46e6e",
         "next": [
             "exitVersionActivityResourceSweep"
         ]
