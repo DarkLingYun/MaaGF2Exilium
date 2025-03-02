@@ -51,6 +51,8 @@
             64
         ],
         "recognition": "ColorMatch",
+        "focus": true,
+        "focus_succeeded": "物资扫荡不足",
         "next": [
             "exitVersionActivityResourceSweep"
         ]
@@ -64,9 +66,9 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
+            "HomePage",
             "enterVersionActivityItemExchange",
-            "exitVersionActivityResourceSweep",
-            "HomePage"
+            "exitVersionActivityResourceSweep"
         ]
     },
     "selectResourceModeLevel": {

@@ -63,6 +63,9 @@
     "HomePage": {
         "recognition": "OCR",
         "expected": "战役推进",
+        "focus": true,
+        "focus_succeeded": "返回主页成功",
+        "focus_failed": "返回主页失败",
         "pre_delay": 2500
     },
     "resourcesLoading": {
