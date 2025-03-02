@@ -28,7 +28,27 @@
         "post_delay": 1500,
         "next": [
             "clickBoundaryAdvanceTagButton",
+            "boundaryAdvanceDelegateRewardFull",
             "clickBoundaryAdvanceDelegateButton"
+        ]
+    },
+    "boundaryAdvanceDelegateRewardFull": {
+        "doc": "边界推进委托奖励已满",
+        "recognition": "OCR",
+        "expected": [
+            "全部领取$"
+        ],
+        "roi": [
+            862,
+            573,
+            209,
+            32
+        ],
+        "focus": true,
+        "focus_succeeded": "派遣奖励已全部领取",
+        "focus_succeeded_color": "#519afd",
+        "next": [
+            "exitBoundaryAdvance"
         ]
     },
     "clickBoundaryAdvanceDelegateButton": {
