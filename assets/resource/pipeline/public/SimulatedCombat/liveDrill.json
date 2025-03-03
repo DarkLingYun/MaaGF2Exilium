@@ -192,6 +192,12 @@
         ],
         "template": "实兵演习/演习补给待领取.png",
         "action": "Click",
+        "target": [
+            404,
+            620,
+            45,
+            36
+        ],
         "next": [
             "claimCombatExerciseRewards",
             "closeCombatExerciseRewardClaimResultPage"
