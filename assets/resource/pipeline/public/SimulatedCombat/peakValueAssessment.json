@@ -10,7 +10,7 @@
         "expected": "峰值推定",
         "action": "Click",
         "post_wait_freezes": {
-            "time": 500,
+            "time": 1000,
             "threshold": 0.8
         },
         "next": [
@@ -42,7 +42,17 @@
     "claimRewards": {
         "doc": "领取峰值推定奖励",
         "recognition": "OCR",
-        "expected": "一键领取",
+        "expected": [
+            "一键领取",
+            "领取",
+            "键"
+        ],
+        "roi": [
+            850,
+            574,
+            306,
+            67
+        ],
         "action": "Click",
         "next": [
             "closeResultPage",
