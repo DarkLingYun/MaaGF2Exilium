@@ -52,6 +52,7 @@
         "action": "Click",
         "next": [
             "enterCombatExercise",
+            "enterPeakValueAssessment",
             "enterMilitarySimulationTask",
             "returnToHomePage"
         ]

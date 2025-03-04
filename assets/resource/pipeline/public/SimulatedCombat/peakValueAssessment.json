@@ -1,0 +1,105 @@
+{
+    "enterPeakValueAssessment": {
+        "next": [
+            "clickEnterPeakValueAssessmentPage"
+        ]
+    },
+    "clickEnterPeakValueAssessmentPage": {
+        "doc": "点击进入峰值推定页面",
+        "recognition": "OCR",
+        "expected": "峰值推定",
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        },
+        "next": [
+            "peakValueAssessmentPageEnteredForFirstTime",
+            "peakValueAssessmentPageEnteredAgain"
+        ]
+    },
+    "peakValueAssessmentPageEnteredForFirstTime": {
+        "doc": "当日首次进入峰值推定,周期报酬自动弹出,有奖励就领，没有直接关掉",
+        "recognition": "OCR",
+        "expected": "周期报酬",
+        "roi": [
+            569,
+            72,
+            137,
+            40
+        ],
+        "next": [
+            "claimRewards",
+            "closePeriodicReturnsPage"
+        ]
+    },
+    "peakValueAssessmentPageEnteredAgain": {
+        "doc": "当日非首次进入峰值推定",
+        "next": [
+            "exitPeakValueAssessment"
+        ]
+    },
+    "claimRewards": {
+        "doc": "领取峰值推定奖励",
+        "recognition": "OCR",
+        "expected": "一键领取",
+        "action": "Click",
+        "next": [
+            "closeResultPage",
+            "claimRewards"
+        ]
+    },
+    "closeResultPage": {
+        "doc": "关闭领取结果页面",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "rewardsClaimed",
+            "closeResultPage"
+        ]
+    },
+    "rewardsClaimed": {
+        "doc": "已领取",
+        "recognition": "OCR",
+        "expected": "周期报酬",
+        "next": [
+            "closePeriodicReturnsPage"
+        ]
+    },
+    "closePeriodicReturnsPage": {
+        "doc": "关闭周期报酬页面",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "threshold": 0.8
+        },
+        "next": [
+            "exitPeakValueAssessment"
+        ]
+    },
+    "exitPeakValueAssessment": {
+        "doc": "退出兵棋推演页面",
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            200,
+            70
+        ],
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "enterMilitarySimulationTask",
+            "returnToHomePage"
+        ]
+    }
+}
