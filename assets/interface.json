@@ -36,7 +36,7 @@
         }
     ],
     "name": "少女前线2：追放自动化助手",
-    "custom_title": "素银匿信",
+    "custom_title": "匿影而生",
     "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "mirrorchyan_rid": "MaaGF2Exilium",
     "task": [
@@ -1357,7 +1357,22 @@
         "物资模式活动选择": {
             "cases": [
                 {
-                    "name": "素银匿信",
+                    "name": "匿影而生",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "匿影而生"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "情报置换处"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "素银匿信(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
