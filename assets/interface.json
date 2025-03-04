@@ -84,7 +84,7 @@
             "check": true
         },
         {
-            "name": "标准同调(金币本)",
+            "name": "[暂不可用]标准同调(金币本)",
             "entry": "AutoSweepBattle",
             "option": [
                 "同调次数："
