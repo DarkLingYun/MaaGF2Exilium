@@ -15,6 +15,47 @@
         "action": "Click",
         "post_wait_freezes": 200,
         "next": [
+            "clickTimeLimitedGiftPackage"
+        ]
+    },
+    "clickTimeLimitedGiftPackage": {
+        "recognition": "OCR",
+        "expected": "^限时礼包$",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "clickWeekSupplyBox",
+            "clickPermanentGiftPackage"
+        ]
+    },
+    "clickWeekSupplyBox": {
+        "recognition": "OCR",
+        "expected": [
+            "周周乐补给箱",
+            "周周"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "confirmWeekSupplyBoxPurchase"
+        ]
+    },
+    "confirmWeekSupplyBoxPurchase": {
+        "recognition": "OCR",
+        "expected": "^(购买|确认)$",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "closeWeekSupplyBoxPurchaseResultPage"
+        ]
+    },
+    "closeWeekSupplyBoxPurchaseResultPage": {
+        "recognition": "OCR",
+        "expected": "点击",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "closeWeekSupplyBoxPurchaseResultPage",
             "clickPermanentGiftPackage"
         ]
     },
