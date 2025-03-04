@@ -25,6 +25,7 @@
         "next": [
             "enterBossFightTask",
             "enterCombatExercise",
+            "enterPeakValueAssessment",
             "enterMilitarySimulationTask",
             "returnToHomePage"
         ]

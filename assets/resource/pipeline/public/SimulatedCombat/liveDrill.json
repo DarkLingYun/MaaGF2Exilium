@@ -240,6 +240,7 @@
         ],
         "action": "Click",
         "next": [
+            "enterPeakValueAssessment",
             "enterMilitarySimulationTask",
             "returnToHomePage"
         ]

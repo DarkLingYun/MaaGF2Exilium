@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
-<img alt="logo2" src="https://gf2.mcc.wiki/image/doll/Avatar_Half_YooHeeSSR.png" width="256"/>
+<img alt="logo2" src="https://gf2.mcc.wiki/image/doll/Avatar_Half_NikketaSSR.png" width="256"/>
 </p>
 
 <div align="center">
@@ -199,6 +199,7 @@
   * [x] 常规首领挑战自律
     * [x] 支持自动自律
   * [x] 自动实兵演习
+  * [x] 自动领取峰值推定奖励
   * [x] 自动兵棋推演(暂不支持自动领取推演奖励)
 
 * [x] 班组日常
