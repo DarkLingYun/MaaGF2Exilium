@@ -1,6 +1,7 @@
 {
     "enterCommissionToClaimTask": {
         "doc": "进入委托领取任务",
+        "enabled": true,
         "recognition": "OCR",
         "expected": "^委托$",
         "roi": [
@@ -140,10 +141,21 @@
             "公用按钮组件/主页按钮_black.png"
         ],
         "action": "Click",
-        "post_delay": 1500,
+        "next": [
+            "commissionPageExited",
+            "exitCommissionPage"
+        ]
+    },
+    "commissionPageExited": {
+        "doc": "已退出到主界面",
+        "recognition": "OCR",
+        "expected": [
+            "战役推进"
+        ],
         "next": [
             "enterPassToClaimTask",
             "enterPersonalInformationPage",
+            "enterDangerousExcavation",
             "HomePage"
         ]
     }

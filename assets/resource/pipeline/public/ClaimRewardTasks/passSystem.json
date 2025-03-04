@@ -1,6 +1,7 @@
 {
     "enterPassToClaimTask": {
         "doc": "进入巡录领取任务",
+        "enabled": true,
         "recognition": "OCR",
         "expected": "^巡录$",
         "action": "Click",
@@ -176,10 +177,20 @@
             "公用按钮组件/主页按钮_black.png"
         ],
         "action": "Click",
-        "post_delay": 1500,
+        "next": [
+            "passSystemPageExited",
+            "exitPassSystemPage"
+        ]
+    },
+    "passSystemPageExited": {
+        "doc": "已退出到主界面",
+        "recognition": "OCR",
+        "expected": [
+            "战役推进"
+        ],
         "next": [
             "enterPersonalInformationPage",
-            "exitPassSystemPage",
+            "enterDangerousExcavation",
             "HomePage"
         ]
     }

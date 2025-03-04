@@ -161,8 +161,14 @@
             ]
         },
         {
-            "name": "领取奖励(日常，通行证和助战)",
+            "name": "领取奖励",
             "entry": "ClaimRewardTasks",
+            "option": [
+                "每日订单",
+                "远航巡录",
+                "助战",
+                "险境挖掘（限时）"
+            ],
             "check": true
         },
         {
@@ -1635,6 +1641,86 @@
                     "name": "NO",
                     "pipeline_override": {
                         "enterBossChallengeExchangeTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "每日订单": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterCommissionToClaimTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterCommissionToClaimTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "远航巡录": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterPassToClaimTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterPassToClaimTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "助战": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterPersonalInformationPage": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterPersonalInformationPage": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "险境挖掘（限时）": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterDangerousExcavation": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterDangerousExcavation": {
                             "enabled": false
                         }
                     }
