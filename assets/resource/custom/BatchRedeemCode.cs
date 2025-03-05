@@ -173,6 +173,7 @@ namespace JsonHelper
 
 namespace MFAWPF.Custom
 {
+    using MFAWPF.Extensions;
     // 执行完毕后，回到主页面
     public class BatchRedeemCodeAction : IMaaCustomAction
     {
