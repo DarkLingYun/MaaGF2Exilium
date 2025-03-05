@@ -1,0 +1,47 @@
+{
+    "PlatoonTasks": {
+        "doc": "班组日常",
+        "next": [
+            "clickPlatoonButton"
+        ],
+        "interrupt": [
+            "StartGame"
+        ]
+    },
+    "clickPlatoonButton": {
+        "doc": "工会任务",
+        "recognition": "OCR",
+        "expected": "^班组$",
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "rate_limit": 200
+        },
+        "next": [
+            "checkPlatoon",
+            "enterPlatoonDailySupplyTask",
+            "enterPlatoonDailyCombatTask",
+            "returnToHomePage"
+        ]
+    },
+    "checkPlatoon": {
+        "doc": "检查是否加入班组",
+        "recognition": "OCR",
+        "expected": [
+            "一键",
+            "加入",
+            "申请",
+            "记录"
+        ],
+        "roi": [
+            465,
+            614,
+            350,
+            105
+        ],
+        "next": [
+            "returnToHomePage",
+            "checkPlatoon"
+        ]
+    }
+}

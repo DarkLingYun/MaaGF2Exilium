@@ -1,0 +1,564 @@
+{
+    "enterGunsmokeFrontlineTask": {
+        "doc": "进入尘烟前线任务",
+        "enabled": true,
+        "next": [
+            "checkGunsmokeFrontlineState",
+            "enterGunsmokeFrontlinePage"
+        ]
+    },
+    "checkGunsmokeFrontlineState": {
+        "doc": "未开启状态",
+        "recognition": "OCR",
+        "expected": "开启$",
+        "roi": [
+            506,
+            550,
+            773,
+            169
+        ],
+        "post_wait_freezes": {
+            "time": 500,
+            "rate_limit": 100
+        },
+        "next": [
+            "exitGunsmokeFrontlineTask"
+        ]
+    },
+    "enterGunsmokeFrontlinePage": {
+        "doc": "进入尘烟前线界面",
+        "recognition": "OCR",
+        "expected": "^尘烟前线$",
+        "roi": [
+            506,
+            550,
+            773,
+            169
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "rate_limit": 100
+        },
+        "next": [
+            "selectGunsmokeFrontlineCombatType",
+            "enterGunsmokeFrontlinePage"
+        ]
+    },
+    "selectGunsmokeFrontlineCombatType": {
+        "doc": "选择战斗类型",
+        "recognition": "OCR",
+        "expected": "前哨战",
+        "action": "Click",
+        "next": [
+            "gunsmokeFrontlineCombatInsufficientAttempts",
+            "clickGunsmokeFrontlineStartButton",
+            "SelectGunsmokeFrontlineCombatTypeTwo",
+            "selectGunsmokeFrontlineCombatType"
+        ]
+    },
+    "gunsmokeFrontlineCombatInsufficientAttempts": {
+        "doc": "剩余次数不足",
+        "recognition": "ColorMatch",
+        "roi": [
+            904,
+            585,
+            330,
+            38
+        ],
+        "upper": [
+            255,
+            129,
+            113
+        ],
+        "lower": [
+            200,
+            95,
+            64
+        ],
+        "next": [
+            "claimGunsmokeFrontlineRewards",
+            "returnToHomePage"
+        ]
+    },
+    "claimGunsmokeFrontlineRewards": {
+        "doc": "领取奖励",
+        "recognition": "TemplateMatch",
+        "roi": [
+            231,
+            633,
+            182,
+            47
+        ],
+        "template": "班组/奖励提醒1.png",
+        "green_mask": true,
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "clickGunsmokeFrontlineRewardButton",
+            "switchGunsmokeFrontlineRewardsType"
+        ]
+    },
+    "switchGunsmokeFrontlineRewardsType": {
+        "doc": "切换奖励类型",
+        "recognition": "OCR",
+        "expected": "班组表现",
+        "roi": [
+            312,
+            176,
+            660,
+            87
+        ],
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "clickGunsmokeFrontlineRewardButton",
+            "closeGunsmokeFrontlineRewardsPage"
+        ]
+    },
+    "clickGunsmokeFrontlineRewardButton": {
+        "doc": "点击领取奖励按钮",
+        "recognition": "OCR",
+        "expected": "一键领取",
+        "action": "Click",
+        "post_wait_freezes": 1500,
+        "next": [
+            "closeGunsmokeFrontlineRewardClaimResultPage",
+            "switchGunsmokeFrontlineRewardsType",
+            "exitGunsmokeFrontlineTask"
+        ]
+    },
+    "closeGunsmokeFrontlineRewardsPage": {
+        "doc": "关闭奖励页",
+        "recognition": "TemplateMatch",
+        "roi": [
+            920,
+            111,
+            64,
+            51
+        ],
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "exitGunsmokeFrontlineTask"
+        ]
+    },
+    "exitGunsmokeFrontlineTask": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_gray.png",
+            "公用按钮组件/主页按钮_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "HomePage"
+        ]
+    },
+    "closeGunsmokeFrontlineRewardClaimResultPage": {
+        "doc": "关闭奖励领取结果页",
+        "recognition": "OCR",
+        "expected": "空白",
+        "action": "Click",
+        "next": [
+            "closeGunsmokeFrontlineRewardClaimResultPage",
+            "switchGunsmokeFrontlineRewardsType"
+        ]
+    },
+    "SelectGunsmokeFrontlineCombatTypeTwo": {
+        "doc": "选择战斗类型",
+        "recognition": "OCR",
+        "expected": "前哨战",
+        "action": "Click",
+        "next": [
+            "clickGunsmokeFrontlineStartButton",
+            "SelectGunsmokeFrontlineCombatTypeTwo"
+        ]
+    },
+    "clickGunsmokeFrontlineStartButton": {
+        "doc": "点击开始作战按钮",
+        "recognition": "OCR",
+        "expected": "开始作战",
+        "action": "Click",
+        "next": [
+            "switchGunsmokeFrontlinePlatoo"
+        ]
+    },
+    "switchGunsmokeFrontlinePlatoo": {
+        "doc": "切换编队",
+        "recognition": "TemplateMatch",
+        "roi": [
+            444,
+            296,
+            48,
+            37
+        ],
+        "template": "班组/切换编队.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "switchGunsmokeFrontlinePlatoo",
+            "confirmGunsmokeFrontlinePlatoo"
+        ]
+    },
+    "confirmGunsmokeFrontlinePlatoo": {
+        "doc": "确认编队",
+        "recognition": "OCR",
+        "expected": "整备室配置",
+        "action": "Click",
+        "roi": [
+            46,
+            287,
+            455,
+            325
+        ],
+        "order_by": "Vertical",
+        "next": [
+            "switchGunsmokeFrontlineSortOrder"
+        ]
+    },
+    "switchGunsmokeFrontlineSortOrder": {
+        "doc": "切换排序方式",
+        "recognition": "TemplateMatch",
+        "roi": [
+            425,
+            654,
+            30,
+            32
+        ],
+        "template": "班组/切换排序.png",
+        "threshold": 0.8,
+        "action": "Click",
+        "next": [
+            "confirmGunsmokeFrontlineSortOrder",
+            "switchGunsmokeFrontlineSortOrder"
+        ]
+    },
+    "confirmGunsmokeFrontlineSortOrder": {
+        "doc": "确认排序方式",
+        "recognition": "OCR",
+        "expected": "作战效能",
+        "action": "Click",
+        "roi": [
+            54,
+            497,
+            450,
+            147
+        ],
+        "next": [
+            "chooseGunsmokeFrontlineDollX1"
+        ]
+    },
+    "chooseGunsmokeFrontlineDollX1": {
+        "doc": "选择人形1-1",
+        "recognition": "OCR",
+        "expected": "选择人形",
+        "roi": [
+            38,
+            247,
+            125,
+            44
+        ],
+        "target": [
+            53,
+            345,
+            99,
+            96
+        ],
+        "action": "Click",
+        "next": [
+            "chooseGunsmokeFrontlineDollX2"
+        ]
+    },
+    "chooseGunsmokeFrontlineDollX2": {
+        "doc": "选择人形1-2",
+        "recognition": "OCR",
+        "expected": "选择人形",
+        "roi": [
+            38,
+            247,
+            125,
+            44
+        ],
+        "target": [
+            165,
+            348,
+            97,
+            95
+        ],
+        "action": "Click",
+        "next": [
+            "chooseGunsmokeFrontlineDollX3"
+        ]
+    },
+    "chooseGunsmokeFrontlineDollX3": {
+        "roi": [
+            38,
+            247,
+            125,
+            44
+        ],
+        "doc": "选择人形1-3",
+        "recognition": "OCR",
+        "expected": "选择人形",
+        "target": [
+            280,
+            346,
+            98,
+            97
+        ],
+        "action": "Click",
+        "next": [
+            "chooseGunsmokeFrontlineDollX4"
+        ]
+    },
+    "chooseGunsmokeFrontlineDollX4": {
+        "doc": "选择人形1-4",
+        "recognition": "OCR",
+        "expected": "选择人形",
+        "roi": [
+            38,
+            247,
+            125,
+            44
+        ],
+        "target": [
+            394,
+            345,
+            96,
+            100
+        ],
+        "action": "Click",
+        "next": [
+            "enterGunsmokeFrontlineSupportDoll"
+        ]
+    },
+    "enterGunsmokeFrontlineSupportDoll": {
+        "doc": "选择支援人形任务",
+        "recognition": "OCR",
+        "expected": "助战",
+        "roi": [
+            1103,
+            561,
+            97,
+            35
+        ],
+        "action": "Click",
+        "next": [
+            "chooseGunsmokeFrontlineSupportDollX1"
+        ]
+    },
+    "chooseGunsmokeFrontlineSupportDollX1": {
+        "doc": "选择支援人形1-1",
+        "recognition": "OCR",
+        "expected": "尖兵$",
+        "roi": [
+            584,
+            130,
+            107,
+            39
+        ],
+        "target": [
+            232,
+            245,
+            139,
+            72
+        ],
+        "action": "Click",
+        "next": [
+            "confirmGunsmokeFrontlineSupportDollX1"
+        ]
+    },
+    "chooseGunsmokeFrontlineSupportDollX2": {
+        "doc": "选择支援人形1-2",
+        "recognition": "OCR",
+        "expected": "尖兵$",
+        "roi": [
+            584,
+            130,
+            107,
+            39
+        ],
+        "target": [
+            572,
+            243,
+            117,
+            75
+        ],
+        "action": "Click",
+        "next": [
+            "confirmGunsmokeFrontlineSupportDollX2"
+        ]
+    },
+    "chooseGunsmokeFrontlineSupportDollX3": {
+        "doc": "选择支援人形1-3",
+        "recognition": "OCR",
+        "expected": "尖兵$",
+        "roi": [
+            584,
+            130,
+            107,
+            39
+        ],
+        "target": [
+            908,
+            249,
+            108,
+            68
+        ],
+        "action": "Click",
+        "next": [
+            "confirmGunsmokeFrontlineSupportDollX3"
+        ]
+    },
+    "confirmGunsmokeFrontlineSupportDollX1": {
+        "doc": "确认支援人形1",
+        "recognition": "OCR",
+        "expected": "入队",
+        "roi": [
+            843,
+            591,
+            305,
+            64
+        ],
+        "action": "Click",
+        "next": [
+            "gunsmokeFrontlineCombatStart",
+            "cancelGunsmokeFrontlineSupportDollX1"
+        ]
+    },
+    "confirmGunsmokeFrontlineSupportDollX2": {
+        "doc": "确认支援人形2",
+        "recognition": "OCR",
+        "expected": "入队",
+        "roi": [
+            843,
+            591,
+            305,
+            64
+        ],
+        "action": "Click",
+        "next": [
+            "gunsmokeFrontlineCombatStart",
+            "cancelGunsmokeFrontlineSupportDollX2"
+        ]
+    },
+    "confirmGunsmokeFrontlineSupportDollX3": {
+        "doc": "确认支援人形3",
+        "recognition": "OCR",
+        "expected": "入队",
+        "roi": [
+            843,
+            591,
+            305,
+            64
+        ],
+        "action": "Click",
+        "next": [
+            "gunsmokeFrontlineCombatStart",
+            "cancelGunsmokeFrontlineSupportDollX3"
+        ]
+    },
+    "cancelGunsmokeFrontlineSupportDollX1": {
+        "doc": "取消支援人形1",
+        "recognition": "OCR",
+        "expected": "^取消$",
+        "roi": [
+            311,
+            509,
+            316,
+            66
+        ],
+        "action": "Click",
+        "next": [
+            "chooseGunsmokeFrontlineSupportDollX2"
+        ]
+    },
+    "cancelGunsmokeFrontlineSupportDollX2": {
+        "doc": "取消支援人形2",
+        "recognition": "OCR",
+        "expected": "^取消$",
+        "roi": [
+            311,
+            509,
+            316,
+            66
+        ],
+        "action": "Click",
+        "next": [
+            "chooseGunsmokeFrontlineSupportDollX3"
+        ]
+    },
+    "cancelGunsmokeFrontlineSupportDollX3": {
+        "doc": "取消支援人形3",
+        "recognition": "OCR",
+        "expected": "^取消$",
+        "roi": [
+            311,
+            509,
+            316,
+            66
+        ],
+        "action": "Click",
+        "next": [
+            "exitChooseGunsmokeFrontlineSupportDoll"
+        ]
+    },
+    "exitChooseGunsmokeFrontlineSupportDoll": {
+        "doc": "退出支援人形选择",
+        "recognition": "TemplateMatch",
+        "roi": [
+            1115,
+            49,
+            51,
+            41
+        ],
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "exitChooseGunsmokeFrontlineSupportDoll",
+            "gunsmokeFrontlineCombatStart"
+        ]
+    },
+    "gunsmokeFrontlineCombatStart": {
+        "doc": "尘烟前线作战开始",
+        "recognition": "OCR",
+        "expected": "确定",
+        "roi": [
+            968,
+            632,
+            256,
+            58
+        ],
+        "action": "Click",
+        "next": [
+            "confirmGunsmokeFrontlineCombatStart",
+            "enterGunsmokeFrontlineCombatResourceLoading"
+        ]
+    },
+    "confirmGunsmokeFrontlineCombatStart": {
+        "doc": "点击确认",
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "next": [
+            "confirmGunsmokeFrontlineCombatStart",
+            "enterGunsmokeFrontlineCombatResourceLoading"
+        ]
+    },
+    "enterGunsmokeFrontlineCombatResourceLoading": {
+        "doc": "尘烟前线战斗资源加载",
+        "recognition": "OCR",
+        "expected": "资源加载中",
+        "next": [
+            "enterGunsmokeFrontlineCombatResourceLoading",
+            "clickGunsmokeFrontlineCombatStartButton"
+        ]
+    }
+}

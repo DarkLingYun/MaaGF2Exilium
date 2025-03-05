@@ -65,11 +65,13 @@
         ],
         "action": "Click",
         "next": [
-            "confirmPassRewardContent"
+            "selectPassSupplyCrateReward",
+            "confirmPassRewardContent",
+            "closePassClaimResultPage"
         ]
     },
     "confirmPassRewardContent": {
-        "doc": "通行证奖励内容确认",
+        "doc": "付费通行证购买提示，已付费不会弹出此节点",
         "recognition": "OCR",
         "expected": "^确认$",
         "action": "Click",

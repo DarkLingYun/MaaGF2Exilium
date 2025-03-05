@@ -35,7 +35,9 @@
             "集中兑换/调度商店/存量条T4.png",
             "集中兑换/调度商店/战场报告.png",
             "集中兑换/调度商店/萨狄斯金.png",
-            "集中兑换/调度商店/解析图纸.png"
+            "集中兑换/调度商店/解析图纸.png",
+            "集中兑换/调度商店/奇亿甄选暗流.png",
+            "集中兑换/调度商店/奇亿甄选火线.png"
         ],
         "threshold": 0.87,
         "roi": [
@@ -116,7 +118,7 @@
     "dispatchCenterConfirmPurchaseItem": {
         "doc": "确认购买商品",
         "recognition": "OCR",
-        "expected": "^购买$",
+        "expected": "^(购买|确认)$",
         "action": "Click",
         "next": [
             "dispatchCenterCloseItemPurchaseResultPage"

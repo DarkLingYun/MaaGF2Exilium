@@ -1,5 +1,5 @@
 {
-    "clickLiveDrillStartCombatButton": {
+    "clickCombatExerciseStartCombatButton": {
         "doc": "点击实兵演习战斗开始按钮",
         "recognition": "OCR",
         "expected": "作战开始",
@@ -10,12 +10,30 @@
             44
         ],
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
-            "enableLiveDrillAutoCombat",
-            "clickLiveDrillStartCombatButton"
+            "ableToChangeSpeed",
+            "clickCombatExerciseStartCombatConfirmButton",
+            "clickCombatExerciseStartCombatButton"
         ]
     },
-    "enableLiveDrillAutoCombat": {
+    "clickCombatExerciseStartCombatConfirmButton": {
+        "doc": "还有可部署人形提示时，点击确认开始",
+        "recognition": "OCR",
+        "expected": "^确认$",
+        "roi": [
+            261,
+            119,
+            760,
+            480
+        ],
+        "action": "Click",
+        "next": [
+            "ableToChangeSpeed",
+            "clickCombatExerciseStartCombatConfirmButton"
+        ]
+    },
+    "enableCombatExerciseAutoCombat": {
         "doc": "点击实兵演习自动战斗按钮",
         "recognition": "ColorMatch",
         "connected": true,
@@ -38,21 +56,118 @@
         ],
         "action": "Click",
         "next": [
-            "waitingForLiveDrillAutoCombatToEnd"
+            "waitingForCombatExerciseAutoCombatToEnd"
         ]
     },
-    "waitingForLiveDrillAutoCombatToEnd": {
+    "ableToChangeSpeed": {
+        "doc": "实兵演习战斗速度按钮可用",
+        "recognition": "ColorMatch",
+        "connected": true,
+        "count": 55,
+        "roi": [
+            1069,
+            25,
+            35,
+            27
+        ],
+        "upper": [
+            210,
+            210,
+            210
+        ],
+        "lower": [
+            150,
+            150,
+            150
+        ],
+        "next": [
+            "changeSpeed"
+        ]
+    },
+    "changeSpeed": {
+        "doc": "改变实兵演习战斗速度，只在这里改变，因为战斗速度会继承到别的战斗中，而这里是每日任务中最早的战斗",
+        "next": [
+            "current3xSpeed",
+            "current2xSpeed",
+            "current1xSpeed"
+        ]
+    },
+    "current1xSpeed": {
+        "doc": "当前实兵演习战斗速度为 1 倍，这里因为背景的变化，老是识别不到，就直接无脑进入这个节点了",
+        "next": [
+            "clickChangeSpeedButtonTo2xSpeed"
+        ]
+    },
+    "current2xSpeed": {
+        "doc": "当前实兵演习战斗速度为 2 倍",
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/2倍速.png",
+        "roi": [
+            1139,
+            39,
+            19,
+            12
+        ],
+        "threshold": 0.9,
+        "next": [
+            "clickChangeSpeedButtonTo3xSpeed"
+        ]
+    },
+    "current3xSpeed": {
+        "doc": "当前实兵演习战斗速度为 3 倍",
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/3倍速.png",
+        "roi": [
+            1139,
+            39,
+            19,
+            12
+        ],
+        "threshold": 0.9,
+        "next": [
+            "enableCombatExerciseAutoCombat"
+        ]
+    },
+    "clickChangeSpeedButtonTo2xSpeed": {
+        "doc": "点击实兵演习战斗速度按钮切换到 2 倍速",
+        "target": [
+            1144,
+            28,
+            27,
+            22
+        ],
+        "action": "Click",
+        "next": [
+            "current2xSpeed",
+            "clickChangeSpeedButtonTo2xSpeed"
+        ]
+    },
+    "clickChangeSpeedButtonTo3xSpeed": {
+        "doc": "点击实兵演习战斗速度按钮切换到 3 倍速",
+        "target": [
+            1144,
+            28,
+            27,
+            22
+        ],
+        "action": "Click",
+        "next": [
+            "current3xSpeed",
+            "clickChangeSpeedButtonTo3xSpeed"
+        ]
+    },
+    "waitingForCombatExerciseAutoCombatToEnd": {
         "doc": "等待实兵演习自动战斗结束",
         "post_wait_freezes": {
             "time": 2500,
             "threshold": 0.8
         },
         "next": [
-            "liveDrillTaskCompleted",
-            "waitingForLiveDrillAutoCombatToEnd"
+            "combatExerciseTaskCompleted",
+            "waitingForCombatExerciseAutoCombatToEnd"
         ]
     },
-    "liveDrillTaskCompleted": {
+    "combatExerciseTaskCompleted": {
         "doc": "实兵演习任务完成或失败",
         "recognition": "OCR",
         "expected": [
@@ -62,11 +177,11 @@
         "action": "Click",
         "post_wait_freezes": 300,
         "next": [
-            "confirmLevelPromotionForLiveDrill",
-            "clickConfirmButtonToExitLiveDrill"
+            "confirmLevelPromotionForCombatExercise",
+            "clickConfirmButtonToExitCombatExercise"
         ]
     },
-    "confirmLevelPromotionForLiveDrill": {
+    "confirmLevelPromotionForCombatExercise": {
         "doc": "确认实兵演习等级晋级",
         "recognition": "OCR",
         "expected": [
@@ -76,18 +191,18 @@
         ],
         "action": "Click",
         "next": [
-            "confirmLevelPromotionForLiveDrill",
-            "confirmLiveDrillOpponentListPage",
-            "clickConfirmButtonToExitLiveDrill"
+            "confirmLevelPromotionForCombatExercise",
+            "confirmCombatExerciseOpponentListPage",
+            "clickConfirmButtonToExitCombatExercise"
         ]
     },
-    "clickConfirmButtonToExitLiveDrill": {
+    "clickConfirmButtonToExitCombatExercise": {
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
         "next": [
-            "clickConfirmButtonToExitLiveDrill",
-            "confirmLevelPromotionForLiveDrill",
+            "clickConfirmButtonToExitCombatExercise",
+            "confirmLevelPromotionForCombatExercise",
             "exitLiveDrillCombatResourceLoading"
         ]
     },
@@ -97,8 +212,8 @@
         "expected": "资源加载中",
         "next": [
             "exitLiveDrillCombatResourceLoading",
-            "confirmLevelPromotionForLiveDrill",
-            "confirmLiveDrillOpponentListPage"
+            "confirmLevelPromotionForCombatExercise",
+            "confirmCombatExerciseOpponentListPage"
         ]
     }
 }

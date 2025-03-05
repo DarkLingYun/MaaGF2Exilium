@@ -1,0 +1,82 @@
+{
+    "clickGunsmokeFrontlineCombatStartButton": {
+        "doc": "点击尘烟前线战斗开始按钮",
+        "recognition": "OCR",
+        "expected": "作战开始",
+        "action": "Click",
+        "next": [
+            "clickGunsmokeFrontlineCombatStartButton",
+            "enableGunsmokeFrontlineCombatAutoBattle",
+            "waitForGunsmokeFrontlineCombatToEnd"
+        ]
+    },
+    "enableGunsmokeFrontlineCombatAutoBattle": {
+        "doc": "点击尘烟前线自动战斗按钮",
+        "recognition": "ColorMatch",
+        "connected": true,
+        "count": 55,
+        "roi": [
+            1069,
+            25,
+            35,
+            27
+        ],
+        "upper": [
+            210,
+            210,
+            210
+        ],
+        "lower": [
+            150,
+            150,
+            150
+        ],
+        "action": "Click",
+        "next": [
+            "enableGunsmokeFrontlineCombatAutoBattle",
+            "waitForGunsmokeFrontlineCombatToEnd"
+        ]
+    },
+    "waitForGunsmokeFrontlineCombatToEnd": {
+        "doc": "等待尘烟前线日常自动战斗结束",
+        "post_wait_freezes": {
+            "time": 2500,
+            "threshold": 0.8
+        },
+        "next": [
+            "gunsmokeFrontlineCombatTaskCompleted",
+            "enableGunsmokeFrontlineCombatAutoBattle",
+            "waitForGunsmokeFrontlineCombatToEnd"
+        ]
+    },
+    "gunsmokeFrontlineCombatTaskCompleted": {
+        "doc": "尘烟前线日常任务完成",
+        "recognition": "OCR",
+        "expected": "任务完成",
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "clickConfirmButtonToExitGunsmokeFrontlineCombat",
+            "gunsmokeFrontlineCombatTaskCompleted"
+        ]
+    },
+    "clickConfirmButtonToExitGunsmokeFrontlineCombat": {
+        "doc": "点击确认退出",
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "next": [
+            "clickConfirmButtonToExitGunsmokeFrontlineCombat",
+            "exitGunsmokeFrontlineCombatResourceLoading"
+        ]
+    },
+    "exitGunsmokeFrontlineCombatResourceLoading": {
+        "doc": "退出尘烟前线战斗后的资源加载",
+        "recognition": "OCR",
+        "expected": "资源加载中",
+        "next": [
+            "exitGunsmokeFrontlineCombatResourceLoading",
+            "selectGunsmokeFrontlineCombatType"
+        ]
+    }
+}

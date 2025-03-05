@@ -1,48 +1,48 @@
 {
-    "enterGuildSquadDailyCombatTask": {
+    "enterPlatoonDailyCombatTask": {
         "next": [
-            "enterGuildSquadDailyCombatPage"
+            "enterPlatoonDailyCombatPage"
         ]
     },
-    "enterGuildSquadDailyCombatPage": {
+    "enterPlatoonDailyCombatPage": {
         "doc": "进入班组每日要务页",
         "recognition": "OCR",
         "expected": "^要务$",
         "action": "Click",
         "next": [
-            "enterGuildSquadDailyCombatPage",
-            "guildSquadDailyCombatCompleted",
-            "guildSquadDailyCombatStart"
+            "enterPlatoonDailyCombatPage",
+            "platoonDailyCombatCompleted",
+            "platoonDailyCombatStart"
         ]
     },
-    "guildSquadDailyCombatCompleted": {
+    "platoonDailyCombatCompleted": {
         "doc": "每日要务已完成",
         "recognition": "OCR",
         "expected": "^每日要务已完成$",
         "next": [
-            "closeGuildSquadDailyCombatPage"
+            "closePlatoonDailyCombatPage"
         ]
     },
-    "guildSquadDailyCombatStart": {
+    "platoonDailyCombatStart": {
         "doc": "班组要务作战开始",
         "recognition": "OCR",
         "expected": "开始作战",
         "action": "Click",
         "next": [
-            "guildSquadDailyCombatStart",
-            "enterGuildSquadDailyCombatResourceLoading"
+            "platoonDailyCombatStart",
+            "enterPlatoonDailyCombatResourceLoading"
         ]
     },
-    "enterGuildSquadDailyCombatResourceLoading": {
+    "enterPlatoonDailyCombatResourceLoading": {
         "doc": "进入班组要务战斗资源加载",
         "recognition": "OCR",
         "expected": "资源加载中",
         "next": [
-            "enterGuildSquadDailyCombatResourceLoading",
-            "clickGuildSquadDailyCombatStartButton"
+            "enterPlatoonDailyCombatResourceLoading",
+            "clickPlatoonDailyCombatStartButton"
         ]
     },
-    "closeGuildSquadDailyCombatPage": {
+    "closePlatoonDailyCombatPage": {
         "doc": "关闭每日要务页面",
         "recognition": "TemplateMatch",
         "roi": [
@@ -57,10 +57,11 @@
         ],
         "action": "Click",
         "next": [
-            "exitGuildSquadDailyCombat"
+            "enterGunsmokeFrontlineTask",
+            "exitPlatoonDailyCombat"
         ]
     },
-    "exitGuildSquadDailyCombat": {
+    "exitPlatoonDailyCombat": {
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/主页按钮_gray.png",

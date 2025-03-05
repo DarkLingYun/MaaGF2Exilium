@@ -5,6 +5,12 @@
         "recognition": "OCR",
         "expected": "^物资模式$",
         "action": "Click",
+        "roi": [
+            0,
+            76,
+            1280,
+            643
+        ],
         "post_delay": 2000,
         "next": [
             "selectResourceModeLevel",
@@ -51,6 +57,9 @@
             64
         ],
         "recognition": "ColorMatch",
+        "focus": true,
+        "focus_succeeded": "扫荡券不足",
+        "focus_succeeded_color": "#f46e6e",
         "next": [
             "exitVersionActivityResourceSweep"
         ]
@@ -64,9 +73,9 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
+            "HomePage",
             "enterVersionActivityItemExchange",
-            "exitVersionActivityResourceSweep",
-            "HomePage"
+            "exitVersionActivityResourceSweep"
         ]
     },
     "selectResourceModeLevel": {
@@ -83,7 +92,22 @@
         "post_wait_freezes": 100,
         "next": [
             "resourceModeSweepTimesInsufficient",
-            "clickResourceLevelSweepButton"
+            "clickResourceLevelSweepButton",
+            "resourceModeSweepCheckLevelLockStatus"
+        ]
+    },
+    "resourceModeSweepCheckLevelLockStatus": {
+        "doc": "物资模式扫荡关卡是否被锁定",
+        "recognition": "OCR",
+        "expected": [
+            "需要完成前置关卡",
+            "关卡$"
+        ],
+        "focus": true,
+        "focus_succeeded": "第五关未解锁",
+        "focus_succeeded_color": "#f46e6e",
+        "next": [
+            "exitVersionActivityResourceSweep"
         ]
     },
     "clickResourceLevelSweepButton": {

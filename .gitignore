@@ -450,3 +450,6 @@ tools/ImageCropper/**/*.png
 .nicegui
 storage-general.json
 assets/config/maa_pi_config.json
+
+# maagf2
+mermaid.mmd

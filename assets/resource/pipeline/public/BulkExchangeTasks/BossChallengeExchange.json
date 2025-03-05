@@ -113,7 +113,7 @@
     "BossChallengeConfirmPurchaseItem": {
         "doc": "确认购买商品",
         "recognition": "OCR",
-        "expected": "^购买$",
+        "expected": "^(购买|确认)$",
         "action": "Click",
         "next": [
             "BossChallengeCloseItemPurchaseResultPage"
