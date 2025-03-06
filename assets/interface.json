@@ -132,6 +132,7 @@
                 "自动实兵演习",
                 "演习次数",
                 "实兵演习对象战力值范围",
+                "自动领取峰值推定奖励",
                 "自动兵棋推演",
                 "推演次数"
             ],
@@ -1231,6 +1232,26 @@
                     "pipeline_override": {
                         "challengeOpponentSelection": {
                             "expected": "^[1-7][0-9]{1,3}$"
+                        }
+                    }
+                }
+            ]
+        },
+        "自动领取峰值推定奖励": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterPeakValueAssessment": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterPeakValueAssessment": {
+                            "enabled": false
                         }
                     }
                 }
