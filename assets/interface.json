@@ -1317,18 +1317,18 @@
         "尘烟前线自动作战": {
             "cases": [
                 {
-                    "name": "YES",
-                    "pipeline_override": {
-                        "enterGunsmokeFrontlineTask": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
                     "name": "NO",
                     "pipeline_override": {
                         "enterGunsmokeFrontlineTask": {
                             "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterGunsmokeFrontlineTask": {
+                            "enabled": true
                         }
                     }
                 }
