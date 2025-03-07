@@ -81,11 +81,13 @@
             150
         ],
         "next": [
-            "changeSpeed"
+            "changeSpeed",
+            "enableCombatExerciseAutoCombat"
         ]
     },
     "changeSpeed": {
         "doc": "改变实兵演习战斗速度，只在这里改变，因为战斗速度会继承到别的战斗中，而这里是每日任务中最早的战斗",
+        "enabled": true,
         "next": [
             "current3xSpeed",
             "current2xSpeed",
@@ -139,7 +141,7 @@
         "action": "Click",
         "next": [
             "current2xSpeed",
-            "clickChangeSpeedButtonTo2xSpeed"
+            "proceedToCombat"
         ]
     },
     "clickChangeSpeedButtonTo3xSpeed": {
@@ -153,7 +155,13 @@
         "action": "Click",
         "next": [
             "current3xSpeed",
-            "clickChangeSpeedButtonTo3xSpeed"
+            "proceedToCombat"
+        ]
+    },
+    "proceedToCombat": {
+        "doc": "没有正常切换到期望的战斗速度，但是防止死循环，还是继续自动战斗",
+        "next": [
+            "enableCombatExerciseAutoCombat"
         ]
     },
     "waitingForCombatExerciseAutoCombatToEnd": {

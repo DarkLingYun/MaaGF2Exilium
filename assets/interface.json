@@ -131,6 +131,7 @@
                 "首领挑战自律",
                 "自动实兵演习",
                 "演习次数",
+                "自动调整战斗速度为 3 倍速",
                 "实兵演习对象战力值范围",
                 "自动领取峰值推定奖励",
                 "自动兵棋推演",
@@ -1204,6 +1205,26 @@
                     "pipeline_override": {
                         "insufficientPassesForCombatExercise": {
                             "expected": "0/3"
+                        }
+                    }
+                }
+            ]
+        },
+        "自动调整战斗速度为 3 倍速": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "changeSpeed": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "changeSpeed": {
+                            "enabled": false
                         }
                     }
                 }
