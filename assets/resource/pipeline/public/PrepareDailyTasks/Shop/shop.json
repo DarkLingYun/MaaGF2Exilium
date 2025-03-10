@@ -22,7 +22,7 @@
         "recognition": "OCR",
         "expected": "^限时礼包$",
         "action": "Click",
-        "post_wait_freezes": 200,
+        "post_wait_freezes": 800,
         "next": [
             "clickWeekSupplyBox",
             "clickPermanentGiftPackage"
