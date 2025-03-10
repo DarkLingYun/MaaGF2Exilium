@@ -84,14 +84,6 @@
             "check": true
         },
         {
-            "name": "[暂不可用]标准同调(金币本)",
-            "entry": "AutoSweepBattle",
-            "option": [
-                "同调次数："
-            ],
-            "doc": "标准同调体力值每次消耗20"
-        },
-        {
             "name": "定向精研(刷配件)",
             "entry": "AutoSweepBattle",
             "option": [
@@ -108,12 +100,7 @@
                 "补给资源：",
                 "补给次数："
             ],
-            "pipeline_override": {
-                "enterSaridisjinTokenTask": {
-                    "enabled": false
-                }
-            },
-            "doc": "补给作战体力值存量条每次消耗20，其他均为10"
+            "doc": "战争报告与解析图纸每次10体力, 存量条和金币本每次20体力"
         },
         {
             "name": "心智勘测",
@@ -146,7 +133,8 @@
                 "尘烟前线自动作战",
                 "作战模式"
             ],
-            "check": true
+            "check": true,
+            "doc": "尘烟前线目前自动编队导致攻坚战分数普遍较低，请谨慎开启。"
         },
         {
             "name": "版本活动日常",
@@ -434,71 +422,16 @@
                 }
             ]
         },
-        "同调次数：": {
-            "cases": [
-                {
-                    "name": "x1",
-                    "pipeline_override": {
-                        "UserSetSliderValue": {
-                            "enabled": true,
-                            "expected": "^1$"
-                        },
-                        "exitAutoSweepBattleTask": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "x2",
-                    "pipeline_override": {
-                        "UserSetSliderValue": {
-                            "enabled": true,
-                            "expected": "^2$"
-                        },
-                        "exitAutoSweepBattleTask": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "x3",
-                    "pipeline_override": {
-                        "UserSetSliderValue": {
-                            "enabled": true,
-                            "expected": "^3$"
-                        },
-                        "exitAutoSweepBattleTask": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "x4",
-                    "pipeline_override": {
-                        "UserSetSliderValue": {
-                            "enabled": true,
-                            "expected": "^4$"
-                        },
-                        "exitAutoSweepBattleTask": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "All(耗尽体力)",
-                    "pipeline_override": {
-                        "UserSetSliderValue": {
-                            "enabled": false
-                        },
-                        "exitAutoSweepBattleTask": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
         "补给资源：": {
             "cases": [
+                {
+                    "name": "标准同调_金币本",
+                    "pipeline_override": {
+                        "supplyOperationType": {
+                            "expected": "标准同调"
+                        }
+                    }
+                },
                 {
                     "name": "战争报告_人形升级",
                     "pipeline_override": {
@@ -670,9 +603,6 @@
                         },
                         "supplyOperationType": {
                             "expected": "定向精研"
-                        },
-                        "enterSaridisjinTokenTask": {
-                            "enabled": false
                         }
                     }
                 },
@@ -684,9 +614,6 @@
                         },
                         "supplyOperationType": {
                             "expected": "定向精研"
-                        },
-                        "enterSaridisjinTokenTask": {
-                            "enabled": false
                         }
                     }
                 },
@@ -698,9 +625,6 @@
                         },
                         "supplyOperationType": {
                             "expected": "定向精研"
-                        },
-                        "enterSaridisjinTokenTask": {
-                            "enabled": false
                         }
                     }
                 },
@@ -712,9 +636,6 @@
                         },
                         "supplyOperationType": {
                             "expected": "定向精研"
-                        },
-                        "enterSaridisjinTokenTask": {
-                            "enabled": false
                         }
                     }
                 }

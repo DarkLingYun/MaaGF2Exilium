@@ -23,7 +23,6 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "enterSaridisjinTokenTask",
             "supplyOperationPageRightSwip"
         ]
     },
@@ -47,47 +46,6 @@
         "next": [
             "supplyOperationType",
             "supplyOperationPageLeftSwip"
-        ]
-    },
-    "enterSaridisjinTokenTask": {
-        "doc": "进入标准同调",
-        "next": [
-            "dailySaridisjinTokenTask",
-            "supplyOperationPageLeftSwip"
-        ]
-    },
-    "dailySaridisjinTokenTask": {
-        "doc": "识别并进入",
-        "recognition": "OCR",
-        "expected": "^标准同调$",
-        "action": "Click",
-        "next": [
-            "supplyOperationTypeIsSaridisjinToken"
-        ]
-    },
-    "supplyOperationTypeIsSaridisjinToken": {
-        "recognition": "OCR",
-        "expected": "^标准同调$",
-        "action": "DoNothing",
-        "post_delay": 1500,
-        "next": [
-            "supplyOperationSaridisjinTokenInsufficientPermission",
-            "supplyOperationLevelPageTopSwip"
-        ]
-    },
-    "supplyOperationSaridisjinTokenInsufficientPermission": {
-        "doc": "标准同调权限不足",
-        "recognition": "OCR",
-        "expected": "^0/4$",
-        "roi": [
-            145,
-            157,
-            46,
-            38
-        ],
-        "action": "Click",
-        "next": [
-            "returnToHomePage"
         ]
     },
     "supplyOperationPageLeftSwip": {

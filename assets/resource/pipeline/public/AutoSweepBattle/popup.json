@@ -159,7 +159,6 @@
         ],
         "action": "Click",
         "next": [
-            "supplyOperationSaridisjinTokenInsufficientPermission",
             "exitAutoSweepBattleTask",
             "clickAutoSweepBattleSupplyOperationButton"
         ]
