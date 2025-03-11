@@ -1,0 +1,90 @@
+{
+    "itemBox": {
+        "doc": "道具箱",
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": "道具箱",
+        "action": "Click",
+        "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "tryToOpenItemBox"
+        ]
+    },
+    "tryToOpenItemBox": {
+        "doc": "寻找潜在的可开启道具箱",
+        "next": [
+            "openSupplySupportBox",
+            "openItemBoxCompleted"
+        ]
+    },
+    "openSupplySupportBox": {
+        "doc": "开启物资助力箱",
+        "recognition": "TemplateMatch",
+        "template": [
+            "仓库/物资助力箱.png"
+        ],
+        "action": "Click",
+        "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "chooseSupplySupportBoxItem"
+        ]
+    },
+    "chooseSupplySupportBoxItem": {
+        "doc": "选择道具",
+        "recognition": "OCR",
+        "expected": "战场报告",
+        "action": "Click",
+        "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "setSupplySupportBoxNumber"
+        ]
+    },
+    "setSupplySupportBoxNumber": {
+        "doc": "设置数量",
+        "recognition": "OCR",
+        "expected": "最大",
+        "action": "Click",
+        "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "confirmSupplySupportBox"
+        ]
+    },
+    "confirmSupplySupportBox": {
+        "doc": "确认",
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "closeSupplySupportBoxResultPage"
+        ]
+    },
+    "closeSupplySupportBoxResultPage": {
+        "doc": "关闭结果页面",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "tryToOpenItemBox"
+        ]
+    },
+    "openItemBoxCompleted": {
+        "doc": "没有可以开的箱子了，开启道具箱完成",
+        "next": [
+            "exitItemBox"
+        ]
+    },
+    "exitItemBox": {
+        "doc": "退出仓库",
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}
