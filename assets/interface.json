@@ -68,7 +68,9 @@
                 "商城免费每日补给箱购买",
                 "边界推进委托领取",
                 "拆解武器配件",
-                "拆解武器配件等级"
+                "拆解武器配件等级",
+                "开启道具箱",
+                "物资助力箱奖励类型"
             ],
             "doc": "领取邮件需要主界面背景为人形",
             "check": true
@@ -324,9 +326,6 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "organizeStoreroom": {
-                            "enabled": true
-                        },
                         "weaponAttachments": {
                             "enabled": true
                         }
@@ -357,6 +356,62 @@
                     "pipeline_override": {
                         "chooseLevel": {
                             "expected": "精密级及以下未培养"
+                        }
+                    }
+                }
+            ]
+        },
+        "开启道具箱": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "itemBox": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "itemBox": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "物资助力箱奖励类型": {
+            "cases": [
+                {
+                    "name": "战场报告",
+                    "pipeline_override": {
+                        "chooseSupplySupportBoxItem": {
+                            "expected": "战场报告"
+                        }
+                    }
+                },
+                {
+                    "name": "解析图纸",
+                    "pipeline_override": {
+                        "chooseSupplySupportBoxItem": {
+                            "expected": "解析图纸"
+                        }
+                    }
+                },
+                {
+                    "name": "增域存量条",
+                    "pipeline_override": {
+                        "chooseSupplySupportBoxItem": {
+                            "expected": "增域存量条"
+                        }
+                    }
+                },
+                {
+                    "name": "转录导体",
+                    "pipeline_override": {
+                        "chooseSupplySupportBoxItem": {
+                            "expected": "转录导体"
                         }
                     }
                 }

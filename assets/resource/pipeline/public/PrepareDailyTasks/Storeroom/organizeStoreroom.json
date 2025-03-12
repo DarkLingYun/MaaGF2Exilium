@@ -1,7 +1,7 @@
 {
     "organizeStoreroom": {
         "doc": "整理仓库",
-        "enabled": false,
+        "enabled": true,
         "recognition": "OCR",
         "expected": "战役推进",
         "next": [
@@ -30,14 +30,9 @@
         "target": true,
         "post_delay": 1500,
         "next": [
-            "weaponAttachments"
-        ]
-    },
-    "organizeStoreroomCompleted": {
-        "recognition": "OCR",
-        "expected": "战役推进",
-        "next": [
-            "HomePage"
+            "weaponAttachments",
+            "itemBox",
+            "returnToHomePage"
         ]
     }
 }
