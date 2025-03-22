@@ -4,6 +4,7 @@
         "action": "StartApp",
         "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity",
         "next": [
+            "StartGame_levelUp",
             "StartGame_clickCancel",
             "StartGame_HomePage",
             "StartGame_sunbornGameLogo",
@@ -17,6 +18,23 @@
         ],
         "interrupt": [
             "openGF2GameApp"
+        ]
+    },
+    "StartGame_levelUp": {
+        "recognition": "OCR",
+        "expected": [
+            "指挥官等级",
+            "官等级"
+        ],
+        "roi": [
+            272,
+            84,
+            726,
+            487
+        ],
+        "action": "Click",
+        "next": [
+            "StartGame"
         ]
     },
     "StartGame_HomePage": {
