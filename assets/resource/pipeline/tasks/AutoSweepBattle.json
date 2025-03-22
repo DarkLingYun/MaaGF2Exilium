@@ -205,6 +205,7 @@
         ],
         "next": [
             "nonScrollablePopupCancel",
+            "accessoriesPopupClose",
             "returnToHomePage"
         ]
     },
