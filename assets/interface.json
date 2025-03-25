@@ -36,7 +36,7 @@
         }
     ],
     "name": "少女前线2：追放自动化助手",
-    "custom_title": "匿影而生",
+    "custom_title": "错位锚定·上篇",
     "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "mirrorchyan_rid": "MaaGF2Exilium",
     "task": [
@@ -1383,7 +1383,49 @@
         "物资模式活动选择": {
             "cases": [
                 {
-                    "name": "匿影而生",
+                    "name": "错位锚定·上篇",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "错位锚定"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "临时据点"
+                            ]
+                        },
+                        "switchVersionActivityChapter": {
+                            "enabled": true,
+                            "expected": [
+                                "^错位.*上篇$"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "错位锚定·下篇",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "错位锚定"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "临时据点"
+                            ]
+                        },
+                        "switchVersionActivityChapter": {
+                            "enabled": true,
+                            "expected": [
+                                "^错位.*下篇$"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "匿影而生(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [

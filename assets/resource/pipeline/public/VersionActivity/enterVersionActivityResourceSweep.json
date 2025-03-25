@@ -3,7 +3,10 @@
         "doc": "物资模式扫荡任务",
         "enabled": true,
         "recognition": "OCR",
-        "expected": "^物资模式$",
+        "expected": [
+            "^物资模式$",
+            "^物资$"
+        ],
         "action": "Click",
         "roi": [
             0,

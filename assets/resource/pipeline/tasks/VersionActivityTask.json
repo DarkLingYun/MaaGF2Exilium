@@ -28,10 +28,25 @@
             414
         ],
         "expected": [
-            "匿影而生"
+            "错位锚定"
         ],
         "action": "Click",
         "post_delay": 2000,
+        "next": [
+            "switchVersionActivityChapter",
+            "enterVersionActivityResourceSweep",
+            "enterVersionActivityItemExchange",
+            "returnToHomePage"
+        ]
+    },
+    "switchVersionActivityChapter": {
+        "doc": "切换版本活动章节, 默认false",
+        "enabled": false,
+        "recognition": "OCR",
+        "expected": "^错位.*上篇$",
+        "post_wait_freezes": 100,
+        "action": "Click",
+        "post_delay": 1000,
         "next": [
             "enterVersionActivityResourceSweep",
             "enterVersionActivityItemExchange",
