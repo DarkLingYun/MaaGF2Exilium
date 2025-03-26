@@ -4,7 +4,7 @@
         "enabled": true,
         "recognition": "OCR",
         "expected": [
-            "情报置换处"
+            "临时据点"
         ],
         "index": -1,
         "action": "Click",
@@ -24,6 +24,7 @@
         ],
         "recognition": "OCR",
         "expected": [
+            "芯片",
             "晶条",
             "许可",
             "共键",

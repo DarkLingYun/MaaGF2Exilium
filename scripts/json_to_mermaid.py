@@ -14,8 +14,8 @@ def json_to_mermaid(json_file_path):
     for key, obj in data.items():
         # 取出 doc，如果没有 doc，就用空字符串或其他占位
         doc_str = obj.get("doc", "")
-        # mermaid 不支持中文逗号，替换成英文逗号
-        doc_str = doc_str.replace("，", ",")
+        # mermaid 不支持中文逗号，替换成英文逗号，不支持空格，去除空格
+        doc_str = doc_str.replace("，", ",").replace(" ", "")
 
         # 构造节点名称：键|doc
         # 如果 doc 为空，就不显示 -doc 部分
@@ -26,7 +26,9 @@ def json_to_mermaid(json_file_path):
             for i, next_key in enumerate(obj["next"]):
                 # 找到 next_key 的 doc
                 next_obj = data.get(next_key, {})
-                next_doc_str = next_obj.get("doc", "").replace("，", ",")
+                next_doc_str = (
+                    next_obj.get("doc", "").replace("，", ",").replace(" ", "")
+                )
                 next_node_label = (
                     f"{next_key}-{next_doc_str}" if next_doc_str else next_key
                 )
@@ -40,9 +42,9 @@ def json_to_mermaid(json_file_path):
 
 
 if __name__ == "__main__":
-    json_file = r"assets\resource\pipeline\public\SimulatedCombat\liveDrillCombatLogic.json"  # 你的 JSON 文件路径
+    json_file = r"/Users/chenshang/Documents/MaaGF2Exilium/assets/resource/pipeline/public/SimulatedCombat/liveDrillCombatLogic.json"  # 你的 JSON 文件路径
     mermaid_code = json_to_mermaid(json_file)
     # 文件保存到项目根目录方便复制，控制台输出会有点格式的问题
     with open("mermaid.mmd", "w", encoding="utf-8") as f:
         f.write(mermaid_code)
-    # 如果本地支持，可以直接放到本地运行，或者复制到 https://mermaid.live/ 上查看效果
+    # 如果本地支持，可以直接放到本地运行，或者复制到 https://www.mermaidflow.app/editor 上查看效果

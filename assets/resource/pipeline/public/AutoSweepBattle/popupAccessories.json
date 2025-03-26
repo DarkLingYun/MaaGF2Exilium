@@ -78,7 +78,6 @@
         ],
         "action": "Click",
         "next": [
-            "supplyOperationSaridisjinTokenInsufficientPermission",
             "exitAutoSweepBattleTask",
             "clickAutoSweepBattleSupplyOperationButton"
         ]
@@ -94,6 +93,7 @@
         ],
         "expected": "1",
         "next": [
+            "AutoSweepBattleSupplyOperationPrepareAccessoriesLimit",
             "scrollablePopupConfirmAccessories",
             "resultRecognitionAccessories"
         ]
@@ -136,5 +136,21 @@
         "expected": "确认",
         "action": "Click",
         "post_delay": 4000
+    },
+    "accessoriesPopupClose": {
+        "doc": "当配件多次自律达到上限的时候，调用此方法关闭自律准备弹窗",
+        "is_sub": true,
+        "recognition": "TemplateMatch",
+        "roi": [
+            1092,
+            98,
+            48,
+            46
+        ],
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click"
     }
 }

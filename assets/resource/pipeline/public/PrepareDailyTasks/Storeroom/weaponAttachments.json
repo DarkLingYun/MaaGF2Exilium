@@ -93,19 +93,20 @@
         "expected": "无符合筛选条件的物品",
         "post_wait_freezes": 500,
         "next": [
-            "returnToHomePage"
+            "exitweaponAttachments"
         ]
     },
     "exitweaponAttachments": {
         "recognition": "TemplateMatch",
         "template": [
-            "公用按钮组件/主页按钮_gray.png",
-            "公用按钮组件/主页按钮_black.png"
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
         ],
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "organizeStoreroomCompleted"
+            "itemBox",
+            "returnToHomePage"
         ]
     }
 }
