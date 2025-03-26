@@ -267,7 +267,7 @@ public static class CommunityDailyHelper
 
             try
             {
-                var exchangeIds = new[] { 1, 1, 2, 3, 4, 5 };
+                var exchangeIds = new[] { 1, 1, 2, 3, 4, 5, 7 };
                 foreach (var id in exchangeIds)
                 {
                     await ExchangeItemAsync(id, jwtToken);
