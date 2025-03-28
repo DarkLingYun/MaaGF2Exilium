@@ -1,5 +1,6 @@
 {
     "enterPassToClaimTask": {
+        "enabled": false,
         "doc": "进入巡录领取任务",
         "recognition": "OCR",
         "expected": "^巡录$",
