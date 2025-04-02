@@ -354,7 +354,7 @@
     "chooseGunsmokeFrontlineSupportDollX1": {
         "doc": "选择支援人形1-1",
         "recognition": "OCR",
-        "expected": "尖兵$",
+        "expected": "电导$",
         "roi": [
             584,
             130,
@@ -375,7 +375,7 @@
     "chooseGunsmokeFrontlineSupportDollX2": {
         "doc": "选择支援人形1-2",
         "recognition": "OCR",
-        "expected": "尖兵$",
+        "expected": "电导$",
         "roi": [
             584,
             130,
@@ -396,7 +396,7 @@
     "chooseGunsmokeFrontlineSupportDollX3": {
         "doc": "选择支援人形1-3",
         "recognition": "OCR",
-        "expected": "尖兵$",
+        "expected": "电导$",
         "roi": [
             584,
             130,
