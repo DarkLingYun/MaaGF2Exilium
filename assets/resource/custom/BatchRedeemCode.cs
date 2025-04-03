@@ -267,6 +267,7 @@ namespace MFAWPF.Custom
                     localContext.Click(detail.HitBox.X, detail.HitBox.Y); // 进入编辑状态
                     Task.Delay(1200).Wait();
                     localContext.InputText(redeemCode);
+                    Task.Delay(1200).Wait();
                     localContext.Click(detail.HitBox.X, detail.HitBox.Y); // 退出编辑状态
                     Task.Delay(1200).Wait();
                     if (localContext.OCR("申请", image, out detail, 471, 493, 335, 86))
