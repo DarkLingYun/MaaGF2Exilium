@@ -24,16 +24,38 @@
         "action": "Click",
         "post_wait_freezes": 800,
         "next": [
+            "TimeLimitedGiftPackagePageSwipe"
+        ]
+    },
+    "TimeLimitedGiftPackagePageSwipe": {
+        "doc": "从下向上滑动",
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": [
+            1132,
+            366,
+            1,
+            1
+        ],
+        "end": [
+            1132,
+            291,
+            1,
+            1
+        ],
+        "post_wait_freezes": 1000,
+        "next": [
             "clickWeekSupplyBox",
             "clickPermanentGiftPackage"
         ]
     },
     "clickWeekSupplyBox": {
-        "recognition": "OCR",
-        "expected": [
-            "周周乐补给箱",
-            "周周"
+        "doc": "点击每周补给箱",
+        "recognition": "TemplateMatch",
+        "template": [
+            "每日免费礼包/每周补给箱.png"
         ],
+        "threshold": 0.87,
         "action": "Click",
         "post_wait_freezes": 200,
         "next": [
@@ -61,7 +83,7 @@
     },
     "clickPermanentGiftPackage": {
         "recognition": "OCR",
-        "expected": "^常驻礼包$",
+        "expected": "^周期礼包$",
         "action": "Click",
         "post_delay": 1500,
         "next": [
@@ -70,8 +92,12 @@
         ]
     },
     "clickDailySupplyBox": {
-        "recognition": "OCR",
-        "expected": "每日补给箱",
+        "doc": "点击每日补给箱",
+        "recognition": "TemplateMatch",
+        "template": [
+            "每日免费礼包/每日补给箱.png"
+        ],
+        "threshold": 0.87,
         "action": "Click",
         "post_wait_freezes": 200,
         "next": [

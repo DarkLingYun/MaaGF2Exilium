@@ -52,7 +52,7 @@
         ]
     },
     "clickBoundaryAdvanceDelegateButton": {
-        "doc": "点击边界推进委托按钮",
+        "doc": "点击边界推进委托按钮,循环调用防止新周期卡住",
         "recognition": "OCR",
         "roi": [
             722,
@@ -66,8 +66,9 @@
             "^晶源"
         ],
         "action": "Click",
-        "post_delay": 2000,
+        "post_wait_freezes": 2000,
         "next": [
+            "clickBoundaryAdvanceDelegateButton",
             "boundaryAdvanceDelegateOneClickDispatch",
             "boundaryAdvanceDelegateOneClickClaim",
             "boundaryAdvanceDelegateNotClaimable"

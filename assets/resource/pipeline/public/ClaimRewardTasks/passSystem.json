@@ -63,11 +63,20 @@
             "^一键领取$",
             "键领取$"
         ],
+        "post_wait_freezes": 1500,
         "action": "Click",
         "next": [
-            "selectPassSupplyCrateReward",
-            "confirmPassRewardContent",
+            "findPaymentNotification",
+            "choosePackage",
             "closePassClaimResultPage"
+        ]
+    },
+    "findPaymentNotification": {
+        "doc": "发现付费通行证购买提示",
+        "recognition": "OCR",
+        "expected": "解锁远航集后",
+        "next": [
+            "confirmPassRewardContent"
         ]
     },
     "confirmPassRewardContent": {
@@ -77,21 +86,64 @@
         "action": "Click",
         "post_delay": 1500,
         "next": [
-            "selectPassSupplyCrateReward",
+            "choosePackage",
             "closePassClaimResultPage"
         ]
     },
-    "selectPassSupplyCrateReward": {
-        "doc": "选择通行证补给箱奖励",
+    "choosePackage": {
+        "doc": "选择奖励",
+        "next": [
+            "findPurpleWeaponPackageReward",
+            "findGoldWeaponPackageReward",
+            "selectLightPackageReward",
+            "closePassClaimResultPage"
+        ]
+    },
+    "selectLightPackageReward": {
+        "doc": "选择拂晓之光破晓天光补给包奖励",
         "recognition": "OCR",
-        "expected": [
-            "坍塌晶条",
-            "晶条",
-            "野兔"
-        ],
+        "expected": "晶条",
         "action": "Click",
         "next": [
             "openPassSupplyCrateReward"
+        ]
+    },
+    "findPurpleWeaponPackageReward": {
+        "doc": "发现紫色武器自选礼箱",
+        "recognition": "OCR",
+        "expected": "标准武器自选礼箱",
+        "next": [
+            "weaponPackageFound"
+        ]
+    },
+    "findGoldWeaponPackageReward": {
+        "doc": "发现金色武器自选礼箱",
+        "recognition": "OCR",
+        "expected": "远行守护自选礼箱",
+        "next": [
+            "weaponPackageFound"
+        ]
+    },
+    "weaponPackageFound": {
+        "doc": "发现武器自选礼箱，触发通知",
+        "next": [
+            "exitPackagePageAfterWeaponPackageFound"
+        ],
+        "focus": true,
+        "focus_tip": "发现武器自选礼箱，请手动处理",
+        "focus_toast": "发现武器自选礼箱，请手动处理"
+    },
+    "exitPackagePageAfterWeaponPackageFound": {
+        "doc": "发现武器自选礼箱后关闭领奖界面",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "exitPassSystemPage"
         ]
     },
     "openPassSupplyCrateReward": {
@@ -103,8 +155,7 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "selectPassSupplyCrateReward",
-            "closePassClaimResultPage"
+            "choosePackage"
         ]
     },
     "closePassClaimResultPage": {
