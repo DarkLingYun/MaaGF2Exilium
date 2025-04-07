@@ -25,6 +25,7 @@
             "公用按钮组件/邮件_主页.png",
             "公用按钮组件/邮件_主页_2.png"
         ],
+        "threshold": 0.75,
         "action": "Click",
         "next": [
             "claimAllEmails"
