@@ -25,10 +25,20 @@
         ],
         "post_delay": 2500,
         "next": [
+            "sendDispatchNotification"
+        ]
+    },
+    "sendDispatchNotification": {
+        "doc": "发送手动处理派遣的通知",
+        "next": [
             "claimDispatchCenterDispatchCountReward",
             "enterSchedulingGainsAction",
             "returnToHomePage"
-        ]
+        ],
+        "focus": true,
+        "focus_tip": "公共区调度室未派遣，请手动处理",
+        "focus_tip_color": "#f46e6e",
+        "focus_toast": "公共区调度室未派遣，请手动处理"
     },
     "rewardGet": {
         "recognition": "OCR",
