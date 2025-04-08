@@ -131,6 +131,7 @@
         ],
         "focus": true,
         "focus_tip": "发现武器自选礼箱，请手动处理",
+        "focus_tip_color": "#f46e6e",
         "focus_toast": "发现武器自选礼箱，请手动处理"
     },
     "exitPackagePageAfterWeaponPackageFound": {
