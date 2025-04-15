@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
-<img alt="logo2" src="https://gf2.mcc.wiki/image/doll/Avatar_Half_LevaSSR.png" width="256"/>
+<img alt="logo2" src="https://gf2.mcc.wiki/image/doll/Avatar_Half_RobellaSSR.png" width="256"/>
 </p>
 
 <div align="center">
