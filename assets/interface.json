@@ -1383,6 +1383,33 @@
         "物资模式活动选择": {
             "cases": [
                 {
+                    "name": "错位锚定·下篇",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "错位锚定"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "临时据点"
+                            ]
+                        },
+                        "switchVersionActivityChapter": {
+                            "enabled": true,
+                            "expected": [
+                                "^错位.*下篇$"
+                            ]
+                        },
+                        "secectExchangeType": {
+                            "enabled": true,
+                            "expected": [
+                                "^临时.*下篇$"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "错位锚定·上篇",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
@@ -1400,26 +1427,11 @@
                             "expected": [
                                 "^错位.*上篇$"
                             ]
-                        }
-                    }
-                },
-                {
-                    "name": "错位锚定·下篇",
-                    "pipeline_override": {
-                        "clickVersionActivityTagButton": {
-                            "expected": [
-                                "错位锚定"
-                            ]
                         },
-                        "enterVersionActivityItemExchange": {
-                            "expected": [
-                                "临时据点"
-                            ]
-                        },
-                        "switchVersionActivityChapter": {
+                        "secectExchangeType": {
                             "enabled": true,
                             "expected": [
-                                "^错位.*下篇$"
+                                "^临时.*上篇$"
                             ]
                         }
                     }
