@@ -1,6 +1,23 @@
 {
     "itemBox": {
-        "doc": "道具箱",
+        "doc": "准备开始处理道具箱",
+        "enabled": true,
+        "next": [
+            "swipeColumn"
+        ]
+    },
+    "swipeColumn": {
+        "doc": "滑动左侧列表露出道具箱",
+        "action": "Swipe",
+        "begin": [89,521,43,16],
+        "end": [81,283,30,11],
+        "post_wait_freezes": 500,
+        "next": [
+            "enterItemBox"
+        ]
+    },
+    "enterItemBox": {
+        "doc": "点击按钮进入道具箱页面",
         "enabled": true,
         "recognition": "OCR",
         "expected": "道具箱",
@@ -15,6 +32,7 @@
         "doc": "寻找潜在的可开启道具箱",
         "next": [
             "openSupplySupportBox",
+            "openFlowerBox",
             "openItemBoxCompleted"
         ]
     },
@@ -70,6 +88,60 @@
         "expected": "点击空白处关闭",
         "action": "Click",
         "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "tryToOpenItemBox"
+        ]
+    },
+    "openFlowerBox": {
+        "doc": "顶级生长数据随机箱",
+        "recognition": "TemplateMatch",
+        "template": [
+            "仓库/顶级生长数据随机箱.png"
+        ],
+        "action": "Click",
+        "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "doubleCheckFlowerBox",
+            "tryToOpenItemBox"
+        ]
+    },
+    "doubleCheckFlowerBox": {
+        "doc": "确认是顶级生长数据随机箱",
+        "recognition": "OCR",
+        "expected": "顶级生长数据随机箱",
+        "post_wait_freezes": 500,
+        "next": [
+            "setFlowerBoxNumber",
+            "confirmFlowerBox"
+        ]
+    },
+    "setFlowerBoxNumber": {
+        "doc": "设置数量",
+        "recognition": "OCR",
+        "expected": "最大",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "confirmFlowerBox"
+        ]
+    },
+    "confirmFlowerBox": {
+        "doc": "开箱子",
+        "recognition": "OCR",
+        "expected": "开启",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "closeFlowerBoxResultPage"
+        ]
+    },
+    "closeFlowerBoxResultPage": {
+        "doc": "关闭结果页面",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
         "post_wait_freezes": 500,
         "next": [
             "tryToOpenItemBox"
