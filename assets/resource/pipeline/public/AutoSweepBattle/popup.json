@@ -146,6 +146,7 @@
         "expected": "点击空白处关闭",
         "post_delay": 1500,
         "next": [
+            "resultRecognition",
             "ClickResultRecognition"
         ]
     },
