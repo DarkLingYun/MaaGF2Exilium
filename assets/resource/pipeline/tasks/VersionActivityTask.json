@@ -40,7 +40,7 @@
         ]
     },
     "switchVersionActivityChapter": {
-        "doc": "切换版本活动章节, 默认false",
+        "doc": "切换版本活动章节(大型活动), 默认false",
         "enabled": false,
         "recognition": "OCR",
         "expected": "^错位.*上篇$",
