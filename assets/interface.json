@@ -227,31 +227,6 @@
                 }
             ]
         },
-        "通知调研邀请邮件": {
-            "cases": [
-                {
-                    "name": "YES",
-                    "pipeline_override": {
-                        "findSurveyEmail": {
-                            "enabled": true
-                        },
-                        "surveyEmailFound": {
-                            "focus": true,
-                            "focus_tip": "发现调研邀请邮件，请手动处理",
-                            "focus_toast": "发现调研邀请邮件，请手动处理"
-                        }
-                    }
-                },
-                {
-                    "name": "NO",
-                    "pipeline_override": {
-                        "findSurveyEmail": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
         "使用完体力药水": {
             "default_case": "NO",
             "cases": [

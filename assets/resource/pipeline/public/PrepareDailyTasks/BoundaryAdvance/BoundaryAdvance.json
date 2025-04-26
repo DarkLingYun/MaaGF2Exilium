@@ -48,9 +48,9 @@
             209,
             32
         ],
-        "focus": true,
-        "focus_succeeded": "派遣奖励已全部领取",
-        "focus_succeeded_color": "#519afd",
+        "focus": {
+            "succeeded": "[color:blue]边界推进奖励已全部领取[/color]"
+        },
         "next": [
             "exitBoundaryAdvance"
         ]

@@ -47,10 +47,10 @@
             "enterSchedulingGainsAction",
             "returnToHomePage"
         ],
-        "focus": true,
-        "focus_tip": "公共区调度室未完全派遣，请手动处理",
-        "focus_tip_color": "#f46e6e",
-        "focus_toast": "公共区调度室未完全派遣，请手动处理"
+        "focus": {
+            "start": "[color:red]公共区调度室未完全派遣，请手动处理[/color]",
+            "toast": "公共区调度室未完全派遣，请手动处理"
+        }
     },
     "rewardGet": {
         "recognition": "OCR",

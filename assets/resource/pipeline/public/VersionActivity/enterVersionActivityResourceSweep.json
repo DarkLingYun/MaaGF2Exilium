@@ -60,9 +60,9 @@
             64
         ],
         "recognition": "ColorMatch",
-        "focus": true,
-        "focus_succeeded": "扫荡券不足",
-        "focus_succeeded_color": "#f46e6e",
+        "focus": {
+            "succeeded": "[color:red]扫荡券不足[/color]"
+        },
         "next": [
             "exitVersionActivityResourceSweep"
         ]
@@ -106,9 +106,9 @@
             "需要完成前置关卡",
             "关卡$"
         ],
-        "focus": true,
-        "focus_succeeded": "第五关未解锁",
-        "focus_succeeded_color": "#f46e6e",
+        "focus": {
+            "succeeded": "[color:red]第五关未解锁[/color]"
+        },
         "next": [
             "exitVersionActivityResourceSweep"
         ]
