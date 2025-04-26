@@ -100,6 +100,7 @@
         "recognition": "ColorMatch",
         "post_delay": 100,
         "next": [
+            "resultRecognition",
             "decreaseSlider"
         ]
     },
@@ -146,7 +147,6 @@
         "expected": "点击空白处关闭",
         "post_delay": 1500,
         "next": [
-            "resultRecognition",
             "ClickResultRecognition"
         ]
     },
@@ -172,6 +172,7 @@
         ]
     },
     "UserSetSliderValue": {
+        "doc": "用户设定的滑动条值",
         "enabled": true,
         "recognition": "OCR",
         "roi": [
