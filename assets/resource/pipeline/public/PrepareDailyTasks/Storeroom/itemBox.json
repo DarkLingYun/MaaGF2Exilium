@@ -9,8 +9,18 @@
     "swipeColumn": {
         "doc": "滑动左侧列表露出道具箱",
         "action": "Swipe",
-        "begin": [89,521,43,16],
-        "end": [81,283,30,11],
+        "begin": [
+            89,
+            521,
+            43,
+            16
+        ],
+        "end": [
+            81,
+            283,
+            30,
+            11
+        ],
         "post_wait_freezes": 500,
         "next": [
             "enterItemBox"
@@ -104,7 +114,19 @@
         "post_wait_freezes": 500,
         "next": [
             "doubleCheckFlowerBox",
+            "closeNotTopDataBoxPage",
             "tryToOpenItemBox"
+        ]
+    },
+    "closeNotTopDataBoxPage": {
+        "doc": "非顶级数据随机箱子页面关闭",
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "closeNotTopDataBoxPage",
+            "openItemBoxCompleted"
         ]
     },
     "doubleCheckFlowerBox": {
