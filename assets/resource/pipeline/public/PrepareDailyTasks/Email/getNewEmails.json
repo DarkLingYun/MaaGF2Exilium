@@ -27,21 +27,24 @@
         ],
         "threshold": 0.75,
         "action": "Click",
+        "post_wait_freezes": 1000,
         "next": [
             "claimAllEmails"
         ]
     },
     "claimAllEmails": {
+        "doc": "循环调用自身，确保按钮有效点击",
         "recognition": "OCR",
         "expected": "领取全部",
         "action": "Click",
         "next": [
             "noUnclaimedItems",
-            "closeClaimAllEmailsPopup"
+            "closeClaimAllEmailsPopup",
+            "claimAllEmails"
         ]
     },
     "noUnclaimedItems": {
-        "rate_limit": 200,
+        "rate_limit": 100,
         "recognition": "OCR",
         "expected": "无可领取物品",
         "next": [
