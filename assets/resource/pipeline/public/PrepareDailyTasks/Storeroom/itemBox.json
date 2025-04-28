@@ -106,6 +106,7 @@
     "openFlowerBox": {
         "doc": "顶级生长数据随机箱",
         "recognition": "TemplateMatch",
+        "index": -1,
         "template": [
             "仓库/顶级生长数据随机箱.png"
         ],
