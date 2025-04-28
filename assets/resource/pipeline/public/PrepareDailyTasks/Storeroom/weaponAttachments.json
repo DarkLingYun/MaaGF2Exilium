@@ -47,14 +47,16 @@
         ]
     },
     "quickSelect": {
-        "doc": "快捷选择",
+        "doc": "快捷选择,",
         "recognition": "OCR",
         "expected": "快捷选择",
         "action": "Click",
         "target": true,
+        "post_delay": 100,
         "next": [
             "noAccessoriesToDisassemble",
-            "disassembly"
+            "disassembly",
+            "quickSelect"
         ]
     },
     "disassembly": {
@@ -90,7 +92,11 @@
     },
     "noAccessoriesToDisassemble": {
         "recognition": "OCR",
-        "expected": "无符合筛选条件的物品",
+        "expected": [
+            "无符合筛选条件的物品",
+            "无符合",
+            "条件的物品"
+        ],
         "post_wait_freezes": 500,
         "next": [
             "exitweaponAttachments"
