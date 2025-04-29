@@ -203,6 +203,10 @@
             "清理库存",
             "存储上限"
         ],
+        "focus": {
+            "start": "[color:red]武器配件已达存储上限，请先清理库存[/color]",
+            "toast": "武器配件已达存储上限，请先清理库存"
+        },
         "next": [
             "nonScrollablePopupCancel",
             "accessoriesPopupClose",
