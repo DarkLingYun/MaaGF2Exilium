@@ -36,7 +36,7 @@
         }
     ],
     "name": "少女前线2：追放自动化助手",
-    "custom_title": "错位锚定·下篇",
+    "custom_title": "镜茧与囚蝶",
     "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "mirrorchyan_rid": "MaaGF2Exilium",
     "task": [
@@ -1357,6 +1357,27 @@
         },
         "物资模式活动选择": {
             "cases": [
+                {
+                    "name": "镜茧与囚蝶",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "镜茧与囚蝶",
+                                "与囚蝶",
+                                "镜茧与",
+                                "镜茧",
+                                "囚蝶"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "数据整合程序",
+                                "整合程序",
+                                "数据整合"
+                            ]
+                        }
+                    }
+                },
                 {
                     "name": "错位锚定·下篇",
                     "pipeline_override": {
