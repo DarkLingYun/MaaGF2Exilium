@@ -27,7 +27,7 @@
         "post_wait_freezes": 300,
         "next": [
             "warGameSeasonSettlement",
-            "confirmWarGameSimulationPage"
+            "enterClaimRewardPage"
         ]
     },
     "warGameSeasonSettlement": {
@@ -48,6 +48,62 @@
         "post_delay": 1500,
         "next": [
             "warGameSeasonSettlement",
+            "enterClaimRewardPage"
+        ]
+    },
+    "enterClaimRewardPage": {
+        "doc": "进入奖励预览页面",
+        "recognition": "OCR",
+        "expected": "奖励预览",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "enterClaimRewardTab"
+        ]
+    },
+    "enterClaimRewardTab": {
+        "doc": "进入参与奖励页面",
+        "recognition": "OCR",
+        "expected": "参与奖励",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "claimReward",
+            "closeClaimRewardPage"
+        ]
+    },
+    "claimReward": {
+        "doc": "领取兵棋推演奖励",
+        "recognition": "OCR",
+        "expected": "^领取$",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "closeClaimResultPage"
+        ]
+    },
+    "closeClaimResultPage": {
+        "doc": "关闭奖励结果页面",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "post_wait_freezes": 1500,
+        "next": [
+            "claimReward",
+            "closeClaimRewardPage"
+        ]
+    },
+    "closeClaimRewardPage": {
+        "doc": "关闭奖励预览页面",
+        "recognition": "TemplateMatch",
+        "roi": [983,99,59,49],
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
             "confirmWarGameSimulationPage"
         ]
     },
