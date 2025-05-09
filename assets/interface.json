@@ -1257,64 +1257,6 @@
                 }
             ]
         },
-        "推演次数": {
-            "cases": [
-                {
-                    "name": "x1",
-                    "pipeline_override": {
-                        "insufficientPermissionsForWarGameSimulation": {
-                            "expected": [
-                                "4/5$",
-                                "0/5$"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "x2",
-                    "pipeline_override": {
-                        "insufficientPermissionsForWarGameSimulation": {
-                            "expected": [
-                                "3/5$",
-                                "0/5$"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "x3",
-                    "pipeline_override": {
-                        "insufficientPermissionsForWarGameSimulation": {
-                            "expected": [
-                                "2/5$",
-                                "0/5$"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "x4",
-                    "pipeline_override": {
-                        "insufficientPermissionsForWarGameSimulation": {
-                            "expected": [
-                                "1/5$",
-                                "0/5$"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "x5",
-                    "pipeline_override": {
-                        "insufficientPermissionsForWarGameSimulation": {
-                            "expected": [
-                                "0/5$"
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
         "尘烟前线自动作战": {
             "cases": [
                 {
