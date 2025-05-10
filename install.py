@@ -3,7 +3,6 @@ from pathlib import Path
 import shutil
 import sys
 import json
-import os
 
 from configure import configure_ocr_model
 
@@ -38,6 +37,11 @@ def install_deps():
 
 
 def install_resource():
+    # 手动清理资源目录，防止旧文件残留，节点变化导致的冲突
+    resource_dir_to_clean = install_path / "resource"
+    if resource_dir_to_clean.exists():
+        print(f"正在清理已存在的资源目录: {resource_dir_to_clean}")
+        shutil.rmtree(resource_dir_to_clean)
 
     configure_ocr_model()
 
