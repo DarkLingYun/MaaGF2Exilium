@@ -3,6 +3,7 @@ from pathlib import Path
 import shutil
 import sys
 import json
+import os
 
 from configure import configure_ocr_model
 
@@ -70,9 +71,24 @@ def install_chores():
     )
 
 
+def install_mfawpf():
+    mfa_exe_path = working_dir / "MFA" / "MFAWPF.exe"
+    install_exe_path = install_path / "MaaGF2Exilium.exe"
+
+    if mfa_exe_path.exists():
+        shutil.copy2(
+            mfa_exe_path,
+            install_exe_path,
+        )
+        print(f"Copied MFAWPF.exe to {install_exe_path}")
+    else:
+        print("Warning: MFA/MFAWPF.exe not found. Skipping copy operation.")
+
+
 if __name__ == "__main__":
     install_deps()
     install_resource()
     install_chores()
+    install_mfawpf()
 
     print(f"Install to {install_path} successfully.")
