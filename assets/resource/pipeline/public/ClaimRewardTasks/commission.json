@@ -19,7 +19,7 @@
         "next": [
             "oneKeyClaimCommissionReward",
             "claimDailyActiveCommissionReward",
-            "noCommissionRewardsToClaim"
+            "enterJourneyWitnessTab"
         ]
     },
     "oneKeyClaimCommissionReward": {
@@ -30,7 +30,7 @@
         "post_delay": 1500,
         "next": [
             "claimDailyActiveCommissionReward",
-            "exitCommissionPage"
+            "enterJourneyWitnessTab"
         ]
     },
     "claimDailyActiveCommissionReward": {
@@ -49,18 +49,70 @@
         "action": "Click",
         "next": [
             "closeCommissionRewardResultPage",
+            "enterJourneyWitnessTab"
+        ]
+    },
+    "enterJourneyWitnessTab": {
+        "doc": "进入危途见证",
+        "recognition": "OCR",
+        "roi": [516,16,748,62],
+        "expected": "危途见证",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "claimJourneyWitnessReward",
+            "enterJourneyMileStoneTab"
+        ]
+    },
+    "claimJourneyWitnessReward": {
+        "doc": "领取危途见证奖励",
+        "recognition": "OCR",
+        "expected": "一键领取",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "closeClaimJourneyWitnessRewardResultPage"
+        ]
+    },
+    "closeClaimJourneyWitnessRewardResultPage": {
+        "doc": "关闭领取危途见证奖励结果页",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "closeClaimJourneyWitnessRewardResultPage",
+            "enterJourneyMileStoneTab"
+        ]
+    },
+    "enterJourneyMileStoneTab": {
+        "doc": "进入征程丰碑",
+        "recognition": "OCR",
+        "roi": [516,16,748,62],
+        "expected": "征程丰碑",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "claimJourneyMileStoneReward",
             "exitCommissionPage"
         ]
     },
-    "noCommissionRewardsToClaim": {
-        "doc": "无可领取委托奖励",
-        "inverse": true,
+    "claimJourneyMileStoneReward": {
+        "doc": "领取征程丰碑奖励",
         "recognition": "OCR",
-        "expected": [
-            "^领取$",
-            "^领取全部$"
-        ],
+        "expected": "一键领取",
+        "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
+            "closeClaimJourneyMileStoneRewardResultPage"
+        ]
+    },
+    "closeClaimJourneyMileStoneRewardResultPage": {
+        "doc": "关闭领取征程丰碑奖励结果页",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "closeClaimJourneyMileStoneRewardResultPage",
             "exitCommissionPage"
         ]
     },
