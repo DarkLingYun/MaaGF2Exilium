@@ -37,6 +37,11 @@ def install_deps():
 
 
 def install_resource():
+    # 手动清理资源目录，防止旧文件残留，节点变化导致的冲突
+    resource_dir_to_clean = install_path / "resource"
+    if resource_dir_to_clean.exists():
+        print(f"正在清理已存在的资源目录: {resource_dir_to_clean}")
+        shutil.rmtree(resource_dir_to_clean)
 
     configure_ocr_model()
 
@@ -70,9 +75,24 @@ def install_chores():
     )
 
 
+def install_mfawpf():
+    mfa_exe_path = working_dir / "MFA" / "MFAWPF.exe"
+    install_exe_path = install_path / "MaaGF2Exilium.exe"
+
+    if mfa_exe_path.exists():
+        shutil.copy2(
+            mfa_exe_path,
+            install_exe_path,
+        )
+        print(f"Copied MFAWPF.exe to {install_exe_path}")
+    else:
+        print("Warning: MFA/MFAWPF.exe not found. Skipping copy operation.")
+
+
 if __name__ == "__main__":
     install_deps()
     install_resource()
     install_chores()
+    install_mfawpf()
 
     print(f"Install to {install_path} successfully.")
