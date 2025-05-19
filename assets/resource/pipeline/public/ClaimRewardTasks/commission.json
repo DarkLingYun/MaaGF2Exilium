@@ -3,7 +3,14 @@
         "doc": "进入委托领取任务",
         "recognition": "OCR",
         "expected": "^委托$",
+        "roi": [
+            370,
+            582,
+            909,
+            137
+        ],
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "confirmEntrustedClaimPage"
         ]
@@ -15,7 +22,7 @@
             "日活跃",
             "每日订单"
         ],
-        "post_delay": 1500,
+        "post_delay": 500,
         "next": [
             "oneKeyClaimCommissionReward",
             "claimDailyActiveCommissionReward",
@@ -55,7 +62,12 @@
     "enterJourneyWitnessTab": {
         "doc": "进入危途见证",
         "recognition": "OCR",
-        "roi": [516,16,748,62],
+        "roi": [
+            516,
+            16,
+            748,
+            62
+        ],
         "expected": "危途见证",
         "action": "Click",
         "post_wait_freezes": 500,
@@ -87,7 +99,12 @@
     "enterJourneyMileStoneTab": {
         "doc": "进入征程丰碑",
         "recognition": "OCR",
-        "roi": [516,16,748,62],
+        "roi": [
+            516,
+            16,
+            748,
+            62
+        ],
         "expected": "征程丰碑",
         "action": "Click",
         "post_wait_freezes": 500,
