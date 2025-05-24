@@ -37,6 +37,7 @@
         "recognition": "OCR",
         "expected": "领取全部",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "noUnclaimedItems",
             "closeClaimAllEmailsPopup",
@@ -47,6 +48,7 @@
         "rate_limit": 100,
         "recognition": "OCR",
         "expected": "无可领取物品",
+        "post_wait_freezes": 500,
         "next": [
             "noUnclaimedItems",
             "findSurveyEmail",
@@ -92,6 +94,7 @@
         "recognition": "OCR",
         "expected": "点击空白",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "closeClaimAllEmailsPopup",
             "findSurveyEmail",
