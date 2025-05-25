@@ -31,6 +31,7 @@
         "post_delay": 1500,
         "next": [
             "weaponAttachments",
+            "flower",
             "itemBox",
             "returnToHomePage"
         ]
