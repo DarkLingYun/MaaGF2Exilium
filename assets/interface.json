@@ -69,6 +69,8 @@
                 "边界推进委托领取",
                 "拆解武器配件",
                 "拆解武器配件等级",
+                "拆解生长数据",
+                "拆解生长数据等级",
                 "开启道具箱",
                 "物资助力箱奖励类型"
             ],
@@ -331,6 +333,54 @@
                     "pipeline_override": {
                         "chooseLevel": {
                             "expected": "精密级及以下未培养"
+                        }
+                    }
+                }
+            ]
+        },
+        "拆解生长数据": {
+            "cases": [
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "flower": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "flower": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "拆解生长数据等级": {
+            "cases": [
+                {
+                    "name": "工业级及以下",
+                    "pipeline_override": {
+                        "chooseFlowerLevel": {
+                            "expected": "工业级及以下"
+                        }
+                    }
+                },
+                {
+                    "name": "军用级及以下",
+                    "pipeline_override": {
+                        "chooseFlowerLevel": {
+                            "expected": "军用级及以下"
+                        }
+                    }
+                },
+                {
+                    "name": "精密级及以下",
+                    "pipeline_override": {
+                        "chooseFlowerLevel": {
+                            "expected": "精密级及以下"
                         }
                     }
                 }
