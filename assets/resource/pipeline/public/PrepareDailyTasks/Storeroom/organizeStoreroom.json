@@ -30,6 +30,7 @@
         "target": true,
         "post_delay": 1500,
         "next": [
+            "weapon",
             "weaponAttachments",
             "flower",
             "itemBox",
