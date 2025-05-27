@@ -36,7 +36,7 @@
         }
     ],
     "name": "少女前线2：追放自动化助手",
-    "custom_title": "镜茧与囚蝶",
+    "custom_title": "心跳游乐园",
     "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "mirrorchyan_rid": "MaaGF2Exilium",
     "task": [
@@ -1350,7 +1350,28 @@
         "物资模式活动选择": {
             "cases": [
                 {
-                    "name": "镜茧与囚蝶",
+                    "name": "心跳游乐园",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "心跳游乐园",
+                                "游乐园",
+                                "心跳游",
+                                "心跳",
+                                "乐园"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "纪念品商店",
+                                "纪念品",
+                                "商店"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "镜茧与囚蝶(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
