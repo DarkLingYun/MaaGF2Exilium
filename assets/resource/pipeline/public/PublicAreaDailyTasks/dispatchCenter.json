@@ -9,21 +9,24 @@
         "recognition": "OCR",
         "expected": "调度室",
         "action": "Click",
-        "post_delay": 2000,
+        "post_wait_freezes": 1000,
+        "next": [
+            "dispatchCenterEntered"
+        ]
+    },
+    "dispatchCenterEntered": {
+        "doc": "已进入调度室",
+        "recognition": "OCR",
+        "expected": "^调度考核$",
+        "post_wait_freezes": 1000,
         "next": [
             "rewardGet",
             "noRewardGet"
         ]
     },
     "noRewardGet": {
-        "inverse": true,
-        "recognition": "OCR",
-        "expected": [
-            "领取",
-            "一键领取",
-            "键领取"
-        ],
-        "post_delay": 2500,
+        "doc": "没有可领取的奖励",
+        "post_wait_freezes": 1000,
         "next": [
             "dispatchProgressing",
             "sendDispatchNotification"
@@ -53,6 +56,7 @@
         }
     },
     "rewardGet": {
+        "doc": "领取调度室奖励",
         "recognition": "OCR",
         "expected": [
             "领取",
@@ -60,7 +64,7 @@
             "键领取"
         ],
         "action": "Click",
-        "post_delay": 2500,
+        "post_wait_freezes": 1000,
         "next": [
             "dispatchCenterSendAgain"
         ]
