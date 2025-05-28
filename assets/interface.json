@@ -67,6 +67,8 @@
                 "使用完体力药水",
                 "商城免费每日补给箱购买",
                 "边界推进委托领取",
+                "拆解武器",
+                "拆解武器等级",
                 "拆解武器配件",
                 "拆解武器配件等级",
                 "拆解生长数据",
@@ -285,6 +287,46 @@
                     "pipeline_override": {
                         "enterBoundaryAdvanceAction": {
                             "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "拆解武器": {
+            "cases": [
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "weapon": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "weapon": {
+                            "enabled": true
+                        }
+                    }
+                }
+            ]
+        },
+        "拆解武器等级": {
+            "cases": [
+                {
+                    "name": "旧式未培养武器",
+                    "pipeline_override": {
+                        "chooseWeaponLevel": {
+                            "expected": "旧式未培养武器"
+                        }
+                    }
+                },
+                {
+                    "name": "标准及以下未培养武器",
+                    "pipeline_override": {
+                        "chooseWeaponLevel": {
+                            "expected": "标准及以下未培养武器"
                         }
                     }
                 }
