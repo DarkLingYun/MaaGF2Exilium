@@ -9,21 +9,24 @@
         "recognition": "OCR",
         "expected": "调度室",
         "action": "Click",
-        "post_delay": 2000,
+        "post_wait_freezes": 1000,
+        "next": [
+            "dispatchCenterEntered"
+        ]
+    },
+    "dispatchCenterEntered": {
+        "doc": "已进入调度室",
+        "recognition": "OCR",
+        "expected": "^调度考核$",
+        "post_wait_freezes": 1000,
         "next": [
             "rewardGet",
             "noRewardGet"
         ]
     },
     "noRewardGet": {
-        "inverse": true,
-        "recognition": "OCR",
-        "expected": [
-            "领取",
-            "一键领取",
-            "键领取"
-        ],
-        "post_delay": 2500,
+        "doc": "没有可领取的奖励",
+        "post_wait_freezes": 1000,
         "next": [
             "dispatchProgressing",
             "sendDispatchNotification"
@@ -33,7 +36,12 @@
         "doc": "派遣进行中",
         "recognition": "OCR",
         "expected": "同时可派遣5/5",
-        "roi": [1072,532,171,43],
+        "roi": [
+            1072,
+            532,
+            171,
+            43
+        ],
         "next": [
             "claimDispatchCenterDispatchCountReward",
             "enterSchedulingGainsAction",
@@ -53,6 +61,7 @@
         }
     },
     "rewardGet": {
+        "doc": "领取调度室奖励",
         "recognition": "OCR",
         "expected": [
             "领取",
@@ -60,7 +69,7 @@
             "键领取"
         ],
         "action": "Click",
-        "post_delay": 2500,
+        "post_wait_freezes": 1000,
         "next": [
             "dispatchCenterSendAgain"
         ]
@@ -86,6 +95,13 @@
             129
         ],
         "action": "Click",
+        "target": true,
+        "target_offset": [
+            -20,
+            20,
+            0,
+            0
+        ],
         "post_wait_freezes": 300,
         "next": [
             "closeDispatchCenterDispatchCountRewardClaimResultPage"
