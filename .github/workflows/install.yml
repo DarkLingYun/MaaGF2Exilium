@@ -162,6 +162,8 @@ jobs:
         with:
           files: assets/*
           tag_name: ${{ needs.meta.outputs.tag }}
+          body: |
+            [已有 Mirror酱 CDK? 前往Mirror酱高速下载](https://mirrorchyan.com/zh/projects?rid=MaaGF2Exilium)
 
       - name: Trigger MirrorChyanUploading
         run: |
