@@ -54,7 +54,8 @@
         "target": true,
         "next": [
             "noAccessoriesToDisassemble",
-            "disassembly"
+            "disassembly",
+            "finalActionForQuickSelect"
         ]
     },
     "disassembly": {
@@ -96,6 +97,12 @@
             "条件的物品"
         ],
         "post_wait_freezes": 500,
+        "next": [
+            "exitWeaponAttachments"
+        ]
+    },
+    "finalActionForQuickSelect": {
+        "doc": "有的用户quickSelect节点两个选项都识别不到,用这个兜底直接退出",
         "next": [
             "exitWeaponAttachments"
         ]
