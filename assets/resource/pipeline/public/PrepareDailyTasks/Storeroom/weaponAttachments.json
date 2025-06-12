@@ -52,11 +52,9 @@
         "expected": "快捷选择",
         "action": "Click",
         "target": true,
-        "post_delay": 100,
         "next": [
             "noAccessoriesToDisassemble",
-            "disassembly",
-            "quickSelect"
+            "disassembly"
         ]
     },
     "disassembly": {
