@@ -36,16 +36,7 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
-        "post_delay": 2500,
-        "next": [
-            "claimSevenDayCheckInResourceTaskTimed",
-            "getNewEmails",
-            "staminaReplenishment",
-            "enterShop",
-            "enterBoundaryAdvanceAction",
-            "organizeStoreroom",
-            "HomePage"
-        ]
+        "post_delay": 2500
     },
     "clickStaminaClaimButton": {
         "recognition": "OCR",

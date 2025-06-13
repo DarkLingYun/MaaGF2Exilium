@@ -81,14 +81,7 @@
             "公用按钮组件/主页按钮_black.png"
         ],
         "action": "Click",
-        "post_delay": 2000,
-        "next": [
-            "staminaReplenishment",
-            "enterShop",
-            "enterBoundaryAdvanceAction",
-            "organizeStoreroom",
-            "HomePage"
-        ]
+        "post_delay": 2000
     },
     "closeClaimAllEmailsPopup": {
         "recognition": "OCR",

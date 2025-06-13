@@ -13,6 +13,13 @@
             }
         }
     ],
+    "agent": {
+        "child_exec": "C:/Users/chesha1/miniconda3/envs/maa/python.exe",
+        "child_args": [
+            "{PROJECT_DIR}/../agent/main.py",
+            "-u"
+        ]
+    },
     "resource": [
         {
             "name": "官服",
@@ -58,7 +65,7 @@
         },
         {
             "name": "日常任务前准备",
-            "entry": "PrepareDailyTasks",
+            "entry": "日常任务前准备",
             "option": [
                 "领取情报补给体力(限时)",
                 "领取七日签到资源(限时)",
