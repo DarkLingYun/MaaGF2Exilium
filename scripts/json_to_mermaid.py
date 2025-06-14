@@ -10,31 +10,43 @@ def json_to_mermaid(json_file_path):
     mermaid_lines = []
     mermaid_lines.append("graph TD")  # 可改为 graph LR, graph TB 等
 
-    # 3. 遍历大字典
+    # 3. 为每个节点生成唯一ID
+    node_ids = {}
+    node_counter = 0
+
+    # 预先为所有节点分配ID
+    for key in data.keys():
+        node_ids[key] = f"node_{node_counter}"
+        node_counter += 1
+
+    # 4. 遍历大字典
     for key, obj in data.items():
         # 取出 doc，如果没有 doc，就用空字符串或其他占位
         doc_str = obj.get("doc", "")
-        # mermaid 不支持中文逗号，替换成英文逗号，不支持空格，去除空格
-        doc_str = doc_str.replace("，", ",").replace(" ", "")
 
-        # 构造节点名称：键|doc
-        # 如果 doc 为空，就不显示 -doc 部分
-        node_label = f"{key}-{doc_str}" if doc_str else key
+        # 构造节点显示内容：键-doc 或仅键
+        display_content = f"{key}-{doc_str}" if doc_str else key
+
+        # 获取当前节点的ID
+        current_node_id = node_ids[key]
 
         # 仅当有 next 且为列表时，才继续画连线
         if "next" in obj and isinstance(obj["next"], list):
             for i, next_key in enumerate(obj["next"]):
                 # 找到 next_key 的 doc
                 next_obj = data.get(next_key, {})
-                next_doc_str = (
-                    next_obj.get("doc", "").replace("，", ",").replace(" ", "")
-                )
-                next_node_label = (
+                next_doc_str = next_obj.get("doc", "")
+                next_display_content = (
                     f"{next_key}-{next_doc_str}" if next_doc_str else next_key
                 )
 
-                # 生成一行 Mermaid 连线： 'A-DocA' -->|i| 'B-DocB'
-                mermaid_lines.append(f"    '{node_label}' -->|{i}| '{next_node_label}'")
+                # 获取目标节点的ID
+                next_node_id = node_ids.get(next_key, f"unknown_{next_key}")
+
+                # 生成一行 Mermaid 连线： nodeA["内容A"] -->|i| nodeB["内容B"]
+                mermaid_lines.append(
+                    f'    {current_node_id}["{display_content}"] -->|{i}| {next_node_id}["{next_display_content}"]'
+                )
 
     # 拼成完整 Mermaid 字符串
     mermaid_result = "\n".join(mermaid_lines)
