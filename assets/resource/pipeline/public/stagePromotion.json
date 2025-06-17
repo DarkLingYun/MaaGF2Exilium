@@ -68,5 +68,13 @@
         "roi": [980,621,60,32],
         "expected": "确认",
         "action": "Click"
+    },
+    "StagePromotionTeamConfirmation": {
+        "doc": "还有可部署单位，确认开始, 在作战开始前判断",
+        "recognition": "OCR",
+        "roi": [779,520,94,44],
+        "expected": "确认",
+        "action": "Click",
+        "post_delay": 2000
     }
 }

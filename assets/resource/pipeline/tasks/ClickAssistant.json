@@ -8,6 +8,7 @@
             "StagePromotionStartMission",
             "StagePromotionSkipStory",
             "StagePromotionClosePage",
+            "StagePromotionTeamConfirmation",
             "StagePromotionStartBattle",
             "StagePromotionCommunication",
             "StagePromotionContinue",
