@@ -36,7 +36,7 @@
         }
     ],
     "name": "少女前线2：追放自动化助手",
-    "custom_title": "心跳游乐园",
+    "custom_title": "沉没夜潮",
     "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "mirrorchyan_rid": "MaaGF2Exilium",
     "task": [
@@ -1391,6 +1391,27 @@
         },
         "物资模式活动选择": {
             "cases": [
+                {
+                    "name": "沉没夜潮",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "沉没夜潮",
+                                "沉没夜",
+                                "沉没",
+                                "夜潮",
+                                "没夜"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "筹码兑换处",
+                                "筹码",
+                                "兑换处"
+                            ]
+                        }
+                    }
+                },
                 {
                     "name": "心跳游乐园",
                     "pipeline_override": {
