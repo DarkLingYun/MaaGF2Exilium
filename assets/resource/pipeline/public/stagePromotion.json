@@ -9,7 +9,7 @@
     "StagePromotionStartMission":{
         "doc": "挑战节点, 点击开始挑战",
         "recognition": "OCR",
-        "roi": [1024,635,117,47],
+        "roi": [890,633,363,57],
         "expected": "挑战",
         "action": "Click"
     },
@@ -30,9 +30,10 @@
     "StagePromotionStartBattle": {
         "doc": "战斗界面, 点击作战开始",
         "recognition": "OCR",
-        "roi": [555,603,171,43],
+        "roi": [529,610,201,61],
         "expected": "作战开始",
-        "action": "Click"
+        "action": "Click",
+        "post_delay": 2000
     },
     "StagePromotionCommunication": {
         "doc": "剧情界面, 点击通信中跳过角色对话",
