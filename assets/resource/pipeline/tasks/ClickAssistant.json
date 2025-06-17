@@ -1,0 +1,18 @@
+{
+    "ClickAssistant": {
+        "next": [
+            "StagePromotionReturnFalse"
+        ],
+        "interrupt":[
+            "StagePromotionWatchStory",
+            "StagePromotionStartMission",
+            "StagePromotionSkipStory",
+            "StagePromotionClosePage",
+            "StagePromotionStartBattle",
+            "StagePromotionCommunication",
+            "StagePromotionContinue",
+            "StagePromotionConfirm",
+            "StagePromotionFinishTask"
+        ]
+    }
+}
