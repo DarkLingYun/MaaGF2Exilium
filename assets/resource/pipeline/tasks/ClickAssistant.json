@@ -11,7 +11,8 @@
             "StagePromotionClosePage",
             "StagePromotionTeamConfirmation",
             "StagePromotionStartBattle",
-            "StagePromotionCommunication",
+            "StagePromotionCommunication1",
+            "StagePromotionCommunication2",
             "StagePromotionContinue",
             "StagePromotionConfirm",
             "StagePromotionFinishTask"

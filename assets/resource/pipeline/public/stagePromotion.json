@@ -35,10 +35,17 @@
         "action": "Click",
         "post_delay": 2000
     },
-    "StagePromotionCommunication": {
+    "StagePromotionCommunication1": {
         "doc": "剧情界面, 点击通信中跳过角色对话",
         "recognition": "OCR",
-        "roi": [47,48,199,624],
+        "roi": [83,79,57,22],
+        "expected": "通信中",
+        "action": "Click"
+    },
+    "StagePromotionCommunication2": {
+        "doc": "剧情界面, 点击通信中跳过角色对话",
+        "recognition": "OCR",
+        "roi": [88,513,55,21],
         "expected": "通信中",
         "action": "Click"
     },
