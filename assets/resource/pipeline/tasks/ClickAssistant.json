@@ -1,5 +1,6 @@
 {
     "ClickAssistant": {
+        "timeout": 3600000,
         "next": [
             "StagePromotionReturnFalse"
         ],
