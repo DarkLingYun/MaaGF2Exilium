@@ -179,7 +179,7 @@ namespace MFAWPF.Custom
     {
         public string Name { get; set; } = nameof(BatchRedeemCodeAction);
 
-        public bool Run(in IMaaContext context, in RunArgs args)
+        public bool Run(in IMaaContext context, in RunArgs args, in RunResults res)
         {
 
             var localContext = context;

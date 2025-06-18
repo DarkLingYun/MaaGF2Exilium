@@ -315,7 +315,7 @@ public class CommunityDailyAction : IMaaCustomAction
 {
     public string Name { get; set; } = nameof(CommunityDailyAction);
 
-    public bool Run(in IMaaContext context, in RunArgs args)
+    public bool Run(in IMaaContext context, in RunArgs args, in RunResults res)
     {
         try
         {
