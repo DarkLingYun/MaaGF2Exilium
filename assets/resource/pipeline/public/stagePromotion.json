@@ -1,0 +1,87 @@
+{
+    "StagePromotionWatchStory":{
+        "doc": "剧情节点, 点击观看剧情",
+        "recognition": "OCR",
+        "roi": [1024,635,117,47],
+        "expected": "观看",
+        "action": "Click"
+    },
+    "StagePromotionStartMission":{
+        "doc": "挑战节点, 点击开始挑战",
+        "recognition": "OCR",
+        "roi": [890,633,363,57],
+        "expected": "挑战",
+        "action": "Click"
+    },
+    "StagePromotionSkipStory":{
+        "doc": "剧情界面, 点击全部跳过",
+        "recognition": "OCR",
+        "roi": [853,14,401,49],
+        "expected": "全部",
+        "action": "Click"
+    },
+    "StagePromotionClosePage": {
+        "doc": "奖励界面, 点击空白处关闭",
+        "recognition": "OCR",
+        "roi": [555,603,171,43],
+        "expected": "点击空白处关闭",
+        "action": "Click"
+    },
+    "StagePromotionStartBattle": {
+        "doc": "战斗界面, 点击作战开始",
+        "recognition": "OCR",
+        "roi": [529,610,201,61],
+        "expected": "作战开始",
+        "action": "Click",
+        "post_delay": 2000
+    },
+    "StagePromotionCommunication1": {
+        "doc": "剧情界面, 点击通信中跳过角色对话",
+        "recognition": "OCR",
+        "roi": [83,79,57,22],
+        "expected": "通信中",
+        "action": "Click"
+    },
+    "StagePromotionCommunication2": {
+        "doc": "剧情界面, 点击通信中跳过角色对话",
+        "recognition": "OCR",
+        "roi": [88,513,55,21],
+        "expected": "通信中",
+        "action": "Click"
+    },
+    "StagePromotionFinishTask": {
+        "doc": "结算界面, 点击完成任务（最后识别）",
+        "recognition": "OCR",
+        "roi": [888,72,244,83],
+        "expected": "任务完成",
+        "action": "Click"
+    },
+    "StagePromotionContinue": {
+        "doc": "结算界面, 点击继续前进",
+        "recognition": "OCR",
+        "roi": [841,614,121,41],
+        "expected": "继续前进",
+        "action": "Click"
+    },
+    "StagePromotionReturnFalse": {
+        "doc": "始终False, 强迫点击助手循环执行interrupt",
+        "recognition": "OCR",
+        "roi": [1207,17,53,39],
+        "expected": "False"
+    },
+    "StagePromotionConfirm": {
+        "doc": "结算界面, 点击确认",
+        "recognition": "OCR",
+        "roi": [980,621,60,32],
+        "expected": "确认",
+        "action": "Click"
+    },
+    "StagePromotionTeamConfirmation": {
+        "doc": "还有可部署单位，确认开始, 在作战开始前判断",
+        "recognition": "OCR",
+        "roi": [779,520,94,44],
+        "expected": "确认",
+        "action": "Click",
+        "post_delay": 2000
+    }
+}
