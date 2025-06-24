@@ -1,0 +1,265 @@
+{
+    "enterDangerousExcavation": {
+        "doc": "开始险境挖掘，英文描述见https://x.com/GFL2EXILIUM_EN/status/1884202260437017016",
+        "enabled": true,
+        "next": [
+            "enterEventPage"
+        ]
+    },
+    "enterEventPage": {
+        "doc": "进入活动页面",
+        "recognition": "OCR",
+        "expected": [
+            "活动"
+        ],
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "next": [
+            "dangerousExcavationFound",
+            "exitEventPage"
+        ]
+    },
+    "dangerousExcavationFound": {
+        "doc": "发现险境挖掘",
+        "recognition": "OCR",
+        "expected": [
+            "险境挖掘"
+        ],
+        "action": "Click",
+        "next": [
+            "clickDangerousExcavationTab"
+        ]
+    },
+    "clickDangerousExcavationTab": {
+        "doc": "点击险境挖掘页签",
+        "recognition": "OCR",
+        "expected": [
+            "险境挖掘"
+        ],
+        "action": "Click",
+        "next": [
+            "dangerousExcavationTabClicked",
+            "clickDangerousExcavationTab"
+        ]
+    },
+    "dangerousExcavationTabClicked": {
+        "doc": "险境挖掘页签已点击",
+        "recognition": "OCR",
+        "expected": [
+            "险境挖掘"
+        ],
+        "roi": [861,138,255,75],
+        "next": [
+            "enterDangerousExcavationPage"
+        ]
+    },
+    "enterDangerousExcavationPage": {
+        "doc": "进入险境挖掘页面",
+        "recognition": "OCR",
+        "expected": [
+            "险境挖掘"
+        ],
+        "roi": [1117,548,91,25],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "dangerousExcavationPageEntered",
+            "enterDangerousExcavationPage"
+        ]
+    },
+    "dangerousExcavationPageEntered": {
+        "doc": "险境挖掘页面已进入",
+        "recognition": "OCR",
+        "expected": [
+            "^险境挖掘$"
+        ],
+        "roi": [39,515,213,61],
+        "next": [
+            "enterClueCollectionPage"
+        ]
+    },
+    "enterClueCollectionPage": {
+        "doc": "进入线索收集页面",
+        "recognition": "OCR",
+        "expected": [
+            "线索收集"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "clueCollectionPageEntered",
+            "enterClueCollectionPage"
+        ]
+    },
+    "clueCollectionPageEntered": {
+        "doc": "线索收集页面已进入",
+        "recognition": "OCR",
+        "expected": [
+            "线索收集"
+        ],
+        "roi": [579,101,122,39],
+        "next": [
+            "claimClue",
+            "closeClueCollectionPage"
+        ]
+    },
+    "claimClue": {
+        "doc": "领取线索",
+        "recognition": "OCR",
+        "expected": [
+            "领取"
+        ],
+        "action": "Click",
+        "next": [
+            "closeDangerousExcavationClaimResultPage"
+        ]
+    },
+    "closeDangerousExcavationClaimResultPage": {
+        "doc": "关闭领取结果页面",
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭"
+        ],
+        "action": "Click",
+        "next": [
+            "clueCollectionPageEntered",
+            "closeDangerousExcavationClaimResultPage"
+        ]
+    },
+    "closeClueCollectionPage": {
+        "doc": "关闭线索收集页面",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "clueCollectionPageClosed",
+            "closeClueCollectionPage"
+        ]
+    },
+    "clueCollectionPageClosed": {
+        "doc": "线索收集页面已关闭",
+        "recognition": "OCR",
+        "expected": [
+            "^险境挖掘$"
+        ],
+        "roi": [39,515,213,61],
+        "next": [
+            "startToClaimSingleReward"
+        ]
+    },
+    "startToClaimSingleReward": {
+        "doc": "开始领取奖励",
+        "next": [
+            "insufficientTreasureMap",
+            "claimSingleReward",
+            "allSingleRewardsClaimed"
+        ]
+    },
+    "claimSingleReward": {
+        "doc": "翻开一格",
+        "recognition": "TemplateMatch",
+        "template": "活动/险境挖掘格子.png",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "insufficientTreasureMap",
+            "closeClaimSingleRewardResultPage"
+        ]
+    },
+    "closeClaimSingleRewardResultPage": {
+        "doc": "关闭翻开一格结果页面",
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭"
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "claimSingleReward",
+            "allSingleRewardsClaimed"
+        ]
+    },
+    "insufficientTreasureMap": {
+        "doc": "藏宝图不足",
+        "recognition": "OCR",
+        "expected": "^道具不足$",
+        "next": [
+            "allSingleRewardsClaimed"
+        ]
+    },
+    "allSingleRewardsClaimed": {
+        "doc": "所有单个奖励已领取",
+        "next": [
+            "claimLineReward",
+            "exitDangerousExcavation"
+        ]
+    },
+    "claimLineReward": {
+        "doc": "开始领取行列奖励",
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/提醒.png",
+        "action": "Click",
+        "roi": [396,83,862,628],
+        "post_delay": 500,
+        "next": [
+            "closeClaimLineRewardResultPage"
+        ]
+    },
+    "closeClaimLineRewardResultPage": {
+        "doc": "关闭行列奖励结果页面",
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭"
+        ],
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "claimLineReward",
+            "allLineRewardsClaimed"
+        ]
+    },
+    "allLineRewardsClaimed": {
+        "doc": "所有行列奖励已领取",
+        "next": [
+            "exitDangerousExcavation"
+        ]
+    },
+    "exitDangerousExcavation": {
+        "doc": "退出险境挖掘",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_gray.png",
+            "公用按钮组件/主页按钮_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "dangerousExcavationExited",
+            "exitDangerousExcavation"
+        ]
+    },
+    "dangerousExcavationExited": {
+        "doc": "已退出到主界面",
+        "recognition": "OCR",
+        "expected": [
+            "战役推进"
+        ],
+        "next": [
+            "HomePage"
+        ]
+    },
+    "exitEventPage": {
+        "doc": "未发现险境挖掘，退出活动页面",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "next": [
+            "dangerousExcavationExited",
+            "exitEventPage"
+        ]
+    }
+}

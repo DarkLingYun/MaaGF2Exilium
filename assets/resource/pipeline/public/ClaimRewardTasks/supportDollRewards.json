@@ -1,6 +1,7 @@
 {
     "enterPersonalInformationPage": {
         "doc": "进入个人信息",
+        "enabled": true,
         "recognition": "TemplateMatch",
         "template": "公用按钮组件/个人信息.png",
         "action": "Click",
@@ -55,8 +56,19 @@
         ],
         "action": "Click",
         "next": [
-            "HomePage",
+            "personalInformationPageExited",
             "exitPersonalInformationPage"
+        ]
+    },
+    "personalInformationPageExited": {
+        "doc": "已退出到主界面",
+        "recognition": "OCR",
+        "expected": [
+            "战役推进"
+        ],
+        "next": [
+            "enterDangerousExcavation",
+            "HomePage"
         ]
     }
 }
