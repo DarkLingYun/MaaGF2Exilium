@@ -111,10 +111,10 @@
         ],
         "action": "Click",
         "next": [
-            "closeClaimResultPage"
+            "closeDangerousExcavationClaimResultPage"
         ]
     },
-    "closeClaimResultPage": {
+    "closeDangerousExcavationClaimResultPage": {
         "doc": "关闭领取结果页面",
         "recognition": "OCR",
         "expected": [
@@ -123,7 +123,7 @@
         "action": "Click",
         "next": [
             "clueCollectionPageEntered",
-            "closeClaimResultPage"
+            "closeDangerousExcavationClaimResultPage"
         ]
     },
     "closeClueCollectionPage": {
@@ -202,6 +202,7 @@
         "recognition": "TemplateMatch",
         "template": "公用按钮组件/提醒.png",
         "action": "Click",
+        "roi": [396,83,862,628],
         "post_delay": 500,
         "next": [
             "closeClaimLineRewardResultPage"
