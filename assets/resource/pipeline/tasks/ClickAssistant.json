@@ -1,0 +1,21 @@
+{
+    "ClickAssistant": {
+        "timeout": 3600000,
+        "next": [
+            "StagePromotionReturnFalse"
+        ],
+        "interrupt":[
+            "StagePromotionWatchStory",
+            "StagePromotionStartMission",
+            "StagePromotionSkipStory",
+            "StagePromotionClosePage",
+            "StagePromotionTeamConfirmation",
+            "StagePromotionStartBattle",
+            "StagePromotionCommunication1",
+            "StagePromotionCommunication2",
+            "StagePromotionContinue",
+            "StagePromotionConfirm",
+            "StagePromotionFinishTask"
+        ]
+    }
+}

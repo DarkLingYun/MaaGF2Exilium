@@ -117,9 +117,32 @@
         "recognition": "OCR",
         "expected": "点击",
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 1500,
         "next": [
             "closeSupplyBoxPurchaseResultPage",
+            "checkDailyPaidGift",
+            "exitGameStore"
+        ]
+    },
+    "checkDailyPaidGift": {
+        "recognition": "OCR",
+        "expected": "每日晶条礼包",
+        "roi": [
+            409,
+            136,
+            350,
+            164
+        ],
+        "post_delay": 1000,
+        "next": [
+            "closeDailyPaidGiftPage"
+        ]
+    },
+    "closeDailyPaidGiftPage": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "next": [
             "exitGameStore"
         ]
     },
