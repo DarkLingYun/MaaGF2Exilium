@@ -73,8 +73,29 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
+            "findWeaponDisassemblyNotification",
             "closeWeaponDisassemblyResultByClickingBlank",
             "weaponDisassemblyResultClosed"
+        ]
+    },
+    "findWeaponDisassemblyNotification": {
+        "doc": "找到拆解通知",
+        "recognition": "OCR",
+        "expected": "是否确认拆解",
+        "roi": [367,302,526,72],
+        "next": [
+            "confirmWeaponDisassemblyNotification"
+        ]
+    },
+    "confirmWeaponDisassemblyNotification": {
+        "doc": "确认拆解通知",
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "roi": [783,519,89,42],
+        "post_wait_freezes": 500,
+        "next": [
+            "closeWeaponDisassemblyResultByClickingBlank"
         ]
     },
     "closeWeaponDisassemblyResultByClickingBlank": {
