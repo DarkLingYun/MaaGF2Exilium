@@ -203,6 +203,7 @@
         "template": "公用按钮组件/提醒.png",
         "action": "Click",
         "roi": [396,83,862,628],
+        "threshold": 0.65,
         "post_delay": 500,
         "next": [
             "closeClaimLineRewardResultPage"
