@@ -97,7 +97,7 @@ jobs:
         with:
           repository: SweetSmellFox/MFAWPF
           filename: MFAWPF*
-          latest: true
+          tag: v1.3.2  # 指定版本号
           out-file-path: "MFA"
           extract: true
 
