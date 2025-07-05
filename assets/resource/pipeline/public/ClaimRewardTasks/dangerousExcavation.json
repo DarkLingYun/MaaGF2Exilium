@@ -26,10 +26,10 @@
         ],
         "next": [
             "clickDangerousExcavationTab",
-            "swipeToFinddangerousExcavation"
+            "swipeToFindDangerousExcavation"
         ]
     },
-    "swipeToFinddangerousExcavation":{
+    "swipeToFindDangerousExcavation":{
         "doc": "滑动活动标签页，险境挖掘可能被藏在下面了",
         "action": "Swipe",
         "begin": [164,533,49,33],
