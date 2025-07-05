@@ -15,8 +15,7 @@
         "post_wait_freezes": 500,
         "action": "Click",
         "next": [
-            "dangerousExcavationFound",
-            "exitEventPage"
+            "dangerousExcavationFound"
         ]
     },
     "dangerousExcavationFound": {
@@ -25,7 +24,28 @@
         "expected": [
             "险境挖掘"
         ],
-        "action": "Click",
+        "next": [
+            "clickDangerousExcavationTab",
+            "swipeToFinddangerousExcavation"
+        ]
+    },
+    "swipeToFinddangerousExcavation":{
+        "doc": "滑动活动标签页，险境挖掘可能被藏在下面了",
+        "action": "Swipe",
+        "begin": [164,533,49,33],
+        "end": [181,129,34,28],
+        "post_wait_freezes": 500,
+        "next":[
+            "dangerousExcavationFoundAfterSwipe",
+            "exitEventPage"
+        ]
+    },
+    "dangerousExcavationFoundAfterSwipe": {
+        "doc": "滑动后发现险境挖掘",
+        "recognition": "OCR",
+        "expected": [
+            "险境挖掘"
+        ],
         "next": [
             "clickDangerousExcavationTab"
         ]
@@ -258,6 +278,7 @@
             "公用按钮组件/关闭按钮_gray.png",
             "公用按钮组件/关闭按钮_black.png"
         ],
+        "action": "Click",
         "next": [
             "dangerousExcavationExited",
             "exitEventPage"
