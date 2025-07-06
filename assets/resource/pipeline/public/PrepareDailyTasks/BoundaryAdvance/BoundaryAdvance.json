@@ -165,10 +165,6 @@
             "公用按钮组件/主页按钮_black.png"
         ],
         "action": "Click",
-        "post_delay": 2000,
-        "next": [
-            "organizeStoreroom",
-            "HomePage"
-        ]
+        "post_delay": 2000
     }
 }

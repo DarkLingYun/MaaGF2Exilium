@@ -89,10 +89,19 @@ def install_mfawpf():
         print("Warning: MFA/MFAWPF.exe not found. Skipping copy operation.")
 
 
+def install_agent():
+    shutil.copytree(
+        working_dir / "agent",
+        install_path / "agent",
+        dirs_exist_ok=True,
+    )
+
+
 if __name__ == "__main__":
     install_deps()
     install_resource()
     install_chores()
     install_mfawpf()
+    install_agent()
 
     print(f"Install to {install_path} successfully.")
