@@ -1,10 +1,40 @@
 import json
+import re
+
+
+# 新增: 支持 JSONC (带注释的 JSON) 解析的辅助函数
+
+
+def load_jsonc(json_file_path: str):
+    """读取带注释的 JSON (JSONC) 文件并返回解析后的对象。
+
+    该实现会在加载前去除：
+        1. 单行注释： // comment
+        2. 多行注释： /* comment */
+
+    如果去除注释后存在多余的尾逗号，会一并清理以避免 json.loads 抛错。
+    """
+
+    with open(json_file_path, "r", encoding="utf-8") as f:
+        text = f.read()
+
+    # 1) 去除多行注释  /* ... */
+    text = re.sub(r"/\*.*?\*/", "", text, flags=re.DOTALL)
+
+    # 2) 去除单行注释 //... （注意尽量简洁实现，若字符串中包含 // 可能误杀，但一般 JSON 文件很少如此）
+    text = re.sub(r"//.*", "", text)
+
+    # 3) 去除多余的尾逗号，例如 "key": "value",}\n 或 [1, 2,]\n
+    text = re.sub(r",\s*(\}|\])", r"\1", text)
+
+    # 4) 加载 JSON
+    return json.loads(text)
 
 
 def json_to_mermaid(json_file_path):
     # 1. 读取 JSON 文件
-    with open(json_file_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    # 使用支持 JSONC 的加载函数
+    data = load_jsonc(json_file_path)
 
     # 2. Mermaid 结果用列表存储，稍后join输出
     mermaid_lines = []
