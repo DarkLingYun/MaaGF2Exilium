@@ -3,37 +3,26 @@
         "doc": "准备开始处理道具箱",
         "enabled": true,
         "next": [
-            "swipeColumn"
+            "selectItemBoxTab"
         ]
     },
-    "swipeColumn": {
-        "doc": "滑动左侧列表露出道具箱",
-        "action": "Swipe",
-        "begin": [
-            89,
-            521,
-            43,
-            16
+    "selectItemBoxTab": {
+        "doc": "选择道具箱标签页",
+        "recognition": "TemplateMatch",
+        "template": [
+            "仓库/道具箱.png"
         ],
-        "end": [
-            81,
-            283,
-            30,
-            11
-        ],
+        "green_mask": true,
+        "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "enterItemBox"
+            "itemBoxTabSelected"
         ]
     },
-    "enterItemBox": {
-        "doc": "点击按钮进入道具箱页面",
-        "enabled": true,
+    "itemBoxTabSelected": {
+        "doc": "道具箱标签页已选中",
         "recognition": "OCR",
         "expected": "道具箱",
-        "action": "Click",
-        "target": true,
-        "post_wait_freezes": 500,
         "next": [
             "tryToOpenItemBox"
         ]
@@ -53,7 +42,16 @@
             "仓库/物资助力箱.png"
         ],
         "action": "Click",
-        "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "useSupplySupportBoxItem"
+        ]
+    },
+    "useSupplySupportBoxItem": {
+        "doc": "使用物资助力箱",
+        "recognition": "OCR",
+        "expected": "使用",
+        "action": "Click",
         "post_wait_freezes": 500,
         "next": [
             "chooseSupplySupportBoxItem"
@@ -111,7 +109,16 @@
             "仓库/顶级生长数据随机箱.png"
         ],
         "action": "Click",
-        "target": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "useFlowerBoxItem"
+        ]
+    },
+    "useFlowerBoxItem": {
+        "doc": "使用顶级生长数据随机箱",
+        "recognition": "OCR",
+        "expected": "使用",
+        "action": "Click",
         "post_wait_freezes": 500,
         "next": [
             "doubleCheckFlowerBox",

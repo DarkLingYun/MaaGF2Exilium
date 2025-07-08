@@ -28,7 +28,16 @@
         "expected": "仓库",
         "action": "Click",
         "target": true,
-        "post_delay": 1500,
+        "post_wait_freezes": 500,
+        "next": [
+            "storeroomEntered"
+        ]
+    },
+    "storeroomEntered": {
+        "doc": "已进入仓库",
+        "recognition": "OCR",
+        "expected": "资源",
+        "target": true,
         "next": [
             "weapon",
             "weaponAttachments",
