@@ -39,7 +39,7 @@
             1,
             1
         ],
-        "post_delay": 1000
+        "post_wait_freezes": 1000
     },
     "resourceModeSweepTimesInsufficient": {
         "doc": "物资模式扫荡次数不足",

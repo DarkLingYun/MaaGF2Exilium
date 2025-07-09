@@ -28,10 +28,10 @@
             414
         ],
         "expected": [
-            "错位锚定"
+            "火花之罪"
         ],
         "action": "Click",
-        "post_delay": 2000,
+        "post_wait_freezes": 2000,
         "next": [
             "switchVersionActivityChapter",
             "enterVersionActivityResourceSweep",

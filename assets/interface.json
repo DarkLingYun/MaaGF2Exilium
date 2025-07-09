@@ -36,7 +36,7 @@
         }
     ],
     "name": "少女前线2：追放自动化助手",
-    "custom_title": "沉没夜潮",
+    "custom_title": "火花之罪",
     "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "mirrorchyan_rid": "MaaGF2Exilium",
     "task": [
@@ -63,7 +63,6 @@
                 "领取情报补给体力(限时)",
                 "领取七日签到资源(限时)",
                 "领取邮件",
-                "通知调研邀请邮件",
                 "使用完体力药水",
                 "商城免费每日补给箱购买",
                 "边界推进委托领取"
@@ -119,8 +118,7 @@
                 "自动调整战斗速度为 3 倍速",
                 "实兵演习对象战力值范围",
                 "自动领取峰值推定奖励",
-                "自动兵棋推演",
-                "推演次数"
+                "自动兵棋推演"
             ],
             "check": true
         },
@@ -879,6 +877,36 @@
                             "expected": "^激流增幅$"
                         }
                     }
+                },
+                {
+                    "name": "战术演算",
+                    "pipeline_override": {
+                        "selectedEffectsCombination": {
+                            "expected": "^战术演算$"
+                        }
+                    }
+                },
+                {
+                    "name": "护盾守愈",
+                    "pipeline_override": {
+                        "selectedEffectsCombination": {
+                            "expected": [
+                                "^护盾守愈$",
+                                "^护盾守"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "迫近强攻",
+                    "pipeline_override": {
+                        "selectedEffectsCombination": {
+                            "expected": [
+                                "^迫近强攻$",
+                                "^迫近强"
+                            ]
+                        }
+                    }
                 }
             ]
         },
@@ -1411,6 +1439,36 @@
         "物资模式活动选择": {
             "cases": [
                 {
+                    "name": "火花之罪·上篇",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "火花之罪",
+                                "火花",
+                                "花之",
+                                "之罪"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "安全屋"
+                            ]
+                        },
+                        "selectExchangeType": {
+                            "enabled": true,
+                            "expected": [
+                                "^安全屋.*上篇$"
+                            ]
+                        },
+                        "enterVersionActivityResourceSweep": {
+                            "enabled": true,
+                            "expected": [
+                                "^战术.*上篇$"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "沉没夜潮",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
@@ -1492,7 +1550,7 @@
                                 "^错位.*下篇$"
                             ]
                         },
-                        "secectExchangeType": {
+                        "selectExchangeType": {
                             "enabled": true,
                             "expected": [
                                 "^临时.*下篇$"
@@ -1519,7 +1577,7 @@
                                 "^错位.*上篇$"
                             ]
                         },
-                        "secectExchangeType": {
+                        "selectExchangeType": {
                             "enabled": true,
                             "expected": [
                                 "^临时.*上篇$"
