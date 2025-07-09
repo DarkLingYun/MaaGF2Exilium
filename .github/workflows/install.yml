@@ -97,7 +97,7 @@ jobs:
         with:
           repository: SweetSmellFox/MFAWPF
           filename: MFAWPF*
-          tag: v1.3.3
+          tag: v1.3.4
           out-file-path: "MFA"
           extract: true
 
