@@ -15,7 +15,8 @@
         "post_wait_freezes": 500,
         "action": "Click",
         "next": [
-            "dangerousExcavationFound"
+            "dangerousExcavationFound",
+            "swipeToFindDangerousExcavation"
         ]
     },
     "dangerousExcavationFound": {
