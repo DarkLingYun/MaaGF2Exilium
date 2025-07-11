@@ -38,7 +38,8 @@
         ],
         "template": "公用按钮组件/自动战斗_off.png",
         "threshold": 0.8,
-        "action": "Click"
+        "action": "Click",
+        "green_mask": true
     },
     "announcementClosed": {
         "is_sub": true,
