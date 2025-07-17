@@ -68,6 +68,7 @@
         ],
         "next": [
             "enterDangerousExcavation",
+            "enterTrial",
             "HomePage"
         ]
     }
