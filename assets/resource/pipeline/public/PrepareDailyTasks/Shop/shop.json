@@ -156,7 +156,6 @@
         "post_delay": 2500,
         "next": [
             "enterBoundaryAdvanceAction",
-            "organizeStoreroom",
             "HomePage"
         ]
     }
