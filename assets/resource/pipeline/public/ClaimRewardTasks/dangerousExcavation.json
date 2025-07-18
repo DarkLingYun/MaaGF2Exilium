@@ -3,10 +3,10 @@
         "doc": "开始险境挖掘，英文描述见https://x.com/GFL2EXILIUM_EN/status/1884202260437017016",
         "enabled": true,
         "next": [
-            "enterEventPage"
+            "enterEventPageForDangerousExcavation"
         ]
     },
-    "enterEventPage": {
+    "enterEventPageForDangerousExcavation": {
         "doc": "进入活动页面",
         "recognition": "OCR",
         "expected": [
@@ -38,7 +38,7 @@
         "post_wait_freezes": 500,
         "next":[
             "dangerousExcavationFoundAfterSwipe",
-            "exitEventPage"
+            "exitEventPageInDangerousExcavation"
         ]
     },
     "dangerousExcavationFoundAfterSwipe": {
@@ -257,32 +257,34 @@
             "公用按钮组件/主页按钮_black.png"
         ],
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
-            "dangerousExcavationExited",
+            "HomePage",
             "exitDangerousExcavation"
         ]
     },
-    "dangerousExcavationExited": {
-        "doc": "已退出到主界面",
-        "recognition": "OCR",
-        "expected": [
-            "战役推进"
-        ],
-        "next": [
-            "HomePage"
-        ]
-    },
-    "exitEventPage": {
-        "doc": "未发现险境挖掘，退出活动页面",
+    "exitEventPageInDangerousExcavation": {
+        "doc": "未发现对应活动标签页，退出活动页面",
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/关闭按钮_gray.png",
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
-            "dangerousExcavationExited",
-            "exitEventPage"
+            "dangerousExcavationTaskEnd",
+            "exitEventPageInDangerousExcavation"
+        ]
+    },
+    "dangerousExcavationTaskEnd": {
+        "doc": "险境挖掘任务已结束",
+        "recognition": "OCR",
+        "expected": [
+            "战役推进"
+        ],
+        "next": [
+            "enterTrial"
         ]
     }
 }

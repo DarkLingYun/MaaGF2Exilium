@@ -5,7 +5,8 @@
             "enterCommissionToClaimTask",
             "enterPassToClaimTask",
             "enterPersonalInformationPage",
-            "enterDangerousExcavation"
+            "enterDangerousExcavation",
+            "enterTrial"
         ],
         "interrupt": [
             "StartGame"

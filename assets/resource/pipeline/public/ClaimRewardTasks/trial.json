@@ -1,0 +1,207 @@
+{
+    "enterTrial": {
+        "doc": "进入预演（人形试用）",
+        "enabled": true,
+        "next": [
+            "enterEventPageForTrial"
+        ]
+    },
+    "enterEventPageForTrial": {
+        "doc": "进入活动页面",
+        "recognition": "OCR",
+        "expected": [
+            "活动"
+        ],
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "next": [
+            "trialFound",
+            "swipeToFindTrial"
+        ]
+    },
+    "trialFound": {
+        "doc": "已找到预演，没打过的会排在第一个",
+        "recognition": "OCR",
+        "expected": [
+            "预演"
+        ],
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "order_by": "Vertical",
+        "next": [
+            "clickTrialTab"
+        ]
+    },
+    "swipeToFindTrial": {
+        "doc": "滑动活动标签页，预演可能被藏在下面了",
+        "action": "Swipe",
+        "begin": [164,533,49,33],
+        "end": [181,129,34,28],
+        "post_wait_freezes": 500,
+        "next": [
+            "trialFoundAfterSwipe",
+            "exitEventPageInTrial"
+        ]
+    },
+    "trialFoundAfterSwipe": {
+        "doc": "滑动后发现预演",
+        "recognition": "OCR",
+        "expected": [
+            "预演"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "clickTrialTab"
+        ]
+    },
+    "clickTrialTab": {
+        "doc": "点击预演",
+        "recognition": "OCR",
+        "expected": [
+            "预演"
+        ],
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "order_by": "Vertical",
+        "next": [
+            "trialTabClicked"
+        ]
+    },
+    "trialTabClicked": {
+        "doc": "预演页签已点击",
+        "recognition": "OCR",
+        "roi": [391,105,877,515],
+        "expected": [
+            "预演"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "trialRewardClaimed",
+            "trialRewardNotClaimed"
+        ]
+    },
+    "trialRewardClaimed": {
+        "doc": "预演奖励已领取",
+        "recognition": "TemplateMatch",
+        "template": "活动/预演奖励已领取.png",
+        "post_wait_freezes": 500,
+        "threshold": 0.95,
+        "next": [
+            "exitEventPageInTrial"
+        ]
+    },
+    "trialRewardNotClaimed": {
+        "doc": "预演奖励未领取",
+        "next": [
+            "autoBattleForTrial"
+        ]
+    },
+    "autoBattleForTrial": {
+        "doc": "开始自动战斗",
+        "recognition": "OCR",
+        "expected": [
+            "前往"
+        ],
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "timeout": 200000,
+        "next": [
+            "stagePromotionCommunication1InTrial"
+        ]
+    },
+    "stagePromotionCommunication1InTrial": {
+        "doc": "剧情界面, 点击通信中跳过角色对话",
+        "recognition": "TemplateMatch",
+        "roi": [64,509,80,27],
+        "template": "活动/通信中.png",
+        "green_mask": true,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "timeout": 200000,
+        "next": [
+            "trialDollIntroductionFound",
+            "stagePromotionCommunication1InTrial"
+        ]
+    },
+    "trialDollIntroductionFound": {
+        "doc": "发现人形介绍界面",
+        "recognition": "OCR",
+        "expected": "试用人形介绍",
+        "post_wait_freezes": 500,
+        "timeout": 200000,
+        "next": [
+            "clickToCloseDollIntroduction"
+        ]
+    },
+    "clickToCloseDollIntroduction": {
+        "doc": "点击关闭人形介绍",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "timeout": 200000,
+        "next": [
+            "battleCompletedInTrial",
+            "enableAutoBattleInTrial"
+        ]
+    },
+    "enableAutoBattleInTrial": {
+        "doc": "启动自动战斗",
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/自动战斗_off.png",
+        "roi": [986,4,279,63],
+        "threshold": 0.5,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "timeout": 200000,
+        "next": [
+            "battleCompletedInTrial"
+        ]
+    },
+    "battleCompletedInTrial": {
+        "doc": "战斗完成",
+        "recognition": "OCR",
+        "expected": "任务完成",
+        "post_wait_freezes": 500,
+        "next": [
+            "confirmBattleCompletedInTrial"
+        ]
+    },
+    "confirmBattleCompletedInTrial": {
+        "doc": "确认战斗完成",
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "exitEventPageInTrial"
+        ]
+    },
+    "exitEventPageInTrial": {
+        "doc": "退出活动页面",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "trialTaskEnd",
+            "exitEventPageInTrial"
+        ]
+    },
+    "trialTaskEnd": {
+        "doc": "预演任务已结束",
+        "recognition": "OCR",
+        "expected": [
+            "战役推进"
+        ],
+        "next": [
+            "HomePage"
+        ]
+    }
+}

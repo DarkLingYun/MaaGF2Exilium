@@ -172,7 +172,8 @@
                 "每日订单",
                 "远航巡录",
                 "助战",
-                "险境挖掘（限时）"
+                "险境挖掘（限时）",
+                "预演"
             ],
             "check": true
         },
@@ -1786,6 +1787,26 @@
                     "name": "NO",
                     "pipeline_override": {
                         "enterDangerousExcavation": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "预演": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterTrial": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterTrial": {
                             "enabled": false
                         }
                     }
