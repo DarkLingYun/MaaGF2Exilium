@@ -7,7 +7,6 @@
             "staminaReplenishment",
             "enterShop",
             "enterBoundaryAdvanceAction",
-            "organizeStoreroom",
             "HomePage"
         ],
         "interrupt": [
