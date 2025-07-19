@@ -173,7 +173,8 @@
                 "远航巡录",
                 "助战",
                 "险境挖掘（限时）",
-                "预演"
+                "预演",
+                "动态招募祝福"
             ],
             "check": true
         },
@@ -1807,6 +1808,26 @@
                     "name": "NO",
                     "pipeline_override": {
                         "enterTrial": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "动态招募祝福": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "开始动态招募祝福任务": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "开始动态招募祝福任务": {
                             "enabled": false
                         }
                     }
