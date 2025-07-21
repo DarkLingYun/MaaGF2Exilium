@@ -284,7 +284,9 @@
             "战役推进"
         ],
         "next": [
-            "enterTrial"
+            "enterTrial",
+            "开始动态招募祝福任务",
+            "HomePage"
         ]
     }
 }

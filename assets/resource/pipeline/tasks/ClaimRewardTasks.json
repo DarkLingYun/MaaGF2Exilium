@@ -6,7 +6,8 @@
             "enterPassToClaimTask",
             "enterPersonalInformationPage",
             "enterDangerousExcavation",
-            "enterTrial"
+            "enterTrial",
+            "开始动态招募祝福任务"
         ],
         "interrupt": [
             "StartGame"
