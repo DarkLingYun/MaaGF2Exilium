@@ -1441,6 +1441,36 @@
         "物资模式活动选择": {
             "cases": [
                 {
+                    "name": "火花之罪·下篇",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "火花之罪",
+                                "火花",
+                                "花之",
+                                "之罪"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "安全屋"
+                            ]
+                        },
+                        "selectExchangeType": {
+                            "enabled": true,
+                            "expected": [
+                                "^安全屋.*下篇$"
+                            ]
+                        },
+                        "enterVersionActivityResourceSweep": {
+                            "enabled": true,
+                            "expected": [
+                                "^战术.*下篇$"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "火花之罪·上篇",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
