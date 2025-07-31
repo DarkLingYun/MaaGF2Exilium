@@ -1,15 +1,29 @@
 {
     "enterDispatchCenterAction": {
-        "enabled": true,
         "next": [
-            "dispatchCenterButtonClick"
+            "进入委托页面-调度室"
         ]
     },
-    "dispatchCenterButtonClick": {
+    "进入委托页面-调度室": {
         "recognition": "OCR",
-        "expected": "调度室",
+        "expected": "^委托$",
+        "roi": [
+            370,
+            582,
+            909,
+            137
+        ],
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 500,
+        "next": [
+            "前往调度室"
+        ]
+    },
+    "前往调度室": {
+        "recognition": "OCR",
+        "expected": "前往",
+        "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "dispatchCenterEntered"
         ]

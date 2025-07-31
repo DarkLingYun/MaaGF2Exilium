@@ -1,14 +1,25 @@
 {
     "enterLoungeAction": {
-        "enabled": true,
+        "next": [
+            "进入整备室"
+        ]
+    },
+    "进入整备室": {
+        "recognition": "OCR",
+        "expected": "整备室",
+        "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "loungeButtonClick"
         ]
     },
     "loungeButtonClick": {
-        "recognition": "OCR",
+        "recognition": "TemplateMatch",
+        "template": [
+            "其他/休息室.png"
+        ],
         "action": "Click",
-        "expected": "^休息室$",
+        "post_wait_freezes": 500,
         "next": [
             "loungeConfirm"
         ]
@@ -33,7 +44,20 @@
             "公用按钮组件/返回上一页_black.png"
         ],
         "action": "Click",
-        "post_delay": 1000,
+        "post_wait_freezes": 500,
+        "next": [
+            "退出整备室"
+        ]
+
+    },
+    "退出整备室": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "enterDispatchCenterAction",
             "enterSchedulingGainsAction",
