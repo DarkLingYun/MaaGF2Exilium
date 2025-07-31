@@ -1,11 +1,30 @@
 {
     "enterPassToClaimTask": {
+        "doc": "开始巡录任务",
+        "next": [
+            "findPassByText",
+            "findPassByImage"
+        ]
+    },
+    "findPassByText": {
         "doc": "进入巡录领取任务",
-        "enabled": true,
         "recognition": "OCR",
         "expected": "^巡录$",
         "action": "Click",
-        "post_delay": 2000,
+        "post_wait_freezes": 500,
+        "next": [
+            "switchToDailyPassRewardPage"
+        ]
+    },
+    "findPassByImage": {
+        "doc": "进入巡录领取任务",
+        "recognition": "TemplateMatch",
+        "template": [
+            "其他/巡录.png"
+        ],
+        "green_mask": true,
+        "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "switchToDailyPassRewardPage"
         ]
