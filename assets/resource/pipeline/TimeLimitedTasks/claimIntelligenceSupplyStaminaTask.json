@@ -7,16 +7,32 @@
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "clickIntelligenceSupplyTab",
-            "noIntelligenceSupplyTab"
+            "intelligenceSupplyTabFound",
+            "swipeToFindIntelligenceSupplyTab"
         ]
     },
-    "noIntelligenceSupplyTab": {
-        "inverse": true,
+    "intelligenceSupplyTabFound": {
         "recognition": "OCR",
         "expected": "^情报补给$",
         "next": [
-            "noClaimButton"
+            "clickIntelligenceSupplyTab"
+        ]
+    },
+    "swipeToFindIntelligenceSupplyTab": {
+        "action": "Swipe",
+        "begin": [164,533,49,33],
+        "end": [181,129,34,28],
+        "post_wait_freezes": 500,
+        "next": [
+            "intelligenceSupplyTabFoundAfterSwipe",
+            "exitIntelligenceSupply"
+        ]
+    },
+    "intelligenceSupplyTabFoundAfterSwipe": {
+        "recognition": "OCR",
+        "expected": "^情报补给$",
+        "next": [
+            "clickIntelligenceSupplyTab"
         ]
     },
     "clickIntelligenceSupplyTab": {
@@ -26,17 +42,25 @@
         "post_delay": 2500,
         "next": [
             "clickStaminaClaimButton",
-            "noClaimButton"
+            "exitIntelligenceSupply"
         ]
     },
-    "noClaimButton": {
+    "exitIntelligenceSupply": {
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/关闭按钮_gray.png",
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
-        "post_delay": 2500,
+        "post_wait_freezes": 500,
+        "next": [
+            "intelligenceSupplyTaskEnd"
+        ]
+    },
+    "intelligenceSupplyTaskEnd": {
+        "recognition": "OCR",
+        "expected": "战役推进",
+        "post_wait_freezes": 500,
         "next": [
             "claimSevenDayCheckInResourceTaskTimed",
             "getNewEmails",
@@ -62,7 +86,7 @@
         "next": [
             "closeStaminaClaimResultPage",
             "clickStaminaClaimButton",
-            "noClaimButton"
+            "exitIntelligenceSupply"
         ]
     }
 }
