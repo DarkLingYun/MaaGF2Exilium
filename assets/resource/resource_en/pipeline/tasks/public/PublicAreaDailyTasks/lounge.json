@@ -1,0 +1,43 @@
+{
+    "enterLoungeAction": {
+        "enabled": true,
+        "next": [
+            "loungeButtonClick"
+        ]
+    },
+    "loungeButtonClick": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "^休息室$",
+        "next": [
+            "loungeConfirm"
+        ]
+    },
+    "loungeConfirm": {
+        "recognition": "OCR",
+        "expected": "姿态",
+        "next": [
+            "loungeBackPage"
+        ]
+    },
+    "loungeBackPage": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            200,
+            70
+        ],
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "enterDispatchCenterAction",
+            "enterSchedulingGainsAction",
+            "returnToHomePage"
+        ]
+    }
+}
