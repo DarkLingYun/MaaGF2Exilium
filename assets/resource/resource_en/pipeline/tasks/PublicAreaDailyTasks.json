@@ -1,0 +1,23 @@
+{
+    "PublicAreaDailyTasks": {
+        "doc": "公共区日常",
+        "next": [
+            "clickPublicAreaDailyButton"
+        ],
+        "interrupt": [
+            "StartGame"
+        ]
+    },
+    "clickPublicAreaDailyButton": {
+        "recognition": "OCR",
+        "expected": "^公共区$",
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "enterLoungeAction",
+            "enterDispatchCenterAction",
+            "enterSchedulingGainsAction",
+            "returnToHomePage"
+        ]
+    }
+}
