@@ -17,20 +17,20 @@
         {
             "name": "官服",
             "path": [
-                "{PROJECT_DIR}/resource/"
+                "{PROJECT_DIR}/resource/base"
             ]
         },
         {
             "name": "B 服",
             "path": [
-                "{PROJECT_DIR}/resource",
+                "{PROJECT_DIR}/resource/base",
                 "{PROJECT_DIR}/resource/resource_bilibili"
             ]
         },
         {
             "name": "美服",
             "path": [
-                "{PROJECT_DIR}/resource",
+                "{PROJECT_DIR}/resource/base",
                 "{PROJECT_DIR}/resource/resource_en"
             ]
         }
