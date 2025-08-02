@@ -6,6 +6,7 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
+            "platoonDailyCombatTaskCompleted",
             "clickPlatoonDailyCombatConfirmStartButton",
             "clickPlatoonDailyCombatStartButton",
             "enablePlatoonDailyCombatAutoBattle",
@@ -24,6 +25,7 @@
         ],
         "action": "Click",
         "next": [
+            "platoonDailyCombatTaskCompleted",
             "clickPlatoonDailyCombatConfirmStartButton",
             "enablePlatoonDailyCombatAutoBattle",
             "waitForPlatoonDailyCombatToEnd"
