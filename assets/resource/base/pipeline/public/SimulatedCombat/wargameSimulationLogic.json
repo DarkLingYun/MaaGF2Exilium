@@ -12,6 +12,7 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
+            "warGameTaskCompleted",
             "enableWarGameAutoCombat",
             "clickWarGameCombatConfirmButton",
             "clickWarGameCombatButton"
@@ -28,7 +29,9 @@
             480
         ],
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
+            "warGameTaskCompleted",
             "enableWarGameAutoCombat",
             "clickWarGameCombatConfirmButton",
             "clickWarGameCombatButton"

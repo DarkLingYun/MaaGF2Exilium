@@ -12,6 +12,7 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
+            "combatExerciseTaskCompleted",
             "ableToChangeSpeed",
             "clickCombatExerciseStartCombatConfirmButton",
             "clickCombatExerciseStartCombatButton"
@@ -29,6 +30,7 @@
         ],
         "action": "Click",
         "next": [
+            "combatExerciseTaskCompleted",
             "ableToChangeSpeed",
             "clickCombatExerciseStartCombatConfirmButton"
         ]
