@@ -85,13 +85,24 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
-            "dispatchCenterSendAgain"
+            "dispatchCenterSendAgain",
+            "未识别到再次派遣直接点击固定位置"
         ]
     },
     "dispatchCenterSendAgain": {
         "recognition": "OCR",
         "expected": "再次派遣",
         "action": "Click",
+        "post_delay": 4000,
+        "next": [
+            "claimDispatchCenterDispatchCountReward",
+            "enterSchedulingGainsAction",
+            "returnToHomePage"
+        ]
+    },
+    "未识别到再次派遣直接点击固定位置": {
+        "action": "Click",
+        "target": [743,620,264,41],
         "post_delay": 4000,
         "next": [
             "claimDispatchCenterDispatchCountReward",
