@@ -1,0 +1,11 @@
+{
+    "StartGame": {
+        "package": "com.haoplay.game.and.exilium/.ExiliumMainActivity"
+    },
+    "StartGame_sunbornGameLogo": {
+        "template": "启动游戏/HaoPlayLogo.png"
+    },
+    "openGF2GameApp": {
+        "package": "com.haoplay.game.and.exilium/.ExiliumMainActivity"
+    }
+}

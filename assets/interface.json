@@ -28,10 +28,18 @@
             ]
         },
         {
-            "name": "美服",
+            "name": "美服(dark winter)",
             "path": [
                 "{PROJECT_DIR}/resource/base",
                 "{PROJECT_DIR}/resource/resource_en"
+            ]
+        },
+        {
+            "name": "国际服(haoplay)",
+            "path": [
+                "{PROJECT_DIR}/resource/base",
+                "{PROJECT_DIR}/resource/resource_en",
+                "{PROJECT_DIR}/resource/resource_glo"
             ]
         }
     ],
@@ -1618,6 +1626,21 @@
                     }
                 },
                 {
+                    "name": "烟火重燃之时(美服/国际服)",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "烟火重燃之时"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "积分找换所"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "匿影而生(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
@@ -1648,7 +1671,7 @@
                     }
                 },
                 {
-                    "name": "驻足之地（美服）",
+                    "name": "驻足之地（已结束）",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
