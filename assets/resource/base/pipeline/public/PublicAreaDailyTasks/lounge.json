@@ -28,7 +28,8 @@
         "recognition": "OCR",
         "expected": "姿态",
         "next": [
-            "loungeBackPage"
+            "loungeBackPage",
+            "loungeBackPageNotFound"
         ]
     },
     "loungeBackPage": {
@@ -40,15 +41,31 @@
             70
         ],
         "template": [
-            "公用按钮组件/返回上一页_gray.png",
-            "公用按钮组件/返回上一页_black.png"
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
         ],
+        "green_mask": true,
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
             "退出整备室"
         ]
 
+    }, 
+    "loungeBackPageNotFound": {
+        "post_wait_freezes": 500,
+        "next": [
+            "clickButtonWithFixedPositionToLeaveDormitory"
+        ]
+    },
+    "clickButtonWithFixedPositionToLeaveDormitory": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [26,23,43,42],
+        "post_wait_freezes": 500,
+        "next": [
+            "退出整备室"
+        ]
     },
     "退出整备室": {
         "recognition": "TemplateMatch",
