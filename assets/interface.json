@@ -37,7 +37,7 @@
         {
             "name": "国际服(haoplay)",
             "path": [
-                "{PROJECT_DIR}/resource",
+                "{PROJECT_DIR}/resource/base",
                 "{PROJECT_DIR}/resource/resource_en",
                 "{PROJECT_DIR}/resource/resource_glo"
             ]
