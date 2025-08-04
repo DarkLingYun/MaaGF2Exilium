@@ -1,7 +1,6 @@
 {
     "itemBox": {
         "doc": "准备开始处理道具箱",
-        "enabled": true,
         "next": [
             "selectItemBoxTab"
         ]
@@ -31,7 +30,8 @@
         "doc": "寻找潜在的可开启道具箱",
         "next": [
             "openSupplySupportBox",
-            "openFlowerBox",
+            "选中奇忆甄选箱子",
+            "选中生长数据礼箱",
             "openItemBoxCompleted"
         ]
     },
@@ -101,14 +101,97 @@
             "tryToOpenItemBox"
         ]
     },
-    "openFlowerBox": {
-        "doc": "顶级生长数据随机箱",
+    "选中生长数据礼箱": {
+        "next": [
+            "选中生长数据礼箱-候选1",
+            "openItemBoxCompleted"
+        ]
+    },
+    "选中生长数据礼箱-候选1": {
         "recognition": "TemplateMatch",
-        "index": -1,
+        "index": 0,
         "template": [
             "仓库/顶级生长数据随机箱.png"
         ],
         "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认是顶级生长数据随机箱-候选1",
+            "选中生长数据礼箱-候选2",
+            "选中生长数据礼箱-候选3",
+            "选中生长数据礼箱-候选4",
+            "openItemBoxCompleted"
+        ]
+    },
+    "选中生长数据礼箱-候选2": {
+        "recognition": "TemplateMatch",
+        "index": 1,
+        "template": [
+            "仓库/顶级生长数据随机箱.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认是顶级生长数据随机箱-候选2",
+            "选中生长数据礼箱-候选3",
+            "选中生长数据礼箱-候选4",
+            "openItemBoxCompleted"
+        ]
+    },
+    "选中生长数据礼箱-候选3": {
+        "recognition": "TemplateMatch",
+        "index": 2,
+        "template": [
+            "仓库/顶级生长数据随机箱.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认是顶级生长数据随机箱-候选3",
+            "选中生长数据礼箱-候选4",
+            "openItemBoxCompleted"
+        ]
+    },
+    "选中生长数据礼箱-候选4": {
+        "recognition": "TemplateMatch",
+        "index": 3,
+        "template": [
+            "仓库/顶级生长数据随机箱.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认是顶级生长数据随机箱-候选4",
+            "openItemBoxCompleted"
+        ]
+    },
+    "确认是顶级生长数据随机箱-候选1": {
+        "recognition": "OCR",
+        "expected": "顶级生长数据随机箱",
+        "post_wait_freezes": 500,
+        "next": [
+            "useFlowerBoxItem"
+        ]
+    },
+    "确认是顶级生长数据随机箱-候选2": {
+        "recognition": "OCR",
+        "expected": "顶级生长数据随机箱",
+        "post_wait_freezes": 500,
+        "next": [
+            "useFlowerBoxItem"
+        ]
+    },
+    "确认是顶级生长数据随机箱-候选3": {
+        "recognition": "OCR",
+        "expected": "顶级生长数据随机箱",
+        "post_wait_freezes": 500,
+        "next": [
+            "useFlowerBoxItem"
+        ]
+    },
+    "确认是顶级生长数据随机箱-候选4": {
+        "recognition": "OCR",
+        "expected": "顶级生长数据随机箱",
         "post_wait_freezes": 500,
         "next": [
             "useFlowerBoxItem"
@@ -169,6 +252,55 @@
     },
     "closeFlowerBoxResultPage": {
         "doc": "关闭结果页面",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "openItemBoxCompleted"
+        ]
+    },
+    "选中奇忆甄选箱子": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "仓库/奇忆甄选火线.png",
+            "仓库/奇忆甄选暗流.png",
+            "仓库/奇忆甄选信念.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "使用奇忆甄选箱子"
+        ]
+    },
+    "使用奇忆甄选箱子": {
+        "recognition": "OCR",
+        "expected": "使用",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "设置奇忆甄选箱子使用数量"
+        ]
+    },
+    "设置奇忆甄选箱子使用数量": {
+        "recognition": "OCR",
+        "expected": "最大",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认开启奇忆甄选箱子"
+        ]
+    },
+    "确认开启奇忆甄选箱子": {
+        "recognition": "OCR",
+        "expected": "开启",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭奇忆甄选箱子打开结果"
+        ]
+    },
+    "关闭奇忆甄选箱子打开结果": {
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
