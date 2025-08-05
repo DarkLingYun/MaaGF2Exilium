@@ -47,7 +47,8 @@
         "expected": "领取全部",
         "action": "Click",
         "next": [
-            "closeCommissionRewardResultPage"
+            "closeCommissionRewardResultPage",
+            "oneKeyClaimCommissionReward"
         ]
     },
     "closeCommissionRewardResultPage": {
