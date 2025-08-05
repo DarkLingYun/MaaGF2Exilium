@@ -104,7 +104,8 @@
         ],
         "post_wait_freezes": 300,
         "next": [
-            "closeDispatchCenterDispatchCountRewardClaimResultPage"
+            "closeDispatchCenterDispatchCountRewardClaimResultPage",
+            "claimDispatchCenterDispatchCountReward"
         ]
     },
     "closeDispatchCenterDispatchCountRewardClaimResultPage": {
