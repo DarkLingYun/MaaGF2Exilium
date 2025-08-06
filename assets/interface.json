@@ -187,6 +187,14 @@
             "check": true
         },
         {
+            "name": "活动层",
+            "entry": "开始活动层任务",
+            "option": [
+                "美味烹调"
+            ],
+            "check": true
+        },
+        {
             "name": "关闭游戏",
             "entry": "StopGame"
         },
@@ -1881,6 +1889,26 @@
                     "name": "NO",
                     "pipeline_override": {
                         "开始动态招募祝福任务": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "美味烹调": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "开始美味烹调任务": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "开始美味烹调任务": {
                             "enabled": false
                         }
                     }
