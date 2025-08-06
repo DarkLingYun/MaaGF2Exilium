@@ -1,0 +1,218 @@
+{
+    "开始美味烹调任务": {
+        "next": [
+            "进入活动层-美味烹调"
+        ]
+    },
+    "进入活动层-美味烹调": {
+        "recognition": "OCR",
+        "expected": "活动层",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "已进入活动层-美味烹调"
+        ]
+    },
+    "已进入活动层-美味烹调": {
+        "recognition": "TemplateMatch",
+        "template": "活动层/退出.png",
+        "green_mask": true,
+        "next": [
+            "已有用餐效果",
+            "向上转动摄像机-美味烹调"
+        ]
+    },
+    "已有用餐效果": {
+        "recognition": "TemplateMatch",
+        "template": "活动层/用餐效果.png",
+        "green_mask": true,
+        "roi": [
+            12,
+            612,
+            178,
+            94
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "退出活动层-美味烹调"
+        ]
+    },
+    "向上转动摄像机-美味烹调": {
+        "action": "Swipe",
+        "begin": [
+            643,
+            638,
+            1,
+            1
+        ],
+        "end": [
+            643,
+            384,
+            1,
+            1
+        ],
+        "duration": 5000,
+        "post_wait_freezes": 500,
+        "next": [
+            "逆时针转动摄像机-美味烹调"
+        ]
+    },
+    "逆时针转动摄像机-美味烹调": {
+        "action": "Swipe",
+        "begin": [
+            671,
+            631,
+            1,
+            1
+        ],
+        "end": [
+            607,
+            631,
+            1,
+            1
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "找到美味烹调图标",
+            "逆时针转动摄像机-美味烹调"
+        ]
+    },
+    "找到美味烹调图标": {
+        "recognition": "TemplateMatch",
+        "template": "活动层/美味烹调.png",
+        "roi": [
+            145,
+            192,
+            408,
+            480
+        ],
+        "threshold": 0.4,
+        "action": "Swipe",
+        "begin_offset": [
+            0,
+            0,
+            -80,
+            -80
+        ],
+        "end_offset": [
+            -200,
+            -200,
+            -80,
+            -80
+        ],
+        "green_mask": true,
+        "next": [
+            "进入美味烹调区域",
+            "找到美味烹调图标"
+        ]
+    },
+    "进入美味烹调区域": {
+        "recognition": "OCR",
+        "expected": "美味烹调",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "每天第一次免费美味烹调",
+            "不是每天第一次免费美味烹调，返回活动层"
+        ]
+    },
+    "每天第一次免费美味烹调": {
+        "recognition": "OCR",
+        "expected": "每日首次免费",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "邀请人形-美味烹调"
+        ]
+    },
+    "不是每天第一次免费美味烹调，返回活动层": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_black_v2.png",
+            "公用按钮组件/返回上一页_gray_v2.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "post_wait_freezes": 500,
+        "next": "退出活动层-美味烹调"
+    },
+    "返回活动层-美味烹调": {
+        "recognition": "FeatureMatch",
+        "template": [
+            "公用按钮组件/返回上一页_black_v2.png",
+            "公用按钮组件/返回上一页_gray_v2.png"
+        ],
+        "green_mask": true,
+        "post_wait_freezes": 500,
+        "next": "退出活动层-美味烹调"
+    },
+    "邀请人形-美味烹调": {
+        "recognition": "OCR",
+        "expected": "下一步",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认邀请-美味烹调"
+        ]
+    },
+    "确认邀请-美味烹调": {
+        "recognition": "OCR",
+        "expected": "确认邀请",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认结果-美味烹调",
+            "跳过动画-美味烹调"
+        ]
+    },
+    "跳过动画-美味烹调": {
+        "recognition": "OCR",
+        "expected": [
+            "跳过动画",
+            "跳过"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认结果-美味烹调",
+            "跳过动画-美味烹调"
+        ]
+    },
+    "确认结果-美味烹调": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "退出活动层-美味烹调",
+            "确认结果-美味烹调"
+        ]
+    },
+    "退出活动层-美味烹调": {
+        "recognition": "TemplateMatch",
+        "template": "活动层/退出.png",
+        "green_mask": true,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认退出活动层-美味烹调"
+        ]
+    },
+    "确认退出活动层-美味烹调": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "美味烹调任务结束"
+        ]
+    },
+    "美味烹调任务结束": {
+        "recognition": "OCR",
+        "expected": "战役推进",
+        "post_wait_freezes": 500,
+        "next": [
+            "HomePage"
+        ]
+    }
+}
