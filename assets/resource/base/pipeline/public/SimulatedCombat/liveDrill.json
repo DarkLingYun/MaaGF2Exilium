@@ -38,7 +38,8 @@
         "post_wait_freezes": 500,
         "next": [
             "confirmCombatExerciseOpponentListPage",
-            "combatExerciseWeeklySettlement"
+            "combatExerciseWeeklySettlement",
+            "clickButtonToEnterOpponentSelection"
         ]
     },
     "confirmCombatExerciseOpponentListPage": {
@@ -96,6 +97,7 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
+            "hasChallengeSuccessfulObject",
             "challengeOpponentSelection",
             "refreshOpponentList"
         ]
@@ -200,7 +202,8 @@
         ],
         "next": [
             "claimCombatExerciseRewards",
-            "closeCombatExerciseRewardClaimResultPage"
+            "closeCombatExerciseRewardClaimResultPage",
+            "exitCombatExercisePage"
         ]
     },
     "closeCombatExerciseRewardClaimResultPage": {

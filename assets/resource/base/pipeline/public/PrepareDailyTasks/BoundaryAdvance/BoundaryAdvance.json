@@ -25,6 +25,7 @@
             54
         ],
         "action": "Click",
+        "pre_wait_freezes": 500,
         "post_delay": 1500,
         "next": [
             "clickBoundaryAdvanceTagButton",

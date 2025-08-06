@@ -89,7 +89,9 @@
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
+        "pre_wait_freezes": 200,
         "next": [
+            "clickConfirmButtonToExitWarGame",
             "exitWarGameCombatResourceLoading"
         ]
     },
