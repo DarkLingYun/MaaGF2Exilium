@@ -137,7 +137,7 @@
         "next": "退出活动层-美味烹调"
     },
     "返回活动层-美味烹调": {
-        "recognition": "FeatureMatch",
+        "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/返回上一页_black_v2.png",
             "公用按钮组件/返回上一页_gray_v2.png"
