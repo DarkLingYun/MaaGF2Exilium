@@ -25,7 +25,12 @@
     "已解锁茶歇一刻": {
         "recognition": "TemplateMatch",
         "template": "活动层/茶歇一刻.png",
-        "roi": [533,131,731,573],
+        "roi": [
+            533,
+            131,
+            731,
+            573
+        ],
         "green_mask": true,
         "post_wait_freezes": 500,
         "next": [
