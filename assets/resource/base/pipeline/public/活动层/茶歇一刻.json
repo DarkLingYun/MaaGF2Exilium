@@ -122,6 +122,7 @@
         "recognition": "TemplateMatch",
         "template": "活动层/战场报告.png",
         "action": "Click",
+        "order_by": "Score",
         "post_wait_freezes": 500,
         "next": [
             "制作饮品-茶歇一刻"
