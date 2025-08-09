@@ -453,3 +453,6 @@ assets/config/maa_pi_config.json
 
 # maagf2
 mermaid.mmd
+
+# macos
+.DS_Store
