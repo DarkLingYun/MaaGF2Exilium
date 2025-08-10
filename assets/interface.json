@@ -192,7 +192,8 @@
             "option": [
                 "美味烹调",
                 "茶歇一刻",
-                "饮品加成"
+                "饮品加成",
+                "领取逸趣导算进度奖励"
             ],
             "check": true
         },
@@ -1984,6 +1985,26 @@
                     "pipeline_override": {
                         "选择饮品-茶歇一刻": {
                             "template": "活动层/数据链路.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "领取逸趣导算进度奖励": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "开始逸趣导算任务": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "开始逸趣导算任务": {
+                            "enabled": false
                         }
                     }
                 }
