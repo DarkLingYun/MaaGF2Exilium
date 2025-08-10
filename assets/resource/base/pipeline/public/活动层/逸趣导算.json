@@ -1,0 +1,95 @@
+{
+    "开始逸趣导算任务": {
+        "next": [
+            "进入活动层-逸趣导算"
+        ]
+    },
+    "进入活动层-逸趣导算": {
+        "recognition": "OCR",
+        "expected": "活动层",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "已进入活动层-逸趣导算"
+        ]
+    },
+    "已进入活动层-逸趣导算": {
+        "recognition": "TemplateMatch",
+        "template": "活动层/退出.png",
+        "green_mask": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "进入逸趣导算页面"
+        ]
+    },
+    "进入逸趣导算页面": {
+        "recognition": "TemplateMatch",
+        "template": "活动层/逸趣导算.png",
+        "green_mask": true,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "领取逸趣导算奖励",
+            "关闭逸趣导算页面"
+        ]
+    },
+    "领取逸趣导算奖励": {
+        "recognition": "OCR",
+        "expected": "一键领取",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭领取结果-逸趣导算"
+        ]
+    },
+    "关闭领取结果-逸趣导算": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭领取结果-逸趣导算",
+            "关闭逸趣导算页面"
+        ]
+    },
+    "关闭逸趣导算页面": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_black.png",
+            "公用按钮组件/关闭按钮_gray.png"
+        ],
+        "green_mask": true,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "退出活动层-逸趣导算"
+        ]
+    },
+    "退出活动层-逸趣导算": {
+        "recognition": "TemplateMatch",
+        "template": "活动层/退出.png",
+        "green_mask": true,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认退出活动层-逸趣导算"
+        ]
+    },
+    "确认退出活动层-逸趣导算": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "逸趣导算任务结束"
+        ]
+    },
+    "逸趣导算任务结束": {
+        "recognition": "OCR",
+        "expected": "战役推进",
+        "post_wait_freezes": 500,
+        "next": [
+            "HomePage"
+        ]
+    }
+}
