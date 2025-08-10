@@ -1,0 +1,40 @@
+{
+    "organizeStoreroom": {
+        "doc": "整理仓库",
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": "战役推进",
+        "next": [
+            "openNavigationScreen"
+        ]
+    },
+    "openNavigationScreen": {
+        "doc": "打开智能导航光屏",
+        "next": [
+            "enterStoreroom"
+        ],
+        "enabled": true,
+        "action": "Click",
+        "target": [
+            59,
+            505,
+            68,
+            68
+        ],
+        "post_wait_freezes": 500
+    },
+    "enterStoreroom": {
+        "recognition": "OCR",
+        "expected": "仓库",
+        "action": "Click",
+        "target": true,
+        "post_delay": 1500,
+        "next": [
+            "weapon",
+            "weaponAttachments",
+            "flower",
+            "itemBox",
+            "returnToHomePage"
+        ]
+    }
+}
