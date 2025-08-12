@@ -120,7 +120,7 @@
     },
     "选择饮品-茶歇一刻": {
         "recognition": "TemplateMatch",
-        "template": "活动层/战场报告.png",
+        "template": "活动层/星标.png",
         "action": "Click",
         "order_by": "Score",
         "post_wait_freezes": 500,

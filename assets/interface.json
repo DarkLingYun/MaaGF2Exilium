@@ -1941,6 +1941,14 @@
         "饮品加成": {
             "cases": [
                 {
+                    "name": "星标饮品",
+                    "pipeline_override": {
+                        "选择饮品-茶歇一刻": {
+                            "template": "活动层/星标.png"
+                        }
+                    }
+                },
+                {
                     "name": "战场报告",
                     "pipeline_override": {
                         "选择饮品-茶歇一刻": {
