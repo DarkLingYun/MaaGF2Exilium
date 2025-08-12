@@ -58,6 +58,7 @@
         ],
         "action": "Click",
         "next": [
+            "combatExerciseTaskCompleted",
             "waitingForCombatExerciseAutoCombatToEnd"
         ]
     },
@@ -83,6 +84,7 @@
             150
         ],
         "next": [
+            "combatExerciseTaskCompleted",
             "changeSpeed",
             "enableCombatExerciseAutoCombat"
         ]
@@ -91,6 +93,7 @@
         "doc": "改变实兵演习战斗速度，只在这里改变，因为战斗速度会继承到别的战斗中，而这里是每日任务中最早的战斗",
         "enabled": true,
         "next": [
+            "combatExerciseTaskCompleted",
             "current3xSpeed",
             "current2xSpeed",
             "current1xSpeed"
@@ -99,6 +102,7 @@
     "current1xSpeed": {
         "doc": "当前实兵演习战斗速度为 1 倍，这里因为背景的变化，老是识别不到，就直接无脑进入这个节点了",
         "next": [
+            "combatExerciseTaskCompleted",
             "clickChangeSpeedButtonTo2xSpeed"
         ]
     },
@@ -114,6 +118,7 @@
         ],
         "threshold": 0.9,
         "next": [
+            "combatExerciseTaskCompleted",
             "clickChangeSpeedButtonTo3xSpeed"
         ]
     },
@@ -129,6 +134,7 @@
         ],
         "threshold": 0.9,
         "next": [
+            "combatExerciseTaskCompleted",
             "enableCombatExerciseAutoCombat"
         ]
     },
@@ -142,6 +148,7 @@
         ],
         "action": "Click",
         "next": [
+            "combatExerciseTaskCompleted",
             "current2xSpeed",
             "proceedToCombat"
         ]
@@ -156,6 +163,7 @@
         ],
         "action": "Click",
         "next": [
+            "combatExerciseTaskCompleted",
             "current3xSpeed",
             "proceedToCombat"
         ]
@@ -163,6 +171,7 @@
     "proceedToCombat": {
         "doc": "没有正常切换到期望的战斗速度，但是防止死循环，还是继续自动战斗",
         "next": [
+            "combatExerciseTaskCompleted",
             "enableCombatExerciseAutoCombat"
         ]
     },
