@@ -84,7 +84,7 @@ def json_to_mermaid(json_file_path):
 
 
 if __name__ == "__main__":
-    json_file = r"C:\Files\Codes\MaaGF2Exilium\assets\resource\pipeline\public\PrepareDailyTasks\Storeroom\itemBox.json"  # 你的 JSON 文件路径
+    json_file = r"C:\Files\Codes\MaaGF2Exilium\assets\resource\base\pipeline\public\ClaimRewardTasks\暗香赠礼.json"  # 你的 JSON 文件路径
     mermaid_code = json_to_mermaid(json_file)
     # 文件保存到项目根目录方便复制，控制台输出会有点格式的问题
     with open("mermaid.mmd", "w", encoding="utf-8") as f:

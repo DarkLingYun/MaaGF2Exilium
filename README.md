@@ -269,3 +269,7 @@
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks)
+
+
+TODO:其他的都好了，测过了
+领取信息核没写呢

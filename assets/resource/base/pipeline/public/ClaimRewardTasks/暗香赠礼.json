@@ -1,0 +1,316 @@
+{
+    "开始暗香赠礼任务": {
+        "next": [
+            "确认当前在主页-暗香赠礼"
+        ]
+    },
+    "确认当前在主页-暗香赠礼": {
+        "recognition": "OCR",
+        "expected": [
+            "战役推进"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "进入活动页面-暗香赠礼"
+        ]
+    },
+    "进入活动页面-暗香赠礼": {
+        "recognition": "OCR",
+        "expected": [
+            "^活动$"
+        ],
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "next": [
+            "发现暗香赠礼",
+            "滑动寻找暗香赠礼"
+        ]
+    },
+    "发现暗香赠礼": {
+        "recognition": "OCR",
+        "expected": [
+            "暗香赠礼"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "点击暗香赠礼标签页"
+        ]
+    },
+    "滑动寻找暗香赠礼": {
+        "action": "Swipe",
+        "begin": [
+            164,
+            533,
+            49,
+            33
+        ],
+        "end": [
+            181,
+            129,
+            34,
+            28
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "滑动后发现暗香赠礼",
+            "退出活动页面-暗香赠礼"
+        ]
+    },
+    "滑动后发现暗香赠礼": {
+        "recognition": "OCR",
+        "expected": [
+            "暗香赠礼"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "点击暗香赠礼标签页"
+        ]
+    },
+    "点击暗香赠礼标签页": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": [
+            "暗香赠礼"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "进入暗香赠礼页面"
+        ]
+    },
+    "进入暗香赠礼页面": {
+        "recognition": "OCR",
+        "expected": [
+            "前往"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "已进入暗香赠礼页面"
+        ]
+    },
+    "已进入暗香赠礼页面": {
+        "recognition": "OCR",
+        "expected": [
+            "铁玫瑰赠礼"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "开启铁玫瑰赠礼",
+            "开启火玫瑰赠礼",
+            "直接返回主页-暗香赠礼"
+        ]
+    },
+    "返回活动页面-暗香赠礼": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_black_v2.png",
+            "公用按钮组件/返回上一页_gray_v2.png"
+        ],
+        "green_mask": true,
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "next": [
+            "退出活动页面-暗香赠礼"
+        ]
+    },
+    "开启铁玫瑰赠礼": {
+        "recognition": "OCR",
+        "expected": [
+            "开启"
+        ],
+        "roi": [
+            101,
+            535,
+            522,
+            147
+        ],
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "next": [
+            "选择铁玫瑰赠礼奖励道具"
+        ]
+    },
+    "选择铁玫瑰赠礼奖励道具": {
+        "recognition": "OCR",
+        "expected": [
+            "战场报告"
+        ],
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "next": [
+            "增加铁玫瑰赠礼领取次数",
+            "确认领取铁玫瑰赠礼"
+        ]
+    },
+    "增加铁玫瑰赠礼领取次数": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/滑动条值增加.png"
+        ],
+        "order_by": "Score",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "铁玫瑰赠礼批量使用值已到最大",
+            "增加铁玫瑰赠礼领取次数"
+        ]
+    },
+    "铁玫瑰赠礼批量使用值已到最大": {
+        "recognition": "ColorMatch",
+        "roi": [
+            843,
+            512,
+            29,
+            28
+        ],
+        "upper": [
+            130,
+            131,
+            135
+        ],
+        "lower": [
+            129,
+            131,
+            135
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "确认领取铁玫瑰赠礼"
+        ]
+    },
+    "确认领取铁玫瑰赠礼": {
+        "recognition": "OCR",
+        "expected": [
+            "领取"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭赠礼领取结果"
+        ]
+    },
+    "关闭赠礼领取结果": {
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭赠礼领取结果",
+            "已进入暗香赠礼页面"
+        ]
+    },
+    "开启火玫瑰赠礼": {
+        "recognition": "OCR",
+        "expected": [
+            "开启"
+        ],
+        "roi": [
+            686,
+            535,
+            533,
+            148
+        ],
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "next": [
+            "选择火玫瑰赠礼奖励道具"
+        ]
+    },
+    "选择火玫瑰赠礼奖励道具": {
+        "recognition": "OCR",
+        "expected": [
+            "序六"
+        ],
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "next": [
+            "增加火玫瑰赠礼领取次数",
+            "确认领取火玫瑰赠礼"
+        ]
+    },
+    "增加火玫瑰赠礼领取次数": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/滑动条值增加.png"
+        ],
+        "order_by": "Score",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "火玫瑰赠礼批量使用值已到最大",
+            "增加火玫瑰赠礼领取次数"
+        ]
+    },
+    "火玫瑰赠礼批量使用值已到最大": {
+        "recognition": "ColorMatch",
+        "roi": [
+            843,
+            512,
+            29,
+            28
+        ],
+        "upper": [
+            130,
+            131,
+            135
+        ],
+        "lower": [
+            129,
+            131,
+            135
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "确认领取火玫瑰赠礼"
+        ]
+    },
+    "确认领取火玫瑰赠礼": {
+        "recognition": "OCR",
+        "expected": [
+            "领取"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭赠礼领取结果",
+            "已进入暗香赠礼页面"
+        ]
+    },
+    "直接返回主页-暗香赠礼": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_black.png",
+            "公用按钮组件/主页按钮_gray.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "暗香赠礼任务结束"
+        ]
+    },
+    "退出活动页面-暗香赠礼": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "暗香赠礼任务结束",
+            "退出活动页面-暗香赠礼"
+        ]
+    },
+    "暗香赠礼任务结束": {
+        "recognition": "OCR",
+        "expected": [
+            "战役推进"
+        ],
+        "next": [
+            "HomePage"
+        ]
+    }
+}
