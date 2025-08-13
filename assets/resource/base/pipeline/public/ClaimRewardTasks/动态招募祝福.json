@@ -80,6 +80,7 @@
         ],
         "post_wait_freezes": 500,
         "next": [
+            "开始暗香赠礼任务",
             "HomePage"
         ]
     }

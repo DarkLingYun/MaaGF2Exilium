@@ -7,7 +7,8 @@
             "enterPersonalInformationPage",
             "enterDangerousExcavation",
             "enterTrial",
-            "开始动态招募祝福任务"
+            "开始动态招募祝福任务",
+            "开始暗香赠礼任务"
         ],
         "interrupt": [
             "StartGame"
