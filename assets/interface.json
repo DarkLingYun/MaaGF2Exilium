@@ -182,7 +182,10 @@
                 "助战",
                 "险境挖掘（限时）",
                 "预演",
-                "动态招募祝福"
+                "动态招募祝福",
+                "暗香赠礼",
+                "铁玫瑰赠礼",
+                "火玫瑰赠礼"
             ],
             "check": true
         },
@@ -1893,6 +1896,90 @@
                     "pipeline_override": {
                         "开始动态招募祝福任务": {
                             "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "暗香赠礼": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "开始暗香赠礼任务": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "开始暗香赠礼任务": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "铁玫瑰赠礼": {
+            "cases": [
+                {
+                    "name": "战场报告",
+                    "pipeline_override": {
+                        "选择铁玫瑰赠礼奖励道具": {
+                            "expected": "战场报告"
+                        }
+                    }
+                },
+                {
+                    "name": "解析图纸",
+                    "pipeline_override": {
+                        "选择铁玫瑰赠礼奖励道具": {
+                            "expected": "解析图纸"
+                        }
+                    }
+                },
+                {
+                    "name": "萨狄斯金",
+                    "pipeline_override": {
+                        "选择铁玫瑰赠礼奖励道具": {
+                            "expected": "萨狄斯金"
+                        }
+                    }
+                }
+            ]
+        },
+        "火玫瑰赠礼": {
+            "cases": [
+                {
+                    "name": "序六",
+                    "pipeline_override": {
+                        "选择火玫瑰赠礼奖励道具": {
+                            "expected": "序六"
+                        }
+                    }
+                },
+                {
+                    "name": "序五",
+                    "pipeline_override": {
+                        "选择火玫瑰赠礼奖励道具": {
+                            "expected": "序五"
+                        }
+                    }
+                },
+                {
+                    "name": "序四",
+                    "pipeline_override": {
+                        "选择火玫瑰赠礼奖励道具": {
+                            "expected": "序四"
+                        }
+                    }
+                },
+                {
+                    "name": "序三",
+                    "pipeline_override": {
+                        "选择火玫瑰赠礼奖励道具": {
+                            "expected": "序三"
                         }
                     }
                 }

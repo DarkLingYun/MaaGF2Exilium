@@ -98,6 +98,7 @@
         "next": [
             "开启铁玫瑰赠礼",
             "开启火玫瑰赠礼",
+            "领取信息核-暗香赠礼",
             "直接返回主页-暗香赠礼"
         ]
     },
@@ -276,6 +277,53 @@
         "post_wait_freezes": 500,
         "next": [
             "关闭赠礼领取结果",
+            "已进入暗香赠礼页面"
+        ]
+    },
+    "领取信息核-暗香赠礼": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动/信息核.png"
+        ],
+        "threshold": 0.9,
+        "roi": [1105,355,127,149],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭信息核领取结果-暗香赠礼",
+            "已打开信息核介绍页面-暗香赠礼"
+        ]
+    },
+    "已打开信息核介绍页面-暗香赠礼": {
+        "recognition": "OCR",
+        "expected": [
+            "基原信息核"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭信息核介绍页面-暗香赠礼"
+        ]
+    },
+    "关闭信息核介绍页面-暗香赠礼": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "直接返回主页-暗香赠礼"
+        ]
+    },
+    "关闭信息核领取结果-暗香赠礼": {
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
             "已进入暗香赠礼页面"
         ]
     },
