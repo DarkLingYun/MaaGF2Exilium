@@ -155,7 +155,9 @@
             "option": [
                 "班组商店兑换",
                 "调度商店兑换",
-                "讯段交易兑换"
+                "调度商店不兑换的物品",
+                "讯段交易兑换",
+                "讯段交易不兑换的物品"
             ]
         },
         {
@@ -1761,6 +1763,65 @@
                 }
             ]
         },
+        "调度商店不兑换的物品": {
+            "cases": [
+                {
+                    "name": "全部兑换"
+                },
+                {
+                    "name": "紫色心意礼盒",
+                    "pipeline_override": {
+                        "selectdispatchCenterItem": {
+                            "template": [
+                                "集中兑换/调度商店/访问许可.png",
+                                "集中兑换/调度商店/存量条T2.png",
+                                "集中兑换/调度商店/存量条T3.png",
+                                "集中兑换/调度商店/存量条T4.png",
+                                "集中兑换/调度商店/战场报告.png",
+                                "集中兑换/调度商店/萨狄斯金.png",
+                                "集中兑换/调度商店/解析图纸.png",
+                                "集中兑换/调度商店/奇忆甄选暗流.png",
+                                "集中兑换/调度商店/奇忆甄选火线.png",
+                                "集中兑换/调度商店/奇忆甄选信念.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "奇忆甄选",
+                    "pipeline_override": {
+                        "selectdispatchCenterItem": {
+                            "template": [
+                                "集中兑换/调度商店/访问许可.png",
+                                "集中兑换/调度商店/心意礼盒.png",
+                                "集中兑换/调度商店/存量条T2.png",
+                                "集中兑换/调度商店/存量条T3.png",
+                                "集中兑换/调度商店/存量条T4.png",
+                                "集中兑换/调度商店/战场报告.png",
+                                "集中兑换/调度商店/萨狄斯金.png",
+                                "集中兑换/调度商店/解析图纸.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "紫色心意礼盒和奇忆甄选",
+                    "pipeline_override": {
+                        "selectdispatchCenterItem": {
+                            "template": [
+                                "集中兑换/调度商店/访问许可.png",
+                                "集中兑换/调度商店/存量条T2.png",
+                                "集中兑换/调度商店/存量条T3.png",
+                                "集中兑换/调度商店/存量条T4.png",
+                                "集中兑换/调度商店/战场报告.png",
+                                "集中兑换/调度商店/萨狄斯金.png",
+                                "集中兑换/调度商店/解析图纸.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "讯段交易兑换": {
             "cases": [
                 {
@@ -1776,6 +1837,51 @@
                     "pipeline_override": {
                         "enterBossChallengeExchangeTask": {
                             "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "讯段交易不兑换的物品": {
+            "cases": [
+                {
+                    "name": "全部兑换"
+                },
+                {
+                    "name": "萨狄斯金",
+                    "pipeline_override": {
+                        "selectBossChallengeItem": {
+                            "template": [
+                                "集中兑换/讯段交易/塞布丽娜心智存档.png",
+                                "集中兑换/讯段交易/访问许可.png",
+                                "集中兑换/讯段交易/基原信息核.png",
+                                "集中兑换/讯段交易/次世代内存条.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "次世代内存条",
+                    "pipeline_override": {
+                        "selectBossChallengeItem": {
+                            "template": [
+                                "集中兑换/讯段交易/塞布丽娜心智存档.png",
+                                "集中兑换/讯段交易/访问许可.png",
+                                "集中兑换/讯段交易/基原信息核.png",
+                                "集中兑换/讯段交易/萨狄斯金.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "萨狄斯金和次世代内存条",
+                    "pipeline_override": {
+                        "selectBossChallengeItem": {
+                            "template": [
+                                "集中兑换/讯段交易/塞布丽娜心智存档.png",
+                                "集中兑换/讯段交易/访问许可.png",
+                                "集中兑换/讯段交易/基原信息核.png"
+                            ]
                         }
                     }
                 }
