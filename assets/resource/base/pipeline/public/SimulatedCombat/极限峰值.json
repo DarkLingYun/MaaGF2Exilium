@@ -1,0 +1,488 @@
+{
+    "开始极限峰值任务": {
+        "focus": {
+            "start": "极限峰值仅进行0级战斗，请自行处理18级战斗"
+        },
+        "next": [
+            "进入峰值推定-极限峰值"
+        ]
+    },
+    "进入峰值推定-极限峰值": {
+        "recognition": "OCR",
+        "expected": "峰值推定",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "进入极限峰值标签页-极限峰值"
+        ]
+    },
+    "进入极限峰值标签页-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "极限峰值"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "进入子群1-极限峰值"
+        ]
+    },
+    "进入子群1-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "子群1"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "子群1已完成-极限峰值",
+            "子群1未完成-极限峰值"
+        ]
+    },
+    "子群1已完成-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": "其他/子群已完成.png",
+        "threshold": 0.95,
+        "post_wait_freezes": 500,
+        "next": [
+            "子群1后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "子群1后返回极限峰值标签页-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "进入子群2-极限峰值"
+        ]
+    },
+    "子群1未完成-极限峰值": {
+        "next": [
+            "开始作战-子群1-极限峰值"
+        ]
+    },
+    "开始作战-子群1-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "开始作战"
+        ],
+        "action": "Click",
+        "next": [
+            "作战开始-子群1-极限峰值"
+        ]
+    },
+    "作战开始-子群1-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "作战开始"
+        ],
+        "action": "Click",
+        "next": [
+            "跳过动画-子群1-极限峰值",
+            "未上满人确认开始-子群1-极限峰值",
+            "启动自动战斗-子群1-极限峰值",
+            "任务失败-子群1-极限峰值",
+            "任务完成-子群1-极限峰值"
+        ]
+    },
+    "跳过动画-子群1-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "跳过"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "跳过动画-子群1-极限峰值",
+            "启动自动战斗-子群1-极限峰值",
+            "任务失败-子群1-极限峰值",
+            "任务完成-子群1-极限峰值"
+        ]
+    },
+    "未上满人确认开始-子群1-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "action": "Click",
+        "next": [
+            "启动自动战斗-子群1-极限峰值",
+            "任务失败-子群1-极限峰值",
+            "任务完成-子群1-极限峰值"
+        ]
+    },
+    "启动自动战斗-子群1-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/自动战斗_off.png",
+        "roi": [
+            986,
+            4,
+            279,
+            63
+        ],
+        "threshold": 0.5,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "timeout": 200000,
+        "next": [
+            "任务失败-子群1-极限峰值",
+            "任务完成-子群1-极限峰值"
+        ]
+    },
+    "任务失败-子群1-极限峰值": {
+        "recognition": "OCR",
+        "expected": "任务失败",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "focus": {
+            "start": "[color:red]极限峰值-子群1-任务失败，请手动处理[/color]",
+            "toast": "极限峰值-子群1-任务失败，请手动处理"
+        },
+        "next": [
+            "确认任务失败-子群1-极限峰值"
+        ]
+    },
+    "确认任务失败-子群1-极限峰值": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "子群1后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "任务完成-子群1-极限峰值": {
+        "recognition": "OCR",
+        "expected": "任务完成",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认任务完成-子群1-极限峰值",
+            "任务完成-子群1-极限峰值"
+        ]
+    },
+    "确认任务完成-子群1-极限峰值": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "子群1后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "进入子群2-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "子群2"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "子群2已完成-极限峰值",
+            "子群2未完成-极限峰值"
+        ]
+    },
+    "子群2已完成-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": "其他/子群已完成.png",
+        "threshold": 0.95,
+        "post_wait_freezes": 500,
+        "next": [
+            "子群2后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "子群2后返回极限峰值标签页-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "进入子群3-极限峰值"
+        ]
+    },
+    "子群2未完成-极限峰值": {
+        "next": [
+            "开始作战-子群2-极限峰值"
+        ]
+    },
+    "开始作战-子群2-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "开始作战"
+        ],
+        "action": "Click",
+        "next": [
+            "作战开始-子群2-极限峰值"
+        ]
+    },
+    "作战开始-子群2-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "作战开始"
+        ],
+        "action": "Click",
+        "next": [
+            "跳过动画-子群2-极限峰值",
+            "未上满人确认开始-子群2-极限峰值",
+            "启动自动战斗-子群2-极限峰值",
+            "任务失败-子群2-极限峰值",
+            "任务完成-子群2-极限峰值"
+        ]
+    },
+    "跳过动画-子群2-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "跳过"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "跳过动画-子群2-极限峰值",
+            "启动自动战斗-子群2-极限峰值",
+            "任务失败-子群2-极限峰值",
+            "任务完成-子群2-极限峰值"
+        ]
+    },
+    "未上满人确认开始-子群2-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "action": "Click",
+        "next": [
+            "启动自动战斗-子群2-极限峰值",
+            "任务失败-子群2-极限峰值",
+            "任务完成-子群2-极限峰值"
+        ]
+    },
+    "启动自动战斗-子群2-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/自动战斗_off.png",
+        "roi": [
+            986,
+            4,
+            279,
+            63
+        ],
+        "threshold": 0.5,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "timeout": 200000,
+        "next": [
+            "任务失败-子群2-极限峰值",
+            "任务完成-子群2-极限峰值"
+        ]
+    },
+    "任务失败-子群2-极限峰值": {
+        "recognition": "OCR",
+        "expected": "任务失败",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "focus": {
+            "start": "[color:red]极限峰值-子群2-任务失败，请手动处理[/color]",
+            "toast": "极限峰值-子群2-任务失败，请手动处理"
+        },
+        "next": [
+            "确认任务失败-子群2-极限峰值"
+        ]
+    },
+    "确认任务失败-子群2-极限峰值": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "子群2后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "任务完成-子群2-极限峰值": {
+        "recognition": "OCR",
+        "expected": "任务完成",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认任务完成-子群2-极限峰值",
+            "任务完成-子群2-极限峰值"
+        ]
+    },
+    "确认任务完成-子群2-极限峰值": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "子群2后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "进入子群3-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "子群3"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "子群3已完成-极限峰值",
+            "子群3未完成-极限峰值"
+        ]
+    },
+    "子群3已完成-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": "其他/子群已完成.png",
+        "threshold": 0.95,
+        "post_wait_freezes": 500,
+        "next": [
+            "子群3后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "子群3后返回极限峰值标签页-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "极限峰值任务完成"
+        ]
+    },
+    "子群3未完成-极限峰值": {
+        "next": [
+            "开始作战-子群3-极限峰值"
+        ]
+    },
+    "开始作战-子群3-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "开始作战"
+        ],
+        "action": "Click",
+        "next": [
+            "作战开始-子群3-极限峰值"
+        ]
+    },
+    "作战开始-子群3-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "作战开始"
+        ],
+        "action": "Click",
+        "next": [
+            "跳过动画-子群3-极限峰值",
+            "未上满人确认开始-子群3-极限峰值",
+            "启动自动战斗-子群3-极限峰值",
+            "任务失败-子群3-极限峰值",
+            "任务完成-子群3-极限峰值"
+        ]
+    },
+    "跳过动画-子群3-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "跳过"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "跳过动画-子群3-极限峰值",
+            "启动自动战斗-子群3-极限峰值",
+            "任务失败-子群3-极限峰值",
+            "任务完成-子群3-极限峰值"
+        ]
+    },
+    "未上满人确认开始-子群3-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "action": "Click",
+        "next": [
+            "启动自动战斗-子群3-极限峰值",
+            "任务失败-子群3-极限峰值",
+            "任务完成-子群3-极限峰值"
+        ]
+    },
+    "启动自动战斗-子群3-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/自动战斗_off.png",
+        "roi": [
+            986,
+            4,
+            279,
+            63
+        ],
+        "threshold": 0.5,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "timeout": 200000,
+        "next": [
+            "任务失败-子群3-极限峰值",
+            "任务完成-子群3-极限峰值"
+        ]
+    },
+    "任务失败-子群3-极限峰值": {
+        "recognition": "OCR",
+        "expected": "任务失败",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "focus": {
+            "start": "[color:red]极限峰值-子群3-任务失败，请手动处理[/color]",
+            "toast": "极限峰值-子群3-任务失败，请手动处理"
+        },
+        "next": [
+            "确认任务失败-子群3-极限峰值"
+        ]
+    },
+    "确认任务失败-子群3-极限峰值": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "子群3后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "任务完成-子群3-极限峰值": {
+        "recognition": "OCR",
+        "expected": "任务完成",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认任务完成-子群3-极限峰值",
+            "任务完成-子群3-极限峰值"
+        ]
+    },
+    "确认任务完成-子群3-极限峰值": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "子群3后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "极限峰值任务完成": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "enterMilitarySimulationTask",
+            "returnToHomePage"
+        ]
+    }
+}

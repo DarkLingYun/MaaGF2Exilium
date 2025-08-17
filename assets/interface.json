@@ -126,9 +126,11 @@
                 "自动调整战斗速度为 3 倍速",
                 "实兵演习对象战力值范围",
                 "自动领取峰值推定奖励",
+                "极限峰值（0级战斗）",
                 "自动兵棋推演"
             ],
-            "check": true
+            "check": true,
+            "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
         },
         {
             "name": "班组日常",
@@ -173,7 +175,8 @@
                 "开启道具箱",
                 "物资助力箱奖励类型"
             ],
-            "check": true
+            "check": true,
+            "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
         },
         {
             "name": "领取奖励",
@@ -189,7 +192,8 @@
                 "铁玫瑰赠礼",
                 "火玫瑰赠礼"
             ],
-            "check": true
+            "check": true,
+            "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
         },
         {
             "name": "活动层",
@@ -1396,6 +1400,26 @@
                     "name": "NO",
                     "pipeline_override": {
                         "enterPeakValueAssessment": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "极限峰值（0级战斗）": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "开始极限峰值任务": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "开始极限峰值任务": {
                             "enabled": false
                         }
                     }

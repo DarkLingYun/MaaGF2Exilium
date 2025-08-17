@@ -89,4 +89,4 @@ if __name__ == "__main__":
     # 文件保存到项目根目录方便复制，控制台输出会有点格式的问题
     with open("mermaid.mmd", "w", encoding="utf-8") as f:
         f.write(mermaid_code)
-    # 如果本地支持，可以直接放到本地运行，或者复制到 https://www.mermaidflow.app/editor 上查看效果
+    # 如果本地支持，可以直接放到本地运行，或者复制到 https://mermaid.live/ 上查看效果

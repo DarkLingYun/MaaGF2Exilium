@@ -244,6 +244,7 @@
         "action": "Click",
         "next": [
             "enterPeakValueAssessment",
+            "开始极限峰值任务",
             "enterMilitarySimulationTask",
             "returnToHomePage"
         ]
