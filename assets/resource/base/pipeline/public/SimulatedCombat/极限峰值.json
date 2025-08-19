@@ -13,6 +13,16 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
+            "发现新周期-极限峰值",
+            "进入极限峰值标签页-极限峰值"
+        ]
+    },
+    "发现新周期-极限峰值": {
+        "recognition": "OCR",
+        "expected": "新周期开启",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
             "进入极限峰值标签页-极限峰值"
         ]
     },
