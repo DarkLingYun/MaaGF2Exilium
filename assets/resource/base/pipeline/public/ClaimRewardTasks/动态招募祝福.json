@@ -81,6 +81,7 @@
         "post_wait_freezes": 500,
         "next": [
             "开始暗香赠礼任务",
+            "开始艾莫号许愿池任务",
             "HomePage"
         ]
     }
