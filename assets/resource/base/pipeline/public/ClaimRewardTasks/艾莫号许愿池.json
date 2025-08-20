@@ -1,0 +1,166 @@
+{
+    "开始艾莫号许愿池任务": {
+        "next": [
+            "确认当前在主页-艾莫号许愿池"
+        ]
+    },
+    "确认当前在主页-艾莫号许愿池": {
+        "recognition": "OCR",
+        "expected": [
+            "战役推进"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "进入活动页面-艾莫号许愿池"
+        ]
+    },
+    "进入活动页面-艾莫号许愿池": {
+        "recognition": "OCR",
+        "expected": [
+            "^活动$"
+        ],
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "next": [
+            "发现艾莫号许愿池",
+            "滑动寻找艾莫号许愿池"
+        ]
+    },
+    "发现艾莫号许愿池": {
+        "recognition": "OCR",
+        "expected": [
+            "艾莫号许愿池"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "点击艾莫号许愿池标签页"
+        ]
+    },
+    "滑动寻找艾莫号许愿池": {
+        "action": "Swipe",
+        "begin": [
+            164,
+            533,
+            49,
+            33
+        ],
+        "end": [
+            181,
+            129,
+            34,
+            28
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "滑动后发现艾莫号许愿池",
+            "退出活动页面-艾莫号许愿池"
+        ]
+    },
+    "滑动后发现艾莫号许愿池": {
+        "recognition": "OCR",
+        "expected": [
+            "艾莫号许愿池"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "点击艾莫号许愿池标签页"
+        ]
+    },
+    "点击艾莫号许愿池标签页": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": [
+            "艾莫号许愿池"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "进入艾莫号许愿池页面"
+        ]
+    },
+    "进入艾莫号许愿池页面": {
+        "recognition": "OCR",
+        "expected": [
+            "前往"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "已进入艾莫号许愿池页面"
+        ]
+    },
+    "已进入艾莫号许愿池页面": {
+        "post_wait_freezes": 500,
+        "next": [
+            "发现艾莫号许愿池提醒",
+            "返回活动页面-艾莫号许愿池"
+        ]
+    },
+    "返回活动页面-艾莫号许愿池": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_black_v2.png",
+            "公用按钮组件/返回上一页_gray_v2.png"
+        ],
+        "green_mask": true,
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "next": [
+            "退出活动页面-艾莫号许愿池"
+        ]
+    },
+    "发现艾莫号许愿池提醒": {
+        "recognition": "TemplateMatch",
+        "template": "活动/艾莫号许愿池提醒.png",
+        "action": "Click",
+        "green_mask": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "领取奖励-艾莫号许愿池",
+            "返回活动页面-艾莫号许愿池"
+        ]
+    },
+    "领取奖励-艾莫号许愿池": {
+        "recognition": "OCR",
+        "expected": [
+            "领取奖励"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭领取结果-艾莫号许愿池"
+        ]
+    },
+    "关闭领取结果-艾莫号许愿池": {
+        "recognition": "OCR",
+        "expected": [
+            "点击空白处关闭"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "已进入艾莫号许愿池页面"
+        ]
+    },
+    "退出活动页面-艾莫号许愿池": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "艾莫号许愿池任务结束",
+            "退出活动页面-艾莫号许愿池"
+        ]
+    },
+    "艾莫号许愿池任务结束": {
+        "recognition": "OCR",
+        "expected": [
+            "战役推进"
+        ],
+        "next": [
+            "HomePage"
+        ]
+    }
+}
