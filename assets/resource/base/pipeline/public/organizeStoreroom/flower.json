@@ -84,11 +84,18 @@
         "expected": "快捷选择",
         "action": "Click",
         "target": true,
-        "post_delay": 100,
+        "post_wait_freezes": 500,
         "next": [
-            "noFlowerToDisassemble",
-            "disassemblyFlower",
-            "quickSelectFlower"
+            "有物品可拆解-生长数据",
+            "exitFlower"
+        ]
+    },
+    "有物品可拆解-生长数据": {
+        "recognition": "OCR",
+        "expected": "共选",
+        "post_delay": 500,
+        "next": [
+            "disassemblyFlower"
         ]
     },
     "disassemblyFlower": {
@@ -120,18 +127,6 @@
         "next": [
             "noFlowerLeft",
             "quickSelectFlower"
-        ]
-    },
-    "noFlowerToDisassemble": {
-        "recognition": "OCR",
-        "expected": [
-            "无符合筛选条件的物品",
-            "无符合",
-            "条件的物品"
-        ],
-        "post_wait_freezes": 500,
-        "next": [
-            "exitFlower"
         ]
     },
     "exitFlower": {
