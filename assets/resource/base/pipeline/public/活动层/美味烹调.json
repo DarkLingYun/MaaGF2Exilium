@@ -10,6 +10,24 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
+            "活动层等级提升-美味烹调",
+            "已进入活动层-美味烹调"
+        ]
+    },
+    "活动层等级提升-美味烹调": {
+        "recognition": "OCR",
+        "expected": "活动层等级提升",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认活动层等级提升-美味烹调"
+        ]
+    },
+    "确认活动层等级提升-美味烹调": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
             "已进入活动层-美味烹调"
         ]
     },

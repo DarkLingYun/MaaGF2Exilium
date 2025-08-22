@@ -10,6 +10,24 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
+            "活动层等级提升-茶歇一刻",
+            "已进入活动层-茶歇一刻"
+        ]
+    },
+    "活动层等级提升-茶歇一刻": {
+        "recognition": "OCR",
+        "expected": "活动层等级提升",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认活动层等级提升-茶歇一刻"
+        ]
+    },
+    "确认活动层等级提升-茶歇一刻": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
             "已进入活动层-茶歇一刻"
         ]
     },
