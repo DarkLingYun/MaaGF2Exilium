@@ -1,0 +1,17 @@
+{
+    "confirmChallengeWithOpponent": {
+        "doc": "因延迟需延迟等待时间",
+        "post_wait_freezes": 2000,
+        "next": [
+            "enterLiveDrillCombatResourceLoading",
+            "challengeOpponentSelection"
+        ]
+    },
+    "enterLiveDrillCombatResourceLoading": {
+        "next": [
+            "confirmChallengeWithOpponent",
+            "enterLiveDrillCombatResourceLoading",
+            "clickCombatExerciseStartCombatButton"
+        ]
+    }
+}

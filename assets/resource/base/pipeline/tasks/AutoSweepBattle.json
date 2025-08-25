@@ -74,6 +74,21 @@
         "action": "Click",
         "post_delay": 1000,
         "next": [
+            "supplyOperationReady",
+            "supplyOperationType"
+        ]
+    },
+    "supplyOperationReady": {
+        "doc": "确认是否进入对应页面",
+        "recognition": "OCR",
+        "roi": [
+            969,
+            584,
+            48,
+            28
+        ],
+        "expected": "消耗",
+        "next": [
             "supplyOperationTypeIsAccessories",
             "supplyOperationLevelPageTopSwip"
         ]

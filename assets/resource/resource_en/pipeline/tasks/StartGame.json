@@ -15,6 +15,7 @@
         "expected": [
             "^Copyright"
         ],
+        "action": "Click",
         "timeout": 35000,
         "next": [
             "StartGame_clickStart",
