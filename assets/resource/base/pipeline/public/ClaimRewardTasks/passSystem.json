@@ -124,6 +124,7 @@
         "recognition": "OCR",
         "expected": "晶条",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "openPassSupplyCrateReward"
         ]
@@ -171,6 +172,7 @@
         "recognition": "OCR",
         "expected": [
             "^开启$",
+            "^下一$",
             "^下一个$"
         ],
         "action": "Click",
