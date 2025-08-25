@@ -49,7 +49,10 @@
     "dispatchProgressing": {
         "doc": "派遣进行中",
         "recognition": "OCR",
-        "expected": "同时可派遣5/5",
+        "expected": [
+            "同时可派遣5/5",
+            "同时可派遣 5/5"
+        ],
         "roi": [
             1072,
             532,
@@ -102,7 +105,12 @@
     },
     "未识别到再次派遣直接点击固定位置": {
         "action": "Click",
-        "target": [743,620,264,41],
+        "target": [
+            743,
+            620,
+            264,
+            41
+        ],
         "post_delay": 4000,
         "next": [
             "claimDispatchCenterDispatchCountReward",
