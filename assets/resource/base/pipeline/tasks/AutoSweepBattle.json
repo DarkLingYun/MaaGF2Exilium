@@ -183,6 +183,7 @@
         "recognition": "OCR",
         "expected": "^自律$",
         "action": "Click",
+        "post_wait_freezes": 1000,
         "next": [
             "AutoSweepBattleSupplyOperationPrepareAccessoriesLimit",
             "AutoSweepBattleSupplyOperationPrepareInsufficient",
@@ -217,7 +218,15 @@
         "doc": "确认是否为配件自律页面",
         "recognition": "OCR",
         "expected": [
-            "^下一步$"
+            "^下一步$",
+            "^下一$",
+            "^一步$"
+        ],
+        "roi": [
+            645,
+            581,
+            332,
+            94
         ],
         "begin": [
             158,
@@ -266,7 +275,7 @@
             336,
             340
         ],
-        "expected": "^异位打击$",
+        "expected": "^迫近强攻$",
         "action": "Click",
         "next": [
             "selectedEffectsCombinationNextButtonClick"
@@ -275,6 +284,12 @@
     "selectedEffectsCombinationNextButtonClick": {
         "recognition": "OCR",
         "expected": "^下一步$",
+        "roi": [
+            645,
+            581,
+            332,
+            94
+        ],
         "action": "Click",
         "next": [
             "AutoSweepBattleSupplyOperationPrepareAccessories"
