@@ -61,6 +61,7 @@
             "itemNotPurchasable",
             "selectExchangeItemQuantity",
             "confirmPurchaseItem",
+            "itemOutOfStock",
             "selectExchangeItem"
         ]
     },
@@ -85,6 +86,39 @@
         ],
         "next": [
             "exitVersionActivityItemExchange"
+        ]
+    },
+    "itemOutOfStock": {
+        "doc": "对可能点到已售罄的商品进行处理",
+        "recognition": "OCR",
+        "expected": "^已售",
+        "roi": [
+            594,
+            542,
+            93,
+            47
+        ],
+        "next": [
+            "exitItemExchange"
+        ]
+    },
+    "exitItemExchange": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "roi": [
+            1104,
+            107,
+            44,
+            42
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "exitItemExchange",
+            "selectExchangeItem"
         ]
     },
     "selectExchangeItemQuantity": {

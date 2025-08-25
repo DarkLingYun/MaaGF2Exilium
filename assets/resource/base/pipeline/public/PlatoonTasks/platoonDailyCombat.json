@@ -57,6 +57,7 @@
         ],
         "action": "Click",
         "next": [
+            "closePlatoonDailyCombatPage",
             "enterGunsmokeFrontlineTask",
             "exitPlatoonDailyCombat"
         ]

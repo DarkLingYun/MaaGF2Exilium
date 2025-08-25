@@ -1667,7 +1667,7 @@
                     }
                 },
                 {
-                    "name": "烟火重燃之时(美服/国际服)",
+                    "name": "烟火重燃之时(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -1682,7 +1682,7 @@
                     }
                 },
                 {
-                    "name": "匿影而生(已结束)",
+                    "name": "匿影而生(美服/国际服)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
