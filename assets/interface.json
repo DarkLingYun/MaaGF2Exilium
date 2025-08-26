@@ -1490,6 +1490,27 @@
         "物资模式活动选择": {
             "cases": [
                 {
+                    "name": "循迹追演",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "循迹追演",
+                                "追演",
+                                "循迹",
+                                "循迹追",
+                                "迹追演"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "幕后补给",
+                                "幕后补",
+                                "后补给"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "火花之罪·下篇",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
