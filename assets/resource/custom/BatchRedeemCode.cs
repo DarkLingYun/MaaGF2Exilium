@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-using MFAWPF.Views;
-using MFAWPF.Helper;
+using MFAAvalonia.Views;
+using MFAAvalonia.Helper;
 using MaaFramework.Binding;
 using MaaFramework.Binding.Custom;
 using MaaFramework.Binding.Buffers;
@@ -171,9 +171,9 @@ namespace JsonHelper
     }
 }
 
-namespace MFAWPF.Custom
+namespace MFAAvalonia.Custom
 {
-    using MFAWPF.Extensions;
+    using MFAAvalonia.Extensions;
     // 执行完毕后，回到主页面
     public class BatchRedeemCodeAction : IMaaCustomAction
     {
