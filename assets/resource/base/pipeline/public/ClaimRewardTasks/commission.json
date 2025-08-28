@@ -23,7 +23,7 @@
             "日活跃",
             "每日订单"
         ],
-        "post_delay": 500,
+        "post_wait_freezes": 500,
         "next": [
             "oneKeyClaimCommissionReward",
             "claimDailyActiveCommissionReward",
@@ -35,8 +35,9 @@
         "recognition": "OCR",
         "expected": "键领取",
         "action": "Click",
-        "post_delay": 1500,
+        "post_wait_freezes": 1500,
         "next": [
+            "oneKeyClaimCommissionReward",
             "claimDailyActiveCommissionReward",
             "enterJourneyWitnessTab"
         ]
@@ -46,6 +47,7 @@
         "recognition": "OCR",
         "expected": "领取全部",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "closeCommissionRewardResultPage",
             "oneKeyClaimCommissionReward"
@@ -56,6 +58,7 @@
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "closeCommissionRewardResultPage",
             "enterJourneyWitnessTab"
