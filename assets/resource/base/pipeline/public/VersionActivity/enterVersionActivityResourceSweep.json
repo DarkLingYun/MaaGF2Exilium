@@ -85,12 +85,15 @@
         "doc": "选择物资模式关卡",
         "roi": [
             0,
-            135,
+            188,
             1280,
-            459
+            315
         ],
         "recognition": "OCR",
-        "expected": "5$",
+        "expected": [
+            "5$",
+            "-5"
+        ],
         "action": "Click",
         "post_wait_freezes": 100,
         "next": [
