@@ -9,6 +9,7 @@
         "expected": "活动层",
         "action": "Click",
         "post_wait_freezes": 500,
+        "timeout": 40000,
         "next": [
             "活动层等级提升-逸趣导算",
             "已进入活动层-逸趣导算"
