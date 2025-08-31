@@ -268,6 +268,3 @@
 </a>
 
 Made with [contrib.rocks](https://contrib.rocks)
-
-# TODO
-自动战斗部分全部完成，还需要做自动领奖和自动战斗失败的处理
