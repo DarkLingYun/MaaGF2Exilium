@@ -298,7 +298,10 @@
     },
     "selectedEffectsCombinationNextButtonClick": {
         "recognition": "OCR",
-        "expected": "^下一步$",
+        "expected": [
+            "^下一步$",
+            "一步$"
+        ],
         "roi": [
             645,
             581,
