@@ -84,7 +84,7 @@
     "claimJourneyWitnessReward": {
         "doc": "领取危途见证奖励",
         "recognition": "OCR",
-        "expected": "一键领取",
+        "expected": "键领取",
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
@@ -121,7 +121,7 @@
     "claimJourneyMileStoneReward": {
         "doc": "领取征程丰碑奖励",
         "recognition": "OCR",
-        "expected": "一键领取",
+        "expected": "键领取",
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
