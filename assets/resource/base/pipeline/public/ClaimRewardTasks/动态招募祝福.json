@@ -42,7 +42,7 @@
     "点击一键祝福": {
         "recognition": "OCR",
         "expected": [
-            "一键祝福"
+            "键祝福"
         ],
         "action": "Click",
         "post_wait_freezes": 500,
