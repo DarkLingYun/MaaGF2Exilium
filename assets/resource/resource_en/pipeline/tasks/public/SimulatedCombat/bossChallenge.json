@@ -1,0 +1,11 @@
+{
+
+    "clickEnterBossFightPage": {
+        "doc": "增加重试",
+        "post_wait_freezes": 500,
+        "next": [
+            "enterBossStandardBattle",
+            "clickEnterBossFightPage"
+        ]
+    }
+}

@@ -1689,6 +1689,28 @@
                     }
                 },
                 {
+                    "name": "溯回时光之隙(美服/国际服)",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "溯回时光之隙",
+                                "^溯回"
+                            ]
+                        },
+                        "switchVersionActivityChapter": {
+                            "enabled": true,
+                            "expected": [
+                                "纪念日礼赞"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "时光小筑"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "烟火重燃之时(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
@@ -1704,7 +1726,7 @@
                     }
                 },
                 {
-                    "name": "匿影而生(美服/国际服)",
+                    "name": "匿影而生(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
