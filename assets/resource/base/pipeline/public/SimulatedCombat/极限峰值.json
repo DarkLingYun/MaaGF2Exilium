@@ -13,19 +13,14 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
+            "进入极限峰值标签页-极限峰值"
+        ],
+        "interrupt": [
             "发现新周期-极限峰值",
-            "进入极限峰值标签页-极限峰值"
+            "发现周期报酬-极限峰值"
         ]
     },
-    "发现新周期-极限峰值": {
-        "recognition": "OCR",
-        "expected": "新周期开启",
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "进入极限峰值标签页-极限峰值"
-        ]
-    },
+
     "进入极限峰值标签页-极限峰值": {
         "recognition": "OCR",
         "expected": [
@@ -34,7 +29,24 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
+            "已进入极限峰值标签页-极限峰值",
+            "未进入极限峰值标签页-极限峰值"
+        ]
+    },
+    "已进入极限峰值标签页-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "激化阶群"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
             "进入子群1-极限峰值"
+        ]
+    },
+    "未进入极限峰值标签页-极限峰值": {
+        "next": [
+            "极限峰值任务完成"
         ]
     },
     "进入子群1-极限峰值": {
@@ -497,5 +509,48 @@
             "enterMilitarySimulationTask",
             "returnToHomePage"
         ]
+    },
+    // 本节点内的 interrupt
+    "发现新周期-极限峰值": {
+        "recognition": "OCR",
+        "expected": "新周期开启",
+        "action": "Click",
+        "post_wait_freezes": 500
+    },
+    "发现周期报酬-极限峰值": {
+        "recognition": "OCR",
+        "expected": "周期报酬",
+        "post_wait_freezes": 500,
+        "next": [
+            "领取周期报酬-极限峰值",
+            "关闭周期报酬页面-极限峰值"
+        ]
+    },
+    "领取周期报酬-极限峰值": {
+        "recognition": "OCR",
+        "expected": "键领取",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭周期报酬奖励领取结果页-极限峰值"
+        ]
+    },
+    "关闭周期报酬奖励领取结果页-极限峰值": {
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "发现周期报酬-极限峰值"
+        ]
+    },
+    "关闭周期报酬页面-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500
     }
 }
