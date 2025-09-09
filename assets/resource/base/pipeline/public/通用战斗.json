@@ -1,0 +1,149 @@
+{
+    "通用战斗任务开始": {
+        "recognition": "OCR",
+        "expected": [
+            "作战开始",
+            "资源加载中"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "已进入作战开始页面-通用战斗"
+        ]
+    },
+    "已进入作战开始页面-通用战斗": {
+        "recognition": "OCR",
+        "expected": "作战开始",
+        "post_wait_freezes": 500,
+        "next": [
+            "任务完成-通用战斗",
+            "任务失败-通用战斗",
+            "点击作战开始按钮-通用战斗"
+        ]
+    },
+    "点击作战开始按钮-通用战斗": {
+        "recognition": "OCR",
+        "expected": "作战开始",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "timeout": 200000,
+        "next": [
+            "发现可部署人形提示-通用战斗",
+            "点击作战开始按钮-通用战斗",
+            "任务完成-通用战斗",
+            "任务失败-通用战斗",
+            "启动自动战斗-通用战斗"
+        ]
+    },
+    "发现可部署人形提示-通用战斗": {
+        "recognition": "OCR",
+        "expected": [
+            "可部署"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认可部署人形-通用战斗"
+        ]
+    },
+    "确认可部署人形-通用战斗": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "timeout": 200000,
+        "next": [
+            "点击作战开始按钮-通用战斗",
+            "任务完成-通用战斗",
+            "任务失败-通用战斗",
+            "启动自动战斗-通用战斗"
+        ]
+    },
+    "启动自动战斗-通用战斗": {
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/自动战斗_off.png",
+        "roi": [
+            986,
+            4,
+            279,
+            63
+        ],
+        "threshold": 0.9,
+        "green_mask": true,
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "timeout": 200000,
+        "next": [
+            "任务完成-通用战斗",
+            "任务失败-通用战斗",
+            "启动自动战斗-通用战斗"
+        ]
+    },
+    "任务完成-通用战斗": {
+        "recognition": "OCR",
+        "expected": "任务完成",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "确认任务完成或失败-通用战斗",
+            "任务完成-通用战斗"
+        ],
+        "interrupt": [
+            "实兵演习等级晋级-通用战斗"
+        ]
+    },
+    "确认任务完成或失败-通用战斗": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "退出战斗资源加载中-通用战斗",
+            "确认任务完成或失败-通用战斗"
+        ],
+        "interrupt": [
+            "实兵演习等级晋级-通用战斗"
+        ]
+    },
+    "任务失败-通用战斗": {
+        "recognition": "OCR",
+        "expected": [
+            "任务失败",
+            "对战失败"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "focus": {
+            "start": "[color:red]任务失败，请考虑是否需要手动处理[/color]"
+        },
+        "next": [
+            "确认任务完成或失败-通用战斗",
+            "任务失败-通用战斗"
+        ],
+        "interrupt": [
+            "实兵演习等级晋级-通用战斗"
+        ]
+    },
+    "退出战斗资源加载中-通用战斗": {
+        "recognition": "OCR",
+        "expected": "资源加载中",
+        "post_wait_freezes": 500,
+        "next": [
+            "退出战斗资源加载中-通用战斗",
+            "通用战斗任务结束"
+        ]
+    },
+    "通用战斗任务结束": {
+        "post_wait_freezes": 500
+    },
+    // 下面的节点用于内部 interrupt，处理各种类似不同战斗前后的附加内容
+    
+    "实兵演习等级晋级-通用战斗": {
+        "recognition": "OCR",
+        "expected": [
+            "点击屏幕任意位置继续",
+            "已晋升"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500
+    }
+}

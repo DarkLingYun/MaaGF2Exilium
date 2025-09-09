@@ -130,16 +130,10 @@
         "expected": "进攻",
         "action": "Click",
         "next": [
-            "enterLiveDrillCombatResourceLoading"
-        ]
-    },
-    "enterLiveDrillCombatResourceLoading": {
-        "doc": "进入实兵演习战斗前的资源加载",
-        "recognition": "OCR",
-        "expected": "资源加载中",
-        "next": [
-            "enterLiveDrillCombatResourceLoading",
-            "clickCombatExerciseStartCombatButton"
+            "confirmCombatExerciseOpponentListPage"
+        ],
+        "interrupt": [
+            "通用战斗任务开始"
         ]
     },
     "insufficientPassesForCombatExercise": {
