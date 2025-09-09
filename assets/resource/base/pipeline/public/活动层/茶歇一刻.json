@@ -1,3 +1,4 @@
+// 活动层太卡，有的用户那里识别得太快，这里的延迟专门调整 1000
 {
     "开始茶歇一刻任务": {
         "next": [
@@ -8,7 +9,7 @@
         "recognition": "OCR",
         "expected": "活动层",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "timeout": 40000,
         "next": [
             "已进入活动层-茶歇一刻"
@@ -36,7 +37,7 @@
             573
         ],
         "green_mask": true,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "已有饮用效果",
             "走上台阶-茶歇一刻"
@@ -52,7 +53,7 @@
             178,
             94
         ],
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "退出活动层-茶歇一刻"
         ]
@@ -72,7 +73,7 @@
             1
         ],
         "duration": 6000,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "走向茶歇一刻"
         ]
@@ -92,7 +93,7 @@
             1
         ],
         "duration": 1000,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "进入茶歇一刻区域",
             "走向茶歇一刻"
@@ -102,7 +103,7 @@
         "recognition": "OCR",
         "expected": "茶歇一刻",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "今日已饮用-茶歇一刻",
             "今日未饮用-茶歇一刻"
@@ -111,13 +112,13 @@
     "今日已饮用-茶歇一刻": {
         "recognition": "OCR",
         "expected": "今日已饮用",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "返回活动层-茶歇一刻"
         ]
     },
     "今日未饮用-茶歇一刻": {
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "选择饮品-茶歇一刻",
             "返回活动层-茶歇一刻"
@@ -128,7 +129,7 @@
         "template": "活动层/星标.png",
         "action": "Click",
         "order_by": "Score",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "制作饮品-茶歇一刻"
         ]
@@ -137,7 +138,7 @@
         "recognition": "OCR",
         "expected": "制作",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "确认制作-茶歇一刻"
         ]
@@ -148,7 +149,7 @@
         "order_by": "Vertical",
         "index": -1,
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "确认结果-茶歇一刻",
             "跳过动画-茶歇一刻"
@@ -161,7 +162,7 @@
             "跳过"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "确认结果-茶歇一刻",
             "跳过动画-茶歇一刻"
@@ -171,7 +172,7 @@
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "退出活动层-茶歇一刻",
             "确认结果-茶歇一刻"
@@ -188,7 +189,7 @@
         ],
         "action": "Click",
         "green_mask": true,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": "退出活动层-茶歇一刻",
         "interrupt": [
             "活动层等级提升"
@@ -199,7 +200,7 @@
         "template": "活动层/退出.png",
         "green_mask": true,
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "确认退出活动层-茶歇一刻"
         ]
@@ -208,7 +209,7 @@
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "茶歇一刻任务结束"
         ]
@@ -216,7 +217,7 @@
     "茶歇一刻任务结束": {
         "recognition": "OCR",
         "expected": "战役推进",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "开始逸趣导算任务",
             "HomePage"

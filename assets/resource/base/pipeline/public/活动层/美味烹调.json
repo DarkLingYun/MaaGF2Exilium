@@ -1,3 +1,4 @@
+// 活动层太卡，有的用户那里识别得太快，这里的延迟专门调整 1000
 {
     "开始美味烹调任务": {
         "next": [
@@ -8,7 +9,7 @@
         "recognition": "OCR",
         "expected": "活动层",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "timeout": 40000,
         "next": [
             "已进入活动层-美味烹调"
@@ -36,7 +37,7 @@
             178,
             94
         ],
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "退出活动层-美味烹调"
         ]
@@ -56,7 +57,7 @@
             1
         ],
         "duration": 1000,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "进入美味烹调区域",
             "走向美味烹调"
@@ -66,7 +67,7 @@
         "recognition": "OCR",
         "expected": "美味烹调",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "每天第一次免费美味烹调",
             "不是每天第一次免费美味烹调，返回活动层"
@@ -76,7 +77,7 @@
         "recognition": "OCR",
         "expected": "每日首次免费",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "邀请人形-美味烹调"
         ]
@@ -89,7 +90,7 @@
         ],
         "action": "Click",
         "green_mask": true,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": "退出活动层-美味烹调"
     },
     "返回活动层-美味烹调": {
@@ -100,14 +101,14 @@
         ],
         "action": "Click",
         "green_mask": true,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": "退出活动层-美味烹调"
     },
     "邀请人形-美味烹调": {
         "recognition": "OCR",
         "expected": "下一步",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "确认邀请-美味烹调"
         ]
@@ -116,7 +117,7 @@
         "recognition": "OCR",
         "expected": "确认邀请",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "确认结果-美味烹调",
             "跳过动画-美味烹调",
@@ -141,7 +142,7 @@
             17,
             15
         ],
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "确认结果-美味烹调",
             "跳过动画-美味烹调"
@@ -151,7 +152,7 @@
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "退出活动层-美味烹调",
             "确认结果-美味烹调"
@@ -165,7 +166,7 @@
         "template": "活动层/退出.png",
         "green_mask": true,
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "确认退出活动层-美味烹调"
         ],
@@ -177,7 +178,7 @@
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "美味烹调任务结束"
         ]
@@ -185,7 +186,7 @@
     "美味烹调任务结束": {
         "recognition": "OCR",
         "expected": "战役推进",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "开始茶歇一刻任务",
             "开始逸趣导算任务",

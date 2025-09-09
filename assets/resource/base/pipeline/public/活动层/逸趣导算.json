@@ -1,3 +1,4 @@
+// 活动层太卡，有的用户那里识别得太快，这里的延迟专门调整 1000
 {
     "开始逸趣导算任务": {
         "next": [
@@ -8,7 +9,7 @@
         "recognition": "OCR",
         "expected": "活动层",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "timeout": 40000,
         "next": [
             "活动层等级提升-逸趣导算",
@@ -18,7 +19,7 @@
     "活动层等级提升-逸趣导算": {
         "recognition": "OCR",
         "expected": "活动层等级提升",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "确认活动层等级提升-逸趣导算"
         ]
@@ -27,7 +28,7 @@
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "已进入活动层-逸趣导算"
         ]
@@ -36,7 +37,7 @@
         "recognition": "TemplateMatch",
         "template": "活动层/退出.png",
         "green_mask": true,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "进入逸趣导算页面"
         ]
@@ -46,7 +47,7 @@
         "template": "活动层/逸趣导算.png",
         "green_mask": true,
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "领取逸趣导算奖励",
             "关闭逸趣导算页面"
@@ -56,7 +57,7 @@
         "recognition": "OCR",
         "expected": "键领取",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "关闭领取结果-逸趣导算"
         ]
@@ -65,7 +66,7 @@
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "关闭领取结果-逸趣导算",
             "关闭逸趣导算页面"
@@ -79,7 +80,7 @@
         ],
         "green_mask": true,
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "退出活动层-逸趣导算"
         ]
@@ -89,7 +90,7 @@
         "template": "活动层/退出.png",
         "green_mask": true,
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "确认退出活动层-逸趣导算"
         ]
@@ -98,7 +99,7 @@
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "逸趣导算任务结束"
         ]
@@ -106,7 +107,7 @@
     "逸趣导算任务结束": {
         "recognition": "OCR",
         "expected": "战役推进",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "HomePage"
         ]
