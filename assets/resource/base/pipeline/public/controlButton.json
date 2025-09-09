@@ -21,26 +21,6 @@
             "stopTask"
         ]
     },
-    "battleStart": {
-        "is_sub": true,
-        "recognition": "OCR",
-        "expected": "作战开始",
-        "action": "Click"
-    },
-    "autoBattleEnabled": {
-        "is_sub": true,
-        "recognition": "TemplateMatch",
-        "roi": [
-            1067,
-            20,
-            40,
-            35
-        ],
-        "template": "公用按钮组件/自动战斗_off.png",
-        "threshold": 0.8,
-        "action": "Click",
-        "green_mask": true
-    },
     "announcementClosed": {
         "is_sub": true,
         "recognition": "TemplateMatch",
