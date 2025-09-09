@@ -44,7 +44,7 @@
         }
     ],
     "name": "少女前线2：追放自动化助手",
-    "custom_title": "火花之罪",
+    "custom_title": "虚境新始",
     "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "mirrorchyan_rid": "MaaGF2Exilium",
     "task": [
@@ -1490,6 +1490,28 @@
         },
         "物资模式活动选择": {
             "cases": [
+                {
+                    "name": "虚境新始",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "虚境新始",
+                                "虚境",
+                                "新始",
+                                "虚境新",
+                                "境新始"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "绿洲补给站",
+                                "补给站",
+                                "绿洲补给",
+                                "洲补给"
+                            ]
+                        }
+                    }
+                },
                 {
                     "name": "循迹追演",
                     "pipeline_override": {
