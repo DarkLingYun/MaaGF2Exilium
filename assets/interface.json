@@ -1495,11 +1495,8 @@
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
-                                "虚境新始",
                                 "虚境",
-                                "新始",
-                                "虚境新",
-                                "境新始"
+                                "新始"
                             ]
                         },
                         "enterVersionActivityItemExchange": {

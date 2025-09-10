@@ -74,6 +74,7 @@
             "公用按钮组件/返回上一页_gray.png"
         ],
         "action": "Click",
+        "order_by": "Score",
         "post_delay": 2000,
         "next": [
             "HomePage",
