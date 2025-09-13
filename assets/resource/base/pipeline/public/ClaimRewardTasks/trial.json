@@ -35,8 +35,18 @@
     "swipeToFindTrial": {
         "doc": "滑动活动标签页，预演可能被藏在下面了",
         "action": "Swipe",
-        "begin": [164,533,49,33],
-        "end": [181,129,34,28],
+        "begin": [
+            164,
+            533,
+            49,
+            33
+        ],
+        "end": [
+            181,
+            129,
+            34,
+            28
+        ],
         "post_wait_freezes": 500,
         "next": [
             "trialFoundAfterSwipe",
@@ -70,7 +80,12 @@
     "trialTabClicked": {
         "doc": "预演页签已点击",
         "recognition": "OCR",
-        "roi": [391,105,877,515],
+        "roi": [
+            391,
+            105,
+            877,
+            515
+        ],
         "expected": [
             "预演"
         ],
@@ -104,81 +119,11 @@
         ],
         "post_wait_freezes": 500,
         "action": "Click",
-        "timeout": 200000,
-        "next": [
-            "trialDollIntroductionFound",
-            "stagePromotionCommunication1InTrial"
-        ]
-    },
-    "stagePromotionCommunication1InTrial": {
-        "doc": "剧情界面, 点击通信中跳过角色对话",
-        "recognition": "TemplateMatch",
-        "roi": [64,509,80,27],
-        "template": "活动/通信中.png",
-        "green_mask": true,
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "timeout": 200000,
-        "next": [
-            "trialDollIntroductionFound",
-            "stagePromotionCommunication1InTrial"
-        ]
-    },
-    "trialDollIntroductionFound": {
-        "doc": "发现人形介绍界面",
-        "recognition": "OCR",
-        "expected": "试用人形介绍",
-        "post_wait_freezes": 500,
-        "timeout": 200000,
-        "next": [
-            "clickToCloseDollIntroduction"
-        ]
-    },
-    "clickToCloseDollIntroduction": {
-        "doc": "点击关闭人形介绍",
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/关闭按钮_gray.png",
-            "公用按钮组件/关闭按钮_black.png"
-        ],
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "timeout": 200000,
-        "next": [
-            "battleCompletedInTrial",
-            "enableAutoBattleInTrial"
-        ]
-    },
-    "enableAutoBattleInTrial": {
-        "doc": "启动自动战斗",
-        "recognition": "TemplateMatch",
-        "template": "公用按钮组件/自动战斗_off.png",
-        "roi": [986,4,279,63],
-        "threshold": 0.5,
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "timeout": 200000,
-        "next": [
-            "battleCompletedInTrial"
-        ]
-    },
-    "battleCompletedInTrial": {
-        "doc": "战斗完成",
-        "recognition": "OCR",
-        "expected": "任务完成",
-        "post_wait_freezes": 500,
-        "next": [
-            "confirmBattleCompletedInTrial"
-        ]
-    },
-    "confirmBattleCompletedInTrial": {
-        "doc": "确认战斗完成",
-        "recognition": "OCR",
-        "expected": "确认",
-        "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "exitEventPageInTrial"
+        ],
+        "interrupt": [
+            "通用战斗任务开始"
         ]
     },
     "exitEventPageInTrial": {
