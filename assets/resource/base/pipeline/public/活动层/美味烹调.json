@@ -106,7 +106,10 @@
     },
     "邀请人形-美味烹调": {
         "recognition": "OCR",
-        "expected": "下一步",
+        "expected": [
+            "^下一步$",
+            "^下.?$"
+        ],
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [

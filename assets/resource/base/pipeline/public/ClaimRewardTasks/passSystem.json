@@ -172,8 +172,7 @@
         "recognition": "OCR",
         "expected": [
             "^开启$",
-            "^下-",
-            "^下一",
+            "^下.?$",
             "^下一个$"
         ],
         "action": "Click",
