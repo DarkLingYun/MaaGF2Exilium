@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
 
-using MFAWPF.Helper;
-using MFAWPF.Views;
+using MFAAvalonia.Helper;
+using MFAAvalonia.Views;
 using MaaFramework.Binding;
 using MaaFramework.Binding.Custom;
 
-namespace MFAWPF.Custom;
+namespace MFAAvalonia.Custom;
 
 public class LoginPayload
 {

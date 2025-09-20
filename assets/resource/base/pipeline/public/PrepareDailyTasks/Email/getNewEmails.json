@@ -64,7 +64,7 @@
         ]
     },
     "surveyEmailFound": {
-        "doc": "中间节点，用于触发 mfawpf 的通知",
+        "doc": "中间节点，用于触发 mfa 的通知",
         "focus": {
             "start": "[color:red]发现调研邀请邮件，请手动处理[/color]",
             "toast": "发现调研邀请邮件，请手动处理"
