@@ -115,7 +115,8 @@
         "action": "Click",
         "post_wait_freezes": 200,
         "next": [
-            "confirmChallengeWithOpponent"
+            "confirmChallengeWithOpponent",
+            "challengeOpponentSelection"
         ]
     },
     "confirmChallengeWithOpponent": {
@@ -129,6 +130,7 @@
         "recognition": "OCR",
         "expected": "进攻",
         "action": "Click",
+        "post_wait_freezes": 800,
         "next": [
             "confirmCombatExerciseOpponentListPage"
         ],

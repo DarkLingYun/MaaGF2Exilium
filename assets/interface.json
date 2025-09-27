@@ -1708,7 +1708,7 @@
                     }
                 },
                 {
-                    "name": "溯回时光之隙(美服/国际服)",
+                    "name": "溯回时光之隙（上）(美服/国际服)(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -1725,6 +1725,40 @@
                         "enterVersionActivityItemExchange": {
                             "expected": [
                                 "时光小筑"
+                            ]
+                        },
+                        "selectExchangeType": {
+                            "enabled": true,
+                            "expected": [
+                                "时光小筑.*上篇"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "溯回时光之隙（下）(美服/国际服)",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "溯回时光之隙",
+                                "^溯回"
+                            ]
+                        },
+                        "switchVersionActivityChapter": {
+                            "enabled": true,
+                            "expected": [
+                                "循迹追演"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "时光小筑"
+                            ]
+                        },
+                        "selectExchangeType": {
+                            "enabled": true,
+                            "expected": [
+                                "时光小筑.*下篇"
                             ]
                         }
                     }

@@ -28,7 +28,8 @@
         "post_wait_freezes": 500,
         "next": [
             "closeClaimResult",
-            "claimSupportDollRewards"
+            "claimSupportDollRewards",
+            "claimResultClosed"
         ]
     },
     "closeClaimResult":{

@@ -51,6 +51,12 @@
         "expected": [
             "可部署"
         ],
+        "roi": [
+            385,
+            274,
+            506,
+            142
+        ],
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
@@ -151,7 +157,6 @@
         "post_wait_freezes": 500
     },
     // 下面的节点用于内部 interrupt，处理各种类似不同战斗前后的附加内容
-    
     "实兵演习等级晋级-通用战斗": {
         "recognition": "OCR",
         "expected": [
