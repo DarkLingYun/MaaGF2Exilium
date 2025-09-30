@@ -12,6 +12,7 @@
             "仓库/道具箱.png"
         ],
         "action": "Click",
+        "green_mask": true,
         "post_wait_freezes": 500,
         "next": [
             "itemBoxTabSelected"
@@ -40,7 +41,14 @@
         "template": [
             "仓库/物资助力箱.png"
         ],
+        "roi": [
+            127,
+            126,
+            655,
+            402
+        ],
         "action": "Click",
+        "threshold": 0.3,
         "post_wait_freezes": 500,
         "next": [
             "useSupplySupportBoxItem"

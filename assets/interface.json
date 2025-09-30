@@ -363,18 +363,18 @@
         "拆解武器等级": {
             "cases": [
                 {
-                    "name": "旧式未培养武器",
+                    "name": "旧式未培养",
                     "pipeline_override": {
                         "chooseWeaponLevel": {
-                            "expected": "旧式未培养武器"
+                            "expected": "旧式未培养"
                         }
                     }
                 },
                 {
-                    "name": "标准及以下未培养武器",
+                    "name": "标准及以下未培养",
                     "pipeline_override": {
                         "chooseWeaponLevel": {
-                            "expected": "标准及以下未培养武器"
+                            "expected": "标准及以下未培养"
                         }
                     }
                 }
