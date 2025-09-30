@@ -94,7 +94,7 @@
         ]
     },
     "exitPeakValueAssessment": {
-        "doc": "退出兵棋推演页面",
+        "doc": "退出峰值推定页面",
         "recognition": "TemplateMatch",
         "roi": [
             0,
