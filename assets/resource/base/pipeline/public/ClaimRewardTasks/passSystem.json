@@ -3,7 +3,8 @@
         "doc": "开始巡录任务",
         "next": [
             "findPassByText",
-            "findPassByImage"
+            "findPassByImage",
+            "当前不存在巡录"
         ]
     },
     "findPassByText": {
@@ -27,6 +28,11 @@
         "post_wait_freezes": 500,
         "next": [
             "switchToDailyPassRewardPage"
+        ]
+    },
+    "当前不存在巡录": {
+        "next": [
+            "passSystemPageExited"
         ]
     },
     "switchToDailyPassRewardPage": {
