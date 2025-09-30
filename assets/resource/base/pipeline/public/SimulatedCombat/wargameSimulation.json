@@ -1,5 +1,7 @@
 {
     "enterMilitarySimulationTask": {
+        "doc": "进入兵棋推演界面,关闭",
+        "enabled": false,
         "action": "Swipe",
         "begin": [
             1124,
@@ -105,8 +107,18 @@
     "tryToFindMoreReward": {
         "doc": "滑动到累计参与20次的位置",
         "action": "Swipe",
-        "begin": [840, 517, 10, 10],
-        "end": [840, 280, 10, 10],
+        "begin": [
+            840,
+            517,
+            10,
+            10
+        ],
+        "end": [
+            840,
+            280,
+            10,
+            10
+        ],
         "post_wait_freezes": 1000,
         "next": [
             "claimRewardInNewLocation",
@@ -151,7 +163,7 @@
         ]
     },
     "rewardsRemained": {
-        "doc":"有未完成的奖励,准备继续战斗",
+        "doc": "有未完成的奖励,准备继续战斗",
         "recognition": "OCR",
         "expected": "未完成",
         "next": [
@@ -167,7 +179,12 @@
     "closeClaimRewardPageToContinue": {
         "doc": "关闭奖励预览页面",
         "recognition": "TemplateMatch",
-        "roi": [983,99,59,49],
+        "roi": [
+            983,
+            99,
+            59,
+            49
+        ],
         "template": [
             "公用按钮组件/关闭按钮_gray.png",
             "公用按钮组件/关闭按钮_black.png"
@@ -181,7 +198,12 @@
     "closeClaimRewardPageToLeave": {
         "doc": "关闭奖励预览页面",
         "recognition": "TemplateMatch",
-        "roi": [983,99,59,49],
+        "roi": [
+            983,
+            99,
+            59,
+            49
+        ],
         "template": [
             "公用按钮组件/关闭按钮_gray.png",
             "公用按钮组件/关闭按钮_black.png"

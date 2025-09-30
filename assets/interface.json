@@ -126,8 +126,7 @@
                 "自动调整战斗速度为 3 倍速",
                 "实兵演习对象战力值范围",
                 "自动领取峰值推定奖励",
-                "极限峰值（0级战斗）",
-                "自动兵棋推演"
+                "极限峰值（0级战斗）"
             ],
             "check": true,
             "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
@@ -1422,26 +1421,6 @@
                     "name": "NO",
                     "pipeline_override": {
                         "开始极限峰值任务": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "自动兵棋推演": {
-            "cases": [
-                {
-                    "name": "YES",
-                    "pipeline_override": {
-                        "enterMilitarySimulationTask": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "NO",
-                    "pipeline_override": {
-                        "enterMilitarySimulationTask": {
                             "enabled": false
                         }
                     }
