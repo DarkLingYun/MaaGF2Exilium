@@ -49,9 +49,9 @@
         "doc": "点击展开武器等级多选框",
         "recognition": "OCR",
         "expected": [
-            "旧式未培养武器",
-            "标准及以下未培养武器",
-            "精英及以下未培养武器"
+            "旧式未培养",
+            "标准及以下未培养",
+            "精英及以下未培养"
         ],
         "action": "Click",
         "target": true,
@@ -63,7 +63,7 @@
     "chooseWeaponLevel": {
         "doc": "选择需要拆解的级别",
         "recognition": "OCR",
-        "expected": "旧式未培养武器",
+        "expected": "旧式未培养",
         "action": "Click",
         "target": true,
         "post_wait_freezes": 500,
