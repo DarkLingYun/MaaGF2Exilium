@@ -5,6 +5,7 @@ on:
 
 jobs:
   mirrorchyan:
+    if: ${{ github.repository_owner == 'DarkLingYun' }}
     runs-on: macos-latest
     strategy:
       fail-fast: false
@@ -28,6 +29,7 @@ jobs:
           
   mirrorchyan_res:
     runs-on: macos-latest
+    if: ${{ github.repository_owner == 'DarkLingYun' }}
     steps:
       - id: uploading
         uses: MirrorChyan/uploading-action@v1
