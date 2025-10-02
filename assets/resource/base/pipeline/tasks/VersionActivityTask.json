@@ -28,7 +28,10 @@
             414
         ],
         "expected": [
-            "火花之罪"
+            "歧路双轨",
+            "歧路",
+            "双轨",
+            "路双"
         ],
         "action": "Click",
         "post_wait_freezes": 2000,

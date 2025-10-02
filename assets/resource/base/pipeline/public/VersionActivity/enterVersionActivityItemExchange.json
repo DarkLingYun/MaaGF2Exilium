@@ -4,7 +4,7 @@
         "enabled": true,
         "recognition": "OCR",
         "expected": [
-            "临时据点"
+            "人形互助站"
         ],
         "index": -1,
         "action": "Click",
