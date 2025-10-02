@@ -44,7 +44,7 @@
         }
     ],
     "name": "少女前线2：追放自动化助手",
-    "custom_title": "虚境新始",
+    "custom_title": "歧路双轨",
     "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "mirrorchyan_rid": "MaaGF2Exilium",
     "task": [
@@ -1469,6 +1469,37 @@
         },
         "物资模式活动选择": {
             "cases": [
+                {
+                    "name": "歧路双轨·上篇",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "歧路双轨",
+                                "歧路",
+                                "双轨",
+                                "路双"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "人形互助站"
+                            ]
+                        },
+                        "switchVersionActivityChapter": {
+                            "enabled": true,
+                            "expected": [
+                                "^歧路双轨.*上篇$",
+                                "^双轨.*上篇$"
+                            ]
+                        },
+                        "selectExchangeType": {
+                            "enabled": true,
+                            "expected": [
+                                "^上篇$"
+                            ]
+                        }
+                    }
+                },
                 {
                     "name": "虚境新始",
                     "pipeline_override": {
