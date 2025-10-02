@@ -1,8 +1,12 @@
 // 通用节点，建议在作为其他节点的 interrupt
 {
-    "点击空白处关闭-通用":{
+    "点击空白处关闭-通用": {
         "recognition": "OCR",
-        "expected": "点击空白处关闭",
+        "expected": [
+            "点击空白处关闭",
+            "点击任意位置继续",
+            "点击屏幕任意位置继续"
+        ],
         "action": "Click",
         "post_wait_freezes": 500
     }
