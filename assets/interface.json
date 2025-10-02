@@ -1497,6 +1497,18 @@
                             "expected": [
                                 "^上篇$"
                             ]
+                        },
+                        "selectResourceModeLevel": {
+                            "doc": "选择物资模式关卡",
+                            "recognition": "TemplateMatch",
+                            "template": "版本活动/歧路物资5.png",
+                            "action": "Click",
+                            "roi": [
+                                0,
+                                276,
+                                1280,
+                                142
+                            ]
                         }
                     }
                 },
