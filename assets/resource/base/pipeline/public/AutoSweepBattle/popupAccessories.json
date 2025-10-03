@@ -86,10 +86,10 @@
         "enabled": true,
         "recognition": "OCR",
         "roi": [
-            570,
-            343,
-            141,
-            49
+            607,
+            352,
+            70,
+            34
         ],
         "expected": "1",
         "next": [
