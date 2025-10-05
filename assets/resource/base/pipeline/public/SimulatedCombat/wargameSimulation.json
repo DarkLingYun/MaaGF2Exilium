@@ -257,6 +257,7 @@
     },
     "warGameMatchSuccess": {
         "recognition": "OCR",
+        "timeout": 200000,
         "expected": "匹配成功",
         "next": [
             "confirmWarGameSimulationPage"
