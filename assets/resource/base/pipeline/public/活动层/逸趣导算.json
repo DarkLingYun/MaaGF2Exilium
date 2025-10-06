@@ -49,6 +49,15 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
+            "已进入逸趣导算页面",
+            "进入逸趣导算页面"
+        ]
+    },
+    "已进入逸趣导算页面": {
+        "recognition": "OCR",
+        "expected": "逸趣",
+        "post_wait_freezes": 1000,
+        "next": [
             "领取逸趣导算奖励",
             "关闭逸趣导算页面"
         ]
