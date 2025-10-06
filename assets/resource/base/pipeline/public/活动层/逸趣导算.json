@@ -47,6 +47,7 @@
         "template": "活动层/逸趣导算.png",
         "green_mask": true,
         "action": "Click",
+        "order_by": "Score",
         "post_wait_freezes": 1000,
         "next": [
             "已进入逸趣导算页面",
