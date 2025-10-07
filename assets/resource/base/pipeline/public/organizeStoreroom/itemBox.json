@@ -120,6 +120,8 @@
         "template": [
             "仓库/顶级生长数据随机箱.png"
         ],
+        "green_mask": true,
+        "order_by": "Score",
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
@@ -136,6 +138,8 @@
         "template": [
             "仓库/顶级生长数据随机箱.png"
         ],
+        "green_mask": true,
+        "order_by": "Score",
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
@@ -151,6 +155,8 @@
         "template": [
             "仓库/顶级生长数据随机箱.png"
         ],
+        "green_mask": true,
+        "order_by": "Score",
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
@@ -165,6 +171,8 @@
         "template": [
             "仓库/顶级生长数据随机箱.png"
         ],
+        "green_mask": true,
+        "order_by": "Score",
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
