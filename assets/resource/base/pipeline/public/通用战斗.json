@@ -85,7 +85,8 @@
             279,
             63
         ],
-        "threshold": 0.9,
+        "threshold": 0.75,
+        "order_by": "Score",
         "green_mask": true,
         "action": "Click",
         "post_wait_freezes": 500,
