@@ -136,7 +136,7 @@
     },
     "制作饮品-茶歇一刻": {
         "recognition": "OCR",
-        "expected": "制作",
+        "expected": "^制作$",
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
