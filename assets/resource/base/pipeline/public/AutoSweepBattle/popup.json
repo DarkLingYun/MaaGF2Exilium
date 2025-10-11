@@ -176,10 +176,10 @@
         "enabled": true,
         "recognition": "OCR",
         "roi": [
-            574,
-            282,
-            136,
-            45
+            613,
+            288,
+            49,
+            36
         ],
         "expected": "1",
         "next": [

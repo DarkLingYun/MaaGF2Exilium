@@ -110,10 +110,10 @@
         "enabled": false,
         "recognition": "OCR",
         "roi": [
-            574,
-            282,
-            136,
-            45
+            620,
+            289,
+            38,
+            37
         ],
         "expected": "1",
         "next": [
