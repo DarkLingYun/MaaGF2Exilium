@@ -1,0 +1,370 @@
+{
+    "开始格琳喵的委托任务": {
+        "next": [
+            "确认当前在主页-格琳喵的委托"
+        ]
+    },
+    "确认当前在主页-格琳喵的委托": {
+        "recognition": "OCR",
+        "expected": [
+            "战役推进"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "进入活动页面-格琳喵的委托"
+        ]
+    },
+    "进入活动页面-格琳喵的委托": {
+        "recognition": "OCR",
+        "expected": [
+            "^活动$"
+        ],
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "next": [
+            "发现格琳喵的委托",
+            "滑动寻找格琳喵的委托"
+        ]
+    },
+    "发现格琳喵的委托": {
+        "recognition": "OCR",
+        "expected": [
+            "格琳喵的委托",
+            "格琳",
+            "喵的委托"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "点击格琳喵的委托标签页"
+        ]
+    },
+    "滑动寻找格琳喵的委托": {
+        "action": "Swipe",
+        "begin": [
+            164,
+            533,
+            49,
+            33
+        ],
+        "end": [
+            181,
+            129,
+            34,
+            28
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "滑动后发现格琳喵的委托",
+            "退出活动页面-格琳喵的委托"
+        ]
+    },
+    "滑动后发现格琳喵的委托": {
+        "recognition": "OCR",
+        "expected": [
+            "格琳喵的委托",
+            "格琳",
+            "喵的委托"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "点击格琳喵的委托标签页"
+        ]
+    },
+    "点击格琳喵的委托标签页": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": [
+            "格琳喵的委托",
+            "格琳",
+            "喵的委托"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "进入格琳喵的委托页面",
+            "退出活动页面-格琳喵的委托"
+        ]
+    },
+    "进入格琳喵的委托页面": {
+        "recognition": "OCR",
+        "expected": [
+            "委托详情"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "已进入格琳喵的委托页面"
+        ]
+    },
+    "已进入格琳喵的委托页面": {
+        "recognition": "OCR",
+        "expected": [
+            "喵封",
+            "愉悦馈赠"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "进入搜寻喵封物资页面"
+        ]
+    },
+    "进入搜寻喵封物资页面": {
+        "recognition": "OCR",
+        "expected": [
+            "喵封"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "领取喵封物资",
+            "关闭搜寻喵封物资页面"
+        ]
+    },
+    "领取喵封物资": {
+        "recognition": "OCR",
+        "expected": [
+            "领取"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "进入搜寻喵封物资页面"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用"
+        ]
+    },
+    "关闭搜寻喵封物资页面": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "开始使用喵封物资购物"
+        ]
+    },
+    "进入愉悦馈赠页面": {
+        "recognition": "OCR",
+        "expected": [
+            "愉悦馈赠"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "领取愉悦馈赠物资",
+            "滑动页面寻找更多愉悦馈赠物资"
+        ]
+    },
+    "领取愉悦馈赠物资": {
+        "recognition": "OCR",
+        "expected": [
+            "领取"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "进入愉悦馈赠页面"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用"
+        ]
+    },
+    "滑动页面寻找更多愉悦馈赠物资": {
+        "action": "Swipe",
+        "begin": [
+            756,
+            550,
+            19,
+            19
+        ],
+        "end": [
+            762,
+            224,
+            18,
+            25
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "已滑动到愉悦馈赠新页面"
+        ]
+    },
+    "已滑动到愉悦馈赠新页面": {
+        "recognition": "OCR",
+        "expected": [
+            "愉悦馈赠"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "新页面领取愉悦馈赠物资",
+            "关闭愉悦馈赠页面"
+        ]
+    },
+    "新页面领取愉悦馈赠物资": {
+        "recognition": "OCR",
+        "expected": [
+            "领取"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "已滑动到愉悦馈赠新页面"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用"
+        ]
+    },
+    "关闭愉悦馈赠页面": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "直接返回主页-格琳喵的委托"
+        ]
+    },
+    "开始使用喵封物资购物": {
+        "next": [
+            "使用喵封物资购物",
+            "滑动寻找更多喵封物资购物"
+        ]
+    },
+    "使用喵封物资购物": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动/喵封物资.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "已打开购物详情界面-格琳喵的委托"
+        ]
+    },
+    "已打开购物详情界面-格琳喵的委托": {
+        "recognition": "OCR",
+        "expected": [
+            "商品购买"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "调整物品为最大购买数量-格琳喵的委托"
+        ]
+    },
+    "调整物品为最大购买数量-格琳喵的委托": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/调整购买数量按钮.png"
+        ],
+        "action": "Swipe",
+        "end_offset": [
+            500,
+            0,
+            0,
+            0
+        ],
+        "post_wait_freezes": 500,
+        "green_mask": true,
+        "next": [
+            "确认购买-格琳喵的委托"
+        ]
+    },
+    "确认购买-格琳喵的委托": {
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "购买未成功-格琳喵的委托",
+            "开始使用喵封物资购物"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用",
+            "心情提升-格琳喵的委托"
+        ]
+    },
+    "购买未成功-格琳喵的委托": {
+        "recognition": "OCR",
+        "expected": [
+            "商品购买",
+            "喵封物资不足"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "关闭购买页面-格琳喵的委托"
+        ]
+    },
+    "关闭购买页面-格琳喵的委托": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "进入愉悦馈赠页面"
+        ]
+    },
+    "滑动寻找更多喵封物资购物": {
+        "action": "Swipe",
+        "begin": [1070,565,38,29],
+        "end": [223,561,37,22],
+        "post_wait_freezes": 500,
+        "next": [
+            "已滑动到喵封物资新页面"
+        ]
+    },
+    "已滑动到喵封物资新页面": {
+        "next": [
+            "使用喵封物资购物",
+            "进入愉悦馈赠页面"
+        ]
+    },
+    "直接返回主页-格琳喵的委托": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_black.png",
+            "公用按钮组件/主页按钮_gray.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "格琳喵的委托任务结束"
+        ]
+    },
+    "退出活动页面-格琳喵的委托": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "格琳喵的委托任务结束",
+            "退出活动页面-格琳喵的委托"
+        ]
+    },
+    "格琳喵的委托任务结束": {
+        "recognition": "OCR",
+        "post_wait_freezes": 500,
+        "expected": [
+            "战役推进"
+        ],
+        "next": [
+            "HomePage"
+        ]
+    },
+    "心情提升-格琳喵的委托": {
+        "recognition": "OCR",
+        "expected": [
+            "心情提升"
+        ],
+        "post_wait_freezes": 5000
+    }
+}

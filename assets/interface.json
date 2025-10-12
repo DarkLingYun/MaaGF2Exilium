@@ -191,7 +191,8 @@
                 "铁玫瑰赠礼",
                 "火玫瑰赠礼",
                 "艾莫号许愿池",
-                "模拟习练"
+                "模拟习练",
+                "格琳喵的委托"
             ],
             "check": true,
             "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
@@ -2271,6 +2272,26 @@
                     "name": "NO",
                     "pipeline_override": {
                         "开始模拟习练任务": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "格琳喵的委托": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "开始格琳喵的委托任务": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "开始格琳喵的委托任务": {
                             "enabled": false
                         }
                     }
