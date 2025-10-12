@@ -102,19 +102,6 @@
             "直接返回主页-暗香赠礼"
         ]
     },
-    "返回活动页面-暗香赠礼": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/返回上一页_black_v2.png",
-            "公用按钮组件/返回上一页_gray_v2.png"
-        ],
-        "green_mask": true,
-        "post_wait_freezes": 500,
-        "action": "Click",
-        "next": [
-            "退出活动页面-暗香赠礼"
-        ]
-    },
     "开启铁玫瑰赠礼": {
         "recognition": "OCR",
         "expected": [
@@ -360,6 +347,7 @@
         "next": [
             "开始艾莫号许愿池任务",
             "开始模拟习练任务",
+            "开始格琳喵的委托任务",
             "HomePage"
         ]
     }
