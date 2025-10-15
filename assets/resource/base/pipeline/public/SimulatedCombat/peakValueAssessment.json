@@ -16,6 +16,9 @@
         "next": [
             "peakValueAssessmentPageEnteredForFirstTime",
             "peakValueAssessmentPageEnteredAgain"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用"
         ]
     },
     "peakValueAssessmentPageEnteredForFirstTime": {
@@ -31,6 +34,9 @@
         "next": [
             "claimRewards",
             "closePeriodicReturnsPage"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用"
         ]
     },
     "peakValueAssessmentPageEnteredAgain": {
