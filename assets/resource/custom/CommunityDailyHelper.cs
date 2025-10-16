@@ -10,13 +10,11 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Diagnostics;
 using System.IO;
-
-using MFAWPF.Helper;
-using MFAWPF.Views;
 using MaaFramework.Binding;
 using MaaFramework.Binding.Custom;
+using MFAAvalonia.Helper;
 
-namespace MFAWPF.Custom;
+namespace MFAAvalonia.Custom;
 
 public class LoginPayload
 {
@@ -87,7 +85,10 @@ public static class CommunityDailyHelper
         {
             using var httpClient = new HttpClient();
             var url = "https://gf2-bbs-api.sunborngame.com/login/account";
-            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
 
             payload.Source = payload.AccountName.Contains("@") ? "mail" : "phone";
 
@@ -137,7 +138,10 @@ public static class CommunityDailyHelper
         {
             using var httpClient = new HttpClient();
             var url = "https://gf2-bbs-api.sunborngame.com/community/item/exchange";
-            var requestBody = new ExchangeRequestBody { ExchangeId = exchangeId };
+            var requestBody = new ExchangeRequestBody
+            {
+                ExchangeId = exchangeId
+            };
 
             var json = JsonSerializer.Serialize(requestBody);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -152,11 +156,11 @@ public static class CommunityDailyHelper
             response.EnsureSuccessStatusCode();
 
             var responseBody = await response.Content.ReadAsStringAsync();
-            LoggerService.LogInfo($"物品兑换: {responseBody}");
+            LoggerHelper.Info($"物品兑换: {responseBody}");
         }
         catch (Exception ex)
         {
-            LoggerService.LogError($"社区每日操作: 兑换失败, {ex.Message}");
+            LoggerHelper.Error($"社区每日操作: 兑换失败, {ex.Message}");
         }
     }
 
@@ -180,7 +184,7 @@ public static class CommunityDailyHelper
         }
         catch (Exception ex)
         {
-            LoggerService.LogError($"社区每日操作: 登录失败, {ex}");
+            LoggerHelper.Error($"社区每日操作: 登录失败, {ex}");
             throw;
         }
     }
@@ -191,7 +195,10 @@ public static class CommunityDailyHelper
         {
             using var httpClient = new HttpClient();
             var url = "https://gf2-bbs-api.sunborngame.com/community/topic/list?sort_type=2";
-            var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+            var options = new JsonSerializerOptions
+            {
+                PropertyNameCaseInsensitive = true
+            };
 
             var response = await httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
@@ -200,12 +207,12 @@ public static class CommunityDailyHelper
             var data = JsonSerializer.Deserialize<CommunityResponse>(responseBody, options);
 
             var topicIds = data.Data.List.Take(3).Select(t => t.TopicId).ToList();
-            LoggerService.LogInfo($"TopicIDs: {string.Join(", ", topicIds)}");
+            LoggerHelper.Info($"TopicIDs: {string.Join(", ", topicIds)}");
             return topicIds;
         }
         catch (Exception ex)
         {
-            LoggerService.LogInfo($"社区每日操作: Topic获取失败, {ex.Message}");
+            LoggerHelper.Info($"社区每日操作: Topic获取失败, {ex.Message}");
             return new List<int>();
         }
     }
@@ -222,29 +229,29 @@ public static class CommunityDailyHelper
             var viewUrl = $"{baseUrl}/{topicId}?id={topicId}";
             var response = await httpClient.GetAsync(viewUrl);
             response.EnsureSuccessStatusCode();
-            LoggerService.LogInfo($"\nTopicView: {await response.Content.ReadAsStringAsync()}");
+            LoggerHelper.Info($"\nTopicView: {await response.Content.ReadAsStringAsync()}");
 
             // Like
             var likeUrl = $"{baseUrl}/like/{topicId}?id={topicId}";
             response = await httpClient.GetAsync(likeUrl);
             response.EnsureSuccessStatusCode();
-            LoggerService.LogInfo($"\nTopicLike: {await response.Content.ReadAsStringAsync()}");
+            LoggerHelper.Info($"\nTopicLike: {await response.Content.ReadAsStringAsync()}");
 
             // Share
             var shareUrl = $"{baseUrl}/share/{topicId}?id={topicId}";
             response = await httpClient.GetAsync(shareUrl);
             response.EnsureSuccessStatusCode();
-            LoggerService.LogInfo($"\nTopicShare: {await response.Content.ReadAsStringAsync()}");
+            LoggerHelper.Info($"\nTopicShare: {await response.Content.ReadAsStringAsync()}");
         }
         catch (Exception ex)
         {
-            LoggerService.LogInfo($"社区每日操作: Topic操作失败, {ex.Message}");
+            LoggerHelper.Info($"社区每日操作: Topic操作失败, {ex.Message}");
         }
     }
 
     public static async Task ExecuteDailyTaskAsync(LoginPayload userPayload)
     {
-        LoggerService.LogInfo("社区每日操作: 开始");
+        LoggerHelper.Info("社区每日操作: 开始");
         try
         {
             var loginTask = LoginAsync(userPayload);
@@ -256,7 +263,10 @@ public static class CommunityDailyHelper
 
             try
             {
-                var tasks = new List<Task> { SignInAsync(jwtToken) };
+                var tasks = new List<Task>
+                {
+                    SignInAsync(jwtToken)
+                };
                 tasks.AddRange(topicList.Select(topicId => TopicHandleAsync(topicId, jwtToken)));
                 await Task.WhenAll(tasks);
             }
@@ -267,17 +277,26 @@ public static class CommunityDailyHelper
 
             try
             {
-                var exchangeIds = new[] { 1, 1, 2, 3, 4, 5, 7 };
+                var exchangeIds = new[]
+                {
+                    1,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    7
+                };
                 foreach (var id in exchangeIds)
                 {
                     await ExchangeItemAsync(id, jwtToken);
                     await DelayAsync(1000);
                 }
-                LoggerService.LogInfo("社区每日操作: 兑换成功");
+                LoggerHelper.Info("社区每日操作: 兑换成功");
             }
             catch (Exception ex)
             {
-                LoggerService.LogError($"社区每日操作: 兑换失败, {ex}");
+                LoggerHelper.Error($"社区每日操作: 兑换失败, {ex}");
             }
         }
         catch (Exception ex)
@@ -334,25 +353,31 @@ public class CommunityDailyAction : IMaaCustomAction
                     account_name = "手机号或邮箱",
                     passwd = ""
                 };
-                string json = JsonSerializer.Serialize(initialContent, new JsonSerializerOptions { WriteIndented = true });
+                string json = JsonSerializer.Serialize(initialContent, new JsonSerializerOptions
+                {
+                    WriteIndented = true
+                });
                 json = System.Text.RegularExpressions.Regex.Unescape(json);
                 File.WriteAllText(secretFilePath, json);
             }
 
-            var options = new JsonSerializerOptions { ReadCommentHandling = JsonCommentHandling.Skip };
+            var options = new JsonSerializerOptions
+            {
+                ReadCommentHandling = JsonCommentHandling.Skip
+            };
             string jsonContent = File.ReadAllText(secretFilePath);
             LoginPayload payload = JsonSerializer.Deserialize<LoginPayload>(jsonContent, options)
                 ?? throw new InvalidDataException("反序列化结果为 null");
             payload.Password = PasswordHelper.GetMD5HashedPassword(payload.Password); // MD5加密后再发送给社区服务器
             CommunityDailyHelper.ExecuteDailyTaskAsync(payload).GetAwaiter().GetResult();
 
-            LoggerService.LogInfo("社区每日操作: 执行成功");
+            LoggerHelper.Info("社区每日操作: 执行成功");
             return true;
         }
         catch (Exception ex)
         {
-            LoggerService.LogError($"社区每日操作: 执行失败, {ex}");
-            GrowlHelper.ErrorGlobal($"社区每日操作: 执行失败, {ex.Message}");
+            LoggerHelper.Error($"社区每日操作: 执行失败, {ex}");
+            ToastHelper.Error($"社区每日操作: 执行失败", ex.Message);
             return false;
         }
     }
