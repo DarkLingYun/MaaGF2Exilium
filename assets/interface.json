@@ -89,6 +89,17 @@
             "check": true
         },
         {
+            "name": "活动层",
+            "entry": "开始活动层任务",
+            "option": [
+                "美味烹调",
+                "茶歇一刻",
+                "饮品加成",
+                "领取逸趣导算进度奖励"
+            ],
+            "check": true
+        },
+        {
             "name": "定向精研(刷配件)",
             "entry": "AutoSweepBattle",
             "option": [
@@ -196,17 +207,6 @@
             ],
             "check": true,
             "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
-        },
-        {
-            "name": "活动层",
-            "entry": "开始活动层任务",
-            "option": [
-                "美味烹调",
-                "茶歇一刻",
-                "饮品加成",
-                "领取逸趣导算进度奖励"
-            ],
-            "check": true
         },
         {
             "name": "关闭游戏",
@@ -758,6 +758,126 @@
                             "enabled": false
                         },
                         "exitAutoSweepBattleTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "美味烹调": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "开始美味烹调任务": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "开始美味烹调任务": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "茶歇一刻": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "开始茶歇一刻任务": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "开始茶歇一刻任务": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "饮品加成": {
+            "cases": [
+                {
+                    "name": "星标饮品",
+                    "pipeline_override": {
+                        "选择饮品-茶歇一刻": {
+                            "template": "活动层/星标.png"
+                        }
+                    }
+                },
+                {
+                    "name": "战场报告",
+                    "pipeline_override": {
+                        "选择饮品-茶歇一刻": {
+                            "template": "活动层/战场报告.png"
+                        }
+                    }
+                },
+                {
+                    "name": "解析图纸",
+                    "pipeline_override": {
+                        "选择饮品-茶歇一刻": {
+                            "template": "活动层/解析图纸.png"
+                        }
+                    }
+                },
+                {
+                    "name": "存量条",
+                    "pipeline_override": {
+                        "选择饮品-茶歇一刻": {
+                            "template": "活动层/存量条.png"
+                        }
+                    }
+                },
+                {
+                    "name": "转录导体",
+                    "pipeline_override": {
+                        "选择饮品-茶歇一刻": {
+                            "template": "活动层/转录导体.png"
+                        }
+                    }
+                },
+                {
+                    "name": "内存条",
+                    "pipeline_override": {
+                        "选择饮品-茶歇一刻": {
+                            "template": "活动层/内存条.png"
+                        }
+                    }
+                },
+                {
+                    "name": "数据链路",
+                    "pipeline_override": {
+                        "选择饮品-茶歇一刻": {
+                            "template": "活动层/数据链路.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "领取逸趣导算进度奖励": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "开始逸趣导算任务": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "开始逸趣导算任务": {
                             "enabled": false
                         }
                     }
@@ -2292,126 +2412,6 @@
                     "name": "NO",
                     "pipeline_override": {
                         "开始格琳喵的委托任务": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "美味烹调": {
-            "cases": [
-                {
-                    "name": "YES",
-                    "pipeline_override": {
-                        "开始美味烹调任务": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "NO",
-                    "pipeline_override": {
-                        "开始美味烹调任务": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "茶歇一刻": {
-            "cases": [
-                {
-                    "name": "YES",
-                    "pipeline_override": {
-                        "开始茶歇一刻任务": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "NO",
-                    "pipeline_override": {
-                        "开始茶歇一刻任务": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "饮品加成": {
-            "cases": [
-                {
-                    "name": "星标饮品",
-                    "pipeline_override": {
-                        "选择饮品-茶歇一刻": {
-                            "template": "活动层/星标.png"
-                        }
-                    }
-                },
-                {
-                    "name": "战场报告",
-                    "pipeline_override": {
-                        "选择饮品-茶歇一刻": {
-                            "template": "活动层/战场报告.png"
-                        }
-                    }
-                },
-                {
-                    "name": "解析图纸",
-                    "pipeline_override": {
-                        "选择饮品-茶歇一刻": {
-                            "template": "活动层/解析图纸.png"
-                        }
-                    }
-                },
-                {
-                    "name": "存量条",
-                    "pipeline_override": {
-                        "选择饮品-茶歇一刻": {
-                            "template": "活动层/存量条.png"
-                        }
-                    }
-                },
-                {
-                    "name": "转录导体",
-                    "pipeline_override": {
-                        "选择饮品-茶歇一刻": {
-                            "template": "活动层/转录导体.png"
-                        }
-                    }
-                },
-                {
-                    "name": "内存条",
-                    "pipeline_override": {
-                        "选择饮品-茶歇一刻": {
-                            "template": "活动层/内存条.png"
-                        }
-                    }
-                },
-                {
-                    "name": "数据链路",
-                    "pipeline_override": {
-                        "选择饮品-茶歇一刻": {
-                            "template": "活动层/数据链路.png"
-                        }
-                    }
-                }
-            ]
-        },
-        "领取逸趣导算进度奖励": {
-            "cases": [
-                {
-                    "name": "YES",
-                    "pipeline_override": {
-                        "开始逸趣导算任务": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "NO",
-                    "pipeline_override": {
-                        "开始逸趣导算任务": {
                             "enabled": false
                         }
                     }
