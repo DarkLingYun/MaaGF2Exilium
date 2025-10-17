@@ -1755,7 +1755,7 @@
                     }
                 },
                 {
-                    "name": "心跳游乐园",
+                    "name": "心跳游乐园（美服/国际服）",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -1879,7 +1879,7 @@
                     }
                 },
                 {
-                    "name": "溯回时光之隙（下）(美服/国际服)",
+                    "name": "溯回时光之隙（下）(美服/国际服)(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
