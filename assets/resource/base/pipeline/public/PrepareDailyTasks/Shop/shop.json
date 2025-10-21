@@ -25,7 +25,10 @@
         "post_wait_freezes": 800,
         "next": [
             "TimeLimitedGiftPackagePageSwipe"
-        ]
+        ],
+        "focus": {
+            "succeeded": "已进入购买每周礼包页"
+        }
     },
     "TimeLimitedGiftPackagePageSwipe": {
         "doc": "从下向上滑动",
@@ -89,7 +92,10 @@
         "next": [
             "clickDailySupplyBox",
             "exitGameStore"
-        ]
+        ],
+        "focus": {
+            "succeeded": "已进入购买每日礼包页"
+        }
     },
     "clickDailySupplyBox": {
         "doc": "点击每日补给箱",

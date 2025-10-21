@@ -61,7 +61,7 @@
         ],
         "recognition": "ColorMatch",
         "focus": {
-            "succeeded": "[color:red]扫荡券不足[/color]"
+            "succeeded": "[color:#f46e6e]扫荡券不足[/color]"
         },
         "next": [
             "exitVersionActivityResourceSweep"

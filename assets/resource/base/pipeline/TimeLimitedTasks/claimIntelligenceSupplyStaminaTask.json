@@ -20,8 +20,18 @@
     },
     "swipeToFindIntelligenceSupplyTab": {
         "action": "Swipe",
-        "begin": [164,533,49,33],
-        "end": [181,129,34,28],
+        "begin": [
+            164,
+            533,
+            49,
+            33
+        ],
+        "end": [
+            181,
+            129,
+            34,
+            28
+        ],
         "post_wait_freezes": 500,
         "next": [
             "intelligenceSupplyTabFoundAfterSwipe",

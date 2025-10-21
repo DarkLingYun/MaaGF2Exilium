@@ -41,7 +41,10 @@
         "doc": "任务出口，识别到主页的战役推进后结束任务",
         "recognition": "OCR",
         "expected": "战役推进",
-        "pre_delay": 1000
+        "pre_delay": 1000,
+        "focus": {
+            "succeeded": "已识别到主页，任务结束"
+        }
     },
     "StartGame_clickCancel": {
         "recognition": "OCR",
