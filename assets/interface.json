@@ -1591,6 +1591,49 @@
         "物资模式活动选择": {
             "cases": [
                 {
+                    "name": "歧路双轨·下篇",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "歧路双轨",
+                                "歧路",
+                                "双轨",
+                                "路双"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "人形互助站"
+                            ]
+                        },
+                        "switchVersionActivityChapter": {
+                            "enabled": true,
+                            "expected": [
+                                "^歧路双轨.*下篇$",
+                                "^双轨.*下篇$"
+                            ]
+                        },
+                        "selectExchangeType": {
+                            "enabled": true,
+                            "expected": [
+                                "^下篇$"
+                            ]
+                        },
+                        "selectResourceModeLevel": {
+                            "doc": "选择物资模式关卡",
+                            "recognition": "TemplateMatch",
+                            "template": "版本活动/下篇歧路物资5.png",
+                            "action": "Click",
+                            "roi": [
+                                758,
+                                329,
+                                154,
+                                42
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "歧路双轨·上篇",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
