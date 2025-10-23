@@ -1,0 +1,146 @@
+{
+    "开始七天签到限定十连任务": {
+        "next": [
+            "确认当前在主页-七天签到限定十连"
+        ]
+    },
+    "确认当前在主页-七天签到限定十连": {
+        "recognition": "OCR",
+        "expected": [
+            "战役推进"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "进入活动页面-七天签到限定十连"
+        ]
+    },
+    "进入活动页面-七天签到限定十连": {
+        "recognition": "OCR",
+        "expected": [
+            "^活动$"
+        ],
+        "post_wait_freezes": 500,
+        "action": "Click",
+        "next": [
+            "发现七天签到限定十连",
+            "滑动寻找七天签到限定十连"
+        ]
+    },
+    "发现七天签到限定十连": {
+        "recognition": "OCR",
+        "expected": [
+            "共轭波频"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "点击七天签到限定十连标签页"
+        ]
+    },
+    "滑动寻找七天签到限定十连": {
+        "action": "Swipe",
+        "begin": [
+            164,
+            533,
+            49,
+            33
+        ],
+        "end": [
+            181,
+            129,
+            34,
+            28
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "滑动后发现七天签到限定十连",
+            "退出活动页面-七天签到限定十连"
+        ]
+    },
+    "滑动后发现七天签到限定十连": {
+        "recognition": "OCR",
+        "expected": [
+            "共轭波频"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "点击七天签到限定十连标签页"
+        ]
+    },
+    "点击七天签到限定十连标签页": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": [
+            "共轭波频"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "已进入七天签到限定十连标签页",
+            "点击七天签到限定十连标签页"
+        ]
+    },
+    "已进入七天签到限定十连标签页": {
+        "recognition": "OCR",
+        "roi": [
+            391,
+            105,
+            877,
+            515
+        ],
+        "expected": [
+            "共轭波频"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "今日已领-七天签到限定十连",
+            "领取奖励-七天签到限定十连",
+            "退出活动页面-七天签到限定十连"
+        ]
+    },
+    "今日已领-七天签到限定十连": {
+        "recognition": "OCR",
+        "expected": [
+            "明日可领"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "退出活动页面-七天签到限定十连"
+        ]
+    },
+    "领取奖励-七天签到限定十连": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动/专访许可.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "退出活动页面-七天签到限定十连"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用"
+        ]
+    },
+    "退出活动页面-七天签到限定十连": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "七天签到限定十连任务结束",
+            "退出活动页面-七天签到限定十连"
+        ]
+    },
+    "七天签到限定十连任务结束": {
+        "recognition": "OCR",
+        "post_wait_freezes": 500,
+        "expected": [
+            "战役推进"
+        ],
+        "next": [
+            "HomePage"
+        ]
+    }
+}
