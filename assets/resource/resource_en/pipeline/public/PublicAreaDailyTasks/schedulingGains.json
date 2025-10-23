@@ -1,0 +1,42 @@
+{
+    "enterSchedulingGainsAction": {
+        "next": [
+            "confirmIntoScheduling",
+            "enterSchedulingGainsAction"
+        ]
+    },
+    "confirmIntoScheduling": {
+        "doc": "确认进入调度收益",
+        "recognition": "OCR",
+        "expected": "情报储备情况",
+        "roi": [
+            704,
+            83,
+            145,
+            38
+        ],
+        "next": [
+            "clickMaxStaminaReserveButton"
+        ]
+    },
+    "enterResourceProductionPage": {
+        "next": [
+            "confirmIntoResourceProductionPage",
+            "enterResourceProductionPage"
+        ]
+    },
+    "confirmIntoResourceProductionPage": {
+        "doc": "确认进入资源生产页",
+        "recognition": "OCR",
+        "expected": "收取",
+        "roi": [
+            935,
+            605,
+            87,
+            41
+        ],
+        "next": [
+            "clickResourceProductionCollectionButton"
+        ]
+    }
+}
