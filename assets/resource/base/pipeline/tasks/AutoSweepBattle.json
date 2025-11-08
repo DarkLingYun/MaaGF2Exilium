@@ -279,7 +279,7 @@
             256,
             14
         ],
-        "post_delay": 1000
+        "post_wait_freezes": 1500
     },
     "selectedEffectsCombination": {
         "doc": "选择效果组合",

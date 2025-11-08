@@ -102,7 +102,7 @@
             0,
             0
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": 1000,
         "next": [
             "closeDispatchCenterDispatchCountRewardClaimResultPage",
             "claimDispatchCenterDispatchCountReward"
