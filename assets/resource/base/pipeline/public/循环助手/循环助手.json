@@ -1,0 +1,86 @@
+{
+    "开始循环助手任务": {
+        "next": [
+            "进入循环助手页面",
+            "循环助手任务结束"
+        ]
+    },
+    "进入循环助手页面": {
+        "recognition": "TemplateMatch",
+        "template": "其他/循环助手.png",
+        "action": "Click",
+        "order_by": "Score",
+        "green_mask": true,
+        "post_wait_freezes": 500,
+        "next": [
+            "开始执行循环任务"
+        ]
+    },
+    "开始执行循环任务": {
+        "recognition": "OCR",
+        "expected": [
+            "开始循环"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "循环结束",
+            "确认执行循环任务"
+        ]
+    },
+    "确认执行循环任务": {
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "action": "Click",
+        "order_by": "Horizontal",
+        "index": -1,
+        "post_wait_freezes": 500,
+        "next": [
+            "循环结束"
+        ]
+    },
+    "循环结束": {
+        "recognition": "OCR",
+        "expected": [
+            "循环结束"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "确认循环结束"
+        ]
+    },
+    "确认循环结束": {
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "退出循环助手页面"
+        ]
+    },
+    "退出循环助手页面": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/主页按钮_black.png",
+            "公用按钮组件/主页按钮_gray.png"
+        ],
+        "action": "Click",
+        "order_by": "Score",
+        "post_wait_freezes": 500,
+        "next": [
+            "循环助手任务结束"
+        ]
+    },
+    "循环助手任务结束": {
+        "recognition": "OCR",
+        "expected": "战役推进",
+        "post_wait_freezes": 500,
+        "next": [
+            "HomePage"
+        ]
+    }
+}
