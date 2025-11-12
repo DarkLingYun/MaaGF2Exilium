@@ -44,7 +44,7 @@
         }
     ],
     "name": "少女前线2：追放自动化助手",
-    "custom_title": "歧路双轨",
+    "custom_title": "前进吧，王牌配送员!",
     "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "mirrorchyan_rid": "MaaGF2Exilium",
     "task": [
@@ -1635,6 +1635,52 @@
         },
         "物资模式活动选择": {
             "cases": [
+                {
+                    "name": "前进吧，王牌配送员!",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "前进吧，王牌配送员",
+                                "前进吧",
+                                "王牌配送员",
+                                "配送员"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "配送补给站",
+                                "配送",
+                                "补给站"
+                            ],
+                            "roi": [
+                                107,
+                                607,
+                                238,
+                                76
+                            ]
+                        },
+                        "selectResourceModeLevel": {
+                            "doc": "选择物资模式关卡",
+                            "recognition": "TemplateMatch",
+                            "template": "版本活动/王牌配送员物资5.png",
+                            "action": "Click",
+                            "roi": [
+                                666,
+                                296,
+                                235,
+                                93
+                            ]
+                        },
+                        "exitVersionActivityResourceSweep": {
+                            "roi": [
+                                0,
+                                0,
+                                185,
+                                90
+                            ]
+                        }
+                    }
+                },
                 {
                     "name": "歧路双轨·下篇",
                     "pipeline_override": {

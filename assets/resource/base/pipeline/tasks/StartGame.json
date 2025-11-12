@@ -153,7 +153,9 @@
         "recognition": "OCR",
         "expected": [
             "空白",
-            "点击"
+            "点击",
+            "点击空白处关闭",
+            "关闭"
         ],
         "action": "Click",
         "post_delay": 3000,
