@@ -1446,10 +1446,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "enterCombatExercise": {
-                            "enabled": true,
-                            "focus": {
-                                "start": "自动实兵演习"
-                            }
+                            "enabled": true
                         }
                     }
                 },

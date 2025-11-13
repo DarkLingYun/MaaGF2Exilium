@@ -1,5 +1,8 @@
 {
     "enterCombatExercise": {
+        "focus": {
+            "start": "[color:red]国服用户请使用官方循环助手进行实兵演习战斗，此处仅领取奖励[/color]"
+        },
         "next": [
             "clickEnterCombatExercisePage"
         ]
@@ -10,213 +13,26 @@
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "insufficientPassesForCombatExercise",
-            "clickButtonToEnterOpponentSelection"
+            "combatExerciseWeeklySettlement",
+            "领取周期奖励-实兵演习"
         ],
         "interrupt": [
             "点击空白处关闭-通用"
         ]
     },
-    "clickButtonToEnterOpponentSelection": {
-        "doc": "点击进攻进入演习对象选择页面(需要判断是否有已经挑战成功的、战力值识别失败的,挑战权限不足的)",
-        "recognition": "OCR",
-        "expected": "进攻",
-        "action": "Click",
-        "post_wait_freezes": 500,
-        "next": [
-            "confirmCombatExerciseOpponentListPage",
-            "clickButtonToEnterOpponentSelection"
-        ],
-        "interrupt": [
-            "点击空白处关闭-通用"
-        ]
-    },
-    "confirmCombatExerciseOpponentListPage": {
-        "doc": "确认实兵演习对象列表页",
-        "recognition": "OCR",
-        "roi": [
-            1030,
-            325,
-            110,
-            180
-        ],
-        "expected": [
-            "作战效能",
-            "当前积分"
-        ],
-        "next": [
-            "insufficientPassesForCombatExercise",
-            "hasChallengeSuccessfulObject",
-            "challengeOpponentSelection",
-            "refreshOpponentList"
-        ]
-    },
-    "hasChallengeSuccessfulObject": {
-        "doc": "有挑战成功对象或挑战失败对象",
+    "combatExerciseWeeklySettlement": {
+        "doc": "实兵演习每周结算",
         "recognition": "OCR",
         "expected": [
-            "挑战成功",
-            "挑战失败"
-        ],
-        "target": [
-            1164,
-            656,
-            45,
-            26
-        ],
-        "post_delay": 1500,
-        "next": [
-            "refreshOpponentList"
-        ]
-    },
-    "refreshOpponentList": {
-        "doc": "刷新演习对手列表",
-        "roi": [
-            1115,
-            652,
-            139,
-            41
-        ],
-        "recognition": "OCR",
-        "expected": [
-            "^刷新$",
-            "^刷",
-            "新$"
+            "点击空白处关闭",
+            "点击任意位置继续",
+            "点击屏幕任意位置继续"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_delay": 2500,
         "next": [
-            "hasChallengeSuccessfulObject",
-            "challengeOpponentSelection",
-            "refreshOpponentList"
-        ]
-    },
-    "challengeOpponentSelection": {
-        "doc": "挑战对象选择，选择作战效能从左到右在 100~22999 范围内第一个符合条件的后点击",
-        "roi": [
-            0,
-            400,
-            1200,
-            30
-        ],
-        "recognition": "OCR",
-        "expected": "^[1-9]{0,1}[0-9]{1,2}$|^[1-9][0-9]{3}$|^[1][0-9]{4}$|^[2][0-2][0-9]{3}$",
-        "action": "Click",
-        "post_wait_freezes": 200,
-        "next": [
-            "confirmChallengeWithOpponent",
-            "challengeOpponentSelection"
-        ]
-    },
-    "confirmChallengeWithOpponent": {
-        "doc": "确认与对手挑战",
-        "roi": [
-            1049,
-            545,
-            49,
-            26
-        ],
-        "recognition": "OCR",
-        "expected": "进攻",
-        "action": "Click",
-        "post_wait_freezes": 800,
-        "next": [
-            "confirmCombatExerciseOpponentListPage"
-        ],
-        "interrupt": [
-            "通用战斗任务开始"
-        ]
-    },
-    "insufficientPassesForCombatExercise": {
-        "doc": "实兵演习权限不足(不足有两种页面：实兵演习首页，挑战对象选择页)",
-        "recognition": "OCR",
-        "expected": "0/3",
-        "roi": [
-            1186,
-            11,
-            74,
-            58
-        ],
-        "next": [
-            "exitChallengeOpponentSelection",
-            "exitCombatExercisePage"
-        ]
-    },
-    "exitChallengeOpponentSelection": {
-        "doc": "演习对象选择页返回(一般是自律3次后达到次数，因此需要判断奖励领取情况)",
-        "roi": [
-            1115,
-            652,
-            139,
-            41
-        ],
-        "recognition": "OCR",
-        "expected": [
-            "^刷新$",
-            "^刷",
-            "新$"
-        ],
-        "target": [
-            27,
-            23,
-            41,
-            41
-        ],
-        "action": "Click",
-        "next": [
-            "claimCombatExerciseRewards",
-            "exitCombatExercisePage"
-        ]
-    },
-    "claimCombatExerciseRewards": {
-        "doc": "领取实兵演习奖励，要求演习进度为满",
-        "recognition": "TemplateMatch",
-        "roi": [
-            438,
-            599,
-            28,
-            28
-        ],
-        "template": "实兵演习/演习补给待领取.png",
-        "action": "Click",
-        "target": [
-            404,
-            620,
-            45,
-            36
-        ],
-        "next": [
-            "claimCombatExerciseRewards",
-            "closeCombatExerciseRewardClaimResultPage",
-            "领取周期奖励-实兵演习",
-            "exitCombatExercisePage"
-        ]
-    },
-    "closeCombatExerciseRewardClaimResultPage": {
-        "doc": "关闭实兵演习奖励领取结果页(由于识别太快可能点击无效果，需要调用自身)",
-        "recognition": "OCR",
-        "expected": "点击空白处关闭",
-        "action": "Click",
-        "next": [
-            "combatExerciseRewardProgressNotMet",
-            "closeCombatExerciseRewardClaimResultPage",
-            "领取周期奖励-实兵演习",
-            "exitCombatExercisePage"
-        ]
-    },
-    "combatExerciseRewardProgressNotMet": {
-        "doc": "实兵演习奖励进度未满",
-        "recognition": "TemplateMatch",
-        "roi": [
-            400,
-            610,
-            60,
-            60
-        ],
-        "template": "实兵演习/演习补给已领取.png",
-        "next": [
-            "领取周期奖励-实兵演习",
-            "exitCombatExercisePage"
+            "combatExerciseWeeklySettlement",
+            "领取周期奖励-实兵演习"
         ]
     },
     // 领取周期奖励这里逻辑有点乱，因为此处的奖励逻辑和游戏中别的地方不统一
