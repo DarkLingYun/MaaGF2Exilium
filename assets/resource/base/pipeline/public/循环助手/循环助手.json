@@ -22,6 +22,7 @@
             "开始循环"
         ],
         "action": "Click",
+        "timeout": 600000,
         "post_wait_freezes": 500,
         "next": [
             "循环结束",
@@ -34,6 +35,7 @@
             "确认"
         ],
         "action": "Click",
+        "timeout": 600000,
         "order_by": "Horizontal",
         "index": -1,
         "post_wait_freezes": 500,
