@@ -17,10 +17,12 @@
             "time": 1000,
             "rate_limit": 200
         },
+        "focus": {
+            "start": "[color:red]国服用户请使用官方循环助手进行每日要务战斗，此处仅领取奖励[/color]"
+        },
         "next": [
             "checkPlatoon",
             "enterPlatoonDailySupplyTask",
-            "enterPlatoonDailyCombatTask",
             "returnToHomePage"
         ]
     },

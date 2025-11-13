@@ -1,0 +1,18 @@
+{
+    "clickPlatoonButton": {
+        "doc": "工会任务",
+        "recognition": "OCR",
+        "expected": "^班组$",
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "rate_limit": 200
+        },
+        "next": [
+            "checkPlatoon",
+            "enterPlatoonDailySupplyTask",
+            "enterPlatoonDailyCombatTask",
+            "returnToHomePage"
+        ]
+    }
+}
