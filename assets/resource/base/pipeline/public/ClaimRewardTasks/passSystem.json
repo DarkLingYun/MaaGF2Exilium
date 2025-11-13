@@ -15,6 +15,9 @@
         "post_wait_freezes": 500,
         "next": [
             "switchToDailyPassRewardPage"
+        ],
+        "interrupt": [
+            "开启远航巡录"
         ]
     },
     "findPassByImage": {
@@ -28,6 +31,9 @@
         "post_wait_freezes": 500,
         "next": [
             "switchToDailyPassRewardPage"
+        ],
+        "interrupt": [
+            "开启远航巡录"
         ]
     },
     "当前不存在巡录": {
@@ -213,5 +219,11 @@
             "开始七天签到限定十连任务",
             "HomePage"
         ]
+    },
+    "开启远航巡录": {
+        "recognition":  "OCR",
+        "expected": "开启远航巡录",
+        "action": "Click",
+        "post_wait_freezes": 500
     }
 }
