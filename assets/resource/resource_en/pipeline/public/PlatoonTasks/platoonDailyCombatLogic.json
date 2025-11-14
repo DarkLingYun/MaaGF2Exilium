@@ -4,6 +4,7 @@
         "recognition": "OCR",
         "expected": "作战开始",
         "action": "Click",
+        "pre_wait_freezes": 1500,
         "post_wait_freezes": 500,
         "next": [
             "platoonDailyCombatTaskCompleted",
