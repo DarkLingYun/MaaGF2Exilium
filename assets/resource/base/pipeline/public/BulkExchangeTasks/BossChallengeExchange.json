@@ -32,7 +32,8 @@
             "集中兑换/讯段交易/访问许可.png",
             "集中兑换/讯段交易/基原信息核.png",
             "集中兑换/讯段交易/次世代内存条.png",
-            "集中兑换/讯段交易/萨狄斯金.png"
+            "集中兑换/讯段交易/萨狄斯金.png",
+            "集中兑换/讯段交易/泛用链式键.png"
         ],
         "threshold": 0.8,
         "roi": [
@@ -135,6 +136,7 @@
     "exitBossChallengeExchange": {
         "doc": "结束任务,调用后续任务",
         "next": [
+            "enterHomeStoreExchangeTask",
             "returnToHomePage"
         ]
     }

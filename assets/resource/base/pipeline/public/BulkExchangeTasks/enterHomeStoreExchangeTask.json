@@ -1,0 +1,154 @@
+{
+    "enterHomeStoreExchangeTask": {
+        "doc": "进入家具商店兑换任务",
+        "enabled": true,
+        "next": [
+            "clickHomeStoreExchangeTaskButton"
+        ]
+    },
+    "clickHomeStoreExchangeTaskButton": {
+        "doc": "点击家具商店兑换任务按钮",
+        "recognition": "OCR",
+        "expected": "^家具商店$",
+        "action": "Click",
+        "roi": [
+            242,
+            91,
+            1009,
+            623
+        ],
+        "post_wait_freezes": 1000,
+        "next": [
+            "clickHomeStoreExchangeTaskButton",
+            "clickHomeStoreExchangePageButton"
+        ]
+    },
+    "clickHomeStoreExchangePageButton": {
+        "doc": "点击定向调整按钮",
+        "recognition": "OCR",
+        "expected": "^定向调整$",
+        "action": "Click",
+        "roi": [
+            34,
+            107,
+            157,
+            543
+        ],
+        "post_wait_freezes": 1000,
+        "next": [
+            "selectHomeStoreItem",
+            "homeStoreBackToPreviousPage"
+        ]
+    },
+    "selectHomeStoreItem": {
+        "doc": "选择家具商店兑换商品",
+        "recognition": "TemplateMatch",
+        "template": [
+            "集中兑换/家具商店/全能秘方.png",
+            "集中兑换/家具商店/新装许可.png"
+        ],
+        "threshold": 0.8,
+        "roi": [
+            234,
+            84,
+            1008,
+            299
+        ],
+        "order_by": "Horizontal",
+        "action": "Click",
+        "post_wait_freezes": 300,
+        "next": [
+            "homeStoreItemNotPurchasable",
+            "homeStoreSelectExchangeItemQuantity",
+            "homeStoreConfirmPurchaseItem",
+            "selectHomeStoreItem",
+            "homeStoreBackToPreviousPage"
+        ]
+    },
+    "homeStoreItemNotPurchasable": {
+        "doc": "商品不可购买",
+        "recognition": "ColorMatch",
+        "roi": [
+            550,
+            395,
+            178,
+            119
+        ],
+        "upper": [
+            253,
+            114,
+            91
+        ],
+        "lower": [
+            246,
+            101,
+            73
+        ],
+        "next": [
+            "homeStoreExitItemExchange"
+        ]
+    },
+    "homeStoreExitItemExchange": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "homeStoreBackToPreviousPage"
+        ]
+    },
+    "homeStoreSelectExchangeItemQuantity": {
+        "doc": "选择商品兑换数量为最大",
+        "recognition": "OCR",
+        "expected": "最大",
+        "action": "Click",
+        "next": [
+            "homeStoreConfirmPurchaseItem"
+        ]
+    },
+    "homeStoreConfirmPurchaseItem": {
+        "doc": "确认购买商品",
+        "recognition": "OCR",
+        "expected": "^(购买|确认)$",
+        "action": "Click",
+        "next": [
+            "homeStoreCloseItemPurchaseResultPage"
+        ]
+    },
+    "homeStoreCloseItemPurchaseResultPage": {
+        "doc": "关闭商品购买结果页",
+        "recognition": "OCR",
+        "expected": "^点击",
+        "action": "Click",
+        "post_delay": 500,
+        "next": [
+            "homeStoreCloseItemPurchaseResultPage",
+            "selectHomeStoreItem",
+            "homeStoreBackToPreviousPage"
+        ]
+    },
+    "homeStoreBackToPreviousPage": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            200,
+            70
+        ],
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "exitHomeStoreExchange"
+        ]
+    },
+    "exitHomeStoreExchange": {
+        "doc": "结束任务,调用后续任务",
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}

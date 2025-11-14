@@ -166,10 +166,13 @@
             "entry": "BulkExchange",
             "option": [
                 "班组商店兑换",
+                "班组商店兑换项目",
                 "调度商店兑换",
                 "调度商店不兑换的物品",
                 "讯段交易兑换",
-                "讯段交易不兑换的物品"
+                "讯段交易不兑换的物品",
+                "家具商店兑换",
+                "家具商店兑换项目"
             ]
         },
         {
@@ -2139,6 +2142,58 @@
                 }
             ]
         },
+        "班组商店兑换项目": {
+            "cases": [
+                {
+                    "name": "波波沙心智存档、巴希达心智存档、火控芯片、泛用链式键",
+                    "pipeline_override": {
+                        "selectPlatoonItem": {
+                            "template": [
+                                "集中兑换/班组商店/波波沙心智存档.png",
+                                "集中兑换/班组商店/巴希达心智存档.png",
+                                "集中兑换/班组商店/火控校准芯片.png",
+                                "集中兑换/班组商店/泛用链式键.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "波波沙心智存档、火控芯片、泛用链式键",
+                    "pipeline_override": {
+                        "selectPlatoonItem": {
+                            "template": [
+                                "集中兑换/班组商店/波波沙心智存档.png",
+                                "集中兑换/班组商店/火控校准芯片.png",
+                                "集中兑换/班组商店/泛用链式键.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "巴希达心智存档、火控芯片、泛用链式键",
+                    "pipeline_override": {
+                        "selectPlatoonItem": {
+                            "template": [
+                                "集中兑换/班组商店/巴希达心智存档.png",
+                                "集中兑换/班组商店/火控校准芯片.png",
+                                "集中兑换/班组商店/泛用链式键.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "火控芯片、泛用链式键",
+                    "pipeline_override": {
+                        "selectPlatoonItem": {
+                            "template": [
+                                "集中兑换/班组商店/火控校准芯片.png",
+                                "集中兑换/班组商店/泛用链式键.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
         "调度商店兑换": {
             "cases": [
                 {
@@ -2279,6 +2334,41 @@
                                 "集中兑换/讯段交易/塞布丽娜心智存档.png",
                                 "集中兑换/讯段交易/访问许可.png",
                                 "集中兑换/讯段交易/基原信息核.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "家具商店兑换": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterHomeStoreExchangeTask": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterHomeStoreExchangeTask": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "家具商店兑换项目": {
+            "cases": [
+                {
+                    "name": "全能秘方、新装许可",
+                    "pipeline_override": {
+                        "selectHomeStoreItem": {
+                            "template": [
+                                "集中兑换/家具商店/全能秘方.png",
+                                "集中兑换/家具商店/新装许可.png"
                             ]
                         }
                     }
