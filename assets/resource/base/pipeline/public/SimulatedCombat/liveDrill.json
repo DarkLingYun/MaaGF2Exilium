@@ -42,12 +42,18 @@
         "expected": "周期奖励",
         "action": "Click",
         "next": [
-            "已打开周期奖励-实兵演习"
+            "已打开周期奖励-实兵演习",
+            "领取周期奖励-实兵演习"
+        ],
+        "post_wait_freezes": 500,
+        "interrupt": [
+            "点击空白处关闭-通用"
         ]
     },
     "已打开周期奖励-实兵演习": {
         "recognition": "OCR",
         "expected": "排名奖励",
+        "post_wait_freezes": 500,
         "next": [
             "领取段位奖励-实兵演习",
             "切换到参与奖励标签页-实兵演习"
@@ -57,6 +63,7 @@
         "recognition": "OCR",
         "expected": "键领取",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "切换到参与奖励标签页-实兵演习"
         ],
@@ -68,6 +75,7 @@
         "recognition": "OCR",
         "expected": "参与奖励",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "领取参与奖励-实兵演习",
             "关闭排名奖励-实兵演习"
@@ -80,6 +88,7 @@
         "recognition": "OCR",
         "expected": "键领取",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "关闭排名奖励-实兵演习"
         ],
@@ -94,6 +103,7 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "exitCombatExercisePage"
         ]
@@ -109,6 +119,7 @@
             41
         ],
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "enterPeakValueAssessment",
             "开始极限峰值任务",
