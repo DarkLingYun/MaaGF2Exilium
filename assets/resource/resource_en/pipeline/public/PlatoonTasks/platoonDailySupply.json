@@ -1,0 +1,21 @@
+{
+    "platoonDailySupplyBackPage": {
+        "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            200,
+            70
+        ],
+        "template": [
+            "公用按钮组件/返回上一页_gray.png",
+            "公用按钮组件/返回上一页_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "enterPlatoonDailyCombatTask",
+            "returnToHomePage"
+        ]
+    }
+}
