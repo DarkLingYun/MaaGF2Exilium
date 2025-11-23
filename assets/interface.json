@@ -84,7 +84,8 @@
             "option": [
                 "访问休息室",
                 "调度室派遣任务",
-                "调度收益领取"
+                "调度收益领取",
+                "收取神秘箱（需自备硬币）"
             ],
             "check": true
         },
@@ -624,6 +625,26 @@
                     "pipeline_override": {
                         "enterSchedulingGainsAction": {
                             "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "收取神秘箱（需自备硬币）": {
+            "cases": [
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "开始神秘箱任务": {
+                            "enabled": false
+                        }
+                    }
+                },
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "开始神秘箱任务": {
+                            "enabled": true
                         }
                     }
                 }

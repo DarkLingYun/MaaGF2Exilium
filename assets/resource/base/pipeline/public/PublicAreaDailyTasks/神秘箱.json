@@ -1,0 +1,107 @@
+{
+    "开始神秘箱任务": {
+        "enabled": false,
+        "next": [
+            "进入神秘箱页面"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用"
+        ]
+    },
+    "进入神秘箱页面": {
+        "recognition": "OCR",
+        "expected": [
+            "神秘箱"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "timeout": 60000,
+        "next": [
+            "无剩余次数-神秘箱",
+            "有剩余次数-神秘箱"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用",
+            "跳过动画-神秘箱"
+        ]
+    },
+    "无剩余次数-神秘箱": {
+        "recognition": "OCR",
+        "expected": [
+            "本周剩余次数：0/100",
+            "本周剩余次数:0/100"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "神秘箱任务结束"
+        ]
+    },
+    "有剩余次数-神秘箱": {
+        "recognition": "OCR",
+        "expected": [
+            "本周剩余次数"
+        ],
+        "next": [
+            "可收取十次-神秘箱",
+            "可收取一次-神秘箱",
+            "神秘箱任务结束"
+        ]
+    },
+    "可收取十次-神秘箱": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "调度室/幸运硬币10.png"
+        ],
+        "threshold": 0.95,
+        "post_wait_freezes": 500,
+        "next": [
+            "收取十次-神秘箱"
+        ]
+    },
+    "可收取一次-神秘箱": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "调度室/幸运硬币1.png"
+        ],
+        "threshold": 0.95,
+        "post_wait_freezes": 500,
+        "next": [
+            "收取一次-神秘箱"
+        ]
+    },
+    "收取十次-神秘箱": {
+        "recognition": "OCR",
+        "expected": "收取十次",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "进入神秘箱页面"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用"
+        ]
+    },
+    "收取一次-神秘箱": {
+        "recognition": "OCR",
+        "expected": "收取一次",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "进入神秘箱页面"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用"
+        ]
+    },
+    "神秘箱任务结束": {
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "跳过动画-神秘箱": {
+        "recognition": "OCR",
+        "expected": "跳过动画",
+        "action": "Click",
+        "post_wait_freezes": 500
+    }
+}
