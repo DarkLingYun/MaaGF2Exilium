@@ -56,20 +56,17 @@
         "recognition": "OCR",
         "expected": "^收取$",
         "action": "Click",
+        "post_delay": 500,
         "next": [
-            "closeResourceCollectionResultPage"
+            "调度收益任务结束"
+        ],
+        "interrupt":[
+            "点击空白处关闭-通用"
         ]
     },
-    "closeResourceCollectionResultPage": {
-        "doc": "关闭资源收取结果页面",
-        "recognition": "OCR",
-        "expected": [
-            "空白",
-            "暂无可收取"
-        ],
-        "action": "Click",
-        "next": [
-            "closeResourceCollectionResultPage",
+    "调度收益任务结束":{
+        "next":[
+            "开始神秘箱任务",
             "returnToHomePage"
         ]
     }
