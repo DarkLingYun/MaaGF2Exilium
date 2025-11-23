@@ -1,0 +1,6 @@
+{
+    "enterHomeStoreExchangeTask": {
+        "doc": "进入家具商店兑换任务",
+        "enabled": false
+    }
+}
