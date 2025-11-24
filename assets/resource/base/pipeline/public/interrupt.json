@@ -9,5 +9,11 @@
         ],
         "action": "Click",
         "post_wait_freezes": 500
+    },
+    "跳过动画-通用": {
+        "recognition": "OCR",
+        "expected": "跳过动画",
+        "action": "Click",
+        "post_wait_freezes": 500
     }
 }
