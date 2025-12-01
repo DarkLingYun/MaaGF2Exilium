@@ -163,6 +163,15 @@
             "doc": "物资模式仅识别第五关"
         },
         {
+            "name": "版本活动日常2（美服/国际服）",
+            "entry": "VersionActivityTask",
+            "option": [
+                "物资模式活动选择2（美服/国际服）",
+                "物资商品兑换2（美服/国际服）"
+            ],
+            "doc": "适配美服/国际服双版本活动，物资模式仅识别第五关"
+        },
+        {
             "name": "易物所商店兑换",
             "entry": "BulkExchange",
             "option": [
@@ -1889,7 +1898,7 @@
                     }
                 },
                 {
-                    "name": "沉没夜潮（美服/国际服）",
+                    "name": "沉没夜潮(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -1952,7 +1961,22 @@
                     }
                 },
                 {
-                    "name": "错位锚定·下篇",
+                    "name": "交织突进（美服/国际服）",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "交织突进"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "物资交换站"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "错位锚定·下篇（美服/国际服）",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -1979,7 +2003,7 @@
                     }
                 },
                 {
-                    "name": "错位锚定·上篇",
+                    "name": "错位锚定·上篇（美服/国际服）",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -2124,6 +2148,99 @@
             ]
         },
         "物资商品兑换": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "enterVersionActivityItemExchange": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "enterVersionActivityItemExchange": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "物资模式活动选择2（美服/国际服）": {
+            "cases": [
+                {
+                    "name": "交织突进（美服/国际服）",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "交织突进"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "物资交换站"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "错位锚定·下篇（美服/国际服）",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "错位锚定"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "临时据点"
+                            ]
+                        },
+                        "switchVersionActivityChapter": {
+                            "enabled": true,
+                            "expected": [
+                                "^错位.*下篇$"
+                            ]
+                        },
+                        "selectExchangeType": {
+                            "enabled": true,
+                            "expected": [
+                                "^临时.*下篇$"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "错位锚定·上篇（美服/国际服）",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "错位锚定"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "临时据点"
+                            ]
+                        },
+                        "switchVersionActivityChapter": {
+                            "enabled": true,
+                            "expected": [
+                                "^错位.*上篇$"
+                            ]
+                        },
+                        "selectExchangeType": {
+                            "enabled": true,
+                            "expected": [
+                                "^临时.*上篇$"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "物资商品兑换2（美服/国际服）": {
             "cases": [
                 {
                     "name": "YES",

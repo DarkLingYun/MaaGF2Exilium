@@ -19,7 +19,7 @@
             "其他/休息室.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 1000,
         "next": [
             "loungeConfirm"
         ]

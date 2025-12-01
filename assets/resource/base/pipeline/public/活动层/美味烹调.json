@@ -7,7 +7,7 @@
     },
     "进入活动层-美味烹调": {
         "recognition": "OCR",
-        "expected": "活动层",
+        "expected": "^活动层$",
         "action": "Click",
         "post_wait_freezes": 1000,
         "timeout": 40000,

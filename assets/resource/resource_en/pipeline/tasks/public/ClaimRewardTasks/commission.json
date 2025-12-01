@@ -8,6 +8,7 @@
             52,
             28
         ],
+        "pre_wait_freezes": 5000,
         "expected": "[1-9]\\d*$"
     }
 }

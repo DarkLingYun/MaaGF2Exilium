@@ -25,7 +25,8 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "dispatchCenterEntered"
+            "dispatchCenterEntered",
+            "前往调度室"
         ]
     },
     "dispatchCenterEntered": {
@@ -88,6 +89,7 @@
         "post_wait_freezes": 1000,
         "next": [
             "dispatchCenterSendAgain",
+            "rewardGet",
             "未识别到再次派遣直接点击固定位置"
         ]
     },
@@ -97,6 +99,7 @@
         "action": "Click",
         "post_delay": 4000,
         "next": [
+            "dispatchCenterSendAgain",
             "claimDispatchCenterDispatchCountReward",
             "enterSchedulingGainsAction",
             "returnToHomePage"

@@ -21,6 +21,7 @@
     "已进入作战开始页面-通用战斗": {
         "recognition": "OCR",
         "expected": "作战开始",
+        "pre_wait_freezes": 5000,
         "post_wait_freezes": 500,
         "next": [
             "任务完成-通用战斗",
@@ -36,6 +37,7 @@
         "recognition": "OCR",
         "expected": "作战开始",
         "action": "Click",
+        "pre_wait_freezes": 5000,
         "post_wait_freezes": 500,
         "timeout": 200000,
         "next": [
@@ -62,6 +64,7 @@
             142
         ],
         "action": "Click",
+        "pre_wait_freezes": 1500,
         "post_wait_freezes": 500,
         "next": [
             "确认可部署人形-通用战斗"
@@ -71,6 +74,7 @@
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
+        "pre_wait_freezes": 1500,
         "post_wait_freezes": 500,
         "timeout": 200000,
         "next": [
@@ -103,8 +107,12 @@
     },
     "任务完成-通用战斗": {
         "recognition": "OCR",
-        "expected": "任务完成",
+        "expected": [
+            "任务完成",
+            "对战胜利"
+        ],
         "action": "Click",
+        "pre_wait_freezes": 5000,
         "post_wait_freezes": 500,
         "next": [
             "确认任务完成或失败-通用战斗",
