@@ -17,7 +17,7 @@
             1009,
             623
         ],
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 2000,
         "next": [
             "clickPlatoonExchangeTaskButton",
             "selectPlatoonItem",

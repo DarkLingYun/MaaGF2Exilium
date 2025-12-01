@@ -15,6 +15,8 @@
         },
         "next": [
             "peakValueAssessmentPageEnteredForFirstTime",
+            "发现新周期-极限峰值（峰值推定界面）",
+            "进入常规峰值",
             "peakValueAssessmentPageEnteredAgain"
         ],
         "interrupt": [
@@ -43,6 +45,29 @@
         "doc": "当日非首次进入峰值推定",
         "next": [
             "exitPeakValueAssessment"
+        ]
+    },
+    "发现新周期-极限峰值（峰值推定界面）": {
+        "doc": "外服的极限峰值重置奖励时，进入峰值推定会直接进到极限峰值页面",
+        "recognition": "OCR",
+        "expected": [
+            "新周期开启",
+            "新周期开"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "进入常规峰值"
+        ]
+    },
+    "进入常规峰值": {
+        "recognition": "OCR",
+        "expected": "常规峰值",
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "peakValueAssessmentPageEnteredForFirstTime",
+            "peakValueAssessmentPageEnteredAgain"
         ]
     },
     "claimRewards": {

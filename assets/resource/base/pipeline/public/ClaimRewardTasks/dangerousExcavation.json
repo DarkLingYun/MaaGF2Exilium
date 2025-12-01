@@ -10,7 +10,7 @@
         "doc": "进入活动页面",
         "recognition": "OCR",
         "expected": [
-            "活动"
+            "^活动$"
         ],
         "post_wait_freezes": 500,
         "action": "Click",

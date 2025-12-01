@@ -10,24 +10,11 @@
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "combatExerciseWeeklySettlement",
             "insufficientPassesForCombatExercise",
             "clickButtonToEnterOpponentSelection"
-        ]
-    },
-    "combatExerciseWeeklySettlement": {
-        "doc": "实兵演习每周结算",
-        "recognition": "OCR",
-        "expected": [
-            "点击空白处关闭",
-            "点击任意位置继续",
-            "点击屏幕任意位置继续"
         ],
-        "action": "Click",
-        "post_delay": 2500,
-        "next": [
-            "combatExerciseWeeklySettlement",
-            "clickButtonToEnterOpponentSelection"
+        "interrupt": [
+            "点击空白处关闭-通用"
         ]
     },
     "clickButtonToEnterOpponentSelection": {
@@ -38,8 +25,10 @@
         "post_wait_freezes": 500,
         "next": [
             "confirmCombatExerciseOpponentListPage",
-            "combatExerciseWeeklySettlement",
             "clickButtonToEnterOpponentSelection"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用"
         ]
     },
     "confirmCombatExerciseOpponentListPage": {
@@ -130,7 +119,7 @@
         "recognition": "OCR",
         "expected": "进攻",
         "action": "Click",
-        "post_wait_freezes": 800,
+        "post_wait_freezes": 3000,
         "next": [
             "confirmCombatExerciseOpponentListPage"
         ],
@@ -199,6 +188,7 @@
         "next": [
             "claimCombatExerciseRewards",
             "closeCombatExerciseRewardClaimResultPage",
+            "领取周期奖励-实兵演习",
             "exitCombatExercisePage"
         ]
     },
@@ -210,6 +200,7 @@
         "next": [
             "combatExerciseRewardProgressNotMet",
             "closeCombatExerciseRewardClaimResultPage",
+            "领取周期奖励-实兵演习",
             "exitCombatExercisePage"
         ]
     },
@@ -223,6 +214,65 @@
             60
         ],
         "template": "实兵演习/演习补给已领取.png",
+        "next": [
+            "领取周期奖励-实兵演习",
+            "exitCombatExercisePage"
+        ]
+    },
+    "领取周期奖励-实兵演习": {
+        "recognition": "OCR",
+        "expected": "周期奖励",
+        "action": "Click",
+        "next": [
+            "已打开周期奖励-实兵演习"
+        ]
+    },
+    "已打开周期奖励-实兵演习": {
+        "recognition": "OCR",
+        "expected": "排名奖励",
+        "next": [
+            "领取段位奖励-实兵演习",
+            "切换到参与奖励标签页-实兵演习"
+        ]
+    },
+    "领取段位奖励-实兵演习": {
+        "recognition": "OCR",
+        "expected": "键领取",
+        "action": "Click",
+        "next": [
+            "切换到参与奖励标签页-实兵演习"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用"
+        ]
+    },
+    "切换到参与奖励标签页-实兵演习": {
+        "recognition": "OCR",
+        "expected": "参与奖励",
+        "action": "Click",
+        "next": [
+            "领取参与奖励-实兵演习",
+            "关闭排名奖励-实兵演习"
+        ]
+    },
+    "领取参与奖励-实兵演习": {
+        "recognition": "OCR",
+        "expected": "键领取",
+        "action": "Click",
+        "next": [
+            "关闭排名奖励-实兵演习"
+        ],
+        "interrupt": [
+            "点击空白处关闭-通用"
+        ]
+    },
+    "关闭排名奖励-实兵演习": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
         "next": [
             "exitCombatExercisePage"
         ]
