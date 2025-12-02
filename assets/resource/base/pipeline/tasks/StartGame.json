@@ -38,13 +38,21 @@
         ]
     },
     "StartGame_HomePage": {
-        "doc": "任务出口，识别到主页的战役推进后结束任务",
         "recognition": "OCR",
         "expected": "战役推进",
-        "pre_delay": 1000,
-        "focus": {
-            "succeeded": "已识别到主页，任务结束"
-        }
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.8
+        },
+        "next": [
+            "StartGame_HomePage_Check",
+            "StartGame"
+        ]
+    },
+    "StartGame_HomePage_Check": {
+        "doc": "任务出口，识别到主页的战役推进后结束任务",
+        "recognition": "OCR",
+        "expected": "战役推进"
     },
     "StartGame_clickCancel": {
         "recognition": "OCR",
