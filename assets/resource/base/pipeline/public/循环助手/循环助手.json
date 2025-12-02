@@ -1,25 +1,33 @@
 {
     "开始循环助手任务": {
         "next": [
+            "进入委托页面-循环助手",
+            "退出循环助手页面"
+        ]
+    },
+    // 不从主页直接识图进入，这里调了很多次还是不成功，从委托 OCR 识别进入比较稳
+    "进入委托页面-循环助手": {
+        "recognition": "OCR",
+        "expected": "^委托", // 有时候会识别成"委托、"
+        "roi": [
+            370,
+            582,
+            909,
+            137
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
             "进入循环助手页面",
-            "循环助手任务结束"
+            "退出循环助手页面"
         ]
     },
     "进入循环助手页面": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            40,
-            555,
-            449,
-            146
-        ],
-        "template": [
-            "其他/循环助手.png",
-            "其他/循环助手2.png"
+        "recognition": "OCR",
+        "expected": [
+            "自主循环"
         ],
         "action": "Click",
-        "order_by": "Score",
-        "green_mask": true,
         "post_wait_freezes": 500,
         "next": [
             "开始执行循环任务"
