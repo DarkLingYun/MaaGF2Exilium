@@ -44,7 +44,7 @@
         }
     ],
     "name": "少女前线2：追放自动化助手",
-    "custom_title": "前进吧，王牌配送员!",
+    "custom_title": "铸碑者的黎明",
     "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "mirrorchyan_rid": "MaaGF2Exilium",
     "task": [
@@ -1665,6 +1665,70 @@
         },
         "物资模式活动选择": {
             "cases": [
+                {
+                    "name": "铸碑者的黎明·上篇",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "铸碑者的黎明",
+                                "黎明",
+                                "铸碑",
+                                "铸碑者"
+                            ],
+                            "roi": [
+                                57,
+                                77,
+                                230,
+                                310
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "莫科什街区",
+                                "莫科什"
+                            ],
+                            "roi": [
+                                25,
+                                121,
+                                210,
+                                157
+                            ]
+                        },
+                        "switchVersionActivityChapter": {
+                            "enabled": true,
+                            "expected": [
+                                "^铸碑者的黎明.*上篇$",
+                                "^黎明.*上篇$"
+                            ]
+                        },
+                        "selectExchangeType": {
+                            "enabled": true,
+                            "expected": [
+                                "^上篇$"
+                            ]
+                        },
+                        "selectResourceModeLevel": {
+                            "doc": "选择物资模式关卡",
+                            "recognition": "OCR",
+                            "expected": "^.*5$",
+                            "action": "Click",
+                            "roi": [
+                                572,
+                                269,
+                                424,
+                                163
+                            ]
+                        },
+                        "exitVersionActivityResourceSweep": {
+                            "roi": [
+                                0,
+                                0,
+                                185,
+                                90
+                            ]
+                        }
+                    }
+                },
                 {
                     "name": "前进吧，王牌配送员!",
                     "pipeline_override": {
