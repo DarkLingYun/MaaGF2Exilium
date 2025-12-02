@@ -19,6 +19,7 @@
             "其他/休息室.png"
         ],
         "action": "Click",
+        "order_by": "Score",
         "post_wait_freezes": 1000,
         "next": [
             "loungeConfirm"
