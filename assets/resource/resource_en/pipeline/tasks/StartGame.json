@@ -19,12 +19,10 @@
         "timeout": 35000,
         "next": [
             "StartGame_clickStart",
-            "StartGame_copyright"
-        ],
-        "interrupt": [
-            "restartGF2Game",
-            "unzipResources",
-            "downloadResource"
+            "StartGame_copyright",
+            "[JumpBack]restartGF2Game",
+            "[JumpBack]unzipResources",
+            "[JumpBack]downloadResource"
         ]
     },
     "openGF2GameApp": {

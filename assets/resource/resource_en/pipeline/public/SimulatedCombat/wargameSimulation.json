@@ -237,10 +237,8 @@
         "recognition": "OCR",
         "expected": "匹配成功",
         "next": [
-            "confirmWarGameSimulationPage"
-        ],
-        "interrupt": [
-            "通用战斗任务开始"
+            "confirmWarGameSimulationPage",
+            "[JumpBack]通用战斗任务开始"
         ]
     },
     "exitWarGameSimulation": {

@@ -11,10 +11,8 @@
         "post_delay": 2500,
         "next": [
             "insufficientPassesForCombatExercise",
-            "clickButtonToEnterOpponentSelection"
-        ],
-        "interrupt": [
-            "点击空白处关闭-通用"
+            "clickButtonToEnterOpponentSelection",
+            "[JumpBack]点击空白处关闭-通用"
         ]
     },
     "clickButtonToEnterOpponentSelection": {
@@ -25,10 +23,8 @@
         "post_wait_freezes": 500,
         "next": [
             "confirmCombatExerciseOpponentListPage",
-            "clickButtonToEnterOpponentSelection"
-        ],
-        "interrupt": [
-            "点击空白处关闭-通用"
+            "clickButtonToEnterOpponentSelection",
+            "[JumpBack]点击空白处关闭-通用"
         ]
     },
     "confirmCombatExerciseOpponentListPage": {
@@ -121,10 +117,8 @@
         "action": "Click",
         "post_wait_freezes": 3000,
         "next": [
-            "confirmCombatExerciseOpponentListPage"
-        ],
-        "interrupt": [
-            "通用战斗任务开始"
+            "confirmCombatExerciseOpponentListPage",
+            "[JumpBack]通用战斗任务开始"
         ]
     },
     "insufficientPassesForCombatExercise": {
@@ -240,10 +234,8 @@
         "expected": "键领取",
         "action": "Click",
         "next": [
-            "切换到参与奖励标签页-实兵演习"
-        ],
-        "interrupt": [
-            "点击空白处关闭-通用"
+            "切换到参与奖励标签页-实兵演习",
+            "[JumpBack]点击空白处关闭-通用"
         ]
     },
     "切换到参与奖励标签页-实兵演习": {
@@ -260,10 +252,8 @@
         "expected": "键领取",
         "action": "Click",
         "next": [
-            "关闭排名奖励-实兵演习"
-        ],
-        "interrupt": [
-            "点击空白处关闭-通用"
+            "关闭排名奖励-实兵演习",
+            "[JumpBack]点击空白处关闭-通用"
         ]
     },
     "关闭排名奖励-实兵演习": {

@@ -14,10 +14,8 @@
             "StartGame_backPage",
             "StartGame_returnToHomePage",
             "StartGame_clickStart",
-            "StartGame_dailyRewards"
-        ],
-        "interrupt": [
-            "openGF2GameApp"
+            "StartGame_dailyRewards",
+            "[JumpBack]openGF2GameApp"
         ]
     },
     "StartGame_levelUp": {
@@ -196,12 +194,10 @@
         "timeout": 35000,
         "next": [
             "healthGameAdvice",
-            "StartGame_clickStart"
-        ],
-        "interrupt": [
-            "restartGF2Game",
-            "unzipResources",
-            "downloadResource"
+            "StartGame_clickStart",
+            "[JumpBack]restartGF2Game",
+            "[JumpBack]unzipResources",
+            "[JumpBack]downloadResource"
         ]
     },
     "StartGame_clickStart": {

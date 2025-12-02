@@ -14,10 +14,8 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "switchToDailyPassRewardPage"
-        ],
-        "interrupt": [
-            "开启远航巡录"
+            "switchToDailyPassRewardPage",
+            "[JumpBack]开启远航巡录"
         ]
     },
     "findPassByImage": {
@@ -30,10 +28,8 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "switchToDailyPassRewardPage"
-        ],
-        "interrupt": [
-            "开启远航巡录"
+            "switchToDailyPassRewardPage",
+            "[JumpBack]开启远航巡录"
         ]
     },
     "当前不存在巡录": {

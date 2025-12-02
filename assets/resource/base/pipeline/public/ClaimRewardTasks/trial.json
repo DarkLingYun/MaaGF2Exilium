@@ -120,10 +120,8 @@
         "post_wait_freezes": 500,
         "action": "Click",
         "next": [
-            "exitEventPageInTrial"
-        ],
-        "interrupt": [
-            "通用战斗任务开始"
+            "exitEventPageInTrial",
+            "[JumpBack]通用战斗任务开始"
         ]
     },
     "exitEventPageInTrial": {

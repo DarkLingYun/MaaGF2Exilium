@@ -2,10 +2,8 @@
     "VersionActivityTask": {
         "doc": "版本活动日常",
         "next": [
-            "enterVersionActivityTask"
-        ],
-        "interrupt": [
-            "StartGame"
+            "enterVersionActivityTask",
+            "[JumpBack]StartGame"
         ]
     },
     "enterVersionActivityTask": {

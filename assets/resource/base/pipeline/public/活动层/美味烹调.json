@@ -12,10 +12,8 @@
         "post_wait_freezes": 1000,
         "timeout": 40000,
         "next": [
-            "已进入活动层-美味烹调"
-        ],
-        "interrupt": [
-            "活动层等级提升"
+            "已进入活动层-美味烹调",
+            "[JumpBack]活动层等级提升"
         ]
     },
     "已进入活动层-美味烹调": {
@@ -91,7 +89,7 @@
         "action": "Click",
         "green_mask": true,
         "post_wait_freezes": 1000,
-        "next": "退出活动层-美味烹调"
+        "next": ["退出活动层-美味烹调"]
     },
     "返回活动层-美味烹调": {
         "recognition": "TemplateMatch",
@@ -102,7 +100,7 @@
         "action": "Click",
         "green_mask": true,
         "post_wait_freezes": 1000,
-        "next": "退出活动层-美味烹调"
+        "next": ["退出活动层-美味烹调"]
     },
     "邀请人形-美味烹调": {
         "recognition": "OCR",
@@ -158,10 +156,8 @@
         "post_wait_freezes": 1000,
         "next": [
             "退出活动层-美味烹调",
-            "确认结果-美味烹调"
-        ],
-        "interrupt": [
-            "活动层等级提升"
+            "确认结果-美味烹调",
+            "[JumpBack]活动层等级提升"
         ]
     },
     "退出活动层-美味烹调": {
@@ -171,10 +167,8 @@
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
-            "确认退出活动层-美味烹调"
-        ],
-        "interrupt": [
-            "活动层等级提升"
+            "确认退出活动层-美味烹调",
+            "[JumpBack]活动层等级提升"
         ]
     },
     "确认退出活动层-美味烹调": {

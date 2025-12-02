@@ -2,21 +2,19 @@
     "ClickAssistant": {
         "timeout": 3600000,
         "next": [
-            "StagePromotionReturnFalse"
-        ],
-        "interrupt":[
-            "StagePromotionWatchStory",
-            "StagePromotionStartMission",
-            "StagePromotionSkipStory",
-            "StagePromotionClosePage",
-            "StagePromotionTeamConfirmation",
-            "StagePromotionStartBattle",
-            "StagePromotionCommunication1",
-            "StagePromotionCommunication2",
-            "点击通信中图片跳过角色对话-通用战斗",
-            "StagePromotionContinue",
-            "StagePromotionConfirm",
-            "StagePromotionFinishTask"
+            "StagePromotionReturnFalse",
+            "[JumpBack]StagePromotionWatchStory",
+            "[JumpBack]StagePromotionStartMission",
+            "[JumpBack]StagePromotionSkipStory",
+            "[JumpBack]StagePromotionClosePage",
+            "[JumpBack]StagePromotionTeamConfirmation",
+            "[JumpBack]StagePromotionStartBattle",
+            "[JumpBack]StagePromotionCommunication1",
+            "[JumpBack]StagePromotionCommunication2",
+            "[JumpBack]点击通信中图片跳过角色对话-通用战斗",
+            "[JumpBack]StagePromotionContinue",
+            "[JumpBack]StagePromotionConfirm",
+            "[JumpBack]StagePromotionFinishTask"
         ]
     }
 }

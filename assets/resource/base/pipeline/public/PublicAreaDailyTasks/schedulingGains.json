@@ -58,10 +58,8 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "调度收益任务结束"
-        ],
-        "interrupt":[
-            "点击空白处关闭-通用"
+            "调度收益任务结束",
+            "[JumpBack]点击空白处关闭-通用"
         ]
     },
     "调度收益任务结束":{

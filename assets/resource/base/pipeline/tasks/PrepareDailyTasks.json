@@ -7,10 +7,8 @@
             "staminaReplenishment",
             "enterShop",
             "enterBoundaryAdvanceAction",
-            "HomePage"
-        ],
-        "interrupt": [
-            "StartGame"
+            "HomePage",
+            "[JumpBack]StartGame"
         ]
     }
 }

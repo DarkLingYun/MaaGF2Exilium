@@ -1,6 +1,5 @@
 {
     "nonScrollablePopupConfirm": {
-        "is_sub": true,
         "roi": [
             260,
             120,
@@ -13,7 +12,6 @@
     },
     "scrollablePopupConfirm": {
         "doc": "滑动条的弹窗用于自律，活动兑换物品的滑动弹窗不应该由脚本完成，因此点击确认后延迟3秒",
-        "is_sub": true,
         "roi": [
             260,
             108,
@@ -26,7 +24,6 @@
         "post_delay": 4000
     },
     "nonScrollablePopupCancel": {
-        "is_sub": true,
         "roi": [
             260,
             120,
@@ -38,7 +35,6 @@
         "action": "Click"
     },
     "scrollablePopupCancel": {
-        "is_sub": true,
         "roi": [
             260,
             108,
@@ -50,7 +46,6 @@
         "action": "Click"
     },
     "nonScrollablePopupClose": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "roi": [
             940,
@@ -65,7 +60,6 @@
         "action": "Click"
     },
     "scrollablePopupClose": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "roi": [
             940,
@@ -106,7 +100,6 @@
     },
     "increaseSlider": {
         "doc": "增加自律次数",
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "roi": [
             260,
@@ -138,7 +131,7 @@
         "post_delay": 100,
         "next": [
             "sliderColorDetection",
-            "scrollablePopupConfirm",
+            "[JumpBack]scrollablePopupConfirm",
             "resultRecognition"
         ]
     },
@@ -183,7 +176,7 @@
         ],
         "expected": "1",
         "next": [
-            "scrollablePopupConfirm",
+            "[JumpBack]scrollablePopupConfirm",
             "resultRecognition"
         ]
     },
@@ -208,7 +201,7 @@
         "recognition": "ColorMatch",
         "post_delay": 100,
         "next": [
-            "scrollablePopupConfirm",
+            "[JumpBack]scrollablePopupConfirm",
             "resultRecognition"
         ]
     }

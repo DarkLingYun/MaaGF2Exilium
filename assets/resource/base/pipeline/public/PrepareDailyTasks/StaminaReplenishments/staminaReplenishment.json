@@ -22,7 +22,7 @@
         "action": "Click",
         "next": [
             "accessKeyInsufficient",
-            "nonScrollablePopupConfirm"
+            "[JumpBack]nonScrollablePopupConfirm"
         ]
     },
     "accessKeyInsufficient": {
@@ -30,7 +30,7 @@
         "recognition": "OCR",
         "expected": "接入密钥不足",
         "next": [
-            "nonScrollablePopupCancel",
+            "[JumpBack]nonScrollablePopupCancel",
             "enterShop",
             "enterBoundaryAdvanceAction",
             "HomePage"

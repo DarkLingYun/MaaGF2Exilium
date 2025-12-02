@@ -9,7 +9,6 @@
         "post_delay": 1500
     },
     "returnToHomePageSub": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/主页按钮_gray.png",
@@ -22,7 +21,6 @@
         ]
     },
     "announcementClosed": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/关闭按钮_gray.png",
@@ -51,13 +49,11 @@
         "pre_delay": 2500
     },
     "resourcesLoading": {
-        "is_sub": true,
         "recognition": "OCR",
         "expected": "资源加载中",
         "post_delay": 2500
     },
     "backPage": {
-        "is_sub": true,
         "recognition": "TemplateMatch",
         "roi": [
             0,

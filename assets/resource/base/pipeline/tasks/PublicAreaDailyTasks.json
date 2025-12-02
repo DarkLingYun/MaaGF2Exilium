@@ -2,10 +2,8 @@
     "PublicAreaDailyTasks": {
         "doc": "公共区日常",
         "next": [
-            "clickPublicAreaDailyButton"
-        ],
-        "interrupt": [
-            "StartGame"
+            "clickPublicAreaDailyButton",
+            "[JumpBack]StartGame"
         ]
     },
     "clickPublicAreaDailyButton": {

@@ -5,10 +5,8 @@
         "recognition": "OCR",
         "expected": "战役推进",
         "next": [
-            "openNavigationScreen"
-        ],
-        "interrupt": [
-            "StartGame"
+            "openNavigationScreen",
+            "[JumpBack]StartGame"
         ]
     },
     "openNavigationScreen": {

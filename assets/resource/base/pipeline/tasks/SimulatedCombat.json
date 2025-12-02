@@ -2,10 +2,8 @@
     "CombatSimulations": {
         "doc": "模拟作战日常",
         "next": [
-            "enterCombatSimulationsTask"
-        ],
-        "interrupt": [
-            "StartGame"
+            "enterCombatSimulationsTask",
+            "[JumpBack]StartGame"
         ]
     },
     "enterCombatSimulationsTask": {

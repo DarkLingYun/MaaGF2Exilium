@@ -2,10 +2,8 @@
     "AutoSweepBattle": {
         "doc": "标准同调、定向精研、补给作战",
         "next": [
-            "enterAutoSweepBattleTask"
-        ],
-        "interrupt": [
-            "StartGame"
+            "enterAutoSweepBattleTask",
+            "[JumpBack]StartGame"
         ]
     },
     "enterAutoSweepBattleTask": {
@@ -45,12 +43,11 @@
         "post_delay": 1500,
         "next": [
             "supplyOperationType",
-            "supplyOperationPageLeftSwip"
+            "[JumpBack]supplyOperationPageLeftSwip"
         ]
     },
     "supplyOperationPageLeftSwip": {
         "doc": "从右往左滑动",
-        "is_sub": true,
         "recognition": "DirectHit",
         "action": "Swipe",
         "begin": [
@@ -112,11 +109,10 @@
         "post_delay": 1500,
         "next": [
             "selectHighestSupplyOperationLevel",
-            "supplyOperationLevelPageDownSwip"
+            "[JumpBack]supplyOperationLevelPageDownSwip"
         ]
     },
     "supplyOperationLevelPageDownSwip": {
-        "is_sub": true,
         "recognition": "DirectHit",
         "duration": 500,
         "action": "Swipe",
@@ -174,7 +170,7 @@
         "recognition": "ColorMatch",
         "next": [
             "supplyOperationLevelLastTwo",
-            "supplyOperationLevelPageDownSwip"
+            "[JumpBack]supplyOperationLevelPageDownSwip"
         ]
     },
     "supplyOperationLevelLastTwo": {
@@ -224,8 +220,8 @@
             "toast": "武器配件已达存储上限，请先清理库存"
         },
         "next": [
-            "nonScrollablePopupCancel",
-            "accessoriesPopupClose",
+            "[JumpBack]nonScrollablePopupCancel",
+            "[JumpBack]accessoriesPopupClose",
             "returnToHomePage"
         ]
     },
@@ -258,12 +254,11 @@
         "action": "Swipe",
         "next": [
             "selectedEffectsCombination",
-            "selectedEffectsCombinationPageTopSwip"
+            "[JumpBack]selectedEffectsCombinationPageTopSwip"
         ]
     },
     "selectedEffectsCombinationPageTopSwip": {
         "doc": "向上滑动4个效果组合",
-        "is_sub": true,
         "recognition": "DirectHit",
         "duration": 500,
         "action": "Swipe",
@@ -322,7 +317,7 @@
             "sliderColorDetectionAccessories",
             "UserSetSliderValueAccessories",
             "increaseSliderMaxAccessories",
-            "increaseSliderAccessories"
+            "[JumpBack]increaseSliderAccessories"
         ]
     },
     "AutoSweepBattleSupplyOperationPrepareInsufficient": {
@@ -330,7 +325,7 @@
         "recognition": "OCR",
         "expected": "^情报拼图补充$",
         "next": [
-            "nonScrollablePopupCancel",
+            "[JumpBack]nonScrollablePopupCancel",
             "returnToHomePage"
         ]
     },
@@ -342,7 +337,7 @@
             "sliderColorDetection",
             "UserSetSliderValue",
             "increaseSliderMax",
-            "increaseSlider"
+            "[JumpBack]increaseSlider"
         ]
     },
     "supplyOperationTypeIsAccessories": {
