@@ -7,7 +7,16 @@
     },
     "进入循环助手页面": {
         "recognition": "TemplateMatch",
-        "template": "其他/循环助手.png",
+        "roi": [
+            40,
+            555,
+            449,
+            146
+        ],
+        "template": [
+            "其他/循环助手.png",
+            "其他/循环助手2.png"
+        ],
         "action": "Click",
         "order_by": "Score",
         "green_mask": true,
