@@ -29,6 +29,7 @@
     "发现七天签到限定十连": {
         "recognition": "OCR",
         "expected": [
+            "鎏金华筵",
             "共轭波频"
         ],
         "post_wait_freezes": 500,
@@ -59,6 +60,7 @@
     "滑动后发现七天签到限定十连": {
         "recognition": "OCR",
         "expected": [
+            "鎏金华筵",
             "共轭波频"
         ],
         "post_wait_freezes": 500,
@@ -70,6 +72,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": [
+            "鎏金华筵",
             "共轭波频"
         ],
         "post_wait_freezes": 500,
@@ -87,6 +90,7 @@
             515
         ],
         "expected": [
+            "鎏金华筵",
             "共轭波频"
         ],
         "post_wait_freezes": 500,
