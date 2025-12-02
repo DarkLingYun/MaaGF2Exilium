@@ -28,12 +28,12 @@
         "doc": "选择公会兑换商品",
         "recognition": "TemplateMatch",
         "template": [
-            "集中兑换/班组商店/波波沙心智存档.png",
             "集中兑换/班组商店/巴希达心智存档.png",
             "集中兑换/班组商店/火控校准芯片.png",
             "集中兑换/班组商店/泛用链式键.png"
         ],
-        "threshold": 0.87,
+        "green_mask": true,
+        "threshold": 0.9,
         "roi": [
             270,
             108,
