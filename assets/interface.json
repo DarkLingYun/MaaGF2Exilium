@@ -1,16 +1,9 @@
 {
+    "interface_version": 2,
     "controller": [
         {
             "name": "安卓端",
             "type": "Adb"
-        },
-        {
-            "name": "桌面端",
-            "type": "Win32",
-            "win32": {
-                "class_regex": ".*",
-                "window_regex": "Visual Studio"
-            }
         }
     ],
     "resource": [
@@ -45,24 +38,18 @@
     ],
     "name": "少女前线2：追放自动化助手",
     "custom_title": "铸碑者的黎明",
-    "url": "https://github.com/DarkLingYun/MaaGF2Exilium",
+    "github": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "mirrorchyan_rid": "MaaGF2Exilium",
     "task": [
         {
             "name": "社区每日操作",
             "entry": "CommunityDailyHelper",
-            "check": false
+            "default_check": false
         },
         {
             "name": "启动少女前线2",
             "entry": "StartGame",
-            "check": true
-        },
-        {
-            "name": "批量使用兑换码",
-            "entry": "BatchRedeemCode",
-            "check": false,
-            "doc": "自动从远端仓库拉取兑换码（不保证兑换码全部可用）"
+            "default_check": true
         },
         {
             "name": "日常任务前准备",
@@ -76,7 +63,7 @@
                 "边界推进委托领取"
             ],
             "doc": "领取邮件需要主界面背景为人形",
-            "check": true
+            "default_check": true
         },
         {
             "name": "公共区日常",
@@ -87,7 +74,7 @@
                 "调度收益领取",
                 "收取神秘箱（需自备硬币）"
             ],
-            "check": true
+            "default_check": true
         },
         {
             "name": "活动层",
@@ -98,7 +85,7 @@
                 "饮品加成",
                 "领取逸趣导算进度奖励"
             ],
-            "check": true
+            "default_check": true
         },
         {
             "name": "定向精研(刷配件)",
@@ -129,6 +116,11 @@
             "doc": "心智勘测体力值每次消耗30"
         },
         {
+            "name": "循环助手",
+            "entry": "开始循环助手任务",
+            "default_check": true
+        },
+        {
             "name": "模拟作战日常",
             "entry": "CombatSimulations",
             "option": [
@@ -140,7 +132,7 @@
                 "自动领取峰值推定奖励",
                 "极限峰值（0级战斗）"
             ],
-            "check": true,
+            "default_check": true,
             "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
         },
         {
@@ -150,7 +142,7 @@
                 "尘烟前线自动作战",
                 "作战模式"
             ],
-            "check": true,
+            "default_check": true,
             "doc": "尘烟前线目前自动编队导致攻坚战分数普遍较低，请谨慎开启。"
         },
         {
@@ -160,6 +152,7 @@
                 "物资模式活动选择",
                 "物资商品兑换"
             ],
+            "default_check": true,
             "doc": "物资模式仅识别第五关"
         },
         {
@@ -169,6 +162,7 @@
                 "物资模式活动选择2（美服/国际服）",
                 "物资商品兑换2（美服/国际服）"
             ],
+            "default_check": false,
             "doc": "适配美服/国际服双版本活动，物资模式仅识别第五关"
         },
         {
@@ -183,7 +177,8 @@
                 "讯段交易不兑换的物品",
                 "家具商店兑换",
                 "家具商店兑换项目"
-            ]
+            ],
+            "default_check": true
         },
         {
             "name": "整理仓库",
@@ -198,7 +193,7 @@
                 "开启道具箱",
                 "物资助力箱奖励类型"
             ],
-            "check": true,
+            "default_check": true,
             "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
         },
         {
@@ -219,23 +214,19 @@
                 "格琳喵的委托",
                 "七天签到限定十连"
             ],
-            "check": true,
+            "default_check": true,
             "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
         },
         {
             "name": "关闭游戏",
-            "entry": "StopGame"
+            "entry": "StopGame",
+            "default_check": false
         },
         {
             "name": "推图助手",
             "entry": "ClickAssistant",
-            "check": false,
+            "default_check": false,
             "doc": "自动点击【挑战】、【观看】、【跳过】、【作战开始】、【继续作战】等，辅助完成主线及活动关卡。"
-        },
-        {
-            "name": "循环助手",
-            "entry": "开始循环助手任务",
-            "check": false
         }
     ],
     "option": {

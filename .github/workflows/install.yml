@@ -70,13 +70,33 @@ jobs:
           name: update
           path: "update"
 
-  windows:
+  build:
     needs: meta
-    runs-on: windows-latest
     strategy:
       matrix:
-        arch: [aarch64, x86_64]
+        include:
+          - os: windows-latest
+            os_name: win
+            mfa_os_name: win
+            arch: aarch64
+            mfa_arch: arm64
+          - os: windows-latest
+            os_name: win
+            mfa_os_name: win
+            arch: x86_64
+            mfa_arch: x64
+          - os: macos-latest
+            os_name: macos
+            mfa_os_name: osx
+            arch: aarch64
+            mfa_arch: arm64
+          - os: macos-latest
+            os_name: macos
+            mfa_os_name: osx
+            arch: x86_64
+            mfa_arch: x64
       fail-fast: false
+    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v4
@@ -87,66 +107,43 @@ jobs:
         uses: robinraju/release-downloader@v1
         with:
           repository: MaaXYZ/MaaFramework
-          fileName: "MAA-win-${{ matrix.arch }}*"
+          fileName: "MAA-${{ matrix.os_name }}-${{ matrix.arch }}*"
           latest: true
           out-file-path: "deps"
           extract: true
 
-      - name: Download MFAWPF
+      - name: Download MFAAvalonia
         uses: robinraju/release-downloader@v1
         with:
-          repository: SweetSmellFox/MFAWPF
-          filename: MFAWPF*
-          tag: v1.3.4
+          repository: SweetSmellFox/MFAAvalonia
+          fileName: "*-${{ matrix.mfa_os_name }}-${{ matrix.mfa_arch }}*"
+          latest: true
           out-file-path: "MFA"
           extract: true
 
+      - name: Clean up MFA archive files
+        shell: bash
+        run: |
+          # Remove any remaining archive files after extraction
+          find ./MFA -type f \( -name "*.zip" -o -name "*.tar" -o -name "*.tar.gz" -o -name "*.7z" -o -name "*.rar" \) -delete
+          echo "Cleaned up archive files in MFA directory"
+
       - name: Install
         shell: bash
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
-          jq --arg url "https://github.com/DarkLingYun/MaaGF2Exilium" --arg version "${{ needs.meta.outputs.tag }}" '. + {"url": $url, "version": $version}' ./assets/interface.json > ./install/interface.json
+          if [ "${{ matrix.os_name }}" = "win" ]; then
+            jq --arg url "https://github.com/DarkLingYun/MaaGF2Exilium" --arg version "${{ needs.meta.outputs.tag }}" '. + {"url": $url, "version": $version}' ./assets/interface.json > ./install/interface.json
+          fi
           
       - uses: actions/upload-artifact@v4
         with:
-          name: MaaGF2ExiliumGUI-win-${{ matrix.arch }}
-          path: "install"
-  
-  macos:
-    needs: meta
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        arch: [aarch64, x86_64]
-      fail-fast: false
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-
-      - name: Download MaaFramework
-        uses: robinraju/release-downloader@v1
-        with:
-          repository: MaaXYZ/MaaFramework
-          fileName: "MAA-macos-${{ matrix.arch }}*"
-          latest: true
-          out-file-path: "deps"
-          extract: true
-
-      - name: Install
-        shell: bash
-        run: |
-          python ./install.py ${{ needs.meta.outputs.tag }}
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: MaaGF2Exilium-macos-${{ matrix.arch }}
+          name: MaaGF2ExiliumGUI-${{ matrix.os_name }}-${{ matrix.arch }}
           path: "install"
         
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, windows, macos]
+    needs: [meta, build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4

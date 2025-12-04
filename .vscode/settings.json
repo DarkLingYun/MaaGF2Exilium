@@ -12,7 +12,7 @@
                 "/assets/interface.json",
                 "/install/interface.json"
             ],
-            "url": "/deps/tools/interface.schema.json"
+            "url": "/deps/tools/interface_v2.schema.json"
         },
         {
             "fileMatch": [
