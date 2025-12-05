@@ -24,7 +24,16 @@
         "recognition": "OCR",
         "expected": "前往",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": {
+            // 调度室背景在动，只识别部分区域
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "dispatchCenterEntered",
             "前往调度室"
@@ -34,7 +43,15 @@
         "doc": "已进入调度室",
         "recognition": "OCR",
         "expected": "^调度考核$",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "rewardGet",
             "noRewardGet"
@@ -42,7 +59,15 @@
     },
     "noRewardGet": {
         "doc": "没有可领取的奖励",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "dispatchProgressing",
             "sendDispatchNotification"
@@ -60,6 +85,15 @@
             171,
             43
         ],
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "claimDispatchCenterDispatchCountReward",
             "enterSchedulingGainsAction",
@@ -73,6 +107,15 @@
             "enterSchedulingGainsAction",
             "returnToHomePage"
         ],
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "focus": {
             "start": "[color:red]公共区调度室未完全派遣，请手动处理[/color]",
             "toast": "公共区调度室未完全派遣，请手动处理"
@@ -87,7 +130,15 @@
             "键领取"
         ],
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "dispatchCenterSendAgain",
             "rewardGet",
@@ -98,7 +149,15 @@
         "recognition": "OCR",
         "expected": "再次派遣",
         "action": "Click",
-        "post_delay": 4000,
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "dispatchCenterSendAgain",
             "claimDispatchCenterDispatchCountReward",
@@ -114,7 +173,15 @@
             264,
             41
         ],
-        "post_delay": 4000,
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "claimDispatchCenterDispatchCountReward",
             "enterSchedulingGainsAction",
@@ -138,7 +205,15 @@
             0,
             0
         ],
-        "post_wait_freezes": 300,
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "closeDispatchCenterDispatchCountRewardClaimResultPage"
         ]
@@ -147,7 +222,15 @@
         "recognition": "OCR",
         "expected": "空白",
         "action": "Click",
-        "post_delay": 1500,
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "closeDispatchCenterDispatchCountRewardClaimResultPage",
             "enterSchedulingGainsAction",
