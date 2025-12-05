@@ -10,6 +10,15 @@
             62
         ],
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "clickMaxStaminaReserveButton"
         ]
@@ -24,6 +33,15 @@
             38
         ],
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "clickExtractStaminaButton"
         ]
@@ -38,6 +56,15 @@
             71
         ],
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "enterResourceProductionPage"
         ]
@@ -47,6 +74,15 @@
         "recognition": "OCR",
         "expected": "资源生产",
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "clickResourceProductionCollectionButton"
         ]
@@ -56,7 +92,15 @@
         "recognition": "OCR",
         "expected": "^收取$",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "调度收益任务结束",
             "[JumpBack]点击空白处关闭-通用"
@@ -65,6 +109,15 @@
     "调度收益任务结束":{
         "recognition": "OCR",
         "expected": "资源生产",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next":[
             "开始神秘箱任务",
             "returnToHomePage"
