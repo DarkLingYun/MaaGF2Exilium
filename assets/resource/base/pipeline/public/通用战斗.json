@@ -25,13 +25,14 @@
             "任务完成-通用战斗",
             "任务失败-通用战斗",
             "点击作战开始按钮-通用战斗",
+            "未部署任何人形-通用战斗",
             "[JumpBack]点击通信中图片跳过角色对话-通用战斗",
             "[JumpBack]发现人形介绍界面-通用战斗"
         ]
     },
     "点击作战开始按钮-通用战斗": {
-        "recognition": "OCR",
-        "expected": "作战开始",
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/作战开始.png",
         "action": "Click",
         "pre_wait_freezes": 5000,
         "post_wait_freezes": 500,
@@ -76,6 +77,52 @@
             "任务完成-通用战斗",
             "任务失败-通用战斗",
             "启动自动战斗-通用战斗"
+        ]
+    },
+    "未部署任何人形-通用战斗": {
+        "recognition": "OCR",
+        "expected": [
+            "点击地格",
+            "拖拽",
+            "部署单位"
+        ],
+        "post_wait_freezes": 500,
+        "next": [
+            "选中部署位-通用战斗"
+        ]
+    },
+    "选中部署位-通用战斗": {
+        "recognition": "ColorMatch",
+        "lower": [
+            65,
+            135,
+            160
+        ],
+        "upper": [
+            84,
+            159,
+            209
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "部署人形-通用战斗",
+            "选中部署位-通用战斗"
+        ]
+    },
+    "部署人形-通用战斗": {
+        "recognition": "OCR",
+        "expected": "^部署人形$",
+        "roi": [
+            875,
+            540,
+            398,
+            177
+        ],
+        "action": "Click",
+        "post_wait_freezes": 500,
+        "next": [
+            "点击作战开始按钮-通用战斗"
         ]
     },
     "启动自动战斗-通用战斗": {
