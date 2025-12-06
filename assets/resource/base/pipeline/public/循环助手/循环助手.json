@@ -53,7 +53,7 @@
             "确认"
         ],
         "action": "Click",
-        "timeout": 600000,
+        "timeout": 6000000, // 有的用户会用循环助手打尘烟前线，需要设置时间长一点
         "order_by": "Horizontal",
         "index": -1,
         "post_wait_freezes": 500,
