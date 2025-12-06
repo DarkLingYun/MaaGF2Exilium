@@ -12,7 +12,15 @@
             "神秘箱"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "timeout": 60000,
         "next": [
             "无剩余次数-神秘箱",
@@ -27,7 +35,15 @@
             "本周剩余次数：0/100",
             "本周剩余次数:0/100"
         ],
-        "post_wait_freezes": 500,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "神秘箱任务结束"
         ]
@@ -37,6 +53,15 @@
         "expected": [
             "本周剩余次数"
         ],
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "可收取十次-神秘箱",
             "可收取一次-神秘箱",
@@ -49,7 +74,15 @@
             "调度室/幸运硬币10.png"
         ],
         "threshold": 0.95,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "收取十次-神秘箱"
         ]
@@ -60,7 +93,15 @@
             "调度室/幸运硬币1.png"
         ],
         "threshold": 0.95,
-        "post_wait_freezes": 500,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "收取一次-神秘箱"
         ]
@@ -69,7 +110,15 @@
         "recognition": "OCR",
         "expected": "收取十次",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "进入神秘箱页面",
             "[JumpBack]点击空白处关闭-通用",
@@ -80,7 +129,15 @@
         "recognition": "OCR",
         "expected": "收取一次",
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                500,
+                1280,
+                220
+            ]
+        },
         "next": [
             "进入神秘箱页面",
             "[JumpBack]点击空白处关闭-通用",

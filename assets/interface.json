@@ -224,7 +224,8 @@
                 "艾莫号许愿池",
                 "模拟习练",
                 "格琳喵的委托",
-                "七天签到限定十连"
+                "七天签到限定十连",
+                "限时中型活动"
             ],
             "default_check": true,
             "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
@@ -2881,6 +2882,26 @@
                     "name": "NO",
                     "pipeline_override": {
                         "开始七天签到限定十连任务": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "限时中型活动": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "开始限时中型活动任务": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "开始限时中型活动任务": {
                             "enabled": false
                         }
                     }

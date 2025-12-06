@@ -3,7 +3,11 @@ name = "maagf2exilium"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.13"
+# Python 版本限制说明：
+# maadebugger 依赖 nicegui<3.0，而 nicegui 2.x 依赖 vbuild
+# vbuild 使用了 pkgutil.find_loader()，该 API 在 Python 3.12+ 中已被移除
+# 因此必须限制 Python 版本为 3.11.x
+requires-python = ">=3.11,<3.12"
 dependencies = [
     "black",
     "maadebugger",

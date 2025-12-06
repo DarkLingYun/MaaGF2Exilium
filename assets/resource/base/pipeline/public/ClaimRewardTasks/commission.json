@@ -13,7 +13,8 @@
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "confirmEntrustedClaimPage"
+            "confirmEntrustedClaimPage",
+            "enterCommissionToClaimTask"
         ]
     },
     "confirmEntrustedClaimPage": {
@@ -167,6 +168,7 @@
             "开始模拟习练任务",
             "开始格琳喵的委托任务",
             "开始七天签到限定十连任务",
+            "开始限时中型活动任务",
             "HomePage"
         ]
     }
