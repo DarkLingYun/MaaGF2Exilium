@@ -199,7 +199,8 @@
             "AutoSweepBattleSupplyOperationPrepareAccessoriesLimit",
             "AutoSweepBattleSupplyOperationPrepareInsufficient",
             "AutoSweepBattleSupplyOperationPrepareIsAccessories",
-            "AutoSweepBattleSupplyOperationPrepare"
+            "AutoSweepBattleSupplyOperationPrepare",
+            "clickAutoSweepBattleSupplyOperationButton"
         ]
     },
     "AutoSweepBattleSupplyOperationPrepareAccessoriesLimit": {
