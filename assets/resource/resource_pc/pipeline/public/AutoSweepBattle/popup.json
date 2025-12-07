@@ -6,6 +6,12 @@
             "checkNextStepWin32"
         ]
     },
+    "decreaseSlider": {
+        "template": [
+            "公用按钮组件/滑动条值减少.png",
+            "公用按钮组件/滑动条值减少_black.png"
+        ]
+    },
     "checkNextStepWin32": {
         "doc": "Win32下需要点击下一步才进入选择次数页面",
         "recognition": "TemplateMatch",
