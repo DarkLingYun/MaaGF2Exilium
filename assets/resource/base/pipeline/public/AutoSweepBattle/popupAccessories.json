@@ -144,6 +144,7 @@
             48,
             46
         ],
+        "post_wait_freezes": 500,
         "template": [
             "公用按钮组件/关闭按钮_gray.png",
             "公用按钮组件/关闭按钮_black.png"

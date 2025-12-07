@@ -30,6 +30,7 @@
             760,
             480
         ],
+        "post_wait_freezes": 500,
         "recognition": "OCR",
         "expected": "取消",
         "action": "Click"

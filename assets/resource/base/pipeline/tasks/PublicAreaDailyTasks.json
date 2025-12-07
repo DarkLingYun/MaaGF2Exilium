@@ -7,6 +7,9 @@
         ]
     },
     "clickPublicAreaDailyButton": {
+        "recognition": "OCR",
+        "expected": "^战役推进$",
+        "post_wait_freezes": 100,
         "next": [
             "enterLoungeAction",
             "enterDispatchCenterAction",
