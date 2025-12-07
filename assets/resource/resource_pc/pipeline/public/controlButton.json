@@ -1,0 +1,12 @@
+{
+    "returnToHomePage": {
+        "threshold": 0.5
+    },
+    "returnToHomePageSub": {
+        "threshold": 0.5
+    },
+    "backPage": {
+        "action": "ClickKey",
+        "key": 27
+    }
+}
