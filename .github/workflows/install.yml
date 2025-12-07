@@ -27,15 +27,18 @@ jobs:
       - id: set_tag
         run: |
           is_release=${{ startsWith(github.ref, 'refs/tags/v') }}
-          tag=$(git describe --tags --match "v*" ${{ github.ref }} || true)
-          if [[ $tag != v* ]]; then
-            tag=$(curl -sX GET "https://api.github.com/repos/${{ github.repository }}/releases/latest" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | awk '/tag_name/{print $4}' FS='["]')
+          if $is_release; then
+            # 直接从 github.ref 提取 tag 名称
+            tag=${GITHUB_REF#refs/tags/}
+          else
+            tag=$(git describe --tags --match "v*" HEAD || true)
             if [[ $tag != v* ]]; then
-              tag="v0.0.0"
+              tag=$(curl -sX GET "https://api.github.com/repos/${{ github.repository }}/releases/latest" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | awk '/tag_name/{print $4}' FS='["]')
+              if [[ $tag != v* ]]; then
+                tag="v0.0.0"
+              fi
+              tag=$(date "+$tag-%y%m%d-$(git rev-parse --short HEAD)")
             fi
-            tag=$(date "+$tag-%y%m%d-$(git rev-parse --short HEAD)")
-          fi
-          if ! $($is_release) ; then
             prefix=${tag%-*-*}
             suffix=${tag#$prefix-}
             tag="$prefix-ci.$suffix"
