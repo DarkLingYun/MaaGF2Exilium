@@ -1,6 +1,12 @@
 {
     "returnToHomePage": {
         "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            150,
+            70
+        ],
         "template": [
             "公用按钮组件/主页按钮_gray.png",
             "公用按钮组件/主页按钮_black.png"
@@ -10,6 +16,12 @@
     },
     "returnToHomePageSub": {
         "recognition": "TemplateMatch",
+        "roi": [
+            0,
+            0,
+            150,
+            70
+        ],
         "template": [
             "公用按钮组件/主页按钮_gray.png",
             "公用按钮组件/主页按钮_black.png"
