@@ -46,6 +46,13 @@
                 "{PROJECT_DIR}/resource/resource_en",
                 "{PROJECT_DIR}/resource/resource_glo"
             ]
+        },
+        {
+            "name": "PC 端 (B 服)",
+            "path": [
+                "{PROJECT_DIR}/resource/base",
+                "{PROJECT_DIR}/resource/resource_pc"
+            ]
         }
     ],
     "name": "少女前线2：追放自动化助手",
