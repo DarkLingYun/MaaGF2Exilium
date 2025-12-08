@@ -9,11 +9,17 @@
         "doc": "进入拆解界面",
         "recognition": "OCR",
         "expected": "拆解",
-        "roi": [686,9,574,67],
+        "roi": [
+            686,
+            9,
+            574,
+            67
+        ],
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "weaponDisassemblyPageEntered"
+            "weaponDisassemblyPageEntered",
+            "enterWeaponDisassemblyPage"
         ]
     },
     "weaponDisassemblyPageEntered": {
@@ -109,7 +115,12 @@
         "doc": "找到拆解通知",
         "recognition": "OCR",
         "expected": "是否确认拆解",
-        "roi": [367,302,526,72],
+        "roi": [
+            367,
+            302,
+            526,
+            72
+        ],
         "next": [
             "confirmWeaponDisassemblyNotification"
         ]
@@ -119,7 +130,12 @@
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
-        "roi": [783,519,89,42],
+        "roi": [
+            783,
+            519,
+            89,
+            42
+        ],
         "post_wait_freezes": 500,
         "next": [
             "closeWeaponDisassemblyResultByClickingBlank"
@@ -145,7 +161,12 @@
     "exitWeaponDisassembly": {
         "recognition": "OCR",
         "expected": "仓库",
-        "roi": [686,9,574,67],
+        "roi": [
+            686,
+            9,
+            574,
+            67
+        ],
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
