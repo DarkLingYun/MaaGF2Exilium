@@ -46,14 +46,13 @@
         "recognition": "OCR",
         "expected": "生长数据",
         "next": [
-            "noFlowerLeft",
+            "暂无生长数据",
             "selectFlowerLevel"
         ]
     },
-    "noFlowerLeft": {
-        "doc": "无可拆解生长数据",
+    "暂无生长数据": {
         "recognition": "OCR",
-        "expected": "无可拆解生长数据",
+        "expected": "暂无生长数据",
         "action": "Click",
         "next": [
             "exitFlower"
@@ -119,7 +118,7 @@
         "recognition": "OCR",
         "expected": "请选择要拆解的道具",
         "next": [
-            "noFlowerLeft",
+            "暂无生长数据",
             "quickSelectFlower"
         ]
     },
