@@ -46,7 +46,15 @@
         "recognition": "OCR",
         "expected": "人形武器",
         "next": [
+            "暂无人形武器",
             "selectWeaponLevel"
+        ]
+    },
+    "暂无人形武器": {
+        "recognition": "OCR",
+        "expected": "暂无人形武器",
+        "next": [
+            "exitWeaponDisassembly"
         ]
     },
     "selectWeaponLevel": {
@@ -145,6 +153,7 @@
         "recognition": "OCR",
         "expected": "请选择要拆解的道具",
         "next": [
+            "暂无人形武器",
             "quickSelectWeapon"
         ]
     },

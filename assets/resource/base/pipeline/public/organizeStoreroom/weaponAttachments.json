@@ -46,7 +46,15 @@
         "recognition": "OCR",
         "expected": "武器配件",
         "next": [
+            "暂无武器配件",
             "selectWeaponAttachmentsLevel"
+        ]
+    },
+    "暂无武器配件": {
+        "recognition": "OCR",
+        "expected": "暂无武器配件",
+        "next": [
+            "exitWeaponAttachments"
         ]
     },
     "selectWeaponAttachmentsLevel": {
@@ -103,6 +111,7 @@
         "recognition": "OCR",
         "expected": "请选择要拆解的道具",
         "next": [
+            "暂无武器配件",
             "quickSelect"
         ]
     },
