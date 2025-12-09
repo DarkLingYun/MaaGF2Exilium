@@ -16,7 +16,6 @@
             67
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "flowerDisassemblyPageEntered",
             "enterFlowerDisassemblyPage"
@@ -26,7 +25,6 @@
         "doc": "已进入拆解界面",
         "recognition": "OCR",
         "expected": "请选择要拆解的道具",
-        "post_wait_freezes": 500,
         "next": [
             "selectFlowerTab"
         ]
@@ -39,7 +37,6 @@
             "仓库/生长数据暗.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "flowerTabSelected"
         ]
@@ -48,7 +45,6 @@
         "doc": "生长数据标签页已选中",
         "recognition": "OCR",
         "expected": "生长数据",
-        "post_wait_freezes": 500,
         "next": [
             "noFlowerLeft",
             "selectFlowerLevel"
@@ -59,7 +55,6 @@
         "recognition": "OCR",
         "expected": "无可拆解生长数据",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "exitFlower"
         ]
@@ -69,7 +64,6 @@
         "recognition": "OCR",
         "expected": "及以下",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "chooseFlowerLevel"
         ]
@@ -79,7 +73,6 @@
         "recognition": "OCR",
         "expected": "工业级及以下",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "quickSelectFlower"
         ]
@@ -89,7 +82,6 @@
         "recognition": "OCR",
         "expected": "快捷选择",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "有物品可拆解-生长数据",
             "exitFlower"
@@ -110,7 +102,6 @@
             "仓库/拆解按钮.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "closeFlowerResultByClickingBlank",
             "flowerResultClosed"
@@ -120,7 +111,6 @@
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "flowerResultClosed"
         ]
@@ -128,7 +118,6 @@
     "flowerResultClosed": {
         "recognition": "OCR",
         "expected": "请选择要拆解的道具",
-        "post_wait_freezes": 500,
         "next": [
             "noFlowerLeft",
             "quickSelectFlower"
@@ -144,7 +133,6 @@
             67
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "itemBox",
             "returnToHomePage"

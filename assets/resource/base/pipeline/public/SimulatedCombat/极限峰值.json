@@ -11,7 +11,6 @@
         "recognition": "OCR",
         "expected": "峰值推定",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "进入极限峰值标签页-极限峰值",
             "[JumpBack]发现新周期-极限峰值",
@@ -25,7 +24,6 @@
             "极限峰值"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "已进入极限峰值标签页-极限峰值",
             "未进入极限峰值标签页-极限峰值"
@@ -37,7 +35,6 @@
             "激化阶群"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "进入子群1-极限峰值"
         ]
@@ -53,7 +50,6 @@
             "子群1"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "子群1已完成-极限峰值",
             "子群1未完成-极限峰值"
@@ -63,7 +59,6 @@
         "recognition": "TemplateMatch",
         "template": "其他/子群已完成.png",
         "threshold": 0.95,
-        "post_wait_freezes": 500,
         "next": [
             "子群1后返回极限峰值标签页-极限峰值"
         ]
@@ -76,7 +71,6 @@
         ],
         "action": "Click",
         "green_mask": true,
-        "post_wait_freezes": 500,
         "next": [
             "进入子群2-极限峰值"
         ]
@@ -103,7 +97,6 @@
             "子群2"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "子群2已完成-极限峰值",
             "子群2未完成-极限峰值"
@@ -113,7 +106,6 @@
         "recognition": "TemplateMatch",
         "template": "其他/子群已完成.png",
         "threshold": 0.95,
-        "post_wait_freezes": 500,
         "next": [
             "子群2后返回极限峰值标签页-极限峰值"
         ]
@@ -126,7 +118,6 @@
         ],
         "action": "Click",
         "green_mask": true,
-        "post_wait_freezes": 500,
         "next": [
             "进入子群3-极限峰值"
         ]
@@ -153,7 +144,6 @@
             "子群3"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "子群3已完成-极限峰值",
             "子群3未完成-极限峰值"
@@ -163,7 +153,6 @@
         "recognition": "TemplateMatch",
         "template": "其他/子群已完成.png",
         "threshold": 0.95,
-        "post_wait_freezes": 500,
         "next": [
             "子群3后返回极限峰值标签页-极限峰值"
         ]
@@ -176,7 +165,6 @@
         ],
         "action": "Click",
         "green_mask": true,
-        "post_wait_freezes": 500,
         "next": [
             "极限峰值任务完成"
         ]
@@ -205,7 +193,6 @@
         ],
         "action": "Click",
         "green_mask": true,
-        "post_wait_freezes": 500,
         "next": [
             "enterMilitarySimulationTask",
             "returnToHomePage"
@@ -221,7 +208,6 @@
     "发现周期报酬-极限峰值": {
         "recognition": "OCR",
         "expected": "周期报酬",
-        "post_wait_freezes": 500,
         "next": [
             "领取周期报酬-极限峰值",
             "关闭周期报酬页面-极限峰值"
@@ -231,7 +217,6 @@
         "recognition": "OCR",
         "expected": "键领取",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "关闭周期报酬奖励领取结果页-极限峰值"
         ]
@@ -240,7 +225,6 @@
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "发现周期报酬-极限峰值"
         ]

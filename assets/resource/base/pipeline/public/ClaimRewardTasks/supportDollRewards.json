@@ -25,7 +25,6 @@
         "recognition": "TemplateMatch",
         "template": "个人信息/领取.png",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "closeClaimResult",
             "claimSupportDollRewards",
@@ -37,7 +36,6 @@
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "claimResultClosed",
             "closeClaimResult"
@@ -58,7 +56,6 @@
             "公用按钮组件/主页按钮_black.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "personalInformationPageExited",
             "exitPersonalInformationPage"

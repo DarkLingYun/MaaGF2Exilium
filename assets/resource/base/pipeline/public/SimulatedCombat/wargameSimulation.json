@@ -52,7 +52,6 @@
         "recognition": "OCR",
         "expected": "奖励预览",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "enterClaimRewardTab"
         ]
@@ -62,7 +61,6 @@
         "recognition": "OCR",
         "expected": "参与奖励",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "claimReward",
             "noRewardLeft"
@@ -73,7 +71,6 @@
         "recognition": "OCR",
         "expected": "^领取$",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "closeClaimResultPage"
         ]
@@ -92,7 +89,6 @@
         "doc": "奖励结果页面已关闭",
         "recognition": "OCR",
         "expected": "参与奖励",
-        "post_wait_freezes": 500,
         "next": [
             "claimReward",
             "noRewardLeft"
@@ -130,7 +126,6 @@
         "recognition": "OCR",
         "expected": "^领取$",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "closeClaimResultPageInNewLocation"
         ]
@@ -149,7 +144,6 @@
         "doc": "奖励结果页面已关闭",
         "recognition": "OCR",
         "expected": "参与奖励",
-        "post_wait_freezes": 500,
         "next": [
             "claimRewardComplete"
         ]
@@ -190,7 +184,6 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "confirmWarGameSimulationPage"
         ]
@@ -209,7 +202,6 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "exitWarGameSimulation"
         ]

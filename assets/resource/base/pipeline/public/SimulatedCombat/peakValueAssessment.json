@@ -51,7 +51,6 @@
             "新周期开"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "进入常规峰值"
         ]
@@ -60,7 +59,6 @@
         "recognition": "OCR",
         "expected": "常规峰值",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "peakValueAssessmentPageEnteredForFirstTime",
             "peakValueAssessmentPageEnteredAgain"

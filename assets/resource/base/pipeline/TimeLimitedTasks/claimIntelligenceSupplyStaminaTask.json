@@ -32,7 +32,6 @@
             34,
             28
         ],
-        "post_wait_freezes": 500,
         "next": [
             "intelligenceSupplyTabFoundAfterSwipe",
             "exitIntelligenceSupply"
@@ -62,7 +61,6 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "intelligenceSupplyTaskEnd"
         ]
@@ -70,7 +68,6 @@
     "intelligenceSupplyTaskEnd": {
         "recognition": "OCR",
         "expected": "战役推进",
-        "post_wait_freezes": 500,
         "next": [
             "claimSevenDayCheckInResourceTaskTimed",
             "getNewEmails",

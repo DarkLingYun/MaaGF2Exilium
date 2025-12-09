@@ -13,7 +13,6 @@
         ],
         "action": "Click",
         "green_mask": true,
-        "post_wait_freezes": 500,
         "next": [
             "itemBoxTabSelected"
         ]
@@ -49,7 +48,6 @@
         ],
         "action": "Click",
         "threshold": 0.3,
-        "post_wait_freezes": 500,
         "next": [
             "useSupplySupportBoxItem"
         ]
@@ -59,7 +57,6 @@
         "recognition": "OCR",
         "expected": "使用",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "chooseSupplySupportBoxItem"
         ]
@@ -70,7 +67,6 @@
         "expected": "战场报告",
         "action": "Click",
         "target": true,
-        "post_wait_freezes": 500,
         "next": [
             "setSupplySupportBoxNumber"
         ]
@@ -81,7 +77,6 @@
         "expected": "最大",
         "action": "Click",
         "target": true,
-        "post_wait_freezes": 500,
         "next": [
             "confirmSupplySupportBox"
         ]
@@ -92,7 +87,6 @@
         "expected": "确认",
         "action": "Click",
         "target": true,
-        "post_wait_freezes": 500,
         "next": [
             "closeSupplySupportBoxResultPage"
         ]
@@ -103,7 +97,6 @@
         "expected": "点击空白处关闭",
         "action": "Click",
         "target": true,
-        "post_wait_freezes": 500,
         "next": [
             "tryToOpenItemBox"
         ]
@@ -123,7 +116,6 @@
         "green_mask": true,
         "order_by": "Score",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "确认是顶级生长数据随机箱-候选1",
             "选中生长数据礼箱-候选2",
@@ -141,7 +133,6 @@
         "green_mask": true,
         "order_by": "Score",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "确认是顶级生长数据随机箱-候选2",
             "选中生长数据礼箱-候选3",
@@ -158,7 +149,6 @@
         "green_mask": true,
         "order_by": "Score",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "确认是顶级生长数据随机箱-候选3",
             "选中生长数据礼箱-候选4",
@@ -174,7 +164,6 @@
         "green_mask": true,
         "order_by": "Score",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "确认是顶级生长数据随机箱-候选4",
             "openItemBoxCompleted"
@@ -183,7 +172,6 @@
     "确认是顶级生长数据随机箱-候选1": {
         "recognition": "OCR",
         "expected": "顶级生长数据随机箱",
-        "post_wait_freezes": 500,
         "next": [
             "useFlowerBoxItem"
         ]
@@ -191,7 +179,6 @@
     "确认是顶级生长数据随机箱-候选2": {
         "recognition": "OCR",
         "expected": "顶级生长数据随机箱",
-        "post_wait_freezes": 500,
         "next": [
             "useFlowerBoxItem"
         ]
@@ -199,7 +186,6 @@
     "确认是顶级生长数据随机箱-候选3": {
         "recognition": "OCR",
         "expected": "顶级生长数据随机箱",
-        "post_wait_freezes": 500,
         "next": [
             "useFlowerBoxItem"
         ]
@@ -207,7 +193,6 @@
     "确认是顶级生长数据随机箱-候选4": {
         "recognition": "OCR",
         "expected": "顶级生长数据随机箱",
-        "post_wait_freezes": 500,
         "next": [
             "useFlowerBoxItem"
         ]
@@ -217,7 +202,6 @@
         "recognition": "OCR",
         "expected": "使用",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "doubleCheckFlowerBox",
             "closeNotTopDataBoxPage",
@@ -229,7 +213,6 @@
         "recognition": "OCR",
         "expected": "取消",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "closeNotTopDataBoxPage",
             "openItemBoxCompleted"
@@ -239,7 +222,6 @@
         "doc": "确认是顶级生长数据随机箱",
         "recognition": "OCR",
         "expected": "顶级生长数据随机箱",
-        "post_wait_freezes": 500,
         "next": [
             "setFlowerBoxNumber",
             "confirmFlowerBox"
@@ -250,7 +232,6 @@
         "recognition": "OCR",
         "expected": "最大",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "confirmFlowerBox"
         ]
@@ -260,7 +241,6 @@
         "recognition": "OCR",
         "expected": "开启",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "closeFlowerBoxResultPage"
         ]
@@ -270,7 +250,6 @@
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "openItemBoxCompleted"
         ]
@@ -283,7 +262,6 @@
             "仓库/奇忆甄选信念.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "使用奇忆甄选箱子"
         ]
@@ -292,7 +270,6 @@
         "recognition": "OCR",
         "expected": "使用",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "设置奇忆甄选箱子使用数量"
         ]
@@ -301,7 +278,6 @@
         "recognition": "OCR",
         "expected": "最大",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "确认开启奇忆甄选箱子"
         ]
@@ -310,7 +286,6 @@
         "recognition": "OCR",
         "expected": "开启",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "关闭奇忆甄选箱子打开结果"
         ]
@@ -319,7 +294,6 @@
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "tryToOpenItemBox"
         ]

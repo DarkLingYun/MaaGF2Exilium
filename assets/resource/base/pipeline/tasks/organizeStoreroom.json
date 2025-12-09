@@ -29,7 +29,6 @@
         "expected": "仓库",
         "action": "Click",
         "target": true,
-        "post_wait_freezes": 500,
         "next": [
             "storeroomEntered"
         ]

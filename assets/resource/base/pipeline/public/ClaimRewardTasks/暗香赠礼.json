@@ -9,7 +9,6 @@
         "expected": [
             "战役推进"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "进入活动页面-暗香赠礼"
         ]
@@ -19,7 +18,6 @@
         "expected": [
             "^活动$"
         ],
-        "post_wait_freezes": 500,
         "action": "Click",
         "next": [
             "发现暗香赠礼",
@@ -31,7 +29,6 @@
         "expected": [
             "暗香赠礼"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "点击暗香赠礼标签页"
         ]
@@ -50,7 +47,6 @@
             34,
             28
         ],
-        "post_wait_freezes": 500,
         "next": [
             "滑动后发现暗香赠礼",
             "退出活动页面-暗香赠礼"
@@ -61,7 +57,6 @@
         "expected": [
             "暗香赠礼"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "点击暗香赠礼标签页"
         ]
@@ -72,7 +67,6 @@
         "expected": [
             "暗香赠礼"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "进入暗香赠礼页面"
         ]
@@ -83,7 +77,6 @@
             "前往"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "已进入暗香赠礼页面"
         ]
@@ -94,7 +87,6 @@
             "铁玫瑰赠礼"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "开启铁玫瑰赠礼",
             "开启火玫瑰赠礼",
@@ -113,7 +105,6 @@
             522,
             147
         ],
-        "post_wait_freezes": 500,
         "action": "Click",
         "next": [
             "选择铁玫瑰赠礼奖励道具"
@@ -124,7 +115,6 @@
         "expected": [
             "战场报告"
         ],
-        "post_wait_freezes": 500,
         "action": "Click",
         "next": [
             "增加铁玫瑰赠礼领取次数",
@@ -138,7 +128,6 @@
         ],
         "order_by": "Score",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "铁玫瑰赠礼批量使用值已到最大",
             "增加铁玫瑰赠礼领取次数"
@@ -162,7 +151,6 @@
             131,
             135
         ],
-        "post_wait_freezes": 500,
         "next": [
             "确认领取铁玫瑰赠礼"
         ]
@@ -173,7 +161,6 @@
             "领取"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "关闭赠礼领取结果"
         ]
@@ -184,7 +171,6 @@
             "点击空白处关闭"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "关闭赠礼领取结果",
             "已进入暗香赠礼页面"
@@ -201,7 +187,6 @@
             533,
             148
         ],
-        "post_wait_freezes": 500,
         "action": "Click",
         "next": [
             "选择火玫瑰赠礼奖励道具"
@@ -212,7 +197,6 @@
         "expected": [
             "序六"
         ],
-        "post_wait_freezes": 500,
         "action": "Click",
         "next": [
             "增加火玫瑰赠礼领取次数",
@@ -226,7 +210,6 @@
         ],
         "order_by": "Score",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "火玫瑰赠礼批量使用值已到最大",
             "增加火玫瑰赠礼领取次数"
@@ -250,7 +233,6 @@
             131,
             135
         ],
-        "post_wait_freezes": 500,
         "next": [
             "确认领取火玫瑰赠礼"
         ]
@@ -261,7 +243,6 @@
             "领取"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "关闭赠礼领取结果",
             "已进入暗香赠礼页面"
@@ -275,7 +256,6 @@
         "threshold": 0.9,
         "roi": [1105,355,127,149],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "关闭信息核领取结果-暗香赠礼",
             "已打开信息核介绍页面-暗香赠礼"
@@ -286,7 +266,6 @@
         "expected": [
             "基原信息核"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "关闭信息核介绍页面-暗香赠礼"
         ]
@@ -298,7 +277,6 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "直接返回主页-暗香赠礼"
         ]
@@ -309,7 +287,6 @@
             "点击空白处关闭"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "已进入暗香赠礼页面"
         ]
@@ -321,7 +298,6 @@
             "公用按钮组件/主页按钮_gray.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "暗香赠礼任务结束"
         ]
@@ -333,7 +309,6 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "暗香赠礼任务结束",
             "退出活动页面-暗香赠礼"

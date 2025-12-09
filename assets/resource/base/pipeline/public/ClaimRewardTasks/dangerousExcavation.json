@@ -12,7 +12,6 @@
         "expected": [
             "^活动$"
         ],
-        "post_wait_freezes": 500,
         "action": "Click",
         "next": [
             "dangerousExcavationFound",
@@ -35,7 +34,6 @@
         "action": "Swipe",
         "begin": [164,533,49,33],
         "end": [181,129,34,28],
-        "post_wait_freezes": 500,
         "next":[
             "dangerousExcavationFoundAfterSwipe",
             "exitEventPageInDangerousExcavation"
@@ -82,7 +80,6 @@
         ],
         "roi": [1117,548,91,25],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "dangerousExcavationPageEntered",
             "enterDangerousExcavationPage"
@@ -106,7 +103,6 @@
             "线索收集"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "clueCollectionPageEntered",
             "enterClueCollectionPage"
@@ -257,7 +253,6 @@
             "公用按钮组件/主页按钮_black.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "HomePage",
             "exitDangerousExcavation"
@@ -271,7 +266,6 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "dangerousExcavationTaskEnd",
             "exitEventPageInDangerousExcavation"

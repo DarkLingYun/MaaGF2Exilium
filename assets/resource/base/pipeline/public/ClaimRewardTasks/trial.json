@@ -12,7 +12,6 @@
         "expected": [
             "^活动$"
         ],
-        "post_wait_freezes": 500,
         "action": "Click",
         "next": [
             "trialFound",
@@ -25,7 +24,6 @@
         "expected": [
             "预演"
         ],
-        "post_wait_freezes": 500,
         "action": "Click",
         "order_by": "Vertical",
         "next": [
@@ -47,7 +45,6 @@
             34,
             28
         ],
-        "post_wait_freezes": 500,
         "next": [
             "trialFoundAfterSwipe",
             "exitEventPageInTrial"
@@ -59,7 +56,6 @@
         "expected": [
             "预演"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "clickTrialTab"
         ]
@@ -70,7 +66,6 @@
         "expected": [
             "预演"
         ],
-        "post_wait_freezes": 500,
         "action": "Click",
         "order_by": "Vertical",
         "next": [
@@ -89,7 +84,6 @@
         "expected": [
             "预演"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "trialRewardClaimed",
             "trialRewardNotClaimed"
@@ -99,7 +93,6 @@
         "doc": "预演奖励已领取",
         "recognition": "TemplateMatch",
         "template": "活动/预演奖励已领取.png",
-        "post_wait_freezes": 500,
         "threshold": 0.95,
         "next": [
             "exitEventPageInTrial"
@@ -117,7 +110,6 @@
         "expected": [
             "前往"
         ],
-        "post_wait_freezes": 500,
         "action": "Click",
         "next": [
             "exitEventPageInTrial",
@@ -132,7 +124,6 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "trialTaskEnd",
             "exitEventPageInTrial"
