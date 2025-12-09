@@ -9,17 +9,24 @@
         "doc": "进入拆解界面",
         "recognition": "OCR",
         "expected": "拆解",
-        "roi": [686,9,574,67],
+        "roi": [
+            686,
+            9,
+            574,
+            67
+        ],
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "flowerDisassemblyPageEntered"
+            "flowerDisassemblyPageEntered",
+            "enterFlowerDisassemblyPage"
         ]
     },
     "flowerDisassemblyPageEntered": {
         "doc": "已进入拆解界面",
         "recognition": "OCR",
         "expected": "请选择要拆解的道具",
+        "post_wait_freezes": 500,
         "next": [
             "selectFlowerTab"
         ]
@@ -41,6 +48,7 @@
         "doc": "生长数据标签页已选中",
         "recognition": "OCR",
         "expected": "生长数据",
+        "post_wait_freezes": 500,
         "next": [
             "noFlowerLeft",
             "selectFlowerLevel"
@@ -61,7 +69,6 @@
         "recognition": "OCR",
         "expected": "及以下",
         "action": "Click",
-        "target": true,
         "post_wait_freezes": 500,
         "next": [
             "chooseFlowerLevel"
@@ -72,7 +79,6 @@
         "recognition": "OCR",
         "expected": "工业级及以下",
         "action": "Click",
-        "target": true,
         "post_wait_freezes": 500,
         "next": [
             "quickSelectFlower"
@@ -83,7 +89,6 @@
         "recognition": "OCR",
         "expected": "快捷选择",
         "action": "Click",
-        "target": true,
         "post_wait_freezes": 500,
         "next": [
             "有物品可拆解-生长数据",
@@ -132,7 +137,12 @@
     "exitFlower": {
         "recognition": "OCR",
         "expected": "仓库",
-        "roi": [686,9,574,67],
+        "roi": [
+            686,
+            9,
+            574,
+            67
+        ],
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [

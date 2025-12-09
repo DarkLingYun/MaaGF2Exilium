@@ -9,11 +9,17 @@
         "doc": "进入拆解界面",
         "recognition": "OCR",
         "expected": "拆解",
-        "roi": [686,9,574,67],
+        "roi": [
+            686,
+            9,
+            574,
+            67
+        ],
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
-            "weaponAttachmentsDisassemblyPageEntered"
+            "weaponAttachmentsDisassemblyPageEntered",
+            "enterWeaponAttachmentsDisassemblyPage"
         ]
     },
     "weaponAttachmentsDisassemblyPageEntered": {
@@ -119,7 +125,12 @@
     "exitWeaponAttachments": {
         "recognition": "OCR",
         "expected": "仓库",
-        "roi": [686,9,574,67],
+        "roi": [
+            686,
+            9,
+            574,
+            67
+        ],
         "action": "Click",
         "post_wait_freezes": 500,
         "next": [
