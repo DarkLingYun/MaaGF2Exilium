@@ -3,7 +3,7 @@
         "doc": "进入委托领取任务",
         "enabled": true,
         "recognition": "OCR",
-        "expected": "^委托", // 有时候会识别成"委托、"
+        "expected": "^委托",
         "roi": [
             370,
             582,
@@ -11,7 +11,6 @@
             137
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "confirmEntrustedClaimPage",
             "enterCommissionToClaimTask"
@@ -24,7 +23,6 @@
             "日活跃",
             "每日订单"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "oneKeyClaimCommissionReward",
             "claimDailyActiveCommissionReward",
@@ -34,7 +32,7 @@
     "oneKeyClaimCommissionReward": {
         "doc": "一键领取委托奖励",
         "recognition": "OCR",
-        "expected": "键领取",
+        "expected": "一键领取",
         "action": "Click",
         "post_wait_freezes": 1500,
         "next": [
@@ -48,7 +46,6 @@
         "recognition": "OCR",
         "expected": "领取全部",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "closeCommissionRewardResultPage",
             "oneKeyClaimCommissionReward"
@@ -59,7 +56,6 @@
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "closeCommissionRewardResultPage",
             "enterJourneyWitnessTab"
@@ -76,7 +72,6 @@
         ],
         "expected": "危途见证",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "claimJourneyWitnessReward",
             "enterJourneyMileStoneTab"
@@ -85,9 +80,8 @@
     "claimJourneyWitnessReward": {
         "doc": "领取危途见证奖励",
         "recognition": "OCR",
-        "expected": "键领取",
+        "expected": "一键领取",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "closeClaimJourneyWitnessRewardResultPage"
         ]
@@ -113,7 +107,6 @@
         ],
         "expected": "征程丰碑",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "claimJourneyMileStoneReward",
             "exitCommissionPage"
@@ -122,9 +115,8 @@
     "claimJourneyMileStoneReward": {
         "doc": "领取征程丰碑奖励",
         "recognition": "OCR",
-        "expected": "键领取",
+        "expected": "一键领取",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "closeClaimJourneyMileStoneRewardResultPage"
         ]

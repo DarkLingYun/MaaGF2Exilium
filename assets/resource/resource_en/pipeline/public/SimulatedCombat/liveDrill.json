@@ -20,7 +20,6 @@
         "recognition": "OCR",
         "expected": "进攻",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "confirmCombatExerciseOpponentListPage",
             "clickButtonToEnterOpponentSelection",
@@ -80,7 +79,6 @@
             "新$"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "hasChallengeSuccessfulObject",
             "challengeOpponentSelection",

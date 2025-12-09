@@ -72,7 +72,6 @@
             26,
             2
         ],
-        "post_wait_freezes": 500,
         "next": [
             "selectdispatchCenterItem",
             "dispatchCenterBackToPreviousPage"

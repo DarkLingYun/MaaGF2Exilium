@@ -8,7 +8,6 @@
         "recognition": "OCR",
         "expected": "整备室",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "loungeButtonClick"
         ]
@@ -47,14 +46,12 @@
         ],
         "green_mask": true,
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "退出整备室"
         ]
 
     }, 
     "loungeBackPageNotFound": {
-        "post_wait_freezes": 500,
         "next": [
             "clickButtonWithFixedPositionToLeaveDormitory"
         ]
@@ -63,7 +60,6 @@
         "recognition": "DirectHit",
         "action": "Click",
         "target": [26,23,43,42],
-        "post_wait_freezes": 500,
         "next": [
             "退出整备室"
         ]
@@ -75,7 +71,6 @@
             "公用按钮组件/返回上一页_black.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "enterDispatchCenterAction",
             "enterSchedulingGainsAction",

@@ -12,7 +12,6 @@
         "recognition": "OCR",
         "expected": "^巡录$",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "switchToDailyPassRewardPage"
         ]
@@ -25,7 +24,6 @@
         ],
         "green_mask": true,
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "switchToDailyPassRewardPage"
         ]
@@ -39,7 +37,6 @@
         "doc": "切换到沿途行动",
         "recognition": "OCR",
         "expected": "^沿途行动$",
-        "post_wait_freezes": 500,
         "roi": [
             439,
             1,
@@ -56,8 +53,7 @@
         "doc": "领取沿途行动奖励",
         "recognition": "OCR",
         "expected": [
-            "^一键领取$",
-            "键领取$"
+            "^一键领取$"
         ],
         "action": "Click",
         "post_delay": 5000,
@@ -86,8 +82,7 @@
         "doc": "领取通行证等级奖励",
         "recognition": "OCR",
         "expected": [
-            "^一键领取$",
-            "键领取$"
+            "^一键领取$"
         ],
         "post_wait_freezes": 1500,
         "action": "Click",
@@ -130,7 +125,6 @@
         "recognition": "OCR",
         "expected": "晶条",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "openPassSupplyCrateReward"
         ]
@@ -178,7 +172,6 @@
         "recognition": "OCR",
         "expected": [
             "^开启$",
-            "^下.?$",
             "^下一个$"
         ],
         "action": "Click",
