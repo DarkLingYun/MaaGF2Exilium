@@ -1,0 +1,11 @@
+{
+    "selectWeaponAttachmentsTab": {
+        "roi": [
+            0,
+            100,
+            100,
+            200
+        ],
+        "threshold": 0.5
+    }
+}
