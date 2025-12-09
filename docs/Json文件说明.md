@@ -30,3 +30,9 @@
 - `tasks` 目录，存放任务入口JSON文件，被`assets\interface.json`文件调用，文件名和任务入口一致且采用大驼峰命名法。
 - `timeLimitedTasks` 目录，存放具有时效性的任务入口JSON文件，例如：活动页面领取体力、限时活动奖励、版本活动关卡。被`assets\interface.json`文件调用 ，文件名和任务入口名规范同上。
 - `test` 目录，用于存放正在编写、未完成、或者测试的JSON文件。
+
+## PC端使用的CheckKey相关信息
+
+[Maa教程对应地址](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/3.1-%E4%BB%BB%E5%8A%A1%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%8D%8F%E8%AE%AE.md#clickkey)
+
+**按键对照表**：[微软官方网址](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
