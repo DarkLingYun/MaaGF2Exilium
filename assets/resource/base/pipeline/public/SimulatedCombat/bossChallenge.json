@@ -8,7 +8,6 @@
         "recognition": "OCR",
         "expected": "^首领挑战$",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "enterBossStandardBattle",
             "clickEnterBossFightPage"

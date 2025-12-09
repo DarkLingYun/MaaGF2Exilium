@@ -9,7 +9,6 @@
         "expected": [
             "战役推进"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "进入活动页面-限时中型活动"
         ]
@@ -19,7 +18,6 @@
         "expected": [
             "^活动$"
         ],
-        "post_wait_freezes": 500,
         "action": "Click",
         "next": [
             "发现限时中型活动",
@@ -31,7 +29,6 @@
         "expected": [
             "百变黑客"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "点击限时中型活动标签页"
         ]
@@ -50,7 +47,6 @@
             34,
             28
         ],
-        "post_wait_freezes": 500,
         "next": [
             "滑动后发现限时中型活动",
             "退出活动页面-限时中型活动"
@@ -61,7 +57,6 @@
         "expected": [
             "百变黑客"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "点击限时中型活动标签页"
         ]
@@ -72,7 +67,6 @@
         "expected": [
             "百变黑客"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "进入限时中型活动页面"
         ]
@@ -83,13 +77,11 @@
             "前往"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "已进入限时中型活动页面"
         ]
     },
     "已进入限时中型活动页面": {
-        "post_wait_freezes": 500,
         "next": [
             "领取代币-限时中型活动",
             "领取奖励-限时中型活动",
@@ -102,7 +94,6 @@
             "^领取$"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "领取代币-限时中型活动",
             "领取奖励-限时中型活动",
@@ -121,7 +112,6 @@
             0,
             0
         ],
-        "post_wait_freezes": 500,
         "next": [
             "领取奖励-限时中型活动",
             "直接返回主页-限时中型活动",
@@ -135,7 +125,6 @@
             "公用按钮组件/主页按钮_gray.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "限时中型活动任务结束"
         ]
@@ -147,7 +136,6 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "限时中型活动任务结束",
             "退出活动页面-限时中型活动"

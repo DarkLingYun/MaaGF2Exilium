@@ -16,7 +16,6 @@
             67
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "weaponDisassemblyPageEntered",
             "enterWeaponDisassemblyPage"
@@ -44,7 +43,6 @@
             300
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "weaponTabSelected"
         ]
@@ -67,7 +65,6 @@
         ],
         "action": "Click",
         "target": true,
-        "post_wait_freezes": 500,
         "next": [
             "chooseWeaponLevel"
         ]
@@ -78,7 +75,6 @@
         "expected": "旧式未培养",
         "action": "Click",
         "target": true,
-        "post_wait_freezes": 500,
         "next": [
             "quickSelectWeapon"
         ]
@@ -89,7 +85,6 @@
         "expected": "快捷选择",
         "action": "Click",
         "target": true,
-        "post_wait_freezes": 500,
         "next": [
             "有物品可拆解-武器",
             "exitWeaponDisassembly"
@@ -98,7 +93,6 @@
     "有物品可拆解-武器": {
         "recognition": "OCR",
         "expected": "共选",
-        "post_wait_freezes": 500,
         "next": [
             "disassemblyWeapon"
         ]
@@ -110,7 +104,6 @@
             "仓库/拆解按钮.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "findWeaponDisassemblyNotification",
             "closeWeaponDisassemblyResultByClickingBlank",
@@ -142,7 +135,6 @@
             89,
             42
         ],
-        "post_wait_freezes": 500,
         "next": [
             "closeWeaponDisassemblyResultByClickingBlank"
         ]
@@ -151,7 +143,6 @@
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "weaponDisassemblyResultClosed"
         ]
@@ -159,7 +150,6 @@
     "weaponDisassemblyResultClosed": {
         "recognition": "OCR",
         "expected": "请选择要拆解的道具",
-        "post_wait_freezes": 500,
         "next": [
             "quickSelectWeapon"
         ]
@@ -174,7 +164,6 @@
             67
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "weaponAttachments",
             "flower",

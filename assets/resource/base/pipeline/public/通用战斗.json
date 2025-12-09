@@ -6,7 +6,6 @@
             "资源加载中"
         ],
         "timeout": 200000,
-        "post_wait_freezes": 500,
         "next": [
             "已进入作战开始页面-通用战斗",
             "启动自动战斗-通用战斗",
@@ -20,7 +19,6 @@
         "recognition": "OCR",
         "expected": "作战开始",
         "pre_wait_freezes": 5000,
-        "post_wait_freezes": 500,
         "next": [
             "任务完成-通用战斗",
             "任务失败-通用战斗",
@@ -35,7 +33,6 @@
         "template": "公用按钮组件/作战开始.png",
         "action": "Click",
         "pre_wait_freezes": 5000,
-        "post_wait_freezes": 500,
         "timeout": 200000,
         "next": [
             "发现可部署人形提示-通用战斗",
@@ -60,7 +57,6 @@
         ],
         "action": "Click",
         "pre_wait_freezes": 1500,
-        "post_wait_freezes": 500,
         "next": [
             "确认可部署人形-通用战斗"
         ]
@@ -70,7 +66,6 @@
         "expected": "确认",
         "action": "Click",
         "pre_wait_freezes": 1500,
-        "post_wait_freezes": 500,
         "timeout": 200000,
         "next": [
             "点击作战开始按钮-通用战斗",
@@ -86,7 +81,6 @@
             "拖拽",
             "部署单位"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "选中部署位-通用战斗"
         ]
@@ -104,7 +98,6 @@
             209
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "部署人形-通用战斗",
             "选中部署位-通用战斗"
@@ -120,7 +113,6 @@
             177
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "点击作战开始按钮-通用战斗"
         ]
@@ -138,7 +130,6 @@
         "order_by": "Score",
         "green_mask": true,
         "action": "Click",
-        "post_wait_freezes": 500,
         "timeout": 200000,
         "next": [
             "任务完成-通用战斗",
@@ -154,7 +145,6 @@
         ],
         "action": "Click",
         "pre_wait_freezes": 5000,
-        "post_wait_freezes": 500,
         "next": [
             "确认任务完成或失败-通用战斗",
             "任务完成-通用战斗",
@@ -169,7 +159,6 @@
             "战斗失败"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "focus": {
             "start": "[color:red]任务失败，请考虑是否需要手动处理[/color]"
         },
@@ -185,7 +174,6 @@
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "退出战斗资源加载中-通用战斗",
             "确认任务完成或失败-通用战斗",
@@ -195,7 +183,6 @@
     "退出战斗资源加载中-通用战斗": {
         "recognition": "OCR",
         "expected": "资源加载中",
-        "post_wait_freezes": 500,
         "next": [
             "退出战斗资源加载中-通用战斗",
             "通用战斗任务结束"
@@ -225,7 +212,6 @@
     "发现人形介绍界面-通用战斗": {
         "recognition": "OCR",
         "expected": "试用人形介绍",
-        "post_wait_freezes": 500,
         "next": [
             "点击关闭人形介绍-通用战斗"
         ]

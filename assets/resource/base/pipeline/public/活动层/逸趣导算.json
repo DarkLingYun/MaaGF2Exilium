@@ -65,7 +65,7 @@
     },
     "领取逸趣导算奖励": {
         "recognition": "OCR",
-        "expected": "键领取",
+        "expected": "一键领取",
         "action": "Click",
         "post_wait_freezes": 1000,
         "next": [

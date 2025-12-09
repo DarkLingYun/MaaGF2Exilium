@@ -9,7 +9,6 @@
         "expected": [
             "战役推进"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "进入好友班组动态界面"
         ]
@@ -21,7 +20,6 @@
         ],
         "green_mask": true,
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "切换到动态标签页"
         ]
@@ -31,9 +29,13 @@
         "expected": [
             "动态"
         ],
-        "roi": [795,8,458,56],
+        "roi": [
+            795,
+            8,
+            458,
+            56
+        ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "确认进入动态祝福页",
             "切换到动态标签页"
@@ -42,7 +44,12 @@
     "确认进入动态祝福页": {
         "recognition": "OCR",
         "expected": "每日祝福次数",
-        "roi": [58,643,141,43],
+        "roi": [
+            58,
+            643,
+            141,
+            43
+        ],
         "next": [
             "点击一键祝福",
             "返回主页-动态招募祝福"
@@ -51,10 +58,9 @@
     "点击一键祝福": {
         "recognition": "OCR",
         "expected": [
-            "键祝福"
+            "一键祝福"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "关闭奖励页面-动态招募祝福"
         ]
@@ -65,7 +71,6 @@
             "点击空白处关闭"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "返回主页-动态招募祝福"
         ]
@@ -77,7 +82,6 @@
             "公用按钮组件/主页按钮_gray.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "任务已结束-动态招募祝福"
         ]
@@ -87,7 +91,6 @@
         "expected": [
             "战役推进"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "开始暗香赠礼任务",
             "开始艾莫号许愿池任务",

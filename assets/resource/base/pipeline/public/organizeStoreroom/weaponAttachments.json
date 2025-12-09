@@ -16,7 +16,6 @@
             67
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "weaponAttachmentsDisassemblyPageEntered",
             "enterWeaponAttachmentsDisassemblyPage"
@@ -44,7 +43,6 @@
             300
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "weaponAttachmentsTabSelected"
         ]
@@ -63,7 +61,6 @@
         "expected": "及以下未培养",
         "action": "Click",
         "target": true,
-        "post_wait_freezes": 500,
         "next": [
             "chooseLevel"
         ]
@@ -74,7 +71,6 @@
         "expected": "工业级及以下未培养",
         "action": "Click",
         "target": true,
-        "post_wait_freezes": 500,
         "next": [
             "quickSelect"
         ]
@@ -84,7 +80,6 @@
         "recognition": "OCR",
         "expected": "快捷选择",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "有物品可拆解-武器配件",
             "exitWeaponAttachments"
@@ -97,7 +92,6 @@
             "仓库/拆解按钮.png"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "closeByClickingBlank",
             "resultClosed"
@@ -107,7 +101,6 @@
         "recognition": "OCR",
         "expected": "点击空白处关闭",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "resultClosed"
         ]
@@ -115,7 +108,6 @@
     "resultClosed": {
         "recognition": "OCR",
         "expected": "请选择要拆解的道具",
-        "post_wait_freezes": 500,
         "next": [
             "quickSelect"
         ]
@@ -138,7 +130,6 @@
             67
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "flower",
             "itemBox",

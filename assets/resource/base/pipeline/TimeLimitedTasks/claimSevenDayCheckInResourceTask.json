@@ -18,7 +18,6 @@
             "^战前补给$",
             "超心选速递"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "noClaimButtonInSevenDayCheckIn"
         ]
@@ -65,7 +64,6 @@
         "recognition": "OCR",
         "expected": "空白",
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "closeSevenDayCheckInClaimResultPage",
             "clickSevenDayCheckInClaimButton",

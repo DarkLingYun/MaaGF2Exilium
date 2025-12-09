@@ -14,7 +14,6 @@
             137
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "post_delay": 1000, // 有少量用户在这里老不行，我没招了
         "next": [
             "前往调度室",

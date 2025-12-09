@@ -8,7 +8,7 @@
     // 不从主页直接识图进入，这里调了很多次还是不成功，从委托 OCR 识别进入比较稳
     "进入委托页面-循环助手": {
         "recognition": "OCR",
-        "expected": "^委托", // 有时候会识别成"委托、"
+        "expected": "^委托",
         "roi": [
             370,
             582,
@@ -16,7 +16,6 @@
             137
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "确认进入委托页面-循环助手",
             "进入委托页面-循环助手"
@@ -28,7 +27,6 @@
             "日活跃",
             "每日订单"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "进入循环助手页面",
             "退出循环助手页面"
@@ -40,7 +38,6 @@
             "自主循环"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "开始执行循环任务"
         ]
@@ -52,7 +49,6 @@
         ],
         "action": "Click",
         "timeout": 6000000, // 有的用户会用循环助手打尘烟前线，需要设置时间长一点
-        "post_wait_freezes": 500,
         "next": [
             "循环结束",
             "确认执行循环任务",
@@ -68,7 +64,6 @@
         "timeout": 6000000, // 有的用户会用循环助手打尘烟前线，需要设置时间长一点
         "order_by": "Horizontal",
         "index": -1,
-        "post_wait_freezes": 500,
         "next": [
             "循环结束"
         ]
@@ -78,7 +73,6 @@
         "expected": [
             "循环结束"
         ],
-        "post_wait_freezes": 500,
         "next": [
             "确认循环结束"
         ]
@@ -89,7 +83,6 @@
             "确认"
         ],
         "action": "Click",
-        "post_wait_freezes": 500,
         "next": [
             "退出循环助手页面"
         ]
@@ -102,7 +95,6 @@
         ],
         "action": "Click",
         "order_by": "Score",
-        "post_wait_freezes": 500,
         "next": [
             "循环助手任务结束"
         ]
@@ -110,7 +102,6 @@
     "循环助手任务结束": {
         "recognition": "OCR",
         "expected": "战役推进",
-        "post_wait_freezes": 500,
         "next": [
             "HomePage"
         ]
