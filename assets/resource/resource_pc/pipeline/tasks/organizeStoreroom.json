@@ -8,5 +8,10 @@
             "enterStoreroom",
             "[JumpBack]returnToHomePage"
         ]
+    },
+    "enterStoreroom": {
+        "doc": "按键盘进入仓库 B 0x42 B key",
+        "action": "ClickKey",
+        "key": 66
     }
 }

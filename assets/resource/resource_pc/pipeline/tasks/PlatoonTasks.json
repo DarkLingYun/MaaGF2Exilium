@@ -5,5 +5,10 @@
             "clickPlatoonButton",
             "[JumpBack]returnToHomePage"
         ]
+    },
+    "clickPlatoonButton": {
+        "doc": "工会任务——进入班组使用T\t0x54\tT key",
+        "action": "ClickKey",
+        "key": 84
     }
 }
