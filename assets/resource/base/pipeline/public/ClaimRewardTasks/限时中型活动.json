@@ -99,7 +99,7 @@
     "领取代币-限时中型活动": {
         "recognition": "OCR",
         "expected": [
-            "领取"
+            "^领取$"
         ],
         "action": "Click",
         "post_wait_freezes": 500,
