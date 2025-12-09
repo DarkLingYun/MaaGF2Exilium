@@ -230,7 +230,8 @@
         "doc": "确认是否为配件自律页面",
         "recognition": "OCR",
         "expected": [
-            "^下一步$"
+            "^下一步$",
+            "^下一$"
         ],
         "roi": [
             645,
@@ -293,7 +294,8 @@
     "selectedEffectsCombinationNextButtonClick": {
         "recognition": "OCR",
         "expected": [
-            "^下一步$"
+            "^下一步$",
+            "^下一$"
         ],
         "roi": [
             645,

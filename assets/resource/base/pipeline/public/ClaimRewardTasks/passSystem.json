@@ -160,7 +160,8 @@
         "recognition": "OCR",
         "expected": [
             "^开启$",
-            "^下一个$"
+            "^下一个$",
+            "^下一$"
         ],
         "action": "Click",
         "post_delay": 2000,
