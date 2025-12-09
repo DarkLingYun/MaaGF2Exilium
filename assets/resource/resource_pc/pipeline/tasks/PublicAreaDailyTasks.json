@@ -1,0 +1,9 @@
+{
+    "PublicAreaDailyTasks": {
+        "doc": "公共区日常",
+        "next": [
+            "clickPublicAreaDailyButton",
+            "[JumpBack]returnToHomePage"
+        ]
+    }
+}

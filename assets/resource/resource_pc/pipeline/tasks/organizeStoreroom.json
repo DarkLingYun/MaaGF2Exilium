@@ -1,0 +1,12 @@
+{
+    "organizeStoreroom": {
+        "doc": "整理仓库",
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": "战役推进",
+        "next": [
+            "enterStoreroom",
+            "[JumpBack]returnToHomePage"
+        ]
+    }
+}
