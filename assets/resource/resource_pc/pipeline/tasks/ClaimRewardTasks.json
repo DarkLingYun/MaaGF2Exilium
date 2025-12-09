@@ -1,0 +1,20 @@
+{
+    "ClaimRewardTasks": {
+        "doc": "领取奖励",
+        "next": [
+            "enterCommissionToClaimTask",
+            "enterPassToClaimTask",
+            "enterPersonalInformationPage",
+            "enterDangerousExcavation",
+            "enterTrial",
+            "开始动态招募祝福任务",
+            "开始暗香赠礼任务",
+            "开始艾莫号许愿池任务",
+            "开始模拟习练任务",
+            "开始格琳喵的委托任务",
+            "开始七天签到限定十连任务",
+            "开始限时中型活动任务",
+            "[JumpBack]returnToHomePage"
+        ]
+    }
+}

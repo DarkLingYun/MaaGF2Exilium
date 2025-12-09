@@ -1,0 +1,9 @@
+{
+    "BulkExchange": {
+        "doc": "批量兑换",
+        "next": [
+            "enterBulkExchangeTask",
+            "[JumpBack]returnToHomePage"
+        ]
+    }
+}

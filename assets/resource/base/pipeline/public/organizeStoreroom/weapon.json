@@ -36,6 +36,12 @@
             "仓库/武器亮.png",
             "仓库/武器暗.png"
         ],
+        "roi": [
+            0,
+            0,
+            300,
+            300
+        ],
         "action": "Click",
         "next": [
             "weaponTabSelected"

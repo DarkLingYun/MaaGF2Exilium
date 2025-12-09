@@ -1,6 +1,5 @@
 {
     "AutoSweepBattle": {
-        "doc": "标准同调、定向精研、补给作战",
         "next": [
             "enterAutoSweepBattleTask",
             "[JumpBack]returnToHomePage"

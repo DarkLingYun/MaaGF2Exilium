@@ -1,0 +1,23 @@
+{
+    "StartGame": {
+        "doc": "启动游戏",
+        "recognition": "OCR",
+        "template": [
+            "bilibili/LoginCheck.png"
+        ],
+        "action": "Click",
+        "next": [
+            "StartGame_levelUp",
+            "StartGame_clickCancel",
+            "StartGame_HomePage",
+            "StartGame_sunbornGameLogo",
+            "StartGame_nonScrollablePopupClose",
+            "StartGame_scrollablePopupClose",
+            "StartGame_announcementClosed",
+            "StartGame_backPage",
+            "StartGame_returnToHomePage",
+            "StartGame_clickStart",
+            "StartGame_dailyRewards"
+        ]
+    }
+}

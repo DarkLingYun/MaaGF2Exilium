@@ -1,0 +1,9 @@
+{
+    "CombatSimulations": {
+        "doc": "模拟作战日常",
+        "next": [
+            "enterCombatSimulationsTask",
+            "[JumpBack]returnToHomePage"
+        ]
+    }
+}
