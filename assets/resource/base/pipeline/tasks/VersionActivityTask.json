@@ -13,8 +13,66 @@
         "post_wait_freezes": 100,
         "next": [
             "clickVersionActivityTagButton",
+            "版本活动滑动选择-重置"
+        ]
+    },
+    "版本活动滑动选择-重置": {
+        "doc": "多个活动存在，需滑动选择",
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": [
+            82,
+            88,
+            162,
+            113
+        ],
+        "end": [
+            75,
+            301,
+            171,
+            113
+        ],
+        "post_wait_freezes": {
+            "time": 600,
+            "target": [
+                2,
+                74,
+                201,
+                346
+            ]
+        },
+        "next": [
+            "clickVersionActivityTagButton",
+            "[JumpBack]版本活动滑动选择",
             "HomePage"
         ]
+    },
+    "版本活动滑动选择": {
+        "doc": "多个活动存在，需滑动选择",
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "max_hit": 5,
+        "begin": [
+            71,
+            90,
+            174,
+            116
+        ],
+        "end": [
+            70,
+            0,
+            175,
+            74
+        ],
+        "post_wait_freezes": {
+            "time": 600,
+            "target": [
+                2,
+                74,
+                201,
+                346
+            ]
+        }
     },
     "clickVersionActivityTagButton": {
         "doc": "点击版本活动标签按钮,版本更新后更改识别字段",
