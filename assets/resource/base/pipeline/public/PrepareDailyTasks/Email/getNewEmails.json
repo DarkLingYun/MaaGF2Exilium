@@ -34,6 +34,12 @@
     "claimAllEmails": {
         "doc": "循环调用自身，确保按钮有效点击",
         "recognition": "OCR",
+        "roi": [
+            0,
+            600,
+            400,
+            200
+        ],
         "expected": "领取全部",
         "action": "Click",
         "next": [
@@ -71,14 +77,8 @@
         ]
     },
     "exitEmails": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/主页按钮_gray.png",
-            "公用按钮组件/主页按钮_black.png"
-        ],
-        "action": "Click",
-        "post_delay": 2000,
         "next": [
+            "[JumpBack]returnToHomePage",
             "staminaReplenishment",
             "enterShop",
             "enterBoundaryAdvanceAction",

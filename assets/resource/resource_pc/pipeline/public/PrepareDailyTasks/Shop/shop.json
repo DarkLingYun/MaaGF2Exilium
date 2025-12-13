@@ -1,0 +1,7 @@
+{
+    "enterShop": {
+        "doc": "识别并进入商城 E\t0x45\tE key",
+        "action": "ClickKey",
+        "key": 69
+    }
+}

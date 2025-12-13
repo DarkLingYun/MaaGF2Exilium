@@ -1,0 +1,19 @@
+{
+    "getNewEmails": {
+        "next": [
+            "clickEmailsButtonWin32",
+            "staminaReplenishment",
+            "enterShop",
+            "enterBoundaryAdvanceAction",
+            "HomePage"
+        ]
+    },
+    "clickEmailsButtonWin32": {
+        "doc": "点击右键按钮 M\t0x4D\tM key",
+        "action": "ClickKey",
+        "key": 77,
+        "next": [
+            "claimAllEmails"
+        ]
+    }
+}

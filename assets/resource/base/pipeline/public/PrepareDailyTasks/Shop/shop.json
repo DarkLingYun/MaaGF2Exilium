@@ -21,6 +21,12 @@
     "clickTimeLimitedGiftPackage": {
         "recognition": "OCR",
         "expected": "^限时礼包$",
+        "roi": [
+            0,
+            0,
+            1920,
+            150
+        ],
         "action": "Click",
         "post_wait_freezes": 800,
         "next": [
@@ -87,6 +93,12 @@
     "clickPermanentGiftPackage": {
         "recognition": "OCR",
         "expected": "^周期礼包$",
+        "roi": [
+            0,
+            0,
+            1920,
+            150
+        ],
         "action": "Click",
         "post_delay": 1500,
         "next": [
@@ -99,9 +111,13 @@
     },
     "clickDailySupplyBox": {
         "doc": "点击每日补给箱",
-        "recognition": "TemplateMatch",
-        "template": [
-            "每日免费礼包/每日补给箱.png"
+        "recognition": "OCR",
+        "expected": "^每日补给箱$",
+        "roi": [
+            0,
+            0,
+            500,
+            400
         ],
         "threshold": 0.87,
         "action": "Click",
@@ -153,15 +169,9 @@
         ]
     },
     "exitGameStore": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/主页按钮_gray.png",
-            "公用按钮组件/主页按钮_black.png"
-        ],
-        "action": "Click",
-        "post_delay": 2500,
         "next": [
             "enterBoundaryAdvanceAction",
+            "returnToHomePage",
             "HomePage"
         ]
     }
