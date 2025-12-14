@@ -1,0 +1,15 @@
+{
+    "enterBoundaryAdvanceAction": {
+        "doc": "活动、限时开启 D\t0x44\tD key",
+        "action": "ClickKey",
+        "key": 68
+    },
+    "clickBoundaryAdvanceDelegateButton": {
+        "roi": [
+            722,
+            620,
+            250,
+            65
+        ]
+    }
+}
