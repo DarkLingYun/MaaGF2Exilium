@@ -1,0 +1,142 @@
+{
+    "开始遗珍回收准备": {
+        "recognition": "OCR",
+        "expected": [
+            "战术体系"
+        ],
+        "next": [
+            "开始循环-遗珍回收准备"
+        ]
+    },
+    "开始循环-遗珍回收准备": {
+        "next": [
+            "[JumpBack]作战开始-遗珍回收准备",
+            "[JumpBack]确认-遗珍回收准备",
+            "[JumpBack]下一步-遗珍回收准备",
+            "[JumpBack]选择插件珍品-遗珍回收准备",
+            "[JumpBack]选择人形-遗珍回收准备",
+            "[JumpBack]选择战术体系-遗珍回收准备",
+            "已进入某期遗珍回收作战页面"
+        ]
+    },
+    "选择战术体系-遗珍回收准备": {
+        "recognition": "OCR",
+        "expected": [
+            "炎狱援击"
+        ],
+        "action": "Click"
+    },
+    "选择人形-遗珍回收准备": {
+        "recognition": "OCR",
+        "expected": [
+            "^Lv"
+        ],
+        "next": [
+            "选择例外强力人形-遗珍回收准备",
+            "选择燃烧人形-遗珍回收准备",
+            "选择金色人形-遗珍回收准备",
+            "选择其他人形-遗珍回收准备"
+        ]
+    },
+    "选择例外强力人形-遗珍回收准备": {
+        "recognition": "OCR",
+        "expected": [
+            "威玛西娜",
+            "可露凯"
+        ],
+        "action": "Click"
+    },
+    "选择燃烧人形-遗珍回收准备": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "遗珍回收/燃烧人形.png"
+        ],
+        "green_mask": true,
+        "action": "Click"
+    },
+    "选择金色人形-遗珍回收准备": {
+        "recognition": "ColorMatch",
+        "lower": [
+            223,
+            158,
+            0
+        ],
+        "upper": [
+            223,
+            158,
+            0
+        ],
+        "connected": true,
+        "count": 50,
+        "action": "Click"
+    },
+    "选择其他人形-遗珍回收准备": {
+        "recognition": "OCR",
+        "expected": [
+            "^Lv"
+        ],
+        "action": "Click"
+    },
+    "选择插件珍品-遗珍回收准备": {
+        "recognition": "OCR",
+        "expected": [
+            "^减益$",
+            "^增益$",
+            "^特化$",
+            "^输出$",
+            "^防护$"
+        ],
+        "action": "Click"
+    },
+    "下一步-遗珍回收准备": {
+        "recognition": "OCR",
+        "expected": [
+            "^下一步$",
+            "^下一$"
+        ],
+        "post_wait_freezes": {
+            "time": 500,
+            "target":[
+                0,
+                0,
+                500,
+                500
+            ]
+        },
+        "action": "Click"
+    },
+    "确认-遗珍回收准备": {
+        "recognition": "OCR",
+        "expected": [
+            "确认",
+            "确定"
+        ],
+        "index": -1,
+        "post_wait_freezes": {
+            "time": 500,
+            "target":[
+                0,
+                0,
+                500,
+                500
+            ]
+        },
+        "action": "Click"
+    },
+    "作战开始-遗珍回收准备": {
+        "recognition": "OCR",
+        "expected": [
+            "作战开始"
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                0,
+                500,
+                500
+            ]
+        }
+    }
+}

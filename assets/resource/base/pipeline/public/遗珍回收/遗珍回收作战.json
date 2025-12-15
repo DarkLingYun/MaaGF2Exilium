@@ -1,0 +1,273 @@
+{
+    "已进入某期遗珍回收作战页面": {
+        "recognition": "OCR",
+        "expected": [
+            "路段\\d"
+        ],
+        "next": [
+            "开始循环-遗珍回收作战"
+        ]
+    },
+    "开始循环-遗珍回收作战": {
+        "next": [
+            "已在结算探索页面-遗珍回收",
+            "[JumpBack]突发事件-遗珍回收作战",
+            "[JumpBack]限定强固-遗珍回收作战",
+            "[JumpBack]战斗遭遇-遗珍回收作战",
+            "[JumpBack]战力补充-遗珍回收作战",
+            "[JumpBack]支援终端-遗珍回收作战"
+        ]
+    },
+    "战斗遭遇-遗珍回收作战": { // 合并了：普通遭遇、危险遭遇、凶兆挑战、最后攻坚
+        "recognition": "TemplateMatch",
+        "template": [
+            "遗珍回收/最后攻坚.png",
+            "遗珍回收/凶兆挑战.png",
+            "遗珍回收/危险遭遇.png",
+            "遗珍回收/普通遭遇.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "threshold": 0.96,
+        "index": -1,
+        "next": [
+            "已在结算探索页面-遗珍回收",
+            "[JumpBack]通用战斗任务开始",
+            "[JumpBack]开始战斗-遗珍回收作战",
+            "[JumpBack]确认-遗珍回收准备",
+            "[JumpBack]选择插件珍品-遗珍回收准备",
+            "任务完成回到主页-遗珍回收作战"
+        ]
+    },
+    "开始战斗-遗珍回收作战": {
+        "recognition": "OCR",
+        "expected": [
+            "开始战斗"
+        ],
+        "action": "Click"
+    },
+    "任务完成回到主页-遗珍回收作战": {
+        "recognition": "OCR",
+        "expected": [
+            "路段\\d"
+        ]
+    },
+    "突发事件-遗珍回收作战": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "遗珍回收/突发事件.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "threshold": 0.96,
+        "index": -1,
+        "next": [
+            "已在结算探索页面-遗珍回收",
+            "[JumpBack]事件结束-遗珍回收作战",
+            "[JumpBack]确认-遗珍回收准备",
+            "[JumpBack]通用战斗任务开始",
+            "[JumpBack]选择插件珍品-遗珍回收准备",
+            "[JumpBack]确认突发事件奖励-遗珍回收作战",
+            "[JumpBack]选择突发事件奖励-遗珍回收作战",
+            "[JumpBack]选择备用突发事件奖励-遗珍回收作战",
+            "[JumpBack]点击-遗珍回收作战",
+            "[JumpBack]选择人形-遗珍回收准备",
+            "任务完成回到主页-遗珍回收作战"
+        ]
+    },
+    "点击-遗珍回收作战": {
+        "recognition": "OCR",
+        "expected": [
+            "^点击$",
+            "^点击任意处进入见闻$",
+            "^点击继续$",
+            "^前往$",
+            "^继续$",
+            "^机遇$",
+            "^离开$"
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                0,
+                500,
+                500
+            ]
+        }
+    },
+    "选择突发事件奖励-遗珍回收作战": {
+        "recognition": "OCR",
+        "expected": [
+            "插件",
+            "珍品"
+        ],
+        "action": "Click"
+    },
+    "选择备用突发事件奖励-遗珍回收作战": {
+        "recognition": "OCR",
+        "expected": [
+            "随机奖励",
+            "尝试迂回",
+            "进行战斗",
+            "本次探索圆满结束"
+        ],
+        "action": "Click"
+    },
+    "确认突发事件奖励-遗珍回收作战": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "遗珍回收/红白勾.png"
+        ],
+        "threshold": 0.96,
+        "green_mask": true,
+        "action": "Click"
+    },
+    "事件结束-遗珍回收作战": {
+        "recognition": "OCR",
+        "expected": [
+            "事件结束"
+        ],
+        "action": "Click"
+    },
+    "战力补充-遗珍回收作战": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "遗珍回收/战力补充.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "threshold": 0.96,
+        "index": -1,
+        "next": [
+            "已在结算探索页面-遗珍回收",
+            "[JumpBack]确认-遗珍回收准备",
+            "[JumpBack]点击-遗珍回收作战",
+            "[JumpBack]选择人形-遗珍回收准备",
+            "任务完成回到主页-遗珍回收作战"
+        ]
+    },
+
+    "支援终端-遗珍回收作战": { // 有空再完善一下，现在是直接退出
+        "recognition": "TemplateMatch",
+        "template": [
+            "遗珍回收/支援终端.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "threshold": 0.96,
+        "index": -1,
+        "next": [
+            "已在结算探索页面-遗珍回收",
+            "[JumpBack]是否确认离开弹窗-遗珍回收作战",
+            "[JumpBack]点击-遗珍回收作战",
+            "任务完成回到主页-遗珍回收作战"
+        ]
+    },
+    "是否确认离开弹窗-遗珍回收作战": {
+        "recognition": "OCR",
+        "expected": [
+            "确认离开"
+        ],
+        "next": [
+            "确认离开-遗珍回收作战"
+        ]
+    },
+    "确认离开-遗珍回收作战": {
+        "recognition": "OCR",
+        "expected": [
+            "^确认$"
+        ],
+        "index": -1,
+        "action": "Click"
+    },
+    "限定强固-遗珍回收作战": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "遗珍回收/限定强固.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "threshold": 0.96,
+        "index": -1,
+        "next": [
+            "已在结算探索页面-遗珍回收",
+            "[JumpBack]点击-遗珍回收作战",
+            "任务完成回到主页-遗珍回收作战",
+            "[JumpBack]还有可强固人形提醒-遗珍回收作战",
+            "[JumpBack]返回上一页-通用"
+        ]
+    },
+    "还有可强固人形提醒-遗珍回收作战": {
+        "recognition": "OCR",
+        "expected": [
+            "还有可强固人形"
+        ],
+        "action": "Click",
+        "next": [
+            "取消可强固人形提醒-遗珍回收作战"
+        ]
+    },
+    "取消可强固人形提醒-遗珍回收作战": {
+        "recognition": "OCR",
+        "expected": [
+            "取消"
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                0,
+                500,
+                500
+            ]
+        },
+        "next": [
+            "强固-遗珍回收作战",
+            "当前人形强固完成-遗珍回收作战",
+            "确认退出限定强固-遗珍回收作战"
+        ]
+    },
+    "强固-遗珍回收作战": {
+        "recognition": "OCR",
+        "expected": [
+            "^强固$"
+        ],
+        "action": "Click"
+    },
+    "当前人形强固完成-遗珍回收作战": {
+        "recognition": "OCR",
+        "expected": [
+            "云图强固完成"
+        ],
+        "next": [
+            "切换到另一个人形-遗珍回收作战",
+            "确认退出限定强固-遗珍回收作战"
+        ]
+    },
+    "切换到另一个人形-遗珍回收作战": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "遗珍回收/3椎.png",
+            "遗珍回收/4椎.png",
+            "遗珍回收/5椎.png"
+        ],
+        "green_mask": true,
+        "threshold": 0.96,
+        "action": "Click"
+    },
+    "确认退出限定强固-遗珍回收作战": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_black_v2.png",
+            "公用按钮组件/返回上一页_gray_v2.png"
+        ],
+        "green_mask": true,
+        "action": "Click",
+        "next": [
+            "确认-遗珍回收准备"
+        ]
+    },
+}

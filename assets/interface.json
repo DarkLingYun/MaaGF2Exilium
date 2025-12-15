@@ -247,6 +247,12 @@
             "entry": "ClickAssistant",
             "default_check": false,
             "doc": "自动点击【挑战】、【观看】、【跳过】、【作战开始】、【继续作战】等，辅助完成主线及活动关卡。"
+        },
+        {
+            "name": "遗珍回收",
+            "entry": "开始遗珍回收任务",
+            "default_check": false,
+            "doc": "自动进行遗珍回收（肉鸽），目前仅支持国服03期"
         }
     ],
     "option": {
