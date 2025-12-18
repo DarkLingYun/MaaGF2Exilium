@@ -247,6 +247,15 @@
             "entry": "ClickAssistant",
             "default_check": false,
             "doc": "自动点击【挑战】、【观看】、【跳过】、【作战开始】、【继续作战】等，辅助完成主线及活动关卡。"
+        },
+        {
+            "name": "遗珍回收",
+            "entry": "开始遗珍回收任务",
+            "option": [
+                "难度"
+            ],
+            "default_check": false,
+            "doc": "自动进行遗珍回收（肉鸽），目前仅支持国服03期"
         }
     ],
     "option": {
@@ -2925,6 +2934,50 @@
                     "pipeline_override": {
                         "开始限时中型活动任务": {
                             "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "难度": {
+            "cases": [
+                {
+                    "name": "I",
+                    "pipeline_override": {
+                        "选择难度-遗珍回收": {
+                            "index": 0
+                        }
+                    }
+                },
+                {
+                    "name": "II",
+                    "pipeline_override": {
+                        "选择难度-遗珍回收": {
+                            "index": 1
+                        }
+                    }
+                },
+                {
+                    "name": "III",
+                    "pipeline_override": {
+                        "选择难度-遗珍回收": {
+                            "index": 2
+                        }
+                    }
+                },
+                {
+                    "name": "IV",
+                    "pipeline_override": {
+                        "选择难度-遗珍回收": {
+                            "index": 3
+                        }
+                    }
+                },
+                {
+                    "name": "V",
+                    "pipeline_override": {
+                        "选择难度-遗珍回收": {
+                            "index": 4
                         }
                     }
                 }
