@@ -83,7 +83,13 @@
     "选择难度-遗珍回收": {
         "recognition": "OCR",
         "expected": [
-            "^回收路线"
+            "回收路线"
+        ],
+        "roi": [
+            114,
+            182,
+            1055,
+            61
         ],
         "action": "Click",
         "index": 0,
