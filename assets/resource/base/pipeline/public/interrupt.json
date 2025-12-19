@@ -15,5 +15,14 @@
         "expected": "跳过动画",
         "action": "Click",
         "post_wait_freezes": 500
+    },
+    "返回上一页-通用": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_black_v2.png",
+            "公用按钮组件/返回上一页_gray_v2.png"
+        ],
+        "green_mask": true,
+        "action": "Click"
     }
 }
