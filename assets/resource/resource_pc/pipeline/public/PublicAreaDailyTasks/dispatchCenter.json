@@ -1,0 +1,7 @@
+{
+    "进入委托页面-调度室": {
+        "doc": "U\t0x55\tU key",
+        "action": "ClickKey",
+        "key": 85
+    }
+}
