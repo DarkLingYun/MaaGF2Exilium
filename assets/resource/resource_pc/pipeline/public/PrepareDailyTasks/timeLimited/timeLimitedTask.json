@@ -1,0 +1,19 @@
+{
+    "timeLimitedTask": {
+        "next": [
+            "claimIntelligenceSupplyStaminaTaskTimed",
+            "claimSevenDayCheckInResourceTaskTimed",
+            "exitTimeLimitedTask",
+            "[JumpBack]returnToHomePage"
+        ]
+    },
+    "exitTimeLimitedTask": {
+        "next": [
+            "getNewEmails",
+            "staminaReplenishment",
+            "enterShop",
+            "enterBoundaryAdvanceAction",
+            "returnToHomePage"
+        ]
+    }
+}
