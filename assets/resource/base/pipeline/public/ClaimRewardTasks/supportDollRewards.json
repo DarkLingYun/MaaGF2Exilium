@@ -1,15 +1,19 @@
 {
+    "开始助战奖励领取": {
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "personalInformationPageEntered",
+            "[JumpBack]enterPersonalInformationPage",
+            "[JumpBack]returnToHomePage"
+        ]
+    },
     "enterPersonalInformationPage": {
         "doc": "进入个人信息",
-        "enabled": true,
         "recognition": "TemplateMatch",
         "template": "公用按钮组件/个人信息.png",
         "action": "Click",
-        "post_wait_freezes": 1500,
-        "next": [
-            "personalInformationPageEntered",
-            "enterPersonalInformationPage"
-        ]
+        "post_wait_freezes": 1500
     },
     "personalInformationPageEntered": {
         "doc": "已进入个人信息",
@@ -17,7 +21,7 @@
         "expected": "个人信息",
         "next": [
             "claimSupportDollRewards",
-            "exitPersonalInformationPage"
+            "returnToHomePage"
         ]
     },
     "claimSupportDollRewards": {
@@ -31,7 +35,7 @@
             "claimResultClosed"
         ]
     },
-    "closeClaimResult":{
+    "closeClaimResult": {
         "doc": "关闭领取结果",
         "recognition": "OCR",
         "expected": "点击空白处关闭",
@@ -41,44 +45,12 @@
             "closeClaimResult"
         ]
     },
-    "claimResultClosed":{
+    "claimResultClosed": {
         "doc": "结果关闭，已回到个人信息页",
         "recognition": "OCR",
         "expected": "个人信息",
         "next": [
-            "exitPersonalInformationPage"
-        ]
-    },
-    "exitPersonalInformationPage": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/主页按钮_gray.png",
-            "公用按钮组件/主页按钮_black.png"
-        ],
-        "action": "Click",
-        "next": [
-            "personalInformationPageExited",
-            "exitPersonalInformationPage"
-        ]
-    },
-    "personalInformationPageExited": {
-        "doc": "已退出到主界面",
-        "recognition": "OCR",
-        "expected": [
-            "战役推进"
-        ],
-        "next": [
-            "enterDangerousExcavation",
-            "enterTrial",
-            "开始动态招募祝福任务",
-            "开始暗香赠礼任务",
-            "开始艾莫号许愿池任务",
-            "开始模拟习练任务",
-            "开始格琳喵的委托任务",
-            "开始七天签到限定十连任务",
-            "开始限时中型活动任务",
-            "开始一次性领取十连任务",
-            "HomePage"
+            "returnToHomePage"
         ]
     }
 }

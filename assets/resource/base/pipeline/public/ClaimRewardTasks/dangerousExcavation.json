@@ -1,53 +1,27 @@
 {
-    "enterDangerousExcavation": {
+    "开始险境挖掘任务": {
+        "recognition": "DirectHit",
         "doc": "开始险境挖掘，英文描述见https://x.com/GFL2EXILIUM_EN/status/1884202260437017016",
         "enabled": true,
-        "next": [
-            "enterEventPageForDangerousExcavation"
-        ]
-    },
-    "enterEventPageForDangerousExcavation": {
-        "doc": "进入活动页面",
-        "recognition": "OCR",
-        "expected": [
-            "^活动$"
-        ],
-        "action": "Click",
-        "next": [
-            "dangerousExcavationFound",
-            "swipeToFindDangerousExcavation"
-        ]
-    },
-    "dangerousExcavationFound": {
-        "doc": "发现险境挖掘",
-        "recognition": "OCR",
-        "expected": [
-            "险境挖掘"
-        ],
+        "max_hit": 1,
         "next": [
             "clickDangerousExcavationTab",
-            "swipeToFindDangerousExcavation"
+            "[JumpBack]打开活动页-险境挖掘",
+            "[JumpBack]滑动活动列表-险境挖掘",
+            "returnToHomePage"
         ]
     },
-    "swipeToFindDangerousExcavation":{
-        "doc": "滑动活动标签页，险境挖掘可能被藏在下面了",
-        "action": "Swipe",
-        "begin": [164,533,49,33],
-        "end": [181,129,34,28],
-        "next":[
-            "dangerousExcavationFoundAfterSwipe",
-            "exitEventPageInDangerousExcavation"
-        ]
-    },
-    "dangerousExcavationFoundAfterSwipe": {
-        "doc": "滑动后发现险境挖掘",
-        "recognition": "OCR",
-        "expected": [
-            "险境挖掘"
-        ],
+    "打开活动页-险境挖掘": {
+        "max_hit": 1,
         "next": [
-            "clickDangerousExcavationTab"
+            "打开活动页-活动通用"
         ]
+    },
+    "滑动活动列表-险境挖掘": {
+        "max_hit": 5,
+         "next": [
+             "滑动活动列表-活动通用"
+         ]
     },
     "clickDangerousExcavationTab": {
         "doc": "点击险境挖掘页签",
@@ -67,7 +41,12 @@
         "expected": [
             "险境挖掘"
         ],
-        "roi": [861,138,255,75],
+        "roi": [
+            861,
+            138,
+            255,
+            75
+        ],
         "next": [
             "enterDangerousExcavationPage"
         ]
@@ -78,7 +57,12 @@
         "expected": [
             "险境挖掘"
         ],
-        "roi": [1117,548,91,25],
+        "roi": [
+            1117,
+            548,
+            91,
+            25
+        ],
         "action": "Click",
         "next": [
             "dangerousExcavationPageEntered",
@@ -91,7 +75,12 @@
         "expected": [
             "^险境挖掘$"
         ],
-        "roi": [39,515,213,61],
+        "roi": [
+            39,
+            515,
+            213,
+            61
+        ],
         "next": [
             "enterClueCollectionPage"
         ]
@@ -114,7 +103,12 @@
         "expected": [
             "线索收集"
         ],
-        "roi": [579,101,122,39],
+        "roi": [
+            579,
+            101,
+            122,
+            39
+        ],
         "next": [
             "claimClue",
             "closeClueCollectionPage"
@@ -162,7 +156,12 @@
         "expected": [
             "^险境挖掘$"
         ],
-        "roi": [39,515,213,61],
+        "roi": [
+            39,
+            515,
+            213,
+            61
+        ],
         "next": [
             "startToClaimSingleReward"
         ]
@@ -211,7 +210,7 @@
         "doc": "所有单个奖励已领取",
         "next": [
             "claimLineReward",
-            "exitDangerousExcavation"
+            "returnToHomePage"
         ]
     },
     "claimLineReward": {
@@ -219,7 +218,12 @@
         "recognition": "TemplateMatch",
         "template": "公用按钮组件/提醒.png",
         "action": "Click",
-        "roi": [396,83,862,628],
+        "roi": [
+            396,
+            83,
+            862,
+            628
+        ],
         "threshold": 0.65,
         "post_delay": 500,
         "next": [
@@ -242,52 +246,7 @@
     "allLineRewardsClaimed": {
         "doc": "所有行列奖励已领取",
         "next": [
-            "exitDangerousExcavation"
-        ]
-    },
-    "exitDangerousExcavation": {
-        "doc": "退出险境挖掘",
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/主页按钮_gray.png",
-            "公用按钮组件/主页按钮_black.png"
-        ],
-        "action": "Click",
-        "next": [
-            "HomePage",
-            "exitDangerousExcavation"
-        ]
-    },
-    "exitEventPageInDangerousExcavation": {
-        "doc": "未发现对应活动标签页，退出活动页面",
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/关闭按钮_gray.png",
-            "公用按钮组件/关闭按钮_black.png"
-        ],
-        "action": "Click",
-        "next": [
-            "dangerousExcavationTaskEnd",
-            "exitEventPageInDangerousExcavation"
-        ]
-    },
-    "dangerousExcavationTaskEnd": {
-        "doc": "险境挖掘任务已结束",
-        "recognition": "OCR",
-        "expected": [
-            "战役推进"
-        ],
-        "next": [
-            "enterTrial",
-            "开始动态招募祝福任务",
-            "开始暗香赠礼任务",
-            "开始艾莫号许愿池任务",
-            "开始模拟习练任务",
-            "开始格琳喵的委托任务",
-            "开始七天签到限定十连任务",
-            "开始限时中型活动任务",
-            "开始一次性领取十连任务",
-            "HomePage"
+            "returnToHomePage"
         ]
     }
 }

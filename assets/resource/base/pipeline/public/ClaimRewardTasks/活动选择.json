@@ -1,0 +1,34 @@
+{
+    "打开活动页-活动通用": {
+        "doc": "由调用方控制max_hit，此处统一管理操作内容。前往活动页max_hit应为1，即只执行一次",
+        "next": [
+            "进入活动页面-活动通用",
+            "[JumpBack]returnToHomePage"
+        ]
+    },
+    "进入活动页面-活动通用": {
+        "recognition": "OCR",
+        "expected": [
+            "^活动$"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1500
+    },
+    "滑动活动列表-活动通用": {
+        "doc": "由调用方控制max_hit，此处统一管理操作内容",
+        "action": "Swipe",
+        "begin": [
+            119,
+            549,
+            167,
+            120
+        ],
+        "end": [
+            122,
+            126,
+            162,
+            115
+        ],
+        "end_hold": 1000
+    }
+}

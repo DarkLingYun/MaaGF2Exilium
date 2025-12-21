@@ -1,10 +1,11 @@
 {
-    "enterPassToClaimTask": {
-        "doc": "开始巡录任务",
+    "开始巡录任务": {
+        "max_hit": 1,
+        "enabled": true,
         "next": [
             "findPassByText",
             "findPassByImage",
-            "当前不存在巡录"
+            "returnToHomePage"
         ]
     },
     "findPassByText": {
@@ -28,11 +29,6 @@
         "next": [
             "switchToDailyPassRewardPage",
             "[JumpBack]开启远航巡录"
-        ]
-    },
-    "当前不存在巡录": {
-        "next": [
-            "passSystemPageExited"
         ]
     },
     "switchToDailyPassRewardPage": {
@@ -180,40 +176,12 @@
         ]
     },
     "exitPassSystemPage": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/主页按钮_gray.png",
-            "公用按钮组件/主页按钮_black.png"
-        ],
-        "action": "Click",
         "next": [
-            "passSystemPageExited",
-            "exitPassSystemPage"
-        ]
-    },
-    "passSystemPageExited": {
-        "doc": "已退出到主界面",
-        "recognition": "OCR",
-        "expected": [
-            "战役推进"
-        ],
-        "next": [
-            "enterPersonalInformationPage",
-            "enterDangerousExcavation",
-            "enterTrial",
-            "开始动态招募祝福任务",
-            "开始暗香赠礼任务",
-            "开始艾莫号许愿池任务",
-            "开始模拟习练任务",
-            "开始格琳喵的委托任务",
-            "开始七天签到限定十连任务",
-            "开始限时中型活动任务",
-            "开始一次性领取十连任务",
-            "HomePage"
+            "returnToHomePage"
         ]
     },
     "开启远航巡录": {
-        "recognition":  "OCR",
+        "recognition": "OCR",
         "expected": "开启远航巡录",
         "action": "Click",
         "post_wait_freezes": 500

@@ -78,7 +78,7 @@
     },
     "exitEmails": {
         "next": [
-            "[JumpBack]returnToHomePage",
+            "[JumpBack]clickHomeButton",
             "staminaReplenishment",
             "enterShop",
             "enterBoundaryAdvanceAction",

@@ -1,67 +1,25 @@
 {
     "开始模拟习练任务": {
+        "enabled": true,
+        "max_hit": 1,
         "next": [
-            "确认当前在主页-模拟习练"
+            "点击模拟习练标签页",
+            "[JumpBack]打开活动页-模拟习练",
+            "[JumpBack]滑动活动列表-模拟习练",
+            "returnToHomePage"
         ]
     },
-    "确认当前在主页-模拟习练": {
-        "recognition": "OCR",
-        "expected": [
-            "战役推进"
-        ],
+    "打开活动页-模拟习练": {
+        "max_hit": 1,
         "next": [
-            "进入活动页面-模拟习练"
+            "打开活动页-活动通用"
         ]
     },
-    "进入活动页面-模拟习练": {
-        "recognition": "OCR",
-        "expected": [
-            "^活动$"
-        ],
-        "action": "Click",
-        "next": [
-            "已找到模拟习练",
-            "滑动寻找模拟习练"
-        ]
-    },
-    "已找到模拟习练": {
-        "recognition": "OCR",
-        "expected": [
-            "模拟习练"
-        ],
-        "action": "Click",
-        "next": [
-            "点击模拟习练标签页"
-        ]
-    },
-    "滑动寻找模拟习练": {
-        "action": "Swipe",
-        "begin": [
-            164,
-            533,
-            49,
-            33
-        ],
-        "end": [
-            181,
-            129,
-            34,
-            28
-        ],
-        "next": [
-            "滑动后找到模拟习练",
-            "退出活动页面-模拟习练"
-        ]
-    },
-    "滑动后找到模拟习练": {
-        "recognition": "OCR",
-        "expected": [
-            "模拟习练"
-        ],
-        "action": "Click",
-        "next": [
-            "点击模拟习练标签页"
-        ]
+    "滑动活动列表-模拟习练": {
+        "max_hit": 5,
+         "next": [
+             "滑动活动列表-活动通用"
+         ]
     },
     "点击模拟习练标签页": {
         "recognition": "OCR",
@@ -95,8 +53,17 @@
         ],
         "action": "Click",
         "next": [
-            "有未完成的关卡-模拟习练",
-            "无未完成的关卡-模拟习练"
+            "模拟习练页面"
+        ]
+    },
+    "模拟习练页面": {
+        "recognition": "OCR",
+        "expected": [
+            "模拟习练"
+        ],
+        "next": [
+            "[JumpBack]有未完成的关卡-模拟习练",
+            "领取关卡奖励-模拟习练"
         ]
     },
     "有未完成的关卡-模拟习练": {
@@ -112,95 +79,16 @@
         ]
     },
     "开始模拟习练战斗": {
+        "doc": "使用了通用战斗没法在失败时直接返回主页，故增加max_hit防止死循环",
         "recognition": "OCR",
+        "max_hit": 5,
         "expected": [
             "前往挑战"
         ],
         "action": "Click",
         "next": [
-            "作战开始-模拟习练"
-        ]
-    },
-    "作战开始-模拟习练": {
-        "recognition": "OCR",
-        "expected": [
-            "作战开始"
-        ],
-        "action": "Click",
-        "timeout": 200000,
-        "next": [
-            "作战开始-模拟习练",
-            "任务失败-模拟习练",
-            "任务完成-模拟习练",
-            "开始自动战斗-模拟习练"
-        ]
-    },
-    "开始自动战斗-模拟习练": {
-        "recognition": "TemplateMatch",
-        "template": "公用按钮组件/自动战斗_off.png",
-        "roi": [
-            986,
-            4,
-            279,
-            63
-        ],
-        "green_mask": true,
-        "action": "Click",
-        "timeout": 200000,
-        "next": [
-            "任务失败-模拟习练",
-            "任务完成-模拟习练"
-        ]
-    },
-    "任务完成-模拟习练": {
-        "recognition": "OCR",
-        "expected": "任务完成",
-        "action": "Click",
-        "next": [
-            "确认任务完成-模拟习练"
-        ]
-    },
-    "任务失败-模拟习练": {
-        "recognition": "OCR",
-        "expected": "任务失败",
-        "action": "Click",
-        "focus": {
-            "start": "[color:red]模拟习练任务失败，请手动处理[/color]",
-            "toast": "模拟习练任务失败，请手动处理"
-        },
-        "next": [
-            "确认任务失败-模拟习练"
-        ]
-    },
-    "确认任务失败-模拟习练": {
-        "recognition": "OCR",
-        "expected": "确认",
-        "action": "Click",
-        "next": [
-            "退出模拟习练"
-        ]
-    },
-    "确认任务完成-模拟习练": {
-        "recognition": "OCR",
-        "expected": "确认",
-        "action": "Click",
-        "next": [
-            "战斗后再次回到模拟习练页面"
-        ]
-    },
-    "战斗后再次回到模拟习练页面": {
-        "recognition": "OCR",
-        "expected": [
-            "模拟习练"
-        ],
-        "next": [
-            "有未完成的关卡-模拟习练",
-            "无未完成的关卡-模拟习练"
-        ]
-    },
-    "无未完成的关卡-模拟习练": {
-        "next": [
-            "领取关卡奖励-模拟习练"
+            "模拟习练页面",
+            "[JumpBack]通用战斗任务开始"
         ]
     },
     "领取关卡奖励-模拟习练": {
@@ -218,19 +106,9 @@
             "通关模拟习练"
         ],
         "next": [
-            "切换到未领取奖励的标签页-模拟习练",
-            "关闭关卡奖励-模拟习练"
-        ]
-    },
-    "关闭关卡奖励-模拟习练": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/关闭按钮_gray.png",
-            "公用按钮组件/关闭按钮_black.png"
-        ],
-        "action": "Click",
-        "next": [
-            "退出模拟习练"
+            "[JumpBack]切换到未领取奖励的标签页-模拟习练",
+            "[JumpBack]点击空白处关闭-通用",
+            "returnToHomePage"
         ]
     },
     "切换到未领取奖励的标签页-模拟习练": {
@@ -256,53 +134,6 @@
         "order_by": "Vertical",
         "index": -1,
         "action": "Click",
-        "next": [
-            "确认领取结果-模拟习练"
-        ]
-    },
-    "确认领取结果-模拟习练": {
-        "recognition": "OCR",
-        "expected": "点击空白处关闭",
-        "action": "Click",
-        "next": [
-            "已进入关卡奖励-模拟习练"
-        ]
-    },
-    "退出活动页面-模拟习练": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/关闭按钮_gray.png",
-            "公用按钮组件/关闭按钮_black.png"
-        ],
-        "action": "Click",
-        "next": [
-            "模拟习练任务结束",
-            "退出活动页面-模拟习练"
-        ]
-    },
-    "退出模拟习练": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/主页按钮_gray.png",
-            "公用按钮组件/主页按钮_black.png"
-        ],
-        "action": "Click",
-        "next": [
-            "模拟习练任务结束",
-            "退出模拟习练"
-        ]
-    },
-    "模拟习练任务结束": {
-        "recognition": "OCR",
-        "expected": [
-            "战役推进"
-        ],
-        "next": [
-            "开始格琳喵的委托任务",
-            "开始七天签到限定十连任务",
-            "开始限时中型活动任务",
-            "开始一次性领取十连任务",
-            "HomePage"
-        ]
+        "post_wait_freezes": 1200
     }
 }

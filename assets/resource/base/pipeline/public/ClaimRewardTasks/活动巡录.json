@@ -1,0 +1,170 @@
+{
+    "开始活动巡录任务": {
+        "enabled": true,
+        "max_hit": 1,
+        "anchor": "活动任务名",
+        "next": [
+            "点击活动巡录标签页",
+            "[JumpBack]打开活动页-活动巡录",
+            "[JumpBack]滑动活动列表-活动巡录",
+            "returnToHomePage"
+        ]
+    },
+    "打开活动页-活动巡录": {
+        "max_hit": 1,
+        "next": [
+            "打开活动页-活动通用"
+        ]
+    },
+    "滑动活动列表-活动巡录": {
+        "max_hit": 5,
+         "next": [
+             "滑动活动列表-活动通用"
+         ]
+    },
+    "点击活动巡录标签页": {
+        "doc": "活动巡录一般叫xx巡录",
+        "recognition": "OCR",
+        "expected": [
+            ".+巡录$"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "进入活动巡录"
+        ]
+    },
+    "进入活动巡录": {
+        "recognition": "OCR",
+        "expected": "前往",
+        "action": "Click",
+        "post_wait_freezes": 1500,
+        "next": [
+            "进入任务页-活动巡录",
+            "[JumpBack]选择任务页-活动巡录"
+        ]
+    },
+    "选择任务页-活动巡录": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            631,
+            0,
+            213,
+            102
+        ]
+    },
+    "进入任务页-活动巡录": {
+        "recognition": "OCR",
+        "action": "DoNothing",
+        "expected": [
+            "每日行动",
+            "每周行动",
+            "航标校准"
+        ],
+        "next": [
+            "确认切换到奖励页-活动巡录",
+            "[JumpBack]一键领取点数-活动巡录",
+            "[JumpBack]切换到奖励页-活动巡录"
+        ]
+    },
+    "一键领取点数-活动巡录": {
+        "recognition": "OCR",
+        "expected": "键领取$",
+        "action": "Click"
+    },
+    "切换到奖励页-活动巡录": {
+        "recognition": "OCR",
+        "expected": "巡录$",
+        "roi": [
+            372,
+            0,
+            514,
+            108
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1500
+    },
+    "确认切换到奖励页-活动巡录": {
+        "recognition": "OCR",
+        "expected": "巡录$",
+        "roi": [
+            300,
+            33,
+            746,
+            257
+        ],
+        "next": [
+            "[JumpBack]一键领取奖励-活动巡录",
+            "returnToHomePage"
+        ]
+    },
+    "一键领取奖励-活动巡录": {
+        "recognition": "OCR",
+        "expected": "键领取$",
+        "action": "Click",
+        "next": [
+            "巡录付费解锁提示-活动巡录",
+            "选择奖励-活动巡录"
+        ]
+    },
+    "巡录付费解锁提示-活动巡录": {
+        "recognition": "OCR",
+        "expected": "解锁.*?后",
+        "next": [
+            "[JumpBack]巡录付费解锁-领取奖励确认-活动巡录",
+            "选择奖励-活动巡录"
+        ]
+    },
+    "巡录付费解锁-领取奖励确认-活动巡录": {
+        "recognition": "OCR",
+        "expected": "^确认$",
+        "action": "Click",
+        "post_wait_freezes": 1500
+    },
+    "选择奖励-活动巡录": {
+        "next": [
+            "武器自选箱-活动巡录",
+            "拂晓之光、破晓天光补给包-活动巡录",
+            "[JumpBack]点击空白处关闭-通用",
+            "空节点-活动巡录"
+        ]
+    },
+    "武器自选箱-活动巡录": {
+        "doc": "发现武器自选礼箱，触发通知",
+        "recognition": "OCR",
+        "expected": [
+            "标准武器自选礼箱",
+            "远行守护自选礼箱"
+        ],
+        "focus": {
+            "start": "[color:red]发现武器自选礼箱，请手动处理[/color]",
+            "toast": "发现武器自选礼箱，请手动处理"
+        }
+    },
+    "空节点-活动巡录": {
+        "action": "DoNothing"
+    },
+    "拂晓之光、破晓天光补给包-活动巡录": {
+        "recognition": "OCR",
+        "expected": "晶条",
+        "action": "Click",
+        "post_wait_freezes": 800,
+        "next": [
+            "选择下一个补给包-活动巡录"
+        ]
+    },
+    "选择下一个补给包-活动巡录": {
+        "recognition": "OCR",
+        "expected": [
+            "^开启$",
+            "^下.?$",
+            "^下一个$"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 2000,
+        "next": [
+            "选择奖励-活动巡录"
+        ]
+    }
+}

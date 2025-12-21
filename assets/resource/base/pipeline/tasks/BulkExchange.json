@@ -2,16 +2,9 @@
     "BulkExchange": {
         "doc": "批量兑换",
         "next": [
-            "enterBulkExchangeTask",
-            "[JumpBack]StartGame"
-        ]
-    },
-    "enterBulkExchangeTask": {
-        "doc": "正式进入批量兑换任务",
-        "recognition": "OCR",
-        "expected": "战役推进",
-        "next": [
-            "bulkExchangeTaskClickShopButton"
+            "enterBulkExchangeTaskPageBottomSwip",
+            "[JumpBack]bulkExchangeTaskClickShopButton",
+            "[JumpBack]returnToHomePage"
         ]
     },
     "bulkExchangeTaskClickShopButton": {
@@ -19,10 +12,7 @@
         "expected": "^商城$",
         "post_wait_freezes": 200,
         "post_delay": 1500,
-        "action": "Click",
-        "next": [
-            "enterBulkExchangeTaskPageBottomSwip"
-        ]
+        "action": "Click"
     },
     "enterBulkExchangeTaskPageBottomSwip": {
         "doc": "进入批量兑换任务页面底部滑动",
