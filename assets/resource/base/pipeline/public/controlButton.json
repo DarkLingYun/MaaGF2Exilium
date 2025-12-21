@@ -35,25 +35,8 @@
             "公用按钮组件/返回上一页_black_v2.png"
         ],
         "action": "Click",
+        "green_mask": true,
         "post_delay": 1000
-    },
-    "returnToHomePageSub": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            0,
-            150,
-            70
-        ],
-        "template": [
-            "公用按钮组件/主页按钮_gray.png",
-            "公用按钮组件/主页按钮_black.png"
-        ],
-        "action": "Click",
-        "post_delay": 1500,
-        "next": [
-            "stopTask"
-        ]
     },
     "announcementClosed": {
         "recognition": "TemplateMatch",
