@@ -1,18 +1,41 @@
 {
     "returnToHomePage": {
+        "doc": "除特殊页面，一般都可通过下列按键回到主页。从出现次数多到少/最短路径依次匹配，可减少不必要的匹配",
+        "next": [
+            "HomePage",
+            "[JumpBack]clickHomeButton",
+            "[JumpBack]clickCloseWindowButton",
+            "[JumpBack]clickBackButton",
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]StartGame"
+        ]
+    },
+    "clickHomeButton": {
         "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            0,
-            150,
-            70
-        ],
         "template": [
             "公用按钮组件/主页按钮_gray.png",
             "公用按钮组件/主页按钮_black.png"
         ],
         "action": "Click",
-        "post_delay": 1500
+        "post_delay": 1000
+    },
+    "clickCloseWindowButton": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000
+    },
+    "clickBackButton": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "action": "Click",
+        "post_delay": 1000
     },
     "returnToHomePageSub": {
         "recognition": "TemplateMatch",
@@ -54,10 +77,6 @@
     "HomePage": {
         "recognition": "OCR",
         "expected": "战役推进",
-        "focus": {
-            "start": "返回主页成功",
-            "failed": "返回主页失败"
-        },
         "pre_delay": 2500
     },
     "resourcesLoading": {

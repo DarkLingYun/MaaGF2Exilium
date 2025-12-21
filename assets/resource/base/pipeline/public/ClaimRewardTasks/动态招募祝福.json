@@ -1,16 +1,10 @@
 {
     "开始动态招募祝福任务": {
+        "enabled": true,
+        "max_hit": 1,
         "next": [
-            "确认当前在主页-动态招募祝福"
-        ]
-    },
-    "确认当前在主页-动态招募祝福": {
-        "recognition": "OCR",
-        "expected": [
-            "战役推进"
-        ],
-        "next": [
-            "进入好友班组动态界面"
+            "进入好友班组动态界面",
+            "[JumpBack]returnToHomePage"
         ]
     },
     "进入好友班组动态界面": {
@@ -52,7 +46,7 @@
         ],
         "next": [
             "点击一键祝福",
-            "返回主页-动态招募祝福"
+            "returnToHomePage"
         ]
     },
     "点击一键祝福": {
@@ -62,44 +56,8 @@
         ],
         "action": "Click",
         "next": [
-            "关闭奖励页面-动态招募祝福"
-        ]
-    },
-    "关闭奖励页面-动态招募祝福": {
-        "recognition": "OCR",
-        "expected": [
-            "点击空白处关闭"
-        ],
-        "action": "Click",
-        "next": [
-            "返回主页-动态招募祝福"
-        ]
-    },
-    "返回主页-动态招募祝福": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/主页按钮_black.png",
-            "公用按钮组件/主页按钮_gray.png"
-        ],
-        "action": "Click",
-        "next": [
-            "任务已结束-动态招募祝福"
-        ]
-    },
-    "任务已结束-动态招募祝福": {
-        "recognition": "OCR",
-        "expected": [
-            "战役推进"
-        ],
-        "next": [
-            "开始暗香赠礼任务",
-            "开始艾莫号许愿池任务",
-            "开始模拟习练任务",
-            "开始格琳喵的委托任务",
-            "开始七天签到限定十连任务",
-            "开始限时中型活动任务",
-            "开始一次性领取十连任务",
-            "HomePage"
+            "[JumpBack]点击空白处关闭-通用",
+            "returnToHomePage"
         ]
     }
 }

@@ -1,67 +1,29 @@
 {
-    "enterTrial": {
+    "开始预演任务": {
         "doc": "进入预演（人形试用）",
         "enabled": true,
+        "max_hit": 1,
         "next": [
-            "enterEventPageForTrial"
+            "clickTrialTab",
+            "[JumpBack]打开活动页-预演",
+            "[JumpBack]滑动活动列表-预演",
+            "returnToHomePage"
         ]
     },
-    "enterEventPageForTrial": {
-        "doc": "进入活动页面",
-        "recognition": "OCR",
-        "expected": [
-            "^活动$"
-        ],
-        "action": "Click",
+    "打开活动页-预演": {
+        "max_hit": 1,
         "next": [
-            "trialFound",
-            "swipeToFindTrial"
+            "打开活动页-活动通用"
         ]
     },
-    "trialFound": {
-        "doc": "已找到预演，没打过的会排在第一个",
-        "recognition": "OCR",
-        "expected": [
-            "预演"
-        ],
-        "action": "Click",
-        "order_by": "Vertical",
-        "next": [
-            "clickTrialTab"
-        ]
-    },
-    "swipeToFindTrial": {
-        "doc": "滑动活动标签页，预演可能被藏在下面了",
-        "action": "Swipe",
-        "begin": [
-            164,
-            533,
-            49,
-            33
-        ],
-        "end": [
-            181,
-            129,
-            34,
-            28
-        ],
-        "next": [
-            "trialFoundAfterSwipe",
-            "exitEventPageInTrial"
-        ]
-    },
-    "trialFoundAfterSwipe": {
-        "doc": "滑动后发现预演",
-        "recognition": "OCR",
-        "expected": [
-            "预演"
-        ],
-        "next": [
-            "clickTrialTab"
-        ]
+    "滑动活动列表-预演": {
+        "max_hit": 5,
+         "next": [
+             "滑动活动列表-活动通用"
+         ]
     },
     "clickTrialTab": {
-        "doc": "点击预演",
+        "doc": "点击预演，没打过的会排在第一个",
         "recognition": "OCR",
         "expected": [
             "预演"
@@ -95,7 +57,7 @@
         "template": "活动/预演奖励已领取.png",
         "threshold": 0.95,
         "next": [
-            "exitEventPageInTrial"
+            "returnToHomePage"
         ]
     },
     "trialRewardNotClaimed": {
@@ -111,40 +73,10 @@
             "前往"
         ],
         "action": "Click",
+
         "next": [
-            "exitEventPageInTrial",
-            "[JumpBack]通用战斗任务开始"
-        ]
-    },
-    "exitEventPageInTrial": {
-        "doc": "退出活动页面",
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/关闭按钮_gray.png",
-            "公用按钮组件/关闭按钮_black.png"
-        ],
-        "action": "Click",
-        "next": [
-            "trialTaskEnd",
-            "exitEventPageInTrial"
-        ]
-    },
-    "trialTaskEnd": {
-        "doc": "预演任务已结束",
-        "recognition": "OCR",
-        "expected": [
-            "战役推进"
-        ],
-        "next": [
-            "开始动态招募祝福任务",
-            "开始暗香赠礼任务",
-            "开始艾莫号许愿池任务",
-            "开始模拟习练任务",
-            "开始格琳喵的委托任务",
-            "开始七天签到限定十连任务",
-            "开始限时中型活动任务",
-            "开始一次性领取十连任务",
-            "HomePage"
+            "[JumpBack]通用战斗任务开始",
+            "returnToHomePage"
         ]
     }
 }
