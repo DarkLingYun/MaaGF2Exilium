@@ -2,8 +2,8 @@
     "开始暗香赠礼任务": {
         "max_hit": 1,
         "next": [
-            "点击暗香赠礼标签页",
             "[JumpBack]打开活动页-暗香赠礼",
+            "点击暗香赠礼标签页",
             "[JumpBack]滑动活动列表-暗香赠礼",
             "returnToHomePage"
         ]

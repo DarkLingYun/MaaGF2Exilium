@@ -4,8 +4,8 @@
         "max_hit": 1,
         "anchor": "活动任务名",
         "next": [
-            "点击活动巡录标签页",
             "[JumpBack]打开活动页-活动巡录",
+            "点击活动巡录标签页",
             "[JumpBack]滑动活动列表-活动巡录",
             "returnToHomePage"
         ]

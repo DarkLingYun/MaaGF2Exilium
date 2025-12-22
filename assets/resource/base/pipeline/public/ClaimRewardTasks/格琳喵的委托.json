@@ -3,8 +3,8 @@
         "enabled": true,
         "max_hit": 1,
         "next": [
-            "点击格琳喵的委托标签页",
             "[JumpBack]打开活动页-格琳喵的委托",
+            "点击格琳喵的委托标签页",
             "[JumpBack]滑动活动列表-格琳喵的委托",
             "returnToHomePage"
         ]

@@ -7,14 +7,15 @@
             "点击任意位置继续",
             "点击屏幕任意位置继续"
         ],
-        "action": "Click",
-        "post_wait_freezes": 500
+        "action": "Click"
     },
     "跳过动画-通用": {
         "recognition": "OCR",
-        "expected": "跳过动画",
-        "action": "Click",
-        "post_wait_freezes": 500
+        "expected": [
+            "跳过动画",
+            "跳过"
+        ],
+        "action": "Click"
     },
     "返回上一页-通用": {
         "recognition": "TemplateMatch",
@@ -23,6 +24,13 @@
             "公用按钮组件/返回上一页_gray_v2.png"
         ],
         "green_mask": true,
+        "action": "Click"
+    },
+    "一键领取-通用": {
+        "recognition": "OCR",
+        "expected": [
+            "键领取"
+        ],
         "action": "Click"
     }
 }
