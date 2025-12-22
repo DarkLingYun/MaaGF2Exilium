@@ -3,8 +3,8 @@
         "enabled": true,
         "max_hit": 1,
         "next": [
-            "点击模拟习练标签页",
             "[JumpBack]打开活动页-模拟习练",
+            "点击模拟习练标签页",
             "[JumpBack]滑动活动列表-模拟习练",
             "returnToHomePage"
         ]

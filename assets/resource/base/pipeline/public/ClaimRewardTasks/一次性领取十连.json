@@ -3,8 +3,8 @@
         "enabled": true,
         "max_hit": 1,
         "next": [
-            "点击一次性领取十连标签页",
             "[JumpBack]打开活动页-一次性领取十连",
+            "点击一次性领取十连标签页",
             "[JumpBack]滑动活动列表-一次性领取十连",
             "returnToHomePage"
         ]

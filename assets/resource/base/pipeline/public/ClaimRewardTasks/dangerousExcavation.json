@@ -5,8 +5,8 @@
         "enabled": true,
         "max_hit": 1,
         "next": [
-            "clickDangerousExcavationTab",
             "[JumpBack]打开活动页-险境挖掘",
+            "clickDangerousExcavationTab",
             "[JumpBack]滑动活动列表-险境挖掘",
             "returnToHomePage"
         ]

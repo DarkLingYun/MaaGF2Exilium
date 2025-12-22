@@ -4,8 +4,8 @@
         "enabled": true,
         "max_hit": 1,
         "next": [
-            "clickTrialTab",
             "[JumpBack]打开活动页-预演",
+            "clickTrialTab",
             "[JumpBack]滑动活动列表-预演",
             "returnToHomePage"
         ]
