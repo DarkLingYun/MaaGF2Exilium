@@ -232,7 +232,8 @@
                 "模拟习练",
                 "格琳喵的委托",
                 "七天签到限定十连",
-                "限时中型活动"
+                "限时中型活动",
+                "活动巡录"
             ],
             "default_check": true,
             "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
@@ -2640,7 +2641,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "enterCommissionToClaimTask": {
+                        "开始委托领取任务": {
                             "enabled": true
                         }
                     }
@@ -2648,7 +2649,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "enterCommissionToClaimTask": {
+                        "开始委托领取任务": {
                             "enabled": false
                         }
                     }
@@ -2660,7 +2661,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "enterPassToClaimTask": {
+                        "开始巡录任务": {
                             "enabled": true
                         }
                     }
@@ -2668,7 +2669,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "enterPassToClaimTask": {
+                        "开始巡录任务": {
                             "enabled": false
                         }
                     }
@@ -2680,7 +2681,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "enterPersonalInformationPage": {
+                        "开始助战奖励领取": {
                             "enabled": true
                         }
                     }
@@ -2688,7 +2689,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "enterPersonalInformationPage": {
+                        "开始助战奖励领取": {
                             "enabled": false
                         }
                     }
@@ -2700,7 +2701,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "enterDangerousExcavation": {
+                        "开始险境挖掘任务": {
                             "enabled": true
                         }
                     }
@@ -2708,7 +2709,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "enterDangerousExcavation": {
+                        "开始险境挖掘任务": {
                             "enabled": false
                         }
                     }
@@ -2933,6 +2934,26 @@
                     "name": "NO",
                     "pipeline_override": {
                         "开始限时中型活动任务": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "活动巡录": {
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "开始活动巡录任务": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "开始活动巡录任务": {
                             "enabled": false
                         }
                     }

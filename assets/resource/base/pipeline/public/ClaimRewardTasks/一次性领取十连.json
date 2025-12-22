@@ -1,0 +1,62 @@
+{
+    "开始一次性领取十连任务": {
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "点击一次性领取十连标签页",
+            "[JumpBack]打开活动页-一次性领取十连",
+            "[JumpBack]滑动活动列表-一次性领取十连",
+            "returnToHomePage"
+        ]
+    },
+    "打开活动页-一次性领取十连": {
+        "max_hit": 1,
+        "next": [
+            "打开活动页-活动通用"
+        ]
+    },
+    "滑动活动列表-一次性领取十连": {
+        "max_hit": 5,
+         "next": [
+             "滑动活动列表-活动通用"
+         ]
+    },
+    "点击一次性领取十连标签页": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": [
+            "庆典豪礼"
+        ],
+        "next": [
+            "已进入一次性领取十连标签页",
+            "点击一次性领取十连标签页"
+        ]
+    },
+    "已进入一次性领取十连标签页": {
+        "recognition": "OCR",
+        "roi": [
+            391,
+            105,
+            877,
+            515
+        ],
+        "expected": [
+            "庆典豪礼"
+        ],
+        "next": [
+            "领取十连-一次性领取十连",
+            "returnToHomePage"
+        ]
+    },
+    "领取十连-一次性领取十连": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动/领取.png"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "returnToHomePage"
+        ]
+    }
+}

@@ -1,7 +1,15 @@
 {
+    "开始委托领取任务": {
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "confirmEntrustedClaimPage",
+            "[JumpBack]enterCommissionToClaimTask",
+            "[JumpBack]returnToHomePage"
+        ]
+    },
     "enterCommissionToClaimTask": {
         "doc": "进入委托领取任务",
-        "enabled": true,
         "recognition": "OCR",
         "expected": "^委托",
         "roi": [
@@ -11,10 +19,7 @@
             137
         ],
         "action": "Click",
-        "next": [
-            "confirmEntrustedClaimPage",
-            "enterCommissionToClaimTask"
-        ]
+        "post_wait_freezes": 1000
     },
     "confirmEntrustedClaimPage": {
         "doc": "确认进入委托领取页面",
@@ -107,9 +112,10 @@
         ],
         "expected": "征程丰碑",
         "action": "Click",
+        "post_wait_freezes": 1500,
         "next": [
             "claimJourneyMileStoneReward",
-            "exitCommissionPage"
+            "returnToHomePage"
         ]
     },
     "claimJourneyMileStoneReward": {
@@ -128,40 +134,7 @@
         "action": "Click",
         "next": [
             "closeClaimJourneyMileStoneRewardResultPage",
-            "exitCommissionPage"
-        ]
-    },
-    "exitCommissionPage": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/主页按钮_gray.png",
-            "公用按钮组件/主页按钮_black.png"
-        ],
-        "action": "Click",
-        "next": [
-            "commissionPageExited",
-            "exitCommissionPage"
-        ]
-    },
-    "commissionPageExited": {
-        "doc": "已退出到主界面",
-        "recognition": "OCR",
-        "expected": [
-            "战役推进"
-        ],
-        "next": [
-            "enterPassToClaimTask",
-            "enterPersonalInformationPage",
-            "enterDangerousExcavation",
-            "enterTrial",
-            "开始动态招募祝福任务",
-            "开始暗香赠礼任务",
-            "开始艾莫号许愿池任务",
-            "开始模拟习练任务",
-            "开始格琳喵的委托任务",
-            "开始七天签到限定十连任务",
-            "开始限时中型活动任务",
-            "HomePage"
+            "returnToHomePage"
         ]
     }
 }

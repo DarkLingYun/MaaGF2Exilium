@@ -16,6 +16,7 @@
             "^Copyright"
         ],
         "action": "Click",
+        "rate_limit": 2000,
         "timeout": 35000,
         "next": [
             "StartGame_clickStart",

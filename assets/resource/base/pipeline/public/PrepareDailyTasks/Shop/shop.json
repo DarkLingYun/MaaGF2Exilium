@@ -3,10 +3,11 @@
         "enabled": true,
         "recognition": "OCR",
         "expected": "^商城$",
-        "post_wait_freezes": 200,
+        "max_hit": 3,
         "action": "Click",
         "next": [
-            "clickQualitySelection"
+            "clickQualitySelection",
+            "enterShop"
         ]
     },
     "clickQualitySelection": {
@@ -28,7 +29,7 @@
             150
         ],
         "action": "Click",
-        "post_wait_freezes": 800,
+        "post_wait_freezes": 1200,
         "next": [
             "TimeLimitedGiftPackagePageSwipe"
         ],
