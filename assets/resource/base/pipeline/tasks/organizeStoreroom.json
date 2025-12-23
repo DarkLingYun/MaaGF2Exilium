@@ -21,8 +21,7 @@
             505,
             68,
             68
-        ],
-        "post_wait_freezes": 500
+        ]
     },
     "enterStoreroom": {
         "recognition": "OCR",
