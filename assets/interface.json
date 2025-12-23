@@ -1688,6 +1688,85 @@
         "物资模式活动选择": {
             "cases": [
                 {
+                    "name": "铸碑者的黎明·下篇",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "铸碑者的黎明",
+                                "黎明",
+                                "铸碑",
+                                "铸碑者"
+                            ],
+                            "roi": [
+                                57,
+                                77,
+                                230,
+                                310
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "莫科什街区",
+                                "莫科什"
+                            ],
+                            "roi": [
+                                25,
+                                121,
+                                210,
+                                157
+                            ]
+                        },
+                        "switchVersionActivityChapter": {
+                            "enabled": true,
+                            "expected": [
+                                "^铸碑者的黎明.*下篇$",
+                                "^黎明.下篇$"
+                            ]
+                        },
+                        "selectExchangeType": {
+                            "enabled": true,
+                            "expected": [
+                                "^下篇$"
+                            ]
+                        },
+                        "selectResourceModeLevel": {
+                            "doc": "选择物资模式关卡",
+                            "recognition": "OCR",
+                            "expected": "^.*5$",
+                            "action": "Click",
+                            "roi": [
+                                572,
+                                269,
+                                424,
+                                163
+                            ]
+                        },
+                        "exitVersionActivityResourceSweep": {
+                            "roi": [
+                                0,
+                                0,
+                                185,
+                                90
+                            ]
+                        },
+                        "setResourceLevelSweepTimes": {
+                            "doc": "这个版本改过滑动条位置",
+                            "begin": [
+                                458,
+                                376,
+                                1,
+                                1
+                            ],
+                            "end": [
+                                832,
+                                375,
+                                1,
+                                1
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "铸碑者的黎明·上篇",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
