@@ -107,23 +107,11 @@
             "default_check": true
         },
         {
-            "name": "定向精研(刷配件)",
+            "name": "补给作战",
             "entry": "AutoSweepBattle",
             "option": [
-                "配件类型：",
-                "配件效果：",
-                "配件刷取次数："
-            ],
-            "doc": "定向精研体力值每次消耗30"
-        },
-        {
-            "name": "补给作战(人形培养)",
-            "entry": "AutoSweepBattle",
-            "option": [
-                "补给资源：",
-                "补给次数："
-            ],
-            "doc": "战争报告与解析图纸每次10体力, 存量条和金币本每次20体力"
+                "作战类型"
+            ]
         },
         {
             "name": "心智勘测",
@@ -681,43 +669,7 @@
                 }
             ]
         },
-        "补给资源：": {
-            "cases": [
-                {
-                    "name": "标准同调_金币本",
-                    "pipeline_override": {
-                        "supplyOperationType": {
-                            "expected": "标准同调"
-                        }
-                    }
-                },
-                {
-                    "name": "战争报告_人形升级",
-                    "pipeline_override": {
-                        "supplyOperationType": {
-                            "expected": "深度搜索"
-                        }
-                    }
-                },
-                {
-                    "name": "解析图纸_武器升级",
-                    "pipeline_override": {
-                        "supplyOperationType": {
-                            "expected": "军备解析"
-                        }
-                    }
-                },
-                {
-                    "name": "增域存量条_提升人形等级上限",
-                    "pipeline_override": {
-                        "supplyOperationType": {
-                            "expected": "决策构象"
-                        }
-                    }
-                }
-            ]
-        },
-        "补给次数：": {
+        "补给次数": {
             "cases": [
                 {
                     "name": "x1",
@@ -972,16 +924,69 @@
                 }
             ]
         },
-        "配件类型：": {
+        "作战类型": {
+            "cases": [
+                {
+                    "name": "深度搜索",
+                    "pipeline_override": {
+                        "supplyOperationType": {
+                            "expected": "深度搜索"
+                        }
+                    },
+                    "option": [
+                        "补给次数"
+                    ]
+                },
+                {
+                    "name": "军备解析",
+                    "pipeline_override": {
+                        "supplyOperationType": {
+                            "expected": "军备解析"
+                        }
+                    },
+                    "option": [
+                        "补给次数"
+                    ]
+                },
+                {
+                    "name": "决策构象",
+                    "pipeline_override": {
+                        "supplyOperationType": {
+                            "expected": "决策构象"
+                        }
+                    },
+                    "option": [
+                        "补给次数"
+                    ]
+                },
+                {
+                    "name": "定向精研",
+                    "option": [
+                        "配件类型",
+                        "配件效果",
+                        "配件刷取次数"
+                    ]
+                },
+                {
+                    "name": "标准同调",
+                    "pipeline_override": {
+                        "supplyOperationType": {
+                            "expected": "标准同调"
+                        }
+                    },
+                    "option": [
+                        "补给次数"
+                    ]
+                }
+            ]
+        },
+        "配件类型": {
             "cases": [
                 {
                     "name": "突击与霰弹枪",
                     "pipeline_override": {
                         "switchAccessoriesTag": {
                             "expected": "^突击"
-                        },
-                        "supplyOperationType": {
-                            "expected": "定向精研"
                         }
                     }
                 },
@@ -990,9 +995,6 @@
                     "pipeline_override": {
                         "switchAccessoriesTag": {
                             "expected": "^冲锋枪"
-                        },
-                        "supplyOperationType": {
-                            "expected": "定向精研"
                         }
                     }
                 },
@@ -1001,9 +1003,6 @@
                     "pipeline_override": {
                         "switchAccessoriesTag": {
                             "expected": "^狙击枪"
-                        },
-                        "supplyOperationType": {
-                            "expected": "定向精研"
                         }
                     }
                 },
@@ -1012,15 +1011,12 @@
                     "pipeline_override": {
                         "switchAccessoriesTag": {
                             "expected": "^手枪"
-                        },
-                        "supplyOperationType": {
-                            "expected": "定向精研"
                         }
                     }
                 }
             ]
         },
-        "配件效果：": {
+        "配件效果": {
             "cases": [
                 {
                     "name": "异位打击",
@@ -1150,7 +1146,7 @@
                 }
             ]
         },
-        "配件刷取次数：": {
+        "配件刷取次数": {
             "cases": [
                 {
                     "name": "x1",
