@@ -14,9 +14,8 @@ def check(dirs: List[Path]) -> bool:
 
     for dir in dirs:
         print(f"Checking {dir}...")
-        status = resource.post_bundle(dir)
-        sleep(10)
-        if not status.succeeded():
+        status = resource.post_bundle(dir).wait().status
+        if not status.succeeded:
             print(f"Failed to check {dir}.")
             return False
 
