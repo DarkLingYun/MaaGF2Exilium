@@ -18,7 +18,6 @@
     "确认活动层等级提升":{
         "recognition": "OCR",
         "expected": "点击空白处关闭",
-        "action": "Click",
-        "post_wait_freezes": 500
+        "action": "Click"
     }
 }

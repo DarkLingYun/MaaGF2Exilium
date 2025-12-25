@@ -3,8 +3,8 @@
         "enabled": true,
         "max_hit": 1,
         "next": [
-            "点击限时中型活动标签页",
             "[JumpBack]打开活动页-限时中型活动",
+            "点击限时中型活动标签页",
             "[JumpBack]滑动活动列表-限时中型活动",
             "returnToHomePage"
         ]

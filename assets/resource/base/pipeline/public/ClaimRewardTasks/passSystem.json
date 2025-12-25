@@ -183,7 +183,6 @@
     "开启远航巡录": {
         "recognition": "OCR",
         "expected": "开启远航巡录",
-        "action": "Click",
-        "post_wait_freezes": 500
+        "action": "Click"
     }
 }

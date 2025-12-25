@@ -13,7 +13,6 @@
         "doc": "按键进入仓库 B 0x42 B key",
         "action": "ClickKey",
         "key": 66,
-        "post_wait_freezes": 500,
         "next": [
             "storeroomEntered"
         ]

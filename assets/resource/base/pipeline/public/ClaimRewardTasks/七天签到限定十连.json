@@ -3,8 +3,8 @@
         "enabled": true,
         "max_hit": 1,
         "next": [
-            "点击七天签到限定十连标签页",
             "[JumpBack]打开活动页-七天签到限定十连",
+            "点击七天签到限定十连标签页",
             "[JumpBack]滑动活动列表-七天签到限定十连",
             "returnToHomePage"
         ]
@@ -25,6 +25,7 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": [
+            "燎月连宵",
             "鎏金华筵",
             "共轭波频"
         ],
@@ -42,6 +43,7 @@
             515
         ],
         "expected": [
+            "燎月连宵",
             "鎏金华筵",
             "共轭波频"
         ],
