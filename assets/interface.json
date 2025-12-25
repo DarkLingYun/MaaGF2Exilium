@@ -255,10 +255,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "claimIntelligenceSupplyStaminaTaskTimed": {
-                            "enabled": true,
-                            "focus": {
-                                "start": "领取情报补给体力"
-                            }
+                            "enabled": true
                         }
                     }
                 },
@@ -278,10 +275,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "claimSevenDayCheckInResourceTaskTimed": {
-                            "enabled": true,
-                            "focus": {
-                                "start": "领取七日签到资源"
-                            }
+                            "enabled": true
                         }
                     }
                 },
@@ -301,10 +295,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "getNewEmails": {
-                            "enabled": true,
-                            "focus": {
-                                "start": "领取邮件"
-                            }
+                            "enabled": true
                         }
                     }
                 },
@@ -333,10 +324,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "staminaReplenishment": {
-                            "enabled": true,
-                            "focus": {
-                                "start": "使用体力药水"
-                            }
+                            "enabled": true
                         }
                     }
                 }
@@ -348,10 +336,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "enterShop": {
-                            "enabled": true,
-                            "focus": {
-                                "start": "免费每日补给箱购买"
-                            }
+                            "enabled": true
                         }
                     }
                 },
@@ -371,10 +356,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "enterBoundaryAdvanceAction": {
-                            "enabled": true,
-                            "focus": {
-                                "start": "边界推进委托领取"
-                            }
+                            "enabled": true
                         }
                     }
                 },
@@ -586,10 +568,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "enterLoungeAction": {
-                            "enabled": true,
-                            "focus": {
-                                "start": "访问休息室"
-                            }
+                            "enabled": true
                         }
                     }
                 },
@@ -609,10 +588,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "enterDispatchCenterAction": {
-                            "enabled": true,
-                            "focus": {
-                                "start": "开始派遣任务"
-                            }
+                            "enabled": true
                         }
                     }
                 },
@@ -632,10 +608,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "enterSchedulingGainsAction": {
-                            "enabled": true,
-                            "focus": {
-                                "succeeded": "领取调度收益"
-                            }
+                            "enabled": true
                         }
                     }
                 },
@@ -1474,10 +1447,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "enterBossFightTask": {
-                            "enabled": true,
-                            "focus": {
-                                "start": "首领挑战自律"
-                            }
+                            "enabled": true
                         }
                     }
                 },
@@ -1601,10 +1571,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "enterPeakValueAssessment": {
-                            "enabled": true,
-                            "focus": {
-                                "start": "领取峰值推定奖励"
-                            }
+                            "enabled": true
                         }
                     }
                 },
@@ -1624,10 +1591,7 @@
                     "name": "YES",
                     "pipeline_override": {
                         "开始极限峰值任务": {
-                            "enabled": true,
-                            "focus": {
-                                "start": "开始极限峰值任务"
-                            }
+                            "enabled": true
                         }
                     }
                 },

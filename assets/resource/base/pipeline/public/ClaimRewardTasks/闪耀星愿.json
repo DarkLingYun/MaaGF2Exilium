@@ -60,7 +60,7 @@
             "为她应援"
         ],
         "focus": {
-            "start": "[color:red]闪耀星愿未选择应援人形，请手动处理[/color]",
+            "Node.Action.Starting": "<span style=\"color: red;\">闪耀星愿未选择应援人形，请手动处理</span>",
             "toast": "闪耀星愿未选择应援人形，请手动处理"
         },
         "next": [

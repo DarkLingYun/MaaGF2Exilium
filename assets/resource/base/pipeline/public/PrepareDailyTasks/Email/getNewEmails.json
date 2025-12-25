@@ -1,9 +1,11 @@
 {
     "getNewEmails": {
         "doc": "领取邮件任务",
-        "enabled": true,
         "recognition": "OCR",
         "expected": "战役推进",
+        "focus": {
+            "Node.Action.Starting": "领取邮件"
+        },
         "next": [
             "clickEmailsButton",
             "staminaReplenishment",
@@ -69,7 +71,7 @@
     },
     "surveyEmailFound": {
         "focus": {
-            "start": "[color:red]发现调研邀请邮件，请手动处理[/color]",
+            "Node.Action.Starting": "<span style=\"color: red;\">发现调研邀请邮件，请手动处理</span>",
             "toast": "发现调研邀请邮件，请手动处理"
         },
         "next": [
