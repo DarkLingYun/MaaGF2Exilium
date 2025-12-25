@@ -19,6 +19,9 @@
                 220
             ]
         },
+        "focus": {
+            "Node.Action.Succeeded": "领取调度收益"
+        },
         "next": [
             "clickMaxStaminaReserveButton"
         ]

@@ -1,5 +1,8 @@
 {
     "enterPeakValueAssessment": {
+        "focus": {
+            "Node.Action.Starting": "领取峰值推定奖励"
+        },
         "next": [
             "clickEnterPeakValueAssessmentPage"
         ]

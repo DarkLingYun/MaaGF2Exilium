@@ -1,5 +1,8 @@
 {
     "enterLoungeAction": {
+        "focus": {
+            "Node.Action.Starting": "访问休息室"
+        },
         "next": [
             "进入整备室"
         ]

@@ -1,5 +1,8 @@
 {
     "enterBossFightTask": {
+        "focus": {
+            "Node.Action.Starting": "首领挑战自律"
+        },
         "next": [
             "clickEnterBossFightPage"
         ]

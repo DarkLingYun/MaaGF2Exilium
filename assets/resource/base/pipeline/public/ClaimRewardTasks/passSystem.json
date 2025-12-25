@@ -135,7 +135,7 @@
             "exitPackagePageAfterWeaponPackageFound"
         ],
         "focus": {
-            "start": "[color:red]发现武器自选礼箱，请手动处理[/color]",
+            "Node.Action.Starting": "<span style=\"color: red;\">发现武器自选礼箱，请手动处理</span>",
             "toast": "发现武器自选礼箱，请手动处理"
         }
     },

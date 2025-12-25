@@ -10,6 +10,9 @@
         ],
         "post_wait_freezes": 200,
         "action": "Click",
+        "focus": {
+            "Node.Action.Starting": "边界推进委托领取"
+        },
         "next": [
             "clickBoundaryAdvanceTagButton"
         ]
@@ -62,7 +65,7 @@
             32
         ],
         "focus": {
-            "succeeded": "[color:blue]边界推进奖励已全部领取[/color]"
+            "Node.Action.Succeeded": "边界推进奖励已全部领取"
         },
         "next": [
             "returnToHomePage"
