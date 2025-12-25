@@ -14,8 +14,8 @@ def check(dirs: List[Path]) -> bool:
 
     for dir in dirs:
         print(f"Checking {dir}...")
-        status = resource.post_bundle(dir).wait()
-        if not status.succeeded():
+        status = resource.post_bundle(dir).wait().status
+        if not status.succeeded:
             print(f"Failed to check {dir}.")
             return False
 
@@ -25,7 +25,7 @@ def check(dirs: List[Path]) -> bool:
 
 def main():
     if len(sys.argv) < 2:
-        print("Usage: python configure.py <directory>")
+        print("Usage: python check_resource.py <directories...>")
         sys.exit(1)
 
     Tasker.set_stdout_level(LoggingLevelEnum.All)
