@@ -47,11 +47,7 @@
         "action": "Click",
         "post_delay": 2500,
         "next": [
-            "getNewEmails",
-            "staminaReplenishment",
-            "enterShop",
-            "enterBoundaryAdvanceAction",
-            "HomePage"
+            "exitTimeLimitedTask"
         ]
     },
     "clickSevenDayCheckInClaimButton": {
