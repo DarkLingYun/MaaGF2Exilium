@@ -39,7 +39,7 @@
         "recognition": "OCR",
         "expected": "战役推进",
         "post_wait_freezes": {
-            "time": 2000,
+            "time": 3000,
             "threshold": 0.8
         },
         "next": [
