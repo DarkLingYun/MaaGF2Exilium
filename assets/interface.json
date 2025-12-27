@@ -900,7 +900,7 @@
         "作战类型": {
             "cases": [
                 {
-                    "name": "深度搜索",
+                    "name": "深度搜索(人形升级)",
                     "pipeline_override": {
                         "supplyOperationType": {
                             "expected": "深度搜索"
@@ -911,7 +911,7 @@
                     ]
                 },
                 {
-                    "name": "军备解析",
+                    "name": "军备解析(武器升级)",
                     "pipeline_override": {
                         "supplyOperationType": {
                             "expected": "军备解析"
@@ -922,7 +922,7 @@
                     ]
                 },
                 {
-                    "name": "决策构象",
+                    "name": "决策构象(人形等级突破)",
                     "pipeline_override": {
                         "supplyOperationType": {
                             "expected": "决策构象"
@@ -933,7 +933,7 @@
                     ]
                 },
                 {
-                    "name": "定向精研",
+                    "name": "定向精研(武器配件)",
                     "option": [
                         "配件类型",
                         "配件效果",
@@ -941,7 +941,7 @@
                     ]
                 },
                 {
-                    "name": "标准同调",
+                    "name": "标准同调(金币本)",
                     "pipeline_override": {
                         "supplyOperationType": {
                             "expected": "标准同调"
