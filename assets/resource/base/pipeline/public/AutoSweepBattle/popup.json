@@ -183,22 +183,15 @@
     "increaseSliderMax": {
         "doc": "检测滑动条是否最大值,配件精研不适用",
         "roi": [
-            812,
-            378,
-            28,
-            28
+            733,
+            361,
+            29,
+            29
         ],
-        "upper": [
-            130,
-            131,
-            135
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/滑动按钮.png"
         ],
-        "lower": [
-            129,
-            131,
-            135
-        ],
-        "recognition": "ColorMatch",
         "post_delay": 100,
         "next": [
             "[JumpBack]scrollablePopupConfirm",
