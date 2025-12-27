@@ -17,6 +17,7 @@
             1009,
             623
         ],
+        "post_wait_freezes": 0,
         "next": [
             "clickHomeStoreExchangeTaskButton",
             "clickHomeStoreExchangePageButton"
