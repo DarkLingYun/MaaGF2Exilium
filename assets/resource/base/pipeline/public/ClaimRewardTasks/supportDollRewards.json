@@ -3,8 +3,7 @@
         "enabled": true,
         "max_hit": 1,
         "next": [
-            "personalInformationPageEntered",
-            "[JumpBack]enterPersonalInformationPage",
+            "enterPersonalInformationPage",
             "[JumpBack]returnToHomePage"
         ]
     },
@@ -13,7 +12,11 @@
         "recognition": "TemplateMatch",
         "template": "公用按钮组件/个人信息.png",
         "action": "Click",
-        "post_wait_freezes": 1500
+        "post_wait_freezes": 1500,
+        "next": [
+            "personalInformationPageEntered",
+            "enterPersonalInformationPage"
+        ]
     },
     "personalInformationPageEntered": {
         "doc": "已进入个人信息",
