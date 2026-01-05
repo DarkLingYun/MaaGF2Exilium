@@ -2137,7 +2137,7 @@
                         "selectExchangeType": {
                             "enabled": true,
                             "expected": [
-                                "^临时.*下篇$"
+                                "^临时.*下"
                             ]
                         }
                     }
@@ -2164,7 +2164,7 @@
                         "selectExchangeType": {
                             "enabled": true,
                             "expected": [
-                                "^临时.*上篇$"
+                                "^临时.*上"
                             ]
                         }
                     }

@@ -3,8 +3,7 @@
         "enabled": true,
         "max_hit": 1,
         "next": [
-            "confirmEntrustedClaimPage",
-            "[JumpBack]enterCommissionToClaimTask",
+            "enterCommissionToClaimTask",
             "[JumpBack]returnToHomePage"
         ]
     },
@@ -19,7 +18,11 @@
             137
         ],
         "action": "Click",
-        "post_wait_freezes": 1000
+        "post_wait_freezes": 1000,
+        "next": [
+            "confirmEntrustedClaimPage",
+            "enterCommissionToClaimTask"
+        ]
     },
     "confirmEntrustedClaimPage": {
         "doc": "确认进入委托领取页面",
