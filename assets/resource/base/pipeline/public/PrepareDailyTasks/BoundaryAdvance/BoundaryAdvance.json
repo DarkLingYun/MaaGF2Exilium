@@ -28,8 +28,15 @@
             54
         ],
         "action": "Click",
-        "pre_wait_freezes": 500,
-        "post_delay": 1500,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                639,
+                536,
+                641,
+                184
+            ]
+        },
         "next": [
             "clickBoundaryAdvanceTagButton",
             "boundaryAdvanceDelegateRewardFull",
@@ -68,7 +75,7 @@
             "Node.Action.Succeeded": "边界推进奖励已全部领取"
         },
         "next": [
-            "returnToHomePage"
+            "exitBoundaryAdvance"
         ]
     },
     "clickBoundaryAdvanceDelegateButton": {
@@ -86,7 +93,15 @@
             "^晶源"
         ],
         "action": "Click",
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                639,
+                536,
+                641,
+                184
+            ]
+        },
         "next": [
             "clickBoundaryAdvanceDelegateButton",
             "boundaryAdvanceDelegateOneClickDispatch",
@@ -134,6 +149,9 @@
             76,
             34
         ],
+        "focus": {
+            "Node.Action.Starting": "领取边界推进奖励"
+        },
         "action": "Click",
         "next": [
             "boundaryAdvanceDelegateRewardClaimResultPage"
@@ -146,7 +164,7 @@
         "action": "Click",
         "next": [
             "boundaryAdvanceDelegateRewardClaimResultPage",
-            "returnToHomePage"
+            "exitBoundaryAdvance"
         ]
     },
     "boundaryAdvanceDelegateNotClaimable": {
@@ -168,10 +186,32 @@
             39,
             40
         ],
+        "focus": {
+            "Node.Action.Starting": "边界委托未完成"
+        },
         "action": "Click",
         "post_delay": 100,
         "next": [
-            "returnToHomePage"
+            "exitBoundaryAdvance"
+        ]
+    },
+    "exitBoundaryAdvance": {
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                639,
+                536,
+                641,
+                184
+            ]
+        },
+        "focus": {
+            "Node.Action.Starting": "退出边界推进任务"
+        },
+        "doc": "子任务推出到首页固定写法，方便后期扩展新的顺序子任务",
+        "next": [
+            "[JumpBack]clickHomeButton",
+            "HomePage"
         ]
     }
 }
