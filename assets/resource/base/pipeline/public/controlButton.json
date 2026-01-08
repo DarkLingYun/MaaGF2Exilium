@@ -17,7 +17,8 @@
             "公用按钮组件/主页按钮_black.png"
         ],
         "action": "Click",
-        "post_delay": 1000
+        "post_delay": 1000,
+        "post_wait_freezes": 0
     },
     "clickCloseWindowButton": {
         "recognition": "TemplateMatch",
@@ -26,7 +27,8 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
-        "post_delay": 1000
+        "post_delay": 1000,
+        "post_wait_freezes": 0
     },
     "clickBackButton": {
         "recognition": "TemplateMatch",
@@ -36,7 +38,8 @@
         ],
         "action": "Click",
         "green_mask": true,
-        "post_delay": 1000
+        "post_delay": 1000,
+        "post_wait_freezes": 0
     },
     "announcementClosed": {
         "recognition": "TemplateMatch",
@@ -65,7 +68,8 @@
     "resourcesLoading": {
         "recognition": "OCR",
         "expected": "资源加载中",
-        "post_delay": 2500
+        "post_delay": 2500,
+        "post_wait_freezes": 0
     },
     "backPage": {
         "recognition": "TemplateMatch",
@@ -80,6 +84,7 @@
             "公用按钮组件/返回上一页_black.png"
         ],
         "action": "Click",
-        "post_delay": 1000
+        "post_delay": 1000,
+        "post_wait_freezes": 0
     }
 }
