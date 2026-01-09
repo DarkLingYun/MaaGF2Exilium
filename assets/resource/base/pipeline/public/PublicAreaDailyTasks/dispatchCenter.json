@@ -1,5 +1,8 @@
 {
     "enterDispatchCenterAction": {
+        "focus": {
+            "Node.Action.Starting": "开始派遣任务"
+        },
         "next": [
             "进入委托页面-调度室"
         ]
@@ -119,7 +122,7 @@
             ]
         },
         "focus": {
-            "start": "[color:red]公共区调度室未完全派遣，请手动处理[/color]",
+            "Node.Action.Starting": "<span style=\"color: red;\">公共区调度室未完全派遣，请手动处理</span>",
             "toast": "公共区调度室未完全派遣，请手动处理"
         }
     },

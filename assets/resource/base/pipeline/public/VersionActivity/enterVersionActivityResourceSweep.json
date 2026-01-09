@@ -59,7 +59,7 @@
         ],
         "recognition": "ColorMatch",
         "focus": {
-            "succeeded": "[color:#f46e6e]扫荡券不足[/color]"
+            "Node.Action.Succeeded": "扫荡券不足"
         },
         "next": [
             "exitVersionActivityResourceSweep"
@@ -110,7 +110,7 @@
             "关卡$"
         ],
         "focus": {
-            "succeeded": "[color:red]第五关未解锁[/color]"
+            "Node.Action.Succeeded": "<span style=\"color: red;\">第五关未解锁</span>"
         },
         "next": [
             "exitVersionActivityResourceSweep"

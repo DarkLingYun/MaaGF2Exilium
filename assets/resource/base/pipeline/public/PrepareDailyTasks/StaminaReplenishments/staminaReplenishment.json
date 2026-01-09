@@ -10,6 +10,9 @@
             67,
             17
         ],
+        "focus": {
+            "Node.Action.Starting": "使用体力药水"
+        },
         "action": "Click",
         "next": [
             "consumeAccessKey"

@@ -6,6 +6,9 @@
         "expected": "^活动$",
         "action": "Click",
         "post_delay": 2500,
+        "focus": {
+            "Node.Action.Starting": "领取情报补给体力"
+        },
         "next": [
             "intelligenceSupplyTabFound",
             "swipeToFindIntelligenceSupplyTab"
@@ -70,11 +73,7 @@
         "expected": "战役推进",
         "next": [
             "claimSevenDayCheckInResourceTaskTimed",
-            "getNewEmails",
-            "staminaReplenishment",
-            "enterShop",
-            "enterBoundaryAdvanceAction",
-            "HomePage"
+            "exitTimeLimitedTask"
         ]
     },
     "clickStaminaClaimButton": {

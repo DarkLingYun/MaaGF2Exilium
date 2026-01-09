@@ -182,7 +182,7 @@
         ],
         "action": "Click",
         "focus": {
-            "start": "[color:red]任务失败，请考虑是否需要手动处理[/color]"
+            "Node.Action.Starting": "<span style=\"color: red;\">任务失败，请考虑是否需要手动处理</span>"
         },
         "next": [
             "退出战斗资源加载中-通用战斗",

@@ -60,11 +60,11 @@
             "为她应援"
         ],
         "focus": {
-            "start": "[color:red]闪耀星愿未选择应援人形，请手动处理[/color]",
+            "Node.Action.Starting": "<span style=\"color: red;\">闪耀星愿未选择应援人形，请手动处理</span>",
             "toast": "闪耀星愿未选择应援人形，请手动处理"
         },
         "next": [
-            "直接返回主页-闪耀星愿"
+            "闪耀星愿任务结束"
         ]
     },
     "没有足够的星愿券": {
@@ -82,7 +82,8 @@
             "应援"
         ],
         "next": [
-            "领取累计分数奖励-闪耀星愿"
+            "领取累计分数奖励-闪耀星愿",
+            "闪耀星愿活动已结束"
         ]
     },
     "领取累计分数奖励-闪耀星愿": {
@@ -95,6 +96,11 @@
             "[JumpBack]一键领取-通用",
             "[JumpBack]点击空白处关闭-通用",
             "关闭累计分数奖励-闪耀星愿"
+        ]
+    },
+    "闪耀星愿活动已结束": {
+        "next": [
+            "闪耀星愿任务结束"
         ]
     },
     "关闭累计分数奖励-闪耀星愿": {
@@ -143,7 +149,7 @@
         ],
         "action": "Click",
         "next": [
-            "returnToHomePage"
+            "闪耀星愿任务结束"
         ]
     },
     "开始作战-闪耀星愿": {
@@ -165,53 +171,9 @@
         ],
         "action": "Click"
     },
-    "返回活动页面-闪耀星愿": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/返回上一页_black_v2.png",
-            "公用按钮组件/返回上一页_gray_v2.png"
-        ],
-        "green_mask": true,
-        "action": "Click",
-        "next": [
-            "退出活动页面-闪耀星愿"
-        ]
-    },
-    "退出活动页面-闪耀星愿": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/关闭按钮_gray.png",
-            "公用按钮组件/关闭按钮_black.png"
-        ],
-        "action": "Click",
-        "next": [
-            "闪耀星愿任务结束",
-            "退出活动页面-闪耀星愿"
-        ]
-    },
-    "直接返回主页-闪耀星愿": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/主页按钮_black.png",
-            "公用按钮组件/主页按钮_gray.png"
-        ],
-        "action": "Click",
-        "next": [
-            "闪耀星愿任务结束"
-        ]
-    },
     "闪耀星愿任务结束": {
-        "recognition": "OCR",
-        "expected": [
-            "战役推进"
-        ],
         "next": [
-            "开始模拟习练任务",
-            "开始格琳喵的委托任务",
-            "开始七天签到限定十连任务",
-            "开始限时中型活动任务",
-            "开始一次性领取十连任务",
-            "HomePage"
+            "returnToHomePage"
         ]
     }
 }

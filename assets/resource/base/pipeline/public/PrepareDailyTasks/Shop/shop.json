@@ -5,6 +5,9 @@
         "expected": "^商城$",
         "max_hit": 3,
         "action": "Click",
+        "focus": {
+            "Node.Action.Starting": "免费每日补给箱购买"
+        },
         "next": [
             "clickQualitySelection",
             "enterShop"
@@ -34,7 +37,7 @@
             "TimeLimitedGiftPackagePageSwipe"
         ],
         "focus": {
-            "succeeded": "已进入购买每周礼包页"
+            "Node.Action.Succeeded": "已进入购买每周礼包页"
         }
     },
     "TimeLimitedGiftPackagePageSwipe": {
@@ -107,7 +110,7 @@
             "exitGameStore"
         ],
         "focus": {
-            "succeeded": "已进入购买每日礼包页"
+            "Node.Action.Succeeded": "已进入购买每日礼包页"
         }
     },
     "clickDailySupplyBox": {
@@ -171,8 +174,8 @@
     },
     "exitGameStore": {
         "next": [
+            "[JumpBack]clickHomeButton",
             "enterBoundaryAdvanceAction",
-            "returnToHomePage",
             "HomePage"
         ]
     }
