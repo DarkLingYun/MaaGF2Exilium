@@ -152,10 +152,13 @@ tqdm==4.67.1
     # via maagf2exilium (pyproject.toml)
 typing-extensions==4.15.0
     # via
+    #   aiosignal
+    #   anyio
     #   fastapi
     #   nicegui
     #   pydantic
     #   pydantic-core
+    #   starlette
     #   typing-inspection
 typing-inspection==0.4.2
     # via pydantic
