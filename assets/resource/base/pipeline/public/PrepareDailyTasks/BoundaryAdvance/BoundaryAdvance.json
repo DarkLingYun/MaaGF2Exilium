@@ -8,13 +8,13 @@
             "限时开启$",
             "^限时开启"
         ],
-        "post_wait_freezes": 200,
         "action": "Click",
         "focus": {
             "Node.Action.Starting": "边界推进委托领取"
         },
         "next": [
-            "clickBoundaryAdvanceTagButton"
+            "clickBoundaryAdvanceTagButton",
+            "enterBoundaryAdvanceAction"
         ]
     },
     "clickBoundaryAdvanceTagButton": {

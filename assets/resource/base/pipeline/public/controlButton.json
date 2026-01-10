@@ -23,7 +23,7 @@
             212
         ],
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 1500,
         "post_wait_freezes": 0
     },
     "clickCloseWindowButton": {
