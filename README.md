@@ -17,7 +17,7 @@
 
 欢迎扫码加入**QQ交流群：904823072**。
 <p align="center">
-<img alt="logo2" src="./imgs/1.jpg" width="400"/>
+<img alt="logo2" src="./imgs/1.png" width="400"/>
 </p>
 
 ## 使用事项
