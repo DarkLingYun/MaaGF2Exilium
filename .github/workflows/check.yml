@@ -16,27 +16,20 @@ on:
       - "assets/**"
       - "**.py"
   workflow_dispatch:
-env:
-  res_base: "./assets/resource/base"
-  res_bilibili: "./assets/resource/resource_bilibili"
-  res_en: "./assets/resource/resource_en"
-  res_glo: "./assets/resource/resource_glo"
-  res_pc: "./assets/resource/resource_pc"
 
 jobs:
   resource:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
         with:
-          fetch-depth: 0
+          python-version: "3.x"
 
       - name: Install maafw
-        shell: powershell
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install -U maafw
+        run: pip install -U maafw
 
       - name: Check Resource
-        run: |
-          python ./check_resource.py ${{ env.res_base }} ${{ env.res_bilibili }} ${{ env.res_en }} ${{ env.res_glo }} ${{ env.res_pc }}
+        run: python check_resource.py
