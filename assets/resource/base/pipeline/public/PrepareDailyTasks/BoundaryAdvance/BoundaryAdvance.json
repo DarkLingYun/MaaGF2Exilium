@@ -211,6 +211,7 @@
         "doc": "子任务推出到首页固定写法，方便后期扩展新的顺序子任务",
         "next": [
             "[JumpBack]clickHomeButton",
+            "PlatoonTasks",
             "HomePage"
         ]
     }

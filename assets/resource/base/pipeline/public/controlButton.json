@@ -16,6 +16,12 @@
             "公用按钮组件/主页按钮_gray.png",
             "公用按钮组件/主页按钮_black.png"
         ],
+        "roi": [
+            0,
+            0,
+            438,
+            212
+        ],
         "action": "Click",
         "post_delay": 1000,
         "post_wait_freezes": 0

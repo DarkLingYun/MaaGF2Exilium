@@ -1,0 +1,121 @@
+{
+    "PlatoonTasks": {
+        "doc": "班组日常",
+        "recognition": "OCR",
+        "expected": "^班组$",
+        "post_wait_freezes": 0,
+        "next": [
+            "clickPlatoonButton",
+            "[JumpBack]StartGame"
+        ]
+    },
+    "clickPlatoonButton": {
+        "doc": "工会任务",
+        "recognition": "OCR",
+        "expected": "^班组$",
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500
+        },
+        "focus": {
+            "Node.Action.Starting": "进入班组页"
+        },
+        "next": [
+            "checkPlatoon",
+            "enterPlatoonDailySupplyPage"
+        ]
+    },
+    "checkPlatoon": {
+        "doc": "检查是否加入班组",
+        "recognition": "OCR",
+        "expected": [
+            "一键",
+            "加入",
+            "申请",
+            "记录"
+        ],
+        "roi": [
+            465,
+            614,
+            350,
+            105
+        ],
+        "focus": {
+            "Node.Action.Succeeded": "未加入班组"
+        },
+        "next": [
+            "exitPlatoonDailyPage",
+            "checkPlatoon"
+        ]
+    },
+    "enterPlatoonDailySupplyPage": {
+        "doc": "进入班组每日补给页",
+        "recognition": "OCR",
+        "roi": [
+            516,
+            567,
+            754,
+            136
+        ],
+        "expected": "^补给$",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "enterPlatoonDailySupplyPage",
+            "claimPlatoonDailySupply",
+            "noClaimPlatoonDailySupply"
+        ]
+    },
+    "noClaimPlatoonDailySupply": {
+        "doc": "无领取班组每日补给按钮",
+        "inverse": true,
+        "recognition": "OCR",
+        "expected": "^领取全部$",
+        "focus": {
+            "Node.Action.Starting": "今日补给箱已领取"
+        },
+        "next": [
+            "exitPlatoonDailyPage"
+        ]
+    },
+    "claimPlatoonDailySupply": {
+        "doc": "领取班组每日补给",
+        "recognition": "OCR",
+        "expected": "^领取全部$",
+        "action": "Click",
+        "focus": {
+            "Node.Action.Starting": "点击领取"
+        },
+        "next": [
+            "closeDailySupplyResultPage"
+        ]
+    },
+    "closeDailySupplyResultPage": {
+        "doc": "关闭每日补给结果页面",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "next": [
+            "closeDailySupplyResultPage",
+            "exitPlatoonDailyPage"
+        ]
+    },
+    "exitPlatoonDailyPage": {
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                639,
+                536,
+                641,
+                184
+            ]
+        },
+        "focus": {
+            "Node.Action.Starting": "退出班组页"
+        },
+        "next": [
+            "[JumpBack]clickHomeButton",
+            "HomePage"
+        ]
+    }
+}

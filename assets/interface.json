@@ -79,7 +79,8 @@
                 "领取邮件",
                 "使用完体力药水",
                 "商城免费每日补给箱购买",
-                "边界推进委托领取"
+                "边界推进委托领取",
+                "领取班组补给箱"
             ],
             "doc": "领取邮件需要主界面背景为人形",
             "default_check": true
@@ -141,16 +142,6 @@
             ],
             "default_check": true,
             "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
-        },
-        {
-            "name": "班组日常",
-            "entry": "PlatoonTasks",
-            "option": [
-                "尘烟前线自动作战",
-                "作战模式"
-            ],
-            "default_check": true,
-            "doc": "尘烟前线目前自动编队导致攻坚战分数普遍较低，请谨慎开启。"
         },
         {
             "name": "版本活动日常",
@@ -364,6 +355,27 @@
                     "name": "NO",
                     "pipeline_override": {
                         "enterBoundaryAdvanceAction": {
+                            "enabled": false
+                        }
+                    }
+                }
+            ]
+        },
+        "领取班组补给箱": {
+            "type": "select",
+            "cases": [
+                {
+                    "name": "YES",
+                    "pipeline_override": {
+                        "PlatoonTasks": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "NO",
+                    "pipeline_override": {
+                        "PlatoonTasks": {
                             "enabled": false
                         }
                     }
@@ -1600,46 +1612,6 @@
                     "pipeline_override": {
                         "开始极限峰值任务": {
                             "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "尘烟前线自动作战": {
-            "cases": [
-                {
-                    "name": "NO",
-                    "pipeline_override": {
-                        "enterGunsmokeFrontlineTask": {
-                            "enabled": false
-                        }
-                    }
-                },
-                {
-                    "name": "YES",
-                    "pipeline_override": {
-                        "enterGunsmokeFrontlineTask": {
-                            "enabled": true
-                        }
-                    }
-                }
-            ]
-        },
-        "作战模式": {
-            "cases": [
-                {
-                    "name": "前哨战",
-                    "pipeline_override": {
-                        "selectGunsmokeFrontlineCombatType": {
-                            "expected": "前哨战"
-                        }
-                    }
-                },
-                {
-                    "name": "攻坚战",
-                    "pipeline_override": {
-                        "selectGunsmokeFrontlineCombatType": {
-                            "expected": "攻坚战"
                         }
                     }
                 }

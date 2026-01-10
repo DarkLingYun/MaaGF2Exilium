@@ -176,6 +176,7 @@
         "next": [
             "[JumpBack]clickHomeButton",
             "enterBoundaryAdvanceAction",
+            "PlatoonTasks",
             "HomePage"
         ]
     }

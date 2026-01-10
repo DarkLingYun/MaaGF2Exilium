@@ -3,6 +3,7 @@
         "doc": "启动游戏",
         "action": "StartApp",
         "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity",
+        "post_wait_freezes": 0,
         "next": [
             "StartGame_levelUp",
             "StartGame_clickCancel",
