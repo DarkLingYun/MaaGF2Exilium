@@ -5,7 +5,6 @@
             "作战开始",
             "资源加载中"
         ],
-        "rate_limit": 3000,
         "timeout": 200000,
         "next": [
             "已进入作战开始页面-通用战斗",
@@ -20,7 +19,6 @@
     "已进入作战开始页面-通用战斗": {
         "recognition": "OCR",
         "expected": "作战开始",
-        "rate_limit": 3000,
         "next": [
             "任务完成-通用战斗",
             "任务失败-通用战斗",
@@ -34,8 +32,7 @@
         "recognition": "TemplateMatch",
         "template": "公用按钮组件/作战开始.png",
         "action": "Click",
-        "rate_limit": 5000,
-        "timeout": 200000,
+        "timeout": 2000000, // 肉鸽有的战斗可能很长，200s 不够用
         "next": [
             "发现可部署人形提示-通用战斗",
             "点击作战开始按钮-通用战斗",
@@ -150,7 +147,6 @@
         "order_by": "Score",
         "green_mask": true,
         "action": "Click",
-        "rate_limit": 5000,
         "timeout": 2000000, // 肉鸽有的战斗可能很长，200s 不够用
         "next": [
             "任务完成-通用战斗",
