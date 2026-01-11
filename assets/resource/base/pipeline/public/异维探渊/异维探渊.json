@@ -1,0 +1,52 @@
+{
+    "开始异维探渊任务":{
+        "enabled": false,
+        "next": [
+            "已进入异维探渊页面",
+            "开始进入异维探渊页面"
+        ]
+    },
+    "已进入异维探渊页面": {
+        "recognition": "OCR",
+        "expected": [
+            "采样奖励"
+        ],
+        "next": [
+            "[JumpBack]开始异维探渊战斗",
+            "领取采样奖励-异维探渊"
+        ]
+    },
+    "开始进入异维探渊页面":{
+        "next": [
+            "[JumpBack]返回主页-异维探渊",
+            "进入活动-异维探渊"
+        ]
+    },
+    "返回主页-异维探渊": {
+        "max_hit": 1,
+        "next": [
+            "HomePage",
+            "[JumpBack]returnToHomePage"
+        ]
+    },
+    "进入活动-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "铸碑者的黎明"
+        ],
+        "action": "Click",
+        "next": [
+            "点击异维探渊入口"
+        ]
+    },
+    "点击异维探渊入口": {
+        "recognition": "OCR",
+        "expected": [
+            "异维探渊"
+        ],
+        "action": "Click",
+        "next": [
+            "已进入异维探渊页面"
+        ]
+    }
+}

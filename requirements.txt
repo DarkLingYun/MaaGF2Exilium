@@ -4,7 +4,7 @@ aiofiles==25.1.0
     # via nicegui
 aiohappyeyeballs==2.6.1
     # via aiohttp
-aiohttp==3.13.2
+aiohttp==3.13.3
     # via
     #   nicegui
     #   python-socketio
@@ -14,7 +14,7 @@ annotated-doc==0.0.4
     # via fastapi
 annotated-types==0.7.0
     # via pydantic
-anyio==4.12.0
+anyio==4.12.1
     # via
     #   httpx
     #   starlette
@@ -25,9 +25,9 @@ attrs==25.4.0
     # via aiohttp
 bidict==0.23.1
     # via python-socketio
-black==25.11.0
+black==25.12.0
     # via maagf2exilium (pyproject.toml)
-certifi==2025.11.12
+certifi==2026.1.4
     # via
     #   httpcore
     #   httpx
@@ -44,9 +44,9 @@ colorama==0.4.6
     #   click
     #   tqdm
     #   uvicorn
-docutils==0.22.3
+docutils==0.22.4
     # via nicegui
-fastapi==0.123.5
+fastapi==0.128.0
     # via nicegui
 frozenlist==1.8.0
     # via
@@ -82,7 +82,7 @@ maaagentbinary==1.0.1
     # via maafw
 maadebugger==1.14.1
     # via maagf2exilium (pyproject.toml)
-maafw==5.1.3
+maafw==5.3.3
     # via
     #   maagf2exilium (pyproject.toml)
     #   maadebugger
@@ -98,19 +98,19 @@ mypy-extensions==1.1.0
     # via black
 nicegui==2.24.2
     # via maadebugger
-numpy==2.3.5
+numpy==2.4.1
     # via maafw
-orjson==3.11.4
+orjson==3.11.5
     # via nicegui
 packaging==25.0
     # via
     #   black
     #   maadebugger
-pathspec==0.12.1
+pathspec==1.0.3
     # via black
-pillow==12.0.0
+pillow==12.1.0
     # via maadebugger
-platformdirs==4.5.0
+platformdirs==4.5.1
     # via black
 propcache==0.4.1
     # via
@@ -126,13 +126,13 @@ pygments==2.19.2
     # via nicegui
 python-dotenv==1.2.1
     # via uvicorn
-python-engineio==4.12.3
+python-engineio==4.13.0
     # via
     #   nicegui
     #   python-socketio
-python-multipart==0.0.20
+python-multipart==0.0.21
     # via nicegui
-python-socketio==5.15.0
+python-socketio==5.16.0
     # via nicegui
 pytokens==0.3.0
     # via black
@@ -162,9 +162,9 @@ typing-extensions==4.15.0
     #   typing-inspection
 typing-inspection==0.4.2
     # via pydantic
-urllib3==2.5.0
+urllib3==2.6.3
     # via requests
-uvicorn==0.38.0
+uvicorn==0.40.0
     # via nicegui
 vbuild==0.8.2
     # via nicegui
@@ -172,7 +172,7 @@ watchfiles==1.1.1
     # via
     #   nicegui
     #   uvicorn
-websockets==15.0.1
+websockets==16.0
     # via uvicorn
 wsproto==1.3.2
     # via simple-websocket

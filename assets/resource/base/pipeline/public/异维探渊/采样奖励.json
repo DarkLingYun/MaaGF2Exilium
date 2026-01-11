@@ -1,0 +1,57 @@
+{
+    "领取采样奖励-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "采样奖励"
+        ],
+        "action": "Click",
+        "next": [
+            "已进入采样奖励页面-异维探渊"
+        ]
+    },
+    "已进入采样奖励页面-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "探索纪要"
+        ],
+        "next": [
+            "切换到探索纪要标签页-异维探渊"
+        ]
+    },
+    "切换到探索纪要标签页-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "探索纪要"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]一键领取-通用",
+            "[JumpBack]点击空白处关闭-通用",
+            "切换到作战规划标签页-异维探渊"
+        ]
+    },
+    "切换到作战规划标签页-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "作战规划"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]一键领取-通用",
+            "[JumpBack]点击空白处关闭-通用",
+            "返回异维探渊页面-异维探渊"
+        ]
+    },
+    "返回异维探渊页面-异维探渊": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_black_v2.png",
+            "公用按钮组件/返回上一页_gray_v2.png"
+        ],
+        "green_mask": true,
+        "action": "Click",
+        "next": [
+            "已进入异维探渊页面"
+        ]
+    }
+}

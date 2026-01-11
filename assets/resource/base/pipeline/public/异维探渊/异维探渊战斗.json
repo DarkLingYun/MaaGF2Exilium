@@ -1,0 +1,219 @@
+{
+    "开始异维探渊战斗": {
+        "recognition": "TemplateMatch",
+        "template": "异维探渊/异维探渊关卡.png",
+        "action": "Click",
+        "next": [
+            "已进入异维探渊关卡页面-异维探渊"
+        ]
+    },
+    "已进入异维探渊关卡页面-异维探渊": {
+        "timeout": 2000000, // 有的战斗可能很长，200s 不够用
+        "next": [
+            "已进入关卡结算界面-异维探渊",
+            "[JumpBack]开始选择人形子任务-异维探渊",
+            "[JumpBack]开始战斗-异维探渊",
+            "[JumpBack]确认战斗胜利-异维探渊",
+            "[JumpBack]是否确认进入下一关-异维探渊",
+            "[JumpBack]开始购物子任务-异维探渊"
+        ]
+    },
+    "开始选择人形子任务-异维探渊": {
+        "recognition": "OCR",
+        "expected": "选择人形",
+        "action": "Click",
+        "next": [
+            "选择人形绛雨-异维探渊"
+        ]
+    },
+    "选择人形绛雨-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "绛雨"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]加入编队-异维探渊",
+            "选择人形可露凯-异维探渊",
+            "选择人形芙洛伦-异维探渊"
+        ]
+    },
+    "选择人形芙洛伦-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "芙洛伦"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]加入编队-异维探渊",
+            "选择桑朵莱希-异维探渊"
+        ]
+    },
+    "选择人形可露凯-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "可露凯"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]加入编队-异维探渊",
+            "选择桑朵莱希-异维探渊"
+        ]
+    },
+    "选择桑朵莱希-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "桑朵莱希"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]加入编队-异维探渊",
+            "开始作战-异维探渊"
+        ]
+    },
+    "加入编队-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "加入编队"
+        ],
+        "action": "Click"
+    },
+    "开始作战-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "开始作战"
+        ],
+        "action": "Click"
+    },
+    "开始战斗-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "开始战斗"
+        ],
+        "action": "Click"
+    },
+    "确认战斗胜利-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "点击任意处"
+        ],
+        "action": "Click"
+    },
+    "开始购物子任务-异维探渊": {
+        "recognition": "OCR",
+        "expected": "购买",
+        "next": [
+            "[JumpBack]选中商品-异维探渊",
+            "[JumpBack]选择控件生效人形-异维探渊",
+            "下一关-异维探渊"
+        ]
+    },
+    "选中商品-异维探渊": {
+        "recognition": "TemplateMatch",
+        "template": "异维探渊/缓存币.png",
+        "roi": [
+            506,
+            160,
+            718,
+            400
+        ],
+        "action": "Click",
+        "next": [
+            "无法购买-异维探渊",
+            "确认购买商品-异维探渊"
+        ]
+    },
+    "无法购买-异维探渊": {
+        "recognition": "ColorMatch",
+        "roi": [
+            1128,
+            609,
+            2,
+            2
+        ],
+        "lower": [
+            245,
+            92,
+            63
+        ],
+        "upper": [
+            255,
+            95,
+            64
+        ],
+        "next": [
+            "取消购买-异维探渊"
+        ]
+    },
+    "取消购买-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "取消"
+        ],
+        "action": "Click",
+        "next": [
+            "下一关-异维探渊"
+        ]
+    },
+    "确认购买商品-异维探渊": {
+        "recognition": "OCR",
+        "expected": "购买",
+        "action": "Click",
+        "index": -1
+    },
+    "下一关-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "下一关"
+        ],
+        "action": "Click"
+    },
+    "选择控件生效人形-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "请选择控件生效人形"
+        ],
+        "action": "Click",
+        "next": [
+            "确认选择控件生效人形-异维探渊"
+        ]
+    },
+    "确认选择控件生效人形-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "选择"
+        ],
+        "action": "Click"
+    },
+    "是否确认进入下一关-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "是否确认进入下一关"
+        ],
+        "action": "Click",
+        "next": [
+            "确认进入下一关-异维探渊"
+        ]
+    },
+    "确认进入下一关-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "action": "Click",
+        "index": -1
+    },
+    "已进入关卡结算界面-异维探渊": {
+        "recognition": "OCR",
+        "expected": [
+            "作战完成"
+        ],
+        "roi": [
+            74,
+            138,
+            312,
+            92
+        ],
+        "action": "Click"
+    }
+}

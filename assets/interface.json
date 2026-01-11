@@ -82,7 +82,7 @@
                 "边界推进委托领取",
                 "领取班组补给箱"
             ],
-            "doc": "领取邮件需要主界面背景为人形",
+            "description": "领取邮件需要主界面背景为人形",
             "default_check": true
         },
         {
@@ -121,7 +121,7 @@
                 "转录序体：",
                 "勘测次数："
             ],
-            "doc": "心智勘测体力值每次消耗30"
+            "description": "心智勘测体力值每次消耗30"
         },
         {
             "name": "循环助手",
@@ -141,7 +141,7 @@
                 "极限峰值（0级战斗）"
             ],
             "default_check": true,
-            "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
+            "description": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
         },
         {
             "name": "版本活动日常",
@@ -151,7 +151,7 @@
                 "物资商品兑换"
             ],
             "default_check": true,
-            "doc": "物资模式仅识别第五关"
+            "description": "物资模式仅识别第五关"
         },
         {
             "name": "版本活动日常2（美服/国际服）",
@@ -161,7 +161,7 @@
                 "物资商品兑换2（美服/国际服）"
             ],
             "default_check": false,
-            "doc": "适配美服/国际服双版本活动，物资模式仅识别第五关"
+            "description": "适配美服/国际服双版本活动，物资模式仅识别第五关"
         },
         {
             "name": "易物所商店兑换",
@@ -192,7 +192,7 @@
                 "物资助力箱奖励类型"
             ],
             "default_check": true,
-            "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
+            "description": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
         },
         {
             "name": "领取奖励",
@@ -216,7 +216,7 @@
                 "闪耀星愿"
             ],
             "default_check": true,
-            "doc": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
+            "description": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
         },
         {
             "name": "关闭游戏",
@@ -227,16 +227,16 @@
             "name": "推图助手",
             "entry": "ClickAssistant",
             "default_check": false,
-            "doc": "自动点击【挑战】、【观看】、【跳过】、【作战开始】、【继续作战】等，辅助完成主线及活动关卡。"
+            "description": "自动点击【挑战】、【观看】、【跳过】、【作战开始】、【继续作战】等，辅助完成主线及活动关卡。"
         },
         {
-            "name": "遗珍回收",
-            "entry": "开始遗珍回收任务",
-            "option": [
-                "难度"
-            ],
+            "name": "小游戏",
+            "entry": "开始小游戏",
             "default_check": false,
-            "doc": "自动进行遗珍回收（肉鸽），目前仅支持国服03期"
+            "option": [
+                "小游戏类型选择"
+            ],
+            "description": "自动进行遗珍回收（肉鸽）、异维探渊（云图计划自走棋）小游戏"
         }
     ],
     "option": {
@@ -1662,7 +1662,7 @@
                             ]
                         },
                         "selectResourceModeLevel": {
-                            "doc": "选择物资模式关卡",
+                            "description": "选择物资模式关卡",
                             "recognition": "OCR",
                             "expected": "^.*5$",
                             "action": "Click",
@@ -1682,7 +1682,7 @@
                             ]
                         },
                         "setResourceLevelSweepTimes": {
-                            "doc": "这个版本改过滑动条位置",
+                            "description": "这个版本改过滑动条位置",
                             "begin": [
                                 458,
                                 376,
@@ -1741,7 +1741,7 @@
                             ]
                         },
                         "selectResourceModeLevel": {
-                            "doc": "选择物资模式关卡",
+                            "description": "选择物资模式关卡",
                             "recognition": "OCR",
                             "expected": "^.*5$",
                             "action": "Click",
@@ -1761,7 +1761,7 @@
                             ]
                         },
                         "setResourceLevelSweepTimes": {
-                            "doc": "这个版本改过滑动条位置",
+                            "description": "这个版本改过滑动条位置",
                             "begin": [
                                 458,
                                 376,
@@ -1802,7 +1802,7 @@
                             ]
                         },
                         "selectResourceModeLevel": {
-                            "doc": "选择物资模式关卡",
+                            "description": "选择物资模式关卡",
                             "recognition": "TemplateMatch",
                             "template": "版本活动/王牌配送员物资5.png",
                             "action": "Click",
@@ -1853,7 +1853,7 @@
                             ]
                         },
                         "selectResourceModeLevel": {
-                            "doc": "选择物资模式关卡",
+                            "description": "选择物资模式关卡",
                             "recognition": "TemplateMatch",
                             "template": "版本活动/下篇歧路物资5.png",
                             "action": "Click",
@@ -1896,7 +1896,7 @@
                             ]
                         },
                         "selectResourceModeLevel": {
-                            "doc": "选择物资模式关卡",
+                            "description": "选择物资模式关卡",
                             "recognition": "TemplateMatch",
                             "template": "版本活动/歧路物资5.png",
                             "action": "Click",
@@ -2992,7 +2992,34 @@
                 }
             ]
         },
-        "难度": {
+        "小游戏类型选择": {
+            "label": "游戏选择",
+            "cases": [
+                {
+                    "name": "遗珍回收",
+                    "pipeline_override": {
+                        "开始遗珍回收任务": {
+                            "enabled": true
+                        }
+                    },
+                    "description": "肉鸽，目前仅支持国服03期",
+                    "option": [
+                        "遗珍回收难度选择"
+                    ]
+                },
+                {
+                    "name": "异维探渊",
+                    "pipeline_override": {
+                        "开始异维探渊任务": {
+                            "enabled": true
+                        }
+                    },
+                    "description": "云图计划（自走棋），目前仅支持国服第二期，本期难度较高，仅能自动打NC-1到NC-3"
+                }
+            ]
+        },
+        "遗珍回收难度选择": {
+            "label": "难度",
             "cases": [
                 {
                     "name": "I",
