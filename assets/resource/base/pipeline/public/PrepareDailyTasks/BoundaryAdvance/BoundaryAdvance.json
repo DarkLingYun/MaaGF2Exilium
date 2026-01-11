@@ -132,22 +132,17 @@
     },
     "boundaryAdvanceDelegateOneClickClaim": {
         "doc": "边界推进委托一键领取",
-        "recognition": "ColorMatch",
+        "recognition": "OCR",
         "roi": [
             957,
             638,
-            269,
-            38
+            323,
+            82
         ],
-        "upper": [
-            228,
-            89,
-            40
-        ],
-        "lower": [
-            196,
-            76,
-            34
+        "expected": [
+            "^一键领取$",
+            "领取$",
+            "^一键"
         ],
         "focus": {
             "Node.Action.Starting": "领取边界推进奖励"
