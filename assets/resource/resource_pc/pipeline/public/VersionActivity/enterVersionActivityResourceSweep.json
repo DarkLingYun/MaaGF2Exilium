@@ -1,0 +1,21 @@
+{
+    "setResourceLevelSweepTimes": {
+        "doc": "可以设置物资关卡扫荡次数",
+        "recognition": "OCR",
+        "expected": "^自律准备$",
+        "next": [
+            "setMaxResourceLevelSweepTimes"
+        ]
+    },
+    "setMaxResourceLevelSweepTimes": {
+        "doc": "设置最大物资关卡扫荡次数",
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动/最大次数按钮.png"
+        ],
+        "next": [
+            "startResourceLevelSweep"
+        ]
+    }
+}
