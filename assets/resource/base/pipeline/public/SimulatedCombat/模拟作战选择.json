@@ -1,0 +1,49 @@
+{
+    "已进入模拟作战页面-模拟作战通用":{
+        "recognition": "TemplateMatch",
+        "template": [
+            "模拟作战/模拟作战标签页.png"
+        ],
+        "threshold": 0.95
+    },
+    "打开模拟作战页-模拟作战通用": {
+        "next": [
+            "打开战役推进-模拟作战通用",
+            "[JumpBack]returnToHomePage"
+        ]
+    },
+    "打开战役推进-模拟作战通用": {
+        "recognition": "OCR",
+        "expected": [
+            "^战役推进$"
+        ],
+        "action": "Click",
+        "next": [
+            "进入模拟作战页面-模拟作战通用",
+            "打开战役推进-模拟作战通用"
+        ]
+    },
+    "进入模拟作战页面-模拟作战通用": {
+        "recognition": "OCR",
+        "expected": [
+            "^模拟作战$"
+        ],
+        "action": "Click"
+    },
+    "滑动模拟作战列表-模拟作战通用": {
+        "action": "Swipe",
+        "begin": [
+            1036,
+            355,
+            59,
+            37
+        ],
+        "end": [
+            477,
+            374,
+            50,
+            37
+        ],
+        "end_hold": 1000
+    }
+}

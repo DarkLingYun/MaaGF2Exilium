@@ -1,31 +1,10 @@
 {
     "CombatSimulations": {
-        "doc": "模拟作战日常",
         "next": [
-            "enterCombatSimulationsTask",
-            "[JumpBack]StartGame"
-        ]
-    },
-    "enterCombatSimulationsTask": {
-        "doc": "正式进入模拟作战日常任务",
-        "recognition": "OCR",
-        "expected": "^战役推进$",
-        "action": "Click",
-        "post_wait_freezes": 100,
-        "next": [
-            "clickEnterCombatSimulationsPage"
-        ]
-    },
-    "clickEnterCombatSimulationsPage": {
-        "recognition": "OCR",
-        "expected": "^模拟作战$",
-        "action": "Click",
-        "next": [
-            "enterBossFightTask",
-            "enterCombatExercise",
-            "enterPeakValueAssessment",
-            "开始极限峰值任务",
-            "enterMilitarySimulationTask",
+            "[JumpBack]开始首领挑战任务",
+            "[JumpBack]开始实兵演习任务",
+            "[JumpBack]开始峰值推定任务",
+            "[JumpBack]开始极限峰值任务",
             "returnToHomePage"
         ]
     }

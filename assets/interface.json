@@ -1453,7 +1453,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "enterBossFightTask": {
+                        "开始首领挑战任务": {
                             "enabled": true
                         }
                     }
@@ -1461,7 +1461,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "enterBossFightTask": {
+                        "开始首领挑战任务": {
                             "enabled": false
                         }
                     }
@@ -1473,7 +1473,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "enterCombatExercise": {
+                        "开始实兵演习任务": {
                             "enabled": true
                         }
                     }
@@ -1481,7 +1481,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "enterCombatExercise": {
+                        "开始实兵演习任务": {
                             "enabled": false
                         }
                     }
@@ -1493,7 +1493,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "enterPeakValueAssessment": {
+                        "开始峰值推定任务": {
                             "enabled": true
                         }
                     }
@@ -1501,7 +1501,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "enterPeakValueAssessment": {
+                        "开始峰值推定任务": {
                             "enabled": false
                         }
                     }

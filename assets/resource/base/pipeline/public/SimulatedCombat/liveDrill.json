@@ -1,10 +1,28 @@
 {
-    "enterCombatExercise": {
+    "开始实兵演习任务": {
+        "max_hit": 1,
         "focus": {
             "Node.Action.Starting": "<span style=\"color: red;\">请使用官方循环助手进行实兵演习战斗，此处仅领取奖励</span>"
         },
         "next": [
-            "clickEnterCombatExercisePage"
+            "[JumpBack]打开模拟作战页-实兵演习",
+            "clickEnterCombatExercisePage",
+            "[JumpBack]滑动模拟作战列表-实兵演习",
+            "未进行实兵演习任务"
+        ]
+    },
+    "未进行实兵演习任务": {},
+    "打开模拟作战页-实兵演习": {
+        "max_hit": 1,
+        "next": [
+            "已进入模拟作战页面-模拟作战通用",
+            "打开模拟作战页-模拟作战通用"
+        ]
+    },
+    "滑动模拟作战列表-实兵演习": {
+        "max_hit": 2,
+        "next": [
+            "滑动模拟作战列表-模拟作战通用"
         ]
     },
     "clickEnterCombatExercisePage": {
@@ -93,21 +111,8 @@
         ]
     },
     "exitCombatExercisePage": {
-        "doc": "实兵演习页返回",
-        "recognition": "OCR",
-        "expected": "演习记录",
-        "target": [
-            27,
-            23,
-            41,
-            41
-        ],
-        "action": "Click",
         "next": [
-            "enterPeakValueAssessment",
-            "开始极限峰值任务",
-            "enterMilitarySimulationTask",
-            "returnToHomePage"
+            "clickBackButton"
         ]
     }
 }
