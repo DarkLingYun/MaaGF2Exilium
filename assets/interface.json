@@ -1591,21 +1591,6 @@
                                 185,
                                 90
                             ]
-                        },
-                        "setResourceLevelSweepTimes": {
-                            "description": "这个版本改过滑动条位置",
-                            "begin": [
-                                458,
-                                376,
-                                1,
-                                1
-                            ],
-                            "end": [
-                                832,
-                                375,
-                                1,
-                                1
-                            ]
                         }
                     }
                 },
@@ -1669,21 +1654,6 @@
                                 0,
                                 185,
                                 90
-                            ]
-                        },
-                        "setResourceLevelSweepTimes": {
-                            "description": "这个版本改过滑动条位置",
-                            "begin": [
-                                458,
-                                376,
-                                1,
-                                1
-                            ],
-                            "end": [
-                                832,
-                                375,
-                                1,
-                                1
                             ]
                         }
                     }

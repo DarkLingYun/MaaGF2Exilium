@@ -122,25 +122,24 @@
         "expected": "^自律$",
         "action": "Click",
         "next": [
-            "setResourceLevelSweepTimes"
+            "confirmResourceAutoSweepPreparation"
         ]
     },
-    "setResourceLevelSweepTimes": {
-        "doc": "设置物资关卡扫荡次数",
+    "confirmResourceAutoSweepPreparation": {
+        "doc": "确认自律准备界面已经出现",
         "recognition": "OCR",
         "expected": "^自律准备$",
-        "action": "Swipe",
-        "begin": [
-            496,
-            391,
-            1,
-            1
-        ],
-        "end": [
-            901,
-            391,
-            1,
-            1
+        "action": "DoNothing",
+        "next": [
+            "setMaxResourceLevelSweepTimes"
+        ]
+    },
+    "setMaxResourceLevelSweepTimes": {
+        "doc": "设置最大物资关卡扫荡次数",
+        "action": "Click",
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动/最大次数按钮.png"
         ],
         "next": [
             "startResourceLevelSweep"

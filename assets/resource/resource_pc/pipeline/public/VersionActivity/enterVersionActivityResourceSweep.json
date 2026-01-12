@@ -1,5 +1,5 @@
 {
-    "setResourceLevelSweepTimes": {
+    "confirmResourceAutoSweepPreparation": {
         "doc": "可以设置物资关卡扫荡次数",
         "recognition": "OCR",
         "expected": "^自律准备$",
