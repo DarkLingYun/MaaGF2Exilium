@@ -12,7 +12,7 @@
             "^活动$"
         ],
         "action": "Click",
-        "post_wait_freezes": 1500
+        "post_wait_freezes": 1000
     },
     "滑动活动列表-活动通用": {
         "doc": "由调用方控制max_hit，此处统一管理操作内容",

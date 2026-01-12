@@ -51,7 +51,7 @@
         "doc": "多个活动存在，需滑动选择",
         "recognition": "DirectHit",
         "action": "Swipe",
-        "max_hit": 5,
+        "max_hit": 2,
         "begin": [
             71,
             90,

@@ -1,7 +1,7 @@
 {
     "enterCombatExercise": {
         "focus": {
-            "Node.Action.Starting": "<span style=\"color: red;\">国服用户</span>请使用官方循环助手进行实兵演习战斗，此处仅领取奖励"
+            "Node.Action.Starting": "<span style=\"color: red;\">请使用官方循环助手进行实兵演习战斗，此处仅领取奖励</span>"
         },
         "next": [
             "clickEnterCombatExercisePage"
