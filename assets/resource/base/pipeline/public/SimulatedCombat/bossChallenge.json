@@ -1,10 +1,27 @@
 {
-    "enterBossFightTask": {
+    "开始首领挑战任务": {
+        "max_hit": 1,
         "focus": {
             "Node.Action.Starting": "首领挑战自律"
         },
         "next": [
-            "clickEnterBossFightPage"
+            "[JumpBack]打开模拟作战页-首领挑战",
+            "clickEnterBossFightPage",
+            "[JumpBack]滑动模拟作战列表-首领挑战",
+            "未进行首领挑战任务"
+        ]
+    },
+    "打开模拟作战页-首领挑战": {
+        "max_hit": 1,
+        "next": [
+            "已进入模拟作战页面-模拟作战通用",
+            "打开模拟作战页-模拟作战通用"
+        ]
+    },
+    "滑动模拟作战列表-首领挑战": {
+        "max_hit": 2,
+        "next": [
+            "滑动模拟作战列表-模拟作战通用"
         ]
     },
     "clickEnterBossFightPage": {
@@ -41,24 +58,8 @@
         ]
     },
     "exitBossFight": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            0,
-            200,
-            70
-        ],
-        "template": [
-            "公用按钮组件/返回上一页_gray.png",
-            "公用按钮组件/返回上一页_black.png"
-        ],
-        "action": "Click",
         "next": [
-            "enterCombatExercise",
-            "enterPeakValueAssessment",
-            "开始极限峰值任务",
-            "enterMilitarySimulationTask",
-            "returnToHomePage"
+            "clickBackButton"
         ]
     },
     "clickBossFightAutoButton": {
@@ -138,5 +139,6 @@
             "closeBossFightResultsPage",
             "insufficientAccessForBossFight"
         ]
-    }
+    },
+    "未进行首领挑战任务": {}
 }
