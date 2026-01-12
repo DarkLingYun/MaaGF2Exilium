@@ -105,8 +105,8 @@
         "next": [
             "clickBoundaryAdvanceDelegateButton",
             "boundaryAdvanceDelegateOneClickDispatch",
-            "boundaryAdvanceDelegateOneClickClaim",
-            "boundaryAdvanceDelegateNotClaimable"
+            "boundaryAdvanceDelegateNotClaimable",
+            "boundaryAdvanceDelegateOneClickClaim"
         ]
     },
     "boundaryAdvanceDelegateOneClickDispatch": {
@@ -126,8 +126,8 @@
         "action": "Click",
         "next": [
             "boundaryAdvanceDelegateOneClickDispatch",
-            "boundaryAdvanceDelegateOneClickClaim",
-            "boundaryAdvanceDelegateNotClaimable"
+            "boundaryAdvanceDelegateNotClaimable",
+            "boundaryAdvanceDelegateOneClickClaim"
         ]
     },
     "boundaryAdvanceDelegateOneClickClaim": {
@@ -164,27 +164,19 @@
     },
     "boundaryAdvanceDelegateNotClaimable": {
         "doc": "边界推进委托不可领取",
-        "recognition": "ColorMatch",
+        "recognition": "TemplateMatch",
         "roi": [
-            957,
-            638,
-            269,
-            38
-        ],
-        "upper": [
-            40,
-            41,
-            41
-        ],
-        "lower": [
-            39,
-            39,
-            40
+            799,
+            530,
+            481,
+            190
         ],
         "focus": {
             "Node.Action.Starting": "边界委托未完成"
         },
-        "action": "Click",
+        "template": [
+            "边界推进/不可领取.png"
+        ],
         "post_delay": 100,
         "next": [
             "exitBoundaryAdvance"
