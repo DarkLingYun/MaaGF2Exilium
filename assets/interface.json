@@ -134,9 +134,6 @@
             "option": [
                 "首领挑战自律",
                 "自动实兵演习",
-                "演习次数",
-                "自动调整战斗速度为 3 倍速",
-                "实兵演习对象战力值范围",
                 "自动领取峰值推定奖励",
                 "极限峰值（0级战斗）"
             ],
@@ -152,16 +149,6 @@
             ],
             "default_check": true,
             "description": "物资模式仅识别第五关"
-        },
-        {
-            "name": "版本活动日常2（美服/国际服）",
-            "entry": "VersionActivityTask",
-            "option": [
-                "物资模式活动选择2（美服/国际服）",
-                "物资商品兑换2（美服/国际服）"
-            ],
-            "default_check": false,
-            "description": "适配美服/国际服双版本活动，物资模式仅识别第五关"
         },
         {
             "name": "易物所商店兑换",
@@ -1501,90 +1488,6 @@
                 }
             ]
         },
-        "演习次数": {
-            "cases": [
-                {
-                    "name": "x1",
-                    "pipeline_override": {
-                        "insufficientPassesForCombatExercise": {
-                            "expected": "2/3"
-                        }
-                    }
-                },
-                {
-                    "name": "x2",
-                    "pipeline_override": {
-                        "insufficientPassesForCombatExercise": {
-                            "expected": "1/3"
-                        }
-                    }
-                },
-                {
-                    "name": "x3",
-                    "pipeline_override": {
-                        "insufficientPassesForCombatExercise": {
-                            "expected": "0/3"
-                        }
-                    }
-                }
-            ]
-        },
-        "自动调整战斗速度为 3 倍速": {
-            "cases": [
-                {
-                    "name": "YES",
-                    "pipeline_override": {
-                        "changeSpeed": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "NO",
-                    "pipeline_override": {
-                        "changeSpeed": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "实兵演习对象战力值范围": {
-            "cases": [
-                {
-                    "name": "23000以下",
-                    "pipeline_override": {
-                        "challengeOpponentSelection": {
-                            "expected": "^[1-9]{0,1}[0-9]{1,2}$|^[1-9][0-9]{3}$|^[1][0-9]{4}$|^[2][0-2][0-9]{3}$"
-                        }
-                    }
-                },
-                {
-                    "name": "15000以下",
-                    "pipeline_override": {
-                        "challengeOpponentSelection": {
-                            "expected": "^[1-9]{0,1}[0-9]{1,3}$|^[1][0-4][0-9]{3}$"
-                        }
-                    }
-                },
-                {
-                    "name": "8000以下",
-                    "pipeline_override": {
-                        "challengeOpponentSelection": {
-                            "expected": "^[1-7]{0,1}[0-9]{1,3}$"
-                        }
-                    }
-                },
-                {
-                    "name": "4000以下",
-                    "pipeline_override": {
-                        "challengeOpponentSelection": {
-                            "expected": "^[1-3]{0,1}[0-9]{1,3}$"
-                        }
-                    }
-                }
-            ]
-        },
         "自动领取峰值推定奖励": {
             "cases": [
                 {
@@ -1918,7 +1821,7 @@
                     }
                 },
                 {
-                    "name": "虚境新始",
+                    "name": "虚境新始（美服/国际服）",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -2081,7 +1984,7 @@
                     }
                 },
                 {
-                    "name": "交织突进（美服/国际服）",
+                    "name": "交织突进(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -2096,7 +1999,7 @@
                     }
                 },
                 {
-                    "name": "错位锚定·下篇（美服/国际服）",
+                    "name": "错位锚定·下篇(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -2123,7 +2026,7 @@
                     }
                 },
                 {
-                    "name": "错位锚定·上篇（美服/国际服）",
+                    "name": "错位锚定·上篇(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -2268,99 +2171,6 @@
             ]
         },
         "物资商品兑换": {
-            "cases": [
-                {
-                    "name": "YES",
-                    "pipeline_override": {
-                        "enterVersionActivityItemExchange": {
-                            "enabled": true
-                        }
-                    }
-                },
-                {
-                    "name": "NO",
-                    "pipeline_override": {
-                        "enterVersionActivityItemExchange": {
-                            "enabled": false
-                        }
-                    }
-                }
-            ]
-        },
-        "物资模式活动选择2（美服/国际服）": {
-            "cases": [
-                {
-                    "name": "交织突进（美服/国际服）",
-                    "pipeline_override": {
-                        "clickVersionActivityTagButton": {
-                            "expected": [
-                                "交织突进"
-                            ]
-                        },
-                        "enterVersionActivityItemExchange": {
-                            "expected": [
-                                "物资交换站"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "错位锚定·下篇（美服/国际服）",
-                    "pipeline_override": {
-                        "clickVersionActivityTagButton": {
-                            "expected": [
-                                "错位锚定"
-                            ]
-                        },
-                        "enterVersionActivityItemExchange": {
-                            "expected": [
-                                "临时据点"
-                            ]
-                        },
-                        "switchVersionActivityChapter": {
-                            "enabled": true,
-                            "expected": [
-                                "^错位.*下篇$"
-                            ]
-                        },
-                        "selectExchangeType": {
-                            "enabled": true,
-                            "expected": [
-                                "^临时.*下篇$"
-                            ]
-                        }
-                    }
-                },
-                {
-                    "name": "错位锚定·上篇（美服/国际服）",
-                    "pipeline_override": {
-                        "clickVersionActivityTagButton": {
-                            "expected": [
-                                "错位锚定"
-                            ]
-                        },
-                        "enterVersionActivityItemExchange": {
-                            "expected": [
-                                "临时据点"
-                            ]
-                        },
-                        "switchVersionActivityChapter": {
-                            "enabled": true,
-                            "expected": [
-                                "^错位.*上篇$"
-                            ]
-                        },
-                        "selectExchangeType": {
-                            "enabled": true,
-                            "expected": [
-                                "^临时.*上篇$"
-                            ]
-                        }
-                    }
-                }
-            ]
-        },
-        "物资商品兑换2（美服/国际服）": {
             "cases": [
                 {
                     "name": "YES",
