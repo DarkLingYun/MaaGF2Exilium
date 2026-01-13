@@ -8,7 +8,8 @@
             "[JumpBack]点击通信中图片跳过角色对话-通用战斗",
             "[JumpBack]跳过动画-通用",
             "[JumpBack]点击空白处关闭-通用",
-            "[JumpBack]通用战斗任务开始"
+            "[JumpBack]通用战斗任务开始",
+            "[JumpBack]点击领取按钮-推图助手"
         ]
     }
 }

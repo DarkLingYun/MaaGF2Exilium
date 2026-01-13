@@ -33,5 +33,12 @@
             39
         ],
         "expected": "False"
+    },
+    "点击领取按钮-推图助手": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "其他/领取按钮.png"
+        ],
+        "action": "Click"
     }
 }
