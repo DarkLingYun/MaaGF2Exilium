@@ -22,7 +22,6 @@
         ],
         "action": "Click",
         "order_by": "Score",
-        "post_wait_freezes": 1000,
         "next": [
             "loungeConfirm"
         ]
@@ -52,17 +51,20 @@
         "next": [
             "退出整备室"
         ]
-
-    }, 
+    },
     "loungeBackPageNotFound": {
         "next": [
             "clickButtonWithFixedPositionToLeaveDormitory"
         ]
     },
     "clickButtonWithFixedPositionToLeaveDormitory": {
-        "recognition": "DirectHit",
         "action": "Click",
-        "target": [26,23,43,42],
+        "target": [
+            26,
+            23,
+            43,
+            42
+        ],
         "next": [
             "退出整备室"
         ]
@@ -70,10 +72,19 @@
     "退出整备室": {
         "recognition": "TemplateMatch",
         "template": [
-            "公用按钮组件/返回上一页_gray.png",
-            "公用按钮组件/返回上一页_black.png"
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
         ],
+        "green_mask": true,
         "action": "Click",
+        "next": [
+            "整备室已退出",
+            "退出整备室"
+        ]
+    },
+    "整备室已退出": {
+        "recognition": "OCR",
+        "expected": "战役推进",
         "next": [
             "enterDispatchCenterAction",
             "enterSchedulingGainsAction",
