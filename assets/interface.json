@@ -56,7 +56,7 @@
         }
     ],
     "name": "少女前线2：追放自动化助手",
-    "custom_title": "铸碑者的黎明",
+    "custom_title": "信号波重度依赖",
     "github": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "mirrorchyan_rid": "MaaGF2Exilium",
     "task": [
@@ -1530,6 +1530,42 @@
         },
         "物资模式活动选择": {
             "cases": [
+                {
+                    "name": "信号波重度依赖",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "信号波重度依赖",
+                                "信号波",
+                                "重度依赖",
+                                "信号",
+                                "依赖"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "私人珍藏",
+                                "私人",
+                                "珍藏"
+                            ],
+                            "roi": [
+                                107,
+                                607,
+                                238,
+                                76
+                            ]
+                        },
+                        "selectResourceModeLevel": {},
+                        "exitVersionActivityResourceSweep": {
+                            "roi": [
+                                0,
+                                0,
+                                185,
+                                90
+                            ]
+                        }
+                    }
+                },
                 {
                     "name": "铸碑者的黎明·下篇",
                     "pipeline_override": {
