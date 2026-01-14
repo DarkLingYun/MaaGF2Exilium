@@ -1542,6 +1542,10 @@
                                 "依赖"
                             ]
                         },
+                        "开始活动内每日任务": {
+                            "enabled": true,
+                            "expected": "^每日留言$"
+                        },
                         "enterVersionActivityItemExchange": {
                             "expected": [
                                 "私人珍藏",
