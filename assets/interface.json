@@ -1555,13 +1555,38 @@
                                 76
                             ]
                         },
-                        "selectResourceModeLevel": {},
+                        "selectResourceModeLevel": {
+                            "doc": "选择物资模式关卡",
+                            "recognition": "OCR",
+                            "expected": [
+                                "^.*5$",
+                                "5$",
+                                "-5",
+                                "5"
+                            ],
+                            "action": "Click",
+                            "roi": [
+                                572,
+                                269,
+                                424,
+                                163
+                            ]
+                        },
                         "exitVersionActivityResourceSweep": {
                             "roi": [
                                 0,
                                 0,
                                 185,
                                 90
+                            ]
+                        },
+                        "开始活动内每日任务": {
+                            "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
+                            "enabled": true,
+                            "expected": [
+                                "^每日留言$",
+                                "留言$",
+                                "^每日"
                             ]
                         }
                     }
