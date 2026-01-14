@@ -20,53 +20,7 @@
             ]
         },
         "focus": {
-            "Node.Action.Succeeded": "领取调度收益"
-        },
-        "next": [
-            "clickMaxStaminaReserveButton"
-        ]
-    },
-    "clickMaxStaminaReserveButton": {
-        "recognition": "OCR",
-        "expected": "最大",
-        "roi": [
-            1063,
-            548,
-            94,
-            38
-        ],
-        "action": "Click",
-        "post_wait_freezes": {
-            "time": 500,
-            "target": [
-                0,
-                500,
-                1280,
-                220
-            ]
-        },
-        "next": [
-            "clickExtractStaminaButton"
-        ]
-    },
-    "clickExtractStaminaButton": {
-        "recognition": "OCR",
-        "expected": "^取出$",
-        "roi": [
-            624,
-            589,
-            305,
-            71
-        ],
-        "action": "Click",
-        "post_wait_freezes": {
-            "time": 500,
-            "target": [
-                0,
-                500,
-                1280,
-                220
-            ]
+            "Node.Action.Starting": "<span style=\"color: red;\">请使用官方循环助手领取情报储备</span>"
         },
         "next": [
             "enterResourceProductionPage"
