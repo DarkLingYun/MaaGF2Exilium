@@ -19,9 +19,40 @@
         ],
         "post_wait_freezes": 0,
         "next": [
-            "clickHomeStoreExchangeTaskButton",
-            "clickHomeStoreExchangePageButton"
+            "已进入家具商店页面",
+            "clickHomeStoreExchangeTaskButton"
         ]
+    },
+    "已进入家具商店页面": {
+        "recognition": "OCR",
+        "expected": [
+            "当季风潮",
+            "主题空间",
+            "家具模块",
+            "摆设陈列",
+            "墙面装饰"
+        ],
+        "next": [
+            "clickHomeStoreExchangePageButton",
+            "[JumpBack]滑动列表-家具商店"
+        ]
+    },
+    "滑动列表-家具商店": {
+        "max_hit": 1,
+        "action": "Swipe",
+        "begin": [
+            97,
+            491,
+            30,
+            30
+        ],
+        "end": [
+            95,
+            225,
+            32,
+            32
+        ],
+        "end_hold": 1000
     },
     "clickHomeStoreExchangePageButton": {
         "doc": "点击定向调整按钮",
