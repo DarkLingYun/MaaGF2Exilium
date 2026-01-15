@@ -1839,6 +1839,10 @@
                                 "新始"
                             ]
                         },
+                        "开始活动内每日任务": {
+                            "enabled": true,
+                            "expected": "^教授日程$"
+                        },
                         "enterVersionActivityItemExchange": {
                             "expected": [
                                 "绿洲补给站",
