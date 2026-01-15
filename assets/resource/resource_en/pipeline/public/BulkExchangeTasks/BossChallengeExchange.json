@@ -1,8 +1,0 @@
-{
-    "exitBossChallengeExchange": {
-        "doc": "结束任务,调用后续任务",
-        "next": [
-            "returnToHomePage"
-        ]
-    }
-}
