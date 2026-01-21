@@ -1542,6 +1542,10 @@
                                 "依赖"
                             ]
                         },
+                        "开始活动内每日任务": {
+                            "enabled": true,
+                            "expected": "^每日留言$"
+                        },
                         "enterVersionActivityItemExchange": {
                             "expected": [
                                 "私人珍藏",
@@ -1859,6 +1863,10 @@
                                 "虚境",
                                 "新始"
                             ]
+                        },
+                        "开始活动内每日任务": {
+                            "enabled": true,
+                            "expected": "^教授日程$"
                         },
                         "enterVersionActivityItemExchange": {
                             "expected": [
@@ -2582,7 +2590,7 @@
                 {
                     "name": "YES",
                     "pipeline_override": {
-                        "enterTrial": {
+                        "开始预演任务": {
                             "enabled": true
                         }
                     }
@@ -2590,7 +2598,7 @@
                 {
                     "name": "NO",
                     "pipeline_override": {
-                        "enterTrial": {
+                        "开始预演任务": {
                             "enabled": false
                         }
                     }

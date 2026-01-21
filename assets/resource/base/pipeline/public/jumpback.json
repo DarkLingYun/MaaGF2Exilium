@@ -18,6 +18,25 @@
         "index": -1,
         "action": "Click"
     },
+    "确认跳过动画-通用": {
+        "recognition": "OCR",
+        "expected": [
+            "是否跳过本段动画"
+        ],
+        "next": [
+            "确认-通用",
+            "确认跳过动画结束-通用"
+        ]
+    },
+    "确认-通用": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/确认.png"
+        ],
+        "order_by": "Score",
+        "action": "Click"
+    },
+    "确认跳过动画结束-通用": {},
     "返回上一页-通用": {
         "recognition": "TemplateMatch",
         "template": [

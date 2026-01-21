@@ -26,15 +26,24 @@
         ]
     },
     "已解锁茶歇一刻": {
-        "recognition": "TemplateMatch",
-        "template": "活动层/茶歇一刻.png",
-        "roi": [
-            533,
-            131,
-            731,
-            573
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "活动层/茶歇一刻.png",
+                "roi": [
+                    533,
+                    131,
+                    731,
+                    573
+                ],
+                "green_mask": true
+            },
+            {
+                "recognition": "OCR", // 有时候茶杯图标会被挡，识别等级够高也行
+                "expected": "Lv\\.\\d{2,}"
+            }
         ],
-        "green_mask": true,
         "post_wait_freezes": 1000,
         "next": [
             "已有饮用效果",

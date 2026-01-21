@@ -137,10 +137,35 @@
     "setMaxResourceLevelSweepTimes": {
         "doc": "设置最大物资关卡扫荡次数",
         "action": "Click",
-        "recognition": "TemplateMatch",
-        "template": [
-            "活动/最大次数按钮.png"
+        "recognition": "And",
+        "all_of": [
+            {
+                "sub_name": "CheckIcon",
+                "recognition": "TemplateMatch",
+                "template": "活动/最大次数按钮.png",
+                "threshold": 0.9,
+                "roi": [
+                    700,
+                    300,
+                    200,
+                    150
+                ]
+            },
+            {
+                "sub_name": "CheckColor",
+                "recognition": "ColorMatch",
+                "lower": [0,0,0],
+                "upper": [100,120,200],
+                "count": 1000,
+                "roi": [
+                    700,
+                    300,
+                    200,
+                    150
+                ]
+            }
         ],
+        "box_index": 1,
         "next": [
             "startResourceLevelSweep"
         ]
