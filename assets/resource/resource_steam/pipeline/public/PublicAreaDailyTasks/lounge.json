@@ -1,0 +1,14 @@
+{
+    "loungeButtonClick": {
+        "template": [
+            "其他/休息室.png"
+        ],
+        "threshold": 0.7
+    },
+    "退出整备室": {
+        "doc": "退出整备室 VK_ESCAPE\t0x1B\tEscape key",
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 27
+    }
+}

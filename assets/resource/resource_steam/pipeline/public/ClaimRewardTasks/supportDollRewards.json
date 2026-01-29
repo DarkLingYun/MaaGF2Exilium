@@ -1,0 +1,8 @@
+{
+    "enterPersonalInformationPage": {
+        "doc": "press Esc Key to enter 个人信息",
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 27
+    }
+}
