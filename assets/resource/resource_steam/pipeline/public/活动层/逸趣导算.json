@@ -1,0 +1,48 @@
+{
+    "进入活动层-逸趣导算": {
+        "doc": "press L Key to enter 活动层",
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 76
+    },
+    "已进入活动层-逸趣导算": {
+        "recognition": "OCR",
+        "expected": [
+            "Esc"
+        ]
+    },
+    "进入逸趣导算页面": {
+        "doc": "Press F2 key to enter 逸趣导算 page",
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 113
+    },
+    "已进入逸趣导算页面": {
+        "next": [
+            "领取逸趣导算奖励",
+            "退出活动层-逸趣导算"
+        ]
+    },
+    "关闭领取结果-逸趣导算": {
+        "next": [
+            "关闭领取结果-逸趣导算",
+            "退出活动层-逸趣导算"
+        ]
+    },
+    "退出活动层-逸趣导算": {
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 27,
+        "next": [
+            "确认退出活动层-逸趣导算",
+            "[JumpBack]VK_ESCAPE_Click"
+        ]
+    },
+    "确认退出活动层-逸趣导算": {
+        "next": [
+            "逸趣导算任务结束",
+            "确认退出活动层-逸趣导算",
+            "[JumpBack]VK_ESCAPE_Click"
+        ]
+    }
+}
