@@ -1,4 +1,10 @@
 {
+    "进入活动层-美味烹调": {
+        "doc": "press L Key to enter 活动层",
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 76
+    },
     "已进入活动层-美味烹调": {
         "recognition": "OCR",
         "expected": [
