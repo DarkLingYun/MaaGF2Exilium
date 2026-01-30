@@ -1732,7 +1732,7 @@
                     }
                 },
                 {
-                    "name": "前进吧，王牌配送员!",
+                    "name": "前进吧，王牌配送员!（美服/国际服）",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -1864,7 +1864,7 @@
                     }
                 },
                 {
-                    "name": "虚境新始（美服/国际服）",
+                    "name": "虚境新始",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
