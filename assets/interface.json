@@ -56,7 +56,7 @@
         }
     ],
     "name": "少女前线2：追放自动化助手",
-    "custom_title": "信号波重度依赖",
+    "custom_title": "少女前线2：追放自动化助手",
     "github": "https://github.com/DarkLingYun/MaaGF2Exilium",
     "mirrorchyan_rid": "MaaGF2Exilium",
     "task": [
@@ -1530,6 +1530,72 @@
         },
         "物资模式活动选择": {
             "cases": [
+                {
+                    "name": "瑞骋迎春归",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "瑞骋迎春归",
+                                "迎春归",
+                                "瑞骋迎",
+                                "骋迎春归",
+                                "瑞骋迎春"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "补给仓库",
+                                "补给",
+                                "仓库"
+                            ],
+                            "roi": [
+                                107,
+                                607,
+                                238,
+                                76
+                            ]
+                        },
+                        "selectResourceModeLevel": {
+                            "doc": "选择物资模式关卡",
+                            "recognition": "Or",
+                            "any_of": [
+                                {
+                                    "recognition": "OCR",
+                                    "expected": [
+                                        "^.*5$",
+                                        "5$",
+                                        "-5",
+                                        "5"
+                                    ],
+                                    "roi": [
+                                        572,
+                                        269,
+                                        424,
+                                        163
+                                    ]
+                                }
+                            ],
+                            "action": "Click"
+                        },
+                        "exitVersionActivityResourceSweep": {
+                            "roi": [
+                                0,
+                                0,
+                                185,
+                                90
+                            ]
+                        },
+                        "开始活动内每日任务": {
+                            "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
+                            "enabled": true,
+                            "expected": [
+                                "^信标巡检$",
+                                "巡检$",
+                                "^信标"
+                            ]
+                        }
+                    }
+                },
                 {
                     "name": "信号波重度依赖",
                     "pipeline_override": {

@@ -116,6 +116,13 @@
         "recognition": "TemplateMatch",
         "template": "公用按钮组件/提醒_v2.png",
         "action": "Click",
+        "roi": [
+            0,
+            540,
+            1280,
+            180
+        ],
+        "threshold": 0.8,
         "green_mask": true
     },
     "领取活动内每日任务奖励": {
