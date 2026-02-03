@@ -1561,20 +1561,35 @@
                         },
                         "selectResourceModeLevel": {
                             "doc": "选择物资模式关卡",
-                            "recognition": "OCR",
-                            "expected": [
-                                "^.*5$",
-                                "5$",
-                                "-5",
-                                "5"
+                            "recognition": "Or",
+                            "any_of": [
+                                {
+                                    "recognition": "OCR",
+                                    "expected": [
+                                        "^.*5$",
+                                        "5$",
+                                        "-5",
+                                        "5"
+                                    ],
+                                    "roi": [
+                                        572,
+                                        269,
+                                        424,
+                                        163
+                                    ]
+                                },
+                                {
+                                    "recognition": "TemplateMatch",
+                                    "template": "版本活动/信号波重度依赖物资5.png",
+                                    "roi": [
+                                        666,
+                                        296,
+                                        235,
+                                        93
+                                    ]
+                                }
                             ],
-                            "action": "Click",
-                            "roi": [
-                                572,
-                                269,
-                                424,
-                                163
-                            ]
+                            "action": "Click"
                         },
                         "exitVersionActivityResourceSweep": {
                             "roi": [
