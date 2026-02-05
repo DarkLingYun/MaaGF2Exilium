@@ -1573,6 +1573,16 @@
                                         424,
                                         163
                                     ]
+                                },
+                                {
+                                    "recognition": "TemplateMatch",
+                                    "template": "版本活动/瑞骋迎春至物资5.png",
+                                    "roi": [
+                                        666,
+                                        296,
+                                        235,
+                                        93
+                                    ]
                                 }
                             ],
                             "action": "Click"
