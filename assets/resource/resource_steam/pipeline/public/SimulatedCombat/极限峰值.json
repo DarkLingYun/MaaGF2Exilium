@@ -1,0 +1,201 @@
+{
+    // not finished, no enough power
+    "进入峰值推定-极限峰值": {
+        "next": [
+            "进入极限峰值标签页-极限峰值",
+            "[JumpBack]发现周期报酬-极限峰值"
+        ]
+    },
+    "进入极限峰值标签页-极限峰值": {
+        "next": [
+            "已进入极限峰值标签页-极限峰值",
+            "[JumpBack]发现新周期-极限峰值"
+        ]
+    },
+    "已进入极限峰值标签页-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "激化阶群"
+        ],
+        "action": "Click",
+        "next": [
+            "进入子群1-极限峰值"
+        ]
+    },
+    "进入子群1-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "子群1"
+        ],
+        "action": "Click",
+        "next": [
+            "已进入子群1-极限峰值",
+            "进入子群1-极限峰值"
+        ]
+    },
+    "已进入子群1-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "敌方单位"
+        ],
+        "next": [
+            "子群1已完成-极限峰值",
+            "子群1未完成-极限峰值"
+        ]
+    },
+    "子群1已完成-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": "其他/子群已完成.png",
+        "threshold": 0.95,
+        "next": [
+            "子群1后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "子群1后返回极限峰值标签页-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "进入子群2-极限峰值"
+        ]
+    },
+    "子群1未完成-极限峰值": {
+        "next": [
+            "开始作战-子群1-极限峰值"
+        ]
+    },
+    "开始作战-子群1-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "开始作战"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]通用战斗任务开始",
+            "子群1后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "进入子群2-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "子群2"
+        ],
+        "action": "Click",
+        "next": [
+            "已进入子群2-极限峰值",
+            "进入子群2-极限峰值"
+        ]
+    },
+    "已进入子群2-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "敌方单位"
+        ],
+        "next": [
+            "子群2已完成-极限峰值",
+            "子群2未完成-极限峰值"
+        ]
+    },
+    "子群2已完成-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": "其他/子群已完成.png",
+        "threshold": 0.95,
+        "next": [
+            "子群2后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "子群2后返回极限峰值标签页-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "进入子群3-极限峰值"
+        ]
+    },
+    "子群2未完成-极限峰值": {
+        "next": [
+            "开始作战-子群2-极限峰值"
+        ]
+    },
+    "开始作战-子群2-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "开始作战"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]通用战斗任务开始",
+            "子群2后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "进入子群3-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "子群3"
+        ],
+        "action": "Click",
+        "next": [
+            "已进入子群3-极限峰值",
+            "进入子群3-极限峰值"
+        ]
+    },
+    "已进入子群3-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "敌方单位"
+        ],
+        "next": [
+            "子群3已完成-极限峰值",
+            "子群3未完成-极限峰值"
+        ]
+    },
+    "子群3已完成-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": "其他/子群已完成.png",
+        "threshold": 0.95,
+        "next": [
+            "子群3后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "子群3后返回极限峰值标签页-极限峰值": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "next": [
+            "极限峰值任务完成"
+        ]
+    },
+    "子群3未完成-极限峰值": {
+        "next": [
+            "开始作战-子群3-极限峰值"
+        ]
+    },
+    "开始作战-子群3-极限峰值": {
+        "recognition": "OCR",
+        "expected": [
+            "开始作战"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]通用战斗任务开始",
+            "子群3后返回极限峰值标签页-极限峰值"
+        ]
+    },
+    "极限峰值任务完成": {
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "exitVersionActivityItemExchange": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}

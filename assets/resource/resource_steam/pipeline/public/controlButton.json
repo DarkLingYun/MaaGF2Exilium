@@ -1,0 +1,37 @@
+{
+    "returnToHomePage": {
+        "doc": "除特殊页面，一般都可通过下列按键回到主页。从出现次数多到少/最短路径依次匹配，可减少不必要的匹配",
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "HomePage",
+            "[JumpBack]VK_ESCAPE_Click"
+        ]
+    },
+    "VK_ESCAPE_Click": {
+        "doc": "Escape key, Low Flashrate requires a longer wait time after pressing ESC to Escape from frequent switch between main page and personal info page",
+        "post_wait_freezes": 1000,
+        "action": "ClickKey",
+        "key": 27
+    },
+    "VK_W_Click": {
+        "doc": "W key",
+        "action": "ClickKey",
+        "key": 87
+    },
+    "VK_S_Click": {
+        "doc": "S key",
+        "action": "ClickKey",
+        "key": 83
+    },
+    "VK_A_Click": {
+        "doc": "A key",
+        "action": "ClickKey",
+        "key": 65
+    },
+    "VK_D_Click": {
+        "doc": "D key",
+        "action": "ClickKey",
+        "key": 68
+    }
+}

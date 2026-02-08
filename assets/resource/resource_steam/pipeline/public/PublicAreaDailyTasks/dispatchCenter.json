@@ -1,0 +1,8 @@
+{
+    "rewardGet": {
+        "next": [
+            "dispatchCenterSendAgain",
+            "rewardGet"
+        ]
+    }
+}

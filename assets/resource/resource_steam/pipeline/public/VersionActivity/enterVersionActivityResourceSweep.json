@@ -1,0 +1,14 @@
+{
+    "exitVersionActivityResourceSweep": {
+        "next": [
+            "enterVersionActivityItemExchange",
+            "HomePage",
+            "[JumpBack]VK_ESCAPE_Click"
+        ]
+    },
+    "startResourceLevelSweep": {
+        "next": [
+            "exitVersionActivityResourceSweep"
+        ]
+    }
+}

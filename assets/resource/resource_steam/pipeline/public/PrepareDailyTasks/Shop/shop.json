@@ -1,0 +1,17 @@
+{
+    "enterShop": {
+        "doc": "识别并进入商城 E\t0x45\tE key",
+        "action": "ClickKey",
+        "key": 69
+    },
+    "closeSupplyBoxPurchaseResultPage": {
+        "doc": "关闭购买结果页面 VK_ESCAPE\t0x1B\tEscape key",
+        "action": "ClickKey",
+        "key": 27
+    },
+    "closeDailyPaidGiftPage": {
+        "doc": "关闭每日晶条礼包页面 VK_ESCAPE\t0x1B\tEscape key",
+        "action": "ClickKey",
+        "key": 27
+    }
+}

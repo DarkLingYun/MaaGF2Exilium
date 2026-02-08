@@ -1,0 +1,19 @@
+{
+    "开始循环助手任务": {
+        "next": [
+            "进入循环助手页面",
+            "退出循环助手页面"
+        ]
+    },
+    "进入循环助手页面": {
+        "doc": "点击循环助手按钮进入循环助手页面 A\t0x41\tA key",
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 65
+    },
+    "确认循环结束": {
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "开始活动内每日任务": {
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]领取活动内每日任务奖励",
+            "[JumpBack]领取活动内每日任务积分累计奖励_steam",
+            "退出活动内每日任务界面"
+        ]
+    },
+    "领取活动内每日任务积分累计奖励_steam": {
+        "recognition": "TemplateMatch",
+        "template": "公用按钮组件/提醒_steam.png",
+        "green_mask": true,
+        "post_wait_freezes": 1500
+    },
+    "领取活动内每日任务奖励": {
+        "recognition": "OCR",
+        "expected": "^领取$",
+        "action": "Click"
+    },
+    "退出活动内每日任务界面": {
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 27
+    }
+}

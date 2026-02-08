@@ -1,0 +1,23 @@
+{
+    "exitBossFight": {
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "clickBossFightAutoButton": {
+        "next": [
+            "maxAutoBattleCountForBossFight"
+        ]
+    },
+    "maxAutoBattleCountForBossFight": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/选择最大值.png"
+        ],
+        "action": "Click",
+        "post_delay": 100,
+        "next": [
+            "confirmBossFightSelfDiscipline"
+        ]
+    }
+}

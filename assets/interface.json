@@ -11,7 +11,7 @@
             "type": "Win32",
             "win32": {
                 "class_regex": ".*",
-                "window_regex": "少女前线.*追放",
+                "window_regex": "少女前线.*追放|EXILIUM|GF2_Exilium",
                 "screencap": "PrintWindow",
                 "mouse": "SendMessageWithCursorPos",
                 "keyboard": "SendMessageWithCursorPos"
@@ -52,6 +52,14 @@
             "path": [
                 "{PROJECT_DIR}/resource/base",
                 "{PROJECT_DIR}/resource/resource_pc"
+            ]
+        },
+        {
+            "name": "PC 端 (Steam)",
+            "path": [
+                "{PROJECT_DIR}/resource/base",
+                "{PROJECT_DIR}/resource/resource_pc",
+                "{PROJECT_DIR}/resource/resource_steam"
             ]
         }
     ],
@@ -1815,7 +1823,7 @@
                     }
                 },
                 {
-                    "name": "前进吧，王牌配送员!",
+                    "name": "前进吧，王牌配送员!（美服/国际服）",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -1947,7 +1955,7 @@
                     }
                 },
                 {
-                    "name": "虚境新始（美服/国际服）",
+                    "name": "虚境新始",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [

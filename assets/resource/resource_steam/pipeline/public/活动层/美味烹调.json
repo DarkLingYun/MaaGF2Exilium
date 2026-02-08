@@ -1,0 +1,64 @@
+{
+    "进入活动层-美味烹调": {
+        "doc": "press L Key to enter 活动层",
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 76
+    },
+    "已进入活动层-美味烹调": {
+        "recognition": "OCR",
+        "expected": [
+            "Esc"
+        ]
+    },
+    "已有用餐效果": {
+        "recognition": "TemplateMatch",
+        "template": "活动层/用餐效果.png",
+        "green_mask": true,
+        "roi": [
+            12,
+            612,
+            178,
+            94
+        ],
+        "post_wait_freezes": 1000,
+        "next": [
+            "退出活动层-美味烹调"
+        ]
+    },
+    "走向美味烹调": {
+        "doc": "S key",
+        "action": "LongPressKey",
+        "key": 83,
+        "duration": 850,
+        "post_wait_freezes": 1000,
+        "next": [
+            "进入美味烹调区域"
+        ]
+    },
+    "进入美味烹调区域": {
+        "doc": " Press F key to enter 美味烹调 area",
+        "action": "ClickKey",
+        "key": 70,
+        "next": [
+            "每天第一次免费美味烹调",
+            "退出活动层-美味烹调"
+        ]
+    },
+    "退出活动层-美味烹调": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "确认退出活动层-美味烹调",
+            "[JumpBack]活动层等级提升",
+            "[JumpBack]VK_ESCAPE_Click"
+        ]
+    },
+    "确认退出活动层-美味烹调": {
+        "next": [
+            "美味烹调任务结束",
+            "确认退出活动层-美味烹调",
+            "[JumpBack]VK_ESCAPE_Click"
+        ]
+    }
+}

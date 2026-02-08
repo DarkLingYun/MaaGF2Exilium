@@ -1,0 +1,8 @@
+{
+    "进入好友班组动态界面": {
+        "doc": "press ~ key to enter 好友班组动态界面",
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 192
+    }
+}
