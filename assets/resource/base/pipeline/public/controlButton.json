@@ -68,8 +68,7 @@
     },
     "HomePage": {
         "recognition": "OCR",
-        "expected": "战役推进",
-        "pre_delay": 2500
+        "expected": "战役推进"
     },
     "resourcesLoading": {
         "recognition": "OCR",

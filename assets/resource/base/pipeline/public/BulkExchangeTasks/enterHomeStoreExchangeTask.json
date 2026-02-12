@@ -2,8 +2,10 @@
     "enterHomeStoreExchangeTask": {
         "doc": "进入家具商店兑换任务",
         "enabled": true,
+        "max_hit": 1,
         "next": [
-            "clickHomeStoreExchangeTaskButton"
+            "clickHomeStoreExchangeTaskButton",
+            "[JumpBack]易物所兑换通用-前往易物所"
         ]
     },
     "clickHomeStoreExchangeTaskButton": {
@@ -68,7 +70,7 @@
         "post_wait_freezes": 1000,
         "next": [
             "selectHomeStoreItem",
-            "homeStoreBackToPreviousPage"
+            "易物所兑换通用-前往易物所"
         ]
     },
     "selectHomeStoreItem": {
@@ -93,7 +95,7 @@
             "homeStoreSelectExchangeItemQuantity",
             "homeStoreConfirmPurchaseItem",
             "selectHomeStoreItem",
-            "homeStoreBackToPreviousPage"
+            "易物所兑换通用-前往易物所"
         ]
     },
     "homeStoreItemNotPurchasable": {
@@ -125,7 +127,8 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "homeStoreBackToPreviousPage"
+            "homeStoreExitItemExchange",
+            "易物所兑换通用-前往易物所"
         ]
     },
     "homeStoreSelectExchangeItemQuantity": {
@@ -155,31 +158,7 @@
         "next": [
             "homeStoreCloseItemPurchaseResultPage",
             "selectHomeStoreItem",
-            "homeStoreBackToPreviousPage"
-        ]
-    },
-    "homeStoreBackToPreviousPage": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            0,
-            200,
-            70
-        ],
-        "template": [
-            "公用按钮组件/返回上一页_gray.png",
-            "公用按钮组件/返回上一页_black.png"
-        ],
-        "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "exitHomeStoreExchange"
-        ]
-    },
-    "exitHomeStoreExchange": {
-        "doc": "结束任务,调用后续任务",
-        "next": [
-            "returnToHomePage"
+            "易物所兑换通用-前往易物所"
         ]
     }
 }

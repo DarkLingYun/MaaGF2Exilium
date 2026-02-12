@@ -2,8 +2,10 @@
     "enterdispatchCenterExchangeTask": {
         "doc": "进入调度商店兑换任务",
         "enabled": true,
+        "max_hit": 1,
         "next": [
-            "clickdispatchCenterExchangeTaskButton"
+            "clickdispatchCenterExchangeTaskButton",
+            "[JumpBack]易物所兑换通用-前往易物所"
         ]
     },
     "clickdispatchCenterExchangeTaskButton": {
@@ -22,7 +24,7 @@
             "clickdispatchCenterExchangeTaskButton",
             "selectdispatchCenterItem",
             "滑动寻找更多调度商店物品",
-            "dispatchCenterBackToPreviousPage"
+            "易物所兑换通用-前往易物所"
         ]
     },
     "selectdispatchCenterItem": {
@@ -55,7 +57,7 @@
             "dispatchCenterSelectExchangeItemQuantity",
             "dispatchCenterConfirmPurchaseItem",
             "selectdispatchCenterItem",
-            "dispatchCenterBackToPreviousPage"
+            "易物所兑换通用-前往易物所"
         ]
     },
     "滑动寻找更多调度商店物品": {
@@ -74,7 +76,7 @@
         ],
         "next": [
             "selectdispatchCenterItem",
-            "dispatchCenterBackToPreviousPage"
+            "易物所兑换通用-前往易物所"
         ]
     },
     "dispatchCenterItemNotPurchasable": {
@@ -106,25 +108,8 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "dispatchCenterBackToPreviousPage"
-        ]
-    },
-    "dispatchCenterBackToPreviousPage": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            0,
-            200,
-            70
-        ],
-        "template": [
-            "公用按钮组件/返回上一页_gray.png",
-            "公用按钮组件/返回上一页_black.png"
-        ],
-        "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "exitdispatchCenterExchange"
+            "dispatchCenterExitItemExchange",
+            "易物所兑换通用-前往易物所"
         ]
     },
     "dispatchCenterSelectExchangeItemQuantity": {
@@ -155,15 +140,7 @@
             "dispatchCenterCloseItemPurchaseResultPage",
             "selectdispatchCenterItem",
             "滑动寻找更多调度商店物品",
-            "dispatchCenterBackToPreviousPage"
-        ]
-    },
-    "exitdispatchCenterExchange": {
-        "doc": "结束任务,调用后续任务",
-        "next": [
-            "enterBossChallengeExchangeTask",
-            "enterHomeStoreExchangeTask",
-            "returnToHomePage"
+            "易物所兑换通用-前往易物所"
         ]
     }
 }

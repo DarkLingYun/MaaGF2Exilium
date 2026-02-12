@@ -2,8 +2,10 @@
     "enterPlatoonExchangeTask": {
         "doc": "进入公会兑换任务",
         "enabled": false,
+        "max_hit": 1,
         "next": [
-            "clickPlatoonExchangeTaskButton"
+            "clickPlatoonExchangeTaskButton",
+            "[JumpBack]易物所兑换通用-前往易物所"
         ]
     },
     "clickPlatoonExchangeTaskButton": {
@@ -21,7 +23,7 @@
         "next": [
             "clickPlatoonExchangeTaskButton",
             "selectPlatoonItem",
-            "PlatoonBackToPreviousPage"
+            "易物所兑换通用-前往易物所"
         ]
     },
     "selectPlatoonItem": {
@@ -47,7 +49,7 @@
             "PlatoonSelectExchangeItemQuantity",
             "PlatoonConfirmPurchaseItem",
             "selectPlatoonItem",
-            "PlatoonBackToPreviousPage"
+            "易物所兑换通用-前往易物所"
         ]
     },
     "PlatoonItemNotPurchasable": {
@@ -79,25 +81,8 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "PlatoonBackToPreviousPage"
-        ]
-    },
-    "PlatoonBackToPreviousPage": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            0,
-            200,
-            70
-        ],
-        "template": [
-            "公用按钮组件/返回上一页_gray.png",
-            "公用按钮组件/返回上一页_black.png"
-        ],
-        "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "exitPlatoonExchange"
+            "PlatoonExitItemExchange",
+            "易物所兑换通用-前往易物所"
         ]
     },
     "PlatoonSelectExchangeItemQuantity": {
@@ -127,16 +112,7 @@
         "next": [
             "PlatoonCloseItemPurchaseResultPage",
             "selectPlatoonItem",
-            "PlatoonBackToPreviousPage"
-        ]
-    },
-    "exitPlatoonExchange": {
-        "doc": "结束任务,调用后续任务",
-        "next": [
-            "enterdispatchCenterExchangeTask",
-            "enterBossChallengeExchangeTask",
-            "enterHomeStoreExchangeTask",
-            "returnToHomePage"
+            "易物所兑换通用-前往易物所"
         ]
     }
 }
