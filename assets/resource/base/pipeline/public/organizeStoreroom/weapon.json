@@ -113,9 +113,9 @@
         ],
         "action": "Click",
         "next": [
-            "有物品可拆解-武器",
             "findWeaponDisassemblyNotification",
             "closeWeaponDisassemblyResultByClickingBlank",
+            "有物品可拆解-武器",
             "weaponDisassemblyResultClosed"
         ]
     },

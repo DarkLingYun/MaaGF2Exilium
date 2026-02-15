@@ -13,6 +13,7 @@
         "timeout": 40000,
         "next": [
             "已进入活动层-茶歇一刻",
+            "进入活动层-茶歇一刻",
             "[JumpBack]活动层等级提升"
         ]
     },
@@ -110,6 +111,18 @@
         "recognition": "OCR",
         "expected": "茶歇一刻",
         "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "进入茶歇一刻区域",
+            "确认进入茶歇一刻"
+        ]
+    },
+    "确认进入茶歇一刻": {
+        "recognition": "OCR",
+        "expected": [
+            "经典饮品",
+            "当期特饮"
+        ],
         "post_wait_freezes": 1000,
         "next": [
             "今日已饮用-茶歇一刻",

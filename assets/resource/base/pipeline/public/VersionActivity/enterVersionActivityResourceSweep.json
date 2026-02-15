@@ -99,7 +99,8 @@
         "next": [
             "resourceModeSweepTimesInsufficient",
             "clickResourceLevelSweepButton",
-            "resourceModeSweepCheckLevelLockStatus"
+            "resourceModeSweepCheckLevelLockStatus",
+            "selectResourceModeLevel"
         ]
     },
     "resourceModeSweepCheckLevelLockStatus": {

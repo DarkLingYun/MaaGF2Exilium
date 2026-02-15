@@ -1967,7 +1967,7 @@
                     }
                 },
                 {
-                    "name": "虚境新始",
+                    "name": "虚境新始(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [

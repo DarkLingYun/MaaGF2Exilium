@@ -2,8 +2,10 @@
     "enterBossChallengeExchangeTask": {
         "doc": "进入讯段交易兑换任务",
         "enabled": true,
+        "max_hit": 1,
         "next": [
-            "clickBossChallengeExchangeTaskButton"
+            "clickBossChallengeExchangeTaskButton",
+            "[JumpBack]易物所兑换通用-前往易物所"
         ]
     },
     "clickBossChallengeExchangeTaskButton": {
@@ -21,7 +23,7 @@
         "next": [
             "clickBossChallengeExchangeTaskButton",
             "selectBossChallengeItem",
-            "BossChallengeBackToPreviousPage"
+            "易物所兑换通用-前往易物所"
         ]
     },
     "selectBossChallengeItem": {
@@ -50,7 +52,7 @@
             "BossChallengeSelectExchangeItemQuantity",
             "BossChallengeConfirmPurchaseItem",
             "selectBossChallengeItem",
-            "BossChallengeBackToPreviousPage"
+            "易物所兑换通用-前往易物所"
         ]
     },
     "BossChallengeItemNotPurchasable": {
@@ -82,25 +84,7 @@
         "action": "Click",
         "post_delay": 2000,
         "next": [
-            "BossChallengeBackToPreviousPage"
-        ]
-    },
-    "BossChallengeBackToPreviousPage": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            0,
-            200,
-            70
-        ],
-        "template": [
-            "公用按钮组件/返回上一页_gray.png",
-            "公用按钮组件/返回上一页_black.png"
-        ],
-        "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "exitBossChallengeExchange"
+            "易物所兑换通用-前往易物所"
         ]
     },
     "BossChallengeSelectExchangeItemQuantity": {
@@ -130,14 +114,7 @@
         "next": [
             "BossChallengeCloseItemPurchaseResultPage",
             "selectBossChallengeItem",
-            "BossChallengeBackToPreviousPage"
-        ]
-    },
-    "exitBossChallengeExchange": {
-        "doc": "结束任务,调用后续任务",
-        "next": [
-            "enterHomeStoreExchangeTask",
-            "returnToHomePage"
+            "易物所兑换通用-前往易物所"
         ]
     }
 }
