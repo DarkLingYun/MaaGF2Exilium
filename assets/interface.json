@@ -1131,6 +1131,18 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "巅峰召唤",
+                    "pipeline_override": {
+                        "selectedEffectsCombination": {
+                            "expected": [
+                                "^巅峰召唤$",
+                                "^巅峰召唤",
+                                "峰召唤$"
+                            ]
+                        }
+                    }
                 }
             ]
         },
