@@ -10,7 +10,10 @@
     "enterCommissionToClaimTask": {
         "doc": "进入委托领取任务",
         "recognition": "OCR",
-        "expected": "^委托",
+        "expected": [
+            "^委托$",
+            "委托$"
+        ],
         "roi": [
             370,
             582,
