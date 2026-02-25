@@ -209,7 +209,11 @@
     },
     "StartGame_clickStart": {
         "recognition": "OCR",
-        "expected": "点击开始",
+        "expected": [
+            "点击开始",
+            "击开始$",
+            "点击开"
+        ],
         "action": "Click",
         "timeout": 35000,
         "next": [
