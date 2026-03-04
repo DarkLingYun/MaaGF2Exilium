@@ -228,16 +228,25 @@
     },
     "AutoSweepBattleSupplyOperationPrepareIsAccessories": {
         "doc": "确认是否为配件自律页面",
-        "recognition": "OCR",
-        "expected": [
-            "^下一步$",
-            "^下一$"
-        ],
-        "roi": [
-            645,
-            581,
-            332,
-            94
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "OCR",
+                "expected": [
+                    "^下一步$",
+                    "^下一$"
+                ],
+                "roi": [
+                    645,
+                    581,
+                    332,
+                    94
+                ]
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "补给作战/定向精研_下一步.png"
+            }
         ],
         "begin": [
             158,
@@ -292,16 +301,12 @@
         ]
     },
     "selectedEffectsCombinationNextButtonClick": {
-        "recognition": "OCR",
-        "expected": [
-            "^下一步$",
-            "^下一$"
-        ],
-        "roi": [
-            645,
-            581,
-            332,
-            94
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "TemplateMatch",
+                "template": "补给作战/定向精研_下一步.png"
+            }
         ],
         "action": "Click",
         "next": [
