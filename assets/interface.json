@@ -1912,7 +1912,7 @@
                     }
                 },
                 {
-                    "name": "前进吧，王牌配送员!（美服/国际服）",
+                    "name": "前进吧，王牌配送员!(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -2088,7 +2088,7 @@
                     }
                 },
                 {
-                    "name": "火花之罪·下篇",
+                    "name": "火花之罪·下篇（美服/国际服）",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
