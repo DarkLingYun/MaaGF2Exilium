@@ -84,7 +84,7 @@ public static class CommunityDailyHelper
         try
         {
             using var httpClient = new HttpClient();
-            var url = "https://gf2-bbs-api.sunborngame.com/login/account";
+            var url = "https://gf2-bbs-api.exiliumgf.com/login/account";
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
@@ -137,7 +137,7 @@ public static class CommunityDailyHelper
         try
         {
             using var httpClient = new HttpClient();
-            var url = "https://gf2-bbs-api.sunborngame.com/community/item/exchange";
+            var url = "https://gf2-bbs-api.exiliumgf.com/community/item/exchange";
             var requestBody = new ExchangeRequestBody
             {
                 ExchangeId = exchangeId
@@ -169,7 +169,7 @@ public static class CommunityDailyHelper
         try
         {
             using var httpClient = new HttpClient();
-            var url = "https://gf2-bbs-api.sunborngame.com/community/task/sign_in";
+            var url = "https://gf2-bbs-api.exiliumgf.com/community/task/sign_in";
 
             var request = new HttpRequestMessage(HttpMethod.Post, url)
             {
@@ -194,7 +194,7 @@ public static class CommunityDailyHelper
         try
         {
             using var httpClient = new HttpClient();
-            var url = "https://gf2-bbs-api.sunborngame.com/community/topic/list?sort_type=2";
+            var url = "https://gf2-bbs-api.exiliumgf.com/community/topic/list?sort_type=2";
             var options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
@@ -223,7 +223,7 @@ public static class CommunityDailyHelper
         {
             using var httpClient = new HttpClient();
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(token);
-            var baseUrl = $"https://gf2-bbs-api.sunborngame.com/community/topic";
+            var baseUrl = $"https://gf2-bbs-api.exiliumgf.com/community/topic";
 
             // View
             var viewUrl = $"{baseUrl}/{topicId}?id={topicId}";
@@ -334,7 +334,7 @@ public class CommunityDailyAction : IMaaCustomAction
 {
     public string Name { get; set; } = nameof(CommunityDailyAction);
 
-    public bool Run(in IMaaContext context, in RunArgs args, in RunResults res)
+    public bool Run<T>(T context, in RunArgs args, in RunResults res) where T : IMaaContext
     {
         try
         {
