@@ -40,7 +40,7 @@
             "TimeLimitedGiftPackagePageSwipe"
         ],
         "focus": {
-            "Node.Action.Succeeded": "已进入购买每周礼包页"
+            "Node.Action.Succeeded": "已进入每周礼包页"
         }
     },
     "TimeLimitedGiftPackagePageSwipe": {
@@ -113,7 +113,7 @@
             "exitGameStore"
         ],
         "focus": {
-            "Node.Action.Succeeded": "已进入购买每日礼包页"
+            "Node.Action.Succeeded": "已进入每日礼包页"
         }
     },
     "clickDailySupplyBox": {
