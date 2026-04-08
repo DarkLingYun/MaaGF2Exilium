@@ -24,7 +24,10 @@
     },
     "clickTimeLimitedGiftPackage": {
         "recognition": "OCR",
-        "expected": "^限时礼包$",
+        "expected": [
+            "^限时礼包$",
+            "^臻品礼包$"
+        ],
         "roi": [
             0,
             0,
