@@ -1551,6 +1551,102 @@
         "物资模式活动选择": {
             "cases": [
                 {
+                    "name": "镜像冗余·下篇(索普)",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "镜像冗余",
+                                "镜像",
+                                "像冗",
+                                "冗余"
+                            ],
+                            "roi": [
+                                57,
+                                77,
+                                230,
+                                310
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "doc": "版本活动商品兑换",
+                            "recognition": "Or",
+                            "any_of": [
+                                {
+                                    "recognition": "OCR",
+                                    "expected": [
+                                        "无垢乐园",
+                                        "无垢",
+                                        "乐园",
+                                        "垢乐"
+                                    ]
+                                },
+                                {
+                                    "recognition": "TemplateMatch",
+                                    "template": "版本活动/无垢乐园.png"
+                                }
+                            ],
+                            "action": "Click"
+                        },
+                        "switchVersionActivityChapter": {
+                            "enabled": true,
+                            "expected": [
+                                "^镜像冗余.*下篇$",
+                                "^镜像.*下篇$",
+                                "冗余.*下篇$"
+                            ]
+                        },
+                        "selectExchangeType": {
+                            "focus": {
+                                "Node.Action.Starting": "切换下篇商店"
+                            },
+                            "enabled": true,
+                            "expected": [
+                                "下"
+                            ]
+                        },
+                        "selectResourceModeLevel": {
+                            "doc": "选择物资模式关卡",
+                            "recognition": "Or",
+                            "any_of": [
+                                {
+                                    "recognition": "OCR",
+                                    "expected": [
+                                        "^.*5$",
+                                        "5$",
+                                        "-5",
+                                        "5"
+                                    ],
+                                    "roi": [
+                                        572,
+                                        269,
+                                        424,
+                                        163
+                                    ]
+                                },
+                                {
+                                    "recognition": "TemplateMatch",
+                                    "template": "版本活动/镜像冗余下篇物资.png",
+                                    "roi": [
+                                        666,
+                                        296,
+                                        235,
+                                        93
+                                    ]
+                                }
+                            ],
+                            "action": "Click"
+                        },
+                        "exitVersionActivityResourceSweep": {
+                            "roi": [
+                                0,
+                                0,
+                                185,
+                                90
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "镜像冗余·上篇",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
