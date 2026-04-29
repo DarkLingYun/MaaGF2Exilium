@@ -1551,6 +1551,84 @@
         "物资模式活动选择": {
             "cases": [
                 {
+                    "name": "琥珀月光(米蒂尔)",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "琥珀月光",
+                                "珀月光",
+                                "琥珀月",
+                                "月光",
+                                "琥珀",
+                                "珀月"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "首映礼品店",
+                                "礼品店",
+                                "首映",
+                                "首映礼"
+                            ],
+                            "roi": [
+                                107,
+                                607,
+                                238,
+                                76
+                            ]
+                        },
+                        "selectResourceModeLevel": {
+                            "doc": "选择物资模式关卡",
+                            "recognition": "Or",
+                            "any_of": [
+                                {
+                                    "recognition": "OCR",
+                                    "expected": [
+                                        "^.*5$",
+                                        "5$",
+                                        "-5",
+                                        "5"
+                                    ],
+                                    "roi": [
+                                        572,
+                                        269,
+                                        424,
+                                        163
+                                    ]
+                                },
+                                {
+                                    "recognition": "TemplateMatch",
+                                    "template": "版本活动/琥珀月光物资5.png",
+                                    "roi": [
+                                        666,
+                                        296,
+                                        235,
+                                        93
+                                    ]
+                                }
+                            ],
+                            "action": "Click"
+                        },
+                        "exitVersionActivityResourceSweep": {
+                            "roi": [
+                                0,
+                                0,
+                                185,
+                                90
+                            ]
+                        },
+                        "开始活动内每日任务": {
+                            "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
+                            "enabled": true,
+                            "expected": [
+                                "^影院通告$",
+                                "通告$",
+                                "^影院"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "镜像冗余·下篇(索普)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
