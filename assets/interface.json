@@ -2193,7 +2193,7 @@
                     }
                 },
                 {
-                    "name": "歧路双轨·上篇",
+                    "name": "歧路双轨·上篇（美服/国际服）",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -2280,7 +2280,7 @@
                     }
                 },
                 {
-                    "name": "火花之罪·下篇（美服/国际服）",
+                    "name": "火花之罪·下篇(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -2310,7 +2310,7 @@
                     }
                 },
                 {
-                    "name": "火花之罪·上篇",
+                    "name": "火花之罪·上篇(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
@@ -2573,7 +2573,7 @@
                     }
                 },
                 {
-                    "name": "驻足之地（已结束）",
+                    "name": "驻足之地(已结束)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
                             "expected": [
