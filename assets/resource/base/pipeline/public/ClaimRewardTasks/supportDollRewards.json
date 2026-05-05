@@ -30,7 +30,7 @@
     "claimSupportDollRewards": {
         "doc": "领取助战人形奖励",
         "recognition": "TemplateMatch",
-        "template": "个人信息/领取.png",
+        "template": "个人信息/领取_1.png",
         "action": "Click",
         "next": [
             "closeClaimResult",
