@@ -84,7 +84,10 @@
     "选择常规菜品": {
         "recognition": "TemplateMatch",
         "action": "Click",
-        "template": "活动层/常规菜品.png",
+        "template": [
+            "活动层/常规菜品.png",
+            "活动层/常规菜品_已选中.png"
+        ],
         "post_wait_freezes": 1000,
         "next": [
             "邀请人形-美味烹调"
