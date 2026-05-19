@@ -1551,6 +1551,83 @@
         "物资模式活动选择": {
             "cases": [
                 {
+                    "name": "忒弥斯棋局(维尔德)",
+                    "pipeline_override": {
+                        "clickVersionActivityTagButton": {
+                            "expected": [
+                                "忒弥斯棋局",
+                                "斯棋局",
+                                "棋局",
+                                "忒弥斯",
+                                "弥斯棋",
+                                "忒弥"
+                            ]
+                        },
+                        "enterVersionActivityItemExchange": {
+                            "expected": [
+                                "红茶馆",
+                                "茶馆",
+                                "红茶"
+                            ],
+                            "roi": [
+                                107,
+                                607,
+                                238,
+                                76
+                            ]
+                        },
+                        "selectResourceModeLevel": {
+                            "doc": "选择物资模式关卡",
+                            "recognition": "Or",
+                            "any_of": [
+                                {
+                                    "recognition": "OCR",
+                                    "expected": [
+                                        "^.*5$",
+                                        "5$",
+                                        "-5",
+                                        "5"
+                                    ],
+                                    "roi": [
+                                        572,
+                                        269,
+                                        424,
+                                        163
+                                    ]
+                                },
+                                {
+                                    "recognition": "TemplateMatch",
+                                    "template": "版本活动/琥珀月光物资5.png",
+                                    "roi": [
+                                        666,
+                                        296,
+                                        235,
+                                        93
+                                    ]
+                                }
+                            ],
+                            "action": "Click"
+                        },
+                        "exitVersionActivityResourceSweep": {
+                            "roi": [
+                                0,
+                                0,
+                                185,
+                                90
+                            ]
+                        },
+                        "开始活动内每日任务": {
+                            "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
+                            "enabled": true,
+                            "expected": [
+                                "^前期搜查$",
+                                "搜查$",
+                                "^前期"
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "琥珀月光(米蒂尔)",
                     "pipeline_override": {
                         "clickVersionActivityTagButton": {
