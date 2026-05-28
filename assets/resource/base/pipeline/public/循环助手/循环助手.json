@@ -72,6 +72,24 @@
         "order_by": "Horizontal",
         "index": -1,
         "next": [
+            "循环进行中",
+            "循环结束"
+        ]
+    },
+    "循环进行中": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "循环助手/循环进行中.png"
+        ],
+        "roi": [
+            453,
+            628,
+            371,
+            80
+        ],
+        "action": "DoNothing",
+        "next": [
+            "循环进行中",
             "循环结束"
         ]
     },
