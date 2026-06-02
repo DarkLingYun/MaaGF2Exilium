@@ -42,6 +42,9 @@
         ],
         "action": "Click",
         "post_wait_freezes": 1500,
+        "focus": {
+            "Node.Action.Succeeded": "点击自主循环"
+        },
         "next": [
             "开始执行循环任务",
             "进入循环助手页面"
@@ -52,6 +55,9 @@
         "expected": [
             "开始循环"
         ],
+        "focus": {
+            "Node.Action.Succeeded": "已点击开始循环"
+        },
         "max_hit": 3,
         "action": "Click",
         "timeout": 6000000, // 有的用户会用循环助手打尘烟前线，需要设置时间长一点
@@ -91,13 +97,22 @@
         "next": [
             "循环进行中",
             "循环结束"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Failed": "未检测的循环进行中，检测是否结束",
+            "Node.Action.Succeeded": "循环进行中..."
+        },
+        "post_delay": 5000
     },
     "循环结束": {
         "recognition": "OCR",
         "expected": [
             "循环结束"
         ],
+        "focus": {
+            "Node.Action.Succeeded": "循环已结束",
+            "Node.Action.Failed": "循环未结束"
+        },
         "next": [
             "确认循环结束"
         ]
