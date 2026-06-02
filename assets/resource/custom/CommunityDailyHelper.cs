@@ -90,9 +90,7 @@ public static class CommunityDailyHelper
                 PropertyNameCaseInsensitive = true
             };
 
-            payload.Source = payload.AccountName.Contains("@") ? "mail" : "phone";
-
-            // 首次尝试
+            // 使用用户配置的 source 值
             var jsonPayload = JsonSerializer.Serialize(payload);
             var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
 
@@ -107,24 +105,7 @@ public static class CommunityDailyHelper
                 return data.Account.Token;
             }
 
-            // 再次尝试
-            payload.Source = payload.Source == "mail" ? "phone" : "mail";
-            jsonPayload = JsonSerializer.Serialize(payload);
-            content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
-
-            response = await httpClient.PostAsync(url, content);
-            responseBody = await response.Content.ReadAsStringAsync();
-
-            loginResponse = JsonSerializer.Deserialize<LoginResponse>(responseBody, options);
-
-            if (loginResponse.Code == 0)
-            {
-                var data = JsonSerializer.Deserialize<LoginResponseData>(JsonSerializer.Serialize(loginResponse.Data));
-                return data.Account.Token;
-            }
-
-            // 两种方式都不行, 抛出
-            throw new ArgumentException($"用户名或密码错误. 请检查 `config/secret.json` 是否正确填写. `config/secret.json` 要填入两个字段: account_name 对应账户名称(可以是邮箱或手机号), passwd 对应账户密码.");
+            throw new ArgumentException($"用户名或密码错误. 请检查 `config/secret.json` 是否正确填写. `config/secret.json` 要填入三个字段: account_name 对应账户名称, passwd 对应密码密文, source 对应账户类型(mail或phone).");
         }
         catch (Exception ex)
         {
@@ -350,8 +331,9 @@ public class CommunityDailyAction : IMaaCustomAction
                 Directory.CreateDirectory(secretDir);
                 var initialContent = new
                 {
-                    account_name = "手机号或邮箱",
-                    passwd = ""
+                    account_name = "密文",
+                    passwd = "密码密文",
+                    source = "phone或mail 根据登录的账号类型填写"
                 };
                 string json = JsonSerializer.Serialize(initialContent, new JsonSerializerOptions
                 {
@@ -368,7 +350,15 @@ public class CommunityDailyAction : IMaaCustomAction
             string jsonContent = File.ReadAllText(secretFilePath);
             LoginPayload payload = JsonSerializer.Deserialize<LoginPayload>(jsonContent, options)
                 ?? throw new InvalidDataException("反序列化结果为 null");
-            payload.Password = PasswordHelper.GetMD5HashedPassword(payload.Password); // MD5加密后再发送给社区服务器
+
+            // 校验 source 字段
+            if (string.IsNullOrEmpty(payload.Source) || 
+                (payload.Source != "mail" && payload.Source != "phone"))
+            {
+                throw new ArgumentException($"source 字段值无效. 请检查 `config/secret.json` 中 source 字段只能为 `mail` 或 `phone`.");
+            }
+
+            // 用户已填写密文密码，不再加密
             CommunityDailyHelper.ExecuteDailyTaskAsync(payload).GetAwaiter().GetResult();
 
             LoggerHelper.Info("社区每日操作: 执行成功");

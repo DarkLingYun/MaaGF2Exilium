@@ -54,12 +54,19 @@
 > [!NOTE]  
 > 在使用该功能前, 请确定可以通过账号密码登录到[少女前线2: 追放社区](https://gf2-bbs.exiliumgf.com/)。
 
-在确认可以登录到社区后，想要使用 `社区每日操作` 功能时，请在脚本程序根目录下 `config` 目录中创建一个名为 `secret.json` 的文件，并使用记事本程序等打开写入以下内容并保存：
+在确认可以登录到社区后，想要使用 `社区每日操作` 功能时，请在脚本程序根目录下 `config` 目录中创建一个名为 `secret.json` 的文件，并使用记事本程序等打开写入以下内容并保存，密文获取参考下图：
+
+ <p align="center">
+  <img alt="logo2" src="./imgs/密文获取方式.png" width="500"/>
+  <br>
+  <span>密文获取方式</span>
+</p>
 
 ```json
 {
-  "account_name": "手机号或邮箱",
-  "passwd": "用户密码"
+  "account_name": "手机号或邮箱密文",
+  "passwd": "用户密码密文",
+  "source": "phone"
 }
 ```
 
