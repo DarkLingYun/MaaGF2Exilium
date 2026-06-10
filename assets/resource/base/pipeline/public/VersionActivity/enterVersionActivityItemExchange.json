@@ -37,6 +37,7 @@
         ],
         "recognition": "OCR",
         "expected": [
+            "模块",
             "规格",
             "索引",
             "泛用",
