@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <p align="center">
-<img alt="logo2" src="./imgs图标.png" width="256"/>
+<img alt="logo2" src="./imgs/图标.png" width="256"/>
 </p>
 
 <div align="center">
