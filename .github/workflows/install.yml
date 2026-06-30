@@ -129,12 +129,44 @@ jobs:
           find ./MFA -type f \( -name "*.zip" -o -name "*.tar" -o -name "*.tar.gz" -o -name "*.7z" -o -name "*.rar" \) -delete
           echo "Cleaned up archive files in MFA directory"
 
+      - name: Convert PNG to ICO
+        shell: bash
+        run: |
+          if [ "${{ matrix.os_name }}" = "win" ]; then
+            choco install imagemagick -y
+            magick convert imgs/图标2.png -define icon:auto-resize=256,128,64,48,32,24,16 gf2.ico
+          elif [ "${{ matrix.os_name }}" = "macos" ]; then
+            brew install imagemagick
+            magick convert imgs/图标2.png -define icon:auto-resize=256,128,64,48,32,24,16 gf2.ico
+          fi
+
+      - name: Modify MFAAvalonia exe icon
+        if: matrix.arch == 'x86_64' && matrix.os_name == 'win'
+        shell: bash
+        run: |
+          curl -L "https://github.com/electron/rcedit/releases/download/v2.0.0/rcedit-x64.exe" -o rcedit.exe
+          ./rcedit.exe "MFA/MFAAvalonia.exe" --set-icon "gf2.ico"
+          echo "MFAAvalonia icon modified successfully"
+
       - name: Install
         shell: bash
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
           if [ "${{ matrix.os_name }}" = "win" ]; then
             jq --arg url "https://github.com/DarkLingYun/MaaGF2Exilium" --arg version "${{ needs.meta.outputs.tag }}" '. + {"url": $url, "version": $version}' ./assets/interface.json > ./install/interface.json
+          fi
+
+      - name: Replace Assets with custom assets folder
+        shell: bash
+        run: |
+          if [ -d "install/Assets" ]; then
+            rm -rf install/Assets
+            echo "Removed original Assets folder"
+          fi
+          mkdir -p install/assets
+          if [ -f "gf2.ico" ]; then
+            cp gf2.ico install/assets/logo.ico
+            echo "Copied custom icon to assets/logo.ico"
           fi
           
       - uses: actions/upload-artifact@v4
