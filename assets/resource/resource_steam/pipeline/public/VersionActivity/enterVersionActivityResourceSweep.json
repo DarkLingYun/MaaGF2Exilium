@@ -1,14 +1,15 @@
 {
-    "exitVersionActivityResourceSweep": {
-        "next": [
-            "enterVersionActivityItemExchange",
-            "HomePage",
-            "[JumpBack]VK_ESCAPE_Click"
-        ]
-    },
-    "startResourceLevelSweep": {
-        "next": [
-            "exitVersionActivityResourceSweep"
-        ]
-    }
+  "exitVersionActivityResourceSweep": {
+    "next": [
+      "enterVersionActivityItemExchange",
+      "HomePage",
+      "[JumpBack]VK_ESCAPE_Click"
+    ]
+  },
+  "startResourceLevelSweep": {
+    "next": ["exitVersionActivityResourceSweep"]
+  },
+  "setMaxResourceLevelSweepTimes": {
+    "roi": [815, 361, 42, 23]
+  }
 }
