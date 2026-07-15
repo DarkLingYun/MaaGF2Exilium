@@ -4,7 +4,7 @@
   },
   "clickHomeButton": {
     "doc": "Swap clickHomeButton to VK_ESCAPE_Click for Steam version, lower threshold for shop",
-    "threshold": 0.595,
+    "threshold": 0.55,
     "action": "DoNothing",
     "next": ["VK_ESCAPE_Click"]
   },
