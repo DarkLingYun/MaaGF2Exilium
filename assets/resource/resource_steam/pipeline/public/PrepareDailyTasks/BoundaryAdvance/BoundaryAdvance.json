@@ -1,0 +1,11 @@
+{
+  "clickBoundaryAdvanceDelegateButton": {
+    "roi": [864, 646, 67, 29]
+  },
+  "boundaryAdvanceDelegateOneClickClaim": {
+    "recognition": "OCR",
+    "roi": [991, 645, 280, 51],
+    "expected": "一键领取",
+    "threshold": 0.85
+  }
+}
