@@ -36,7 +36,9 @@
       "公用按钮组件/返回上一页_gray_v2.png",
       "公用按钮组件/返回上一页_black_v2.png"
     ],
-    "action": "Click",
+    "threshold": 0.65,
+    "action": "ClickKey",
+    "key": 27,
     "green_mask": true,
     "next": ["进入子群2-极限峰值"]
   },
@@ -73,7 +75,9 @@
       "公用按钮组件/返回上一页_gray_v2.png",
       "公用按钮组件/返回上一页_black_v2.png"
     ],
-    "action": "Click",
+    "threshold": 0.65,
+    "action": "ClickKey",
+    "key": 27,
     "green_mask": true,
     "next": ["进入子群3-极限峰值"]
   },
@@ -110,7 +114,9 @@
       "公用按钮组件/返回上一页_gray_v2.png",
       "公用按钮组件/返回上一页_black_v2.png"
     ],
-    "action": "Click",
+    "threshold": 0.65,
+    "action": "ClickKey",
+    "key": 27,
     "green_mask": true,
     "next": ["极限峰值任务完成"]
   },
