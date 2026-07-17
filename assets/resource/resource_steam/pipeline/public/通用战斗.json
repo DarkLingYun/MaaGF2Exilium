@@ -10,5 +10,9 @@
     "post_wait_freezes": {
       "time": 0
     }
+  },
+  "点击通信中图片跳过角色对话-通用战斗": {
+    "recognition": "OCR",
+    "expected": "通信中"
   }
 }
