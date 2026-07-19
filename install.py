@@ -78,6 +78,14 @@ def install_chores():
     )
 
 
+def install_agent():
+    shutil.copytree(
+        working_dir / "agent",
+        install_path / "agent",
+        dirs_exist_ok=True,
+    )
+
+
 def install_MFAAvalonia():
     # 检查 MFA 目录是否存在
     mfa_dir = working_dir / "MFA"
@@ -122,6 +130,7 @@ if __name__ == "__main__":
     install_resource()
     install_deps()
     install_chores()
+    install_agent()
     install_MFAAvalonia()
 
     print(f"Install to {install_path} successfully.")

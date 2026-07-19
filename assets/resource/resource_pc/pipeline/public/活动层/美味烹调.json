@@ -1,0 +1,13 @@
+{
+    "走向美味烹调": {
+        "doc": "S 后退",
+        "action": "LongPressKey",
+        "key": 83,
+        "duration": 500
+    },
+    "进入美味烹调区域": {
+        "doc": "按 F 进入美味烹调",
+        "action": "ClickKey",
+        "key": 70
+    }
+}
