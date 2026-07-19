@@ -1,0 +1,61 @@
+{
+    "已解锁茶歇一刻": {
+        "next": [
+            "走向茶歇一刻-step1-完成",
+            "[JumpBack]走向茶歇一刻-step1"
+        ]
+    },
+    "走向茶歇一刻-step1": {
+        "doc": "向左走，越过吧台玻璃围栏",
+        "action": "LongPressKey",
+        "key": 65,
+        "duration": 300
+    },
+    "走向茶歇一刻-step1-完成": {
+        "recognition": "FeatureMatch",
+        "template": "活动层/茶歇一刻-吧台定位图.png",
+        "green_mask": true,
+        "roi": [
+            862,
+            112,
+            415,
+            304
+        ],
+        "next": [
+            "走向茶歇一刻-step2-完成",
+            "[JumpBack]走向茶歇一刻-step2"
+        ]
+    },
+    "走向茶歇一刻-step2": {
+        "doc": "向前走，上台阶",
+        "action": "LongPressKey",
+        "key": 87,
+        "duration": 300
+    },
+    "走向茶歇一刻-step2-完成": {
+        "recognition": "FeatureMatch",
+        "template": "活动层/茶歇一刻-吧台定位图.png",
+        "green_mask": true,
+        "roi": [
+            1080,
+            112,
+            200,
+            304
+        ],
+        "next": [
+            "进入茶歇一刻区域",
+            "[JumpBack]走向茶歇一刻-step3"
+        ]
+    },
+    "走向茶歇一刻-step3": {
+        "doc": "向右走，前往吧台",
+        "action": "LongPressKey",
+        "key": 68,
+        "duration": 300
+    },
+    "进入茶歇一刻区域": {
+        "doc": "按 F 进入茶歇一刻",
+        "action": "ClickKey",
+        "key": 70
+    }
+}

@@ -18,10 +18,18 @@
       }
     }
   ],
+  "agent": {
+    "child_exec": "python",
+    "child_args": [
+      "./../agent/main.py"
+    ]
+  },
   "resource": [
     {
       "name": "官服",
-      "path": ["{PROJECT_DIR}/resource/base"]
+      "path": [
+        "{PROJECT_DIR}/resource/base"
+      ]
     },
     {
       "name": "B 服",
@@ -56,6 +64,7 @@
       "name": "PC 端 (Steam)",
       "path": [
         "{PROJECT_DIR}/resource/base",
+        "{PROJECT_DIR}/resource/resource_pc",
         "{PROJECT_DIR}/resource/resource_steam"
       ]
     }
@@ -104,18 +113,28 @@
     {
       "name": "活动层",
       "entry": "开始活动层任务",
-      "option": ["美味烹调", "茶歇一刻", "饮品加成", "领取逸趣导算进度奖励"],
+      "option": [
+        "美味烹调",
+        "茶歇一刻",
+        "饮品加成",
+        "领取逸趣导算进度奖励"
+      ],
       "default_check": true
     },
     {
       "name": "补给作战",
       "entry": "AutoSweepBattle",
-      "option": ["作战类型"]
+      "option": [
+        "作战类型"
+      ]
     },
     {
       "name": "心智勘测",
       "entry": "MindSurveyTask",
-      "option": ["转录序体：", "勘测次数："],
+      "option": [
+        "转录序体：",
+        "勘测次数："
+      ],
       "description": "心智勘测体力值每次消耗30"
     },
     {
@@ -138,9 +157,21 @@
     {
       "name": "版本活动日常",
       "entry": "VersionActivityTask",
-      "option": ["物资模式活动选择", "物资商品兑换"],
+      "option": [
+        "物资模式活动选择",
+        "物资商品兑换"
+      ],
       "default_check": true,
       "description": "物资模式仅识别第五关"
+    },
+    {
+      "name": "版本活动日常2（美服/国际服）",
+      "entry": "VersionActivityTask",
+      "option": [
+        "物资模式活动选择2（美服/国际服）",
+        "物资商品兑换2（美服/国际服）"
+      ],
+      "doc": "适配美服/国际服双版本活动，物资模式仅识别第五关"
     },
     {
       "name": "易物所商店兑换",
@@ -220,7 +251,9 @@
       "name": "小游戏",
       "entry": "开始小游戏",
       "default_check": false,
-      "option": ["小游戏类型选择"],
+      "option": [
+        "小游戏类型选择"
+      ],
       "description": "自动进行遗珍回收（肉鸽）、异维探渊（云图计划自走棋）小游戏"
     }
   ],
@@ -820,55 +853,7 @@
           "name": "星标饮品",
           "pipeline_override": {
             "选择饮品-茶歇一刻": {
-              "template": "活动层/星标.png"
-            }
-          }
-        },
-        {
-          "name": "战场报告",
-          "pipeline_override": {
-            "选择饮品-茶歇一刻": {
-              "template": "活动层/战场报告.png"
-            }
-          }
-        },
-        {
-          "name": "解析图纸",
-          "pipeline_override": {
-            "选择饮品-茶歇一刻": {
-              "template": "活动层/解析图纸.png"
-            }
-          }
-        },
-        {
-          "name": "存量条",
-          "pipeline_override": {
-            "选择饮品-茶歇一刻": {
-              "template": "活动层/存量条.png"
-            }
-          }
-        },
-        {
-          "name": "转录导体",
-          "pipeline_override": {
-            "选择饮品-茶歇一刻": {
-              "template": "活动层/转录导体.png"
-            }
-          }
-        },
-        {
-          "name": "内存条",
-          "pipeline_override": {
-            "选择饮品-茶歇一刻": {
-              "template": "活动层/内存条.png"
-            }
-          }
-        },
-        {
-          "name": "数据链路",
-          "pipeline_override": {
-            "选择饮品-茶歇一刻": {
-              "template": "活动层/数据链路.png"
+              "template": "活动层/茶歇一刻-星标.png"
             }
           }
         }
@@ -903,7 +888,9 @@
               "expected": "深度搜索"
             }
           },
-          "option": ["补给次数"]
+          "option": [
+            "补给次数"
+          ]
         },
         {
           "name": "军备解析(武器升级)",
@@ -912,7 +899,9 @@
               "expected": "军备解析"
             }
           },
-          "option": ["补给次数"]
+          "option": [
+            "补给次数"
+          ]
         },
         {
           "name": "决策构象(人形等级突破)",
@@ -921,11 +910,17 @@
               "expected": "决策构象"
             }
           },
-          "option": ["补给次数"]
+          "option": [
+            "补给次数"
+          ]
         },
         {
           "name": "定向精研(武器配件)",
-          "option": ["配件类型", "配件效果", "配件刷取次数"]
+          "option": [
+            "配件类型",
+            "配件效果",
+            "配件刷取次数"
+          ]
         },
         {
           "name": "标准同调(金币本)",
@@ -934,7 +929,9 @@
               "expected": "标准同调"
             }
           },
-          "option": ["补给次数"]
+          "option": [
+            "补给次数"
+          ]
         }
       ]
     },
@@ -1084,7 +1081,10 @@
           "name": "护盾守愈",
           "pipeline_override": {
             "selectedEffectsCombination": {
-              "expected": ["^护盾守愈$", "^护盾守"]
+              "expected": [
+                "^护盾守愈$",
+                "^护盾守"
+              ]
             }
           }
         },
@@ -1092,7 +1092,10 @@
           "name": "迫近强攻",
           "pipeline_override": {
             "selectedEffectsCombination": {
-              "expected": ["^迫近强攻$", "^迫近强"]
+              "expected": [
+                "^迫近强攻$",
+                "^迫近强"
+              ]
             }
           }
         },
@@ -1100,7 +1103,11 @@
           "name": "巅峰召唤",
           "pipeline_override": {
             "selectedEffectsCombination": {
-              "expected": ["^巅峰召唤$", "^巅峰召唤", "峰召唤$"]
+              "expected": [
+                "^巅峰召唤$",
+                "^巅峰召唤",
+                "峰召唤$"
+              ]
             }
           }
         }
@@ -1514,8 +1521,19 @@
           "name": "伊利昂之围·上篇(克莱妲)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["伊利昂之围", "伊利昂", "之围", "利昂", "昂之围"],
-              "roi": [57, 77, 230, 310]
+              "expected": [
+                "伊利昂之围",
+                "伊利昂",
+                "之围",
+                "利昂",
+                "昂之围"
+              ],
+              "roi": [
+                57,
+                77,
+                230,
+                310
+              ]
             },
             "enterVersionActivityItemExchange": {
               "doc": "版本活动商品兑换",
@@ -1523,7 +1541,12 @@
               "any_of": [
                 {
                   "recognition": "OCR",
-                  "expected": ["特洛伊遗产", "洛伊遗产", "伊遗产", "遗产"]
+                  "expected": [
+                    "特洛伊遗产",
+                    "洛伊遗产",
+                    "伊遗产",
+                    "遗产"
+                  ]
                 },
                 {
                   "recognition": "TemplateMatch",
@@ -1545,7 +1568,9 @@
                 "Node.Action.Starting": "切换上篇商店"
               },
               "enabled": true,
-              "expected": ["上"]
+              "expected": [
+                "上"
+              ]
             },
             "selectResourceModeLevel": {
               "doc": "选择物资模式关卡",
@@ -1553,19 +1578,39 @@
               "any_of": [
                 {
                   "recognition": "OCR",
-                  "expected": ["^.*5$", "5$", "-5", "5"],
-                  "roi": [572, 269, 424, 163]
+                  "expected": [
+                    "^.*5$",
+                    "5$",
+                    "-5",
+                    "5"
+                  ],
+                  "roi": [
+                    572,
+                    269,
+                    424,
+                    163
+                  ]
                 },
                 {
                   "recognition": "TemplateMatch",
                   "template": "版本活动/伊利昂之围物资5上篇.png",
-                  "roi": [666, 296, 235, 93]
+                  "roi": [
+                    666,
+                    296,
+                    235,
+                    93
+                  ]
                 }
               ],
               "action": "Click"
             },
             "exitVersionActivityResourceSweep": {
-              "roi": [0, 0, 185, 90]
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
             }
           }
         },
@@ -1583,8 +1628,17 @@
               ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["静浪宝匣", "宝匣", "静浪"],
-              "roi": [107, 607, 238, 76]
+              "expected": [
+                "静浪宝匣",
+                "宝匣",
+                "静浪"
+              ],
+              "roi": [
+                107,
+                607,
+                238,
+                76
+              ]
             },
             "selectResourceModeLevel": {
               "doc": "选择物资模式关卡",
@@ -1592,24 +1646,48 @@
               "any_of": [
                 {
                   "recognition": "OCR",
-                  "expected": ["^.*5$", "5$", "-5", "5"],
-                  "roi": [572, 269, 424, 163]
+                  "expected": [
+                    "^.*5$",
+                    "5$",
+                    "-5",
+                    "5"
+                  ],
+                  "roi": [
+                    572,
+                    269,
+                    424,
+                    163
+                  ]
                 },
                 {
                   "recognition": "TemplateMatch",
                   "template": "版本活动/梦中的永无岛物资5.png",
-                  "roi": [666, 296, 235, 93]
+                  "roi": [
+                    666,
+                    296,
+                    235,
+                    93
+                  ]
                 }
               ],
               "action": "Click"
             },
             "exitVersionActivityResourceSweep": {
-              "roi": [0, 0, 185, 90]
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
               "enabled": true,
-              "expected": ["^明灯渡口$", "渡口$", "^明灯"]
+              "expected": [
+                "^明灯渡口$",
+                "渡口$",
+                "^明灯"
+              ]
             }
           }
         },
@@ -1627,8 +1705,17 @@
               ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["红茶馆", "茶馆", "红茶"],
-              "roi": [107, 607, 238, 76]
+              "expected": [
+                "红茶馆",
+                "茶馆",
+                "红茶"
+              ],
+              "roi": [
+                107,
+                607,
+                238,
+                76
+              ]
             },
             "selectResourceModeLevel": {
               "doc": "选择物资模式关卡",
@@ -1636,24 +1723,48 @@
               "any_of": [
                 {
                   "recognition": "OCR",
-                  "expected": ["^.*5$", "5$", "-5", "5"],
-                  "roi": [572, 269, 424, 163]
+                  "expected": [
+                    "^.*5$",
+                    "5$",
+                    "-5",
+                    "5"
+                  ],
+                  "roi": [
+                    572,
+                    269,
+                    424,
+                    163
+                  ]
                 },
                 {
                   "recognition": "TemplateMatch",
                   "template": "版本活动/忒弥斯棋局物资5.png",
-                  "roi": [666, 296, 235, 93]
+                  "roi": [
+                    666,
+                    296,
+                    235,
+                    93
+                  ]
                 }
               ],
               "action": "Click"
             },
             "exitVersionActivityResourceSweep": {
-              "roi": [0, 0, 185, 90]
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
               "enabled": true,
-              "expected": ["^前期搜查$", "搜查$", "^前期"]
+              "expected": [
+                "^前期搜查$",
+                "搜查$",
+                "^前期"
+              ]
             }
           }
         },
@@ -1671,8 +1782,18 @@
               ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["首映礼品店", "礼品店", "首映", "首映礼"],
-              "roi": [107, 607, 238, 76]
+              "expected": [
+                "首映礼品店",
+                "礼品店",
+                "首映",
+                "首映礼"
+              ],
+              "roi": [
+                107,
+                607,
+                238,
+                76
+              ]
             },
             "selectResourceModeLevel": {
               "doc": "选择物资模式关卡",
@@ -1680,24 +1801,48 @@
               "any_of": [
                 {
                   "recognition": "OCR",
-                  "expected": ["^.*5$", "5$", "-5", "5"],
-                  "roi": [572, 269, 424, 163]
+                  "expected": [
+                    "^.*5$",
+                    "5$",
+                    "-5",
+                    "5"
+                  ],
+                  "roi": [
+                    572,
+                    269,
+                    424,
+                    163
+                  ]
                 },
                 {
                   "recognition": "TemplateMatch",
                   "template": "版本活动/琥珀月光物资5.png",
-                  "roi": [666, 296, 235, 93]
+                  "roi": [
+                    666,
+                    296,
+                    235,
+                    93
+                  ]
                 }
               ],
               "action": "Click"
             },
             "exitVersionActivityResourceSweep": {
-              "roi": [0, 0, 185, 90]
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
               "enabled": true,
-              "expected": ["^影院通告$", "通告$", "^影院"]
+              "expected": [
+                "^影院通告$",
+                "通告$",
+                "^影院"
+              ]
             }
           }
         },
@@ -1705,8 +1850,18 @@
           "name": "镜像冗余·下篇(索普)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["镜像冗余", "镜像", "像冗", "冗余"],
-              "roi": [57, 77, 230, 310]
+              "expected": [
+                "镜像冗余",
+                "镜像",
+                "像冗",
+                "冗余"
+              ],
+              "roi": [
+                57,
+                77,
+                230,
+                310
+              ]
             },
             "enterVersionActivityItemExchange": {
               "doc": "版本活动商品兑换",
@@ -1714,7 +1869,12 @@
               "any_of": [
                 {
                   "recognition": "OCR",
-                  "expected": ["无垢乐园", "无垢", "乐园", "垢乐"]
+                  "expected": [
+                    "无垢乐园",
+                    "无垢",
+                    "乐园",
+                    "垢乐"
+                  ]
                 },
                 {
                   "recognition": "TemplateMatch",
@@ -1725,14 +1885,20 @@
             },
             "switchVersionActivityChapter": {
               "enabled": true,
-              "expected": ["^镜像冗余.*下篇$", "^镜像.*下篇$", "冗余.*下篇$"]
+              "expected": [
+                "^镜像冗余.*下篇$",
+                "^镜像.*下篇$",
+                "冗余.*下篇$"
+              ]
             },
             "selectExchangeType": {
               "focus": {
                 "Node.Action.Starting": "切换下篇商店"
               },
               "enabled": true,
-              "expected": ["下"]
+              "expected": [
+                "下"
+              ]
             },
             "selectResourceModeLevel": {
               "doc": "选择物资模式关卡",
@@ -1740,19 +1906,39 @@
               "any_of": [
                 {
                   "recognition": "OCR",
-                  "expected": ["^.*5$", "5$", "-5", "5"],
-                  "roi": [572, 269, 424, 163]
+                  "expected": [
+                    "^.*5$",
+                    "5$",
+                    "-5",
+                    "5"
+                  ],
+                  "roi": [
+                    572,
+                    269,
+                    424,
+                    163
+                  ]
                 },
                 {
                   "recognition": "TemplateMatch",
                   "template": "版本活动/镜像冗余下篇物资.png",
-                  "roi": [666, 296, 235, 93]
+                  "roi": [
+                    666,
+                    296,
+                    235,
+                    93
+                  ]
                 }
               ],
               "action": "Click"
             },
             "exitVersionActivityResourceSweep": {
-              "roi": [0, 0, 185, 90]
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
             }
           }
         },
@@ -1760,8 +1946,18 @@
           "name": "镜像冗余·上篇",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["镜像冗余", "镜像", "像冗", "冗余"],
-              "roi": [57, 77, 230, 310]
+              "expected": [
+                "镜像冗余",
+                "镜像",
+                "像冗",
+                "冗余"
+              ],
+              "roi": [
+                57,
+                77,
+                230,
+                310
+              ]
             },
             "enterVersionActivityItemExchange": {
               "doc": "版本活动商品兑换",
@@ -1769,7 +1965,12 @@
               "any_of": [
                 {
                   "recognition": "OCR",
-                  "expected": ["无垢乐园", "无垢", "乐园", "垢乐"]
+                  "expected": [
+                    "无垢乐园",
+                    "无垢",
+                    "乐园",
+                    "垢乐"
+                  ]
                 },
                 {
                   "recognition": "TemplateMatch",
@@ -1780,14 +1981,20 @@
             },
             "switchVersionActivityChapter": {
               "enabled": true,
-              "expected": ["^镜像冗余.*上篇$", "^镜像.*上篇$", "冗余.*上篇$"]
+              "expected": [
+                "^镜像冗余.*上篇$",
+                "^镜像.*上篇$",
+                "冗余.*上篇$"
+              ]
             },
             "selectExchangeType": {
               "focus": {
                 "Node.Action.Starting": "切换上篇商店"
               },
               "enabled": true,
-              "expected": ["上"]
+              "expected": [
+                "上"
+              ]
             },
             "selectResourceModeLevel": {
               "doc": "选择物资模式关卡",
@@ -1795,19 +2002,39 @@
               "any_of": [
                 {
                   "recognition": "OCR",
-                  "expected": ["^.*5$", "5$", "-5", "5"],
-                  "roi": [572, 269, 424, 163]
+                  "expected": [
+                    "^.*5$",
+                    "5$",
+                    "-5",
+                    "5"
+                  ],
+                  "roi": [
+                    572,
+                    269,
+                    424,
+                    163
+                  ]
                 },
                 {
                   "recognition": "TemplateMatch",
                   "template": "版本活动/镜像冗余上篇物资.png",
-                  "roi": [666, 296, 235, 93]
+                  "roi": [
+                    666,
+                    296,
+                    235,
+                    93
+                  ]
                 }
               ],
               "action": "Click"
             },
             "exitVersionActivityResourceSweep": {
-              "roi": [0, 0, 185, 90]
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
             }
           }
         },
@@ -1824,8 +2051,18 @@
               ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["坍塌禁区", "塌禁区", "坍塌禁", "塌禁"],
-              "roi": [107, 607, 238, 76]
+              "expected": [
+                "坍塌禁区",
+                "塌禁区",
+                "坍塌禁",
+                "塌禁"
+              ],
+              "roi": [
+                107,
+                607,
+                238,
+                76
+              ]
             },
             "selectResourceModeLevel": {
               "doc": "选择物资模式关卡",
@@ -1833,24 +2070,48 @@
               "any_of": [
                 {
                   "recognition": "OCR",
-                  "expected": ["^.*5$", "5$", "-5", "5"],
-                  "roi": [572, 269, 424, 163]
+                  "expected": [
+                    "^.*5$",
+                    "5$",
+                    "-5",
+                    "5"
+                  ],
+                  "roi": [
+                    572,
+                    269,
+                    424,
+                    163
+                  ]
                 },
                 {
                   "recognition": "TemplateMatch",
                   "template": "版本活动/月下安魂曲物资5.png",
-                  "roi": [666, 296, 235, 93]
+                  "roi": [
+                    666,
+                    296,
+                    235,
+                    93
+                  ]
                 }
               ],
               "action": "Click"
             },
             "exitVersionActivityResourceSweep": {
-              "roi": [0, 0, 185, 90]
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
               "enabled": true,
-              "expected": ["^迷雾暗影$", "暗影$", "^迷雾"]
+              "expected": [
+                "^迷雾暗影$",
+                "暗影$",
+                "^迷雾"
+              ]
             }
           }
         },
@@ -1867,8 +2128,17 @@
               ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["补给仓库", "补给", "仓库"],
-              "roi": [107, 607, 238, 76]
+              "expected": [
+                "补给仓库",
+                "补给",
+                "仓库"
+              ],
+              "roi": [
+                107,
+                607,
+                238,
+                76
+              ]
             },
             "selectResourceModeLevel": {
               "doc": "选择物资模式关卡",
@@ -1876,24 +2146,48 @@
               "any_of": [
                 {
                   "recognition": "OCR",
-                  "expected": ["^.*5$", "5$", "-5", "5"],
-                  "roi": [572, 269, 424, 163]
+                  "expected": [
+                    "^.*5$",
+                    "5$",
+                    "-5",
+                    "5"
+                  ],
+                  "roi": [
+                    572,
+                    269,
+                    424,
+                    163
+                  ]
                 },
                 {
                   "recognition": "TemplateMatch",
                   "template": "版本活动/瑞骋迎春至物资5.png",
-                  "roi": [666, 296, 235, 93]
+                  "roi": [
+                    666,
+                    296,
+                    235,
+                    93
+                  ]
                 }
               ],
               "action": "Click"
             },
             "exitVersionActivityResourceSweep": {
-              "roi": [0, 0, 185, 90]
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
               "enabled": true,
-              "expected": ["^信标巡检$", "巡检$", "^信标"]
+              "expected": [
+                "^信标巡检$",
+                "巡检$",
+                "^信标"
+              ]
             }
           }
         },
@@ -1914,8 +2208,17 @@
               "expected": "^每日留言$"
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["私人珍藏", "私人", "珍藏"],
-              "roi": [107, 607, 238, 76]
+              "expected": [
+                "私人珍藏",
+                "私人",
+                "珍藏"
+              ],
+              "roi": [
+                107,
+                607,
+                238,
+                76
+              ]
             },
             "selectResourceModeLevel": {
               "doc": "选择物资模式关卡",
@@ -1923,24 +2226,48 @@
               "any_of": [
                 {
                   "recognition": "OCR",
-                  "expected": ["^.*5$", "5$", "-5", "5"],
-                  "roi": [572, 269, 424, 163]
+                  "expected": [
+                    "^.*5$",
+                    "5$",
+                    "-5",
+                    "5"
+                  ],
+                  "roi": [
+                    572,
+                    269,
+                    424,
+                    163
+                  ]
                 },
                 {
                   "recognition": "TemplateMatch",
                   "template": "版本活动/信号波重度依赖物资5.png",
-                  "roi": [666, 296, 235, 93]
+                  "roi": [
+                    666,
+                    296,
+                    235,
+                    93
+                  ]
                 }
               ],
               "action": "Click"
             },
             "exitVersionActivityResourceSweep": {
-              "roi": [0, 0, 185, 90]
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
               "enabled": true,
-              "expected": ["^每日留言$", "留言$", "^每日"]
+              "expected": [
+                "^每日留言$",
+                "留言$",
+                "^每日"
+              ]
             }
           }
         },
@@ -1948,61 +2275,127 @@
           "name": "铸碑者的黎明·下篇",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["铸碑者的黎明", "黎明", "铸碑", "铸碑者"],
-              "roi": [57, 77, 230, 310]
+              "expected": [
+                "铸碑者的黎明",
+                "黎明",
+                "铸碑",
+                "铸碑者"
+              ],
+              "roi": [
+                57,
+                77,
+                230,
+                310
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["莫科什街区", "莫科什"],
-              "roi": [25, 121, 210, 157]
+              "expected": [
+                "莫科什街区",
+                "莫科什"
+              ],
+              "roi": [
+                25,
+                121,
+                210,
+                157
+              ]
             },
             "switchVersionActivityChapter": {
               "enabled": true,
-              "expected": ["^铸碑者的黎明.*下篇$", "^黎明.下篇$"]
+              "expected": [
+                "^铸碑者的黎明.*下篇$",
+                "^黎明.下篇$"
+              ]
             },
             "selectExchangeType": {
               "enabled": true,
-              "expected": ["^下篇$"]
+              "expected": [
+                "^下篇$"
+              ]
             },
             "selectResourceModeLevel": {
               "description": "选择物资模式关卡",
               "recognition": "OCR",
               "expected": "^.*5$",
               "action": "Click",
-              "roi": [572, 269, 424, 163]
+              "roi": [
+                572,
+                269,
+                424,
+                163
+              ]
             },
             "exitVersionActivityResourceSweep": {
-              "roi": [0, 0, 185, 90]
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
             }
           }
         },
         {
-          "name": "铸碑者的黎明·上篇（美服/国际服）",
+          "name": "铸碑者的黎明·上篇",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["铸碑者的黎明", "黎明", "铸碑", "铸碑者"],
-              "roi": [57, 77, 230, 310]
+              "expected": [
+                "铸碑者的黎明",
+                "黎明",
+                "铸碑",
+                "铸碑者"
+              ],
+              "roi": [
+                57,
+                77,
+                230,
+                310
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["莫科什街区", "莫科什"],
-              "roi": [25, 121, 210, 157]
+              "expected": [
+                "莫科什街区",
+                "莫科什"
+              ],
+              "roi": [
+                25,
+                121,
+                210,
+                157
+              ]
             },
             "switchVersionActivityChapter": {
               "enabled": true,
-              "expected": ["^铸碑者的黎明.*上篇$", "^黎明.*上篇$"]
+              "expected": [
+                "^铸碑者的黎明.*上篇$",
+                "^黎明.*上篇$"
+              ]
             },
             "selectExchangeType": {
               "enabled": true,
-              "expected": ["^上篇$"]
+              "expected": [
+                "^上篇$"
+              ]
             },
             "selectResourceModeLevel": {
               "description": "选择物资模式关卡",
               "recognition": "OCR",
               "expected": "^.*5$",
               "action": "Click",
-              "roi": [572, 269, 424, 163]
+              "roi": [
+                572,
+                269,
+                424,
+                163
+              ]
             },
             "exitVersionActivityResourceSweep": {
-              "roi": [0, 0, 185, 90]
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
             }
           }
         },
@@ -2018,18 +2411,37 @@
               ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["配送补给站", "配送", "补给站"],
-              "roi": [107, 607, 238, 76]
+              "expected": [
+                "配送补给站",
+                "配送",
+                "补给站"
+              ],
+              "roi": [
+                107,
+                607,
+                238,
+                76
+              ]
             },
             "selectResourceModeLevel": {
               "description": "选择物资模式关卡",
               "recognition": "TemplateMatch",
               "template": "版本活动/王牌配送员物资5.png",
               "action": "Click",
-              "roi": [666, 296, 235, 93]
+              "roi": [
+                666,
+                296,
+                235,
+                93
+              ]
             },
             "exitVersionActivityResourceSweep": {
-              "roi": [0, 0, 185, 90]
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
             }
           }
         },
@@ -2037,51 +2449,85 @@
           "name": "歧路双轨·下篇",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["歧路双轨", "歧路", "双轨", "路双"]
+              "expected": [
+                "歧路双轨",
+                "歧路",
+                "双轨",
+                "路双"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["人形互助站"]
+              "expected": [
+                "人形互助站"
+              ]
             },
             "switchVersionActivityChapter": {
               "enabled": true,
-              "expected": ["^歧路双轨.*下篇$", "^双轨.*下篇$"]
+              "expected": [
+                "^歧路双轨.*下篇$",
+                "^双轨.*下篇$"
+              ]
             },
             "selectExchangeType": {
               "enabled": true,
-              "expected": ["^下篇$"]
+              "expected": [
+                "^下篇$"
+              ]
             },
             "selectResourceModeLevel": {
               "description": "选择物资模式关卡",
               "recognition": "TemplateMatch",
               "template": "版本活动/下篇歧路物资5.png",
               "action": "Click",
-              "roi": [758, 329, 154, 42]
+              "roi": [
+                758,
+                329,
+                154,
+                42
+              ]
             }
           }
         },
         {
-          "name": "歧路双轨·上篇",
+          "name": "歧路双轨·上篇（美服/国际服）",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["歧路双轨", "歧路", "双轨", "路双"]
+              "expected": [
+                "歧路双轨",
+                "歧路",
+                "双轨",
+                "路双"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["人形互助站"]
+              "expected": [
+                "人形互助站"
+              ]
             },
             "switchVersionActivityChapter": {
               "enabled": true,
-              "expected": ["^歧路双轨.*上篇$", "^双轨.*上篇$"]
+              "expected": [
+                "^歧路双轨.*上篇$",
+                "^双轨.*上篇$"
+              ]
             },
             "selectExchangeType": {
               "enabled": true,
-              "expected": ["^上篇$"]
+              "expected": [
+                "^上篇$"
+              ]
             },
             "selectResourceModeLevel": {
               "description": "选择物资模式关卡",
               "recognition": "TemplateMatch",
               "template": "版本活动/歧路物资5.png",
               "action": "Click",
-              "roi": [572, 269, 424, 163]
+              "roi": [
+                572,
+                269,
+                424,
+                163
+              ]
             }
           }
         },
@@ -2089,14 +2535,22 @@
           "name": "虚境新始(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["虚境", "新始"]
+              "expected": [
+                "虚境",
+                "新始"
+              ]
             },
             "开始活动内每日任务": {
               "enabled": true,
               "expected": "^教授日程$"
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["绿洲补给站", "补给站", "绿洲补给", "洲补给"]
+              "expected": [
+                "绿洲补给站",
+                "补给站",
+                "绿洲补给",
+                "洲补给"
+              ]
             }
           }
         },
@@ -2104,10 +2558,20 @@
           "name": "循迹追演",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["循迹追演", "追演", "循迹", "循迹追", "迹追演"]
+              "expected": [
+                "循迹追演",
+                "追演",
+                "循迹",
+                "循迹追",
+                "迹追演"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["幕后补给", "幕后补", "后补给"]
+              "expected": [
+                "幕后补给",
+                "幕后补",
+                "后补给"
+              ]
             }
           }
         },
@@ -2115,18 +2579,29 @@
           "name": "火花之罪·下篇(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["火花之罪", "火花", "花之", "之罪"]
+              "expected": [
+                "火花之罪",
+                "火花",
+                "花之",
+                "之罪"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["安全屋"]
+              "expected": [
+                "安全屋"
+              ]
             },
             "selectExchangeType": {
               "enabled": true,
-              "expected": ["^安全屋.*下篇$"]
+              "expected": [
+                "^安全屋.*下篇$"
+              ]
             },
             "enterVersionActivityResourceSweep": {
               "enabled": true,
-              "expected": ["^战术.*下篇$"]
+              "expected": [
+                "^战术.*下篇$"
+              ]
             }
           }
         },
@@ -2134,18 +2609,29 @@
           "name": "火花之罪·上篇(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["火花之罪", "火花", "花之", "之罪"]
+              "expected": [
+                "火花之罪",
+                "火花",
+                "花之",
+                "之罪"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["安全屋"]
+              "expected": [
+                "安全屋"
+              ]
             },
             "selectExchangeType": {
               "enabled": true,
-              "expected": ["^安全屋.*上篇$"]
+              "expected": [
+                "^安全屋.*上篇$"
+              ]
             },
             "enterVersionActivityResourceSweep": {
               "enabled": true,
-              "expected": ["^战术.*上篇$"]
+              "expected": [
+                "^战术.*上篇$"
+              ]
             }
           }
         },
@@ -2153,10 +2639,20 @@
           "name": "沉没夜潮(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["沉没夜潮", "沉没夜", "沉没", "夜潮", "没夜"]
+              "expected": [
+                "沉没夜潮",
+                "沉没夜",
+                "沉没",
+                "夜潮",
+                "没夜"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["筹码兑换处", "筹码", "兑换处"]
+              "expected": [
+                "筹码兑换处",
+                "筹码",
+                "兑换处"
+              ]
             }
           }
         },
@@ -2164,10 +2660,20 @@
           "name": "心跳游乐园(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["心跳游乐园", "游乐园", "心跳游", "心跳", "乐园"]
+              "expected": [
+                "心跳游乐园",
+                "游乐园",
+                "心跳游",
+                "心跳",
+                "乐园"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["纪念品商店", "纪念品", "商店"]
+              "expected": [
+                "纪念品商店",
+                "纪念品",
+                "商店"
+              ]
             }
           }
         },
@@ -2175,10 +2681,20 @@
           "name": "镜茧与囚蝶(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["镜茧与囚蝶", "与囚蝶", "镜茧与", "镜茧", "囚蝶"]
+              "expected": [
+                "镜茧与囚蝶",
+                "与囚蝶",
+                "镜茧与",
+                "镜茧",
+                "囚蝶"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["数据整合程序", "整合程序", "数据整合"]
+              "expected": [
+                "数据整合程序",
+                "整合程序",
+                "数据整合"
+              ]
             }
           }
         },
@@ -2186,10 +2702,14 @@
           "name": "交织突进(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["交织突进"]
+              "expected": [
+                "交织突进"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["物资交换站"]
+              "expected": [
+                "物资交换站"
+              ]
             }
           }
         },
@@ -2197,18 +2717,26 @@
           "name": "错位锚定·下篇(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["错位锚定"]
+              "expected": [
+                "错位锚定"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["临时据点"]
+              "expected": [
+                "临时据点"
+              ]
             },
             "switchVersionActivityChapter": {
               "enabled": true,
-              "expected": ["^错位.*下篇$"]
+              "expected": [
+                "^错位.*下篇$"
+              ]
             },
             "selectExchangeType": {
               "enabled": true,
-              "expected": ["^临时.*下"]
+              "expected": [
+                "^临时.*下"
+              ]
             }
           }
         },
@@ -2216,18 +2744,26 @@
           "name": "错位锚定·上篇(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["错位锚定"]
+              "expected": [
+                "错位锚定"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["临时据点"]
+              "expected": [
+                "临时据点"
+              ]
             },
             "switchVersionActivityChapter": {
               "enabled": true,
-              "expected": ["^错位.*上篇$"]
+              "expected": [
+                "^错位.*上篇$"
+              ]
             },
             "selectExchangeType": {
               "enabled": true,
-              "expected": ["^临时.*上"]
+              "expected": [
+                "^临时.*上"
+              ]
             }
           }
         },
@@ -2235,18 +2771,27 @@
           "name": "溯回时光之隙（上）(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["溯回时光之隙", "^溯回"]
+              "expected": [
+                "溯回时光之隙",
+                "^溯回"
+              ]
             },
             "switchVersionActivityChapter": {
               "enabled": true,
-              "expected": ["纪念日礼赞"]
+              "expected": [
+                "纪念日礼赞"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["时光小筑"]
+              "expected": [
+                "时光小筑"
+              ]
             },
             "selectExchangeType": {
               "enabled": true,
-              "expected": ["时光小筑.*上篇"]
+              "expected": [
+                "时光小筑.*上篇"
+              ]
             }
           }
         },
@@ -2254,18 +2799,27 @@
           "name": "溯回时光之隙（下）(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["溯回时光之隙", "^溯回"]
+              "expected": [
+                "溯回时光之隙",
+                "^溯回"
+              ]
             },
             "switchVersionActivityChapter": {
               "enabled": true,
-              "expected": ["循迹追演"]
+              "expected": [
+                "循迹追演"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["时光小筑"]
+              "expected": [
+                "时光小筑"
+              ]
             },
             "selectExchangeType": {
               "enabled": true,
-              "expected": ["时光小筑.*下篇"]
+              "expected": [
+                "时光小筑.*下篇"
+              ]
             }
           }
         },
@@ -2273,10 +2827,14 @@
           "name": "烟火重燃之时(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["烟火重燃之时"]
+              "expected": [
+                "烟火重燃之时"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["积分找换所"]
+              "expected": [
+                "积分找换所"
+              ]
             }
           }
         },
@@ -2284,10 +2842,14 @@
           "name": "匿影而生(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["匿影而生"]
+              "expected": [
+                "匿影而生"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["情报置换处"]
+              "expected": [
+                "情报置换处"
+              ]
             }
           }
         },
@@ -2295,10 +2857,14 @@
           "name": "素银匿信(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["素银匿信"]
+              "expected": [
+                "素银匿信"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["冬日礼品铺"]
+              "expected": [
+                "冬日礼品铺"
+              ]
             }
           }
         },
@@ -2306,16 +2872,66 @@
           "name": "驻足之地(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
-              "expected": ["驻足之地"]
+              "expected": [
+                "驻足之地"
+              ]
             },
             "enterVersionActivityItemExchange": {
-              "expected": ["物资小摊"]
+              "expected": [
+                "物资小摊"
+              ]
             }
           }
         }
       ]
     },
     "物资商品兑换": {
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "enterVersionActivityItemExchange": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "enterVersionActivityItemExchange": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "物资模式活动选择2（美服/国际服）": {
+      "cases": [
+        {
+          "name": "骐骥踏光时（美服/国际服）",
+          "pipeline_override": {
+            "clickVersionActivityTagButton": {
+              "expected": [
+                "骐骥踏光时"
+              ]
+            },
+            "enterVersionActivityItemExchange": {
+              "expected": [
+                "补给仓库"
+              ]
+            },
+            "开始活动内每日任务": {
+              "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
+              "enabled": true,
+              "expected": [
+                "信标巡检"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "物资商品兑换2（美服/国际服）": {
       "cases": [
         {
           "name": "YES",
@@ -2409,7 +3025,9 @@
           "name": "火控芯片",
           "pipeline_override": {
             "selectPlatoonItem": {
-              "template": ["集中兑换/班组商店/火控校准芯片.png"]
+              "template": [
+                "集中兑换/班组商店/火控校准芯片.png"
+              ]
             }
           }
         },
@@ -2417,7 +3035,9 @@
           "name": "泛用链式键",
           "pipeline_override": {
             "selectPlatoonItem": {
-              "template": ["集中兑换/班组商店/泛用链式键.png"]
+              "template": [
+                "集中兑换/班组商店/泛用链式键.png"
+              ]
             }
           }
         }
@@ -2962,7 +3582,9 @@
             }
           },
           "description": "肉鸽，目前仅支持国服03期",
-          "option": ["遗珍回收难度选择"]
+          "option": [
+            "遗珍回收难度选择"
+          ]
         },
         {
           "name": "异维探渊",

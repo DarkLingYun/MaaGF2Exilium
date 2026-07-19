@@ -1,0 +1,39 @@
+{
+    "首页进入活动层-活动层通用": {
+        "doc": "首页按 L 进入活动层",
+        "action": "ClickKey",
+        "key": 76
+    },
+    "点击地图-活动层通用": {
+        "doc": "活动层按 M 进入快速导航",
+        "action": "ClickKey",
+        "key": 77
+    },
+    "滑动快捷前往列表-活动层通用": {
+        "action": "Swipe",
+        "begin": [
+            972,
+            693,
+            275,
+            12
+        ],
+        "end": [
+            974,
+            30,
+            275,
+            12
+        ],
+        "end_hold": 1200
+    },
+    "形象管理-活动层通用": {
+        "doc": "活动层按 P 进入形象管理",
+        "action": "ClickKey",
+        "key": 80
+    },
+    "退出活动层-活动层通用": {
+        "doc": "活动层按 Esc 进入形象管理",
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 27
+    }
+}

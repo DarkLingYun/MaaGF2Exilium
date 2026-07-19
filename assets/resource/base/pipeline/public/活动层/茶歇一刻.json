@@ -1,29 +1,28 @@
-// 活动层太卡，有的用户那里识别得太快，这里的延迟专门调整 1000
 {
     "开始茶歇一刻任务": {
+        "max_hit": 1,
         "next": [
-            "进入活动层-茶歇一刻"
-        ]
-    },
-    "进入活动层-茶歇一刻": {
-        "recognition": "OCR",
-        "expected": "^活动层$",
-        "action": "Click",
-        "post_wait_freezes": 1000,
-        "timeout": 40000,
-        "next": [
-            "已进入活动层-茶歇一刻",
-            "进入活动层-茶歇一刻",
-            "[JumpBack]活动层等级提升"
-        ]
-    },
-    "已进入活动层-茶歇一刻": {
-        "recognition": "TemplateMatch",
-        "template": "活动层/退出.png",
-        "green_mask": true,
-        "next": [
+            "[JumpBack]前往休憩大厅-茶歇一刻",
+            "已有饮用效果",
             "已解锁茶歇一刻",
-            "退出活动层-茶歇一刻"
+            "返回活动层-活动层通用"
+        ]
+    },
+    "前往休憩大厅-茶歇一刻": {
+        "max_hit": 1,
+        "next": [
+            "前往休憩大厅-活动层通用"
+        ]
+    },
+    "已有饮用效果": {
+        "recognition": "TemplateMatch",
+        "template": "活动层/左下角-饮用效果.png",
+        "green_mask": true,
+        "roi": [
+            12,
+            612,
+            178,
+            94
         ]
     },
     "已解锁茶歇一刻": {
@@ -41,120 +40,44 @@
                 "green_mask": true
             },
             {
-                "recognition": "OCR", // 有时候茶杯图标会被挡，识别等级够高也行
+                "doc": "有时候茶杯图标会被挡，识别等级够高也行",
+                "recognition": "OCR",
                 "expected": "Lv\\.\\d{2,}"
             }
         ],
-        "post_wait_freezes": 1000,
         "next": [
-            "已有饮用效果",
-            "走向茶歇一刻-step1"
+            "走上台阶-茶歇一刻"
         ]
     },
-    "已有饮用效果": {
-        "recognition": "TemplateMatch",
-        "template": "活动层/饮用效果.png",
-        "green_mask": true,
-        "roi": [
-            12,
-            612,
-            178,
-            94
-        ],
-        "post_wait_freezes": 1000,
-        "next": [
-            "退出活动层-茶歇一刻"
-        ]
-    },
-    "走向茶歇一刻-step1": {
-        "doc": "向左走，越过吧台玻璃围栏",
+    "走上台阶-茶歇一刻": {
         "action": "Swipe",
         "begin": [
-            185,
-            537,
-            10,
-            17
+            190,
+            538
         ],
         "end": [
-            135,
-            537,
-            10,
-            17
+            170,
+            518
         ],
-        "end_hold": 300,
+        "end_hold": 6500,
         "next": [
-            "走向茶歇一刻-step1-完成",
-            "走向茶歇一刻-step1"
+            "走向茶歇一刻"
         ]
     },
-    "走向茶歇一刻-step1-完成": {
-        "recognition": "FeatureMatch",
-        "template": "活动层/茶歇一刻_吧台定位图.png",
-        "green_mask": true,
-        "roi": [
-            898,
-            87,
-            383,
-            365
-        ],
-        "next": [
-            "走向茶歇一刻-step2"
-        ]
-    },
-    "走向茶歇一刻-step2": {
-        "doc": "向前走，上台阶",
+    "走向茶歇一刻": {
         "action": "Swipe",
         "begin": [
-            191,
-            525,
-            14,
-            12
+            190,
+            538
         ],
         "end": [
-            191,
-            460,
-            14,
-            14
+            210,
+            525
         ],
-        "end_hold": 300,
-        "next": [
-            "走向茶歇一刻-step2-完成",
-            "走向茶歇一刻-step2"
-        ]
-    },
-    "走向茶歇一刻-step2-完成": {
-        "recognition": "FeatureMatch",
-        "template": "活动层/茶歇一刻_吧台定位图.png",
-        "green_mask": true,
-        "roi": [
-            1105,
-            92,
-            175,
-            421
-        ],
-        "next": [
-            "走向茶歇一刻-step3"
-        ]
-    },
-    "走向茶歇一刻-step3": {
-        "doc": "向右走，前往吧台",
-        "action": "Swipe",
-        "begin": [
-            206,
-            539,
-            13,
-            15
-        ],
-        "end": [
-            280,
-            539,
-            14,
-            15
-        ],
-        "end_hold": 300,
+        "end_hold": 500,
         "next": [
             "进入茶歇一刻区域",
-            "走向茶歇一刻-step3"
+            "走向茶歇一刻"
         ]
     },
     "进入茶歇一刻区域": {
@@ -175,27 +98,20 @@
         "post_wait_freezes": 1000,
         "next": [
             "今日已饮用-茶歇一刻",
-            "今日未饮用-茶歇一刻"
+            "选择饮品-茶歇一刻",
+            "返回活动层-活动层通用"
         ]
     },
     "今日已饮用-茶歇一刻": {
         "recognition": "OCR",
         "expected": "今日已饮用",
-        "post_wait_freezes": 1000,
         "next": [
-            "返回活动层-茶歇一刻"
-        ]
-    },
-    "今日未饮用-茶歇一刻": {
-        "post_wait_freezes": 1000,
-        "next": [
-            "选择饮品-茶歇一刻",
-            "返回活动层-茶歇一刻"
+            "返回活动层-活动层通用"
         ]
     },
     "选择饮品-茶歇一刻": {
         "recognition": "TemplateMatch",
-        "template": "活动层/星标.png",
+        "template": "活动层/茶歇一刻-星标.png",
         "action": "Click",
         "order_by": "Score",
         "post_wait_freezes": 1000,
@@ -241,53 +157,18 @@
         "recognition": "OCR",
         "expected": "确认",
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                0,
+                438,
+                212
+            ]
+        },
         "next": [
-            "退出活动层-茶歇一刻",
             "确认结果-茶歇一刻",
-            "[JumpBack]活动层等级提升"
-        ]
-    },
-    "返回活动层-茶歇一刻": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/返回上一页_black_v2.png",
-            "公用按钮组件/返回上一页_gray_v2.png"
-        ],
-        "action": "Click",
-        "green_mask": true,
-        "post_wait_freezes": 1000,
-        "next": [
-            "退出活动层-茶歇一刻",
-            "[JumpBack]活动层等级提升"
-        ]
-    },
-    "退出活动层-茶歇一刻": {
-        "recognition": "TemplateMatch",
-        "template": "活动层/退出.png",
-        "green_mask": true,
-        "action": "Click",
-        "post_wait_freezes": 1000,
-        "next": [
-            "确认退出活动层-茶歇一刻"
-        ]
-    },
-    "确认退出活动层-茶歇一刻": {
-        "recognition": "OCR",
-        "expected": "确认",
-        "action": "Click",
-        "post_wait_freezes": 1000,
-        "next": [
-            "茶歇一刻任务结束"
-        ]
-    },
-    "茶歇一刻任务结束": {
-        "recognition": "OCR",
-        "expected": "战役推进",
-        "post_wait_freezes": 1000,
-        "next": [
-            "开始逸趣导算任务",
-            "HomePage"
+            "返回活动层-活动层通用"
         ]
     }
 }

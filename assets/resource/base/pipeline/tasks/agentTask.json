@@ -1,0 +1,6 @@
+{
+    "agent_template_recognition": {
+        "recognition": "TemplateMatch",
+        "green_mask": true
+    }
+}

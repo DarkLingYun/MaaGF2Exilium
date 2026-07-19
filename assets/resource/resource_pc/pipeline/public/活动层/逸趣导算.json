@@ -1,0 +1,8 @@
+{
+    "进入逸趣导算页面": {
+        "doc": "按 F2 进入逸趣导算",
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 113
+    }
+}

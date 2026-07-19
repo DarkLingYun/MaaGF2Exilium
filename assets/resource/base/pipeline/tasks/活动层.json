@@ -1,23 +1,221 @@
 {
     "开始活动层任务": {
         "next": [
-            "开始美味烹调任务",
-            "开始茶歇一刻任务"
+            "[JumpBack]任务开始前进入活动层-活动层通用",
+            "[JumpBack]切换形象为指挥官-活动层通用",
+            "[JumpBack]开始美味烹调任务",
+            "[JumpBack]开始茶歇一刻任务",
+            "[JumpBack]开始逸趣导算任务",
+            "退出活动层-活动层通用"
         ]
     },
-    "活动层等级提升":{
+    "活动层等级提升-活动层通用": {
         "recognition": "OCR",
         "expected": [
             "活动层等级提升",
             "等级提升"
         ],
         "next": [
-            "确认活动层等级提升"
+            "点击空白处关闭-通用"
         ]
     },
-    "确认活动层等级提升":{
+    "已进入活动层-活动层通用": {
+        "recognition": "TemplateMatch",
+        "template": "活动层/左上角控制按钮-退出.png",
+        "green_mask": true
+    },
+    "任务开始前进入活动层-活动层通用": {
+        "max_hit": 1,
+        "next": [
+            "进入活动层-活动层通用"
+        ]
+    },
+    "首页进入活动层-活动层通用": {
         "recognition": "OCR",
-        "expected": "点击空白处关闭",
+        "expected": [
+            "^活动层$"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 600,
+        "next": [
+            "已进入活动层-活动层通用",
+            "[JumpBack]活动层加载中-活动层通用",
+            "首页进入活动层-活动层通用"
+        ]
+    },
+    "活动层加载中-活动层通用": {
+        "recognition": "OCR",
+        "expected": [
+            "移动中"
+        ],
+        "post_delay": 1000
+    },
+    "进入活动层-活动层通用": {
+        "next": [
+            "已进入活动层-活动层通用",
+            "[JumpBack]活动层等级提升-活动层通用",
+            "首页进入活动层-活动层通用",
+            "[JumpBack]returnToHomePage"
+        ]
+    },
+    "前往休憩大厅-活动层通用": {
+        "next": [
+            "休憩大厅传送按钮-活动层通用",
+            "[JumpBack]点击地图-活动层通用",
+            "[JumpBack]进入活动层-活动层通用"
+        ]
+    },
+    "点击地图-活动层通用": {
+        "doc": "点击左上角地图进入快速导航",
+        "recognition": "TemplateMatch",
+        "template": "活动层/左上角控制按钮-地图.png",
+        "green_mask": true,
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 800,
+            "target": [
+                0,
+                576,
+                1280,
+                144
+            ]
+        },
+        "next": [
+            "点击地图-活动层通用",
+            "点击快捷前往-活动层通用"
+        ]
+    },
+    "点击快捷前往-活动层通用": {
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "OCR",
+                "expected": "快捷前往"
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "活动层/地图-快捷前往.png",
+                "green_mask": true
+            }
+        ],
         "action": "Click"
+    },
+    "滑动快捷前往列表-活动层通用": {
+        "action": "Swipe",
+        "begin": [
+            892,
+            685,
+            347,
+            13
+        ],
+        "end": [
+            892,
+            25,
+            347,
+            13
+        ],
+        "end_hold": 1200
+    },
+    "休憩大厅传送按钮-活动层通用": {
+        "recognition": "Custom",
+        "custom_recognition": "double_template_recognition",
+        "custom_recognition_param": {
+            "template": "活动层/地图-休憩大厅传送.png",
+            "target_template": "活动层/地图-传送按钮.png"
+        },
+        "action": "Click",
+        "next": [
+            "[JumpBack]活动层加载中-活动层通用",
+            "已进入活动层-活动层通用",
+            "休憩大厅传送按钮-活动层通用"
+        ]
+    },
+    "切换形象为指挥官-活动层通用": {
+        "max_hit": 1,
+        "next": [
+            "形象管理-活动层通用"
+        ]
+    },
+    "形象管理-活动层通用": {
+        "recognition": "TemplateMatch",
+        "template": "活动层/左上角控制按钮-形象管理.png",
+        "green_mask": true,
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "已进入形象管理菜单-活动层通用",
+            "形象管理-活动层通用"
+        ]
+    },
+    "已进入形象管理菜单-活动层通用": {
+        "recognition": "OCR",
+        "expected": [
+            "形象管理"
+        ],
+        "post_wait_freezes": 1000,
+        "next": [
+            "确认当前形象为指挥官-活动层通用",
+            "点击指挥官形象-活动层通用"
+        ]
+    },
+    "确认当前形象为指挥官-活动层通用": {
+        "recognition": "TemplateMatch",
+        "template": "活动层/形象管理-指挥官.png",
+        "green_mask": true,
+        "threshold": 0.9,
+        "next": [
+            "退出形象管理-活动层通用"
+        ]
+    },
+    "点击指挥官形象-活动层通用": {
+        "recognition": "OCR",
+        "expected": "指挥官",
+        "action": "Click",
+        "next": [
+            "[JumpBack]点击切换形象-活动层通用",
+            "形象管理-活动层通用"
+        ]
+    },
+    "点击切换形象-活动层通用": {
+        "recognition": "OCR",
+        "expected": [
+            "确认选择"
+        ],
+        "action": "Click"
+    },
+    "退出形象管理-活动层通用": {
+        "next": [
+            "[JumpBack]clickCloseWindowButton",
+            "已进入活动层-活动层通用"
+        ]
+    },
+    "返回活动层-活动层通用": {
+        "next": [
+            "[JumpBack]clickBackButton",
+            "[JumpBack]活动层等级提升-活动层通用",
+            "进入活动层-活动层通用"
+        ]
+    },
+    "退出活动层-活动层通用": {
+        "recognition": "TemplateMatch",
+        "template": "活动层/左上角控制按钮-退出.png",
+        "green_mask": true,
+        "action": "Click",
+        "next": [
+            "退出活动层确认-活动层通用",
+            "退出活动层-活动层通用"
+        ]
+    },
+    "退出活动层确认-活动层通用": {
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]活动层加载中-活动层通用",
+            "HomePage",
+            "退出活动层确认-活动层通用"
+        ]
     }
 }
