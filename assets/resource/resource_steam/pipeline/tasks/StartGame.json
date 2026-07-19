@@ -1,5 +1,13 @@
 {
-    "StartGame": {
-        "action": "DoNothing"
-    }
+  "StartGame": {
+    "action": "DoNothing",
+    "next": [
+      "HomePage",
+      "[JumpBack]StartGame_clickStart",
+      "[JumpBack]VK_ESCAPE_Click"
+    ]
+  },
+  "StartGame_clickStart": {
+    "next": []
+  }
 }

@@ -1,0 +1,10 @@
+{
+  "openNavigationScreen": {
+    "doc": "Press KEY B",
+    "action": "ClickKey",
+    "key": 66
+  },
+  "confirmWeaponDisassemblyNotification": {
+    "roi": [769, 492, 42, 27]
+  }
+}

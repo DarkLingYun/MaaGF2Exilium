@@ -1,6 +1,15 @@
 {
-    "点击作战开始按钮-通用战斗": {
-        "recognition": "OCR",
-        "expected": "作战开始"
+  "点击作战开始按钮-通用战斗": {
+    "recognition": "OCR",
+    "expected": "作战开始"
+  },
+  "退出战斗资源加载中-通用战斗": {
+    "post_wait_freezes": {
+      "time": 0
     }
+  },
+  "点击通信中图片跳过角色对话-通用战斗": {
+    "recognition": "OCR",
+    "expected": "通信中"
+  }
 }
