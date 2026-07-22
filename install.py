@@ -63,6 +63,12 @@ def install_resource():
 
     interface["version"] = version
 
+    # 如果存在嵌入式 Python，则使用它来运行 agent
+    if (working_dir / "deps" / "python" / "python.exe").exists():
+        if "agent" in interface:
+            interface["agent"]["child_exec"] = "{PROJECT_DIR}/python/python.exe"
+            print("Agent child_exec set to embedded Python: {PROJECT_DIR}/python/python.exe")
+
     with open(install_path / "interface.json", "w", encoding="utf-8") as f:
         json.dump(interface, f, ensure_ascii=False, indent=4)
 
@@ -84,6 +90,20 @@ def install_agent():
         install_path / "agent",
         dirs_exist_ok=True,
     )
+
+
+def install_python():
+    python_dir = working_dir / "deps" / "python"
+    if not python_dir.exists():
+        print("Embedded Python not found, skipping Python installation.")
+        return
+
+    shutil.copytree(
+        python_dir,
+        install_path / "python",
+        dirs_exist_ok=True,
+    )
+    print("Embedded Python installed successfully.")
 
 
 def install_MFAAvalonia():
@@ -131,6 +151,7 @@ if __name__ == "__main__":
     install_deps()
     install_chores()
     install_agent()
+    install_python()
     install_MFAAvalonia()
 
     print(f"Install to {install_path} successfully.")

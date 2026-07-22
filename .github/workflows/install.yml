@@ -113,6 +113,49 @@ jobs:
           out-file-path: "deps"
           extract: true
 
+      - name: Setup Embedded Python (Windows)
+        if: matrix.os_name == 'win'
+        shell: bash
+        run: |
+          PYTHON_VERSION="3.11.11"
+          if [ "${{ matrix.arch }}" = "x86_64" ]; then
+            PYTHON_ARCH="amd64"
+          elif [ "${{ matrix.arch }}" = "aarch64" ]; then
+            PYTHON_ARCH="arm64"
+          else
+            echo "Unknown architecture: ${{ matrix.arch }}"
+            exit 1
+          fi
+
+          PYTHON_URL="https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}-embed-${PYTHON_ARCH}.zip"
+          echo "Downloading embedded Python from: $PYTHON_URL"
+          curl -L "$PYTHON_URL" -o python-embed.zip
+
+          mkdir -p deps/python
+          unzip -q python-embed.zip -d deps/python
+          rm python-embed.zip
+
+          cd deps/python
+
+          # 启用 site-packages 支持（嵌入式 Python 默认禁用）
+          # 找到 _pth 文件并取消 import site 的注释
+          pth_file=$(ls python*._pth 2>/dev/null || echo "python311._pth")
+          if [ -f "$pth_file" ]; then
+            sed -i 's/^#import site/import site/' "$pth_file"
+            echo "Enabled site-packages in $pth_file"
+          fi
+
+          # 安装 pip
+          curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+          ./python.exe get-pip.py --no-warn-script-location
+          rm get-pip.py
+
+          # 安装 maafw 和 maaagentbinary
+          ./python.exe -m pip install --no-warn-script-location maafw maaagentbinary
+
+          echo "Embedded Python setup complete."
+          ./python.exe -c "import maa; print('maa module version:', maa.__version__ if hasattr(maa, '__version__') else 'ok')"
+
       - name: Download MFAAvalonia
         uses: robinraju/release-downloader@v1
         with:
@@ -153,7 +196,7 @@ jobs:
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
           if [ "${{ matrix.os_name }}" = "win" ]; then
-            jq --arg url "https://github.com/DarkLingYun/MaaGF2Exilium" --arg version "${{ needs.meta.outputs.tag }}" '. + {"url": $url, "version": $version}' ./assets/interface.json > ./install/interface.json
+            jq --arg url "https://github.com/DarkLingYun/MaaGF2Exilium" --arg version "${{ needs.meta.outputs.tag }}" '. + {"url": $url, "version": $version}' ./install/interface.json > ./install/interface.json.tmp && mv ./install/interface.json.tmp ./install/interface.json
           fi
 
       - name: Replace Assets with custom assets folder
