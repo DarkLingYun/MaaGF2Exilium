@@ -66,7 +66,7 @@ def install_resource():
     # 如果存在 uv，则使用 uv run 来启动 agent
     if (working_dir / "deps" / "uv" / "uv.exe").exists():
         if "agent" in interface:
-            interface["agent"]["child_exec"] = "uv"
+            interface["agent"]["child_exec"] = "uv/uv"
             interface["agent"]["child_args"] = [
                 "run",
                 "python",
