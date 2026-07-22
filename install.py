@@ -63,11 +63,16 @@ def install_resource():
 
     interface["version"] = version
 
-    # 如果存在嵌入式 Python，则使用它来运行 agent
-    if (working_dir / "deps" / "python" / "python.exe").exists():
+    # 如果存在 uv，则使用 uv run 来启动 agent
+    if (working_dir / "deps" / "uv" / "uv.exe").exists():
         if "agent" in interface:
-            interface["agent"]["child_exec"] = "{PROJECT_DIR}/python/python.exe"
-            print("Agent child_exec set to embedded Python: {PROJECT_DIR}/python/python.exe")
+            interface["agent"]["child_exec"] = "uv"
+            interface["agent"]["child_args"] = [
+                "run",
+                "python",
+                "{PROJECT_DIR}/agent/main.py"
+            ]
+            print("Agent configured to use uv run.")
 
     with open(install_path / "interface.json", "w", encoding="utf-8") as f:
         json.dump(interface, f, ensure_ascii=False, indent=4)
@@ -83,6 +88,12 @@ def install_chores():
         install_path,
     )
 
+    # 复制 pyproject.toml 和 uv.lock，供 uv run 解析依赖
+    for f in ["pyproject.toml", "uv.lock"]:
+        src = working_dir / f
+        if src.exists():
+            shutil.copy2(src, install_path)
+
 
 def install_agent():
     shutil.copytree(
@@ -92,18 +103,27 @@ def install_agent():
     )
 
 
-def install_python():
-    python_dir = working_dir / "deps" / "python"
-    if not python_dir.exists():
-        print("Embedded Python not found, skipping Python installation.")
+def install_uv():
+    uv_dir = working_dir / "deps" / "uv"
+    if not uv_dir.exists():
+        print("uv binary not found, skipping uv installation.")
         return
 
-    shutil.copytree(
-        python_dir,
-        install_path / "python",
-        dirs_exist_ok=True,
-    )
-    print("Embedded Python installed successfully.")
+    install_uv_dir = install_path / "uv"
+    install_uv_dir.mkdir(parents=True, exist_ok=True)
+    for item in uv_dir.iterdir():
+        shutil.copy2(item, install_uv_dir / item.name)
+    print("uv binary installed successfully.")
+
+    # 复制 wheels 目录（离线安装用）
+    wheels_dir = working_dir / "deps" / "wheels"
+    if wheels_dir.exists() and list(wheels_dir.glob("*.whl")):
+        shutil.copytree(
+            wheels_dir,
+            install_path / "wheels",
+            dirs_exist_ok=True,
+        )
+        print("Python wheels installed successfully.")
 
 
 def install_MFAAvalonia():
@@ -151,7 +171,7 @@ if __name__ == "__main__":
     install_deps()
     install_chores()
     install_agent()
-    install_python()
+    install_uv()
     install_MFAAvalonia()
 
     print(f"Install to {install_path} successfully.")

@@ -113,48 +113,36 @@ jobs:
           out-file-path: "deps"
           extract: true
 
-      - name: Setup Embedded Python (Windows)
+      - name: Download uv
         if: matrix.os_name == 'win'
         shell: bash
         run: |
-          PYTHON_VERSION="3.11.11"
           if [ "${{ matrix.arch }}" = "x86_64" ]; then
-            PYTHON_ARCH="amd64"
+            UV_TARGET="x86_64-pc-windows-msvc"
           elif [ "${{ matrix.arch }}" = "aarch64" ]; then
-            PYTHON_ARCH="arm64"
+            UV_TARGET="aarch64-pc-windows-msvc"
           else
             echo "Unknown architecture: ${{ matrix.arch }}"
             exit 1
           fi
 
-          PYTHON_URL="https://www.python.org/ftp/python/${PYTHON_VERSION}/python-${PYTHON_VERSION}-embed-${PYTHON_ARCH}.zip"
-          echo "Downloading embedded Python from: $PYTHON_URL"
-          curl -L "$PYTHON_URL" -o python-embed.zip
+          UV_URL="https://github.com/astral-sh/uv/releases/latest/download/uv-${UV_TARGET}.exe"
+          echo "Downloading uv from: $UV_URL"
+          mkdir -p deps/uv
+          curl -fsSL "$UV_URL" -o deps/uv/uv.exe
+          echo "uv downloaded successfully."
 
-          mkdir -p deps/python
-          unzip -q python-embed.zip -d deps/python
-          rm python-embed.zip
-
-          cd deps/python
-
-          # 启用 site-packages 支持（嵌入式 Python 默认禁用）
-          # 找到 _pth 文件并取消 import site 的注释
-          pth_file=$(ls python*._pth 2>/dev/null || echo "python311._pth")
-          if [ -f "$pth_file" ]; then
-            sed -i 's/^#import site/import site/' "$pth_file"
-            echo "Enabled site-packages in $pth_file"
-          fi
-
-          # 安装 pip
-          curl -sSL https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-          ./python.exe get-pip.py --no-warn-script-location
-          rm get-pip.py
-
-          # 安装 maafw 和 maaagentbinary
-          ./python.exe -m pip install --no-warn-script-location maafw maaagentbinary
-
-          echo "Embedded Python setup complete."
-          ./python.exe -c "import maa; print('maa module version:', maa.__version__ if hasattr(maa, '__version__') else 'ok')"
+      - name: Download Python wheels (offline support)
+        if: matrix.os_name == 'win'
+        shell: bash
+        run: |
+          mkdir -p deps/wheels
+          cd deps/wheels
+          # 使用 uv 下载 maafw 和 maaagentbinary 及其所有依赖的 wheel
+          ../uv/uv.exe pip download maafw maaagentbinary --python-platform windows --only-binary :all: 2>&1 || \
+          ../uv/uv.exe pip download maafw maaagentbinary --only-binary :all: 2>&1
+          echo "Wheels downloaded:"
+          ls -la *.whl 2>/dev/null || echo "No wheels downloaded (will install from PyPI on first run)."
 
       - name: Download MFAAvalonia
         uses: robinraju/release-downloader@v1
