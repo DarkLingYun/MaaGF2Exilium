@@ -19,10 +19,9 @@
     }
   ],
   "agent": {
-    "child_exec": "uv/run.bat",
+    "child_exec": "python/python.exe",
     "child_args": [
-      "run",
-      "python",
+      "-u",
       "{PROJECT_DIR}/agent/main.py"
     ]
   },

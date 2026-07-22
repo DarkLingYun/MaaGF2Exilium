@@ -63,16 +63,15 @@ def install_resource():
 
     interface["version"] = version
 
-    # 如果存在 uv，则使用 uv run 来启动 agent
-    if (working_dir / "deps" / "uv" / "uv.exe").exists():
+    # 如果存在嵌入式 Python，则使用它来启动 agent
+    if (working_dir / "deps" / "python" / "python.exe").exists():
         if "agent" in interface:
-            interface["agent"]["child_exec"] = "uv/run.bat"
+            interface["agent"]["child_exec"] = "python/python.exe"
             interface["agent"]["child_args"] = [
-                "run",
-                "python",
+                "-u",
                 "{PROJECT_DIR}/agent/main.py"
             ]
-            print("Agent configured to use uv run.")
+            print("Agent configured to use embedded Python.")
 
     with open(install_path / "interface.json", "w", encoding="utf-8") as f:
         json.dump(interface, f, ensure_ascii=False, indent=4)
@@ -88,12 +87,6 @@ def install_chores():
         install_path,
     )
 
-    # 复制 pyproject.toml 和 uv.lock，供 uv run 解析依赖
-    for f in ["pyproject.toml", "uv.lock"]:
-        src = working_dir / f
-        if src.exists():
-            shutil.copy2(src, install_path)
-
 
 def install_agent():
     shutil.copytree(
@@ -103,46 +96,18 @@ def install_agent():
     )
 
 
-def install_uv():
-    uv_dir = working_dir / "deps" / "uv"
-    if not uv_dir.exists():
-        print("uv binary not found, skipping uv installation.")
+def install_python():
+    python_dir = working_dir / "deps" / "python"
+    if not python_dir.exists():
+        print("Embedded Python not found, skipping.")
         return
 
-    install_uv_dir = install_path / "uv"
-    install_uv_dir.mkdir(parents=True, exist_ok=True)
-    for item in uv_dir.iterdir():
-        shutil.copy2(item, install_uv_dir / item.name)
-    print("uv binary installed successfully.")
-
-    # 复制预下载的 Python（离线首次运行）
-    python_dir = working_dir / "deps" / "python"
-    if python_dir.exists():
-        shutil.copytree(
-            python_dir,
-            install_path / "python",
-            dirs_exist_ok=True,
-        )
-        print("Python (offline) installed successfully.")
-
-    # 复制 wheels 目录（离线安装用）
-    wheels_dir = working_dir / "deps" / "wheels"
-    if wheels_dir.exists() and list(wheels_dir.glob("*.whl")):
-        shutil.copytree(
-            wheels_dir,
-            install_path / "wheels",
-            dirs_exist_ok=True,
-        )
-        print("Python wheels installed successfully.")
-
-    # 创建 uv/run.bat 包装脚本，设置 UV_PYTHON_INSTALL_DIR 指向预下载的 Python
-    run_bat = install_uv_dir / "run.bat"
-    run_bat.write_text(
-        '@echo off\r\n'
-        'set "UV_PYTHON_INSTALL_DIR=%~dp0..\\python"\r\n'
-        '"%~dp0uv.exe" %*\r\n'
+    shutil.copytree(
+        python_dir,
+        install_path / "python",
+        dirs_exist_ok=True,
     )
-    print("uv runner script created (uv/run.bat).")
+    print("Embedded Python installed successfully.")
 
 
 def install_MFAAvalonia():
@@ -190,7 +155,7 @@ if __name__ == "__main__":
     install_deps()
     install_chores()
     install_agent()
-    install_uv()
+    install_python()
     install_MFAAvalonia()
 
     print(f"Install to {install_path} successfully.")

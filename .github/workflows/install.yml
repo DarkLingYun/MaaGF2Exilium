@@ -113,50 +113,27 @@ jobs:
           out-file-path: "deps"
           extract: true
 
-      - name: Download uv
+      - name: Download embedded Python
         if: matrix.os_name == 'win'
         shell: bash
         run: |
+          PYTHON_TAG="20250609"
           if [ "${{ matrix.arch }}" = "x86_64" ]; then
-            UV_TARGET="x86_64-pc-windows-msvc"
-          elif [ "${{ matrix.arch }}" = "aarch64" ]; then
-            UV_TARGET="aarch64-pc-windows-msvc"
+            PYTHON_ARCH="x86_64"
           else
-            echo "Unknown architecture: ${{ matrix.arch }}"
-            exit 1
+            PYTHON_ARCH="aarch64"
           fi
-
-          UV_URL="https://github.com/astral-sh/uv/releases/latest/download/uv-${UV_TARGET}.zip"
-          echo "Downloading uv from: $UV_URL"
-          mkdir -p deps/uv
-          curl -fsSL "$UV_URL" -o deps/uv/uv.zip
-          unzip -q deps/uv/uv.zip -d deps/uv
-          rm deps/uv/uv.zip
-          # uv zip 解压后目录结构可能是 uv-x86_64-pc-windows-msvc/uv.exe
-          # 把 uv.exe 移到 deps/uv/ 根目录
-          find deps/uv -name "uv.exe" -type f -exec mv {} deps/uv/uv.exe \;
-          find deps/uv -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} \;
-          echo "uv downloaded successfully."
-
-      - name: Download Python wheels (offline support)
-        if: matrix.os_name == 'win'
-        shell: bash
-        run: |
-          mkdir -p deps/wheels
-          # 使用 CI runner 自带的 Python 下载 wheel（uv 是目标架构的，无法在 runner 上执行）
-          python -m pip download maafw maaagentbinary --dest deps/wheels --only-binary :all: 2>&1 || \
-          python -m pip download maafw maaagentbinary --dest deps/wheels 2>&1 || \
-          echo "Wheel download failed (will install from PyPI on first run)."
-          echo "Wheels downloaded:"
-          ls -la deps/wheels/*.whl 2>/dev/null || echo "No wheels in deps/wheels/"
-
-      - name: Pre-download Python (offline first run)
-        if: matrix.os_name == 'win' && matrix.arch == 'x86_64'
-        shell: bash
-        run: |
-          deps/uv/uv.exe python install 3.11 --install-dir deps/python
-          echo "Python installed:"
-          ls -la deps/python/
+          PYTHON_URL="https://github.com/astral-sh/python-build-standalone/releases/download/${PYTHON_TAG}/cpython-3.11.15+${PYTHON_TAG}-${PYTHON_ARCH}-pc-windows-msvc-install_only.tar.gz"
+          echo "Downloading Python from: $PYTHON_URL"
+          mkdir -p deps/python
+          curl -fsSL "$PYTHON_URL" -o deps/python.tar.gz
+          tar -xzf deps/python.tar.gz -C deps/python --strip-components=1
+          rm deps/python.tar.gz
+          echo "Python downloaded:"
+          deps/python/python.exe --version
+          # Install maafw into embedded Python
+          deps/python/python.exe -m pip install --no-cache-dir maafw maaagentbinary
+          echo "maafw installed into embedded Python."
 
       - name: Download MFAAvalonia
         uses: robinraju/release-downloader@v1
