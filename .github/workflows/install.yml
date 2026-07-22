@@ -143,12 +143,12 @@ jobs:
         shell: bash
         run: |
           mkdir -p deps/wheels
-          cd deps/wheels
-          # 使用 uv 下载 maafw 和 maaagentbinary 及其所有依赖的 wheel
-          ../uv/uv.exe pip download maafw maaagentbinary --python-platform windows --only-binary :all: 2>&1 || \
-          ../uv/uv.exe pip download maafw maaagentbinary --only-binary :all: 2>&1
+          # 使用 CI runner 自带的 Python 下载 wheel（uv 是目标架构的，无法在 runner 上执行）
+          python -m pip download maafw maaagentbinary --dest deps/wheels --only-binary :all: 2>&1 || \
+          python -m pip download maafw maaagentbinary --dest deps/wheels 2>&1 || \
+          echo "Wheel download failed (will install from PyPI on first run)."
           echo "Wheels downloaded:"
-          ls -la *.whl 2>/dev/null || echo "No wheels downloaded (will install from PyPI on first run)."
+          ls -la deps/wheels/*.whl 2>/dev/null || echo "No wheels in deps/wheels/"
 
       - name: Download MFAAvalonia
         uses: robinraju/release-downloader@v1
