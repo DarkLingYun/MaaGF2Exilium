@@ -126,10 +126,16 @@ jobs:
             exit 1
           fi
 
-          UV_URL="https://github.com/astral-sh/uv/releases/latest/download/uv-${UV_TARGET}.exe"
+          UV_URL="https://github.com/astral-sh/uv/releases/latest/download/uv-${UV_TARGET}.zip"
           echo "Downloading uv from: $UV_URL"
           mkdir -p deps/uv
-          curl -fsSL "$UV_URL" -o deps/uv/uv.exe
+          curl -fsSL "$UV_URL" -o deps/uv/uv.zip
+          unzip -q deps/uv/uv.zip -d deps/uv
+          rm deps/uv/uv.zip
+          # uv zip 解压后目录结构可能是 uv-x86_64-pc-windows-msvc/uv.exe
+          # 把 uv.exe 移到 deps/uv/ 根目录
+          find deps/uv -name "uv.exe" -type f -exec mv {} deps/uv/uv.exe \;
+          find deps/uv -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} \;
           echo "uv downloaded successfully."
 
       - name: Download Python wheels (offline support)
