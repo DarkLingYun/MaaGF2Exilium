@@ -21,7 +21,7 @@
   "agent": {
     "child_exec": "python",
     "child_args": [
-      "./../agent/main.py"
+      "{PROJECT_DIR}/agent/main.py"
     ]
   },
   "resource": [
