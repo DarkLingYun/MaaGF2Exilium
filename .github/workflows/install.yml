@@ -150,6 +150,14 @@ jobs:
           echo "Wheels downloaded:"
           ls -la deps/wheels/*.whl 2>/dev/null || echo "No wheels in deps/wheels/"
 
+      - name: Pre-download Python (offline first run)
+        if: matrix.os_name == 'win' && matrix.arch == 'x86_64'
+        shell: bash
+        run: |
+          deps/uv/uv.exe python install 3.11 --install-dir deps/python
+          echo "Python installed:"
+          ls -la deps/python/
+
       - name: Download MFAAvalonia
         uses: robinraju/release-downloader@v1
         with:

@@ -19,7 +19,7 @@
     }
   ],
   "agent": {
-    "child_exec": "uv/uv",
+    "child_exec": "uv/run.bat",
     "child_args": [
       "run",
       "python",

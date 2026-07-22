@@ -66,7 +66,7 @@ def install_resource():
     # 如果存在 uv，则使用 uv run 来启动 agent
     if (working_dir / "deps" / "uv" / "uv.exe").exists():
         if "agent" in interface:
-            interface["agent"]["child_exec"] = "uv/uv"
+            interface["agent"]["child_exec"] = "uv/run.bat"
             interface["agent"]["child_args"] = [
                 "run",
                 "python",
@@ -115,6 +115,16 @@ def install_uv():
         shutil.copy2(item, install_uv_dir / item.name)
     print("uv binary installed successfully.")
 
+    # 复制预下载的 Python（离线首次运行）
+    python_dir = working_dir / "deps" / "python"
+    if python_dir.exists():
+        shutil.copytree(
+            python_dir,
+            install_path / "python",
+            dirs_exist_ok=True,
+        )
+        print("Python (offline) installed successfully.")
+
     # 复制 wheels 目录（离线安装用）
     wheels_dir = working_dir / "deps" / "wheels"
     if wheels_dir.exists() and list(wheels_dir.glob("*.whl")):
@@ -124,6 +134,15 @@ def install_uv():
             dirs_exist_ok=True,
         )
         print("Python wheels installed successfully.")
+
+    # 创建 uv/run.bat 包装脚本，设置 UV_PYTHON_INSTALL_DIR 指向预下载的 Python
+    run_bat = install_uv_dir / "run.bat"
+    run_bat.write_text(
+        '@echo off\r\n'
+        'set "UV_PYTHON_INSTALL_DIR=%~dp0..\\python"\r\n'
+        '"%~dp0uv.exe" %*\r\n'
+    )
+    print("uv runner script created (uv/run.bat).")
 
 
 def install_MFAAvalonia():
