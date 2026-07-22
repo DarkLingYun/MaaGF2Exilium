@@ -129,11 +129,15 @@ jobs:
           curl -fsSL "$PYTHON_URL" -o deps/python.tar.gz
           tar -xzf deps/python.tar.gz -C deps/python --strip-components=1
           rm deps/python.tar.gz
-          echo "Python downloaded:"
-          deps/python/python.exe --version
-          # Install maafw into embedded Python
-          deps/python/python.exe -m pip install --no-cache-dir maafw maaagentbinary
-          echo "maafw installed into embedded Python."
+          # x86_64 runner 可以执行 x86_64 Python，ARM64 不行
+          if [ "${{ matrix.arch }}" = "x86_64" ]; then
+            echo "Python version:"
+            deps/python/python.exe --version
+            deps/python/python.exe -m pip install --no-cache-dir maafw maaagentbinary
+            echo "maafw installed into embedded Python."
+          else
+            echo "Skipping pip install (cross-architecture, will install on device)."
+          fi
 
       - name: Download MFAAvalonia
         uses: robinraju/release-downloader@v1
