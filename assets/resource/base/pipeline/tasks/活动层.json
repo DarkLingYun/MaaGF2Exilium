@@ -162,7 +162,7 @@
         "recognition": "TemplateMatch",
         "template": "活动层/形象管理-指挥官.png",
         "green_mask": true,
-        "threshold": 0.9,
+        "threshold": 0.8,
         "next": [
             "退出形象管理-活动层通用"
         ]
