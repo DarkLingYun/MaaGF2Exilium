@@ -1,30 +1,88 @@
 {
     "StartGame": {
-        "package": "com.Sunborn.SnqxExilium.Glo/.ExiliumMainActivity"
-    },
-    "StartGame_sunbornGameLogo": {
-        "template": "启动游戏/SunbornGameLogo.png",
         "next": [
-            "StartGame_sunbornGameLogo",
-            "StartGame_copyright"
+            "[JumpBack]StartGame_loading",
+            "[JumpBack]clickCloseWindowButton",
+            "[JumpBack]clickHomeButton",
+            "[JumpBack]clickBackButton",
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]指挥官等级提升-通用",
+            "StartGame_HomePage_Check",
+            "[JumpBack]StartGame_loadingSource",
+            "[JumpBack]StartGame_retryLogin",
+            "StartGame_notLoginIn",
+            "[JumpBack]StartGame_clickStart",
+            "[JumpBack]StartGame_downloadResource",
+            "[JumpBack]StartGame_unzipResources",
+            "[JumpBack]StartGame_restartGF2Game",
+            "[JumpBack]StartGame_copyright",
+            "[JumpBack]openGF2GameApp"
+        ]
+    },
+    "StartGame_HomePage_Check": {
+        "next": [
+            "StartGame_进入整备室"
+        ]
+    },
+    "StartGame_进入整备室": {
+        "doc": "进入游戏后可能仍在加载（现象为像新手一样的主页），进入整备室再退出即可恢复",
+        "recognition": "OCR",
+        "expected": "整备室",
+        "action": "Click",
+        "next": [
+            "[JumpBack]StartGame_loading",
+            "StartGame_进入整备室",
+            "clickBackButton"
         ]
     },
     "StartGame_copyright": {
-        "doc": "加载进度条下的版权信息",
+        "doc": "加载进度条下的版权信息，有时不点击画面会卡住",
         "recognition": "OCR",
         "expected": [
             "^Copyright"
         ],
-        "action": "Click",
-        "rate_limit": 2000,
-        "timeout": 35000,
-        "next": [
-            "StartGame_clickStart",
-            "StartGame_copyright",
-            "[JumpBack]restartGF2Game",
-            "[JumpBack]unzipResources",
-            "[JumpBack]downloadResource"
+        "action": "Click"
+    },
+    "StartGame_loading": {
+        "doc": "外服进入主页后仍可能需要等待loading",
+        "recognition": "FeatureMatch",
+        "post_delay": 2000,
+        "green_mask": true,
+        "template": [
+            "loading_green_1.png",
+            "loading_green_2.png"
+        ],
+        "roi": [
+            482,
+            215,
+            309,
+            278
         ]
+    },
+    "StartGame_retryLogin": {
+        "doc": "外服用户登录可能需要重试/确定用户协议",
+        "recognition": "OCR",
+        "expected": [
+            "重试",
+            "确定"
+        ],
+        "action": "Click"
+    },
+    "StartGame_notLoginIn": {
+        "doc": "用户未登录，弹出登录提示，直接退出游戏",
+        "recognition": "OCR",
+        "expected": [
+            "登录方式",
+            "使用游客登录",
+            "散爆ID",
+            "通过Google登录",
+            "通过邮箱登录"
+        ],
+        "post_wait_freezes": 0,
+        "focus": {
+            "Node.Action.Starting": "用户未登录，请先登录游戏"
+        },
+        "action": "StopTask"
     },
     "openGF2GameApp": {
         "package": "com.Sunborn.SnqxExilium.Glo/.ExiliumMainActivity"

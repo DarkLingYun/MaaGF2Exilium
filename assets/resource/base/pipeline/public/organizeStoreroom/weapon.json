@@ -139,10 +139,10 @@
         "expected": "确认",
         "action": "Click",
         "roi": [
-            783,
-            519,
-            89,
-            42
+            657,
+            481,
+            249,
+            90
         ],
         "next": [
             "closeWeaponDisassemblyResultByClickingBlank"

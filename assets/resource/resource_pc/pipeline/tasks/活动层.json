@@ -30,9 +30,23 @@
         "action": "ClickKey",
         "key": 80
     },
+    "点击退出形象管理按钮-活动层通用": {
+        "doc": "PC端的活动层按钮大小跟其他页面不一样",
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动层/活动层_关闭按钮_gray.png"
+        ],
+        "green_mask": true,
+        "action": "Click"
+    },
+    "退出形象管理-活动层通用": {
+        "next": [
+            "[JumpBack]点击退出形象管理按钮-活动层通用",
+            "已进入活动层-活动层通用"
+        ]
+    },
     "退出活动层-活动层通用": {
         "doc": "活动层按 Esc 进入形象管理",
-        "recognition": "DirectHit",
         "action": "ClickKey",
         "key": 27
     }

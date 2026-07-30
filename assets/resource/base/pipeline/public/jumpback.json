@@ -7,7 +7,10 @@
             "点击任意位置继续",
             "点击屏幕任意位置继续"
         ],
-        "action": "Click"
+        "action": "Click",
+        "post_wait_freezes": {
+            "target": true
+        }
     },
     "跳过动画-通用": {
         "recognition": "OCR",
@@ -50,6 +53,20 @@
         "recognition": "OCR",
         "expected": [
             "键领取"
+        ],
+        "action": "Click"
+    },
+    "指挥官等级提升-通用": {
+        "recognition": "OCR",
+        "expected": [
+            "指挥官等级",
+            "官等级"
+        ],
+        "roi": [
+            272,
+            84,
+            726,
+            487
         ],
         "action": "Click"
     }

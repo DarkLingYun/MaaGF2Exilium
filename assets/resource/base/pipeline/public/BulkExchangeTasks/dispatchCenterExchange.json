@@ -21,10 +21,10 @@
         ],
         "post_wait_freezes": 1000,
         "next": [
-            "clickdispatchCenterExchangeTaskButton",
             "selectdispatchCenterItem",
             "滑动寻找更多调度商店物品",
-            "易物所兑换通用-前往易物所"
+            "易物所兑换通用-前往易物所",
+            "clickdispatchCenterExchangeTaskButton"
         ]
     },
     "selectdispatchCenterItem": {

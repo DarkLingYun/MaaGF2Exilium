@@ -3,7 +3,7 @@
         "doc": "心智勘测任务",
         "next": [
             "enterMindSurveyTask",
-            "[JumpBack]StartGame"
+            "[JumpBack]returnToHomePage"
         ]
     },
     "enterMindSurveyTask": {

@@ -23,19 +23,26 @@
 ## 使用事项
 
 > [!NOTE]  
-> 大部分测试都是在 Windows 系统上测试的，因此其他操作系统若有运行问题，请提 Issues 或加群讨论。  
+> 大部分测试都是在 Windows 系统上测试的，因此其他操作系统若有运行问题，请提 Issues 或加群讨论。
 > 开发是基于 MuMu12 模拟器测试的，因此推荐使用 MuMu12 运行游戏。其他模拟器若出现问题，请第一时间把脚本根目录下`debug\maa.log` 文件保存并截图进行反馈。
+
+**模拟器**
 
 0. 默认用户的操作系统为 Windows 系统。
 1. 推荐使用MuMu模拟器12运行游戏，[模拟器支持情况](https://maa.plus/docs/zh-cn/manual/device/windows.html)请查看官方文档。
 2. 模拟器建议设置为`16:9`的比例的分辨率，该比例典型的分辨率有`3840*2160 (4K)`、`2560*1440 (2K)`、`1920*1080 (1080P)`、`1280*720 (720P)`。
 3. 每次在软件内更新后，在有新功能的添加的情况下可能不会刷新出来新功能选项，请关闭软件后，删除脚本程序根目录下 `config` 目录中的 `config.json` 文件后再次打开脚本程序即可。但需要重新配置一些选项内容。
 
+**PC端**
+
+0. 默认用户的操作系统为 Windows 系统。
+1. PC端分辨率需设置为`1280x720`，不同分辨率字体大小、位置可能不同
+2. 目前PC端主要功能流程已完成，但仍有部分功能未适配
 ## 使用方式
 
- 0. 从 [Releases](https://github.com/DarkLingYun/MaaGF2Exilium/releases)下载压缩包名为 `MaaGF2ExiliumGUI-win-x86_64-v0.x.x.zip` 的GUI版本。
- 1. 解压下载好的压缩包
- 2. 双击或右键运行解压目录下的 `MaaGF2Exilium.exe` 文件即可 **(确保[MuMu模拟器](https://mumu.163.com/)已运行)**
+ 1. 从 [Releases](https://github.com/DarkLingYun/MaaGF2Exilium/releases)下载压缩包名为 `MaaGF2ExiliumGUI-win-x86_64-v0.x.x.zip` 的GUI版本。
+ 2. 解压下载好的压缩包
+ 3. 双击或右键运行解压目录下的 `MaaGF2Exilium.exe` 文件即可 **(确保[MuMu模拟器](https://mumu.163.com/)已运行)**
 
 <br>
  <p align="center">
@@ -192,7 +199,6 @@
   * [x] 美味烹调
   * [x] 茶歇一刻
   * [x] 领取逸趣导算进度奖励
-
 
 * [x] 萨狄斯金_配件精调及心智螺旋
 

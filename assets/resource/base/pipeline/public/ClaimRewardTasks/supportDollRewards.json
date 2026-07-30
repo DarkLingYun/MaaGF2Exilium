@@ -11,6 +11,7 @@
         "doc": "进入个人信息",
         "recognition": "TemplateMatch",
         "template": "公用按钮组件/个人信息.png",
+        "green_mask": true,
         "action": "Click",
         "post_wait_freezes": 1500,
         "next": [
@@ -30,7 +31,8 @@
     "claimSupportDollRewards": {
         "doc": "领取助战人形奖励",
         "recognition": "TemplateMatch",
-        "template": "个人信息/领取_1.png",
+        "template": "个人信息/领取.png",
+        "green_mask": true,
         "action": "Click",
         "next": [
             "closeClaimResult",

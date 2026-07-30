@@ -14,6 +14,10 @@
             "^委托$",
             "委托$"
         ],
+        "replace": [
+            "委托、",
+            "委托"
+        ],
         "roi": [
             370,
             582,
@@ -130,6 +134,7 @@
         "expected": "一键领取",
         "action": "Click",
         "next": [
+            "claimJourneyMileStoneReward",
             "closeClaimJourneyMileStoneRewardResultPage"
         ]
     },

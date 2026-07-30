@@ -1,0 +1,11 @@
+{
+    "selectBossChallengeItem": {
+        "green_mask": true,
+        "roi": [
+            187,
+            63,
+            1008,
+            404
+        ]
+    }
+}

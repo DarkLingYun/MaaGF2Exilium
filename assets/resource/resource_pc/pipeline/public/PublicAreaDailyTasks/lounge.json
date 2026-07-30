@@ -1,10 +1,11 @@
 {
-    "进入整备室":{
-        "doc": "\t0x43\tC key",
-        "action": "ClickKey",
-        "key": 67
-    },
     "loungeButtonClick": {
-        "threshold": 0.55
+        "green_mask": true,
+        "roi": [
+            712,
+            623,
+            362,
+            96
+        ]
     }
 }

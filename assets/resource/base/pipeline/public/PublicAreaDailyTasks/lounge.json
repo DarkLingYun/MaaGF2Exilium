@@ -1,10 +1,12 @@
 {
     "enterLoungeAction": {
+        "max_hit": 1,
         "focus": {
             "Node.Action.Starting": "访问休息室"
         },
         "next": [
-            "进入整备室"
+            "进入整备室",
+            "[JumpBack]returnToHomePage"
         ]
     },
     "进入整备室": {
@@ -12,7 +14,8 @@
         "expected": "整备室",
         "action": "Click",
         "next": [
-            "loungeButtonClick"
+            "loungeButtonClick",
+            "进入整备室"
         ]
     },
     "loungeButtonClick": {
@@ -23,15 +26,20 @@
         "action": "Click",
         "order_by": "Score",
         "next": [
-            "loungeConfirm"
+            "loungeConfirm",
+            "loungeButtonClick"
         ]
     },
     "loungeConfirm": {
         "recognition": "OCR",
-        "expected": "姿态",
+        "expected": [
+            "姿态",
+            "休息室"
+        ],
         "next": [
-            "loungeBackPage",
-            "loungeBackPageNotFound"
+            "[JumpBack]loungeBackPage",
+            "[JumpBack]loungeBackPageNotFound",
+            "returnToHomePage"
         ]
     },
     "loungeBackPage": {
@@ -48,47 +56,17 @@
         ],
         "green_mask": true,
         "action": "Click",
-        "next": [
-            "退出整备室"
-        ]
+        "max_hit": 2
     },
     "loungeBackPageNotFound": {
-        "next": [
-            "clickButtonWithFixedPositionToLeaveDormitory"
-        ]
-    },
-    "clickButtonWithFixedPositionToLeaveDormitory": {
+        "doc": "复杂的宿舍场景下可能识别不到返回按钮，点击固定区域返回",
         "action": "Click",
         "target": [
             26,
             23,
-            43,
-            42
+            33,
+            33
         ],
-        "next": [
-            "退出整备室"
-        ]
-    },
-    "退出整备室": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/返回上一页_gray_v2.png",
-            "公用按钮组件/返回上一页_black_v2.png"
-        ],
-        "green_mask": true,
-        "action": "Click",
-        "next": [
-            "整备室已退出",
-            "退出整备室"
-        ]
-    },
-    "整备室已退出": {
-        "recognition": "OCR",
-        "expected": "战役推进",
-        "next": [
-            "enterDispatchCenterAction",
-            "enterSchedulingGainsAction",
-            "returnToHomePage"
-        ]
+        "max_hit": 2
     }
 }

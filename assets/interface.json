@@ -65,6 +65,7 @@
       "name": "PC 端 (Steam)",
       "path": [
         "{PROJECT_DIR}/resource/base",
+        "{PROJECT_DIR}/resource/resource_en",
         "{PROJECT_DIR}/resource/resource_pc",
         "{PROJECT_DIR}/resource/resource_steam"
       ]
@@ -212,8 +213,7 @@
         "每日订单",
         "远航巡录",
         "助战",
-        "动态招募祝福",
-        "七天签到限定十连"
+        "动态招募祝福"
       ],
       "default_check": true,
       "description": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
@@ -222,6 +222,7 @@
       "name": "活动",
       "entry": "活动",
       "option": [
+        "七天签到限定十连",
         "险境挖掘",
         "预演",
         "暗香赠礼",

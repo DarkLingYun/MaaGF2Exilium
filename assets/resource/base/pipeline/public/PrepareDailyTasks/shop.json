@@ -1,0 +1,201 @@
+{
+    "商城免费每日补给箱购买": {
+        "max_hit": 1,
+        "enabled": true,
+        "next": [
+            "[JumpBack]返回首页-商城免费每日补给箱购买",
+            "enterShop"
+        ]
+    },
+    "返回首页-商城免费每日补给箱购买": {
+        "max_hit": 1,
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "enterShop": {
+        "recognition": "OCR",
+        "expected": "^商城$",
+        "replace": [
+            "商城•",
+            "商城"
+        ],
+        "max_hit": 3,
+        "action": "Click",
+        "focus": {
+            "Node.Action.Starting": "免费每日补给箱购买"
+        },
+        "next": [
+            "clickQualitySelection",
+            "enterShop"
+        ]
+    },
+    "clickQualitySelection": {
+        "recognition": "OCR",
+        "expected": "^品质甄选$",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "clickTimeLimitedGiftPackage"
+        ]
+    },
+    "clickTimeLimitedGiftPackage": {
+        "recognition": "OCR",
+        "expected": [
+            "^限时礼包$",
+            "^臻品礼包$"
+        ],
+        "roi": [
+            0,
+            0,
+            1920,
+            150
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1200,
+        "next": [
+            "TimeLimitedGiftPackagePageSwipe"
+        ],
+        "focus": {
+            "Node.Action.Succeeded": "已进入每周礼包页"
+        }
+    },
+    "TimeLimitedGiftPackagePageSwipe": {
+        "doc": "从下向上滑动",
+        "recognition": "DirectHit",
+        "action": "Swipe",
+        "begin": [
+            1132,
+            366,
+            1,
+            1
+        ],
+        "end": [
+            1132,
+            291,
+            1,
+            1
+        ],
+        "post_wait_freezes": 1000,
+        "next": [
+            "clickWeekSupplyBox",
+            "clickPermanentGiftPackage"
+        ]
+    },
+    "clickWeekSupplyBox": {
+        "doc": "点击每周补给箱",
+        "recognition": "TemplateMatch",
+        "template": [
+            "每日免费礼包/每周补给箱.png"
+        ],
+        "green_mask": true,
+        "threshold": 0.87,
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "confirmWeekSupplyBoxPurchase"
+        ]
+    },
+    "confirmWeekSupplyBoxPurchase": {
+        "recognition": "OCR",
+        "expected": "^(购买|确认)$",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "closeWeekSupplyBoxPurchaseResultPage"
+        ]
+    },
+    "closeWeekSupplyBoxPurchaseResultPage": {
+        "recognition": "OCR",
+        "expected": "点击",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "closeWeekSupplyBoxPurchaseResultPage",
+            "clickPermanentGiftPackage"
+        ]
+    },
+    "clickPermanentGiftPackage": {
+        "recognition": "OCR",
+        "expected": "^周期礼包$",
+        "roi": [
+            0,
+            0,
+            1920,
+            150
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "clickDailySupplyBox",
+            "exitGameStore"
+        ],
+        "focus": {
+            "Node.Action.Succeeded": "已进入每日礼包页"
+        }
+    },
+    "clickDailySupplyBox": {
+        "doc": "点击每日补给箱",
+        "recognition": "OCR",
+        "expected": "^每日补给箱$",
+        "roi": [
+            0,
+            0,
+            500,
+            400
+        ],
+        "threshold": 0.87,
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "confirmSupplyBoxPurchase"
+        ]
+    },
+    "confirmSupplyBoxPurchase": {
+        "recognition": "OCR",
+        "expected": "^(购买|确认)$",
+        "action": "Click",
+        "post_wait_freezes": 200,
+        "next": [
+            "closeSupplyBoxPurchaseResultPage"
+        ]
+    },
+    "closeSupplyBoxPurchaseResultPage": {
+        "recognition": "OCR",
+        "expected": "点击",
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "closeSupplyBoxPurchaseResultPage",
+            "checkDailyPaidGift",
+            "exitGameStore"
+        ]
+    },
+    "checkDailyPaidGift": {
+        "recognition": "OCR",
+        "expected": "每日晶条礼包",
+        "roi": [
+            409,
+            136,
+            350,
+            164
+        ],
+        "post_delay": 1000,
+        "next": [
+            "closeDailyPaidGiftPage"
+        ]
+    },
+    "closeDailyPaidGiftPage": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "next": [
+            "exitGameStore"
+        ]
+    },
+    "exitGameStore": {
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}

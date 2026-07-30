@@ -1,0 +1,18 @@
+{
+    "boundaryAdvanceDelegateRewardFull": {
+        "roi": [
+            895,
+            597,
+            277,
+            40
+        ]
+    },
+    "clickBoundaryAdvanceDelegateButton": {
+        "roi": [
+            820,
+            635,
+            156,
+            52
+        ]
+    }
+}

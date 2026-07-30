@@ -1,0 +1,69 @@
+{
+    "开始七天签到限定十连任务": {
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "[JumpBack]打开活动页-七天签到限定十连",
+            "点击七天签到限定十连标签页",
+            "[JumpBack]滑动活动列表-七天签到限定十连",
+            "returnToHomePage"
+        ]
+    },
+    "打开活动页-七天签到限定十连": {
+        "max_hit": 1,
+        "next": [
+            "打开活动页-活动通用"
+        ]
+    },
+    "滑动活动列表-七天签到限定十连": {
+        "max_hit": 2,
+        "next": [
+            "滑动活动列表-活动通用"
+        ]
+    },
+    "点击七天签到限定十连标签页": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动/七天签到活动/七天签到活动_light.png"
+        ],
+        "green_mask": true,
+        "action": "Click",
+        "next": [
+            "已进入七天签到限定十连标签页",
+            "点击七天签到限定十连标签页"
+        ]
+    },
+    "已进入七天签到限定十连标签页": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动/七天签到活动/七天签到活动_dark.png"
+        ],
+        "green_mask": true,
+        "next": [
+            "今日已领-七天签到限定十连",
+            "领取奖励-七天签到限定十连",
+            "returnToHomePage"
+        ]
+    },
+    "今日已领-七天签到限定十连": {
+        "recognition": "OCR",
+        "expected": [
+            "明日可领",
+            "已领取"
+        ],
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "领取奖励-七天签到限定十连": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动/七天签到活动/专访许可.png"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "returnToHomePage"
+        ]
+    }
+}

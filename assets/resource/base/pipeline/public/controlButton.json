@@ -2,11 +2,13 @@
     "returnToHomePage": {
         "doc": "除特殊页面，一般都可通过下列按键回到主页。从出现次数多到少/最短路径依次匹配，可减少不必要的匹配",
         "next": [
+            "[JumpBack]clickCloseWindowButton",
             "HomePage",
             "[JumpBack]clickHomeButton",
-            "[JumpBack]clickCloseWindowButton",
             "[JumpBack]clickBackButton",
             "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]指挥官等级提升-通用",
+            "[JumpBack]退出活动层-活动层通用",
             "[JumpBack]StartGame"
         ]
     },
@@ -23,8 +25,13 @@
             212
         ],
         "action": "Click",
-        "post_delay": 1500,
-        "post_wait_freezes": 0
+        "green_mask": true,
+        "order_by": "Score",
+        "threshold": 0.8,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": true
+        }
     },
     "clickCloseWindowButton": {
         "recognition": "TemplateMatch",
@@ -33,8 +40,13 @@
             "公用按钮组件/关闭按钮_black.png"
         ],
         "action": "Click",
-        "post_delay": 1000,
-        "post_wait_freezes": 0
+        "green_mask": true,
+        "order_by": "Score",
+        "threshold": 0.8,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": true
+        }
     },
     "clickBackButton": {
         "recognition": "TemplateMatch",
@@ -44,8 +56,12 @@
         ],
         "action": "Click",
         "green_mask": true,
-        "post_delay": 1000,
-        "post_wait_freezes": 0
+        "order_by": "Score",
+        "threshold": 0.8,
+        "post_wait_freezes": {
+            "time": 500,
+            "target": true
+        }
     },
     "announcementClosed": {
         "recognition": "TemplateMatch",
@@ -61,35 +77,25 @@
             105
         ],
         "action": "Click",
+        "green_mask": true,
+        "order_by": "Score",
+        "threshold": 0.8,
         "post_wait_freezes": {
             "time": 500,
-            "threshold": 0.8
+            "target": true
         }
     },
     "HomePage": {
         "recognition": "OCR",
-        "expected": "战役推进"
-    },
-    "resourcesLoading": {
-        "recognition": "OCR",
-        "expected": "资源加载中",
-        "post_delay": 2500,
-        "post_wait_freezes": 0
-    },
-    "backPage": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            0,
-            200,
-            70
-        ],
-        "template": [
-            "公用按钮组件/返回上一页_gray.png",
-            "公用按钮组件/返回上一页_black.png"
-        ],
-        "action": "Click",
-        "post_delay": 1000,
-        "post_wait_freezes": 0
+        "expected": "战役推进",
+        "pre_wait_freezes": {
+            "time": 500,
+            "target": [
+                0,
+                0,
+                200,
+                70
+            ]
+        }
     }
 }

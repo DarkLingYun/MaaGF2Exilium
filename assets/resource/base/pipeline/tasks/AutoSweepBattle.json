@@ -3,7 +3,7 @@
         "doc": "标准同调、定向精研、补给作战",
         "next": [
             "enterAutoSweepBattleTask",
-            "[JumpBack]StartGame"
+            "[JumpBack]returnToHomePage"
         ]
     },
     "enterAutoSweepBattleTask": {
@@ -12,7 +12,8 @@
         "expected": "战役推进",
         "action": "Click",
         "next": [
-            "supplyOperation"
+            "supplyOperation",
+            "enterAutoSweepBattleTask"
         ]
     },
     "supplyOperation": {
@@ -238,9 +239,9 @@
                 ],
                 "roi": [
                     645,
-                    581,
+                    530,
                     332,
-                    94
+                    146
                 ]
             },
             {
@@ -269,7 +270,7 @@
     "selectedEffectsCombinationPageTopSwip": {
         "doc": "向上滑动4个效果组合",
         "recognition": "DirectHit",
-        "duration": 500,
+        "end_hold": 500,
         "action": "Swipe",
         "begin": [
             158,

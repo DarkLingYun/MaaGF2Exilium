@@ -1,16 +1,46 @@
 {
-    "AutoSweepBattle": {
-        "next": [
-            "enterAutoSweepBattleTask",
-            "[JumpBack]returnToHomePage"
+    "AutoSweepBattleSupplyOperationPrepareIsAccessories": {
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "OCR",
+                "expected": [
+                    "^下一步$",
+                    "^下一$"
+                ],
+                "roi": [
+                    652,
+                    542,
+                    250,
+                    66
+                ]
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": "补给作战/定向精研_下一步.png"
+            }
+        ]
+    },
+    "selectedEffectsCombinationPageTopSwip": {
+        "begin": [
+            281,
+            470,
+            228,
+            14
+        ],
+        "end": [
+            283,
+            279,
+            225,
+            14
         ]
     },
     "supplyOperationReady": {
         "roi": [
-            969,
-            584,
-            150,
-            50
+            1015,
+            603,
+            117,
+            39
         ]
     }
 }

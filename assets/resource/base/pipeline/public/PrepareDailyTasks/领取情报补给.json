@@ -1,0 +1,53 @@
+{
+    "领取情报补给": {
+        "enabled": true,
+        "max_hit": 1,
+        "next": [
+            "[JumpBack]打开活动页-情报补给",
+            "点击情报补给标签页",
+            "[JumpBack]滑动活动列表-情报补给",
+            "returnToHomePage"
+        ]
+    },
+    "打开活动页-情报补给": {
+        "max_hit": 1,
+        "next": [
+            "打开活动页-活动通用"
+        ]
+    },
+    "滑动活动列表-情报补给": {
+        "max_hit": 2,
+        "next": [
+            "滑动活动列表-活动通用"
+        ]
+    },
+    "点击情报补给标签页": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": [
+            "^情报补给$"
+        ],
+        "next": [
+            "已进入情报补给标签页",
+            "点击情报补给标签页"
+        ]
+    },
+    "已进入情报补给标签页": {
+        "recognition": "OCR",
+        "expected": [
+            "^情报补给$"
+        ],
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]领取情报补给-情报补给",
+            "returnToHomePage"
+        ]
+    },
+    "领取情报补给-情报补给": {
+        "recognition": "OCR",
+        "expected": [
+            "^领取$"
+        ],
+        "action": "Click"
+    }
+}
