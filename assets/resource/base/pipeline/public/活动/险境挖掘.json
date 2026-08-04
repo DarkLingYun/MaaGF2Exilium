@@ -19,16 +19,15 @@
     },
     "滑动活动列表-险境挖掘": {
         "max_hit": 2,
-         "next": [
-             "滑动活动列表-活动通用"
-         ]
+        "next": [
+            "滑动活动列表-活动通用"
+        ]
     },
     "clickDangerousExcavationTab": {
         "doc": "点击险境挖掘页签",
-        "recognition": "OCR",
-        "expected": [
-            "险境挖掘"
-        ],
+        "recognition": "TemplateMatch",
+        "template": "活动/险境挖掘/险境挖掘_light.png",
+        "green_mask": true,
         "action": "Click",
         "next": [
             "dangerousExcavationTabClicked",
@@ -37,16 +36,9 @@
     },
     "dangerousExcavationTabClicked": {
         "doc": "险境挖掘页签已点击",
-        "recognition": "OCR",
-        "expected": [
-            "险境挖掘"
-        ],
-        "roi": [
-            861,
-            138,
-            255,
-            75
-        ],
+        "recognition": "TemplateMatch",
+        "template": "活动/险境挖掘/险境挖掘_dark.png",
+        "green_mask": true,
         "next": [
             "enterDangerousExcavationPage"
         ]
@@ -58,10 +50,10 @@
             "险境挖掘"
         ],
         "roi": [
-            1117,
-            548,
-            91,
-            25
+            954,
+            402,
+            265,
+            176
         ],
         "action": "Click",
         "next": [
@@ -73,16 +65,11 @@
         "doc": "险境挖掘页面已进入",
         "recognition": "OCR",
         "expected": [
-            "^险境挖掘$"
-        ],
-        "roi": [
-            39,
-            515,
-            213,
-            61
+            "线索收集"
         ],
         "next": [
-            "enterClueCollectionPage"
+            "clueCollectionPageEntered",
+            "[JumpBack]enterClueCollectionPage"
         ]
     },
     "enterClueCollectionPage": {
@@ -91,27 +78,20 @@
         "expected": [
             "线索收集"
         ],
-        "action": "Click",
-        "next": [
-            "clueCollectionPageEntered",
-            "enterClueCollectionPage"
-        ]
+        "action": "Click"
     },
     "clueCollectionPageEntered": {
-        "doc": "线索收集页面已进入",
+        "doc": "线索收集页面已进入，识别左下角内容",
         "recognition": "OCR",
         "expected": [
-            "线索收集"
-        ],
-        "roi": [
-            579,
-            101,
-            122,
-            39
+            "每日任务",
+            "刷新"
         ],
         "next": [
-            "claimClue",
-            "closeClueCollectionPage"
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]claimClue",
+            "[JumpBack]clickCloseWindowButton",
+            "startToClaimSingleReward"
         ]
     },
     "claimClue": {
@@ -121,102 +101,37 @@
             "领取"
         ],
         "action": "Click",
-        "next": [
-            "closeDangerousExcavationClaimResultPage"
-        ]
-    },
-    "closeDangerousExcavationClaimResultPage": {
-        "doc": "关闭领取结果页面",
-        "recognition": "OCR",
-        "expected": [
-            "点击空白处关闭"
-        ],
-        "action": "Click",
-        "next": [
-            "clueCollectionPageEntered",
-            "closeDangerousExcavationClaimResultPage"
-        ]
-    },
-    "closeClueCollectionPage": {
-        "doc": "关闭线索收集页面",
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/关闭按钮_gray.png",
-            "公用按钮组件/关闭按钮_black.png"
-        ],
-        "action": "Click",
-        "next": [
-            "clueCollectionPageClosed",
-            "closeClueCollectionPage"
-        ]
-    },
-    "clueCollectionPageClosed": {
-        "doc": "线索收集页面已关闭",
-        "recognition": "OCR",
-        "expected": [
-            "^险境挖掘$"
-        ],
-        "roi": [
-            39,
-            515,
-            213,
-            61
-        ],
-        "next": [
-            "startToClaimSingleReward"
-        ]
+        "post_wait_freezes": 1000
     },
     "startToClaimSingleReward": {
         "doc": "开始领取奖励",
         "next": [
-            "insufficientTreasureMap",
-            "claimSingleReward",
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]claimSingleReward",
             "allSingleRewardsClaimed"
         ]
     },
     "claimSingleReward": {
-        "doc": "翻开一格",
+        "doc": "翻开一格，不识别道具不足提示，改为最多点6次格子，点完就领取奖励/退出",
         "recognition": "TemplateMatch",
-        "template": "活动/险境挖掘格子.png",
+        "template": "活动/险境挖掘/险境挖掘格子.png",
         "action": "Click",
-        "post_delay": 500,
-        "next": [
-            "insufficientTreasureMap",
-            "closeClaimSingleRewardResultPage"
-        ]
-    },
-    "closeClaimSingleRewardResultPage": {
-        "doc": "关闭翻开一格结果页面",
-        "recognition": "OCR",
-        "expected": [
-            "点击空白处关闭"
-        ],
-        "action": "Click",
-        "post_delay": 500,
-        "next": [
-            "claimSingleReward",
-            "allSingleRewardsClaimed"
-        ]
-    },
-    "insufficientTreasureMap": {
-        "doc": "藏宝图不足",
-        "recognition": "OCR",
-        "expected": "^道具不足$",
-        "next": [
-            "allSingleRewardsClaimed"
-        ]
+        "max_hit": 6,
+        "post_wait_freezes": 500
     },
     "allSingleRewardsClaimed": {
         "doc": "所有单个奖励已领取",
         "next": [
-            "claimLineReward",
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]claimLineReward",
             "returnToHomePage"
         ]
     },
     "claimLineReward": {
         "doc": "开始领取行列奖励",
         "recognition": "TemplateMatch",
-        "template": "公用按钮组件/提醒.png",
+        "template": "公用按钮组件/提醒_v2.png",
+        "green_mask": true,
         "action": "Click",
         "roi": [
             396,
@@ -224,29 +139,6 @@
             862,
             628
         ],
-        "threshold": 0.65,
-        "post_delay": 500,
-        "next": [
-            "closeClaimLineRewardResultPage"
-        ]
-    },
-    "closeClaimLineRewardResultPage": {
-        "doc": "关闭行列奖励结果页面",
-        "recognition": "OCR",
-        "expected": [
-            "点击空白处关闭"
-        ],
-        "action": "Click",
-        "post_delay": 500,
-        "next": [
-            "claimLineReward",
-            "allLineRewardsClaimed"
-        ]
-    },
-    "allLineRewardsClaimed": {
-        "doc": "所有行列奖励已领取",
-        "next": [
-            "returnToHomePage"
-        ]
+        "post_wait_freezes": 1200
     }
 }

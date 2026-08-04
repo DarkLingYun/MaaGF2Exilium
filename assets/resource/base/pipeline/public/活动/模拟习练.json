@@ -69,13 +69,14 @@
     "有未完成的关卡-模拟习练": {
         "recognition": "TemplateMatch",
         "template": [
-            "活动/模拟习练_激活.png",
-            "活动/模拟习练_未激活.png"
+            "活动/模拟习练/模拟习练_激活.png",
+            "活动/模拟习练/模拟习练_未激活.png"
         ],
         "order_by": "Vertical",
         "action": "Click",
         "next": [
-            "开始模拟习练战斗"
+            "[JumpBack]开始模拟习练战斗",
+            "通用战斗任务开始"
         ]
     },
     "开始模拟习练战斗": {
@@ -85,11 +86,7 @@
         "expected": [
             "前往挑战"
         ],
-        "action": "Click",
-        "next": [
-            "模拟习练页面",
-            "[JumpBack]通用战斗任务开始"
-        ]
+        "action": "Click"
     },
     "领取关卡奖励-模拟习练": {
         "recognition": "OCR",

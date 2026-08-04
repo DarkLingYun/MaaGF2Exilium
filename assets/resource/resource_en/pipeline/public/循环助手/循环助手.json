@@ -1,0 +1,34 @@
+{
+    "循环结束": {
+        "doc": "模拟器在确认循环结束时可能卡在确认页面（无法通过点击跳出），只能重启游戏",
+        "next": [
+            "循环助手-循环结束后回到循环助手页面",
+            "[JumpBack]循环助手-点击确认循环结束",
+            "[JumpBack]循环助手-关闭游戏",
+            "returnToHomePage"
+        ]
+    },
+    "循环助手-点击确认循环结束": {
+        "max_hit": 20,
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "action": "Click"
+    },
+    "循环助手-循环结束后回到循环助手页面": {
+        "recognition": "OCR",
+        "expected": [
+            "开始循环"
+        ],
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "循环助手-关闭游戏": {
+        "max_hit": 1,
+        "next": [
+            "StopGame"
+        ]
+    }
+}

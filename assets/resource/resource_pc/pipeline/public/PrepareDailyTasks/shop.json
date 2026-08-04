@@ -1,0 +1,7 @@
+{
+    "enterShop": {
+        "doc": "首页按 E 键进入商城",
+        "action": "ClickKey",
+        "key": 69
+    }
+}

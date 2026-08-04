@@ -1,0 +1,18 @@
+{
+    "selectPlatoonItem": {
+        "roi": [
+            206,
+            69,
+            961,
+            611
+        ]
+    },
+    "PlatoonItemNotPurchasable": {
+        "roi": [
+            548,
+            412,
+            178,
+            119
+        ]
+    }
+}

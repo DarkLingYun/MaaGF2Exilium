@@ -3,28 +3,26 @@
         "max_hit": 1,
         "enabled": true,
         "next": [
-            "findPassByText",
-            "findPassByImage",
+            "findPass",
             "returnToHomePage"
         ]
     },
-    "findPassByText": {
+    "findPass": {
         "doc": "进入巡录领取任务",
-        "recognition": "OCR",
-        "expected": "^巡录$",
-        "action": "Click",
-        "next": [
-            "switchToDailyPassRewardPage",
-            "[JumpBack]开启远航巡录"
-        ]
-    },
-    "findPassByImage": {
-        "doc": "进入巡录领取任务",
-        "recognition": "TemplateMatch",
-        "template": [
-            "其他/巡录.png"
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "OCR",
+                "expected": "^巡录$"
+            },
+            {
+                "recognition": "TemplateMatch",
+                "template": [
+                    "其他/巡录.png"
+                ],
+                "green_mask": true
+            }
         ],
-        "green_mask": true,
         "action": "Click",
         "next": [
             "switchToDailyPassRewardPage",

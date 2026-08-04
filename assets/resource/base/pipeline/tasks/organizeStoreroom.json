@@ -6,7 +6,7 @@
         "expected": "战役推进",
         "next": [
             "openNavigationScreen",
-            "[JumpBack]StartGame"
+            "[JumpBack]returnToHomePage"
         ]
     },
     "openNavigationScreen": {

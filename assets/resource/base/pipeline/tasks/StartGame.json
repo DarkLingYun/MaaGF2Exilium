@@ -1,210 +1,45 @@
 {
     "StartGame": {
-        "doc": "启动游戏",
-        "action": "StartApp",
-        "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity",
-        "post_wait_freezes": 0,
+        "doc": "启动游戏流程",
+        "timeout": 150000,
+        "rate_limit": 3000,
         "next": [
-            "StartGame_levelUp",
-            "StartGame_clickCancel",
-            "StartGame_HomePage",
-            "StartGame_sunbornGameLogo",
-            "StartGame_nonScrollablePopupClose",
-            "StartGame_scrollablePopupClose",
-            "StartGame_announcementClosed",
-            "StartGame_backPage",
-            "StartGame_returnToHomePage",
-            "StartGame_clickStart",
-            "StartGame_dailyRewards",
-            "[JumpBack]openGF2GameApp"
-        ]
-    },
-    "StartGame_levelUp": {
-        "recognition": "OCR",
-        "expected": [
-            "指挥官等级",
-            "官等级"
-        ],
-        "roi": [
-            272,
-            84,
-            726,
-            487
-        ],
-        "action": "Click",
-        "next": [
-            "StartGame"
-        ]
-    },
-    "StartGame_HomePage": {
-        "recognition": "OCR",
-        "expected": "战役推进",
-        "post_wait_freezes": {
-            "time": 3000,
-            "threshold": 0.8
-        },
-        "next": [
+            "[JumpBack]clickCloseWindowButton",
+            "[JumpBack]clickHomeButton",
+            "[JumpBack]clickBackButton",
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]指挥官等级提升-通用",
+            "[JumpBack]退出活动层-活动层通用",
             "StartGame_HomePage_Check",
-            "StartGame"
+            "[JumpBack]StartGame_loadingSource",
+            "[JumpBack]StartGame_clickStart",
+            "[JumpBack]StartGame_downloadResource",
+            "[JumpBack]StartGame_unzipResources",
+            "[JumpBack]StartGame_restartGF2Game",
+            "[JumpBack]openGF2GameApp"
         ]
     },
     "StartGame_HomePage_Check": {
         "doc": "任务出口，识别到主页的战役推进后结束任务",
+        "focus": {
+            "Node.Action.Starting": "已进入游戏主页"
+        },
         "recognition": "OCR",
+        "pre_wait_freezes": {
+            "time": 2000,
+            "target": [
+                0,
+                0,
+                337,
+                109
+            ]
+        },
         "expected": "战役推进"
     },
-    "StartGame_clickCancel": {
+    "StartGame_loadingSource": {
         "recognition": "OCR",
         "expected": [
-            "^取消$",
-            "^上一步$"
-        ],
-        "action": "Click",
-        "next": [
-            "StartGame_returnToHomePage",
-            "StartGame_HomePage"
-        ]
-    },
-    "StartGame_nonScrollablePopupClose": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            940,
-            120,
-            80,
-            60
-        ],
-        "template": [
-            "公用按钮组件/关闭按钮_gray.png",
-            "公用按钮组件/关闭按钮_black.png"
-        ],
-        "action": "Click",
-        "next": [
-            "StartGame_returnToHomePage"
-        ]
-    },
-    "StartGame_scrollablePopupClose": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            940,
-            110,
-            80,
-            60
-        ],
-        "template": [
-            "公用按钮组件/关闭按钮_gray.png",
-            "公用按钮组件/关闭按钮_black.png"
-        ],
-        "action": "Click",
-        "next": [
-            "StartGame_returnToHomePage"
-        ]
-    },
-    "StartGame_returnToHomePage": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            0,
-            200,
-            70
-        ],
-        "template": [
-            "公用按钮组件/主页按钮_gray.png",
-            "公用按钮组件/主页按钮_black.png"
-        ],
-        "action": "Click",
-        "post_delay": 1500,
-        "next": [
-            "StartGame_HomePage"
-        ]
-    },
-    "StartGame_backPage": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            0,
-            0,
-            200,
-            70
-        ],
-        "template": [
-            "公用按钮组件/返回上一页_gray.png",
-            "公用按钮组件/返回上一页_black.png"
-        ],
-        "action": "Click",
-        "post_delay": 1000,
-        "next": [
-            "StartGame_returnToHomePage",
-            "StartGame_backPage",
-            "StartGame_HomePage"
-        ]
-    },
-    "StartGame_announcementClosed": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/关闭按钮_gray.png",
-            "公用按钮组件/关闭按钮_black.png",
-            "公用按钮组件/智能导航光屏关闭按钮_gray.png"
-        ],
-        "roi": [
-            1170,
-            0,
-            100,
-            105
-        ],
-        "action": "Click",
-        "post_wait_freezes": {
-            "time": 500,
-            "threshold": 0.8
-        },
-        "post_delay": 3000,
-        "next": [
-            "StartGame_dailyRewards",
-            "StartGame_announcementClosed",
-            "StartGame_HomePage"
-        ]
-    },
-    "StartGame_dailyRewards": {
-        "recognition": "OCR",
-        "expected": [
-            "空白",
-            "点击",
-            "点击空白处关闭",
-            "关闭"
-        ],
-        "action": "Click",
-        "post_delay": 3000,
-        "next": [
-            "StartGame"
-        ]
-    },
-    "StartGame_sunbornGameLogo": {
-        "recognition": "TemplateMatch",
-        "roi": [
-            338,
-            215,
-            268,
-            272
-        ],
-        "template": "启动游戏/SunbornGameLogo.png",
-        "next": [
-            "StartGame_sunbornGameLogo",
-            "healthGameAdvice"
-        ]
-    },
-    "healthGameAdvice": {
-        "doc": "健康游戏忠告到点击开始之间的时间较长，建议识别超时设置时间多一些",
-        "recognition": "OCR",
-        "expected": [
-            "健康",
-            "健康游戏",
-            "忠告"
-        ],
-        "timeout": 35000,
-        "next": [
-            "healthGameAdvice",
-            "StartGame_clickStart",
-            "[JumpBack]restartGF2Game",
-            "[JumpBack]unzipResources",
-            "[JumpBack]downloadResource"
+            "资源加载中"
         ]
     },
     "StartGame_clickStart": {
@@ -214,39 +49,23 @@
             "击开始$",
             "点击开"
         ],
-        "action": "Click",
-        "timeout": 35000,
-        "next": [
-            "StartGame_clickStart",
-            "StartGame"
-        ]
+        "action": "Click"
     },
     "openGF2GameApp": {
         "action": "StartApp",
         "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity"
     },
-    "downloadResource": {
+    "StartGame_downloadResource": {
         "recognition": "OCR",
-        "expected": "下载资源",
-        "next": [
-            "downloadResource",
-            "unzipResources"
-        ]
+        "expected": "下载资源"
     },
-    "unzipResources": {
+    "StartGame_unzipResources": {
         "recognition": "OCR",
-        "expected": "解压",
-        "next": [
-            "unzipResources",
-            "restartGF2Game"
-        ]
+        "expected": "解压"
     },
-    "restartGF2Game": {
+    "StartGame_restartGF2Game": {
         "recognition": "OCR",
         "expected": "确认",
-        "action": "Click",
-        "next": [
-            "StartGame"
-        ]
+        "action": "Click"
     }
 }

@@ -1,0 +1,7 @@
+{
+    "clickEmailsButton": {
+        "doc": "首页按 M 键进入邮箱",
+        "action": "ClickKey",
+        "key": 77
+    }
+}

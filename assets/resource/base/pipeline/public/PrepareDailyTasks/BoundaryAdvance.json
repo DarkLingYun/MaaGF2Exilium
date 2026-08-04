@@ -1,0 +1,204 @@
+{
+    "边界推进委托领取": {
+        "max_hit": 1,
+        "enabled": true,
+        "next": [
+            "[JumpBack]返回首页-边界推进委托领取",
+            "enterBoundaryAdvanceAction"
+        ]
+    },
+    "返回首页-边界推进委托领取": {
+        "max_hit": 1,
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "enterBoundaryAdvanceAction": {
+        "doc": "进入边界派遣",
+        "recognition": "OCR",
+        "expected": [
+            "^限时开启$",
+            "限时开启$",
+            "^限时开启"
+        ],
+        "action": "Click",
+        "focus": {
+            "Node.Action.Starting": "边界推进委托领取"
+        },
+        "next": [
+            "clickBoundaryAdvanceTagButton",
+            "enterBoundaryAdvanceAction"
+        ]
+    },
+    "clickBoundaryAdvanceTagButton": {
+        "doc": "点击边界推进标签按钮,循环调用来自动关闭弹窗",
+        "recognition": "OCR",
+        "expected": "推进",
+        "roi": [
+            1085,
+            154,
+            136,
+            54
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                639,
+                536,
+                641,
+                184
+            ]
+        },
+        "next": [
+            "确认进入边界推进",
+            "clickBoundaryAdvanceTagButton"
+        ]
+    },
+    "确认进入边界推进": {
+        "recognition": "OCR",
+        "expected": [
+            "域限突破"
+        ],
+        "next": [
+            "boundaryAdvanceDelegateRewardFull",
+            "clickBoundaryAdvanceDelegateButton"
+        ]
+    },
+    "boundaryAdvanceDelegateRewardFull": {
+        "doc": "边界推进委托奖励已满",
+        "recognition": "OCR",
+        "expected": [
+            "当前难度奖励已全部领取",
+            "全部领取$",
+            "已全部",
+            "奖励已全部",
+            "己全部",
+            "奖励己全部"
+        ],
+        "roi": [
+            862,
+            573,
+            209,
+            32
+        ],
+        "focus": {
+            "Node.Action.Succeeded": "边界推进奖励已全部领取"
+        },
+        "next": [
+            "exitBoundaryAdvance"
+        ]
+    },
+    "clickBoundaryAdvanceDelegateButton": {
+        "doc": "点击边界推进委托按钮,循环调用防止新周期卡住",
+        "recognition": "OCR",
+        "roi": [
+            722,
+            620,
+            156,
+            52
+        ],
+        "expected": [
+            "^晶源采集$",
+            "采集$",
+            "^晶源"
+        ],
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": [
+                639,
+                536,
+                641,
+                184
+            ]
+        },
+        "next": [
+            "boundaryAdvanceDelegateOneClickDispatch",
+            "boundaryAdvanceDelegateNotClaimable",
+            "boundaryAdvanceDelegateOneClickClaim",
+            "clickBoundaryAdvanceDelegateButton"
+        ]
+    },
+    "boundaryAdvanceDelegateOneClickDispatch": {
+        "doc": "边界推进委托一键派遣",
+        "recognition": "OCR",
+        "roi": [
+            660,
+            635,
+            275,
+            45
+        ],
+        "expected": [
+            "^一键派遣$",
+            "派遣$",
+            "^一键"
+        ],
+        "action": "Click",
+        "next": [
+            "boundaryAdvanceDelegateOneClickDispatch",
+            "boundaryAdvanceDelegateNotClaimable",
+            "boundaryAdvanceDelegateOneClickClaim"
+        ]
+    },
+    "boundaryAdvanceDelegateOneClickClaim": {
+        "doc": "边界推进委托一键领取",
+        "recognition": "TemplateMatch",
+        "roi": [
+            799,
+            530,
+            481,
+            190
+        ],
+        "template": [
+            "边界推进/一键领取.png"
+        ],
+        "green_mask": true,
+        "threshold": 0.85,
+        "focus": {
+            "Node.Action.Starting": "领取边界推进奖励"
+        },
+        "action": "Click",
+        "next": [
+            "boundaryAdvanceDelegateRewardClaimResultPage",
+            "boundaryAdvanceDelegateOneClickClaim"
+        ]
+    },
+    "boundaryAdvanceDelegateRewardClaimResultPage": {
+        "doc": "边界推进委托奖励领取结果页关闭",
+        "recognition": "OCR",
+        "expected": "点击",
+        "action": "Click",
+        "next": [
+            "boundaryAdvanceDelegateRewardClaimResultPage",
+            "exitBoundaryAdvance"
+        ]
+    },
+    "boundaryAdvanceDelegateNotClaimable": {
+        "doc": "边界推进委托不可领取",
+        "recognition": "TemplateMatch",
+        "roi": [
+            799,
+            530,
+            481,
+            190
+        ],
+        "focus": {
+            "Node.Action.Starting": "边界委托未完成"
+        },
+        "threshold": 0.85,
+        "template": [
+            "边界推进/不可领取.png"
+        ],
+        "green_mask": true,
+        "post_delay": 100,
+        "next": [
+            "exitBoundaryAdvance"
+        ]
+    },
+    "exitBoundaryAdvance": {
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}

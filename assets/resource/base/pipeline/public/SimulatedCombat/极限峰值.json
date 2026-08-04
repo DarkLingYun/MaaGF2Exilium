@@ -30,12 +30,11 @@
         "expected": "峰值推定",
         "action": "Click",
         "next": [
-            "进入极限峰值标签页-极限峰值",
             "[JumpBack]发现新周期-极限峰值",
-            "[JumpBack]发现周期报酬-极限峰值"
+            "[JumpBack]发现周期报酬-极限峰值",
+            "进入极限峰值标签页-极限峰值"
         ]
     },
-
     "进入极限峰值标签页-极限峰值": {
         "recognition": "OCR",
         "expected": [

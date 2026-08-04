@@ -1,0 +1,51 @@
+{
+    "使用完接入密钥(体力药水)": {
+        "doc": "用光接入密钥(体力药水)",
+        "enabled": false,
+        "max_hit": 1,
+        "focus": {
+            "Node.Action.Starting": "使用接入密钥(体力药水)"
+        },
+        "next": [
+            "[JumpBack]返回首页-使用完接入密钥(体力药水)",
+            "点击体力条-使用完接入密钥(体力药水)"
+        ]
+    },
+    "返回首页-使用完接入密钥(体力药水)": {
+        "max_hit": 1,
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "点击体力条-使用完接入密钥(体力药水)": {
+        "recognition": "DirectHit",
+        "target": [
+            185,
+            665,
+            67,
+            17
+        ],
+        "action": "Click",
+        "next": [
+            "consumeAccessKey"
+        ]
+    },
+    "consumeAccessKey": {
+        "doc": "消耗接入密钥",
+        "recognition": "FeatureMatch",
+        "template": "体力兑换/体力兑换.png",
+        "action": "Click",
+        "next": [
+            "accessKeyInsufficient",
+            "[JumpBack]nonScrollablePopupConfirm"
+        ]
+    },
+    "accessKeyInsufficient": {
+        "rate_limit": 200,
+        "recognition": "OCR",
+        "expected": "接入密钥不足",
+        "next": [
+            "returnToHomePage"
+        ]
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "selectdispatchCenterItem": {
+        "green_mask": true,
+        "roi": [
+            210,
+            63,
+            958,
+            611
+        ]
+    }
+}

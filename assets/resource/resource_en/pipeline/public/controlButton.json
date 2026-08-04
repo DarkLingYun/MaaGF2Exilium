@@ -1,0 +1,38 @@
+{
+    "clickHomeButton": {
+        "doc": "外服由于网络问题，动画还会稍长一些",
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": true
+        }
+    },
+    "clickCloseWindowButton": {
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": true
+        }
+    },
+    "clickBackButton": {
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": true
+        }
+    },
+    "announcementClosed": {
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": true
+        }
+    },
+    "HomePage": {
+        "pre_wait_freezes": {
+            "time": 1000,
+            "target": [
+                0,
+                0,
+                200,
+                70
+            ]
+        }
+    }
+}

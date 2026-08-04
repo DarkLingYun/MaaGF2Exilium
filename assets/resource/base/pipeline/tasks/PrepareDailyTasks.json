@@ -2,8 +2,14 @@
     "PrepareDailyTasks": {
         "doc": "日常任务前准备",
         "next": [
-            "timeLimitedTask",
-            "[JumpBack]StartGame"
+            "[JumpBack]领取情报补给",
+            "[JumpBack]领取七日签到资源",
+            "[JumpBack]领取邮件",
+            "[JumpBack]使用完接入密钥(体力药水)",
+            "[JumpBack]商城免费每日补给箱购买",
+            "[JumpBack]边界推进委托领取",
+            "[JumpBack]领取班组奖励",
+            "returnToHomePage"
         ]
     }
 }

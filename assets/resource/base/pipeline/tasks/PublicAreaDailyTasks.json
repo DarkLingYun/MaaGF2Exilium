@@ -2,18 +2,8 @@
     "PublicAreaDailyTasks": {
         "doc": "公共区日常",
         "next": [
-            "clickPublicAreaDailyButton",
-            "[JumpBack]StartGame"
-        ]
-    },
-    "clickPublicAreaDailyButton": {
-        "recognition": "OCR",
-        "expected": "^战役推进$",
-        "post_wait_freezes": 100,
-        "next": [
-            "enterLoungeAction",
-            "enterDispatchCenterAction",
-            "enterSchedulingGainsAction",
+            "[JumpBack]enterLoungeAction",
+            "[JumpBack]enterDispatchCenterAction",
             "returnToHomePage"
         ]
     }

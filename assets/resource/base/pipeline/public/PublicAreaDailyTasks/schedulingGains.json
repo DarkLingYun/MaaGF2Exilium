@@ -63,7 +63,7 @@
             "[JumpBack]点击空白处关闭-通用"
         ]
     },
-    "调度收益任务结束":{
+    "调度收益任务结束": {
         "recognition": "OCR",
         "expected": "资源生产",
         "post_wait_freezes": {
@@ -75,7 +75,7 @@
                 220
             ]
         },
-        "next":[
+        "next": [
             "开始神秘箱任务",
             "[JumpBack]点击空白处关闭-通用",
             "returnToHomePage"

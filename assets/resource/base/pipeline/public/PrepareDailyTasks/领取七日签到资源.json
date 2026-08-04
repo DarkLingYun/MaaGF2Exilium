@@ -1,0 +1,58 @@
+{
+    "领取七日签到资源": {
+        "enabled": true,
+        "max_hit": 1,
+        "focus": {
+            "Node.Action.Starting": "领取七日签到资源"
+        },
+        "next": [
+            "[JumpBack]打开活动页-七日签到资源",
+            "点击七日签到资源标签页",
+            "[JumpBack]滑动活动列表-七日签到资源",
+            "returnToHomePage"
+        ]
+    },
+    "打开活动页-七日签到资源": {
+        "max_hit": 1,
+        "next": [
+            "打开活动页-活动通用"
+        ]
+    },
+    "滑动活动列表-七日签到资源": {
+        "max_hit": 2,
+        "next": [
+            "滑动活动列表-活动通用"
+        ]
+    },
+    "点击七日签到资源标签页": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": [
+            "^战前补给$",
+            "超心选速递"
+        ],
+        "next": [
+            "已进入七日签到资源标签页",
+            "点击七日签到资源标签页"
+        ]
+    },
+    "已进入七日签到资源标签页": {
+        "recognition": "OCR",
+        "expected": [
+            "^战前补给$",
+            "超心选速递"
+        ],
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]领取七日签到资源-领取七日签到资源",
+            "returnToHomePage"
+        ]
+    },
+    "领取七日签到资源-领取七日签到资源": {
+        "recognition": "OCR",
+        "expected": [
+            "^领取$"
+        ],
+        "action": "Click"
+    }
+}

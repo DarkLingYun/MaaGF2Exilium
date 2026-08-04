@@ -1,0 +1,99 @@
+{
+    "领取邮件": {
+        "doc": "领取邮件任务",
+        "enabled": true,
+        "max_hit": 1,
+        "focus": {
+            "Node.Action.Starting": "领取邮件"
+        },
+        "next": [
+            "[JumpBack]返回首页-领取邮件",
+            "clickEmailsButton",
+            "returnToHomePage"
+        ]
+    },
+    "返回首页-领取邮件": {
+        "max_hit": 1,
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "clickEmailsButton": {
+        "roi": [
+            40,
+            380,
+            280,
+            200
+        ],
+        "recognition": "FeatureMatch",
+        "template": [
+            "公用按钮组件/邮件_主页.png",
+            "公用按钮组件/邮件_主页_2.png"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "claimAllEmails"
+        ]
+    },
+    "claimAllEmails": {
+        "doc": "领取邮件",
+        "recognition": "OCR",
+        "roi": [
+            0,
+            600,
+            400,
+            200
+        ],
+        "expected": "领取全部",
+        "max_hit": 10,
+        "action": "Click",
+        "next": [
+            "noUnclaimedItems",
+            "closeClaimAllEmailsPopup",
+            "claimAllEmails"
+        ]
+    },
+    "noUnclaimedItems": {
+        "recognition": "OCR",
+        "expected": "无可领取物品",
+        "next": [
+            "noUnclaimedItems",
+            "findSurveyEmail",
+            "exitEmails"
+        ]
+    },
+    "findSurveyEmail": {
+        "doc": "查找是否有调研邀请邮件，有的话弹出通知，该邮件会自动置顶，所以无需向下滑动",
+        "enabled": true,
+        "recognition": "OCR",
+        "expected": "调研邀请",
+        "next": [
+            "surveyEmailFound"
+        ]
+    },
+    "surveyEmailFound": {
+        "focus": {
+            "Node.Action.Starting": "<span style=\"color: red;\">发现调研邀请邮件，请手动处理</span>",
+            "toast": "发现调研邀请邮件，请手动处理"
+        },
+        "next": [
+            "exitEmails"
+        ]
+    },
+    "exitEmails": {
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "closeClaimAllEmailsPopup": {
+        "recognition": "OCR",
+        "expected": "点击空白",
+        "action": "Click",
+        "next": [
+            "closeClaimAllEmailsPopup",
+            "findSurveyEmail",
+            "exitEmails"
+        ]
+    }
+}

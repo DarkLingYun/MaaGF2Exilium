@@ -3,7 +3,7 @@
         "doc": "版本活动日常",
         "next": [
             "enterVersionActivityTask",
-            "[JumpBack]StartGame"
+            "[JumpBack]returnToHomePage"
         ]
     },
     "enterVersionActivityTask": {
@@ -91,7 +91,7 @@
             "依赖"
         ],
         "action": "Click",
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 5000,
         "next": [
             "开始活动内每日任务",
             "switchVersionActivityChapter",

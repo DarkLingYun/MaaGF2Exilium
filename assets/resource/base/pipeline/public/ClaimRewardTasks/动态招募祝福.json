@@ -40,10 +40,10 @@
         "recognition": "OCR",
         "expected": "每日祝福次数",
         "roi": [
-            58,
+            50,
             643,
-            141,
-            43
+            150,
+            50
         ],
         "next": [
             "点击一键祝福",
@@ -53,7 +53,8 @@
     "点击一键祝福": {
         "recognition": "OCR",
         "expected": [
-            "一键祝福"
+            "一键祝福",
+            "键祝福"
         ],
         "action": "Click",
         "next": [

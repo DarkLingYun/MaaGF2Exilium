@@ -18,14 +18,18 @@
     },
     "滑动活动列表-预演": {
         "max_hit": 2,
-         "next": [
-             "滑动活动列表-活动通用"
-         ]
+        "next": [
+            "滑动活动列表-活动通用"
+        ]
     },
     "clickTrialTab": {
         "doc": "点击预演，没打过的会排在第一个",
         "recognition": "OCR",
         "expected": [
+            "预演"
+        ],
+        "replace": [
+            "预潢",
             "预演"
         ],
         "action": "Click",
@@ -44,6 +48,10 @@
             515
         ],
         "expected": [
+            "预演"
+        ],
+        "replace": [
+            "预潢",
             "预演"
         ],
         "next": [
@@ -73,7 +81,6 @@
             "前往"
         ],
         "action": "Click",
-
         "next": [
             "[JumpBack]通用战斗任务开始",
             "returnToHomePage"

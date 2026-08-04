@@ -82,6 +82,7 @@
         "template": [
             "公用按钮组件/滑动条值增加.png"
         ],
+        "green_mask": true,
         "threshold": 0.9,
         "post_delay": 100,
         "action": "Click",

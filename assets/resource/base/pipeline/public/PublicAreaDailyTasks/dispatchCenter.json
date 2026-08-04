@@ -1,5 +1,6 @@
 {
     "enterDispatchCenterAction": {
+        "max_hit": 1,
         "focus": {
             "Node.Action.Starting": "开始派遣任务"
         },
@@ -10,6 +11,10 @@
     "进入委托页面-调度室": {
         "recognition": "OCR",
         "expected": "^委托$",
+        "replace": [
+            "委托、",
+            "委托"
+        ],
         "roi": [
             370,
             582,
@@ -17,30 +22,32 @@
             137
         ],
         "action": "Click",
-        "post_delay": 1000, // 有少量用户在这里老不行，我没招了
+        "post_delay": 1000,
         "next": [
             "前往调度室",
             "进入委托页面-调度室"
         ]
     },
     "前往调度室": {
+        "doc": "点击前往调度室，需选择左边的按钮，否则会点到右边任务的前往",
         "recognition": "OCR",
         "expected": "前往",
         "action": "Click",
+        "roi": [
+            24,
+            300,
+            327,
+            335
+        ],
         "post_wait_freezes": {
             // 调度室背景在动，只识别部分区域
-            "time": 500,
-            "target": [
-                0,
-                500,
-                1280,
-                220
-            ]
+            "time": 1000,
+            "target": true
         },
-        "post_delay": 1000, // 有少量用户在这里老不行，我没招了
+        "order_by": "Horizontal",
         "next": [
-            "dispatchCenterEntered",
-            "前往调度室"
+            "前往调度室",
+            "dispatchCenterEntered"
         ]
     },
     "dispatchCenterEntered": {
@@ -146,8 +153,7 @@
         },
         "next": [
             "dispatchCenterSendAgain",
-            "rewardGet",
-            "未识别到再次派遣直接点击固定位置"
+            "rewardGet"
         ]
     },
     "dispatchCenterSendAgain": {
@@ -170,29 +176,6 @@
             "returnToHomePage"
         ]
     },
-    "未识别到再次派遣直接点击固定位置": {
-        "action": "Click",
-        "target": [
-            743,
-            620,
-            264,
-            41
-        ],
-        "post_wait_freezes": {
-            "time": 1000,
-            "target": [
-                0,
-                500,
-                1280,
-                220
-            ]
-        },
-        "next": [
-            "claimDispatchCenterDispatchCountReward",
-            "enterSchedulingGainsAction",
-            "returnToHomePage"
-        ]
-    },
     "claimDispatchCenterDispatchCountReward": {
         "recognition": "TemplateMatch",
         "template": "公用按钮组件/提醒.png",
@@ -202,6 +185,7 @@
             459,
             129
         ],
+        "green_mask": true,
         "action": "Click",
         "target": true,
         "target_offset": [
