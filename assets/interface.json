@@ -3,6 +3,7 @@
   "controller": [
     {
       "name": "安卓端",
+      "label": "$安卓端",
       "type": "Adb"
     },
     {
@@ -28,12 +29,14 @@
   "resource": [
     {
       "name": "官服",
+      "label": "$官服",
       "path": [
         "{PROJECT_DIR}/resource/base"
       ]
     },
     {
       "name": "B 服",
+      "label": "$B 服",
       "path": [
         "{PROJECT_DIR}/resource/base",
         "{PROJECT_DIR}/resource/resource_bilibili"
@@ -41,6 +44,7 @@
     },
     {
       "name": "美服(dark winter)",
+      "label": "$美服(dark winter)",
       "path": [
         "{PROJECT_DIR}/resource/base",
         "{PROJECT_DIR}/resource/resource_en"
@@ -48,6 +52,7 @@
     },
     {
       "name": "国际服(haoplay)",
+      "label": "$国际服(haoplay)",
       "path": [
         "{PROJECT_DIR}/resource/base",
         "{PROJECT_DIR}/resource/resource_en",
@@ -56,6 +61,7 @@
     },
     {
       "name": "PC 端 (B 服)",
+      "label": "$PC 端 (B 服)",
       "path": [
         "{PROJECT_DIR}/resource/base",
         "{PROJECT_DIR}/resource/resource_pc"
@@ -63,6 +69,7 @@
     },
     {
       "name": "PC 端 (Steam)",
+      "label": "$PC 端 (Steam)",
       "path": [
         "{PROJECT_DIR}/resource/base",
         "{PROJECT_DIR}/resource/resource_en",
@@ -72,22 +79,25 @@
     }
   ],
   "name": "少女前线2：追放自动化助手",
-  "custom_title": "少女前线2：追放自动化助手",
+  "custom_title": "$少女前线2：追放自动化助手",
   "github": "https://github.com/DarkLingYun/MaaGF2Exilium",
   "mirrorchyan_rid": "MaaGF2Exilium",
   "task": [
     {
       "name": "社区每日操作",
+      "label": "$社区每日操作",
       "entry": "CommunityDailyHelper",
       "default_check": false
     },
     {
       "name": "启动少女前线2",
+      "label": "$启动少女前线2",
       "entry": "StartGame",
       "default_check": true
     },
     {
       "name": "日常任务前准备",
+      "label": "$日常任务前准备",
       "entry": "PrepareDailyTasks",
       "option": [
         "领取情报补给体力(限时)",
@@ -98,11 +108,12 @@
         "边界推进委托领取",
         "领取班组补给箱"
       ],
-      "description": "领取邮件需要主界面背景为人形",
+      "description": "$领取邮件说明",
       "default_check": true
     },
     {
       "name": "公共区日常",
+      "label": "$公共区日常",
       "entry": "PublicAreaDailyTasks",
       "option": [
         "访问休息室",
@@ -114,6 +125,7 @@
     },
     {
       "name": "活动层",
+      "label": "$活动层",
       "entry": "开始活动层任务",
       "option": [
         "美味烹调",
@@ -125,6 +137,7 @@
     },
     {
       "name": "补给作战",
+      "label": "$补给作战",
       "entry": "AutoSweepBattle",
       "option": [
         "作战类型"
@@ -132,20 +145,23 @@
     },
     {
       "name": "心智勘测",
+      "label": "$心智勘测",
       "entry": "MindSurveyTask",
       "option": [
         "转录序体：",
         "勘测次数："
       ],
-      "description": "心智勘测体力值每次消耗30"
+      "description": "$心智勘测说明"
     },
     {
       "name": "循环助手",
+      "label": "$循环助手",
       "entry": "开始循环助手任务",
       "default_check": true
     },
     {
       "name": "模拟作战日常",
+      "label": "$模拟作战日常",
       "entry": "CombatSimulations",
       "option": [
         "首领挑战自律",
@@ -154,29 +170,32 @@
         "极限峰值（0级战斗）"
       ],
       "default_check": true,
-      "description": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
+      "description": "$常规设置过多说明"
     },
     {
       "name": "版本活动日常",
+      "label": "$版本活动日常",
       "entry": "VersionActivityTask",
       "option": [
         "物资模式活动选择",
         "物资商品兑换"
       ],
       "default_check": true,
-      "description": "物资模式仅识别第五关"
+      "description": "$物资模式说明"
     },
     {
       "name": "版本活动日常2（美服/国际服）",
+      "label": "$版本活动日常2（美服/国际服）",
       "entry": "VersionActivityTask",
       "option": [
         "物资模式活动选择2（美服/国际服）",
         "物资商品兑换2（美服/国际服）"
       ],
-      "doc": "适配美服/国际服双版本活动，物资模式仅识别第五关"
+      "doc": "$版本活动2说明"
     },
     {
       "name": "易物所商店兑换",
+      "label": "$易物所商店兑换",
       "entry": "BulkExchange",
       "option": [
         "班组商店兑换",
@@ -192,6 +211,7 @@
     },
     {
       "name": "整理仓库",
+      "label": "$整理仓库",
       "entry": "organizeStoreroom",
       "option": [
         "拆解武器",
@@ -204,10 +224,11 @@
         "物资助力箱奖励类型"
       ],
       "default_check": true,
-      "description": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
+      "description": "$常规设置过多说明"
     },
     {
       "name": "领取奖励",
+      "label": "$领取奖励",
       "entry": "ClaimRewardTasks",
       "option": [
         "每日订单",
@@ -216,10 +237,11 @@
         "动态招募祝福"
       ],
       "default_check": true,
-      "description": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
+      "description": "$常规设置过多说明"
     },
     {
       "name": "活动",
+      "label": "$活动",
       "entry": "活动",
       "option": [
         "七天签到限定十连",
@@ -236,31 +258,35 @@
         "闪耀星愿"
       ],
       "default_check": true,
-      "description": "常规设置项过多，可能被遮挡，请在上方区域滚动查看可能被遮挡的设置项"
+      "description": "$常规设置过多说明"
     },
     {
       "name": "关闭游戏",
+      "label": "$关闭游戏",
       "entry": "StopGame",
       "default_check": false
     },
     {
       "name": "推图助手",
+      "label": "$推图助手",
       "entry": "ClickAssistant",
       "default_check": false,
-      "description": "半自动点击【挑战】、【观看】、【领取】，半自动战斗，半自动过剧情等，辅助完成主线及活动关卡，需要手动选关"
+      "description": "$推图助手说明"
     },
     {
       "name": "小游戏",
+      "label": "$小游戏",
       "entry": "开始小游戏",
       "default_check": false,
       "option": [
         "小游戏类型选择"
       ],
-      "description": "自动进行遗珍回收（肉鸽）、异维探渊（云图计划自走棋）小游戏"
+      "description": "$小游戏说明"
     }
   ],
   "option": {
     "领取情报补给体力(限时)": {
+      "label": "$领取情报补给体力(限时)",
       "cases": [
         {
           "name": "YES",
@@ -281,6 +307,7 @@
       ]
     },
     "领取七日签到资源(限时)": {
+      "label": "$领取七日签到资源(限时)",
       "cases": [
         {
           "name": "YES",
@@ -301,6 +328,7 @@
       ]
     },
     "领取邮件": {
+      "label": "$领取邮件",
       "cases": [
         {
           "name": "YES",
@@ -321,6 +349,7 @@
       ]
     },
     "使用完体力药水": {
+      "label": "$使用完体力药水",
       "default_case": "NO",
       "cases": [
         {
@@ -342,6 +371,7 @@
       ]
     },
     "商城免费每日补给箱购买": {
+      "label": "$商城免费每日补给箱购买",
       "cases": [
         {
           "name": "YES",
@@ -362,6 +392,7 @@
       ]
     },
     "边界推进委托领取": {
+      "label": "$边界推进委托领取",
       "cases": [
         {
           "name": "YES",
@@ -382,6 +413,7 @@
       ]
     },
     "领取班组补给箱": {
+      "label": "$领取班组补给箱",
       "type": "select",
       "cases": [
         {
@@ -403,6 +435,7 @@
       ]
     },
     "拆解武器": {
+      "label": "$拆解武器",
       "cases": [
         {
           "name": "NO",
@@ -423,9 +456,11 @@
       ]
     },
     "拆解武器等级": {
+      "label": "$拆解武器等级",
       "cases": [
         {
           "name": "旧式未培养",
+          "label": "$旧式未培养",
           "pipeline_override": {
             "chooseWeaponLevel": {
               "expected": "旧式未培养"
@@ -434,6 +469,7 @@
         },
         {
           "name": "标准及以下未培养",
+          "label": "$标准及以下未培养",
           "pipeline_override": {
             "chooseWeaponLevel": {
               "expected": "标准及以下未培养"
@@ -443,6 +479,7 @@
       ]
     },
     "拆解武器配件": {
+      "label": "$拆解武器配件",
       "cases": [
         {
           "name": "NO",
@@ -463,9 +500,11 @@
       ]
     },
     "拆解武器配件等级": {
+      "label": "$拆解武器配件等级",
       "cases": [
         {
           "name": "工业级及以下未培养",
+          "label": "$工业级及以下未培养",
           "pipeline_override": {
             "chooseLevel": {
               "expected": "工业级及以下未培养"
@@ -474,6 +513,7 @@
         },
         {
           "name": "军用级及以下未培养",
+          "label": "$军用级及以下未培养",
           "pipeline_override": {
             "chooseLevel": {
               "expected": "军用级及以下未培养"
@@ -482,6 +522,7 @@
         },
         {
           "name": "精密级及以下未培养",
+          "label": "$精密级及以下未培养",
           "pipeline_override": {
             "chooseLevel": {
               "expected": "精密级及以下未培养"
@@ -491,6 +532,7 @@
       ]
     },
     "拆解生长数据": {
+      "label": "$拆解生长数据",
       "cases": [
         {
           "name": "NO",
@@ -511,9 +553,11 @@
       ]
     },
     "拆解生长数据等级": {
+      "label": "$拆解生长数据等级",
       "cases": [
         {
           "name": "工业级及以下",
+          "label": "$工业级及以下",
           "pipeline_override": {
             "chooseFlowerLevel": {
               "expected": "工业级及以下"
@@ -522,6 +566,7 @@
         },
         {
           "name": "军用级及以下",
+          "label": "$军用级及以下",
           "pipeline_override": {
             "chooseFlowerLevel": {
               "expected": "军用级及以下"
@@ -530,6 +575,7 @@
         },
         {
           "name": "精密级及以下",
+          "label": "$精密级及以下",
           "pipeline_override": {
             "chooseFlowerLevel": {
               "expected": "精密级及以下"
@@ -539,6 +585,7 @@
       ]
     },
     "开启道具箱": {
+      "label": "$开启道具箱",
       "cases": [
         {
           "name": "YES",
@@ -559,9 +606,11 @@
       ]
     },
     "物资助力箱奖励类型": {
+      "label": "$物资助力箱奖励类型",
       "cases": [
         {
           "name": "战场报告",
+          "label": "$战场报告",
           "pipeline_override": {
             "chooseSupplySupportBoxItem": {
               "expected": "战场报告"
@@ -570,6 +619,7 @@
         },
         {
           "name": "解析图纸",
+          "label": "$解析图纸",
           "pipeline_override": {
             "chooseSupplySupportBoxItem": {
               "expected": "解析图纸"
@@ -578,6 +628,7 @@
         },
         {
           "name": "增域存量条",
+          "label": "$增域存量条",
           "pipeline_override": {
             "chooseSupplySupportBoxItem": {
               "expected": "增域存量条"
@@ -586,6 +637,7 @@
         },
         {
           "name": "转录导体",
+          "label": "$转录导体",
           "pipeline_override": {
             "chooseSupplySupportBoxItem": {
               "expected": "转录导体"
@@ -595,6 +647,7 @@
       ]
     },
     "访问休息室": {
+      "label": "$访问休息室",
       "cases": [
         {
           "name": "YES",
@@ -615,6 +668,7 @@
       ]
     },
     "调度室派遣任务": {
+      "label": "$调度室派遣任务",
       "cases": [
         {
           "name": "YES",
@@ -635,6 +689,7 @@
       ]
     },
     "调度收益领取": {
+      "label": "$调度收益领取",
       "cases": [
         {
           "name": "YES",
@@ -655,6 +710,7 @@
       ]
     },
     "收取神秘箱（需自备硬币）": {
+      "label": "$收取神秘箱（需自备硬币）",
       "cases": [
         {
           "name": "NO",
@@ -675,6 +731,7 @@
       ]
     },
     "补给次数": {
+      "label": "$补给次数",
       "cases": [
         {
           "name": "x1",
@@ -798,6 +855,7 @@
         },
         {
           "name": "All(耗尽体力)",
+          "label": "$All(耗尽体力)",
           "pipeline_override": {
             "UserSetSliderValue": {
               "enabled": false
@@ -810,6 +868,7 @@
       ]
     },
     "美味烹调": {
+      "label": "$美味烹调",
       "cases": [
         {
           "name": "YES",
@@ -830,6 +889,7 @@
       ]
     },
     "茶歇一刻": {
+      "label": "$茶歇一刻",
       "cases": [
         {
           "name": "YES",
@@ -850,9 +910,11 @@
       ]
     },
     "饮品加成": {
+      "label": "$饮品加成",
       "cases": [
         {
           "name": "星标饮品",
+          "label": "$星标饮品",
           "pipeline_override": {
             "选择饮品-茶歇一刻": {
               "template": "活动层/茶歇一刻-星标.png"
@@ -862,6 +924,7 @@
       ]
     },
     "领取逸趣导算进度奖励": {
+      "label": "$领取逸趣导算进度奖励",
       "cases": [
         {
           "name": "YES",
@@ -882,9 +945,11 @@
       ]
     },
     "作战类型": {
+      "label": "$作战类型",
       "cases": [
         {
           "name": "深度搜索(人形升级)",
+          "label": "$深度搜索(人形升级)",
           "pipeline_override": {
             "supplyOperationType": {
               "expected": "深度搜索"
@@ -896,6 +961,7 @@
         },
         {
           "name": "军备解析(武器升级)",
+          "label": "$军备解析(武器升级)",
           "pipeline_override": {
             "supplyOperationType": {
               "expected": "军备解析"
@@ -907,6 +973,7 @@
         },
         {
           "name": "决策构象(人形等级突破)",
+          "label": "$决策构象(人形等级突破)",
           "pipeline_override": {
             "supplyOperationType": {
               "expected": "决策构象"
@@ -918,6 +985,7 @@
         },
         {
           "name": "定向精研(武器配件)",
+          "label": "$定向精研(武器配件)",
           "option": [
             "配件类型",
             "配件效果",
@@ -926,6 +994,7 @@
         },
         {
           "name": "标准同调(金币本)",
+          "label": "$标准同调(金币本)",
           "pipeline_override": {
             "supplyOperationType": {
               "expected": "标准同调"
@@ -938,9 +1007,11 @@
       ]
     },
     "配件类型": {
+      "label": "$配件类型",
       "cases": [
         {
           "name": "突击与霰弹枪",
+          "label": "$突击与霰弹枪",
           "pipeline_override": {
             "switchAccessoriesTag": {
               "expected": "^突击"
@@ -949,6 +1020,7 @@
         },
         {
           "name": "冲锋枪与机枪",
+          "label": "$冲锋枪与机枪",
           "pipeline_override": {
             "switchAccessoriesTag": {
               "expected": "^冲锋枪"
@@ -957,6 +1029,7 @@
         },
         {
           "name": "狙击枪与刀",
+          "label": "$狙击枪与刀",
           "pipeline_override": {
             "switchAccessoriesTag": {
               "expected": "^狙击枪"
@@ -965,6 +1038,7 @@
         },
         {
           "name": "手枪",
+          "label": "$手枪",
           "pipeline_override": {
             "switchAccessoriesTag": {
               "expected": "^手枪"
@@ -974,9 +1048,11 @@
       ]
     },
     "配件效果": {
+      "label": "$配件效果",
       "cases": [
         {
           "name": "异位打击",
+          "label": "$异位打击",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": "^异位打击$"
@@ -985,6 +1061,7 @@
         },
         {
           "name": "制胜追进",
+          "label": "$制胜追进",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": "^制胜追进$"
@@ -993,6 +1070,7 @@
         },
         {
           "name": "双重对策",
+          "label": "$双重对策",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": "^双重对策$"
@@ -1001,6 +1079,7 @@
         },
         {
           "name": "异位提振",
+          "label": "$异位提振",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": "^异位提振$"
@@ -1009,6 +1088,7 @@
         },
         {
           "name": "应急修复",
+          "label": "$应急修复",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": "^应急修复$"
@@ -1017,6 +1097,7 @@
         },
         {
           "name": "减伤支援",
+          "label": "$减伤支援",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": "^减伤支援$"
@@ -1025,6 +1106,7 @@
         },
         {
           "name": "实弹增幅",
+          "label": "$实弹增幅",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": "^实弹增幅$"
@@ -1033,6 +1115,7 @@
         },
         {
           "name": "灼热增幅",
+          "label": "$灼热增幅",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": "^灼热增幅$"
@@ -1041,6 +1124,7 @@
         },
         {
           "name": "冰点增幅",
+          "label": "$冰点增幅",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": "^冰点增幅$"
@@ -1049,6 +1133,7 @@
         },
         {
           "name": "强蚀增幅",
+          "label": "$强蚀增幅",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": "^强蚀增幅$"
@@ -1057,6 +1142,7 @@
         },
         {
           "name": "电场增幅",
+          "label": "$电场增幅",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": "^电场增幅$"
@@ -1065,6 +1151,7 @@
         },
         {
           "name": "激流增幅",
+          "label": "$激流增幅",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": "^激流增幅$"
@@ -1073,6 +1160,7 @@
         },
         {
           "name": "战术演算",
+          "label": "$战术演算",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": "^战术演算$"
@@ -1081,6 +1169,7 @@
         },
         {
           "name": "护盾守愈",
+          "label": "$护盾守愈",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": [
@@ -1092,6 +1181,7 @@
         },
         {
           "name": "迫近强攻",
+          "label": "$迫近强攻",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": [
@@ -1103,6 +1193,7 @@
         },
         {
           "name": "巅峰召唤",
+          "label": "$巅峰召唤",
           "pipeline_override": {
             "selectedEffectsCombination": {
               "expected": [
@@ -1116,6 +1207,7 @@
       ]
     },
     "配件刷取次数": {
+      "label": "$配件刷取次数",
       "cases": [
         {
           "name": "x1",
@@ -1239,6 +1331,7 @@
         },
         {
           "name": "All(耗尽体力)",
+          "label": "$All(耗尽体力)",
           "pipeline_override": {
             "UserSetSliderValueAccessories": {
               "enabled": false
@@ -1251,9 +1344,11 @@
       ]
     },
     "转录序体：": {
+      "label": "$转录序体：",
       "cases": [
         {
           "name": "序六",
+          "label": "$序六",
           "pipeline_override": {
             "selectMindSurveyMaterialType": {
               "template": "心智勘测/06星点光芒闪耀时.png"
@@ -1262,6 +1357,7 @@
         },
         {
           "name": "序五",
+          "label": "$序五",
           "pipeline_override": {
             "selectMindSurveyMaterialType": {
               "template": "心智勘测/05乘于裙摆之上.png"
@@ -1270,6 +1366,7 @@
         },
         {
           "name": "序四",
+          "label": "$序四",
           "pipeline_override": {
             "selectMindSurveyMaterialType": {
               "template": "心智勘测/04最后的命令.png"
@@ -1278,6 +1375,7 @@
         },
         {
           "name": "序三",
+          "label": "$序三",
           "pipeline_override": {
             "selectMindSurveyMaterialType": {
               "template": "心智勘测/03限时替身.png"
@@ -1286,6 +1384,7 @@
         },
         {
           "name": "序二",
+          "label": "$序二",
           "pipeline_override": {
             "selectMindSurveyMaterialType": {
               "template": "心智勘测/02流浪的人.png"
@@ -1294,6 +1393,7 @@
         },
         {
           "name": "序一",
+          "label": "$序一",
           "pipeline_override": {
             "selectMindSurveyMaterialType": {
               "template": "心智勘测/01守望者.png"
@@ -1303,6 +1403,7 @@
       ]
     },
     "勘测次数：": {
+      "label": "$勘测次数：",
       "cases": [
         {
           "name": "x1",
@@ -1426,6 +1527,7 @@
         },
         {
           "name": "All(耗尽体力)",
+          "label": "$All(耗尽体力)",
           "pipeline_override": {
             "userSetMindSurveyCount": {
               "enabled": false
@@ -1438,6 +1540,7 @@
       ]
     },
     "首领挑战自律": {
+      "label": "$首领挑战自律",
       "cases": [
         {
           "name": "YES",
@@ -1458,6 +1561,7 @@
       ]
     },
     "自动实兵演习": {
+      "label": "$自动实兵演习",
       "cases": [
         {
           "name": "YES",
@@ -1478,6 +1582,7 @@
       ]
     },
     "自动领取峰值推定奖励": {
+      "label": "$自动领取峰值推定奖励",
       "cases": [
         {
           "name": "YES",
@@ -1498,6 +1603,7 @@
       ]
     },
     "极限峰值（0级战斗）": {
+      "label": "$极限峰值（0级战斗）",
       "cases": [
         {
           "name": "YES",
@@ -1518,9 +1624,11 @@
       ]
     },
     "物资模式活动选择": {
+      "label": "$物资模式活动选择",
       "cases": [
         {
           "name": "寂静的匹斯缇(伊格蕾塔)",
+          "label": "$寂静的匹斯缇(伊格蕾塔)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -1598,6 +1706,7 @@
         },
         {
           "name": "伊利昂之围·中篇(阿斯缇亚)",
+          "label": "$伊利昂之围·中篇(阿斯缇亚)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -1695,6 +1804,7 @@
         },
         {
           "name": "伊利昂之围·上篇(克莱妲)",
+          "label": "$伊利昂之围·上篇(克莱妲)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -1792,6 +1902,7 @@
         },
         {
           "name": "梦中的永无岛(芙玲)",
+          "label": "$梦中的永无岛(芙玲)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -1869,6 +1980,7 @@
         },
         {
           "name": "忒弥斯棋局(维尔德)",
+          "label": "$忒弥斯棋局(维尔德)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -1946,6 +2058,7 @@
         },
         {
           "name": "琥珀月光(米蒂尔)",
+          "label": "$琥珀月光(米蒂尔)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2024,6 +2137,7 @@
         },
         {
           "name": "镜像冗余·下篇(索普)",
+          "label": "$镜像冗余·下篇(索普)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2120,6 +2234,7 @@
         },
         {
           "name": "镜像冗余·上篇",
+          "label": "$镜像冗余·上篇",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2216,6 +2331,7 @@
         },
         {
           "name": "月下安魂曲",
+          "label": "$月下安魂曲",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2293,6 +2409,7 @@
         },
         {
           "name": "瑞骋迎春归",
+          "label": "$瑞骋迎春归",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2369,6 +2486,7 @@
         },
         {
           "name": "信号波重度依赖",
+          "label": "$信号波重度依赖",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2380,8 +2498,13 @@
               ]
             },
             "开始活动内每日任务": {
+              "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
               "enabled": true,
-              "expected": "^每日留言$"
+              "expected": [
+                "^每日留言$",
+                "留言$",
+                "^每日"
+              ]
             },
             "enterVersionActivityItemExchange": {
               "expected": [
@@ -2435,20 +2558,12 @@
                 185,
                 90
               ]
-            },
-            "开始活动内每日任务": {
-              "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
-              "enabled": true,
-              "expected": [
-                "^每日留言$",
-                "留言$",
-                "^每日"
-              ]
             }
           }
         },
         {
           "name": "铸碑者的黎明·下篇",
+          "label": "$铸碑者的黎明·下篇",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2513,6 +2628,7 @@
         },
         {
           "name": "铸碑者的黎明·上篇",
+          "label": "$铸碑者的黎明·上篇",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2577,6 +2693,7 @@
         },
         {
           "name": "前进吧，王牌配送员!(已结束)",
+          "label": "$前进吧，王牌配送员!(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2623,6 +2740,7 @@
         },
         {
           "name": "歧路双轨·下篇",
+          "label": "$歧路双轨·下篇",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2666,6 +2784,7 @@
         },
         {
           "name": "歧路双轨·上篇（美服/国际服）",
+          "label": "$歧路双轨·上篇（美服/国际服）",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2709,6 +2828,7 @@
         },
         {
           "name": "虚境新始(已结束)",
+          "label": "$虚境新始(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2732,6 +2852,7 @@
         },
         {
           "name": "循迹追演",
+          "label": "$循迹追演",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2753,6 +2874,7 @@
         },
         {
           "name": "火花之罪·下篇(已结束)",
+          "label": "$火花之罪·下篇(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2783,6 +2905,7 @@
         },
         {
           "name": "火花之罪·上篇(已结束)",
+          "label": "$火花之罪·上篇(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2813,6 +2936,7 @@
         },
         {
           "name": "沉没夜潮(已结束)",
+          "label": "$沉没夜潮(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2834,6 +2958,7 @@
         },
         {
           "name": "心跳游乐园(已结束)",
+          "label": "$心跳游乐园(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2855,6 +2980,7 @@
         },
         {
           "name": "镜茧与囚蝶(已结束)",
+          "label": "$镜茧与囚蝶(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2876,6 +3002,7 @@
         },
         {
           "name": "交织突进(已结束)",
+          "label": "$交织突进(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2891,6 +3018,7 @@
         },
         {
           "name": "错位锚定·下篇(已结束)",
+          "label": "$错位锚定·下篇(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2918,6 +3046,7 @@
         },
         {
           "name": "错位锚定·上篇(已结束)",
+          "label": "$错位锚定·上篇(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2945,6 +3074,7 @@
         },
         {
           "name": "溯回时光之隙（上）(已结束)",
+          "label": "$溯回时光之隙（上）(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -2973,6 +3103,7 @@
         },
         {
           "name": "溯回时光之隙（下）(已结束)",
+          "label": "$溯回时光之隙（下）(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -3001,6 +3132,7 @@
         },
         {
           "name": "烟火重燃之时(已结束)",
+          "label": "$烟火重燃之时(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -3016,6 +3148,7 @@
         },
         {
           "name": "匿影而生(已结束)",
+          "label": "$匿影而生(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -3031,6 +3164,7 @@
         },
         {
           "name": "素银匿信(已结束)",
+          "label": "$素银匿信(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -3046,6 +3180,7 @@
         },
         {
           "name": "驻足之地(已结束)",
+          "label": "$驻足之地(已结束)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -3062,6 +3197,7 @@
       ]
     },
     "物资商品兑换": {
+      "label": "$物资商品兑换",
       "cases": [
         {
           "name": "YES",
@@ -3082,9 +3218,11 @@
       ]
     },
     "物资模式活动选择2（美服/国际服）": {
+      "label": "$物资模式活动选择2（美服/国际服）",
       "cases": [
         {
           "name": "骐骥踏光时（美服/国际服）",
+          "label": "$骐骥踏光时（美服/国际服）",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
               "expected": [
@@ -3108,6 +3246,7 @@
       ]
     },
     "物资商品兑换2（美服/国际服）": {
+      "label": "$物资商品兑换2（美服/国际服）",
       "cases": [
         {
           "name": "YES",
@@ -3128,6 +3267,7 @@
       ]
     },
     "班组商店兑换": {
+      "label": "$班组商店兑换",
       "cases": [
         {
           "name": "YES",
@@ -3148,9 +3288,11 @@
       ]
     },
     "班组商店兑换项目": {
+      "label": "$班组商店兑换项目",
       "cases": [
         {
           "name": "波波沙心智存档、巴希达心智存档、火控芯片、泛用链式键",
+          "label": "$波波沙心智存档、巴希达心智存档、火控芯片、泛用链式键",
           "pipeline_override": {
             "selectPlatoonItem": {
               "template": [
@@ -3164,6 +3306,7 @@
         },
         {
           "name": "波波沙心智存档、火控芯片、泛用链式键",
+          "label": "$波波沙心智存档、火控芯片、泛用链式键",
           "pipeline_override": {
             "selectPlatoonItem": {
               "template": [
@@ -3176,6 +3319,7 @@
         },
         {
           "name": "巴希达心智存档、火控芯片、泛用链式键",
+          "label": "$巴希达心智存档、火控芯片、泛用链式键",
           "pipeline_override": {
             "selectPlatoonItem": {
               "template": [
@@ -3188,6 +3332,7 @@
         },
         {
           "name": "火控芯片、泛用链式键",
+          "label": "$火控芯片、泛用链式键",
           "pipeline_override": {
             "selectPlatoonItem": {
               "template": [
@@ -3199,6 +3344,7 @@
         },
         {
           "name": "火控芯片",
+          "label": "$火控芯片",
           "pipeline_override": {
             "selectPlatoonItem": {
               "template": [
@@ -3209,6 +3355,7 @@
         },
         {
           "name": "泛用链式键",
+          "label": "$泛用链式键",
           "pipeline_override": {
             "selectPlatoonItem": {
               "template": [
@@ -3220,6 +3367,7 @@
       ]
     },
     "调度商店兑换": {
+      "label": "$调度商店兑换",
       "cases": [
         {
           "name": "YES",
@@ -3240,13 +3388,16 @@
       ]
     },
     "调度商店不兑换的物品": {
+      "label": "$调度商店不兑换的物品",
       "cases": [
         {
           "name": "全部兑换",
+          "label": "$全部兑换",
           "pipeline_override": {}
         },
         {
           "name": "紫色心意礼盒",
+          "label": "$紫色心意礼盒",
           "pipeline_override": {
             "selectdispatchCenterItem": {
               "template": [
@@ -3266,6 +3417,7 @@
         },
         {
           "name": "奇忆甄选",
+          "label": "$奇忆甄选",
           "pipeline_override": {
             "selectdispatchCenterItem": {
               "template": [
@@ -3283,6 +3435,7 @@
         },
         {
           "name": "紫色心意礼盒和奇忆甄选",
+          "label": "$紫色心意礼盒和奇忆甄选",
           "pipeline_override": {
             "selectdispatchCenterItem": {
               "template": [
@@ -3300,6 +3453,7 @@
       ]
     },
     "讯段交易兑换": {
+      "label": "$讯段交易兑换",
       "cases": [
         {
           "name": "YES",
@@ -3320,13 +3474,16 @@
       ]
     },
     "讯段交易不兑换的物品": {
+      "label": "$讯段交易不兑换的物品",
       "cases": [
         {
           "name": "全部兑换",
+          "label": "$全部兑换",
           "pipeline_override": {}
         },
         {
           "name": "萨狄斯金",
+          "label": "$萨狄斯金",
           "pipeline_override": {
             "selectBossChallengeItem": {
               "template": [
@@ -3341,6 +3498,7 @@
         },
         {
           "name": "次世代内存条",
+          "label": "$次世代内存条",
           "pipeline_override": {
             "selectBossChallengeItem": {
               "template": [
@@ -3355,6 +3513,7 @@
         },
         {
           "name": "萨狄斯金和次世代内存条",
+          "label": "$萨狄斯金和次世代内存条",
           "pipeline_override": {
             "selectBossChallengeItem": {
               "template": [
@@ -3369,6 +3528,7 @@
       ]
     },
     "家具商店兑换": {
+      "label": "$家具商店兑换",
       "cases": [
         {
           "name": "YES",
@@ -3389,9 +3549,11 @@
       ]
     },
     "家具商店兑换项目": {
+      "label": "$家具商店兑换项目",
       "cases": [
         {
           "name": "全能秘方、新装许可",
+          "label": "$全能秘方、新装许可",
           "pipeline_override": {
             "selectHomeStoreItem": {
               "template": [
@@ -3404,6 +3566,7 @@
       ]
     },
     "每日订单": {
+      "label": "$每日订单",
       "cases": [
         {
           "name": "YES",
@@ -3424,6 +3587,7 @@
       ]
     },
     "远航巡录": {
+      "label": "$远航巡录",
       "cases": [
         {
           "name": "YES",
@@ -3444,6 +3608,7 @@
       ]
     },
     "助战": {
+      "label": "$助战",
       "cases": [
         {
           "name": "YES",
@@ -3464,6 +3629,7 @@
       ]
     },
     "险境挖掘": {
+      "label": "$险境挖掘",
       "cases": [
         {
           "name": "YES",
@@ -3484,6 +3650,7 @@
       ]
     },
     "预演": {
+      "label": "$预演",
       "cases": [
         {
           "name": "YES",
@@ -3504,6 +3671,7 @@
       ]
     },
     "动态招募祝福": {
+      "label": "$动态招募祝福",
       "cases": [
         {
           "name": "YES",
@@ -3524,6 +3692,7 @@
       ]
     },
     "暗香赠礼": {
+      "label": "$暗香赠礼",
       "cases": [
         {
           "name": "YES",
@@ -3544,9 +3713,11 @@
       ]
     },
     "铁玫瑰赠礼": {
+      "label": "$铁玫瑰赠礼",
       "cases": [
         {
           "name": "战场报告",
+          "label": "$战场报告",
           "pipeline_override": {
             "选择铁玫瑰赠礼奖励道具": {
               "expected": "战场报告"
@@ -3555,6 +3726,7 @@
         },
         {
           "name": "解析图纸",
+          "label": "$解析图纸",
           "pipeline_override": {
             "选择铁玫瑰赠礼奖励道具": {
               "expected": "解析图纸"
@@ -3563,6 +3735,7 @@
         },
         {
           "name": "萨狄斯金",
+          "label": "$萨狄斯金",
           "pipeline_override": {
             "选择铁玫瑰赠礼奖励道具": {
               "expected": "萨狄斯金"
@@ -3572,9 +3745,11 @@
       ]
     },
     "火玫瑰赠礼": {
+      "label": "$火玫瑰赠礼",
       "cases": [
         {
           "name": "序六",
+          "label": "$序六",
           "pipeline_override": {
             "选择火玫瑰赠礼奖励道具": {
               "expected": "序六"
@@ -3583,6 +3758,7 @@
         },
         {
           "name": "序五",
+          "label": "$序五",
           "pipeline_override": {
             "选择火玫瑰赠礼奖励道具": {
               "expected": "序五"
@@ -3591,6 +3767,7 @@
         },
         {
           "name": "序四",
+          "label": "$序四",
           "pipeline_override": {
             "选择火玫瑰赠礼奖励道具": {
               "expected": "序四"
@@ -3599,6 +3776,7 @@
         },
         {
           "name": "序三",
+          "label": "$序三",
           "pipeline_override": {
             "选择火玫瑰赠礼奖励道具": {
               "expected": "序三"
@@ -3608,6 +3786,7 @@
       ]
     },
     "艾莫号许愿池": {
+      "label": "$艾莫号许愿池",
       "cases": [
         {
           "name": "YES",
@@ -3628,6 +3807,7 @@
       ]
     },
     "模拟习练": {
+      "label": "$模拟习练",
       "cases": [
         {
           "name": "YES",
@@ -3648,6 +3828,7 @@
       ]
     },
     "格琳喵的委托": {
+      "label": "$格琳喵的委托",
       "cases": [
         {
           "name": "YES",
@@ -3668,6 +3849,7 @@
       ]
     },
     "七天签到限定十连": {
+      "label": "$七天签到限定十连",
       "cases": [
         {
           "name": "YES",
@@ -3688,6 +3870,7 @@
       ]
     },
     "限时中型活动": {
+      "label": "$限时中型活动",
       "cases": [
         {
           "name": "YES",
@@ -3708,6 +3891,7 @@
       ]
     },
     "活动巡录": {
+      "label": "$活动巡录",
       "cases": [
         {
           "name": "YES",
@@ -3728,6 +3912,7 @@
       ]
     },
     "闪耀星愿": {
+      "label": "$闪耀星愿",
       "cases": [
         {
           "name": "YES",
@@ -3748,10 +3933,11 @@
       ]
     },
     "小游戏类型选择": {
-      "label": "游戏选择",
+      "label": "$游戏选择",
       "cases": [
         {
           "name": "遗珍回收",
+          "label": "$遗珍回收",
           "pipeline_override": {
             "开始遗珍回收任务": {
               "enabled": true
@@ -3764,6 +3950,7 @@
         },
         {
           "name": "异维探渊",
+          "label": "$异维探渊",
           "pipeline_override": {
             "开始异维探渊任务": {
               "enabled": true
@@ -3774,7 +3961,7 @@
       ]
     },
     "遗珍回收难度选择": {
-      "label": "难度",
+      "label": "$难度",
       "cases": [
         {
           "name": "I",
@@ -3818,5 +4005,9 @@
         }
       ]
     }
+  },
+  "languages": {
+    "zh_cn": "interface_zh.json",
+    "en_us": "interface_en.json"
   }
 }
