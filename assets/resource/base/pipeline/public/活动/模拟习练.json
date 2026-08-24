@@ -22,26 +22,23 @@
         ]
     },
     "点击模拟习练标签页": {
-        "recognition": "OCR",
-        "expected": [
-            "模拟习练"
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动/模拟习练/模拟习练_light.png"
         ],
+        "green_mask": true,
         "action": "Click",
         "next": [
-            "确认选中模拟习练标签页"
+            "确认选中模拟习练标签页",
+            "点击模拟习练标签页"
         ]
     },
     "确认选中模拟习练标签页": {
-        "recognition": "OCR",
-        "expected": [
-            "模拟习练"
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动/模拟习练/模拟习练_dark.png"
         ],
-        "roi": [
-            391,
-            105,
-            877,
-            515
-        ],
+        "green_mask": true,
         "next": [
             "进入模拟习练页面"
         ]
@@ -69,9 +66,10 @@
     "有未完成的关卡-模拟习练": {
         "recognition": "TemplateMatch",
         "template": [
-            "活动/模拟习练/模拟习练_激活.png",
-            "活动/模拟习练/模拟习练_未激活.png"
+            "活动/模拟习练/激活.png",
+            "活动/模拟习练/未激活.png"
         ],
+        "green_mask": true,
         "order_by": "Vertical",
         "action": "Click",
         "next": [
@@ -110,10 +108,16 @@
     },
     "切换到未领取奖励的标签页-模拟习练": {
         "recognition": "TemplateMatch",
-        "template": "公用按钮组件/提醒_v2.png",
-        "action": "Click",
+        "template": "公用按钮组件/提醒.png",
+        "roi": [
+            129,
+            101,
+            334,
+            507
+        ],
         "green_mask": true,
-        "threshold": 0.85,
+        "order_by": "Score",
+        "action": "Click",
         "target_offset": [
             -40,
             40,

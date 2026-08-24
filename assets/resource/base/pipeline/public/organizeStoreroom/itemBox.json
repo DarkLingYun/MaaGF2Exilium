@@ -47,7 +47,15 @@
             402
         ],
         "action": "Click",
-        "threshold": 0.3,
+        "green_mask": true,
+        "next": [
+            "checkSupplySupportBox",
+            "openSupplySupportBox"
+        ]
+    },
+    "checkSupplySupportBox": {
+        "recognition": "OCR",
+        "expected": "物资助力箱",
         "next": [
             "useSupplySupportBoxItem"
         ]
@@ -58,7 +66,8 @@
         "expected": "使用",
         "action": "Click",
         "next": [
-            "chooseSupplySupportBoxItem"
+            "chooseSupplySupportBoxItem",
+            "useSupplySupportBoxItem"
         ]
     },
     "chooseSupplySupportBoxItem": {

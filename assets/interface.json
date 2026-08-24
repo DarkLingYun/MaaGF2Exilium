@@ -28,14 +28,14 @@
   },
   "resource": [
     {
-      "name": "官服",
+      "name": "官服(模拟器)",
       "label": "$官服",
       "path": [
         "{PROJECT_DIR}/resource/base"
       ]
     },
     {
-      "name": "B 服",
+      "name": "B 服(模拟器)",
       "label": "$B 服",
       "path": [
         "{PROJECT_DIR}/resource/base",
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "name": "美服(dark winter)",
+      "name": "美服(dark winter)(模拟器)",
       "label": "$美服(dark winter)",
       "path": [
         "{PROJECT_DIR}/resource/base",
@@ -51,7 +51,7 @@
       ]
     },
     {
-      "name": "国际服(haoplay)",
+      "name": "国际服(haoplay)(模拟器)",
       "label": "$国际服(haoplay)",
       "path": [
         "{PROJECT_DIR}/resource/base",
@@ -60,7 +60,7 @@
       ]
     },
     {
-      "name": "PC 端 (B 服)",
+      "name": "官服/B 服(PC端)",
       "label": "$PC 端 (B 服)",
       "path": [
         "{PROJECT_DIR}/resource/base",
@@ -68,7 +68,7 @@
       ]
     },
     {
-      "name": "PC 端 (Steam)",
+      "name": "Steam/美服/国际服(PC端)",
       "label": "$PC 端 (Steam)",
       "path": [
         "{PROJECT_DIR}/resource/base",
@@ -291,7 +291,7 @@
         {
           "name": "YES",
           "pipeline_override": {
-            "claimIntelligenceSupplyStaminaTaskTimed": {
+            "领取情报补给": {
               "enabled": true
             }
           }
@@ -299,7 +299,7 @@
         {
           "name": "NO",
           "pipeline_override": {
-            "claimIntelligenceSupplyStaminaTaskTimed": {
+            "领取情报补给": {
               "enabled": false
             }
           }
@@ -312,7 +312,7 @@
         {
           "name": "YES",
           "pipeline_override": {
-            "claimSevenDayCheckInResourceTaskTimed": {
+            "领取七日签到资源": {
               "enabled": true
             }
           }
@@ -320,7 +320,7 @@
         {
           "name": "NO",
           "pipeline_override": {
-            "claimSevenDayCheckInResourceTaskTimed": {
+            "领取七日签到资源": {
               "enabled": false
             }
           }
@@ -333,7 +333,7 @@
         {
           "name": "YES",
           "pipeline_override": {
-            "getNewEmails": {
+            "领取邮件": {
               "enabled": true
             }
           }
@@ -341,7 +341,7 @@
         {
           "name": "NO",
           "pipeline_override": {
-            "getNewEmails": {
+            "领取邮件": {
               "enabled": false
             }
           }
@@ -355,7 +355,7 @@
         {
           "name": "NO",
           "pipeline_override": {
-            "staminaReplenishment": {
+            "使用完接入密钥(体力药水)": {
               "enabled": false
             }
           }
@@ -363,7 +363,7 @@
         {
           "name": "YES",
           "pipeline_override": {
-            "staminaReplenishment": {
+            "使用完接入密钥(体力药水)": {
               "enabled": true
             }
           }
@@ -376,7 +376,7 @@
         {
           "name": "YES",
           "pipeline_override": {
-            "enterShop": {
+            "商城免费每日补给箱购买": {
               "enabled": true
             }
           }
@@ -384,7 +384,7 @@
         {
           "name": "NO",
           "pipeline_override": {
-            "enterShop": {
+            "商城免费每日补给箱购买": {
               "enabled": false
             }
           }
@@ -397,7 +397,7 @@
         {
           "name": "YES",
           "pipeline_override": {
-            "enterBoundaryAdvanceAction": {
+            "边界推进委托领取": {
               "enabled": true
             }
           }
@@ -405,7 +405,7 @@
         {
           "name": "NO",
           "pipeline_override": {
-            "enterBoundaryAdvanceAction": {
+            "边界推进委托领取": {
               "enabled": false
             }
           }
@@ -419,7 +419,7 @@
         {
           "name": "YES",
           "pipeline_override": {
-            "PlatoonTasks": {
+            "领取班组奖励": {
               "enabled": true
             }
           }
@@ -427,7 +427,7 @@
         {
           "name": "NO",
           "pipeline_override": {
-            "PlatoonTasks": {
+            "领取班组奖励": {
               "enabled": false
             }
           }

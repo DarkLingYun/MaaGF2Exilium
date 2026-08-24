@@ -114,7 +114,7 @@
     },
     "领取活动内每日任务积分累计奖励": {
         "recognition": "TemplateMatch",
-        "template": "公用按钮组件/提醒_v2.png",
+        "template": "公用按钮组件/提醒.png",
         "action": "Click",
         "roi": [
             0,
@@ -122,8 +122,8 @@
             1280,
             180
         ],
-        "threshold": 0.8,
-        "green_mask": true
+        "green_mask": true,
+        "order_by": "Score"
     },
     "领取活动内每日任务奖励": {
         "recognition": "OCR",
