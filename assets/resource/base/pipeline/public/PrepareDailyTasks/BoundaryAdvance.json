@@ -183,9 +183,6 @@
             481,
             190
         ],
-        "focus": {
-            "Node.Action.Starting": "边界委托未完成"
-        },
         "threshold": 0.85,
         "template": [
             "边界推进/不可领取.png"

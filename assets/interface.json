@@ -27,27 +27,27 @@
   },
   "resource": [
     {
-      "name": "官服",
+      "name": "官服(模拟器)",
       "path": [
         "{PROJECT_DIR}/resource/base"
       ]
     },
     {
-      "name": "B 服",
+      "name": "B 服(模拟器)",
       "path": [
         "{PROJECT_DIR}/resource/base",
         "{PROJECT_DIR}/resource/resource_bilibili"
       ]
     },
     {
-      "name": "美服(dark winter)",
+      "name": "美服(dark winter)(模拟器)",
       "path": [
         "{PROJECT_DIR}/resource/base",
         "{PROJECT_DIR}/resource/resource_en"
       ]
     },
     {
-      "name": "国际服(haoplay)",
+      "name": "国际服(haoplay)(模拟器)",
       "path": [
         "{PROJECT_DIR}/resource/base",
         "{PROJECT_DIR}/resource/resource_en",
@@ -55,14 +55,14 @@
       ]
     },
     {
-      "name": "PC 端 (B 服)",
+      "name": "官服/B 服(PC端)",
       "path": [
         "{PROJECT_DIR}/resource/base",
         "{PROJECT_DIR}/resource/resource_pc"
       ]
     },
     {
-      "name": "PC 端 (Steam)",
+      "name": "Steam/美服/国际服(PC端)",
       "path": [
         "{PROJECT_DIR}/resource/base",
         "{PROJECT_DIR}/resource/resource_en",
