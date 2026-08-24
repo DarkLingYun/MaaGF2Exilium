@@ -4,7 +4,7 @@
         "max_hit": 1,
         "next": [
             "[JumpBack]打开活动页-格琳喵的委托",
-            "点击格琳喵的委托标签页",
+            "进入格琳喵的委托标签页",
             "[JumpBack]滑动活动列表-格琳喵的委托",
             "returnToHomePage"
         ]
@@ -21,17 +21,22 @@
             "滑动活动列表-活动通用"
         ]
     },
-    "点击格琳喵的委托标签页": {
-        "recognition": "OCR",
+    "进入格琳喵的委托标签页": {
+        "recognition": "TemplateMatch",
+        "template": "活动/格琳喵的委托/格琳喵的委托_light.png",
+        "green_mask": true,
         "action": "Click",
-        "expected": [
-            "格琳喵的委托",
-            "格琳",
-            "喵的委托"
-        ],
         "next": [
-            "进入格琳喵的委托页面",
-            "returnToHomePage"
+            "已进入格琳喵的委托标签页",
+            "进入格琳喵的委托标签页"
+        ]
+    },
+    "已进入格琳喵的委托标签页": {
+        "recognition": "TemplateMatch",
+        "template": "活动/格琳喵的委托/格琳喵的委托_dark.png",
+        "green_mask": true,
+        "next": [
+            "进入格琳喵的委托页面"
         ]
     },
     "进入格琳喵的委托页面": {
@@ -41,7 +46,8 @@
         ],
         "action": "Click",
         "next": [
-            "已进入格琳喵的委托页面"
+            "已进入格琳喵的委托页面",
+            "进入格琳喵的委托页面"
         ]
     },
     "已进入格琳喵的委托页面": {
@@ -61,7 +67,18 @@
         ],
         "action": "Click",
         "next": [
-            "领取喵封物资",
+            "已进入搜寻喵封物资页面",
+            "进入搜寻喵封物资页面"
+        ]
+    },
+    "已进入搜寻喵封物资页面": {
+        "recognition": "OCR",
+        "expected": [
+            "已收集"
+        ],
+        "next": [
+            "[JumpBack]领取喵封物资",
+            "[JumpBack]点击空白处关闭-通用",
             "关闭搜寻喵封物资页面"
         ]
     },
@@ -71,10 +88,7 @@
             "领取"
         ],
         "action": "Click",
-        "next": [
-            "进入搜寻喵封物资页面",
-            "[JumpBack]点击空白处关闭-通用"
-        ]
+        "post_wait_freezes": 1200
     },
     "关闭搜寻喵封物资页面": {
         "recognition": "TemplateMatch",
@@ -84,94 +98,25 @@
         ],
         "action": "Click",
         "next": [
-            "开始使用喵封物资购物"
-        ]
-    },
-    "进入愉悦馈赠页面": {
-        "recognition": "OCR",
-        "expected": [
-            "愉悦馈赠"
-        ],
-        "action": "Click",
-        "next": [
-            "领取愉悦馈赠物资",
-            "滑动页面寻找更多愉悦馈赠物资"
-        ]
-    },
-    "领取愉悦馈赠物资": {
-        "recognition": "OCR",
-        "expected": [
-            "领取"
-        ],
-        "action": "Click",
-        "next": [
-            "进入愉悦馈赠页面",
-            "[JumpBack]点击空白处关闭-通用"
-        ]
-    },
-    "滑动页面寻找更多愉悦馈赠物资": {
-        "action": "Swipe",
-        "begin": [
-            756,
-            550,
-            19,
-            19
-        ],
-        "end": [
-            762,
-            224,
-            18,
-            25
-        ],
-        "next": [
-            "已滑动到愉悦馈赠新页面"
-        ]
-    },
-    "已滑动到愉悦馈赠新页面": {
-        "recognition": "OCR",
-        "expected": [
-            "愉悦馈赠"
-        ],
-        "next": [
-            "新页面领取愉悦馈赠物资",
-            "关闭愉悦馈赠页面"
-        ]
-    },
-    "新页面领取愉悦馈赠物资": {
-        "recognition": "OCR",
-        "expected": [
-            "领取"
-        ],
-        "action": "Click",
-        "next": [
-            "已滑动到愉悦馈赠新页面",
-            "[JumpBack]点击空白处关闭-通用"
-        ]
-    },
-    "关闭愉悦馈赠页面": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/关闭按钮_gray.png",
-            "公用按钮组件/关闭按钮_black.png"
-        ],
-        "action": "Click",
-        "next": [
-            "returnToHomePage"
+            "开始使用喵封物资购物",
+            "关闭搜寻喵封物资页面"
         ]
     },
     "开始使用喵封物资购物": {
         "next": [
             "使用喵封物资购物",
-            "滑动寻找更多喵封物资购物"
+            "[JumpBack]滑动寻找更多喵封物资购物",
+            "进入愉悦馈赠页面"
         ]
     },
     "使用喵封物资购物": {
         "recognition": "TemplateMatch",
         "template": [
-            "活动/喵封物资.png"
+            "活动/格琳喵的委托/喵封物资.png"
         ],
         "action": "Click",
         "order_by": "Horizontal",
+        "post_wait_freezes": 1200,
         "next": [
             "已打开购物详情界面-格琳喵的委托",
             "未能打开购物详情界面-格琳喵的委托"
@@ -205,7 +150,11 @@
         ],
         "green_mask": true,
         "next": [
-            "确认购买-格琳喵的委托"
+            "购买未成功-格琳喵的委托",
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]心情提升-格琳喵的委托",
+            "确认购买-格琳喵的委托",
+            "开始使用喵封物资购物"
         ]
     },
     "确认购买-格琳喵的委托": {
@@ -214,18 +163,25 @@
             "确认"
         ],
         "action": "Click",
-        "next": [
-            "购买未成功-格琳喵的委托",
-            "开始使用喵封物资购物",
-            "[JumpBack]点击空白处关闭-通用",
-            "[JumpBack]心情提升-格琳喵的委托"
-        ]
+        "post_wait_freezes": 1200
     },
     "购买未成功-格琳喵的委托": {
-        "recognition": "OCR",
-        "expected": [
-            "商品购买",
-            "喵封物资不足"
+        "recognition": "ColorMatch",
+        "roi": [
+            572,
+            341,
+            137,
+            102
+        ],
+        "upper": [
+            253,
+            114,
+            91
+        ],
+        "lower": [
+            246,
+            101,
+            73
         ],
         "next": [
             "关闭购买页面-格琳喵的委托"
@@ -239,6 +195,7 @@
         ],
         "action": "Click",
         "next": [
+            "关闭购买页面-格琳喵的委托",
             "进入愉悦馈赠页面"
         ]
     },
@@ -256,15 +213,8 @@
             37,
             22
         ],
-        "next": [
-            "已滑动到喵封物资新页面"
-        ]
-    },
-    "已滑动到喵封物资新页面": {
-        "next": [
-            "使用喵封物资购物",
-            "进入愉悦馈赠页面"
-        ]
+        "end_hold": 1000,
+        "max_hit": 3
     },
     "心情提升-格琳喵的委托": {
         "recognition": "OCR",
@@ -272,5 +222,55 @@
             "心情提升"
         ],
         "post_wait_freezes": 5000
-    }
+    },
+    "进入愉悦馈赠页面": {
+        "recognition": "OCR",
+        "expected": [
+            "愉悦馈赠"
+        ],
+        "action": "Click",
+        "next": [
+            "已进入愉悦馈赠页面",
+            "进入愉悦馈赠页面"
+        ]
+    },
+    "已进入愉悦馈赠页面": {
+        "recognition": "OCR",
+        "expected": [
+            "愉悦馈赠"
+        ],
+        "roi": [
+            518,
+            103,
+            241,
+            133
+        ],
+        "next": [
+            "领取愉悦馈赠物资"
+        ]
+    },
+    "领取愉悦馈赠物资": {
+        "recognition": "OCR",
+        "expected": [
+            "一键领取"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1200,
+        "next": [
+            "领取愉悦馈赠物资",
+            "[JumpBack]点击空白处关闭-通用",
+            "关闭愉悦馈赠页面"
+        ]
+    },
+    "关闭愉悦馈赠页面": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/关闭按钮_gray.png",
+            "公用按钮组件/关闭按钮_black.png"
+        ],
+        "action": "Click",
+        "next": [
+            "returnToHomePage"
+        ]
+    },
 }

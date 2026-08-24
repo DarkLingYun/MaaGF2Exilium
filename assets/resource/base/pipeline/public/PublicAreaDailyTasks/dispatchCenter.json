@@ -186,6 +186,7 @@
             129
         ],
         "green_mask": true,
+        "order_by": "Score",
         "action": "Click",
         "target": true,
         "target_offset": [

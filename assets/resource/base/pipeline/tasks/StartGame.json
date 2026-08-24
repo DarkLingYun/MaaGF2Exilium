@@ -53,6 +53,7 @@
     },
     "openGF2GameApp": {
         "action": "StartApp",
+        "max_hit": 100,
         "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity"
     },
     "StartGame_downloadResource": {

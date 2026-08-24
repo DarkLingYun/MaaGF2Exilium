@@ -17,7 +17,6 @@
         "doc": "领取班组奖励（补给箱）",
         "recognition": "OCR",
         "expected": "^班组$",
-        "post_wait_freezes": 0,
         "next": [
             "clickPlatoonButton",
             "[JumpBack]returnToHomePage"

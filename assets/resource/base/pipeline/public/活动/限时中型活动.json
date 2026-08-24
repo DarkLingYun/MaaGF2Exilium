@@ -17,9 +17,9 @@
     },
     "滑动活动列表-限时中型活动": {
         "max_hit": 2,
-         "next": [
-             "滑动活动列表-活动通用"
-         ]
+        "next": [
+            "滑动活动列表-活动通用"
+        ]
     },
     "点击限时中型活动标签页": {
         "recognition": "OCR",
@@ -63,9 +63,10 @@
     },
     "领取奖励-限时中型活动": {
         "recognition": "TemplateMatch",
-        "template": "公用按钮组件/提醒_v2.png",
+        "template": "公用按钮组件/提醒.png",
         "action": "Click",
         "green_mask": true,
+        "order_by": "Score",
         "target_offset": [
             -40,
             40,
