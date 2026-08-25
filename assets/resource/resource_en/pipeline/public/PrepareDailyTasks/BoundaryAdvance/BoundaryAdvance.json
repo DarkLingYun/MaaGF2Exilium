@@ -1,0 +1,14 @@
+{
+    // Manual EN overrides for Boundary Advance. Kept out of _auto_en_ocr.json because
+    // these need roi/recognition changes, not just an `expected` translation.
+    // The generator SKIPS any node defined here.
+
+    // CN used a tiny roi tuned to short zh text; the EN banner
+    // "All rewards for current difficulty obtained" is a wide bar elsewhere,
+    // so scan full-screen for the unique phrase.
+    "boundaryAdvanceDelegateRewardFull": {
+        "recognition": "OCR",
+        "expected": "All rewards for current difficulty obtained",
+        "roi": [0, 0, 1280, 720]
+    }
+}

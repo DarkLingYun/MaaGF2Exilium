@@ -1,0 +1,758 @@
+{
+    "nonScrollablePopupConfirm": {
+        "expected": "Confirm"
+    },
+    "scrollablePopupConfirm": {
+        "expected": "Confirm"
+    },
+    "nonScrollablePopupCancel": {
+        "expected": "Cancel"
+    },
+    "scrollablePopupCancel": {
+        "expected": "Cancel"
+    },
+    "resultRecognition": {
+        "expected": "anywhere to exit"
+    },
+    "resultRecognitionAccessories": {
+        "expected": "anywhere to exit"
+    },
+    "scrollablePopupConfirmAccessories": {
+        "expected": "Confirm"
+    },
+    "BossChallengeExitItemExchange": {
+        "expected": "Cancel"
+    },
+    "BossChallengeSelectExchangeItemQuantity": {
+        "expected": "Max|MAX"
+    },
+    "BossChallengeConfirmPurchaseItem": {
+        "expected": "Purchase|Confirm"
+    },
+    "generalExitItemExchange": {
+        "expected": "Cancel"
+    },
+    "generalSelectExchangeItemQuantity": {
+        "expected": "Max|MAX"
+    },
+    "generalConfirmPurchaseItem": {
+        "expected": "Purchase|Confirm"
+    },
+    "dispatchCenterExitItemExchange": {
+        "expected": "Cancel"
+    },
+    "dispatchCenterSelectExchangeItemQuantity": {
+        "expected": "Max|MAX"
+    },
+    "dispatchCenterConfirmPurchaseItem": {
+        "expected": "Purchase|Confirm"
+    },
+    "homeStoreExitItemExchange": {
+        "expected": "Cancel"
+    },
+    "homeStoreSelectExchangeItemQuantity": {
+        "expected": "Max|MAX"
+    },
+    "homeStoreConfirmPurchaseItem": {
+        "expected": "Purchase|Confirm"
+    },
+    "PlatoonExitItemExchange": {
+        "expected": "Cancel"
+    },
+    "PlatoonSelectExchangeItemQuantity": {
+        "expected": "Max|MAX"
+    },
+    "PlatoonConfirmPurchaseItem": {
+        "expected": "Purchase|Confirm"
+    },
+    "oneKeyClaimCommissionReward": {
+        "expected": "Claim All"
+    },
+    "claimDailyActiveCommissionReward": {
+        "expected": "Claim All"
+    },
+    "closeCommissionRewardResultPage": {
+        "expected": "anywhere to exit"
+    },
+    "claimJourneyWitnessReward": {
+        "expected": "Claim All"
+    },
+    "closeClaimJourneyWitnessRewardResultPage": {
+        "expected": "anywhere to exit"
+    },
+    "claimJourneyMileStoneReward": {
+        "expected": "Claim All"
+    },
+    "closeClaimJourneyMileStoneRewardResultPage": {
+        "expected": "anywhere to exit"
+    },
+    "confirmPassRewardContent": {
+        "expected": "^Confirm$"
+    },
+    "weaponPackageFound": {
+        "focus": {
+            "Node.Action.Starting": "<span style=\"color: red;\">Weapon selector chest found — please handle manually</span>",
+            "toast": "Weapon selector chest found — please handle manually"
+        }
+    },
+    "openPassSupplyCrateReward": {
+        "expected": [
+            "^Next$",
+            "^Next$"
+        ]
+    },
+    "closePassClaimResultPage": {
+        "expected": "anywhere to exit"
+    },
+    "closeClaimResult": {
+        "expected": "anywhere to exit"
+    },
+    "enterMindSurveySelfDisciplinePreparation": {
+        "expected": "^Auto$"
+    },
+    "confirmMindSurveySelfDisciplinePage": {
+        "expected": "Auto Mode Preparation"
+    },
+    "cancelStaminaReplenishmentForMindSurvey": {
+        "expected": "Cancel"
+    },
+    "confirmMindSurveySelfDiscipline": {
+        "expected": "Confirm"
+    },
+    "closeMindSurveyResultsPage": {
+        "expected": "anywhere to exit"
+    },
+    "enterBoundaryAdvanceAction": {
+        "expected": [
+            "^Time-Limited Events$",
+            "Time-Limited Events$",
+            "^Time-Limited Events"
+        ],
+        "focus": {
+            "Node.Action.Starting": "Claim Boundary Push dispatch"
+        }
+    },
+    "clickBoundaryAdvanceTagButton": {
+        "expected": "Push"
+    },
+    "clickBoundaryAdvanceDelegateButton": {
+        "expected": [
+            "^Crystal Collection$",
+            "Collection$",
+            "^Crystal"
+        ]
+    },
+    "boundaryAdvanceDelegateOneClickClaim": {
+        "focus": {
+            "Node.Action.Starting": "Claim Boundary Push rewards"
+        }
+    },
+    "boundaryAdvanceDelegateRewardClaimResultPage": {
+        "expected": "anywhere"
+    },
+    "PlatoonTasks": {
+        "expected": "^Platoon$"
+    },
+    "clickPlatoonButton": {
+        "expected": "^Platoon$",
+        "focus": {
+            "Node.Action.Starting": "Enter Platoon page"
+        }
+    },
+    "checkPlatoon": {
+        "focus": {
+            "Node.Action.Succeeded": "Not in a Platoon"
+        }
+    },
+    "noClaimPlatoonDailySupply": {
+        "expected": "^Claim All$",
+        "focus": {
+            "Node.Action.Starting": "Today's supply box already claimed"
+        }
+    },
+    "claimPlatoonDailySupply": {
+        "expected": "^Claim All$",
+        "focus": {
+            "Node.Action.Starting": "Click Claim"
+        }
+    },
+    "closeDailySupplyResultPage": {
+        "expected": "anywhere to exit"
+    },
+    "领取邮件": {
+        "focus": {
+            "Node.Action.Starting": "Claim Mail"
+        }
+    },
+    "claimAllEmails": {
+        "expected": "Claim All"
+    },
+    "noUnclaimedItems": {
+        "expected": "No items to collect"
+    },
+    "findSurveyEmail": {
+        "expected": "Invite"
+    },
+    "surveyEmailFound": {
+        "focus": {
+            "Node.Action.Starting": "<span style=\"color: red;\">Research invitation mail found — please handle manually</span>",
+            "toast": "Research invitation mail found — please handle manually"
+        }
+    },
+    "closeClaimAllEmailsPopup": {
+        "expected": "anywhere to exit"
+    },
+    "enterShop": {
+        "expected": "^Shop$",
+        "focus": {
+            "Node.Action.Starting": "Buy Free Daily Supply Box"
+        }
+    },
+    "clickQualitySelection": {
+        "expected": "^(Quality Selection|Quality)$"
+    },
+    "clickTimeLimitedGiftPackage": {
+        "expected": [
+            "^Treasured Gift Pack$"
+        ],
+        "focus": {
+            "Node.Action.Succeeded": "Entered Weekly Gift Pack page"
+        }
+    },
+    "confirmWeekSupplyBoxPurchase": {
+        "expected": "Purchase|Confirm"
+    },
+    "closeWeekSupplyBoxPurchaseResultPage": {
+        "expected": "anywhere"
+    },
+    "clickPermanentGiftPackage": {
+        "expected": "^Regular Gift Pack$",
+        "focus": {
+            "Node.Action.Succeeded": "Entered Daily Gift Pack page"
+        }
+    },
+    "clickDailySupplyBox": {
+        "expected": "Daily Supply"
+    },
+    "confirmSupplyBoxPurchase": {
+        "expected": "Purchase|Confirm"
+    },
+    "closeSupplyBoxPurchaseResultPage": {
+        "expected": "anywhere"
+    },
+    "closeDailyPaidGiftPage": {
+        "expected": "Cancel"
+    },
+    "领取七日签到资源": {
+        "focus": {
+            "Node.Action.Starting": "Claim 7-Day Check-in Resources"
+        }
+    },
+    "领取七日签到资源-领取七日签到资源": {
+        "expected": [
+            "^Claim$"
+        ]
+    },
+    "领取情报补给-情报补给": {
+        "expected": [
+            "^Claim$"
+        ]
+    },
+    "enterDispatchCenterAction": {
+        "focus": {
+            "Node.Action.Starting": "Starting dispatch tasks"
+        }
+    },
+    "sendDispatchNotification": {
+        "focus": {
+            "Node.Action.Starting": "<span style=\"color: red;\">Public Area Dispatch Center not fully dispatched — please handle manually</span>",
+            "toast": "Public Area Dispatch Center not fully dispatched — please handle manually"
+        }
+    },
+    "rewardGet": {
+        "expected": [
+            "Claim",
+            "Claim All"
+        ]
+    },
+    "closeDispatchCenterDispatchCountRewardClaimResultPage": {
+        "expected": "anywhere to exit"
+    },
+    "enterLoungeAction": {
+        "focus": {
+            "Node.Action.Starting": "Visit Lounge"
+        }
+    },
+    "进入整备室": {
+        "expected": "Refitting Room"
+    },
+    "loungeConfirm": {
+        "expected": [
+            "Pose"
+        ]
+    },
+    "enterSchedulingGainsAction": {
+        "focus": {
+            "Node.Action.Starting": "<span style=\"color: red;\">Use the official Loop Assistant to claim Intel Reserves</span>"
+        }
+    },
+    "开始首领挑战任务": {
+        "focus": {
+            "Node.Action.Starting": "Boss Challenge Auto-Battle"
+        }
+    },
+    "clickBossFightAutoButton": {
+        "expected": "^Auto$"
+    },
+    "confirmBossFightSelfDiscipline": {
+        "expected": "Confirm"
+    },
+    "closeBossFightResultsPage": {
+        "expected": "anywhere to exit"
+    },
+    "开始实兵演习任务": {
+        "focus": {
+            "Node.Action.Starting": "<span style=\"color: red;\">Use the official Loop Assistant for Live Drill battles; this only claims rewards</span>"
+        }
+    },
+    "combatExerciseWeeklySettlement": {
+        "expected": [
+            "anywhere to exit"
+        ]
+    },
+    "开始峰值推定任务": {
+        "focus": {
+            "Node.Action.Starting": "Claim Peak Estimation rewards"
+        }
+    },
+    "claimRewards": {
+        "expected": [
+            "Claim All",
+            "Claim"
+        ]
+    },
+    "closeResultPage": {
+        "expected": "anywhere to exit"
+    },
+    "开始极限峰值任务": {
+        "focus": {
+            "Node.Action.Starting": "Starting Extreme Peak task (Lv.0 battles only — handle Lv.18 battles yourself)"
+        }
+    },
+    "关闭周期报酬奖励领取结果页-极限峰值": {
+        "expected": "anywhere to exit"
+    },
+    "打开战役推进-模拟作战通用": {
+        "expected": [
+            "^Campaign$"
+        ]
+    },
+    "selectExchangeItem": {
+        "expected": [
+            "Analysis Blueprint",
+            "Combat Report"
+        ]
+    },
+    "selectExchangeItemQuantity": {
+        "expected": "Max|MAX"
+    },
+    "confirmPurchaseItem": {
+        "expected": "Purchase|Confirm"
+    },
+    "resourceModeSweepTimesInsufficient": {
+        "focus": {
+            "Node.Action.Succeeded": "Insufficient sweep tickets"
+        }
+    },
+    "resourceModeSweepCheckLevelLockStatus": {
+        "focus": {
+            "Node.Action.Succeeded": "<span style=\"color: red;\">Stage 5 not unlocked</span>"
+        }
+    },
+    "clickResourceLevelSweepButton": {
+        "expected": "^Auto$"
+    },
+    "confirmResourceAutoSweepPreparation": {
+        "expected": "Auto Mode Preparation"
+    },
+    "startResourceLevelSweep": {
+        "expected": "^Confirm$"
+    },
+    "点击空白处关闭-通用": {
+        "expected": [
+            "anywhere to exit"
+        ]
+    },
+    "跳过动画-通用": {
+        "expected": [
+            "Skip",
+            "Skip"
+        ]
+    },
+    "指挥官等级提升-通用": {
+        "expected": [
+            "Commander Level",
+            "Commander Level"
+        ]
+    },
+    "enterFlowerDisassemblyPage": {
+        "expected": "Dismantle"
+    },
+    "flowerDisassemblyPageEntered": {
+        "expected": "Please select items to disassemble"
+    },
+    "quickSelectFlower": {
+        "expected": "Quick Select"
+    },
+    "closeFlowerResultByClickingBlank": {
+        "expected": "anywhere to exit"
+    },
+    "flowerResultClosed": {
+        "expected": "Please select items to disassemble"
+    },
+    "exitFlower": {
+        "expected": "Storeroom"
+    },
+    "chooseSupplySupportBoxItem": {
+        "expected": "Combat Report"
+    },
+    "setSupplySupportBoxNumber": {
+        "expected": "Max|MAX"
+    },
+    "confirmSupplySupportBox": {
+        "expected": "Confirm"
+    },
+    "closeSupplySupportBoxResultPage": {
+        "expected": "anywhere to exit"
+    },
+    "closeNotTopDataBoxPage": {
+        "expected": "Cancel"
+    },
+    "setFlowerBoxNumber": {
+        "expected": "Max|MAX"
+    },
+    "closeFlowerBoxResultPage": {
+        "expected": "anywhere to exit"
+    },
+    "设置奇忆甄选箱子使用数量": {
+        "expected": "Max|MAX"
+    },
+    "关闭奇忆甄选箱子打开结果": {
+        "expected": "anywhere to exit"
+    },
+    "enterWeaponDisassemblyPage": {
+        "expected": "Dismantle"
+    },
+    "weaponDisassemblyPageEntered": {
+        "expected": "Please select items to disassemble"
+    },
+    "quickSelectWeapon": {
+        "expected": "Quick Select"
+    },
+    "confirmWeaponDisassemblyNotification": {
+        "expected": "Confirm"
+    },
+    "closeWeaponDisassemblyResultByClickingBlank": {
+        "expected": "anywhere to exit"
+    },
+    "weaponDisassemblyResultClosed": {
+        "expected": "Please select items to disassemble"
+    },
+    "exitWeaponDisassembly": {
+        "expected": "Storeroom"
+    },
+    "enterWeaponAttachmentsDisassemblyPage": {
+        "expected": "Dismantle"
+    },
+    "weaponAttachmentsDisassemblyPageEntered": {
+        "expected": "Please select items to disassemble"
+    },
+    "quickSelect": {
+        "expected": "Quick Select"
+    },
+    "closeByClickingBlank": {
+        "expected": "anywhere to exit"
+    },
+    "resultClosed": {
+        "expected": "Please select items to disassemble"
+    },
+    "exitWeaponAttachments": {
+        "expected": "Storeroom"
+    },
+    "StagePromotionStartMission": {
+        "expected": "Challenge"
+    },
+    "取消购买-异维探渊": {
+        "expected": [
+            "Cancel"
+        ]
+    },
+    "确认进入下一关-异维探渊": {
+        "expected": [
+            "Confirm"
+        ]
+    },
+    "进入限时开启页面-遗珍回收": {
+        "expected": [
+            "Time-Limited Events"
+        ]
+    },
+    "继续结算探索-遗珍回收": {
+        "expected": [
+            "Confirm"
+        ]
+    },
+    "确认难度选择-遗珍回收": {
+        "expected": [
+            "Confirm"
+        ]
+    },
+    "确认离开-遗珍回收作战": {
+        "expected": [
+            "^Confirm$"
+        ]
+    },
+    "取消可强固人形提醒-遗珍回收作战": {
+        "expected": [
+            "Cancel"
+        ]
+    },
+    "下一步-遗珍回收准备": {
+        "expected": [
+            "^Next$",
+            "^Next$"
+        ]
+    },
+    "确认-遗珍回收准备": {
+        "expected": [
+            "Confirm"
+        ]
+    },
+    "进入循环助手页面": {
+        "focus": {
+            "Node.Action.Succeeded": "Click Auto Loop"
+        }
+    },
+    "开始执行循环任务": {
+        "focus": {
+            "Node.Action.Succeeded": "Clicked Start Loop"
+        }
+    },
+    "确认执行循环任务": {
+        "expected": [
+            "Confirm"
+        ]
+    },
+    "循环进行中": {
+        "focus": {
+            "Node.Action.Failed": "Undetected loop in progress — checking whether it has ended",
+            "Node.Action.Succeeded": "Loop in progress..."
+        }
+    },
+    "确认循环结束": {
+        "expected": [
+            "Confirm"
+        ]
+    },
+    "选择铁玫瑰赠礼奖励道具": {
+        "expected": [
+            "Combat Report"
+        ]
+    },
+    "确认领取铁玫瑰赠礼": {
+        "expected": [
+            "Claim"
+        ]
+    },
+    "关闭赠礼领取结果": {
+        "expected": [
+            "anywhere to exit"
+        ]
+    },
+    "确认领取火玫瑰赠礼": {
+        "expected": [
+            "Claim"
+        ]
+    },
+    "关闭信息核领取结果-暗香赠礼": {
+        "expected": [
+            "anywhere to exit"
+        ]
+    },
+    "领取喵封物资": {
+        "expected": [
+            "Claim"
+        ]
+    },
+    "已打开购物详情界面-格琳喵的委托": {
+        "expected": [
+            "Purchase"
+        ]
+    },
+    "确认购买-格琳喵的委托": {
+        "expected": [
+            "Confirm"
+        ]
+    },
+    "领取愉悦馈赠物资": {
+        "expected": [
+            "Claim All"
+        ]
+    },
+    "领取标签页奖励-模拟习练": {
+        "expected": [
+            "Claim"
+        ]
+    },
+    "巡录付费解锁-领取奖励确认-活动巡录": {
+        "expected": "^Confirm$"
+    },
+    "武器自选箱-活动巡录": {
+        "focus": {
+            "Node.Action.Starting": "<span style=\"color: red;\">Weapon selector chest found — please handle manually</span>",
+            "toast": "Weapon selector chest found — please handle manually"
+        }
+    },
+    "选择下一个补给包-活动巡录": {
+        "expected": [
+            "^Next$"
+        ]
+    },
+    "进入活动页面-活动通用": {
+        "expected": [
+            "^Event$"
+        ]
+    },
+    "关闭领取结果-艾莫号许愿池": {
+        "expected": [
+            "anywhere to exit"
+        ]
+    },
+    "未选择应援人形-闪耀星愿": {
+        "focus": {
+            "Node.Action.Starting": "<span style=\"color: red;\">Shining Star Wish: no support doll selected — please handle manually</span>",
+            "toast": "Shining Star Wish: no support doll selected — please handle manually"
+        }
+    },
+    "领取代币-限时中型活动": {
+        "expected": [
+            "^Claim$"
+        ]
+    },
+    "claimClue": {
+        "expected": [
+            "Claim"
+        ]
+    },
+    "进入美味烹调区域": {
+        "expected": "Delicious Cuisine"
+    },
+    "每天第一次免费美味烹调": {
+        "expected": "each day is free"
+    },
+    "邀请人形-美味烹调": {
+        "expected": [
+            "^Next$",
+            "^Next$"
+        ]
+    },
+    "确认邀请-美味烹调": {
+        "expected": "Confirm Invite"
+    },
+    "确认结果-美味烹调": {
+        "expected": "Confirm"
+    },
+    "进入茶歇一刻区域": {
+        "expected": "Tea Time"
+    },
+    "确认进入茶歇一刻": {
+        "expected": [
+            "Classic Drink",
+            "Today.s Special"
+        ]
+    },
+    "制作饮品-茶歇一刻": {
+        "expected": "^Make$"
+    },
+    "确认制作-茶歇一刻": {
+        "expected": "Confirm"
+    },
+    "跳过动画-茶歇一刻": {
+        "expected": [
+            "Skip",
+            "Skip"
+        ]
+    },
+    "确认结果-茶歇一刻": {
+        "expected": "Confirm"
+    },
+    "领取逸趣导算奖励": {
+        "expected": "Claim All"
+    },
+    "取消可部署人形提示-通用战斗": {
+        "expected": "Cancel"
+    },
+    "任务失败-通用战斗": {
+        "focus": {
+            "Node.Action.Starting": "<span style=\"color: red;\">Task failed — consider whether manual handling is needed</span>"
+        }
+    },
+    "确认任务完成或失败-通用战斗": {
+        "expected": "^Confirm$"
+    },
+    "enterAutoSweepBattleTask": {
+        "expected": "Campaign"
+    },
+    "clickAutoSweepBattleSupplyOperationButton": {
+        "expected": "^Auto$"
+    },
+    "AutoSweepBattleSupplyOperationPrepareAccessoriesLimit": {
+        "focus": {
+            "Node.Action.Starting": "<span style=\"color: red;\">Weapon attachments at storage limit — please clear inventory first</span>",
+            "toast": "Weapon attachments at storage limit — please clear inventory first"
+        }
+    },
+    "AutoSweepBattleSupplyOperationPrepareAccessories": {
+        "expected": "Auto Mode Preparation"
+    },
+    "AutoSweepBattleSupplyOperationPrepare": {
+        "expected": "Auto Mode Preparation"
+    },
+    "易物所兑换通用-当前在首页": {
+        "expected": "Campaign"
+    },
+    "易物所兑换通用-首页进入易物所": {
+        "expected": "^Shop$"
+    },
+    "易物所兑换通用-点击进入易物所": {
+        "expected": "Trading Post"
+    },
+    "enterMindSurveyTask": {
+        "expected": "^Campaign$"
+    },
+    "StartGame_clickStart": {
+        "expected": [
+            "Start",
+            "Start"
+        ]
+    },
+    "StartGame_restartGF2Game": {
+        "expected": "Confirm"
+    },
+    "enterVersionActivityTask": {
+        "expected": "^Campaign$"
+    },
+    "领取活动内每日任务奖励": {
+        "expected": "^Claim$"
+    },
+    "首页进入活动层-活动层通用": {
+        "expected": [
+            "Crew Deck"
+        ]
+    },
+    "退出活动层确认-活动层通用": {
+        "expected": [
+            "Confirm"
+        ]
+    }
+}

@@ -1,0 +1,15 @@
+{
+    // Manual EN overrides for the Shop daily-supply flow. Kept out of
+    // _auto_en_ocr.json because these need roi changes, not just an
+    // `expected` translation. The generator SKIPS any node defined here.
+
+    // CN roi [409,136,350,164] was tuned to the 6-char zh title 每日晶条礼包.
+    // The EN title "Daily Collapse Piece Package" is much wider and overflows
+    // that window, so OCR only saw a slice and never matched. Scan full-screen
+    // for the unique phrase (it only appears on this paid-gift popup).
+    "checkDailyPaidGift": {
+        "recognition": "OCR",
+        "expected": "Daily Collapse Piece Package",
+        "roi": [0, 0, 1280, 720]
+    }
+}
