@@ -321,6 +321,9 @@
             "Node.Action.Starting": "<span style=\"color: red;\">Use the official Loop Assistant for Live Drill battles; this only claims rewards</span>"
         }
     },
+    "clickEnterCombatExercisePage": {
+        "expected": "Combat Exercise"
+    },
     "combatExerciseWeeklySettlement": {
         "expected": [
             "anywhere to exit"
@@ -348,6 +351,21 @@
     "进入极限峰值标签页-极限峰值": {
         "expected": [
             "Extreme Peak"
+        ]
+    },
+    "开始作战-子群1-极限峰值": {
+        "expected": [
+            "Start Combat"
+        ]
+    },
+    "开始作战-子群2-极限峰值": {
+        "expected": [
+            "Start Combat"
+        ]
+    },
+    "开始作战-子群3-极限峰值": {
+        "expected": [
+            "Start Combat"
         ]
     },
     "关闭周期报酬奖励领取结果页-极限峰值": {
@@ -492,6 +510,11 @@
     },
     "StagePromotionStartMission": {
         "expected": "Challenge"
+    },
+    "开始作战-异维探渊": {
+        "expected": [
+            "Start Combat"
+        ]
     },
     "取消购买-异维探渊": {
         "expected": [
@@ -646,6 +669,11 @@
             "toast": "Shining Star Wish: no support doll selected — please handle manually"
         }
     },
+    "开始作战-闪耀星愿": {
+        "expected": [
+            "Start Combat"
+        ]
+    },
     "领取代币-限时中型活动": {
         "expected": [
             "^Claim$"
@@ -714,6 +742,9 @@
     },
     "enterAutoSweepBattleTask": {
         "expected": "Campaign"
+    },
+    "supplyOperationType": {
+        "expected": "Targeted Study"
     },
     "clickAutoSweepBattleSupplyOperationButton": {
         "expected": "^Auto$"
