@@ -572,6 +572,9 @@
     "exitWeaponAttachments": {
         "expected": "Storeroom"
     },
+    "StagePromotionWatchStory": {
+        "expected": "View"
+    },
     "StagePromotionStartMission": {
         "expected": "Challenge"
     },
@@ -625,6 +628,11 @@
         "expected": [
             "Confirm",
             "Confirm"
+        ]
+    },
+    "作战开始-遗珍回收准备": {
+        "expected": [
+            "Combat Start"
         ]
     },
     "进入循环助手页面": {
@@ -792,6 +800,14 @@
     },
     "领取逸趣导算奖励": {
         "expected": "Claim All"
+    },
+    "通用战斗任务开始": {
+        "expected": [
+            "Combat Start"
+        ]
+    },
+    "已进入作战开始页面-通用战斗": {
+        "expected": "Combat Start"
     },
     "取消可部署人形提示-通用战斗": {
         "expected": "Cancel"
