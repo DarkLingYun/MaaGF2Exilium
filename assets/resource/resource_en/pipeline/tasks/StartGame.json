@@ -20,6 +20,7 @@
         ]
     },
     "StartGame_HomePage_Check": {
+        "expected": "Campaign",
         "next": [
             "StartGame_进入整备室"
         ]
@@ -27,7 +28,7 @@
     "StartGame_进入整备室": {
         "doc": "进入游戏后可能仍在加载（现象为像新手一样的主页），进入整备室再退出即可恢复",
         "recognition": "OCR",
-        "expected": "整备室",
+        "expected": "Refitting Room",
         "action": "Click",
         "next": [
             "[JumpBack]StartGame_loading",

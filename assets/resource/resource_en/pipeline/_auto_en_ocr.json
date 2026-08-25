@@ -104,8 +104,14 @@
     "closePassClaimResultPage": {
         "expected": "anywhere to exit"
     },
+    "personalInformationPageEntered": {
+        "expected": "Personal Information"
+    },
     "closeClaimResult": {
         "expected": "anywhere to exit"
+    },
+    "claimResultClosed": {
+        "expected": "Personal Information"
     },
     "enterMindSurveySelfDisciplinePreparation": {
         "expected": "^Auto$"
@@ -339,6 +345,11 @@
             "Node.Action.Starting": "Starting Extreme Peak task (Lv.0 battles only — handle Lv.18 battles yourself)"
         }
     },
+    "进入极限峰值标签页-极限峰值": {
+        "expected": [
+            "Extreme Peak"
+        ]
+    },
     "关闭周期报酬奖励领取结果页-极限峰值": {
         "expected": "anywhere to exit"
     },
@@ -525,6 +536,7 @@
     },
     "确认-遗珍回收准备": {
         "expected": [
+            "Confirm",
             "Confirm"
         ]
     },
@@ -744,6 +756,9 @@
     },
     "领取活动内每日任务奖励": {
         "expected": "^Claim$"
+    },
+    "storeroomEntered": {
+        "expected": "Resource"
     },
     "首页进入活动层-活动层通用": {
         "expected": [
