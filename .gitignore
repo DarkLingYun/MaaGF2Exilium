@@ -456,6 +456,3 @@ mermaid.mmd
 
 # macos
 .DS_Store
-
-# Custom Claude Code skills are kept user-global (~/.claude/skills), not versioned in the fork
-.claude/skills/
