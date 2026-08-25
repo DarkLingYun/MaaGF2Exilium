@@ -47,8 +47,13 @@ def main():
     template_nodes = {}       # file -> [nodes matched by template]
 
     existing = {}
+    existing_focus = {}
     if OUT.exists():
-        existing = json.loads(OUT.read_text(encoding="utf-8")).get("ocr", {})
+        prev = json.loads(OUT.read_text(encoding="utf-8-sig"))
+        existing = prev.get("ocr", {})
+        # `focus`/log strings are curated by hand (the extractor does not derive
+        # them from base OCR nodes), so carry the whole map forward untouched.
+        existing_focus = prev.get("focus", {})
 
     for f in sorted(glob.glob(str(BASE / "pipeline" / "**" / "*.json"), recursive=True)):
         rel = os.path.relpath(f, BASE).replace("\\", "/")
@@ -75,6 +80,7 @@ def main():
                    "the EN client. Empty string = not yet done (falls back to base). "
                    "Then run scripts/build_en_resource.py.",
         "ocr": dict(sorted(ocr_strings.items())),
+        "focus": existing_focus,
         "_template_nodes": dict(sorted(template_nodes.items())),
         "_ocr_locations": dict(sorted(locations.items())),
     }

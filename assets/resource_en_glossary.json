@@ -5,7 +5,6 @@
     "^(购买|确认)$": "Purchase|Confirm",
     "^一键": "",
     "^一键派遣$": "",
-    "^上一步$": "^Previous$",
     "^下.?$": "",
     "^下一$": "^Next$",
     "^下一个$": "^Next$",
@@ -13,7 +12,6 @@
     "^减益$": "",
     "^制作$": "^Make$",
     "^前往$": "",
-    "^取消$": "^Cancel$",
     "^周期礼包$": "^Regular Gift Pack$",
     "^品质甄选$": "^(Quality Selection|Quality)$",
     "^商城$": "^Shop$",
@@ -23,7 +21,6 @@
     "^定向精研$": "",
     "^定向调整$": "",
     "^家具商店$": "",
-    "^巡录$": "",
     "^常规挑战$": "",
     "^开启$": "",
     "^强固$": "",
@@ -65,13 +62,11 @@
     "^输出$": "",
     "^远航巡录$": "",
     "^迫近强攻$": "",
-    "^道具不足$": "",
     "^错位.*上篇$": "",
     "^防护$": "",
     "^限时开启": "^Time-Limited Events",
     "^限时开启$": "^Time-Limited Events$",
     "^限时礼包$": "",
-    "^险境挖掘$": "",
     "^领取$": "^Claim$",
     "^领取全部$": "^Claim All$",
     "^首领挑战$": "",
@@ -93,6 +88,7 @@
     "仓库": "Storeroom",
     "任务失败": "",
     "任务完成": "",
+    "休息室": "",
     "作战完成": "",
     "作战开始": "",
     "作战规划": "",
@@ -102,32 +98,25 @@
     "信号波": "",
     "信号波重度依赖": "",
     "信息核": "",
-    "健康": "",
-    "健康游戏": "",
-    "全": "",
     "全部领取$": "Claim All$",
-    "共轭波频": "",
     "共选": "",
     "共键": "",
     "关卡$": "",
     "关卡奖励": "",
-    "关闭": "",
     "内存条": "",
     "再次派遣": "",
     "击开始$": "",
-    "前": "",
+    "刷新": "",
     "前往": "",
     "前往挑战": "",
     "加入": "",
     "加入编队": "",
     "动态": "",
     "助力人形": "",
-    "励": "",
     "危途见证": "",
     "参与奖励": "",
     "及以下": "",
     "及以下未培养": "",
-    "取": "",
     "取消": "Cancel",
     "可部署": "",
     "可露凯": "",
@@ -135,13 +124,11 @@
     "周期报酬": "",
     "商品购买": "Purchase",
     "喵封": "",
-    "喵封物资不足": "",
-    "喵的委托": "",
     "回收激励": "",
     "回收路线": "",
+    "域限突破": "",
     "基原信息核": "",
     "墙面装饰": "",
-    "奖": "",
     "奖励己全部": "",
     "奖励已全部": "",
     "委托$": "",
@@ -163,16 +150,15 @@
     "巡录$": "",
     "工业级及以下": "",
     "工业级及以下未培养": "",
-    "己": "",
     "己全部": "",
-    "已": "",
     "已全部": "",
+    "已收集": "",
     "已晋升": "",
+    "已领取": "",
     "常规峰值": "",
     "庆典豪礼": "",
     "序六": "",
     "应援": "",
-    "度": "",
     "开启": "",
     "开启远航巡录": "",
     "开始作战": "",
@@ -180,14 +166,13 @@
     "开始战斗": "",
     "开始探索": "",
     "异维探渊": "",
-    "当": "",
+    "当前难度奖励已全部领取": "",
     "当季风潮": "",
     "当期特饮": "Today.s Special",
-    "影弄良辰": "",
+    "形象管理": "",
     "征程丰碑": "",
     "循环结束": "",
     "心情提升": "",
-    "忠告": "",
     "快捷选择": "Quick Select",
     "愉悦馈赠": "",
     "战场报告": "Combat Report",
@@ -196,6 +181,7 @@
     "战术体系": "",
     "投票应援": "",
     "拆解": "Dismantle",
+    "指挥官": "",
     "指挥官等级": "Commander Level",
     "挑战": "Challenge",
     "排名奖励": "",
@@ -235,13 +221,12 @@
     "极限峰值": "",
     "标准及以下未培养": "",
     "标准武器自选礼箱": "",
-    "格琳": "",
-    "格琳喵的委托": "",
     "桑朵莱希": "",
     "模块": "",
     "模拟习练": "",
     "武器配件": "",
     "每周行动": "",
+    "每日任务": "",
     "每日晶条礼包": "Daily Collapse Piece Package",
     "每日祝福次数": "",
     "每日行动": "",
@@ -263,7 +248,7 @@
     "点击开始": "Start",
     "点击空白": "anywhere to exit",
     "点击空白处关闭": "anywhere to exit",
-    "燎月连宵": "",
+    "物资助力箱": "",
     "特别": "",
     "珍品": "",
     "班组商店": "",
@@ -272,11 +257,13 @@
     "百变黑客": "",
     "确定": "",
     "确认": "Confirm",
+    "确认排序": "",
     "确认离开": "",
+    "确认选择": "",
     "确认邀请": "Confirm Invite",
-    "碎镜拾遗": "",
     "礼箱": "",
     "神秘箱": "",
+    "移动中": "",
     "空白": "anywhere to exit",
     "等级提升": "",
     "精英及以下未培养": "",
@@ -329,19 +316,16 @@
     "逸趣": "",
     "道具箱": "",
     "遗珍回收": "",
-    "部": "",
     "部署人形": "",
     "采样奖励": "",
     "采集$": "Collection$",
-    "重圆": "",
-    "重圆阙影": "",
     "重度依赖": "",
     "金": "",
-    "鎏金华筵": "",
     "铁玫瑰赠礼": "",
     "铸碑者的黎明": "",
     "链式": "",
     "键": "",
+    "键祝福": "",
     "键领取": "",
     "键领取$": "",
     "闪耀星愿": "",
@@ -349,11 +333,9 @@
     "限时开启$": "Time-Limited Events$",
     "险境挖掘": "",
     "随机奖励": "",
-    "难": "",
     "需要完成前置关卡": "",
     "顶级生长数据随机箱": "",
     "预演": "",
-    "领": "",
     "领取": "Claim",
     "领取全部": "Claim All",
     "领取奖励": ""
@@ -399,12 +381,6 @@
     "首领挑战自律": "Boss Challenge Auto-Battle"
   },
   "_template_nodes": {
-    "pipeline/TimeLimitedTasks/claimIntelligenceSupplyStaminaTask.json": [
-      "exitIntelligenceSupply"
-    ],
-    "pipeline/TimeLimitedTasks/claimSevenDayCheckInResourceTask.json": [
-      "noClaimButtonInSevenDayCheckIn"
-    ],
     "pipeline/public/AutoSweepBattle/popup.json": [
       "nonScrollablePopupClose",
       "scrollablePopupClose",
@@ -434,18 +410,11 @@
       "selectPlatoonItem"
     ],
     "pipeline/public/ClaimRewardTasks/passSystem.json": [
-      "findPassByImage",
       "exitPackagePageAfterWeaponPackageFound"
     ],
     "pipeline/public/ClaimRewardTasks/supportDollRewards.json": [
       "enterPersonalInformationPage",
       "claimSupportDollRewards"
-    ],
-    "pipeline/public/ClaimRewardTasks/一次性领取十连.json": [
-      "领取十连-一次性领取十连"
-    ],
-    "pipeline/public/ClaimRewardTasks/七天签到限定十连.json": [
-      "领取奖励-七天签到限定十连"
     ],
     "pipeline/public/ClaimRewardTasks/动态招募祝福.json": [
       "进入好友班组动态界面"
@@ -455,17 +424,17 @@
       "increaseSelfDisciplineCountForMindSurvey",
       "decreaseSelfDisciplineCountForMindSurvey"
     ],
-    "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json": [
+    "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json": [
       "boundaryAdvanceDelegateOneClickClaim",
       "boundaryAdvanceDelegateNotClaimable"
     ],
-    "pipeline/public/PrepareDailyTasks/Email/getNewEmails.json": [
+    "pipeline/public/PrepareDailyTasks/getNewEmails.json": [
       "clickEmailsButton"
     ],
-    "pipeline/public/PrepareDailyTasks/Shop/shop.json": [
+    "pipeline/public/PrepareDailyTasks/shop.json": [
       "clickWeekSupplyBox"
     ],
-    "pipeline/public/PrepareDailyTasks/StaminaReplenishments/staminaReplenishment.json": [
+    "pipeline/public/PrepareDailyTasks/staminaReplenishment.json": [
       "consumeAccessKey"
     ],
     "pipeline/public/PublicAreaDailyTasks/dispatchCenter.json": [
@@ -473,8 +442,7 @@
     ],
     "pipeline/public/PublicAreaDailyTasks/lounge.json": [
       "loungeButtonClick",
-      "loungeBackPage",
-      "退出整备室"
+      "loungeBackPage"
     ],
     "pipeline/public/PublicAreaDailyTasks/神秘箱.json": [
       "可收取十次-神秘箱",
@@ -512,8 +480,7 @@
       "clickHomeButton",
       "clickCloseWindowButton",
       "clickBackButton",
-      "announcementClosed",
-      "backPage"
+      "announcementClosed"
     ],
     "pipeline/public/jumpback.json": [
       "确认-通用",
@@ -564,8 +531,15 @@
       "选择燃烧人形-遗珍回收准备"
     ],
     "pipeline/public/循环助手/循环助手.json": [
-      "循环进行中",
-      "退出循环助手页面"
+      "循环进行中"
+    ],
+    "pipeline/public/活动/一次性领取十连.json": [
+      "领取十连-一次性领取十连"
+    ],
+    "pipeline/public/活动/七天签到限定十连.json": [
+      "点击七天签到限定十连标签页",
+      "已进入七天签到限定十连标签页",
+      "领取奖励-七天签到限定十连"
     ],
     "pipeline/public/活动/暗香赠礼.json": [
       "增加铁玫瑰赠礼领取次数",
@@ -574,13 +548,17 @@
       "关闭信息核介绍页面-暗香赠礼"
     ],
     "pipeline/public/活动/格琳喵的委托.json": [
+      "进入格琳喵的委托标签页",
+      "已进入格琳喵的委托标签页",
       "关闭搜寻喵封物资页面",
-      "关闭愉悦馈赠页面",
       "使用喵封物资购物",
       "调整物品为最大购买数量-格琳喵的委托",
-      "关闭购买页面-格琳喵的委托"
+      "关闭购买页面-格琳喵的委托",
+      "关闭愉悦馈赠页面"
     ],
     "pipeline/public/活动/模拟习练.json": [
+      "点击模拟习练标签页",
+      "确认选中模拟习练标签页",
       "有未完成的关卡-模拟习练",
       "切换到未领取奖励的标签页-模拟习练"
     ],
@@ -597,6 +575,8 @@
       "领取奖励-限时中型活动"
     ],
     "pipeline/public/活动/险境挖掘.json": [
+      "clickDangerousExcavationTab",
+      "dangerousExcavationTabClicked",
       "closeClueCollectionPage",
       "claimSingleReward",
       "claimLineReward"
@@ -605,25 +585,16 @@
       "trialRewardClaimed"
     ],
     "pipeline/public/活动层/美味烹调.json": [
-      "已进入活动层-美味烹调",
       "已有用餐效果",
       "选择常规菜品",
-      "不是每天第一次免费美味烹调，返回活动层",
-      "返回活动层-美味烹调",
-      "退出活动层-美味烹调"
+      "已选择常规菜品"
     ],
     "pipeline/public/活动层/茶歇一刻.json": [
-      "已进入活动层-茶歇一刻",
       "已有饮用效果",
-      "选择饮品-茶歇一刻",
-      "返回活动层-茶歇一刻",
-      "退出活动层-茶歇一刻"
+      "选择饮品-茶歇一刻"
     ],
     "pipeline/public/活动层/逸趣导算.json": [
-      "已进入活动层-逸趣导算",
-      "进入逸趣导算页面",
-      "关闭逸趣导算页面",
-      "退出活动层-逸趣导算"
+      "进入逸趣导算页面"
     ],
     "pipeline/public/通用战斗.json": [
       "点击作战开始按钮-通用战斗",
@@ -631,17 +602,16 @@
       "点击通信中图片跳过角色对话-通用战斗",
       "点击关闭人形介绍-通用战斗"
     ],
-    "pipeline/tasks/StartGame.json": [
-      "StartGame_nonScrollablePopupClose",
-      "StartGame_scrollablePopupClose",
-      "StartGame_returnToHomePage",
-      "StartGame_backPage",
-      "StartGame_announcementClosed",
-      "StartGame_sunbornGameLogo"
-    ],
     "pipeline/tasks/VersionActivityTask.json": [
       "领取活动内每日任务积分累计奖励",
       "退出活动内每日任务界面"
+    ],
+    "pipeline/tasks/活动层.json": [
+      "已进入活动层-活动层通用",
+      "点击地图-活动层通用",
+      "形象管理-活动层通用",
+      "确认当前形象为指挥官-活动层通用",
+      "退出活动层-活动层通用"
     ]
   },
   "_ocr_locations": {
@@ -654,18 +624,15 @@
       "pipeline/public/BulkExchangeTasks/dispatchCenterExchange.json::dispatchCenterConfirmPurchaseItem",
       "pipeline/public/BulkExchangeTasks/enterHomeStoreExchangeTask.json::homeStoreConfirmPurchaseItem",
       "pipeline/public/BulkExchangeTasks/guildExchange.json::PlatoonConfirmPurchaseItem",
-      "pipeline/public/PrepareDailyTasks/Shop/shop.json::confirmWeekSupplyBoxPurchase",
-      "pipeline/public/PrepareDailyTasks/Shop/shop.json::confirmSupplyBoxPurchase",
+      "pipeline/public/PrepareDailyTasks/shop.json::confirmWeekSupplyBoxPurchase",
+      "pipeline/public/PrepareDailyTasks/shop.json::confirmSupplyBoxPurchase",
       "pipeline/public/VersionActivity/enterVersionActivityItemExchange.json::confirmPurchaseItem"
     ],
     "^一键": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateOneClickDispatch"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::boundaryAdvanceDelegateOneClickDispatch"
     ],
     "^一键派遣$": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateOneClickDispatch"
-    ],
-    "^上一步$": [
-      "pipeline/tasks/StartGame.json::StartGame_clickCancel"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::boundaryAdvanceDelegateOneClickDispatch"
     ],
     "^下.?$": [
       "pipeline/public/活动/活动巡录.json::选择下一个补给包-活动巡录"
@@ -692,17 +659,14 @@
     "^前往$": [
       "pipeline/public/小游戏/遗珍回收/遗珍回收作战.json::点击-遗珍回收作战"
     ],
-    "^取消$": [
-      "pipeline/tasks/StartGame.json::StartGame_clickCancel"
-    ],
     "^周期礼包$": [
-      "pipeline/public/PrepareDailyTasks/Shop/shop.json::clickPermanentGiftPackage"
+      "pipeline/public/PrepareDailyTasks/shop.json::clickPermanentGiftPackage"
     ],
     "^品质甄选$": [
-      "pipeline/public/PrepareDailyTasks/Shop/shop.json::clickQualitySelection"
+      "pipeline/public/PrepareDailyTasks/shop.json::clickQualitySelection"
     ],
     "^商城$": [
-      "pipeline/public/PrepareDailyTasks/Shop/shop.json::enterShop",
+      "pipeline/public/PrepareDailyTasks/shop.json::enterShop",
       "pipeline/tasks/BulkExchange.json::易物所兑换通用-首页进入易物所"
     ],
     "^增益$": [
@@ -725,9 +689,6 @@
     "^家具商店$": [
       "pipeline/public/BulkExchangeTasks/enterHomeStoreExchangeTask.json::clickHomeStoreExchangeTaskButton"
     ],
-    "^巡录$": [
-      "pipeline/public/ClaimRewardTasks/passSystem.json::findPassByText"
-    ],
     "^常规挑战$": [
       "pipeline/public/SimulatedCombat/bossChallenge.json::enterBossStandardBattle"
     ],
@@ -746,28 +707,26 @@
       "pipeline/tasks/AutoSweepBattle.json::AutoSweepBattleSupplyOperationPrepareInsufficient"
     ],
     "^情报补给$": [
-      "pipeline/TimeLimitedTasks/claimIntelligenceSupplyStaminaTask.json::intelligenceSupplyTabFound",
-      "pipeline/TimeLimitedTasks/claimIntelligenceSupplyStaminaTask.json::intelligenceSupplyTabFoundAfterSwipe",
-      "pipeline/TimeLimitedTasks/claimIntelligenceSupplyStaminaTask.json::clickIntelligenceSupplyTab"
+      "pipeline/public/PrepareDailyTasks/领取情报补给.json::点击情报补给标签页",
+      "pipeline/public/PrepareDailyTasks/领取情报补给.json::已进入情报补给标签页"
     ],
     "^战前补给$": [
-      "pipeline/TimeLimitedTasks/claimSevenDayCheckInResourceTask.json::noSevenDayCheckInTab",
-      "pipeline/TimeLimitedTasks/claimSevenDayCheckInResourceTask.json::clickSevenDayCheckInTab"
+      "pipeline/public/PrepareDailyTasks/领取七日签到资源.json::点击七日签到资源标签页",
+      "pipeline/public/PrepareDailyTasks/领取七日签到资源.json::已进入七日签到资源标签页"
     ],
     "^战役推进$": [
       "pipeline/public/SimulatedCombat/模拟作战选择.json::打开战役推进-模拟作战通用",
       "pipeline/tasks/MindSurveyTask.json::enterMindSurveyTask",
-      "pipeline/tasks/PublicAreaDailyTasks.json::clickPublicAreaDailyButton",
       "pipeline/tasks/VersionActivityTask.json::enterVersionActivityTask"
     ],
     "^收取$": [
       "pipeline/public/PublicAreaDailyTasks/schedulingGains.json::clickResourceProductionCollectionButton"
     ],
     "^晶源": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::clickBoundaryAdvanceDelegateButton"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::clickBoundaryAdvanceDelegateButton"
     ],
     "^晶源采集$": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::clickBoundaryAdvanceDelegateButton"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::clickBoundaryAdvanceDelegateButton"
     ],
     "^机遇$": [
       "pipeline/public/小游戏/遗珍回收/遗珍回收作战.json::点击-遗珍回收作战"
@@ -780,20 +739,16 @@
       "pipeline/tasks/VersionActivityTask.json::开始活动内每日任务"
     ],
     "^每日补给箱$": [
-      "pipeline/public/PrepareDailyTasks/Shop/shop.json::clickDailySupplyBox"
+      "pipeline/public/PrepareDailyTasks/shop.json::clickDailySupplyBox"
     ],
     "^沿途行动$": [
       "pipeline/public/ClaimRewardTasks/passSystem.json::switchToDailyPassRewardPage"
     ],
     "^活动$": [
-      "pipeline/TimeLimitedTasks/claimIntelligenceSupplyStaminaTask.json::claimIntelligenceSupplyStaminaTaskTimed",
-      "pipeline/TimeLimitedTasks/claimSevenDayCheckInResourceTask.json::claimSevenDayCheckInResourceTaskTimed",
-      "pipeline/public/ClaimRewardTasks/活动选择.json::进入活动页面-活动通用"
+      "pipeline/public/活动/活动选择.json::进入活动页面-活动通用"
     ],
     "^活动层$": [
-      "pipeline/public/活动层/美味烹调.json::进入活动层-美味烹调",
-      "pipeline/public/活动层/茶歇一刻.json::进入活动层-茶歇一刻",
-      "pipeline/public/活动层/逸趣导算.json::进入活动层-逸趣导算"
+      "pipeline/tasks/活动层.json::首页进入活动层-活动层通用"
     ],
     "^点击": [
       "pipeline/public/BulkExchangeTasks/BossChallengeExchange.json::BossChallengeCloseItemPurchaseResultPage",
@@ -823,8 +778,8 @@
       "pipeline/public/小游戏/遗珍回收/遗珍回收准备.json::选择插件珍品-遗珍回收准备"
     ],
     "^班组$": [
-      "pipeline/public/PrepareDailyTasks/Platoo/PlatoonTasks.json::PlatoonTasks",
-      "pipeline/public/PrepareDailyTasks/Platoo/PlatoonTasks.json::clickPlatoonButton"
+      "pipeline/public/PrepareDailyTasks/PlatoonTasks.json::PlatoonTasks",
+      "pipeline/public/PrepareDailyTasks/PlatoonTasks.json::clickPlatoonButton"
     ],
     "^班组商店$": [
       "pipeline/public/BulkExchangeTasks/guildExchange.json::clickPlatoonExchangeTaskButton"
@@ -858,10 +813,10 @@
       "pipeline/tasks/AutoSweepBattle.json::AutoSweepBattleSupplyOperationPrepare"
     ],
     "^臻品礼包$": [
-      "pipeline/public/PrepareDailyTasks/Shop/shop.json::clickTimeLimitedGiftPackage"
+      "pipeline/public/PrepareDailyTasks/shop.json::clickTimeLimitedGiftPackage"
     ],
     "^补给$": [
-      "pipeline/public/PrepareDailyTasks/Platoo/PlatoonTasks.json::enterPlatoonDailySupplyPage"
+      "pipeline/public/PrepareDailyTasks/PlatoonTasks.json::enterPlatoonDailySupplyPage"
     ],
     "^讯段交易$": [
       "pipeline/public/BulkExchangeTasks/BossChallengeExchange.json::clickBossChallengeExchangeTaskButton"
@@ -881,9 +836,6 @@
     "^迫近强攻$": [
       "pipeline/tasks/AutoSweepBattle.json::selectedEffectsCombination"
     ],
-    "^道具不足$": [
-      "pipeline/public/活动/险境挖掘.json::insufficientTreasureMap"
-    ],
     "^错位.*上篇$": [
       "pipeline/tasks/VersionActivityTask.json::switchVersionActivityChapter"
     ],
@@ -891,33 +843,29 @@
       "pipeline/public/小游戏/遗珍回收/遗珍回收准备.json::选择插件珍品-遗珍回收准备"
     ],
     "^限时开启": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::enterBoundaryAdvanceAction"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::enterBoundaryAdvanceAction"
     ],
     "^限时开启$": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::enterBoundaryAdvanceAction"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::enterBoundaryAdvanceAction"
     ],
     "^限时礼包$": [
-      "pipeline/public/PrepareDailyTasks/Shop/shop.json::clickTimeLimitedGiftPackage"
-    ],
-    "^险境挖掘$": [
-      "pipeline/public/活动/险境挖掘.json::dangerousExcavationPageEntered",
-      "pipeline/public/活动/险境挖掘.json::clueCollectionPageClosed"
+      "pipeline/public/PrepareDailyTasks/shop.json::clickTimeLimitedGiftPackage"
     ],
     "^领取$": [
-      "pipeline/TimeLimitedTasks/claimIntelligenceSupplyStaminaTask.json::clickStaminaClaimButton",
-      "pipeline/TimeLimitedTasks/claimSevenDayCheckInResourceTask.json::clickSevenDayCheckInClaimButton",
+      "pipeline/public/PrepareDailyTasks/领取七日签到资源.json::领取七日签到资源-领取七日签到资源",
+      "pipeline/public/PrepareDailyTasks/领取情报补给.json::领取情报补给-情报补给",
       "pipeline/public/活动/限时中型活动.json::领取代币-限时中型活动",
       "pipeline/tasks/VersionActivityTask.json::领取活动内每日任务奖励"
     ],
     "^领取全部$": [
-      "pipeline/public/PrepareDailyTasks/Platoo/PlatoonTasks.json::noClaimPlatoonDailySupply",
-      "pipeline/public/PrepareDailyTasks/Platoo/PlatoonTasks.json::claimPlatoonDailySupply"
+      "pipeline/public/PrepareDailyTasks/PlatoonTasks.json::noClaimPlatoonDailySupply",
+      "pipeline/public/PrepareDailyTasks/PlatoonTasks.json::claimPlatoonDailySupply"
     ],
     "^首领挑战$": [
       "pipeline/public/SimulatedCombat/bossChallenge.json::clickEnterBossFightPage"
     ],
     "一键": [
-      "pipeline/public/PrepareDailyTasks/Platoo/PlatoonTasks.json::checkPlatoon"
+      "pipeline/public/PrepareDailyTasks/PlatoonTasks.json::checkPlatoon"
     ],
     "一键祝福": [
       "pipeline/public/ClaimRewardTasks/动态招募祝福.json::点击一键祝福"
@@ -928,6 +876,7 @@
       "pipeline/public/ClaimRewardTasks/commission.json::claimJourneyMileStoneReward",
       "pipeline/public/PublicAreaDailyTasks/dispatchCenter.json::rewardGet",
       "pipeline/public/SimulatedCombat/peakValueAssessment.json::claimRewards",
+      "pipeline/public/活动/格琳喵的委托.json::领取愉悦馈赠物资",
       "pipeline/public/活动层/逸趣导算.json::领取逸趣导算奖励"
     ],
     "一键领取$": [
@@ -938,7 +887,7 @@
       "pipeline/public/小游戏/异维探渊/异维探渊战斗.json::下一关-异维探渊"
     ],
     "下载资源": [
-      "pipeline/tasks/StartGame.json::downloadResource"
+      "pipeline/tasks/StartGame.json::StartGame_downloadResource"
     ],
     "个人信息": [
       "pipeline/public/ClaimRewardTasks/supportDollRewards.json::personalInformationPageEntered",
@@ -980,6 +929,9 @@
     "任务完成": [
       "pipeline/public/通用战斗.json::任务完成-通用战斗"
     ],
+    "休息室": [
+      "pipeline/public/PublicAreaDailyTasks/lounge.json::loungeConfirm"
+    ],
     "作战完成": [
       "pipeline/public/小游戏/异维探渊/异维探渊战斗.json::已进入关卡结算界面-异维探渊"
     ],
@@ -1011,21 +963,8 @@
     "信息核": [
       "pipeline/public/VersionActivity/enterVersionActivityItemExchange.json::selectExchangeItem"
     ],
-    "健康": [
-      "pipeline/tasks/StartGame.json::healthGameAdvice"
-    ],
-    "健康游戏": [
-      "pipeline/tasks/StartGame.json::healthGameAdvice"
-    ],
-    "全": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
-    ],
     "全部领取$": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
-    ],
-    "共轭波频": [
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::点击七天签到限定十连标签页",
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::已进入七天签到限定十连标签页"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
     ],
     "共选": [
       "pipeline/public/organizeStoreroom/flower.json::有物品可拆解-生长数据",
@@ -1041,9 +980,6 @@
     "关卡奖励": [
       "pipeline/public/活动/模拟习练.json::领取关卡奖励-模拟习练"
     ],
-    "关闭": [
-      "pipeline/tasks/StartGame.json::StartGame_dailyRewards"
-    ],
     "内存条": [
       "pipeline/public/VersionActivity/enterVersionActivityItemExchange.json::selectExchangeItem"
     ],
@@ -1053,8 +989,8 @@
     "击开始$": [
       "pipeline/tasks/StartGame.json::StartGame_clickStart"
     ],
-    "前": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
+    "刷新": [
+      "pipeline/public/活动/险境挖掘.json::clueCollectionPageEntered"
     ],
     "前往": [
       "pipeline/public/PublicAreaDailyTasks/dispatchCenter.json::前往调度室",
@@ -1070,7 +1006,7 @@
       "pipeline/public/活动/模拟习练.json::开始模拟习练战斗"
     ],
     "加入": [
-      "pipeline/public/PrepareDailyTasks/Platoo/PlatoonTasks.json::checkPlatoon"
+      "pipeline/public/PrepareDailyTasks/PlatoonTasks.json::checkPlatoon"
     ],
     "加入编队": [
       "pipeline/public/小游戏/异维探渊/异维探渊战斗.json::加入编队-异维探渊"
@@ -1080,9 +1016,6 @@
     ],
     "助力人形": [
       "pipeline/public/活动/闪耀星愿.json::切换到助力人形-闪耀星愿"
-    ],
-    "励": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
     ],
     "危途见证": [
       "pipeline/public/ClaimRewardTasks/commission.json::enterJourneyWitnessTab"
@@ -1096,9 +1029,6 @@
     "及以下未培养": [
       "pipeline/public/organizeStoreroom/weaponAttachments.json::selectWeaponAttachmentsLevel"
     ],
-    "取": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
-    ],
     "取消": [
       "pipeline/public/AutoSweepBattle/popup.json::nonScrollablePopupCancel",
       "pipeline/public/AutoSweepBattle/popup.json::scrollablePopupCancel",
@@ -1108,7 +1038,7 @@
       "pipeline/public/BulkExchangeTasks/enterHomeStoreExchangeTask.json::homeStoreExitItemExchange",
       "pipeline/public/BulkExchangeTasks/guildExchange.json::PlatoonExitItemExchange",
       "pipeline/public/MindSurveyTask/mindSurvey.json::cancelStaminaReplenishmentForMindSurvey",
-      "pipeline/public/PrepareDailyTasks/Shop/shop.json::closeDailyPaidGiftPage",
+      "pipeline/public/PrepareDailyTasks/shop.json::closeDailyPaidGiftPage",
       "pipeline/public/organizeStoreroom/itemBox.json::closeNotTopDataBoxPage",
       "pipeline/public/小游戏/异维探渊/异维探渊战斗.json::取消购买-异维探渊",
       "pipeline/public/小游戏/遗珍回收/遗珍回收作战.json::取消可强固人形提醒-遗珍回收作战",
@@ -1130,18 +1060,11 @@
       "pipeline/public/SimulatedCombat/极限峰值.json::发现周期报酬-极限峰值"
     ],
     "商品购买": [
-      "pipeline/public/活动/格琳喵的委托.json::已打开购物详情界面-格琳喵的委托",
-      "pipeline/public/活动/格琳喵的委托.json::购买未成功-格琳喵的委托"
+      "pipeline/public/活动/格琳喵的委托.json::已打开购物详情界面-格琳喵的委托"
     ],
     "喵封": [
       "pipeline/public/活动/格琳喵的委托.json::已进入格琳喵的委托页面",
       "pipeline/public/活动/格琳喵的委托.json::进入搜寻喵封物资页面"
-    ],
-    "喵封物资不足": [
-      "pipeline/public/活动/格琳喵的委托.json::购买未成功-格琳喵的委托"
-    ],
-    "喵的委托": [
-      "pipeline/public/活动/格琳喵的委托.json::点击格琳喵的委托标签页"
     ],
     "回收激励": [
       "pipeline/public/小游戏/遗珍回收/遗珍回收.json::已进入某期遗珍回收页面"
@@ -1149,20 +1072,20 @@
     "回收路线": [
       "pipeline/public/小游戏/遗珍回收/遗珍回收.json::选择难度-遗珍回收"
     ],
+    "域限突破": [
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::确认进入边界推进"
+    ],
     "基原信息核": [
       "pipeline/public/活动/暗香赠礼.json::已打开信息核介绍页面-暗香赠礼"
     ],
     "墙面装饰": [
       "pipeline/public/BulkExchangeTasks/enterHomeStoreExchangeTask.json::已进入家具商店页面"
     ],
-    "奖": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
-    ],
     "奖励己全部": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
     ],
     "奖励已全部": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
     ],
     "委托$": [
       "pipeline/public/ClaimRewardTasks/commission.json::enterCommissionToClaimTask",
@@ -1190,7 +1113,7 @@
       "pipeline/tasks/AutoSweepBattle.json::AutoSweepBattleSupplyOperationPrepareAccessoriesLimit"
     ],
     "官等级": [
-      "pipeline/tasks/StartGame.json::StartGame_levelUp"
+      "pipeline/public/jumpback.json::指挥官等级提升-通用"
     ],
     "定向精研": [
       "pipeline/tasks/AutoSweepBattle.json::supplyOperationType"
@@ -1224,27 +1147,27 @@
     "工业级及以下未培养": [
       "pipeline/public/organizeStoreroom/weaponAttachments.json::chooseLevel"
     ],
-    "己": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
-    ],
     "己全部": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
-    ],
-    "已": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
     ],
     "已全部": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
+    ],
+    "已收集": [
+      "pipeline/public/活动/格琳喵的委托.json::已进入搜寻喵封物资页面"
     ],
     "已晋升": [
       "pipeline/public/通用战斗.json::实兵演习等级晋级-通用战斗"
+    ],
+    "已领取": [
+      "pipeline/public/活动/七天签到限定十连.json::今日已领-七天签到限定十连"
     ],
     "常规峰值": [
       "pipeline/public/SimulatedCombat/peakValueAssessment.json::进入常规峰值"
     ],
     "庆典豪礼": [
-      "pipeline/public/ClaimRewardTasks/一次性领取十连.json::点击一次性领取十连标签页",
-      "pipeline/public/ClaimRewardTasks/一次性领取十连.json::已进入一次性领取十连标签页"
+      "pipeline/public/活动/一次性领取十连.json::点击一次性领取十连标签页",
+      "pipeline/public/活动/一次性领取十连.json::已进入一次性领取十连标签页"
     ],
     "序六": [
       "pipeline/public/活动/暗香赠礼.json::选择火玫瑰赠礼奖励道具"
@@ -1253,14 +1176,12 @@
       "pipeline/public/活动/闪耀星愿.json::已进入闪耀星愿页面",
       "pipeline/public/活动/闪耀星愿.json::已完成作战-闪耀星愿"
     ],
-    "度": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
-    ],
     "开启": [
       "pipeline/public/organizeStoreroom/itemBox.json::confirmFlowerBox",
       "pipeline/public/organizeStoreroom/itemBox.json::确认开启奇忆甄选箱子",
       "pipeline/public/活动/暗香赠礼.json::开启铁玫瑰赠礼",
-      "pipeline/public/活动/暗香赠礼.json::开启火玫瑰赠礼"
+      "pipeline/public/活动/暗香赠礼.json::开启火玫瑰赠礼",
+      "pipeline/public/活动/活动巡录.json::首次开启巡录-活动巡录"
     ],
     "开启远航巡录": [
       "pipeline/public/ClaimRewardTasks/passSystem.json::开启远航巡录"
@@ -1285,8 +1206,8 @@
     "异维探渊": [
       "pipeline/public/小游戏/异维探渊/异维探渊.json::点击异维探渊入口"
     ],
-    "当": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
+    "当前难度奖励已全部领取": [
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
     ],
     "当季风潮": [
       "pipeline/public/BulkExchangeTasks/enterHomeStoreExchangeTask.json::已进入家具商店页面"
@@ -1294,9 +1215,8 @@
     "当期特饮": [
       "pipeline/public/活动层/茶歇一刻.json::确认进入茶歇一刻"
     ],
-    "影弄良辰": [
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::点击七天签到限定十连标签页",
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::已进入七天签到限定十连标签页"
+    "形象管理": [
+      "pipeline/tasks/活动层.json::已进入形象管理菜单-活动层通用"
     ],
     "征程丰碑": [
       "pipeline/public/ClaimRewardTasks/commission.json::enterJourneyMileStoneTab"
@@ -1307,9 +1227,6 @@
     "心情提升": [
       "pipeline/public/活动/格琳喵的委托.json::心情提升-格琳喵的委托"
     ],
-    "忠告": [
-      "pipeline/tasks/StartGame.json::healthGameAdvice"
-    ],
     "快捷选择": [
       "pipeline/public/organizeStoreroom/flower.json::quickSelectFlower",
       "pipeline/public/organizeStoreroom/weapon.json::quickSelectWeapon",
@@ -1318,7 +1235,7 @@
     "愉悦馈赠": [
       "pipeline/public/活动/格琳喵的委托.json::已进入格琳喵的委托页面",
       "pipeline/public/活动/格琳喵的委托.json::进入愉悦馈赠页面",
-      "pipeline/public/活动/格琳喵的委托.json::已滑动到愉悦馈赠新页面"
+      "pipeline/public/活动/格琳喵的委托.json::已进入愉悦馈赠页面"
     ],
     "战场报告": [
       "pipeline/public/VersionActivity/enterVersionActivityItemExchange.json::selectExchangeItem",
@@ -1326,19 +1243,9 @@
       "pipeline/public/活动/暗香赠礼.json::选择铁玫瑰赠礼奖励道具"
     ],
     "战役推进": [
-      "pipeline/TimeLimitedTasks/claimIntelligenceSupplyStaminaTask.json::intelligenceSupplyTaskEnd",
-      "pipeline/public/PrepareDailyTasks/Email/getNewEmails.json::getNewEmails",
-      "pipeline/public/PrepareDailyTasks/StaminaReplenishments/staminaReplenishment.json::staminaReplenishment",
-      "pipeline/public/PrepareDailyTasks/timeLimited/timeLimitedTask.json::timeLimitedTask",
-      "pipeline/public/PublicAreaDailyTasks/lounge.json::整备室已退出",
       "pipeline/public/controlButton.json::HomePage",
-      "pipeline/public/循环助手/循环助手.json::循环助手任务结束",
-      "pipeline/public/活动层/美味烹调.json::美味烹调任务结束",
-      "pipeline/public/活动层/茶歇一刻.json::茶歇一刻任务结束",
-      "pipeline/public/活动层/逸趣导算.json::逸趣导算任务结束",
       "pipeline/tasks/AutoSweepBattle.json::enterAutoSweepBattleTask",
       "pipeline/tasks/BulkExchange.json::易物所兑换通用-当前在首页",
-      "pipeline/tasks/StartGame.json::StartGame_HomePage",
       "pipeline/tasks/StartGame.json::StartGame_HomePage_Check",
       "pipeline/tasks/organizeStoreroom.json::organizeStoreroom"
     ],
@@ -1356,8 +1263,11 @@
       "pipeline/public/organizeStoreroom/weapon.json::enterWeaponDisassemblyPage",
       "pipeline/public/organizeStoreroom/weaponAttachments.json::enterWeaponAttachmentsDisassemblyPage"
     ],
+    "指挥官": [
+      "pipeline/tasks/活动层.json::点击指挥官形象-活动层通用"
+    ],
     "指挥官等级": [
-      "pipeline/tasks/StartGame.json::StartGame_levelUp"
+      "pipeline/public/jumpback.json::指挥官等级提升-通用"
     ],
     "挑战": [
       "pipeline/public/stagePromotion.json::StagePromotionStartMission"
@@ -1376,10 +1286,10 @@
       "pipeline/public/小游戏/遗珍回收/遗珍回收.json::已在结算探索页面-遗珍回收"
     ],
     "接入密钥不足": [
-      "pipeline/public/PrepareDailyTasks/StaminaReplenishments/staminaReplenishment.json::accessKeyInsufficient"
+      "pipeline/public/PrepareDailyTasks/staminaReplenishment.json::accessKeyInsufficient"
     ],
     "推进": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::clickBoundaryAdvanceTagButton"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::clickBoundaryAdvanceTagButton"
     ],
     "插件": [
       "pipeline/public/小游戏/遗珍回收/遗珍回收作战.json::选择突发事件奖励-遗珍回收作战"
@@ -1412,7 +1322,7 @@
       "pipeline/public/SimulatedCombat/极限峰值.json::发现新周期-极限峰值"
     ],
     "无可领取物品": [
-      "pipeline/public/PrepareDailyTasks/Email/getNewEmails.json::noUnclaimedItems"
+      "pipeline/public/PrepareDailyTasks/getNewEmails.json::noUnclaimedItems"
     ],
     "日活跃": [
       "pipeline/public/ClaimRewardTasks/commission.json::confirmEntrustedClaimPage",
@@ -1423,7 +1333,7 @@
       "pipeline/public/organizeStoreroom/weapon.json::chooseWeaponLevel"
     ],
     "明日可领": [
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::今日已领-七天签到限定十连"
+      "pipeline/public/活动/七天签到限定十连.json::今日已领-七天签到限定十连"
     ],
     "易物所": [
       "pipeline/tasks/BulkExchange.json::易物所兑换通用-点击进入易物所"
@@ -1490,12 +1400,6 @@
       "pipeline/public/ClaimRewardTasks/passSystem.json::findPurpleWeaponPackageReward",
       "pipeline/public/活动/活动巡录.json::武器自选箱-活动巡录"
     ],
-    "格琳": [
-      "pipeline/public/活动/格琳喵的委托.json::点击格琳喵的委托标签页"
-    ],
-    "格琳喵的委托": [
-      "pipeline/public/活动/格琳喵的委托.json::点击格琳喵的委托标签页"
-    ],
     "桑朵莱希": [
       "pipeline/public/小游戏/异维探渊/异维探渊战斗.json::选择桑朵莱希-异维探渊"
     ],
@@ -1503,8 +1407,6 @@
       "pipeline/public/VersionActivity/enterVersionActivityItemExchange.json::selectExchangeItem"
     ],
     "模拟习练": [
-      "pipeline/public/活动/模拟习练.json::点击模拟习练标签页",
-      "pipeline/public/活动/模拟习练.json::确认选中模拟习练标签页",
       "pipeline/public/活动/模拟习练.json::模拟习练页面"
     ],
     "武器配件": [
@@ -1513,8 +1415,11 @@
     "每周行动": [
       "pipeline/public/活动/活动巡录.json::进入任务页-活动巡录"
     ],
+    "每日任务": [
+      "pipeline/public/活动/险境挖掘.json::clueCollectionPageEntered"
+    ],
     "每日晶条礼包": [
-      "pipeline/public/PrepareDailyTasks/Shop/shop.json::checkDailyPaidGift"
+      "pipeline/public/PrepareDailyTasks/shop.json::checkDailyPaidGift"
     ],
     "每日祝福次数": [
       "pipeline/public/ClaimRewardTasks/动态招募祝福.json::确认进入动态祝福页"
@@ -1533,10 +1438,10 @@
       "pipeline/public/VersionActivity/enterVersionActivityItemExchange.json::selectExchangeItem"
     ],
     "活动层等级提升": [
-      "pipeline/tasks/活动层.json::活动层等级提升"
+      "pipeline/tasks/活动层.json::活动层等级提升-活动层通用"
     ],
     "派遣$": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateOneClickDispatch"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::boundaryAdvanceDelegateOneClickDispatch"
     ],
     "涂装": [
       "pipeline/public/VersionActivity/enterVersionActivityItemExchange.json::selectExchangeItem"
@@ -1554,10 +1459,9 @@
       "pipeline/public/小游戏/遗珍回收/遗珍回收准备.json::选择战术体系-遗珍回收准备"
     ],
     "点击": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardClaimResultPage",
-      "pipeline/public/PrepareDailyTasks/Shop/shop.json::closeWeekSupplyBoxPurchaseResultPage",
-      "pipeline/public/PrepareDailyTasks/Shop/shop.json::closeSupplyBoxPurchaseResultPage",
-      "pipeline/tasks/StartGame.json::StartGame_dailyRewards"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::boundaryAdvanceDelegateRewardClaimResultPage",
+      "pipeline/public/PrepareDailyTasks/shop.json::closeWeekSupplyBoxPurchaseResultPage",
+      "pipeline/public/PrepareDailyTasks/shop.json::closeSupplyBoxPurchaseResultPage"
     ],
     "点击任意位置继续": [
       "pipeline/public/SimulatedCombat/liveDrill.json::combatExerciseWeeklySettlement",
@@ -1578,7 +1482,7 @@
       "pipeline/tasks/StartGame.json::StartGame_clickStart"
     ],
     "点击空白": [
-      "pipeline/public/PrepareDailyTasks/Email/getNewEmails.json::closeClaimAllEmailsPopup"
+      "pipeline/public/PrepareDailyTasks/getNewEmails.json::closeClaimAllEmailsPopup"
     ],
     "点击空白处关闭": [
       "pipeline/public/AutoSweepBattle/popup.json::resultRecognition",
@@ -1589,7 +1493,7 @@
       "pipeline/public/ClaimRewardTasks/passSystem.json::closePassClaimResultPage",
       "pipeline/public/ClaimRewardTasks/supportDollRewards.json::closeClaimResult",
       "pipeline/public/MindSurveyTask/mindSurvey.json::closeMindSurveyResultsPage",
-      "pipeline/public/PrepareDailyTasks/Platoo/PlatoonTasks.json::closeDailySupplyResultPage",
+      "pipeline/public/PrepareDailyTasks/PlatoonTasks.json::closeDailySupplyResultPage",
       "pipeline/public/SimulatedCombat/bossChallenge.json::closeBossFightResultsPage",
       "pipeline/public/SimulatedCombat/liveDrill.json::combatExerciseWeeklySettlement",
       "pipeline/public/SimulatedCombat/peakValueAssessment.json::closeResultPage",
@@ -1603,17 +1507,10 @@
       "pipeline/public/organizeStoreroom/weaponAttachments.json::closeByClickingBlank",
       "pipeline/public/活动/暗香赠礼.json::关闭赠礼领取结果",
       "pipeline/public/活动/暗香赠礼.json::关闭信息核领取结果-暗香赠礼",
-      "pipeline/public/活动/艾莫号许愿池.json::关闭领取结果-艾莫号许愿池",
-      "pipeline/public/活动/险境挖掘.json::closeDangerousExcavationClaimResultPage",
-      "pipeline/public/活动/险境挖掘.json::closeClaimSingleRewardResultPage",
-      "pipeline/public/活动/险境挖掘.json::closeClaimLineRewardResultPage",
-      "pipeline/public/活动层/逸趣导算.json::关闭领取结果-逸趣导算",
-      "pipeline/tasks/StartGame.json::StartGame_dailyRewards",
-      "pipeline/tasks/活动层.json::确认活动层等级提升"
+      "pipeline/public/活动/艾莫号许愿池.json::关闭领取结果-艾莫号许愿池"
     ],
-    "燎月连宵": [
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::点击七天签到限定十连标签页",
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::已进入七天签到限定十连标签页"
+    "物资助力箱": [
+      "pipeline/public/organizeStoreroom/itemBox.json::checkSupplySupportBox"
     ],
     "特别": [
       "pipeline/public/VersionActivity/enterVersionActivityItemExchange.json::selectExchangeItem"
@@ -1629,7 +1526,7 @@
       "pipeline/public/organizeStoreroom/flower.json::flowerTabSelected"
     ],
     "申请": [
-      "pipeline/public/PrepareDailyTasks/Platoo/PlatoonTasks.json::checkPlatoon"
+      "pipeline/public/PrepareDailyTasks/PlatoonTasks.json::checkPlatoon"
     ],
     "百变黑客": [
       "pipeline/public/活动/限时中型活动.json::点击限时中型活动标签页"
@@ -1653,22 +1550,22 @@
       "pipeline/public/循环助手/循环助手.json::确认循环结束",
       "pipeline/public/活动/格琳喵的委托.json::确认购买-格琳喵的委托",
       "pipeline/public/活动层/美味烹调.json::确认结果-美味烹调",
-      "pipeline/public/活动层/美味烹调.json::确认退出活动层-美味烹调",
       "pipeline/public/活动层/茶歇一刻.json::确认制作-茶歇一刻",
       "pipeline/public/活动层/茶歇一刻.json::确认结果-茶歇一刻",
-      "pipeline/public/活动层/茶歇一刻.json::确认退出活动层-茶歇一刻",
-      "pipeline/public/活动层/逸趣导算.json::确认退出活动层-逸趣导算",
-      "pipeline/tasks/StartGame.json::restartGF2Game"
+      "pipeline/tasks/StartGame.json::StartGame_restartGF2Game",
+      "pipeline/tasks/活动层.json::退出活动层确认-活动层通用"
+    ],
+    "确认排序": [
+      "pipeline/public/循环助手/循环助手.json::退出循环任务排序"
     ],
     "确认离开": [
       "pipeline/public/小游戏/遗珍回收/遗珍回收作战.json::是否确认离开弹窗-遗珍回收作战"
     ],
+    "确认选择": [
+      "pipeline/tasks/活动层.json::点击切换形象-活动层通用"
+    ],
     "确认邀请": [
       "pipeline/public/活动层/美味烹调.json::确认邀请-美味烹调"
-    ],
-    "碎镜拾遗": [
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::点击七天签到限定十连标签页",
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::已进入七天签到限定十连标签页"
     ],
     "礼箱": [
       "pipeline/public/VersionActivity/enterVersionActivityItemExchange.json::selectExchangeItem"
@@ -1676,14 +1573,14 @@
     "神秘箱": [
       "pipeline/public/PublicAreaDailyTasks/神秘箱.json::进入神秘箱页面"
     ],
+    "移动中": [
+      "pipeline/tasks/活动层.json::活动层加载中-活动层通用"
+    ],
     "空白": [
-      "pipeline/TimeLimitedTasks/claimIntelligenceSupplyStaminaTask.json::closeStaminaClaimResultPage",
-      "pipeline/TimeLimitedTasks/claimSevenDayCheckInResourceTask.json::closeSevenDayCheckInClaimResultPage",
-      "pipeline/public/PublicAreaDailyTasks/dispatchCenter.json::closeDispatchCenterDispatchCountRewardClaimResultPage",
-      "pipeline/tasks/StartGame.json::StartGame_dailyRewards"
+      "pipeline/public/PublicAreaDailyTasks/dispatchCenter.json::closeDispatchCenterDispatchCountRewardClaimResultPage"
     ],
     "等级提升": [
-      "pipeline/tasks/活动层.json::活动层等级提升"
+      "pipeline/tasks/活动层.json::活动层等级提升-活动层通用"
     ],
     "精英及以下未培养": [
       "pipeline/public/organizeStoreroom/weapon.json::selectWeaponLevel"
@@ -1695,8 +1592,8 @@
       "pipeline/public/活动/闪耀星愿.json::领取累计分数奖励-闪耀星愿"
     ],
     "线索收集": [
-      "pipeline/public/活动/险境挖掘.json::enterClueCollectionPage",
-      "pipeline/public/活动/险境挖掘.json::clueCollectionPageEntered"
+      "pipeline/public/活动/险境挖掘.json::dangerousExcavationPageEntered",
+      "pipeline/public/活动/险境挖掘.json::enterClueCollectionPage"
     ],
     "经典饮品": [
       "pipeline/public/活动层/茶歇一刻.json::确认进入茶歇一刻"
@@ -1747,7 +1644,7 @@
       "pipeline/public/VersionActivity/enterVersionActivityItemExchange.json::selectExchangeItem"
     ],
     "解压": [
-      "pipeline/tasks/StartGame.json::unzipResources"
+      "pipeline/tasks/StartGame.json::StartGame_unzipResources"
     ],
     "解析图纸": [
       "pipeline/public/VersionActivity/enterVersionActivityItemExchange.json::selectExchangeItem"
@@ -1762,7 +1659,7 @@
       "pipeline/public/ClaimRewardTasks/passSystem.json::findPaymentNotification"
     ],
     "记录": [
-      "pipeline/public/PrepareDailyTasks/Platoo/PlatoonTasks.json::checkPlatoon"
+      "pipeline/public/PrepareDailyTasks/PlatoonTasks.json::checkPlatoon"
     ],
     "许可": [
       "pipeline/public/VersionActivity/enterVersionActivityItemExchange.json::selectExchangeItem"
@@ -1785,7 +1682,7 @@
       "pipeline/public/PublicAreaDailyTasks/schedulingGains.json::enterSchedulingGainsAction"
     ],
     "调研邀请": [
-      "pipeline/public/PrepareDailyTasks/Email/getNewEmails.json::findSurveyEmail"
+      "pipeline/public/PrepareDailyTasks/getNewEmails.json::findSurveyEmail"
     ],
     "购买": [
       "pipeline/public/小游戏/异维探渊/异维探渊战斗.json::开始购物子任务-异维探渊",
@@ -1795,17 +1692,17 @@
       "pipeline/tasks/organizeStoreroom.json::storeroomEntered"
     ],
     "资源加载中": [
-      "pipeline/public/controlButton.json::resourcesLoading",
       "pipeline/public/通用战斗.json::通用战斗任务开始",
-      "pipeline/public/通用战斗.json::退出战斗资源加载中-通用战斗"
+      "pipeline/public/通用战斗.json::退出战斗资源加载中-通用战斗",
+      "pipeline/tasks/StartGame.json::StartGame_loadingSource"
     ],
     "资源生产": [
       "pipeline/public/PublicAreaDailyTasks/schedulingGains.json::enterResourceProductionPage",
       "pipeline/public/PublicAreaDailyTasks/schedulingGains.json::调度收益任务结束"
     ],
     "超心选速递": [
-      "pipeline/TimeLimitedTasks/claimSevenDayCheckInResourceTask.json::noSevenDayCheckInTab",
-      "pipeline/TimeLimitedTasks/claimSevenDayCheckInResourceTask.json::clickSevenDayCheckInTab"
+      "pipeline/public/PrepareDailyTasks/领取七日签到资源.json::点击七日签到资源标签页",
+      "pipeline/public/PrepareDailyTasks/领取七日签到资源.json::已进入七日签到资源标签页"
     ],
     "路段\\d": [
       "pipeline/public/小游戏/遗珍回收/遗珍回收作战.json::已进入某期遗珍回收作战页面",
@@ -1852,9 +1749,6 @@
     "遗珍回收": [
       "pipeline/public/小游戏/遗珍回收/遗珍回收.json::进入遗珍回收页面-遗珍回收"
     ],
-    "部": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
-    ],
     "部署人形": [
       "pipeline/public/通用战斗.json::部署人形-通用战斗"
     ],
@@ -1863,25 +1757,13 @@
       "pipeline/public/小游戏/异维探渊/采样奖励.json::领取采样奖励-异维探渊"
     ],
     "采集$": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::clickBoundaryAdvanceDelegateButton"
-    ],
-    "重圆": [
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::点击七天签到限定十连标签页",
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::已进入七天签到限定十连标签页"
-    ],
-    "重圆阙影": [
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::点击七天签到限定十连标签页",
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::已进入七天签到限定十连标签页"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::clickBoundaryAdvanceDelegateButton"
     ],
     "重度依赖": [
       "pipeline/tasks/VersionActivityTask.json::clickVersionActivityTagButton"
     ],
     "金": [
       "pipeline/public/VersionActivity/enterVersionActivityItemExchange.json::selectExchangeItem"
-    ],
-    "鎏金华筵": [
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::点击七天签到限定十连标签页",
-      "pipeline/public/ClaimRewardTasks/七天签到限定十连.json::已进入七天签到限定十连标签页"
     ],
     "铁玫瑰赠礼": [
       "pipeline/public/活动/暗香赠礼.json::已进入暗香赠礼页面"
@@ -1894,6 +1776,9 @@
     ],
     "键": [
       "pipeline/public/SimulatedCombat/peakValueAssessment.json::claimRewards"
+    ],
+    "键祝福": [
+      "pipeline/public/ClaimRewardTasks/动态招募祝福.json::点击一键祝福"
     ],
     "键领取": [
       "pipeline/public/PublicAreaDailyTasks/dispatchCenter.json::rewardGet",
@@ -1913,18 +1798,13 @@
       "pipeline/public/小游戏/遗珍回收/遗珍回收.json::进入限时开启页面-遗珍回收"
     ],
     "限时开启$": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::enterBoundaryAdvanceAction"
+      "pipeline/public/PrepareDailyTasks/BoundaryAdvance.json::enterBoundaryAdvanceAction"
     ],
     "险境挖掘": [
-      "pipeline/public/活动/险境挖掘.json::clickDangerousExcavationTab",
-      "pipeline/public/活动/险境挖掘.json::dangerousExcavationTabClicked",
       "pipeline/public/活动/险境挖掘.json::enterDangerousExcavationPage"
     ],
     "随机奖励": [
       "pipeline/public/小游戏/遗珍回收/遗珍回收作战.json::选择备用突发事件奖励-遗珍回收作战"
-    ],
-    "难": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
     ],
     "需要完成前置关卡": [
       "pipeline/public/VersionActivity/enterVersionActivityResourceSweep.json::resourceModeSweepCheckLevelLockStatus"
@@ -1940,23 +1820,18 @@
       "pipeline/public/活动/预演.json::clickTrialTab",
       "pipeline/public/活动/预演.json::trialTabClicked"
     ],
-    "领": [
-      "pipeline/public/PrepareDailyTasks/BoundaryAdvance/BoundaryAdvance.json::boundaryAdvanceDelegateRewardFull"
-    ],
     "领取": [
       "pipeline/public/PublicAreaDailyTasks/dispatchCenter.json::rewardGet",
       "pipeline/public/SimulatedCombat/peakValueAssessment.json::claimRewards",
       "pipeline/public/活动/暗香赠礼.json::确认领取铁玫瑰赠礼",
       "pipeline/public/活动/暗香赠礼.json::确认领取火玫瑰赠礼",
       "pipeline/public/活动/格琳喵的委托.json::领取喵封物资",
-      "pipeline/public/活动/格琳喵的委托.json::领取愉悦馈赠物资",
-      "pipeline/public/活动/格琳喵的委托.json::新页面领取愉悦馈赠物资",
       "pipeline/public/活动/模拟习练.json::领取标签页奖励-模拟习练",
       "pipeline/public/活动/险境挖掘.json::claimClue"
     ],
     "领取全部": [
       "pipeline/public/ClaimRewardTasks/commission.json::claimDailyActiveCommissionReward",
-      "pipeline/public/PrepareDailyTasks/Email/getNewEmails.json::claimAllEmails"
+      "pipeline/public/PrepareDailyTasks/getNewEmails.json::claimAllEmails"
     ],
     "领取奖励": [
       "pipeline/public/活动/艾莫号许愿池.json::领取奖励-艾莫号许愿池"
