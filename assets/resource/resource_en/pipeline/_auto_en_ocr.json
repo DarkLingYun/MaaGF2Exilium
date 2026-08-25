@@ -329,10 +329,25 @@
             "anywhere to exit"
         ]
     },
+    "已打开周期奖励-实兵演习": {
+        "expected": "Ranking Rewards"
+    },
+    "切换到参与奖励标签页-实兵演习": {
+        "expected": "Participation Reward"
+    },
     "开始峰值推定任务": {
         "focus": {
             "Node.Action.Starting": "Claim Peak Estimation rewards"
         }
+    },
+    "clickEnterPeakValueAssessmentPage": {
+        "expected": "Peak Value Assessment"
+    },
+    "peakValueAssessmentPageEnteredForFirstTime": {
+        "expected": "Periodic Returns"
+    },
+    "进入常规峰值": {
+        "expected": "Standard Peak"
     },
     "claimRewards": {
         "expected": [
@@ -343,14 +358,35 @@
     "closeResultPage": {
         "expected": "anywhere to exit"
     },
+    "rewardsClaimed": {
+        "expected": "Periodic Returns"
+    },
     "开始极限峰值任务": {
         "focus": {
             "Node.Action.Starting": "Starting Extreme Peak task (Lv.0 battles only — handle Lv.18 battles yourself)"
         }
     },
+    "进入峰值推定-极限峰值": {
+        "expected": "Peak Value Assessment"
+    },
     "进入极限峰值标签页-极限峰值": {
         "expected": [
             "Extreme Peak"
+        ]
+    },
+    "已进入极限峰值标签页-极限峰值": {
+        "expected": [
+            "Frenzied Wave"
+        ]
+    },
+    "进入子群1-极限峰值": {
+        "expected": [
+            "Horde 1"
+        ]
+    },
+    "已进入子群1-极限峰值": {
+        "expected": [
+            "Enemy Units"
         ]
     },
     "开始作战-子群1-极限峰值": {
@@ -358,9 +394,29 @@
             "Start Combat"
         ]
     },
+    "进入子群2-极限峰值": {
+        "expected": [
+            "Horde 2"
+        ]
+    },
+    "已进入子群2-极限峰值": {
+        "expected": [
+            "Enemy Units"
+        ]
+    },
     "开始作战-子群2-极限峰值": {
         "expected": [
             "Start Combat"
+        ]
+    },
+    "进入子群3-极限峰值": {
+        "expected": [
+            "Horde 3"
+        ]
+    },
+    "已进入子群3-极限峰值": {
+        "expected": [
+            "Enemy Units"
         ]
     },
     "开始作战-子群3-极限峰值": {
@@ -368,12 +424,20 @@
             "Start Combat"
         ]
     },
+    "发现周期报酬-极限峰值": {
+        "expected": "Periodic Returns"
+    },
     "关闭周期报酬奖励领取结果页-极限峰值": {
         "expected": "anywhere to exit"
     },
     "打开战役推进-模拟作战通用": {
         "expected": [
             "^Campaign$"
+        ]
+    },
+    "进入模拟作战页面-模拟作战通用": {
+        "expected": [
+            "^Combat Simulations$"
         ]
     },
     "selectExchangeItem": {
@@ -772,6 +836,9 @@
     },
     "enterMindSurveyTask": {
         "expected": "^Campaign$"
+    },
+    "ClickToEnterMindSurveySimulatedCombatPage": {
+        "expected": "^Combat Simulations$"
     },
     "StartGame_clickStart": {
         "expected": [
