@@ -3,7 +3,7 @@
         "doc": "整理仓库",
         "enabled": true,
         "recognition": "OCR",
-        "expected": "战役推进",
+        "expected": "Campaign",
         "next": [
             "openNavigationScreen"
         ]
@@ -24,7 +24,7 @@
     },
     "enterStoreroom": {
         "recognition": "OCR",
-        "expected": "仓库",
+        "expected": "Storeroom",
         "action": "Click",
         "target": true,
         "post_delay": 1500,
