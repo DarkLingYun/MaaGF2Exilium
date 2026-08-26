@@ -61,6 +61,16 @@ def install_resource():
     with open(install_path / "interface.json", "r", encoding="utf-8") as f:
         interface = json.load(f)
 
+    # 复制 ProjectInterface V2 的多语言词条文件（interface.json 中 $key 显示字段依赖它们）
+    # Copy the ProjectInterface V2 language files that interface.json's $key
+    # display fields resolve against; without them the GUI shows raw $keys.
+    for lang_file in interface.get("languages", {}).values():
+        src = working_dir / "assets" / lang_file
+        if src.exists():
+            shutil.copy2(src, install_path)
+        else:
+            print(f"Warning: language file referenced by interface.json not found: {lang_file}")
+
     interface["version"] = version
 
     # 如果存在嵌入式 Python，则使用它来启动 agent
