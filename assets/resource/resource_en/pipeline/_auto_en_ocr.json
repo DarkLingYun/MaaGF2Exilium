@@ -814,6 +814,11 @@
     "已进入作战开始页面-通用战斗": {
         "expected": "Combat Start"
     },
+    "发现可部署人形提示-通用战斗": {
+        "expected": [
+            "can be deployed"
+        ]
+    },
     "取消可部署人形提示-通用战斗": {
         "expected": "Cancel"
     },
