@@ -199,9 +199,15 @@
         }
     },
     "checkPlatoon": {
+        "expected": [
+            "Record"
+        ],
         "focus": {
             "Node.Action.Succeeded": "Not in a Platoon"
         }
+    },
+    "enterPlatoonDailySupplyPage": {
+        "expected": "^Resupply$"
     },
     "noClaimPlatoonDailySupply": {
         "expected": "^Claim All$",
@@ -606,6 +612,15 @@
     "exitFlower": {
         "expected": "Storeroom"
     },
+    "itemBoxTabSelected": {
+        "expected": "Item Box"
+    },
+    "checkSupplySupportBox": {
+        "expected": "Supply Support Box"
+    },
+    "useSupplySupportBoxItem": {
+        "expected": "Use"
+    },
     "chooseSupplySupportBoxItem": {
         "expected": "Combat Report"
     },
@@ -618,6 +633,9 @@
     "closeSupplySupportBoxResultPage": {
         "expected": "anywhere to exit"
     },
+    "useFlowerBoxItem": {
+        "expected": "Use"
+    },
     "closeNotTopDataBoxPage": {
         "expected": "Cancel"
     },
@@ -626,6 +644,9 @@
     },
     "closeFlowerBoxResultPage": {
         "expected": "anywhere to exit"
+    },
+    "使用奇忆甄选箱子": {
+        "expected": "Use"
     },
     "设置奇忆甄选箱子使用数量": {
         "expected": "Max|MAX"
@@ -657,6 +678,9 @@
     },
     "有物品可拆解-武器": {
         "expected": "Joint Selection"
+    },
+    "findWeaponDisassemblyNotification": {
+        "expected": "want to dismantle"
     },
     "confirmWeaponDisassemblyNotification": {
         "expected": "Confirm"
