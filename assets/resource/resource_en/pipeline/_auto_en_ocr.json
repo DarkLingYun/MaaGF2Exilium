@@ -293,11 +293,6 @@
             "^Para Bellum$"
         ]
     },
-    "已进入七日签到资源标签页": {
-        "expected": [
-            "^Para Bellum$"
-        ]
-    },
     "领取情报补给-情报补给": {
         "expected": [
             "^Claim$"
