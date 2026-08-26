@@ -77,11 +77,17 @@
     "closeCommissionRewardResultPage": {
         "expected": "anywhere to exit"
     },
+    "enterJourneyWitnessTab": {
+        "expected": "Journey Witness"
+    },
     "claimJourneyWitnessReward": {
         "expected": "Claim All"
     },
     "closeClaimJourneyWitnessRewardResultPage": {
         "expected": "anywhere to exit"
+    },
+    "enterJourneyMileStoneTab": {
+        "expected": "Journey Milestone"
     },
     "claimJourneyMileStoneReward": {
         "expected": "Claim All"
@@ -576,8 +582,20 @@
     "flowerDisassemblyPageEntered": {
         "expected": "Please select items to disassemble"
     },
+    "flowerTabSelected": {
+        "expected": "Growth Data"
+    },
+    "selectFlowerLevel": {
+        "expected": "and below"
+    },
+    "chooseFlowerLevel": {
+        "expected": "T2 and below"
+    },
     "quickSelectFlower": {
         "expected": "Quick Select"
+    },
+    "有物品可拆解-生长数据": {
+        "expected": "Joint Selection"
     },
     "closeFlowerResultByClickingBlank": {
         "expected": "anywhere to exit"
@@ -621,8 +639,24 @@
     "weaponDisassemblyPageEntered": {
         "expected": "Please select items to disassemble"
     },
+    "weaponTabSelected": {
+        "expected": "Weapons"
+    },
+    "selectWeaponLevel": {
+        "expected": [
+            "Unenhanced and Retired",
+            "Unimproved Standard and below",
+            "Unimproved Elite and below"
+        ]
+    },
+    "chooseWeaponLevel": {
+        "expected": "Unenhanced and Retired"
+    },
     "quickSelectWeapon": {
         "expected": "Quick Select"
+    },
+    "有物品可拆解-武器": {
+        "expected": "Joint Selection"
     },
     "confirmWeaponDisassemblyNotification": {
         "expected": "Confirm"
@@ -642,6 +676,15 @@
     "weaponAttachmentsDisassemblyPageEntered": {
         "expected": "Please select items to disassemble"
     },
+    "weaponAttachmentsTabSelected": {
+        "expected": "Weapon Attachments"
+    },
+    "selectWeaponAttachmentsLevel": {
+        "expected": "and below"
+    },
+    "chooseLevel": {
+        "expected": "Unimproved T2 and below"
+    },
     "quickSelect": {
         "expected": "Quick Select"
     },
@@ -650,6 +693,9 @@
     },
     "resultClosed": {
         "expected": "Please select items to disassemble"
+    },
+    "有物品可拆解-武器配件": {
+        "expected": "Joint Selection"
     },
     "exitWeaponAttachments": {
         "expected": "Storeroom"
@@ -721,6 +767,11 @@
         "focus": {
             "Node.Action.Succeeded": "Click Auto Loop"
         }
+    },
+    "退出循环任务排序": {
+        "expected": [
+            "Confirm order"
+        ]
     },
     "开始执行循环任务": {
         "expected": [
