@@ -13,5 +13,16 @@
         "focus": {
             "Node.Action.Succeeded": "All Boundary Push rewards claimed"
         }
+    },
+
+    // CN detects the crystal-collection "Claim All" button via a template crop of
+    // the Chinese button (边界推进/一键领取.png), which never matches the EN button.
+    // Switch to OCR on the verified EN text "Claim All" within the base button roi.
+    // PROVISIONAL: verified from a screenshot of the claimable state; the dispatch
+    // (一键派遣) and not-claimable (不可领取) states still need EN screenshots.
+    "boundaryAdvanceDelegateOneClickClaim": {
+        "recognition": "OCR",
+        "expected": "Claim All",
+        "roi": [799, 530, 481, 190]
     }
 }
