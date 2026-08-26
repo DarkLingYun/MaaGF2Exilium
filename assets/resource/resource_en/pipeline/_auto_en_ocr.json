@@ -482,6 +482,11 @@
             "Skip"
         ]
     },
+    "确认跳过动画-通用": {
+        "expected": [
+            "Would you like to skip?"
+        ]
+    },
     "指挥官等级提升-通用": {
         "expected": [
             "Commander Level",
@@ -812,7 +817,15 @@
     "取消可部署人形提示-通用战斗": {
         "expected": "Cancel"
     },
+    "任务完成-通用战斗": {
+        "expected": [
+            "Mission Completed"
+        ]
+    },
     "任务失败-通用战斗": {
+        "expected": [
+            "Mission Failed"
+        ],
         "focus": {
             "Node.Action.Starting": "<span style=\"color: red;\">Task failed — consider whether manual handling is needed</span>"
         }
