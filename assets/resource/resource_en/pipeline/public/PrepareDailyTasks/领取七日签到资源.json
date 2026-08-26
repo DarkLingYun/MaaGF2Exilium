@@ -1,0 +1,21 @@
+{
+    // EN override for the 7-day sign-in (Para Bellum) claim.
+    // BUG: the base claims via OCR "^领取$" (anchored). On CN the future-day button
+    // is "明日可领" (no "领取"), so the anchor is safe. On EN the future-day button
+    // is "Claim Tomorrow", which OCR splits into two tokens "Claim" + "Tomorrow";
+    // the anchored "^Claim$" then matches the standalone "Claim" box, the bot clicks
+    // the dead button, and loops forever (never reaching returnToHomePage).
+    //
+    // STOPGAP: cap the claim node with max_hit so it can still claim every real
+    // reward (<=7 days) but stops after that instead of hanging on "Claim Tomorrow".
+    // A clean fix (match only the active RED "Claim" button via color/template) needs
+    // a screenshot of a currently-claimable state.
+    "领取七日签到资源-领取七日签到资源": {
+        "recognition": "OCR",
+        "expected": [
+            "^Claim$"
+        ],
+        "action": "Click",
+        "max_hit": 7
+    }
+}
