@@ -181,11 +181,6 @@
             "^Crystal"
         ]
     },
-    "boundaryAdvanceDelegateOneClickClaim": {
-        "focus": {
-            "Node.Action.Starting": "Claim Boundary Push rewards"
-        }
-    },
     "boundaryAdvanceDelegateRewardClaimResultPage": {
         "expected": "anywhere"
     },

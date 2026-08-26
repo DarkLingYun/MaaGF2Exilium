@@ -23,6 +23,9 @@
     "boundaryAdvanceDelegateOneClickClaim": {
         "recognition": "OCR",
         "expected": "Claim All",
-        "roi": [799, 530, 481, 190]
+        "roi": [799, 530, 481, 190],
+        "focus": {
+            "Node.Action.Starting": "Claim Boundary Push rewards"
+        }
     }
 }
