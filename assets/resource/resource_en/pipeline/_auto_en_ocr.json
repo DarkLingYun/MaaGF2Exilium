@@ -141,6 +141,11 @@
     "clickBoundaryAdvanceTagButton": {
         "expected": "Push"
     },
+    "确认进入边界推进": {
+        "expected": [
+            "Breakthrough"
+        ]
+    },
     "clickBoundaryAdvanceDelegateButton": {
         "expected": [
             "^Crystal Collection$",
@@ -646,6 +651,9 @@
         }
     },
     "开始执行循环任务": {
+        "expected": [
+            "Start Loop"
+        ],
         "focus": {
             "Node.Action.Succeeded": "Clicked Start Loop"
         }
