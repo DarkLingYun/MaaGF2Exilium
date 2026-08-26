@@ -24,25 +24,27 @@
         "recognition": "OCR",
         "expected": "Claim All",
         "roi": [799, 530, 481, 190],
+        "max_hit": 3,
         "focus": {
             "Node.Action.Starting": "Claim Boundary Push rewards"
         }
     },
 
     // The "Claim All" text is present whether the button is ENABLED (orange, claimable)
-    // or DISABLED (grey, nothing to claim) - so OCR alone loops on the greyed button.
-    // CN distinguished them with a template of the enabled button; do the EN equivalent
-    // with a ColorMatch on the DISABLED grey fill. Measured over ADB: the disabled
-    // button roi is ~72% flat grey ~(39,40,40); when enabled the fill is saturated
-    // orange (0 px in this grey range). This node is checked BEFORE the OCR claim, so
-    // a greyed button -> match -> exit; an orange button -> no match -> OCR claims it.
+    // or DISABLED (dark, nothing to claim) - so OCR alone loops on the disabled button.
+    // Distinguish by color, checked BEFORE the OCR claim: dark fill -> exit; orange -> claim.
+    // NOTE: MaaFramework's screencap renders DARKER than `adb screencap`. Per the reco log,
+    // a 26-62 range matched only the button TEXT (~40), not the fill -> the fill sits BELOW
+    // 26 in MaaFramework's view. So use a wide dark range [0..62] over the button interior
+    // (no white text / no orange fill), which provably captures the disabled fill while
+    // excluding the orange enabled state (r>150). Tune in MaaDebugger if it ever drifts.
     "boundaryAdvanceDelegateNotClaimable": {
         "recognition": "ColorMatch",
         "method": 4,
-        "lower": [26, 26, 26],
-        "upper": [60, 60, 62],
-        "roi": [955, 630, 280, 60],
-        "count": 9000,
+        "lower": [0, 0, 0],
+        "upper": [62, 62, 66],
+        "roi": [975, 635, 250, 45],
+        "count": 5000,
         "next": [
             "exitBoundaryAdvance"
         ]
