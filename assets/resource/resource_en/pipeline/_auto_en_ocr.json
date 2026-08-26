@@ -184,15 +184,6 @@
     "boundaryAdvanceDelegateRewardClaimResultPage": {
         "expected": "anywhere"
     },
-    "PlatoonTasks": {
-        "expected": "^Platoon$"
-    },
-    "clickPlatoonButton": {
-        "expected": "^Platoon$",
-        "focus": {
-            "Node.Action.Starting": "Enter Platoon page"
-        }
-    },
     "checkPlatoon": {
         "expected": [
             "Record"
