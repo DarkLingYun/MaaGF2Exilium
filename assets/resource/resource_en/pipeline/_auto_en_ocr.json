@@ -261,7 +261,7 @@
             "^Treasured Gift Pack$"
         ],
         "focus": {
-            "Node.Action.Succeeded": "Entered Weekly Gift Pack page"
+            "Node.Action.Succeeded": "Entered Weekly Supply Box page"
         }
     },
     "confirmWeekSupplyBoxPurchase": {
@@ -273,7 +273,7 @@
     "clickPermanentGiftPackage": {
         "expected": "^Regular Gift Pack$",
         "focus": {
-            "Node.Action.Succeeded": "Entered Daily Gift Pack page"
+            "Node.Action.Succeeded": "Entered Daily Supply Box page"
         }
     },
     "clickDailySupplyBox": {

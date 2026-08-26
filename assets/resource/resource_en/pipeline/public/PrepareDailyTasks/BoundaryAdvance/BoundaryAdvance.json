@@ -9,6 +9,9 @@
     "boundaryAdvanceDelegateRewardFull": {
         "recognition": "OCR",
         "expected": "All rewards for current difficulty obtained",
-        "roi": [0, 0, 1280, 720]
+        "roi": [0, 0, 1280, 720],
+        "focus": {
+            "Node.Action.Succeeded": "All Boundary Push rewards claimed"
+        }
     }
 }
