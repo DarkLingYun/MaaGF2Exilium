@@ -89,8 +89,27 @@
     "closeClaimJourneyMileStoneRewardResultPage": {
         "expected": "anywhere to exit"
     },
+    "switchToDailyPassRewardPage": {
+        "expected": "^Actions En Route$"
+    },
+    "claimDailyPassReward": {
+        "expected": [
+            "Claim All$"
+        ]
+    },
+    "switchToPassLevelRewardPage": {
+        "expected": "^Voyage Logs$"
+    },
+    "claimPassLevelReward": {
+        "expected": [
+            "Claim All$"
+        ]
+    },
     "confirmPassRewardContent": {
         "expected": "^Confirm$"
+    },
+    "selectLightPackageReward": {
+        "expected": "Collapse Piece"
     },
     "weaponPackageFound": {
         "focus": {
@@ -498,6 +517,8 @@
     },
     "selectExchangeItem": {
         "expected": [
+            "Collapse Piece",
+            "Skin",
             "Analysis Blueprint",
             "Combat Report"
         ]
@@ -788,6 +809,13 @@
     "进入活动巡录": {
         "expected": "Proceed"
     },
+    "进入任务页-活动巡录": {
+        "expected": [
+            "Daily Actions",
+            "Weekly Actions",
+            "Navigation Calibration"
+        ]
+    },
     "巡录付费解锁-领取奖励确认-活动巡录": {
         "expected": "^Confirm$"
     },
@@ -796,6 +824,9 @@
             "Node.Action.Starting": "<span style=\"color: red;\">Weapon selector chest found — please handle manually</span>",
             "toast": "Weapon selector chest found — please handle manually"
         }
+    },
+    "拂晓之光、破晓天光补给包-活动巡录": {
+        "expected": "Collapse Piece"
     },
     "选择下一个补给包-活动巡录": {
         "expected": [
