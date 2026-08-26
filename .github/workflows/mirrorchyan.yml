@@ -36,7 +36,7 @@ jobs:
         with:
           filetype: latest-release
           filename: "MaaGF2ExiliumGUI-win-x86_64-*.zip"
-          pick_files: '["resource", "interface.json"]'
+          pick_files: '["resource", "interface.json", "interface_zh.json", "interface_en.json"]'
           exclude_files: '["*model/ocr/**"]'
           mirrorchyan_rid: MaaGF2Exilium
 
