@@ -293,6 +293,16 @@
             "Node.Action.Starting": "Claim 7-Day Check-in Resources"
         }
     },
+    "点击七日签到资源标签页": {
+        "expected": [
+            "^Para Bellum$"
+        ]
+    },
+    "已进入七日签到资源标签页": {
+        "expected": [
+            "^Para Bellum$"
+        ]
+    },
     "领取七日签到资源-领取七日签到资源": {
         "expected": [
             "^Claim$"
