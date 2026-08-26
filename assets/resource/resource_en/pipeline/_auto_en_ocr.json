@@ -38,6 +38,9 @@
     "generalConfirmPurchaseItem": {
         "expected": "Purchase|Confirm"
     },
+    "clickdispatchCenterExchangeTaskButton": {
+        "expected": "^Dispatch Shop$"
+    },
     "dispatchCenterExitItemExchange": {
         "expected": "Cancel"
     },
@@ -274,6 +277,12 @@
             "Node.Action.Starting": "Starting dispatch tasks"
         }
     },
+    "前往调度室": {
+        "expected": "Proceed"
+    },
+    "dispatchCenterEntered": {
+        "expected": "^Dispatch Assessment$"
+    },
     "sendDispatchNotification": {
         "focus": {
             "Node.Action.Starting": "<span style=\"color: red;\">Public Area Dispatch Center not fully dispatched — please handle manually</span>",
@@ -303,14 +312,56 @@
         ]
     },
     "enterSchedulingGainsAction": {
+        "expected": "Dispatch Income",
         "focus": {
             "Node.Action.Starting": "<span style=\"color: red;\">Use the official Loop Assistant to claim Intel Reserves</span>"
         }
+    },
+    "enterResourceProductionPage": {
+        "expected": "Resource Production"
+    },
+    "clickResourceProductionCollectionButton": {
+        "expected": "^Collect$"
+    },
+    "调度收益任务结束": {
+        "expected": "Resource Production"
+    },
+    "进入神秘箱页面": {
+        "expected": [
+            "Mystery Box"
+        ]
+    },
+    "无剩余次数-神秘箱": {
+        "expected": [
+            "Attempts remaining this week[：: ]+0/100"
+        ]
+    },
+    "有个位数剩余次数-神秘箱": {
+        "expected": [
+            "Attempts remaining this week[：: ]+[1-9]/100"
+        ]
+    },
+    "有很多剩余次数-神秘箱": {
+        "expected": [
+            "Attempts remaining this week"
+        ]
+    },
+    "收取十次-神秘箱": {
+        "expected": "Collect ten times"
+    },
+    "收取一次-神秘箱": {
+        "expected": "Collect once"
     },
     "开始首领挑战任务": {
         "focus": {
             "Node.Action.Starting": "Boss Challenge Auto-Battle"
         }
+    },
+    "clickEnterBossFightPage": {
+        "expected": "^Boss Fight$"
+    },
+    "enterBossStandardBattle": {
+        "expected": "^Standard Battle$"
     },
     "clickBossFightAutoButton": {
         "expected": "^Auto$"
@@ -674,6 +725,11 @@
             "Confirm"
         ]
     },
+    "进入暗香赠礼页面": {
+        "expected": [
+            "Proceed"
+        ]
+    },
     "选择铁玫瑰赠礼奖励道具": {
         "expected": [
             "Combat Report"
@@ -719,10 +775,18 @@
             "Claim All"
         ]
     },
+    "进入模拟习练页面": {
+        "expected": [
+            "Proceed"
+        ]
+    },
     "领取标签页奖励-模拟习练": {
         "expected": [
             "Claim"
         ]
+    },
+    "进入活动巡录": {
+        "expected": "Proceed"
     },
     "巡录付费解锁-领取奖励确认-活动巡录": {
         "expected": "^Confirm$"
@@ -743,9 +807,19 @@
             "^Event$"
         ]
     },
+    "进入艾莫号许愿池页面": {
+        "expected": [
+            "Proceed"
+        ]
+    },
     "关闭领取结果-艾莫号许愿池": {
         "expected": [
             "anywhere to exit"
+        ]
+    },
+    "进入闪耀星愿页面": {
+        "expected": [
+            "Proceed"
         ]
     },
     "未选择应援人形-闪耀星愿": {
@@ -759,6 +833,11 @@
             "Start Combat"
         ]
     },
+    "进入限时中型活动页面": {
+        "expected": [
+            "Proceed"
+        ]
+    },
     "领取代币-限时中型活动": {
         "expected": [
             "^Claim$"
@@ -767,6 +846,11 @@
     "claimClue": {
         "expected": [
             "Claim"
+        ]
+    },
+    "autoBattleForTrial": {
+        "expected": [
+            "Proceed"
         ]
     },
     "进入美味烹调区域": {
