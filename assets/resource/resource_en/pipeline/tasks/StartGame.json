@@ -70,14 +70,12 @@
         "action": "Click"
     },
     "StartGame_notLoginIn": {
-        "doc": "用户未登录，弹出登录提示，直接退出游戏. EN strings are best-guess (not screenshot-verified) — capture the EN login screen to confirm.",
+        "doc": "用户未登录，弹出登录提示，直接退出游戏. EN 'Sign in with' prompt (screenshot-verified 2026-08-26): title 'Sign in with' + 'Play as guest' + 'Sunborn ID'.",
         "recognition": "OCR",
         "expected": [
-            "Login Method",
-            "Log in as Guest",
-            "Sunborn ID",
-            "Sign in with Google",
-            "Sign in with Email"
+            "Sign in with",
+            "Play as guest",
+            "Sunborn ID"
         ],
         "post_wait_freezes": 0,
         "focus": {
