@@ -277,7 +277,7 @@
         }
     },
     "clickDailySupplyBox": {
-        "expected": "Daily Supply"
+        "expected": "^Daily Supply Box$"
     },
     "confirmSupplyBoxPurchase": {
         "expected": "Purchase|Confirm"
@@ -787,6 +787,11 @@
             "Combat Start"
         ]
     },
+    "确认进入委托页面-循环助手": {
+        "expected": [
+            "Daily Activity"
+        ]
+    },
     "进入循环助手页面": {
         "focus": {
             "Node.Action.Succeeded": "Click Auto Loop"
@@ -851,6 +856,27 @@
             "anywhere to exit"
         ]
     },
+    "进入格琳喵的委托页面": {
+        "expected": [
+            "Commission Details"
+        ]
+    },
+    "已进入格琳喵的委托页面": {
+        "expected": [
+            "Meow",
+            "Delightful Reward"
+        ]
+    },
+    "进入搜寻喵封物资页面": {
+        "expected": [
+            "Meow"
+        ]
+    },
+    "已进入搜寻喵封物资页面": {
+        "expected": [
+            "Collected"
+        ]
+    },
     "领取喵封物资": {
         "expected": [
             "Claim"
@@ -864,6 +890,16 @@
     "确认购买-格琳喵的委托": {
         "expected": [
             "Confirm"
+        ]
+    },
+    "进入愉悦馈赠页面": {
+        "expected": [
+            "Delightful Reward"
+        ]
+    },
+    "已进入愉悦馈赠页面": {
+        "expected": [
+            "Delightful Reward"
         ]
     },
     "领取愉悦馈赠物资": {
@@ -947,6 +983,11 @@
     "领取代币-限时中型活动": {
         "expected": [
             "^Claim$"
+        ]
+    },
+    "clueCollectionPageEntered": {
+        "expected": [
+            "Daily Quests"
         ]
     },
     "claimClue": {
