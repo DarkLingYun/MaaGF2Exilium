@@ -30,21 +30,22 @@
         }
     },
 
-    // The "Claim All" text is present whether the button is ENABLED (orange, claimable)
-    // or DISABLED (dark, nothing to claim) - so OCR alone loops on the disabled button.
-    // Distinguish by color, checked BEFORE the OCR claim: dark fill -> exit; orange -> claim.
-    // NOTE: MaaFramework's screencap renders DARKER than `adb screencap`. Per the reco log,
-    // a 26-62 range matched only the button TEXT (~40), not the fill -> the fill sits BELOW
-    // 26 in MaaFramework's view. So use a wide dark range [0..62] over the button interior
-    // (no white text / no orange fill), which provably captures the disabled fill while
-    // excluding the orange enabled state (r>150). Tune in MaaDebugger if it ever drifts.
+    // The "Claim All" text is present whether the button is ENABLED (orange) or DISABLED
+    // (grey) - so OCR alone loops on the disabled button. Distinguish by SATURATION in HSV,
+    // which (unlike RGB brightness) is robust to the adb-vs-MaaFramework screencap gap.
+    // Measured over the disabled button: 0 saturated pixels (pure grey); enabled = saturated
+    // orange. So a ColorMatch for "any saturated colour" (method 40 = HSV, S>=80) in the
+    // button interior + `inverse: true` fires exactly when the button is DESATURATED
+    // (disabled) -> exit. It sits BEFORE the OCR claim, so the disabled button is never
+    // clicked; when enabled the button is saturated, this node fails, and the OCR claim runs.
     "boundaryAdvanceDelegateNotClaimable": {
         "recognition": "ColorMatch",
-        "method": 4,
-        "lower": [0, 0, 0],
-        "upper": [62, 62, 66],
+        "method": 40,
+        "lower": [0, 80, 40],
+        "upper": [179, 255, 255],
         "roi": [975, 635, 250, 45],
-        "count": 5000,
+        "count": 1000,
+        "inverse": true,
         "next": [
             "exitBoundaryAdvance"
         ]
