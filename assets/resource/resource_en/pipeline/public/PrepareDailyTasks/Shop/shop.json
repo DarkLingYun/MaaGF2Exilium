@@ -1,7 +1,33 @@
 {
     // Manual EN overrides for the Shop daily-supply flow. Kept out of
-    // _auto_en_ocr.json because these need roi changes, not just an
+    // _auto_en_ocr.json because these need roi/anchoring changes, not just an
     // `expected` translation. The generator SKIPS any node defined here.
+    // (Only `expected`/`focus` are set; roi/action/next inherit from base.)
+
+    // The updated shop crams 5 tabs into the tab bar (Beginner Package /
+    // Treasured Gift Pack / Blessed Reunion / Regular Gift Pack / Standard
+    // Package), so the longer labels WRAP to two lines - e.g. "Treasured Gift
+    // Pack" becomes "Treasured Gift" + "Pack". The generator preserves base's
+    // anchoring (zh ^臻品礼包$ -> ^Treasured Gift Pack$), which then never
+    // matches the wrapped tokens, so the weekly-box tab is never opened and the
+    // whole free-supply-box flow dies (daily chains after weekly).
+    // FIX: match the distinctive first word UNANCHORED. "Treasured"/"Regular"
+    // are each unique within the tab bar, and sit on the first (upper) line so
+    // they stay inside the base tab-bar roi even when the label wraps.
+    "clickTimeLimitedGiftPackage": {
+        "recognition": "OCR",
+        "expected": "Treasured",
+        "focus": {
+            "Node.Action.Succeeded": "Entered Weekly Supply Box page"
+        }
+    },
+    "clickPermanentGiftPackage": {
+        "recognition": "OCR",
+        "expected": "Regular",
+        "focus": {
+            "Node.Action.Succeeded": "Entered Daily Supply Box page"
+        }
+    },
 
     // CN roi [409,136,350,164] was tuned to the 6-char zh title 每日晶条礼包.
     // The EN title "Daily Collapse Piece Package" is much wider and overflows

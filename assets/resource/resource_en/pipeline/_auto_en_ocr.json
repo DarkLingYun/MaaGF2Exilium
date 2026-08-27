@@ -242,25 +242,11 @@
     "clickQualitySelection": {
         "expected": "^(Quality Selection|Quality)$"
     },
-    "clickTimeLimitedGiftPackage": {
-        "expected": [
-            "^Treasured Gift Pack$"
-        ],
-        "focus": {
-            "Node.Action.Succeeded": "Entered Weekly Supply Box page"
-        }
-    },
     "confirmWeekSupplyBoxPurchase": {
         "expected": "Purchase|Confirm"
     },
     "closeWeekSupplyBoxPurchaseResultPage": {
         "expected": "anywhere"
-    },
-    "clickPermanentGiftPackage": {
-        "expected": "^Regular Gift Pack$",
-        "focus": {
-            "Node.Action.Succeeded": "Entered Daily Supply Box page"
-        }
     },
     "clickDailySupplyBox": {
         "expected": "^Daily Supply Box$"
