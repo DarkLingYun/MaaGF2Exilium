@@ -812,6 +812,11 @@
             "Confirm"
         ]
     },
+    "今日已领-七天签到限定十连": {
+        "expected": [
+            "Claim Tomorrow"
+        ]
+    },
     "进入暗香赠礼页面": {
         "expected": [
             "Proceed"
@@ -979,6 +984,16 @@
     "claimClue": {
         "expected": [
             "Claim"
+        ]
+    },
+    "clickTrialTab": {
+        "expected": [
+            "Trial"
+        ]
+    },
+    "trialTabClicked": {
+        "expected": [
+            "Trial"
         ]
     },
     "autoBattleForTrial": {
