@@ -16,7 +16,7 @@ def configure_ocr_model():
     ocr_dir = assets_dir / "resource" / "base" / "model" / "ocr"
     if True:  # 总是使用远程的最新 OCR 模型
         shutil.copytree(
-            assets_dir / "MaaCommonAssets" / "OCR" / "ppocr_v5" / "zh_cn",
+            assets_dir / "MaaCommonAssets" / "OCR" / "ppocr_v6" / "medium",
             ocr_dir,
             dirs_exist_ok=True,
         )
