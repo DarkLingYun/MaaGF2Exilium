@@ -1,17 +1,27 @@
 {
+    // EN overrides for the Loop Helper (循环助手) end-of-loop handling.
+    // Overrides base "循环结束" (must keep that zh key to merge onto the base
+    // node) and REPLACES its next with a more resilient recovery path. The
+    // three LoopHelper-* nodes are new (English keys, category-prefixed per the
+    // upstream request in issue #334) and are referenced only from here.
+
+    // Base just did next:["确认循环结束"]. The emulator can get STUCK on the
+    // confirm dialog (a tap won't dismiss it), so retry the confirm click, and
+    // if that fails, restart the game to recover. Retry/self-loop structure
+    // follows shakeno-0's network-resilience guidance (issue #334).
     "循环结束": {
-        "doc": "模拟器在确认循环结束时可能卡在确认页面（无法通过点击跳出），只能重启游戏",
+        "doc": "The emulator may get stuck on the loop-end confirm dialog (a click won't dismiss it); if so, restart the game to recover.",
         "expected": [
             "Loop ended"
         ],
         "next": [
-            "循环助手-循环结束后回到循环助手页面",
-            "[JumpBack]循环助手-点击确认循环结束",
-            "[JumpBack]循环助手-关闭游戏",
+            "LoopHelper-BackToLoopPage",
+            "[JumpBack]LoopHelper-ClickConfirmLoopEnd",
+            "[JumpBack]LoopHelper-CloseGame",
             "returnToHomePage"
         ]
     },
-    "循环助手-点击确认循环结束": {
+    "LoopHelper-ClickConfirmLoopEnd": {
         "max_hit": 20,
         "recognition": "OCR",
         "expected": [
@@ -19,7 +29,7 @@
         ],
         "action": "Click"
     },
-    "循环助手-循环结束后回到循环助手页面": {
+    "LoopHelper-BackToLoopPage": {
         "recognition": "OCR",
         "expected": [
             "Start Loop"
@@ -28,7 +38,7 @@
             "returnToHomePage"
         ]
     },
-    "循环助手-关闭游戏": {
+    "LoopHelper-CloseGame": {
         "max_hit": 1,
         "next": [
             "StopGame"

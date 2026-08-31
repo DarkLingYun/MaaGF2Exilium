@@ -21,14 +21,14 @@
             "超心选速递"
         ],
         "next": [
-            "七日签到-无可领取-明日再来",
+            "SevenDaySignIn-NothingToClaimToday",
             "[JumpBack]点击空白处关闭-通用",
             "[JumpBack]领取七日签到资源-领取七日签到资源",
             "returnToHomePage"
         ]
     },
 
-    "七日签到-无可领取-明日再来": {
+    "SevenDaySignIn-NothingToClaimToday": {
         "doc": "EN 'Claim Tomorrow' (OCR token 'Tomorrow') = today already claimed, nothing to claim now. Exit. Never coexists with an active 'Claim'.",
         "recognition": "OCR",
         "expected": [
