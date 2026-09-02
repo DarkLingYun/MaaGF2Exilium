@@ -1627,6 +1627,83 @@
       "label": "$物资模式活动选择",
       "cases": [
         {
+          "name": "金翅雀与橄榄枝(希丽雅)",
+          "pipeline_override": {
+            "clickVersionActivityTagButton": {
+              "expected": [
+                "金翅雀与橄榄枝",
+                "金翅雀",
+                "橄榄枝",
+                "与橄榄枝",
+                "金翅雀与",
+                "雀与橄榄",
+                "雀与"
+              ]
+            },
+            "enterVersionActivityItemExchange": {
+              "expected": [
+                "指挥所",
+                "指挥"
+              ],
+              "roi": [
+                107,
+                607,
+                238,
+                76
+              ]
+            },
+            "selectResourceModeLevel": {
+              "doc": "选择物资模式关卡",
+              "recognition": "Or",
+              "any_of": [
+                {
+                  "recognition": "OCR",
+                  "expected": [
+                    "^.*5$",
+                    "5$",
+                    "-5",
+                    "5"
+                  ],
+                  "roi": [
+                    572,
+                    269,
+                    424,
+                    163
+                  ]
+                },
+                {
+                  "recognition": "TemplateMatch",
+                  "template": "版本活动/金翅雀与橄榄枝.png",
+                  "roi": [
+                    666,
+                    296,
+                    235,
+                    93
+                  ]
+                }
+              ],
+              "action": "Click"
+            },
+            "exitVersionActivityResourceSweep": {
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
+            },
+            "开始活动内每日任务": {
+              "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
+              "enabled": true,
+              "expected": [
+                "^悬赏订单$",
+                "订单$",
+                "^悬赏"
+              ]
+            }
+          }
+        },
+        {
           "name": "寂静的匹斯缇(伊格蕾塔)",
           "label": "$寂静的匹斯缇(伊格蕾塔)",
           "pipeline_override": {
