@@ -7,8 +7,6 @@
 
 # MaaGF2Exilium助手
 
-**简体中文** | [English](README_en.md)
-
 </div>
 
 本项目基于 [MaaFramework](https://github.com/MaaXYZ/MaaFramework) 所提供的项目模板进行开发的少女前线2：追放的自动化助手。
