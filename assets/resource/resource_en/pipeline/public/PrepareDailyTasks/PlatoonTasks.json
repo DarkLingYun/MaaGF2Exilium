@@ -1,0 +1,20 @@
+{
+    // EN override for the Platoon (班组) entry.
+    // BUG: base uses anchored OCR "^班组$" -> generator makes it "^Platoon$". But the EN
+    // bottom nav OCRs "Commissions" and "Platoon" as ONE merged token "CommissionsPlatoon"
+    // (CN's "委托 班组" stay separate), so "^Platoon$" never matches -> the platoon step
+    // loops on its entry until the task times out. Also, matching the merged box would
+    // click between the two nav items.
+    // FIX: restrict the ROI to just the Platoon nav item (icon + label, right of
+    // Commissions; verified against a home-screen capture) and match unanchored "Platoon".
+    "PlatoonTasks": {
+        "recognition": "OCR",
+        "expected": "Platoon",
+        "roi": [884, 625, 108, 62]
+    },
+    "clickPlatoonButton": {
+        "recognition": "OCR",
+        "expected": "Platoon",
+        "roi": [884, 625, 108, 62]
+    }
+}

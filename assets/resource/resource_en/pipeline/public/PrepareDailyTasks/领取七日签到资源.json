@@ -1,0 +1,50 @@
+{
+    // EN override for the 7-day sign-in (Para Bellum) claim.
+    //
+    // Problem: the base claims via OCR "^领取$". On CN the future-day button is
+    // "明日可领" (no "领取") so the anchor is safe. On EN the future button is
+    // "Claim Tomorrow", which OCR splits into two tokens "Claim" + "Tomorrow";
+    // the anchored "^Claim$" then matches the standalone "Claim" of "Claim Tomorrow",
+    // clicks a dead button, and loops forever.
+    //
+    // Fix (text-only, no color sampling): "Claim Tomorrow" only appears AFTER today's
+    // reward is claimed, and never alongside an active red "Claim" (verified from two
+    // states: claimable = "Claim" + "Not reached"; all-claimed = "Claim Tomorrow").
+    // So gate on the standalone "Tomorrow" token FIRST: present => nothing to claim =>
+    // exit; absent => an active "Claim" is real => click it. (max_hit kept only as an
+    // anti-hang backstop in case that mutual-exclusivity ever breaks.)
+
+    "已进入七日签到资源标签页": {
+        "recognition": "OCR",
+        "expected": [
+            "^Para Bellum$",
+            "超心选速递"
+        ],
+        "next": [
+            "SevenDaySignIn-NothingToClaimToday",
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]领取七日签到资源-领取七日签到资源",
+            "returnToHomePage"
+        ]
+    },
+
+    "SevenDaySignIn-NothingToClaimToday": {
+        "doc": "EN 'Claim Tomorrow' (OCR token 'Tomorrow') = today already claimed, nothing to claim now. Exit. Never coexists with an active 'Claim'.",
+        "recognition": "OCR",
+        "expected": [
+            "Tomorrow"
+        ],
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+
+    "领取七日签到资源-领取七日签到资源": {
+        "recognition": "OCR",
+        "expected": [
+            "^Claim$"
+        ],
+        "action": "Click",
+        "max_hit": 7
+    }
+}

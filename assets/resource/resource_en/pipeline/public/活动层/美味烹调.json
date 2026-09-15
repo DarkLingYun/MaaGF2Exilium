@@ -1,0 +1,17 @@
+{
+    "选择常规菜品": {
+        "doc": "EN override: the zh icon-template (常规菜品.png) doesn't match the EN client's dish cards (~0.56). Instead detect the 'Select Dish' screen and click the first dish at a fixed position (a dish must be selected before Next). Coords in 1280x720 reference.",
+        "recognition": "OCR",
+        "expected": "Select Dish",
+        "action": "Click",
+        "target": [152, 128, 80, 112]
+    },
+    "跳过动画-美味烹调": {
+        "doc": "EN override: skip the cooking cutscene. zh OCR can't read the white 'Skip' button, so template-match it (image cropped from the EN client) and click. roi = top-right corner.",
+        "recognition": "TemplateMatch",
+        "template": "活动层/跳过_en.png",
+        "threshold": 0.6,
+        "roi": [1070, 6, 210, 58],
+        "action": "Click"
+    }
+}

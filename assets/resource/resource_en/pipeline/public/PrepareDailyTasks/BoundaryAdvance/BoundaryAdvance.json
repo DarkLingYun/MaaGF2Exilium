@@ -1,0 +1,53 @@
+{
+    // Manual EN overrides for Boundary Advance. Kept out of _auto_en_ocr.json because
+    // these need roi/recognition changes, not just an `expected` translation.
+    // The generator SKIPS any node defined here.
+
+    // CN used a tiny roi tuned to short zh text; the EN banner
+    // "All rewards for current difficulty obtained" is a wide bar elsewhere,
+    // so scan full-screen for the unique phrase.
+    "boundaryAdvanceDelegateRewardFull": {
+        "recognition": "OCR",
+        "expected": "All rewards for current difficulty obtained",
+        "roi": [0, 0, 1280, 720],
+        "focus": {
+            "Node.Action.Succeeded": "All Boundary Push rewards claimed"
+        }
+    },
+
+    // CN detects the crystal-collection "Claim All" button via a template crop of
+    // the Chinese button (边界推进/一键领取.png), which never matches the EN button.
+    // Switch to OCR on the verified EN text "Claim All" within the base button roi.
+    // PROVISIONAL: verified from a screenshot of the claimable state; the dispatch
+    // (一键派遣) and not-claimable (不可领取) states still need EN screenshots.
+    "boundaryAdvanceDelegateOneClickClaim": {
+        "recognition": "OCR",
+        "expected": "Claim All",
+        "roi": [799, 530, 481, 190],
+        "max_hit": 3,
+        "focus": {
+            "Node.Action.Starting": "Claim Boundary Push rewards"
+        }
+    },
+
+    // The "Claim All" text is present whether the button is ENABLED (orange) or DISABLED
+    // (grey) - so OCR alone loops on the disabled button. Distinguish by SATURATION in HSV,
+    // which (unlike RGB brightness) is robust to the adb-vs-MaaFramework screencap gap.
+    // Measured over the disabled button: 0 saturated pixels (pure grey); enabled = saturated
+    // orange. So a ColorMatch for "any saturated colour" (method 40 = HSV, S>=80) in the
+    // button interior + `inverse: true` fires exactly when the button is DESATURATED
+    // (disabled) -> exit. It sits BEFORE the OCR claim, so the disabled button is never
+    // clicked; when enabled the button is saturated, this node fails, and the OCR claim runs.
+    "boundaryAdvanceDelegateNotClaimable": {
+        "recognition": "ColorMatch",
+        "method": 40,
+        "lower": [0, 80, 40],
+        "upper": [179, 255, 255],
+        "roi": [975, 635, 250, 45],
+        "count": 1000,
+        "inverse": true,
+        "next": [
+            "exitBoundaryAdvance"
+        ]
+    }
+}
