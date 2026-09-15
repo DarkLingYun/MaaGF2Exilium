@@ -22,23 +22,26 @@
         ]
     },
     "点击模拟习练标签页": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "活动/模拟习练/模拟习练_light.png"
+        "recognition": "OCR",
+        "expected": [
+            "模拟习练"
         ],
-        "green_mask": true,
         "action": "Click",
         "next": [
-            "确认选中模拟习练标签页",
-            "点击模拟习练标签页"
+            "确认选中模拟习练标签页"
         ]
     },
     "确认选中模拟习练标签页": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "活动/模拟习练/模拟习练_dark.png"
+        "recognition": "OCR",
+        "expected": [
+            "模拟习练"
         ],
-        "green_mask": true,
+        "roi": [
+            391,
+            105,
+            877,
+            515
+        ],
         "next": [
             "进入模拟习练页面"
         ]

@@ -80,10 +80,10 @@
             502
         ],
         "template": [
-            "活动/最大次数按钮.png"
+            "公用按钮组件/最大次数按钮.png"
         ],
         "green_mask": true,
-        "post_delay": 100,
+        "order_by": "Score",
         "action": "Click",
         "next": [
             "confirmBossFightSelfDiscipline"

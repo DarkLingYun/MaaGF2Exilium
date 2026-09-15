@@ -155,9 +155,11 @@
         "enabled": false,
         "recognition": "OCR",
         "expected": "^错位.*上篇$",
-        "post_wait_freezes": 100,
+        "post_wait_freezes": {
+            "time": 800,
+            "target": true
+        },
         "action": "Click",
-        "post_delay": 1000,
         "next": [
             "enterVersionActivityResourceSweep",
             "enterVersionActivityItemExchange",

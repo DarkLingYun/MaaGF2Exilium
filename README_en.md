@@ -169,7 +169,7 @@ See the [docs](docs/en/FAQ.md).
 ## Existing features
 
 * [x] Community daily operations *(off by default)*
-* [x] Launch the game
+* [x] Launch the game（includes server selection）
 * [x] Auto-use redeem codes on the profile page (pulled from the cloud, no user input needed) *(off by default)*
 * [x] Daily task preparation
   * [x] Claim intel stamina (limited-time)

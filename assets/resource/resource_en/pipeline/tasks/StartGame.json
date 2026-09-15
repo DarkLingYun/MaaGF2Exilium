@@ -1,24 +1,4 @@
 {
-    "StartGame": {
-        "next": [
-            "[JumpBack]StartGame_loading",
-            "[JumpBack]clickCloseWindowButton",
-            "[JumpBack]clickHomeButton",
-            "[JumpBack]clickBackButton",
-            "[JumpBack]点击空白处关闭-通用",
-            "[JumpBack]指挥官等级提升-通用",
-            "StartGame_HomePage_Check",
-            "[JumpBack]StartGame_loadingSource",
-            "[JumpBack]StartGame_retryLogin",
-            "StartGame_notLoginIn",
-            "[JumpBack]StartGame_clickStart",
-            "[JumpBack]StartGame_downloadResource",
-            "[JumpBack]StartGame_unzipResources",
-            "[JumpBack]StartGame_restartGF2Game",
-            "[JumpBack]StartGame_copyright",
-            "[JumpBack]openGF2GameApp"
-        ]
-    },
     "StartGame_HomePage_Check": {
         "expected": "Campaign",
         "next": [
@@ -34,30 +14,6 @@
             "[JumpBack]StartGame_loading",
             "StartGame_EnterRefittingRoom",
             "clickBackButton"
-        ]
-    },
-    "StartGame_copyright": {
-        "doc": "加载进度条下的版权信息，有时不点击画面会卡住",
-        "recognition": "OCR",
-        "expected": [
-            "^Copyright"
-        ],
-        "action": "Click"
-    },
-    "StartGame_loading": {
-        "doc": "外服进入主页后仍可能需要等待loading",
-        "recognition": "FeatureMatch",
-        "post_delay": 2000,
-        "green_mask": true,
-        "template": [
-            "loading_green_1.png",
-            "loading_green_2.png"
-        ],
-        "roi": [
-            482,
-            215,
-            309,
-            278
         ]
     },
     "StartGame_retryLogin": {
@@ -82,8 +38,5 @@
             "Node.Action.Starting": "Not logged in — please log in to the game first"
         },
         "action": "StopTask"
-    },
-    "openGF2GameApp": {
-        "package": "com.Sunborn.SnqxExilium.Glo/.ExiliumMainActivity"
     }
 }

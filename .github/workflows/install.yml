@@ -133,7 +133,7 @@ jobs:
           if [ "${{ matrix.arch }}" = "x86_64" ]; then
             echo "Python version:"
             deps/python/python.exe --version
-            deps/python/python.exe -m pip install --no-cache-dir maafw maaagentbinary
+            deps/python/python.exe -m pip install --no-cache-dir maafw==5.12.3 maaagentbinary
             echo "maafw installed into embedded Python."
           else
             echo "Skipping pip install (cross-architecture, will install on device)."
