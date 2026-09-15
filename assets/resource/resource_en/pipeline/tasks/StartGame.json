@@ -20,18 +20,19 @@
         ]
     },
     "StartGame_HomePage_Check": {
+        "expected": "Campaign",
         "next": [
-            "StartGame_进入整备室"
+            "StartGame_EnterRefittingRoom"
         ]
     },
-    "StartGame_进入整备室": {
-        "doc": "进入游戏后可能仍在加载（现象为像新手一样的主页），进入整备室再退出即可恢复",
+    "StartGame_EnterRefittingRoom": {
+        "doc": "After entering the game it may still be loading (shows a new-player-like home screen); entering the Refitting Room and backing out recovers it. New EN node (English key per issue #334); referenced only from StartGame_HomePage_Check.",
         "recognition": "OCR",
-        "expected": "整备室",
+        "expected": "Refitting Room",
         "action": "Click",
         "next": [
             "[JumpBack]StartGame_loading",
-            "StartGame_进入整备室",
+            "StartGame_EnterRefittingRoom",
             "clickBackButton"
         ]
     },
@@ -60,27 +61,25 @@
         ]
     },
     "StartGame_retryLogin": {
-        "doc": "外服用户登录可能需要重试/确定用户协议",
+        "doc": "外服用户登录可能需要重试/确定用户协议 (EN: Retry / Confirm agreement)",
         "recognition": "OCR",
         "expected": [
-            "重试",
-            "确定"
+            "Retry",
+            "Confirm"
         ],
         "action": "Click"
     },
     "StartGame_notLoginIn": {
-        "doc": "用户未登录，弹出登录提示，直接退出游戏",
+        "doc": "用户未登录，弹出登录提示，直接退出游戏. EN 'Sign in with' prompt (screenshot-verified 2026-08-26): title 'Sign in with' + 'Play as guest' + 'Sunborn ID'.",
         "recognition": "OCR",
         "expected": [
-            "登录方式",
-            "使用游客登录",
-            "散爆ID",
-            "通过Google登录",
-            "通过邮箱登录"
+            "Sign in with",
+            "Play as guest",
+            "Sunborn ID"
         ],
         "post_wait_freezes": 0,
         "focus": {
-            "Node.Action.Starting": "用户未登录，请先登录游戏"
+            "Node.Action.Starting": "Not logged in — please log in to the game first"
         },
         "action": "StopTask"
     },

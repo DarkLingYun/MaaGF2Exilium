@@ -25,6 +25,7 @@
         }
     },
     "HomePage": {
+        "expected": "Campaign",
         "pre_wait_freezes": {
             "time": 1000,
             "target": [
