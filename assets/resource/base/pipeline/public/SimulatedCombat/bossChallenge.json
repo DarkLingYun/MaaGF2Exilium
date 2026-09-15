@@ -67,11 +67,11 @@
         "expected": "^自律$",
         "action": "Click",
         "next": [
-            "increaseAutoBattleCountForBossFight"
+            "setMaxAutoBattleCountForBossFight"
         ]
     },
-    "increaseAutoBattleCountForBossFight": {
-        "doc": "增加自律次数",
+    "setMaxAutoBattleCountForBossFight": {
+        "doc": "设置首领挑战自律次数为最大值",
         "recognition": "TemplateMatch",
         "roi": [
             260,
@@ -80,37 +80,11 @@
             502
         ],
         "template": [
-            "公用按钮组件/滑动条值增加.png"
+            "活动/最大次数按钮.png"
         ],
         "green_mask": true,
-        "threshold": 0.9,
         "post_delay": 100,
         "action": "Click",
-        "next": [
-            "maxAutoBattleCountForBossFight",
-            "increaseAutoBattleCountForBossFight"
-        ]
-    },
-    "maxAutoBattleCountForBossFight": {
-        "doc": "首领挑战自律次数达到最大值",
-        "recognition": "ColorMatch",
-        "roi": [
-            811,
-            376,
-            33,
-            32
-        ],
-        "upper": [
-            130,
-            131,
-            135
-        ],
-        "lower": [
-            129,
-            131,
-            135
-        ],
-        "post_delay": 100,
         "next": [
             "confirmBossFightSelfDiscipline"
         ]

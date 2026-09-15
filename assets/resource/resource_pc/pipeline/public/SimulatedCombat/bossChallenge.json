@@ -1,10 +1,10 @@
 {
-    "maxAutoBattleCountForBossFight": {
+    "setMaxAutoBattleCountForBossFight": {
         "roi": [
-            772,
-            369,
-            33,
-            32
+            221,
+            101,
+            760,
+            502
         ]
     }
 }
