@@ -2,7 +2,7 @@
     "开始循环助手任务": {
         "next": [
             "进入委托页面-循环助手",
-            "returnToHomePage"
+            "[JumpBack]returnToHomePage"
         ]
     },
     // 不从主页直接识图进入，这里调了很多次还是不成功，从委托 OCR 识别进入比较稳
