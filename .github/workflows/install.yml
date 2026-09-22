@@ -77,27 +77,21 @@ jobs:
     needs: meta
     strategy:
       matrix:
+        # MXU 的产物命名与 MaaFramework 一致（win/macos + x86_64/aarch64），
+        # 因此不再需要 mfa_os_name / mfa_arch 这两列 MFAAvalonia 专用的别名。
         include:
           - os: windows-latest
             os_name: win
-            mfa_os_name: win
             arch: aarch64
-            mfa_arch: arm64
           - os: windows-latest
             os_name: win
-            mfa_os_name: win
             arch: x86_64
-            mfa_arch: x64
           - os: macos-latest
             os_name: macos
-            mfa_os_name: osx
             arch: aarch64
-            mfa_arch: arm64
           - os: macos-latest
             os_name: macos
-            mfa_os_name: osx
             arch: x86_64
-            mfa_arch: x64
       fail-fast: false
     runs-on: ${{ matrix.os }}
 
@@ -139,28 +133,28 @@ jobs:
           import pathlib, subprocess, sys, tomllib
           project = tomllib.loads(pathlib.Path("pyproject.toml").read_text(encoding="utf-8"))
           subprocess.run([sys.executable, "-m", "pip", "install", "--no-cache-dir",
-                          "maafw==5.12.3", "maaagentbinary", *project["project"]["dependencies"]], check=True)
+                          "maafw", "maaagentbinary", *project["project"]["dependencies"]], check=True)
           PY
             echo "maafw installed into embedded Python."
           else
             echo "Skipping pip install (cross-architecture, will install on device)."
           fi
 
-      - name: Download MFAAvalonia
+      - name: Download MXU
         uses: robinraju/release-downloader@v1
         with:
-          repository: SweetSmellFox/MFAAvalonia
-          fileName: "*-${{ matrix.mfa_os_name }}-${{ matrix.mfa_arch }}*"
+          repository: MistEO/MXU
+          fileName: "MXU-${{ matrix.os_name }}-${{ matrix.arch }}-*"
           latest: true
-          out-file-path: "MFA"
+          out-file-path: "MXU"
           extract: true
 
-      - name: Clean up MFA archive files
+      - name: Clean up MXU archive files
         shell: bash
         run: |
           # Remove any remaining archive files after extraction
-          find ./MFA -type f \( -name "*.zip" -o -name "*.tar" -o -name "*.tar.gz" -o -name "*.7z" -o -name "*.rar" \) -delete
-          echo "Cleaned up archive files in MFA directory"
+          find ./MXU -type f \( -name "*.zip" -o -name "*.tar" -o -name "*.tar.gz" -o -name "*.7z" -o -name "*.rar" \) -delete
+          echo "Cleaned up archive files in MXU directory"
 
       - name: Convert PNG to ICO
         shell: bash
@@ -173,35 +167,36 @@ jobs:
             magick convert imgs/图标2.png -define icon:auto-resize=256,128,64,48,32,24,16 gf2.ico
           fi
 
-      - name: Modify MFAAvalonia exe icon
+      - name: Modify MXU exe icon
         if: matrix.arch == 'x86_64' && matrix.os_name == 'win'
         shell: bash
         run: |
           curl -L "https://github.com/electron/rcedit/releases/download/v2.0.0/rcedit-x64.exe" -o rcedit.exe
-          ./rcedit.exe "MFA/MFAAvalonia.exe" --set-icon "gf2.ico"
-          echo "MFAAvalonia icon modified successfully"
+          ./rcedit.exe "MXU/mxu.exe" --set-icon "gf2.ico"
+          echo "MXU icon modified successfully"
 
       - name: Install
         shell: bash
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
+          # 这里不再用 --arg version 覆盖 version 字段：install.py 的 to_mxu_version()
+          # 会给它打上 -mxu 后缀，把 MXU 构建标记成 MXU 认定中的「非正式版本」以跳过
+          # MirrorChyan 更新检查，在此覆盖等于把它抹掉。
           if [ "${{ matrix.os_name }}" = "win" ]; then
-            jq --arg url "https://github.com/DarkLingYun/MaaGF2Exilium" --arg version "${{ needs.meta.outputs.tag }}" '. + {"url": $url, "version": $version}' ./install/interface.json > ./install/interface.json.tmp && mv ./install/interface.json.tmp ./install/interface.json
+            jq --arg url "https://github.com/DarkLingYun/MaaGF2Exilium" '. + {"url": $url}' ./install/interface.json > ./install/interface.json.tmp && mv ./install/interface.json.tmp ./install/interface.json
           fi
 
-      - name: Replace Assets with custom assets folder
+      - name: Install custom app icon
         shell: bash
         run: |
-          if [ -d "install/Assets" ]; then
-            rm -rf install/Assets
-            echo "Removed original Assets folder"
-          fi
+          # MXU 的界面图标取自 interface.json 顶层的 icon 字段（相对项目根目录），
+          # 不再像 MFAAvalonia 那样读 Assets/ 目录。
           mkdir -p install/assets
           if [ -f "gf2.ico" ]; then
             cp gf2.ico install/assets/logo.ico
             echo "Copied custom icon to assets/logo.ico"
           fi
-          
+
       - uses: actions/upload-artifact@v4
         with:
           name: MaaGF2ExiliumGUI-${{ matrix.os_name }}-${{ matrix.arch }}
