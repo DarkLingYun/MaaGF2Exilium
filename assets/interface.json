@@ -1662,6 +1662,104 @@
       "label": "$物资模式活动选择",
       "cases": [
         {
+          "name": "静默突触·初篇(代理人)",
+          "label": "$静默突触·初篇(代理人)",
+          "pipeline_override": {
+            "clickVersionActivityTagButton": {
+              "expected": [
+                "静默突触",
+                "默突触",
+                "静默突",
+                "突触",
+                "静默"
+              ],
+              "roi": [
+                57,
+                77,
+                230,
+                310
+              ]
+            },
+            "enterVersionActivityItemExchange": {
+              "doc": "版本活动商品兑换",
+              "recognition": "Or",
+              "any_of": [
+                {
+                  "recognition": "OCR",
+                  "expected": [
+                    "突触网络",
+                    "触网络",
+                    "触网",
+                    "突触网"
+                  ]
+                },
+                {
+                  "recognition": "TemplateMatch",
+                  "template": "版本活动/突触网络.png"
+                }
+              ],
+              "action": "Click"
+            },
+            "switchVersionActivityChapter": {
+              "enabled": true,
+              "expected": [
+                "^静默突触.*初篇$",
+                "突触.*初篇$",
+                "默突触.*初篇$"
+              ]
+            },
+            "selectExchangeType": {
+              "focus": {
+                "Node.Action.Starting": "切换上篇商店"
+              },
+              "enabled": true,
+              "expected": [
+                "上"
+              ]
+            },
+            "selectResourceModeLevel": {
+              "doc": "选择物资模式关卡",
+              "recognition": "Or",
+              "any_of": [
+                {
+                  "recognition": "OCR",
+                  "expected": [
+                    "^.*5$",
+                    "5$",
+                    "-5",
+                    "5"
+                  ],
+                  "roi": [
+                    572,
+                    269,
+                    424,
+                    163
+                  ]
+                },
+                {
+                  "recognition": "TemplateMatch",
+                  "template": "版本活动/伊利昂之围物资5中篇.png",
+                  "roi": [
+                    666,
+                    296,
+                    235,
+                    93
+                  ]
+                }
+              ],
+              "action": "Click"
+            },
+            "exitVersionActivityResourceSweep": {
+              "roi": [
+                0,
+                0,
+                185,
+                90
+              ]
+            }
+          }
+        },
+        {
           "name": "金翅雀与橄榄枝(希丽雅)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
