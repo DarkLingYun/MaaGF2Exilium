@@ -7,15 +7,29 @@
       "type": "Adb"
     },
     {
-      "name": "桌面端",
-      "label": "PC",
+      "name": "桌面端-前台",
+      "label": "$桌面端-前台",
+      "description": "$占用鼠标，兼容性最好",
       "type": "Win32",
       "win32": {
         "class_regex": ".*",
         "window_regex": "^(?!.*自动化助手).*(?:少女前线.*追放|EXILIUM|GF2_Exilium).*$",
-        "screencap": "PrintWindow",
-        "mouse": "SendMessageWithCursorPos",
-        "keyboard": "SendMessageWithCursorPos"
+        "screencap": "Foreground",
+        "mouse": "Seize",
+        "keyboard": "Seize"
+      }
+    },
+    {
+      "name": "桌面端-后台",
+      "label": "$桌面端-后台",
+      "description": "$不抢占鼠标，窗口会短暂闪烁",
+      "type": "Win32",
+      "win32": {
+        "class_regex": ".*",
+        "window_regex": "^(?!.*自动化助手).*(?:少女前线.*追放|EXILIUM|GF2_Exilium).*$",
+        "screencap": "Background",
+        "mouse": "PostMessageWithWindowPos",
+        "keyboard": "PostMessageWithWindowPos"
       }
     }
   ],
@@ -23,7 +37,7 @@
     "child_exec": "python/python.exe",
     "child_args": [
       "-u",
-      "{PROJECT_DIR}/agent/main.py"
+      "./agent/main.py"
     ]
   },
   "resource": [
@@ -31,28 +45,29 @@
       "name": "中文资源(模拟器)",
       "label": "$中文资源(模拟器)",
       "path": [
-        "{PROJECT_DIR}/resource/base"
+        "resource/base"
       ]
     },
     {
       "name": "英语资源(模拟器)",
       "label": "$英语资源(模拟器)",
       "path": [
-        "{PROJECT_DIR}/resource/base",
-        "{PROJECT_DIR}/resource/resource_en"
+        "resource/base",
+        "resource/resource_en"
       ]
     },
     {
       "name": "中文资源(PC端)",
       "label": "$中文资源(PC端)",
       "path": [
-        "{PROJECT_DIR}/resource/base",
-        "{PROJECT_DIR}/resource/resource_pc"
+        "resource/base",
+        "resource/resource_pc"
       ]
     }
   ],
   "name": "少女前线2：追放自动化助手",
   "custom_title": "$少女前线2：追放自动化助手",
+  "icon": "assets/logo.ico",
   "github": "https://github.com/DarkLingYun/MaaGF2Exilium",
   "mirrorchyan_rid": "MaaGF2Exilium",
   "task": [

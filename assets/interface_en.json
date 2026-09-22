@@ -1,6 +1,10 @@
 {
   "少女前线2：追放自动化助手": "GFL2: Exilium Automation Assistant",
   "安卓端": "Android",
+  "桌面端-前台": "Desktop (Foreground)",
+  "桌面端-后台": "Desktop (Background)",
+  "占用鼠标，兼容性最好": "Takes over the cursor; best compatibility",
+  "不抢占鼠标，窗口会短暂闪烁": "Does not take over the cursor; the window may flicker briefly",
   "中文资源(模拟器)": "Chinese Resource (Emulator)",
   "英语资源(模拟器)": "English Resource (Emulator)",
   "中文资源(PC端)": "Chinese Resource (PC)",
@@ -126,6 +130,7 @@
   "琥珀月光(米蒂尔)": "Amber Moonlight (Mittul)",
   "镜像冗余·下篇(索普)": "Mirror Redundancy - Part 2 (Sope)",
   "镜像冗余·上篇": "Mirror Redundancy - Part 1",
+  "静默突触·初篇(代理人)": "Silent Synapse - Chapter 1 (Agent)",
   "月下安魂曲": "Moonshroud Requiem",
   "瑞骋迎春归": "Auspicious Spring Return",
   "信号波重度依赖": "Heavy Signal-Wave Dependence",

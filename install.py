@@ -19,9 +19,12 @@ def install_deps():
         print('请先下载 MaaFramework 到 "deps"。')
         sys.exit(1)
 
+    # MXU 从安装根目录下的 maafw/ 加载 MaaFramework（内部按 "maafw/MaaFramework.dll"
+    # 定位），不像 MFAAvalonia 那样平铺在安装根目录。MaaAgentBinary 也要跟着
+    # 放到 maafw/ 下，MaaFramework 按自身库目录寻找它。
     shutil.copytree(
         working_dir / "deps" / "bin",
-        install_path,
+        install_path / "maafw",
         ignore=shutil.ignore_patterns(
             "*MaaDbgControlUnit*",
             "*MaaThriftControlUnit*",
@@ -32,7 +35,7 @@ def install_deps():
     )
     shutil.copytree(
         working_dir / "deps" / "share" / "MaaAgentBinary",
-        install_path / "MaaAgentBinary",
+        install_path / "maafw" / "MaaAgentBinary",
         dirs_exist_ok=True,
     )
 
@@ -79,7 +82,7 @@ def install_resource():
             interface["agent"]["child_exec"] = "python/python.exe"
             interface["agent"]["child_args"] = [
                 "-u",
-                "{PROJECT_DIR}/agent/main.py"
+                "./agent/main.py"
             ]
             print("Agent configured to use embedded Python.")
 
@@ -120,44 +123,44 @@ def install_python():
     print("Embedded Python installed successfully.")
 
 
-def install_MFAAvalonia():
-    # 检查 MFA 目录是否存在
-    mfa_dir = working_dir / "MFA"
-    if not mfa_dir.exists():
-        print("Warning: MFA directory not found. Skipping MFA installation.")
+def install_MXU():
+    # 检查 MXU 目录是否存在
+    mxu_dir = working_dir / "MXU"
+    if not mxu_dir.exists():
+        print("Warning: MXU directory not found. Skipping MXU installation.")
         return
 
     # 根据操作系统确定可执行文件名和扩展名
     if os.name == "nt":  # Windows
-        mfa_exe_name = "MFAAvalonia.exe"
+        mxu_exe_name = "mxu.exe"
         install_exe_name = "MaaGF2Exilium.exe"
     else:  # Unix/Linux
-        mfa_exe_name = "MFAAvalonia"
+        mxu_exe_name = "mxu"
         install_exe_name = "MaaGF2Exilium"
 
-    # 复制 MFA 目录下的所有内容
-    for item in mfa_dir.iterdir():
-        if item.is_file():
-            dest_path = install_path / item.name
-            # 如果是主可执行文件，则重命名
-            if item.name == mfa_exe_name:
-                dest_path = install_path / install_exe_name
-            
-            shutil.copy2(item, dest_path)
-            
-            # 在 Unix 系统上，如果是可执行文件需要确保可执行权限
-            if os.name != "nt" and (item.suffix == ".exe" or item.suffix == "" and os.access(item, os.X_OK)):
-                os.chmod(dest_path, 0o755)
-                
-        elif item.is_dir():
-            # 复制子目录
-            shutil.copytree(
-                item,
-                install_path / item.name,
-                dirs_exist_ok=True,
-            )
+    # 只复制运行需要的东西：
+    #   mxu.pdb 是 MXU 的调试符号，win 包内解压后近 300MB，纯属负担
+    #   README.md / LICENSE 是 MXU 自己的，留着会覆盖 install_chores() 放的项目文档
+    shutil.copytree(
+        mxu_dir,
+        install_path,
+        ignore=shutil.ignore_patterns("*.pdb", "README.md", "LICENSE"),
+        dirs_exist_ok=True,
+    )
 
-    print(f"Copied all MFA contents to {install_path}, with {mfa_exe_name} renamed to {install_exe_name}")
+    exe_src = install_path / mxu_exe_name
+    if not exe_src.exists():
+        print(f"Warning: {mxu_exe_name} not found in {mxu_dir}.")
+        return
+
+    exe_dst = install_path / install_exe_name
+    exe_src.replace(exe_dst)
+
+    # Unix 上要确保可执行权限（解压出来的位可能丢失）
+    if os.name != "nt":
+        os.chmod(exe_dst, 0o755)
+
+    print(f"Copied MXU to {install_path}, with {mxu_exe_name} renamed to {install_exe_name}")
 
 
 if __name__ == "__main__":
@@ -166,6 +169,6 @@ if __name__ == "__main__":
     install_chores()
     install_agent()
     install_python()
-    install_MFAAvalonia()
+    install_MXU()
 
     print(f"Install to {install_path} successfully.")
