@@ -76,6 +76,12 @@
         "doc": "进入游戏后可能仍在加载（现象为像新手一样的主页），进入整备室再退出即可恢复",
         "recognition": "OCR",
         "expected": "整备室",
+        "roi": [
+            853,
+            22,
+            424,
+            546
+        ],
         "action": "Click",
         "next": [
             "[JumpBack]StartGame_loading",
