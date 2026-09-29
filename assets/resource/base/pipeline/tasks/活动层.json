@@ -60,7 +60,7 @@
     },
     "前往休憩大厅-活动层通用": {
         "next": [
-            "休憩大厅传送按钮-活动层通用",
+            "休憩大厅传送-活动层通用",
             "[JumpBack]点击地图-活动层通用",
             "[JumpBack]进入活动层-活动层通用"
         ]
@@ -86,18 +86,8 @@
         ]
     },
     "点击快捷前往-活动层通用": {
-        "recognition": "Or",
-        "any_of": [
-            {
-                "recognition": "OCR",
-                "expected": "快捷前往"
-            },
-            {
-                "recognition": "TemplateMatch",
-                "template": "活动层/地图-快捷前往.png",
-                "green_mask": true
-            }
-        ],
+        "recognition": "OCR",
+        "expected": "快捷前往",
         "action": "Click"
     },
     "滑动快捷前往列表-活动层通用": {
@@ -114,20 +104,32 @@
             347,
             13
         ],
-        "end_hold": 1200
+        "end_hold": 800
     },
-    "休憩大厅传送按钮-活动层通用": {
-        "recognition": "Custom",
-        "custom_recognition": "double_template_recognition",
-        "custom_recognition_param": {
-            "template": "活动层/地图-休憩大厅传送.png",
-            "target_template": "活动层/地图-传送按钮.png"
-        },
+    "休憩大厅传送-活动层通用": {
+        "recognition": "OCR",
+        "expected": "休憩大厅",
+        "next": [
+            "点击传送按钮-活动层通用"
+        ]
+    },
+    "点击传送按钮-活动层通用": {
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动层/地图-传送按钮.png"
+        ],
+        "roi": "休憩大厅传送-活动层通用",
+        "roi_offset": [
+            77,
+            -23,
+            230,
+            44
+        ],
         "action": "Click",
         "next": [
             "[JumpBack]活动层加载中-活动层通用",
             "已进入活动层-活动层通用",
-            "休憩大厅传送按钮-活动层通用"
+            "点击传送按钮-活动层通用"
         ]
     },
     "切换形象为指挥官-活动层通用": {
@@ -152,24 +154,43 @@
         "expected": [
             "形象管理"
         ],
-        "post_wait_freezes": 1000,
         "next": [
-            "确认当前形象为指挥官-活动层通用",
-            "点击指挥官形象-活动层通用"
+            "确认当前形象为指挥官-活动层通用"
         ]
     },
     "确认当前形象为指挥官-活动层通用": {
+        "recognition": "OCR",
+        "expected": [
+            "指挥官",
+            "海伦娜"
+        ],
+        "next": [
+            "确认勾选指挥官形象-活动层通用",
+            "点击指挥官形象-活动层通用"
+        ]
+    },
+    "确认勾选指挥官形象-活动层通用": {
         "recognition": "TemplateMatch",
-        "template": "活动层/形象管理-指挥官.png",
-        "green_mask": true,
-        "threshold": 0.8,
+        "template": [
+            "活动层/形象管理-确认勾选.png"
+        ],
+        "roi": "确认当前形象为指挥官-活动层通用",
+        "roi_offset": [
+            8,
+            -124,
+            45,
+            98
+        ],
         "next": [
             "退出形象管理-活动层通用"
         ]
     },
     "点击指挥官形象-活动层通用": {
         "recognition": "OCR",
-        "expected": "指挥官",
+        "expected": [
+            "指挥官",
+            "海伦娜"
+        ],
         "action": "Click",
         "next": [
             "[JumpBack]点击切换形象-活动层通用",
