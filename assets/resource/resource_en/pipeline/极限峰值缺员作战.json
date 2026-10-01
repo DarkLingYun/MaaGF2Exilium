@@ -1,0 +1,20 @@
+{
+    "战斗任务开始-极限峰值缺员作战": {
+        "expected": [
+            "Combat Start",
+            "Trial Doll Introduction",
+            "can be deployed"
+        ]
+    },
+    "已进入作战开始页面-极限峰值缺员作战": {
+        "expected": "Combat Start"
+    },
+    "发现可部署人形提示-极限峰值缺员作战": {
+        "expected": [
+            "can be deployed"
+        ]
+    },
+    "确认缺员作战-极限峰值": {
+        "expected": "^Confirm$"
+    }
+}

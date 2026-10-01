@@ -194,5 +194,7 @@
   "游戏选择": "Game Mode",
   "遗珍回收": "Artifact Recovery",
   "异维探渊": "Dimensional Abyss",
-  "难度": "Difficulty"
+  "难度": "Difficulty",
+  "极限峰值：槽位未满仍开始作战": "Extreme Peak: start combat with empty slots",
+  "极限峰值缺员作战说明": "Only applies to level-0 Extreme Peak combat. Confirms the recognized deployment warning despite empty slots; does not fill dispatch slots. Disabled by default."
 }

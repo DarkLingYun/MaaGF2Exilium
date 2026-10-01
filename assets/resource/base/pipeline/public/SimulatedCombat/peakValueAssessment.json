@@ -59,9 +59,19 @@
         ]
     },
     "peakValueAssessmentPageEnteredAgain": {
-        "doc": "当日非首次进入峰值推定",
+        "doc": "当日非首次进入峰值推定，主动打开周期报酬，不依赖自动弹窗或红点。",
         "next": [
+            "主动打开周期报酬-峰值推定",
             "exitPeakValueAssessment"
+        ]
+    },
+    "主动打开周期报酬-峰值推定": {
+        "recognition": "OCR",
+        "expected": "^周期报酬$",
+        "roi": [0, 560, 300, 160],
+        "action": "Click",
+        "next": [
+            "peakValueAssessmentPageEnteredForFirstTime"
         ]
     },
     "发现新周期-极限峰值（峰值推定界面）": {

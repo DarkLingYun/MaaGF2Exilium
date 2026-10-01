@@ -408,6 +408,9 @@
     "进入常规峰值": {
         "expected": "Standard Peak"
     },
+    "主动打开周期报酬-峰值推定": {
+        "expected": "^Periodic Returns$"
+    },
     "claimRewards": {
         "expected": [
             "Claim All",

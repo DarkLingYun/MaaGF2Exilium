@@ -33,3 +33,6 @@ jobs:
 
       - name: Check Resource
         run: python check_resource.py
+
+      - name: Test Peak task routing
+        run: python -m unittest discover -s tests -v
