@@ -1,5 +1,6 @@
 """Native routing regressions for live-log Peak failures; perception is simulated."""
 import json
+import json5
 from pathlib import Path
 import tempfile
 import time
@@ -57,7 +58,8 @@ def run_pipeline(nodes, entry, visible, execute):
     # Retain actual transitions, hit limits and timeouts; mock external nodes.
     for node in list(nodes.values()):
         for name in node.get('next', []):
-            nodes.setdefault(name.removeprefix('[JumpBack]'), {})
+            if '[Anchor]' not in name:
+                nodes.setdefault(name.removeprefix('[JumpBack]'), {})
     for node in nodes.values():
         node.update(recognition='Custom', custom_recognition='Screens',
                     action='Custom', custom_action='Actions',
@@ -66,7 +68,7 @@ def run_pipeline(nodes, entry, visible, execute):
     with tempfile.TemporaryDirectory() as temp:
         root = Path(temp)
         (root / 'pipeline').mkdir()
-        (root / 'pipeline/peak.json').write_text(json.dumps(nodes, ensure_ascii=False))
+        (root / 'pipeline/peak.json').write_text(json.dumps(nodes, ensure_ascii=False), encoding='utf-8')
         (root / 'default_pipeline.json').write_text(json.dumps({'Default': {'timeout': 50, 'rate_limit': 1}}))
         resource = Resource()
         resource.register_custom_recognition('Screens', Recognition(visible))
@@ -83,9 +85,10 @@ def run_pipeline(nodes, entry, visible, execute):
 
 class PeakRuntimeTest(unittest.TestCase):
     def test_auto_already_on_keeps_waiting_and_consumes_victory(self):
-        nodes = json.loads((PIPELINE / '极限峰值缺员作战.json').read_text())
+        nodes = json5.loads((ROOT / 'assets/resource/base/pipeline/public/通用战斗.json').read_text(encoding='utf-8'))
         confirm = '确认缺员作战-极限峰值'
-        self.assertEqual(nodes[confirm]['timeout'], nodes['点击作战开始按钮-极限峰值缺员作战']['timeout'])
+        self.assertEqual(nodes[confirm]['timeout'], nodes['点击作战开始按钮-通用战斗']['timeout'])
+        nodes['任务完成-通用战斗']['next'] = []
         state = {'deadline': None, 'visited': [], 'waiting_checks': 0}
         def visible(name):
             if name == confirm:
@@ -104,7 +107,7 @@ class PeakRuntimeTest(unittest.TestCase):
         self.assertGreater(state['waiting_checks'], 1)
 
     def reward_scenario(self, auto_popup=False, reward=True):
-        nodes = json.loads((PIPELINE / 'peakValueAssessment.json').read_text())
+        nodes = json.loads((PIPELINE / 'peakValueAssessment.json').read_text(encoding='utf-8'))
         state = {'screen': 'entry', 'claimed': False, 'visited': []}
         def visible(name):
             screen = state['screen']

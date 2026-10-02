@@ -1037,7 +1037,8 @@
     },
     "通用战斗任务开始": {
         "expected": [
-            "Combat Start"
+            "Combat Start",
+            "can be deployed"
         ]
     },
     "已进入作战开始页面-通用战斗": {
@@ -1130,5 +1131,13 @@
         "expected": [
             "Confirm"
         ]
+    },
+    "发现可部署人形提示-极限峰值": {
+        "expected": [
+            "can be deployed"
+        ]
+    },
+    "确认缺员作战-极限峰值": {
+        "expected": "^Confirm$"
     }
 }
