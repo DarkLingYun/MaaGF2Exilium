@@ -1037,8 +1037,7 @@
     },
     "通用战斗任务开始": {
         "expected": [
-            "Combat Start",
-            "can be deployed"
+            "Combat Start"
         ]
     },
     "已进入作战开始页面-通用战斗": {
@@ -1132,12 +1131,15 @@
             "Confirm"
         ]
     },
-    "发现可部署人形提示-极限峰值": {
+    "缺员策略-通用战斗": {
         "expected": [
             "can be deployed"
         ]
     },
-    "确认缺员作战-极限峰值": {
+    "确认缺员作战-通用战斗": {
         "expected": "^Confirm$"
+    },
+    "取消缺员并停止-通用战斗": {
+        "expected": "^Cancel$"
     }
 }

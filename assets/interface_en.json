@@ -195,6 +195,12 @@
   "遗珍回收": "Artifact Recovery",
   "异维探渊": "Dimensional Abyss",
   "难度": "Difficulty",
-  "极限峰值：槽位未满仍开始作战": "Extreme Peak: start combat with empty slots",
-  "极限峰值缺员作战说明": "Only applies to level-0 Extreme Peak combat. Confirms the recognized deployment warning despite empty slots; does not fill dispatch slots. Disabled by default."
+  "通用战斗部署策略": "Enable shared combat deployment policy",
+  "通用战斗部署策略说明": "Applies to all shared combat modes. Off by default to preserve original behavior. Configure filling and incomplete-party handling. Does not require the startup task. Inactive child options are hidden.",
+  "通用战斗优先补齐": "Try filling empty slots before combat",
+  "通用战斗优先补齐说明": "On by default. Up to 6 filling attempts after a deployment warning, using existing slot and doll selection. Off confirms incomplete-party combat directly. An empty party still needs an initial deployment attempt.",
+  "通用战斗补齐失败处理": "When filling is unsuccessful",
+  "通用战斗补齐失败说明": "Continue with an incomplete party, or cancel the popup and stop the current task without closing the game or repeatedly starting combat.",
+  "缺员强行开始": "Start with empty slots",
+  "取消并停止当前任务": "Cancel and stop current task"
 }
