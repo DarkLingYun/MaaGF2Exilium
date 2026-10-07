@@ -408,6 +408,9 @@
     "进入常规峰值": {
         "expected": "Standard Peak"
     },
+    "主动打开周期报酬-峰值推定": {
+        "expected": "^Periodic Returns$"
+    },
     "claimRewards": {
         "expected": [
             "Claim All",
@@ -1127,5 +1130,16 @@
         "expected": [
             "Confirm"
         ]
+    },
+    "缺员策略-通用战斗": {
+        "expected": [
+            "can be deployed"
+        ]
+    },
+    "确认缺员作战-通用战斗": {
+        "expected": "^Confirm$"
+    },
+    "取消缺员并停止-通用战斗": {
+        "expected": "^Cancel$"
     }
 }
