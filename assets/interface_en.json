@@ -194,5 +194,7 @@
   "游戏选择": "Game Mode",
   "遗珍回收": "Artifact Recovery",
   "异维探渊": "Dimensional Abyss",
-  "难度": "Difficulty"
+  "难度": "Difficulty",
+  "通用战斗允许缺员开始": "Allow combat with empty slots",
+  "通用战斗缺员开始说明": "Applies to all shared combat modes. Off by default, preserving original cancellation and deployment. When enabled, confirms the recognized incomplete-party warning without filling remaining slots. An empty party still uses the original initial deployment; this option does not fix deployment-slot color recognition."
 }
