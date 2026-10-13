@@ -1,0 +1,17 @@
+{
+    // EN overrides for the Dispatch Room (调度室) flow. Verified against EN client captures
+    // run through MaaFramework OCR (1280x720).
+    "进入委托页面-调度室": {
+        "doc": "EN: home-screen bottom bar. 'Commissions' can OCR as one token with its neighbour ('CommissionsPlatoon', see PlatoonTasks.json), so match unanchored inside an ROI that covers only the Commissions icon + label.",
+        "expected": "Commissions",
+        "roi": [784, 625, 100, 62]
+    },
+    "dispatchCenterEntered": {
+        "doc": "EN: the 'Dispatch Assessment' button label wraps onto two lines ('Dispatch' / 'Assessment'), so '^Dispatch Assessment$' never matches. Confirm the room by its single-line bottom-bar buttons instead.",
+        "expected": [
+            "^Dispatch Income$",
+            "^Dispatch Shop$"
+        ],
+        "roi": [450, 600, 830, 90]
+    }
+}

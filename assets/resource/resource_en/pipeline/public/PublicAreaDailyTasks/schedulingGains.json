@@ -1,0 +1,14 @@
+{
+    // EN overrides for Dispatch Income (调度收益). The left tab label wraps onto two lines
+    // ('Resource' / 'Production'), so 'Resource Production' never matches, and the only
+    // single-line hit elsewhere is 'Current production' (lower case). Match the tab's
+    // second line inside an ROI covering only that tab ('Resource Conversion' sits below it).
+    "enterResourceProductionPage": {
+        "expected": "^Production$",
+        "roi": [40, 180, 240, 70]
+    },
+    "调度收益任务结束": {
+        "expected": "^Production$",
+        "roi": [40, 180, 240, 70]
+    }
+}

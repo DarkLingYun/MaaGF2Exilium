@@ -283,9 +283,6 @@
     "前往调度室": {
         "expected": "Proceed"
     },
-    "dispatchCenterEntered": {
-        "expected": "^Dispatch Assessment$"
-    },
     "sendDispatchNotification": {
         "focus": {
             "Node.Action.Starting": "<span style=\"color: red;\">Public Area Dispatch Center not fully dispatched — please handle manually</span>",
@@ -320,14 +317,8 @@
             "Node.Action.Starting": "<span style=\"color: red;\">Use the official Loop Assistant to claim Intel Reserves</span>"
         }
     },
-    "enterResourceProductionPage": {
-        "expected": "Resource Production"
-    },
     "clickResourceProductionCollectionButton": {
         "expected": "^Collect$"
-    },
-    "调度收益任务结束": {
-        "expected": "Resource Production"
     },
     "进入神秘箱页面": {
         "expected": [
