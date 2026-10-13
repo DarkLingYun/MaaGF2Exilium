@@ -280,9 +280,6 @@
             "Node.Action.Starting": "Starting dispatch tasks"
         }
     },
-    "前往调度室": {
-        "expected": "Proceed"
-    },
     "sendDispatchNotification": {
         "focus": {
             "Node.Action.Starting": "<span style=\"color: red;\">Public Area Dispatch Center not fully dispatched — please handle manually</span>",
@@ -339,12 +336,6 @@
         "expected": [
             "Attempts remaining this week"
         ]
-    },
-    "收取十次-神秘箱": {
-        "expected": "Collect ten times"
-    },
-    "收取一次-神秘箱": {
-        "expected": "Collect once"
     },
     "开始首领挑战任务": {
         "focus": {
@@ -1105,9 +1096,6 @@
     },
     "StartGame_restartGF2Game": {
         "expected": "Confirm"
-    },
-    "StartGame_进入整备室": {
-        "expected": "Refitting Room"
     },
     "enterVersionActivityTask": {
         "expected": "^Campaign$"
