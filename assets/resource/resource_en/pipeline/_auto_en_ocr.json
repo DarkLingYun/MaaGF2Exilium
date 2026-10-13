@@ -967,9 +967,6 @@
             "Proceed"
         ]
     },
-    "进入美味烹调区域": {
-        "expected": "Delicious Cuisine"
-    },
     "每天第一次免费美味烹调": {
         "expected": "each day is free"
     },
@@ -1008,6 +1005,9 @@
     },
     "确认结果-茶歇一刻": {
         "expected": "Confirm"
+    },
+    "已进入逸趣导算页面": {
+        "expected": "Recreation Point Tracker"
     },
     "领取逸趣导算奖励": {
         "expected": "Claim All"
@@ -1109,6 +1109,37 @@
     "首页进入活动层-活动层通用": {
         "expected": [
             "Crew Deck"
+        ]
+    },
+    "活动层加载中-活动层通用": {
+        "expected": [
+            "Travelling"
+        ]
+    },
+    "点击快捷前往-活动层通用": {
+        "expected": "Fast Travel"
+    },
+    "休憩大厅传送-活动层通用": {
+        "expected": "^Lounge$"
+    },
+    "已进入形象管理菜单-活动层通用": {
+        "expected": [
+            "Image Management"
+        ]
+    },
+    "确认当前形象为指挥官-活动层通用": {
+        "expected": [
+            "^Commander$"
+        ]
+    },
+    "点击指挥官形象-活动层通用": {
+        "expected": [
+            "^Commander$"
+        ]
+    },
+    "点击切换形象-活动层通用": {
+        "expected": [
+            "Confirm selection"
         ]
     },
     "退出活动层确认-活动层通用": {
