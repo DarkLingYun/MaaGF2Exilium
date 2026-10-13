@@ -405,11 +405,11 @@
     "peakValueAssessmentPageEnteredForFirstTime": {
         "expected": "Periodic Returns"
     },
-    "进入常规峰值": {
-        "expected": "Standard Peak"
-    },
     "主动打开周期报酬-峰值推定": {
         "expected": "^Periodic Returns$"
+    },
+    "进入常规峰值": {
+        "expected": "Standard Peak"
     },
     "claimRewards": {
         "expected": [
@@ -924,11 +924,6 @@
             "^Next$"
         ]
     },
-    "进入活动页面-活动通用": {
-        "expected": [
-            "^Event$"
-        ]
-    },
     "进入艾莫号许愿池页面": {
         "expected": [
             "Proceed"
@@ -1067,6 +1062,14 @@
     "确认任务完成或失败-通用战斗": {
         "expected": "^Confirm$"
     },
+    "缺员策略-通用战斗": {
+        "expected": [
+            "can be deployed"
+        ]
+    },
+    "确认缺员作战-通用战斗": {
+        "expected": "^Confirm$"
+    },
     "enterAutoSweepBattleTask": {
         "expected": "Campaign"
     },
@@ -1112,6 +1115,9 @@
     "StartGame_restartGF2Game": {
         "expected": "Confirm"
     },
+    "StartGame_进入整备室": {
+        "expected": "Refitting Room"
+    },
     "enterVersionActivityTask": {
         "expected": "^Campaign$"
     },
@@ -1130,13 +1136,5 @@
         "expected": [
             "Confirm"
         ]
-    },
-    "缺员策略-通用战斗": {
-        "expected": [
-            "can be deployed"
-        ]
-    },
-    "确认缺员作战-通用战斗": {
-        "expected": "^Confirm$"
     }
 }

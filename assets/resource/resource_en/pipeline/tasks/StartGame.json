@@ -2,18 +2,7 @@
     "StartGame_HomePage_Check": {
         "expected": "Campaign",
         "next": [
-            "StartGame_EnterRefittingRoom"
-        ]
-    },
-    "StartGame_EnterRefittingRoom": {
-        "doc": "After entering the game it may still be loading (shows a new-player-like home screen); entering the Refitting Room and backing out recovers it. New EN node (English key per issue #334); referenced only from StartGame_HomePage_Check.",
-        "recognition": "OCR",
-        "expected": "Refitting Room",
-        "action": "Click",
-        "next": [
-            "[JumpBack]StartGame_loading",
-            "StartGame_EnterRefittingRoom",
-            "clickBackButton"
+            "StartGame_进入整备室"
         ]
     },
     "StartGame_retryLogin": {
