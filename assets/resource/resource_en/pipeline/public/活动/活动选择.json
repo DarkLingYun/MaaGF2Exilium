@@ -1,0 +1,10 @@
+{
+    "进入活动页面-活动通用": {
+        "doc": "EN: OCR reads the home-screen bottom bar as one line ('Voyage Formation Event'), so '^Event$' never matches. Match the text-free Event icon instead (green_mask strips the background). ROI is the whole bottom band so small layout shifts still match.",
+        "recognition": "TemplateMatch",
+        "template": "HomePage/EventIcon_en.png",
+        "green_mask": true,
+        "threshold": 0.8,
+        "roi": [0, 560, 1280, 160]
+    }
+}
