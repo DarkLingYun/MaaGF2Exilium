@@ -1,4 +1,3 @@
-import pi_common
 from maa.agent.agent_server import AgentServer
 from maa.custom_action import CustomAction
 
@@ -29,6 +28,9 @@ def reset_action(action_name, state, label):
     @AgentServer.custom_action(action_name)
     class _ResetState(CustomAction):
         def run(self, context, argv):
+            # 惰性导入：pi_common 末尾要再导出本模块，模块级互相 import 会成环
+            from . import pi_common
+
             state.reset()
             pi_common.log(label, "已清空记录")
             return CustomAction.RunResult(success=True)

@@ -79,3 +79,9 @@ def ocr_words(context, image, roi, expected=None):
 def match_alias(text, patterns):
     """这段文字是否命中任一别名正则。`patterns` 由 `alias_patterns()` 生成。"""
     return any(re.search(pattern, text or "") for pattern in patterns)
+
+
+# 再导出：`shop_exchange` 之类的模块是按 `utils.State` / `utils.reset_action` 用的。
+# 只能放在文件末尾，而且 state 那边对 pi_common 的引用必须是惰性的——否则
+# 先 import 哪个模块就会撞上"部分初始化的模块"，整个 agent 起不来。
+from .state import State, reset_action  # noqa: E402
