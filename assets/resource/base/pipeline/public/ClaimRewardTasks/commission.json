@@ -11,11 +11,6 @@
         "doc": "进入委托领取任务",
         "recognition": "OCR",
         "expected": [
-            "^委托$",
-            "委托$"
-        ],
-        "replace": [
-            "委托、",
             "委托"
         ],
         "roi": [
@@ -25,13 +20,25 @@
             137
         ],
         "action": "Click",
-        "post_wait_freezes": 0,
         "next": [
             "confirmEntrustedClaimPage",
             "enterCommissionToClaimTask"
         ]
     },
     "confirmEntrustedClaimPage": {
+        "recognition": "OCR",
+        "expected": [
+            "每日订单",
+            "周期订单",
+            "危途见证",
+            "征程丰碑"
+        ],
+        "rate_limit": 300,
+        "next": [
+            "waitingForClaimPageLoading"
+        ]
+    },
+    "waitingForClaimPageLoading": {
         "doc": "确认进入委托领取页面，外服因延迟导致进入委托页面时会加载一段时间，此时使用原有检测会异常（失败或直接进行下一步）",
         "recognition": "OCR",
         "roi": [
@@ -40,7 +47,6 @@
             52,
             28
         ],
-        "pre_wait_freezes": 5000,
         "expected": "[1-9]\\d*$",
         "next": [
             "oneKeyClaimCommissionReward",

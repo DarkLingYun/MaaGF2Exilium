@@ -5,7 +5,6 @@
             "[JumpBack]returnToHomePage"
         ]
     },
-    // 不从主页直接识图进入，这里调了很多次还是不成功，从委托 OCR 识别进入比较稳
     "进入委托页面-循环助手": {
         "recognition": "OCR",
         "expected": [
@@ -84,7 +83,6 @@
         },
         "max_hit": 3,
         "action": "Click",
-        "timeout": 6000000, // 有的用户会用循环助手打尘烟前线，需要设置时间长一点
         "post_delay": 2000,
         "next": [
             "循环进行中",
@@ -100,7 +98,6 @@
             "确认"
         ],
         "action": "Click",
-        "timeout": 6000000, // 有的用户会用循环助手打尘烟前线，需要设置时间长一点
         "order_by": "Horizontal",
         "rate_limit": 5000,
         "index": -1,
@@ -120,6 +117,8 @@
             371,
             80
         ],
+        "rate_limit": 5000,
+        "max_hit": 200,
         "next": [
             "循环进行中",
             "循环结束"
@@ -127,8 +126,7 @@
         "focus": {
             "Node.Action.Failed": "未检测的循环进行中，检测是否结束",
             "Node.Action.Succeeded": "循环进行中..."
-        },
-        "post_delay": 5000
+        }
     },
     "循环结束": {
         "recognition": "OCR",

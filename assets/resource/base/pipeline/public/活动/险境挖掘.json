@@ -78,7 +78,8 @@
         "expected": [
             "线索收集"
         ],
-        "action": "Click"
+        "action": "Click",
+        "post_wait_freezes": 800
     },
     "clueCollectionPageEntered": {
         "doc": "线索收集页面已进入，识别左下角内容",
