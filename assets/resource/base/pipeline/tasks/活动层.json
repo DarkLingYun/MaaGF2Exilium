@@ -22,7 +22,8 @@
     "已进入活动层-活动层通用": {
         "recognition": "TemplateMatch",
         "template": "活动层/左上角控制按钮-退出.png",
-        "green_mask": true
+        "green_mask": true,
+        "post_wait_freezes": 800
     },
     "任务开始前进入活动层-活动层通用": {
         "max_hit": 1,
@@ -88,7 +89,8 @@
     "点击快捷前往-活动层通用": {
         "recognition": "OCR",
         "expected": "快捷前往",
-        "action": "Click"
+        "action": "Click",
+        "post_delay": 500
     },
     "滑动快捷前往列表-活动层通用": {
         "action": "Swipe",

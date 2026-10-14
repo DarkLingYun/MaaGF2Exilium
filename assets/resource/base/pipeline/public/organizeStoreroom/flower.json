@@ -72,6 +72,7 @@
         "recognition": "OCR",
         "expected": "工业级及以下",
         "action": "Click",
+        "order_by": "Vertical",
         "next": [
             "quickSelectFlower"
         ]
@@ -81,6 +82,7 @@
         "recognition": "OCR",
         "expected": "快捷选择",
         "action": "Click",
+        "post_wait_freezes": 500,
         "next": [
             "有物品可拆解-生长数据",
             "exitFlower"
@@ -89,28 +91,26 @@
     "有物品可拆解-生长数据": {
         "recognition": "OCR",
         "expected": "共选",
-        "post_delay": 500,
         "next": [
             "disassemblyFlower"
         ]
     },
     "disassemblyFlower": {
         "doc": "点击拆解键",
-        "recognition": "TemplateMatch",
-        "template": [
-            "仓库/拆解按钮.png"
+        "recognition": "OCR",
+        "expected": [
+            "拆解"
+        ],
+        "roi": [
+            890,
+            551,
+            385,
+            155
         ],
         "action": "Click",
+        "post_wait_freezes": 2000,
         "next": [
-            "closeFlowerResultByClickingBlank",
-            "flowerResultClosed"
-        ]
-    },
-    "closeFlowerResultByClickingBlank": {
-        "recognition": "OCR",
-        "expected": "点击空白处关闭",
-        "action": "Click",
-        "next": [
+            "[JumpBack]点击空白处关闭-通用",
             "flowerResultClosed"
         ]
     },

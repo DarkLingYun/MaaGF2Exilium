@@ -56,6 +56,7 @@
         "recognition": "OCR",
         "expected": "^远航巡录$",
         "action": "Click",
+        "post_wait_freezes": 800,
         "next": [
             "claimPassLevelReward",
             "exitPassSystemPage"
@@ -68,6 +69,7 @@
             "一键领取$"
         ],
         "action": "Click",
+        "post_wait_freezes": 800,
         "next": [
             "findPaymentNotification",
             "choosePackage",
@@ -87,7 +89,7 @@
         "recognition": "OCR",
         "expected": "^确认$",
         "action": "Click",
-        "post_delay": 1500,
+        "post_wait_freezes": 800,
         "next": [
             "choosePackage",
             "closePassClaimResultPage"
