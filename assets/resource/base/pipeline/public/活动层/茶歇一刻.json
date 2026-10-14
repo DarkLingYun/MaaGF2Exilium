@@ -179,19 +179,19 @@
         ]
     },
     "TeaTime-TurnOnAuto": {
-        "doc": "Topic mode: the dialogue's Auto toggle is white while off (yellow while on) and Skip is always white. Both white = dialogue playing with Auto off, so tap Auto. Colour-only so it works for every weekly host.",
+        "doc": "Topic mode: the dialogue's Auto toggle is white while off (yellow while on) and Skip is always white. Both white = dialogue playing with Auto off, so tap Auto. Colour only, no text, so it works for every weekly host and should work on the CN client too: the counts are low enough for the icons alone (Auto icon ~54 yellow / ~150 white px, Skip icon ~160 white px on the EN client), and the ROIs are wide in case shorter CN labels shift the icons.",
         "enabled": false,
         "recognition": "And",
         "all_of": [
             {
                 "recognition": "ColorMatch",
                 "roi": [
-                    1150,
-                    22,
-                    95,
-                    36
+                    1140,
+                    20,
+                    130,
+                    40
                 ],
-                "count": 150,
+                "count": 100,
                 "lower": [
                     215,
                     215,
@@ -206,12 +206,12 @@
             {
                 "recognition": "ColorMatch",
                 "roi": [
-                    1025,
-                    22,
-                    105,
-                    36
+                    1000,
+                    20,
+                    140,
+                    40
                 ],
-                "count": 150,
+                "count": 100,
                 "lower": [
                     215,
                     215,
@@ -242,12 +242,12 @@
             {
                 "recognition": "ColorMatch",
                 "roi": [
-                    1150,
-                    22,
-                    95,
-                    36
+                    1140,
+                    20,
+                    130,
+                    40
                 ],
-                "count": 150,
+                "count": 100,
                 "lower": [
                     215,
                     215,
@@ -262,10 +262,10 @@
             {
                 "recognition": "ColorMatch",
                 "roi": [
-                    1025,
-                    22,
-                    105,
-                    36
+                    1000,
+                    20,
+                    140,
+                    40
                 ],
                 "lower": [
                     170,
@@ -277,7 +277,7 @@
                     185,
                     130
                 ],
-                "count": 100
+                "count": 40
             }
         ],
         "post_delay": 1000,
@@ -898,12 +898,12 @@
         "doc": "Topic mode: a topic was picked; let Auto play the rest of the conversation.",
         "recognition": "ColorMatch",
         "roi": [
-            1150,
-            22,
-            95,
-            36
+            1140,
+            20,
+            130,
+            40
         ],
-        "count": 150,
+        "count": 100,
         "lower": [
             215,
             215,
