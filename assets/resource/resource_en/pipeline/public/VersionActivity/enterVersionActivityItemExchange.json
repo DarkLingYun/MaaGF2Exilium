@@ -1,0 +1,6 @@
+{
+    "itemNotPurchasable": {
+        "doc": "EN: the longer 'Currently Purchasing' label pushes the red quantity digit to x~744, outside the base ROI (ends at 728), so an unaffordable item was bought anyway and the flow stalled. Widened to cover the red quantity and the red Expenditure cost.",
+        "roi": [520, 455, 260, 100]
+    }
+}
