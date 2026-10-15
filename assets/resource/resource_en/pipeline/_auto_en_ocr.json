@@ -27,7 +27,10 @@
         "expected": "Max|MAX"
     },
     "BossChallengeConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
+        "expected": "^(Purchase|Confirm)$"
+    },
+    "BossChallengeCloseItemPurchaseResultPage": {
+        "expected": "anywhere to exit"
     },
     "generalExitItemExchange": {
         "expected": "Cancel"
@@ -36,7 +39,10 @@
         "expected": "Max|MAX"
     },
     "generalConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
+        "expected": "^(Purchase|Confirm)$"
+    },
+    "generalCloseItemPurchaseResultPage": {
+        "expected": "anywhere to exit"
     },
     "clickdispatchCenterExchangeTaskButton": {
         "expected": "^Dispatch Shop$"
@@ -48,7 +54,10 @@
         "expected": "Max|MAX"
     },
     "dispatchCenterConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
+        "expected": "^(Purchase|Confirm)$"
+    },
+    "dispatchCenterCloseItemPurchaseResultPage": {
+        "expected": "anywhere to exit"
     },
     "homeStoreExitItemExchange": {
         "expected": "Cancel"
@@ -57,7 +66,10 @@
         "expected": "Max|MAX"
     },
     "homeStoreConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
+        "expected": "^(Purchase|Confirm)$"
+    },
+    "homeStoreCloseItemPurchaseResultPage": {
+        "expected": "anywhere to exit"
     },
     "PlatoonExitItemExchange": {
         "expected": "Cancel"
@@ -66,7 +78,10 @@
         "expected": "Max|MAX"
     },
     "PlatoonConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
+        "expected": "^(Purchase|Confirm)$"
+    },
+    "PlatoonCloseItemPurchaseResultPage": {
+        "expected": "anywhere to exit"
     },
     "oneKeyClaimCommissionReward": {
         "expected": "Claim All"
@@ -243,7 +258,7 @@
         "expected": "^(Quality Selection|Quality)$"
     },
     "confirmWeekSupplyBoxPurchase": {
-        "expected": "Purchase|Confirm"
+        "expected": "^(Purchase|Confirm)$"
     },
     "closeWeekSupplyBoxPurchaseResultPage": {
         "expected": "anywhere"
@@ -252,7 +267,7 @@
         "expected": "^Daily Supply Box$"
     },
     "confirmSupplyBoxPurchase": {
-        "expected": "Purchase|Confirm"
+        "expected": "^(Purchase|Confirm)$"
     },
     "closeSupplyBoxPurchaseResultPage": {
         "expected": "anywhere"
@@ -459,7 +474,7 @@
     },
     "打开战役推进-模拟作战通用": {
         "expected": [
-            "^Campaign$"
+            "^Campaign"
         ]
     },
     "进入模拟作战页面-模拟作战通用": {
@@ -469,8 +484,24 @@
     },
     "selectExchangeItem": {
         "expected": [
+            "Module",
+            "Specification",
+            "Index",
+            "Universal",
+            "Chain Key",
+            "Chip",
             "Collapse Piece",
+            "Permission",
+            "Common Key",
+            "Info Core",
+            "Gift",
+            "Data",
             "Skin",
+            "Special",
+            "Memory Stick",
+            "Transcription",
+            "Box",
+            "Gold",
             "Analysis Blueprint",
             "Combat Report"
         ]
@@ -479,7 +510,16 @@
         "expected": "Max|MAX"
     },
     "confirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
+        "expected": "^(Purchase|Confirm)$"
+    },
+    "closeItemPurchaseResultPage": {
+        "expected": "anywhere to exit"
+    },
+    "enterVersionActivityResourceSweep": {
+        "expected": [
+            "^Supply$",
+            "^Supply$"
+        ]
     },
     "resourceModeSweepTimesInsufficient": {
         "focus": {
@@ -499,6 +539,9 @@
     },
     "startResourceLevelSweep": {
         "expected": "^Confirm$"
+    },
+    "closeResourceLevelSweepResultPage": {
+        "expected": "anywhere to exit"
     },
     "点击空白处关闭-通用": {
         "expected": [
@@ -1066,7 +1109,7 @@
         "expected": "Trading Post"
     },
     "enterMindSurveyTask": {
-        "expected": "^Campaign$"
+        "expected": "^Campaign"
     },
     "ClickToEnterMindSurveySimulatedCombatPage": {
         "expected": "^Combat Simulations$"
@@ -1081,7 +1124,7 @@
         "expected": "Confirm"
     },
     "enterVersionActivityTask": {
-        "expected": "^Campaign$"
+        "expected": "^Campaign"
     },
     "领取活动内每日任务奖励": {
         "expected": "^Claim$"
