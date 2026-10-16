@@ -1,4 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
+
+Android APK 构建、安装和签名配置请参阅 [MaaGF2Exilium for Android](Android/README.md)。
 <p align="center">
 <img alt="logo2" src="./imgs/图标2.png" width="256"/>
 </p>

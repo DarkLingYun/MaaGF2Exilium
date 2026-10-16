@@ -200,24 +200,51 @@ jobs:
           name: MaaGF2ExiliumGUI-${{ matrix.os_name }}-${{ matrix.arch }}
           path: "install"
         
+  android:
+    if: needs.meta.outputs.is_release == 'true'
+    needs: meta
+    uses: ./.github/workflows/android-build.yml
+    with:
+      assemble: release
+      version: ${{ needs.meta.outputs.tag }}
+    secrets: inherit
+
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, build]
+    needs: [meta, update, build, android]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
     steps:
       - uses: actions/download-artifact@v4
         with:
+          pattern: MaaGF2ExiliumGUI-*
           path: assets
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: update
+          path: assets/update
 
       - run: |
           cd assets
           for f in *; do
             (cd "$f" && 7z a -tzip ../"$f-${{ needs.meta.outputs.tag }}.zip" .)
           done
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: android-release-*
+          merge-multiple: true
+          path: android-apks
       - uses: softprops/action-gh-release@v2
         with:
-          files: assets/*
+          files: |
+            assets/*.zip
+            android-apks/*.apk
           tag_name: ${{ needs.meta.outputs.tag }}
+          prerelease: ${{ contains(needs.meta.outputs.tag, '-') }}
+          make_latest: ${{ contains(needs.meta.outputs.tag, '-') && 'false' || 'true' }}
           append_body: true
           body: |
             [已有 Mirror酱 CDK? 前往Mirror酱高速下载](https://mirrorchyan.com/zh/projects?rid=MaaGF2Exilium)

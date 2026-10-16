@@ -13,6 +13,9 @@
 
 An automation assistant for **Girls' Frontline 2: Exilium**, built on the project template provided by [MaaFramework](https://github.com/MaaXYZ/MaaFramework).
 
+For the native Android APK, GitHub Actions builds, and signing setup, see
+[MaaGF2Exilium for Android](Android/README.md).
+
 ## Contact
 
 If something is unclear, you want a feature added, you'd like to help develop, or you just want to hang out ~~and nag for updates~~ — you're welcome to scan the QR code and join the **QQ group: 904823072**.
