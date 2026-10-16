@@ -385,7 +385,8 @@
     },
     "combatExerciseWeeklySettlement": {
         "expected": [
-            "anywhere to exit"
+            "anywhere to exit",
+            "anywhere on the screen to continue"
         ]
     },
     "已打开周期奖励-实兵演习": {
@@ -543,9 +544,58 @@
     "closeResourceLevelSweepResultPage": {
         "expected": "anywhere to exit"
     },
+    "EventDaily-Row1-Proceed": {
+        "expected": "^Proceed$"
+    },
+    "EventDaily-Row1-Sweep": {
+        "expected": "^Auto$"
+    },
+    "EventDaily-Row1-SweepPrep": {
+        "expected": "Auto Mode Preparation"
+    },
+    "EventDaily-Row1-SweepConfirm": {
+        "expected": "^Confirm$"
+    },
+    "EventDaily-Row1-SweepResult": {
+        "expected": "anywhere to exit"
+    },
+    "EventDaily-Row2-Proceed": {
+        "expected": "^Proceed$"
+    },
+    "EventDaily-Row2-Sweep": {
+        "expected": "^Auto$"
+    },
+    "EventDaily-Row2-SweepPrep": {
+        "expected": "Auto Mode Preparation"
+    },
+    "EventDaily-Row2-SweepConfirm": {
+        "expected": "^Confirm$"
+    },
+    "EventDaily-Row2-SweepResult": {
+        "expected": "anywhere to exit"
+    },
+    "EventDaily-Row3-Proceed": {
+        "expected": "^Proceed$"
+    },
+    "EventDaily-Row3-Sweep": {
+        "expected": "^Auto$"
+    },
+    "EventDaily-Row3-SweepPrep": {
+        "expected": "Auto Mode Preparation"
+    },
+    "EventDaily-Row3-SweepConfirm": {
+        "expected": "^Confirm$"
+    },
+    "EventDaily-Row3-SweepResult": {
+        "expected": "anywhere to exit"
+    },
+    "EventDaily-NoStamina": {
+        "expected": "Cancel"
+    },
     "点击空白处关闭-通用": {
         "expected": [
-            "anywhere to exit"
+            "anywhere to exit",
+            "anywhere on the screen to continue"
         ]
     },
     "跳过动画-通用": {
@@ -741,6 +791,11 @@
     "确认难度选择-遗珍回收": {
         "expected": [
             "Confirm"
+        ]
+    },
+    "点击-遗珍回收作战": {
+        "expected": [
+            "^Proceed$"
         ]
     },
     "确认离开-遗珍回收作战": {
@@ -1069,6 +1124,11 @@
     },
     "确认任务完成或失败-通用战斗": {
         "expected": "^Confirm$"
+    },
+    "实兵演习等级晋级-通用战斗": {
+        "expected": [
+            "anywhere on the screen to continue"
+        ]
     },
     "缺员策略-通用战斗": {
         "expected": [

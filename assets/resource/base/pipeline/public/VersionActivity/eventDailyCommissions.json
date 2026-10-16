@@ -1,0 +1,466 @@
+{
+    "EventDaily-Start": {
+        "doc": "活动内每日任务(如影院通告): 逐行点击「前往」并自律 1 次, 直到该行不再显示「前往」; 跳转后不是可自律关卡(如实兵演习)则跳过该行; 体力不足(弹出情报拼图补充)则取消并结束, 不购买体力。默认关闭, 由 interface 选项「完成活动内每日任务」开启。用进度数字 x/y 识别委托页, 与活动名称无关",
+        "enabled": false,
+        "max_hit": 1,
+        "recognition": "OCR",
+        "expected": "^\\d+/\\d+$",
+        "roi": [
+            515,
+            235,
+            85,
+            290
+        ],
+        "next": [
+            "EventDaily-Row1-Proceed",
+            "EventDaily-Row2-Proceed",
+            "EventDaily-Row3-Proceed",
+            "EventDaily-Done"
+        ]
+    },
+    "EventDaily-Done": {
+        "doc": "委托处理结束, 回到活动内每日任务节点继续领取",
+        "recognition": "OCR",
+        "expected": "^\\d+/\\d+$",
+        "roi": [
+            515,
+            235,
+            85,
+            290
+        ]
+    },
+    "EventDaily-Row1-Proceed": {
+        "doc": "第 1 行未完成: 点击「前往」",
+        "recognition": "OCR",
+        "expected": "^前往$",
+        "roi": [
+            660,
+            262,
+            220,
+            60
+        ],
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "EventDaily-Row1-Sweep",
+            "EventDaily-FromRow1",
+            "EventDaily-Row1-Leave"
+        ]
+    },
+    "EventDaily-FromRow1": {
+        "doc": "在委托页, 从第 1 行继续",
+        "recognition": "OCR",
+        "expected": "^\\d+/\\d+$",
+        "roi": [
+            515,
+            235,
+            85,
+            290
+        ],
+        "next": [
+            "EventDaily-Row1-Proceed",
+            "EventDaily-Row2-Proceed",
+            "EventDaily-Row3-Proceed",
+            "EventDaily-Done"
+        ]
+    },
+    "EventDaily-Row1-Leave": {
+        "doc": "第 1 行跳转的不是可自律关卡(如实兵演习): 返回并跳过该行",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "green_mask": true,
+        "roi": [
+            0,
+            0,
+            185,
+            90
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "EventDaily-FromRow2",
+            "EventDaily-Row1-Leave"
+        ]
+    },
+    "EventDaily-Row1-Sweep": {
+        "doc": "关卡页: 点击「自律」",
+        "recognition": "OCR",
+        "expected": "^自律$",
+        "roi": [
+            820,
+            600,
+            460,
+            110
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "EventDaily-Row1-SweepPrep",
+            "EventDaily-NoStamina",
+            "EventDaily-Row1-Sweep"
+        ]
+    },
+    "EventDaily-Row1-SweepPrep": {
+        "doc": "自律准备已打开(默认 1 次)",
+        "recognition": "OCR",
+        "expected": "^自律准备$",
+        "next": [
+            "EventDaily-Row1-SweepConfirm"
+        ]
+    },
+    "EventDaily-Row1-SweepConfirm": {
+        "doc": "确认自律",
+        "recognition": "OCR",
+        "expected": "^确认$",
+        "roi": [
+            660,
+            535,
+            310,
+            75
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "EventDaily-Row1-SweepResult",
+            "EventDaily-Row1-SweepPrep"
+        ]
+    },
+    "EventDaily-Row1-SweepResult": {
+        "doc": "关闭自律结果",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "EventDaily-Row1-SweepBack",
+            "EventDaily-Row1-SweepResult"
+        ]
+    },
+    "EventDaily-Row1-SweepBack": {
+        "doc": "返回委托页, 同一行再检查一次",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "green_mask": true,
+        "roi": [
+            0,
+            0,
+            185,
+            90
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "EventDaily-FromRow1",
+            "EventDaily-Row1-SweepBack"
+        ]
+    },
+    "EventDaily-Row2-Proceed": {
+        "doc": "第 2 行未完成: 点击「前往」",
+        "recognition": "OCR",
+        "expected": "^前往$",
+        "roi": [
+            660,
+            382,
+            220,
+            60
+        ],
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "EventDaily-Row2-Sweep",
+            "EventDaily-FromRow2",
+            "EventDaily-Row2-Leave"
+        ]
+    },
+    "EventDaily-FromRow2": {
+        "doc": "在委托页, 从第 2 行继续",
+        "recognition": "OCR",
+        "expected": "^\\d+/\\d+$",
+        "roi": [
+            515,
+            235,
+            85,
+            290
+        ],
+        "next": [
+            "EventDaily-Row2-Proceed",
+            "EventDaily-Row3-Proceed",
+            "EventDaily-Done"
+        ]
+    },
+    "EventDaily-Row2-Leave": {
+        "doc": "第 2 行跳转的不是可自律关卡(如实兵演习): 返回并跳过该行",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "green_mask": true,
+        "roi": [
+            0,
+            0,
+            185,
+            90
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "EventDaily-FromRow3",
+            "EventDaily-Row2-Leave"
+        ]
+    },
+    "EventDaily-Row2-Sweep": {
+        "doc": "关卡页: 点击「自律」",
+        "recognition": "OCR",
+        "expected": "^自律$",
+        "roi": [
+            820,
+            600,
+            460,
+            110
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "EventDaily-Row2-SweepPrep",
+            "EventDaily-NoStamina",
+            "EventDaily-Row2-Sweep"
+        ]
+    },
+    "EventDaily-Row2-SweepPrep": {
+        "doc": "自律准备已打开(默认 1 次)",
+        "recognition": "OCR",
+        "expected": "^自律准备$",
+        "next": [
+            "EventDaily-Row2-SweepConfirm"
+        ]
+    },
+    "EventDaily-Row2-SweepConfirm": {
+        "doc": "确认自律",
+        "recognition": "OCR",
+        "expected": "^确认$",
+        "roi": [
+            660,
+            535,
+            310,
+            75
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "EventDaily-Row2-SweepResult",
+            "EventDaily-Row2-SweepPrep"
+        ]
+    },
+    "EventDaily-Row2-SweepResult": {
+        "doc": "关闭自律结果",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "EventDaily-Row2-SweepBack",
+            "EventDaily-Row2-SweepResult"
+        ]
+    },
+    "EventDaily-Row2-SweepBack": {
+        "doc": "返回委托页, 同一行再检查一次",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "green_mask": true,
+        "roi": [
+            0,
+            0,
+            185,
+            90
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "EventDaily-FromRow2",
+            "EventDaily-Row2-SweepBack"
+        ]
+    },
+    "EventDaily-Row3-Proceed": {
+        "doc": "第 3 行未完成: 点击「前往」",
+        "recognition": "OCR",
+        "expected": "^前往$",
+        "roi": [
+            660,
+            502,
+            220,
+            60
+        ],
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "EventDaily-Row3-Sweep",
+            "EventDaily-FromRow3",
+            "EventDaily-Row3-Leave"
+        ]
+    },
+    "EventDaily-FromRow3": {
+        "doc": "在委托页, 从第 3 行继续",
+        "recognition": "OCR",
+        "expected": "^\\d+/\\d+$",
+        "roi": [
+            515,
+            235,
+            85,
+            290
+        ],
+        "next": [
+            "EventDaily-Row3-Proceed",
+            "EventDaily-Done"
+        ]
+    },
+    "EventDaily-Row3-Leave": {
+        "doc": "第 3 行跳转的不是可自律关卡(如实兵演习): 返回并跳过该行",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "green_mask": true,
+        "roi": [
+            0,
+            0,
+            185,
+            90
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "EventDaily-Done",
+            "EventDaily-Row3-Leave"
+        ]
+    },
+    "EventDaily-Row3-Sweep": {
+        "doc": "关卡页: 点击「自律」",
+        "recognition": "OCR",
+        "expected": "^自律$",
+        "roi": [
+            820,
+            600,
+            460,
+            110
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "EventDaily-Row3-SweepPrep",
+            "EventDaily-NoStamina",
+            "EventDaily-Row3-Sweep"
+        ]
+    },
+    "EventDaily-Row3-SweepPrep": {
+        "doc": "自律准备已打开(默认 1 次)",
+        "recognition": "OCR",
+        "expected": "^自律准备$",
+        "next": [
+            "EventDaily-Row3-SweepConfirm"
+        ]
+    },
+    "EventDaily-Row3-SweepConfirm": {
+        "doc": "确认自律",
+        "recognition": "OCR",
+        "expected": "^确认$",
+        "roi": [
+            660,
+            535,
+            310,
+            75
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "EventDaily-Row3-SweepResult",
+            "EventDaily-Row3-SweepPrep"
+        ]
+    },
+    "EventDaily-Row3-SweepResult": {
+        "doc": "关闭自律结果",
+        "recognition": "OCR",
+        "expected": "点击空白处关闭",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "EventDaily-Row3-SweepBack",
+            "EventDaily-Row3-SweepResult"
+        ]
+    },
+    "EventDaily-Row3-SweepBack": {
+        "doc": "返回委托页, 同一行再检查一次",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "green_mask": true,
+        "roi": [
+            0,
+            0,
+            185,
+            90
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "EventDaily-FromRow3",
+            "EventDaily-Row3-SweepBack"
+        ]
+    },
+    "EventDaily-NoStamina": {
+        "doc": "点击自律后不是自律准备而是带「取消」的弹窗 = 体力不足(情报拼图补充): 取消, 不购买体力。同心智勘测 cancelStaminaReplenishmentForMindSurvey",
+        "recognition": "OCR",
+        "expected": "取消",
+        "roi": [
+            260,
+            120,
+            760,
+            480
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "focus": {
+            "Node.Action.Starting": "体力不足, 跳过剩余委托"
+        },
+        "next": [
+            "EventDaily-NoStaminaBack",
+            "EventDaily-NoStamina"
+        ]
+    },
+    "EventDaily-NoStaminaBack": {
+        "doc": "返回委托页并结束",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "green_mask": true,
+        "roi": [
+            0,
+            0,
+            185,
+            90
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "EventDaily-Done",
+            "EventDaily-NoStaminaBack"
+        ]
+    }
+}

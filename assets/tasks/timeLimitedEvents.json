@@ -6,7 +6,8 @@
       "entry": "VersionActivityTask",
       "option": [
         "物资模式活动选择",
-        "物资商品兑换"
+        "物资商品兑换",
+        "完成活动内每日任务"
       ],
       "default_check": true,
       "description": "$物资模式说明"
@@ -88,6 +89,24 @@
               "expected": [
                 "信标巡检"
               ]
+            }
+          }
+        }
+      ]
+    },
+    "完成活动内每日任务": {
+      "label": "$完成活动内每日任务",
+      "description": "$完成活动内每日任务说明",
+      "default_case": "NO",
+      "cases": [
+        {
+          "name": "NO"
+        },
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "EventDaily-Start": {
+              "enabled": true
             }
           }
         }

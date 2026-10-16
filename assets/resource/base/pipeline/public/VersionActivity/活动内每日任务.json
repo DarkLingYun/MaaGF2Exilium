@@ -7,6 +7,7 @@
         "action": "Click",
         "next": [
             "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]EventDaily-Start",
             "[JumpBack]领取活动内每日任务奖励",
             "[JumpBack]领取活动内每日任务积分累计奖励",
             "退出活动内每日任务界面"
