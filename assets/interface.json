@@ -948,6 +948,7 @@
     },
     "饮品加成": {
       "label": "$饮品加成",
+      "description": "$饮品加成说明",
       "cases": [
         {
           "name": "星标饮品",
@@ -955,6 +956,24 @@
           "pipeline_override": {
             "选择饮品-茶歇一刻": {
               "template": "活动层/茶歇一刻-星标.png"
+            }
+          }
+        },
+        {
+          "name": "今日特饮",
+          "label": "$今日特饮",
+          "pipeline_override": {
+            "TeaTime-ScrollToSpecial": {
+              "enabled": true
+            },
+            "TeaTime-SelectSpecialDrink": {
+              "enabled": true
+            },
+            "TeaTime-SpecialSelected": {
+              "enabled": true
+            },
+            "TeaTime-SpecialNotAvailable": {
+              "enabled": true
             }
           }
         }
