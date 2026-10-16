@@ -75,6 +75,8 @@
   "茶歇一刻": "Tea Time",
   "饮品加成": "Drink Bonus",
   "星标饮品": "Starred Drink",
+  "今日特饮": "Today's Special",
+  "饮品加成说明": "Which drink to make at Tea Time.\n\nStarred Drink: makes your starred Classic Drink.\n\nToday's Special: makes this week's special drink (the yellow card under Today's Special). It unlocks the host's 6th topic, which Pick Unread Topic then reads first. If the special isn't unlocked yet, the starred drink is made instead.",
   "茶歇一刻对话": "Tea Time Dialogue",
   "茶歇一刻对话说明": "What happens to the conversation after drinking.\n\nSkip Dialogue: skips the conversation with the host Doll. Use this if you don't care about topics.\n\nPick Unread Topic: turns on Auto and picks a topic you haven't read yet (no checkmark). You get one topic per day, and reading all of a host's topics unlocks an achievement. If every topic is already read, it picks any topic.\n\nThe 6th topic (orange icon) only shows up after drinking the week's Today's Special, so it is picked first whenever it's there and unread.",
   "跳过对话": "Skip Dialogue",
