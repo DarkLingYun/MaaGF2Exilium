@@ -292,6 +292,9 @@
             "Claim All"
         ]
     },
+    "dispatchCenterSendAgain": {
+        "expected": "^Resend$"
+    },
     "closeDispatchCenterDispatchCountRewardClaimResultPage": {
         "expected": "anywhere to exit"
     },
