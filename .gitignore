@@ -456,3 +456,8 @@ mermaid.mmd
 
 # macos
 .DS_Store
+
+# Generated Android resources and signing material
+/Android/assets/
+*.jks
+*.keystore

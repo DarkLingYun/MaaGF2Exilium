@@ -1,0 +1,13 @@
+# Paths are relative to this file. prepare.py generates assets/.
+assets: assets
+include:
+  - interface.json
+  - interface_zh.json
+  - interface_en.json
+  - resource/**
+  - LICENSE
+
+app:
+  id: maagf2exilium
+  label: MaaGF2Exilium
+  icon: ../imgs/图标2.png
