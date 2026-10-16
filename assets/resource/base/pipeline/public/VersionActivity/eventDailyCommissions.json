@@ -40,7 +40,25 @@
             60
         ],
         "action": "Click",
-        "post_delay": 3000,
+        "post_delay": 1000,
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "EventDaily-Row1-Settle"
+        ]
+    },
+    "EventDaily-Row1-Settle": {
+        "doc": "等待跳转后的页面淡入完成(右下角「自律」区域静止)再判断: 先显示返回键、后显示按钮, 过早判断会把关卡页误当成非关卡页而跳过",
+        "recognition": "DirectHit",
+        "post_wait_freezes": {
+            "time": 1500,
+            "target": [
+                820,
+                560,
+                460,
+                160
+            ],
+            "timeout": 15000
+        },
         "next": [
             "[JumpBack]点击空白处关闭-通用",
             "EventDaily-Row1-Sweep",
@@ -172,7 +190,25 @@
             60
         ],
         "action": "Click",
-        "post_delay": 3000,
+        "post_delay": 1000,
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "EventDaily-Row2-Settle"
+        ]
+    },
+    "EventDaily-Row2-Settle": {
+        "doc": "等待跳转后的页面淡入完成(右下角「自律」区域静止)再判断: 先显示返回键、后显示按钮, 过早判断会把关卡页误当成非关卡页而跳过",
+        "recognition": "DirectHit",
+        "post_wait_freezes": {
+            "time": 1500,
+            "target": [
+                820,
+                560,
+                460,
+                160
+            ],
+            "timeout": 15000
+        },
         "next": [
             "[JumpBack]点击空白处关闭-通用",
             "EventDaily-Row2-Sweep",
@@ -303,7 +339,25 @@
             60
         ],
         "action": "Click",
-        "post_delay": 3000,
+        "post_delay": 1000,
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "EventDaily-Row3-Settle"
+        ]
+    },
+    "EventDaily-Row3-Settle": {
+        "doc": "等待跳转后的页面淡入完成(右下角「自律」区域静止)再判断: 先显示返回键、后显示按钮, 过早判断会把关卡页误当成非关卡页而跳过",
+        "recognition": "DirectHit",
+        "post_wait_freezes": {
+            "time": 1500,
+            "target": [
+                820,
+                560,
+                460,
+                160
+            ],
+            "timeout": 15000
+        },
         "next": [
             "[JumpBack]点击空白处关闭-通用",
             "EventDaily-Row3-Sweep",
