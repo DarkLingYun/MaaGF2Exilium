@@ -1,0 +1,15 @@
+{
+    "VersionActivity-AmberMoonlight-Banner": {
+        "doc": "EN: home banner 'Amber Reel of Moonlight' wraps onto two lines ('Amber Reel of' / 'Moonlight').",
+        "expected": ["Amber Reel", "Moonlight"]
+    },
+    "VersionActivity-AmberMoonlight-Notice": {
+        "doc": "EN: 'Theater Notice' on the event hub. Hub ROI so the notice page's own title isn't re-clicked.",
+        "expected": ["^Theater Notice$", "Theater Notice"],
+        "roi": [100, 420, 360, 110]
+    },
+    "VersionActivity-AmberMoonlight-Shop": {
+        "doc": "EN: 'Concession Stand' wraps; match the first line.",
+        "expected": ["Concession"]
+    }
+}
