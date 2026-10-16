@@ -75,7 +75,7 @@
   "饮品加成": "Drink Bonus",
   "星标饮品": "Starred Drink",
   "茶歇一刻对话": "Tea Time Dialogue",
-  "茶歇一刻对话说明": "What happens to the conversation after drinking.\n\nSkip Dialogue: skips the conversation with the host Doll. Use this if you don't care about topics.\n\nPick Unread Topic: turns on Auto and picks a topic you haven't read yet (no checkmark). You get one topic per day, and reading all of a host's topics unlocks an achievement. If every topic is already read, it picks any topic.",
+  "茶歇一刻对话说明": "What happens to the conversation after drinking.\n\nSkip Dialogue: skips the conversation with the host Doll. Use this if you don't care about topics.\n\nPick Unread Topic: turns on Auto and picks a topic you haven't read yet (no checkmark). You get one topic per day, and reading all of a host's topics unlocks an achievement. If every topic is already read, it picks any topic.\n\nThe 6th topic (orange icon) only shows up after drinking the week's Today's Special, so it is picked first whenever it's there and unread.",
   "跳过对话": "Skip Dialogue",
   "选择未读话题": "Pick Unread Topic",
   "领取逸趣导算进度奖励": "Claim Leisure Calculation Progress Rewards",
