@@ -1011,12 +1011,6 @@
     "进入茶歇一刻区域": {
         "expected": "Tea Time"
     },
-    "确认进入茶歇一刻": {
-        "expected": [
-            "Classic Drink",
-            "Today.s Special"
-        ]
-    },
     "制作饮品-茶歇一刻": {
         "expected": "^Make$"
     },
