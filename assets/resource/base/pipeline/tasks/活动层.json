@@ -224,6 +224,7 @@
         "template": "活动层/左上角控制按钮-退出.png",
         "green_mask": true,
         "action": "Click",
+        "post_wait_freezes": 800,
         "next": [
             "退出活动层确认-活动层通用",
             "退出活动层-活动层通用"

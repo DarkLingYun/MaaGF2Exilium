@@ -20,6 +20,7 @@
             137
         ],
         "action": "Click",
+        "post_wait_freezes": 800,
         "next": [
             "confirmEntrustedClaimPage",
             "enterCommissionToClaimTask"
@@ -33,7 +34,6 @@
             "危途见证",
             "征程丰碑"
         ],
-        "rate_limit": 300,
         "next": [
             "waitingForClaimPageLoading"
         ]
