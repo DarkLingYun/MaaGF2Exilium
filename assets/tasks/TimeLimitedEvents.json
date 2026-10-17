@@ -1,0 +1,97 @@
+{
+  "task": [
+    {
+      "name": "版本活动日常",
+      "label": "$版本活动日常",
+      "entry": "VersionActivityTask",
+      "option": [
+        "物资模式活动选择",
+        "物资商品兑换"
+      ],
+      "default_check": true,
+      "description": "$物资模式说明"
+    },
+    {
+      "name": "版本活动日常2（美服/国际服）",
+      "label": "$版本活动日常2（美服/国际服）",
+      "entry": "VersionActivityTask",
+      "option": [
+        "物资模式活动选择2（美服/国际服）",
+        "物资商品兑换2（美服/国际服）"
+      ],
+      "doc": "$版本活动2说明"
+    }
+  ],
+  "option": {
+    "物资商品兑换": {
+      "label": "$物资商品兑换",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "enterVersionActivityItemExchange": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "enterVersionActivityItemExchange": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "物资商品兑换2（美服/国际服）": {
+      "label": "$物资商品兑换2（美服/国际服）",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "enterVersionActivityItemExchange": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "enterVersionActivityItemExchange": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "物资模式活动选择2（美服/国际服）": {
+      "label": "$物资模式活动选择2（美服/国际服）",
+      "cases": [
+        {
+          "name": "骐骥踏光时（美服/国际服）",
+          "label": "$骐骥踏光时（美服/国际服）",
+          "pipeline_override": {
+            "clickVersionActivityTagButton": {
+              "expected": [
+                "骐骥踏光时"
+              ]
+            },
+            "enterVersionActivityItemExchange": {
+              "expected": [
+                "补给仓库"
+              ]
+            },
+            "开始活动内每日任务": {
+              "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
+              "enabled": true,
+              "expected": [
+                "信标巡检"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,550 @@
+{
+  "task": [
+    {
+      "name": "补给作战",
+      "label": "$补给作战",
+      "entry": "AutoSweepBattle",
+      "option": [
+        "作战类型"
+      ]
+    }
+  ],
+  "option": {
+    "作战类型": {
+      "label": "$作战类型",
+      "cases": [
+        {
+          "name": "深度搜索(人形升级)",
+          "label": "$深度搜索(人形升级)",
+          "pipeline_override": {
+            "supplyOperationType": {
+              "expected": "深度搜索"
+            }
+          },
+          "option": [
+            "补给次数"
+          ]
+        },
+        {
+          "name": "军备解析(武器升级)",
+          "label": "$军备解析(武器升级)",
+          "pipeline_override": {
+            "supplyOperationType": {
+              "expected": "军备解析"
+            }
+          },
+          "option": [
+            "补给次数"
+          ]
+        },
+        {
+          "name": "决策构象(人形等级突破)",
+          "label": "$决策构象(人形等级突破)",
+          "pipeline_override": {
+            "supplyOperationType": {
+              "expected": "决策构象"
+            }
+          },
+          "option": [
+            "补给次数"
+          ]
+        },
+        {
+          "name": "定向精研(武器配件)",
+          "label": "$定向精研(武器配件)",
+          "option": [
+            "配件类型",
+            "配件效果",
+            "配件刷取次数"
+          ]
+        },
+        {
+          "name": "标准同调(金币本)",
+          "label": "$标准同调(金币本)",
+          "pipeline_override": {
+            "supplyOperationType": {
+              "expected": "标准同调"
+            }
+          },
+          "option": [
+            "补给次数"
+          ]
+        }
+      ]
+    },
+    "补给次数": {
+      "label": "$补给次数",
+      "cases": [
+        {
+          "name": "x1",
+          "pipeline_override": {
+            "UserSetSliderValue": {
+              "enabled": true,
+              "expected": "^1$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x2",
+          "pipeline_override": {
+            "UserSetSliderValue": {
+              "enabled": true,
+              "expected": "^2$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x3",
+          "pipeline_override": {
+            "UserSetSliderValue": {
+              "enabled": true,
+              "expected": "^3$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x4",
+          "pipeline_override": {
+            "UserSetSliderValue": {
+              "enabled": true,
+              "expected": "^4$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x5",
+          "pipeline_override": {
+            "UserSetSliderValue": {
+              "enabled": true,
+              "expected": "^5$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x6",
+          "pipeline_override": {
+            "UserSetSliderValue": {
+              "enabled": true,
+              "expected": "^6$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x7",
+          "pipeline_override": {
+            "UserSetSliderValue": {
+              "enabled": true,
+              "expected": "^7$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x8",
+          "pipeline_override": {
+            "UserSetSliderValue": {
+              "enabled": true,
+              "expected": "^8$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x9",
+          "pipeline_override": {
+            "UserSetSliderValue": {
+              "enabled": true,
+              "expected": "^9$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x10",
+          "pipeline_override": {
+            "UserSetSliderValue": {
+              "enabled": true,
+              "expected": "^10$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "All(耗尽体力)",
+          "label": "$All(耗尽体力)",
+          "pipeline_override": {
+            "UserSetSliderValue": {
+              "enabled": false
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "配件刷取次数": {
+      "label": "$配件刷取次数",
+      "cases": [
+        {
+          "name": "x1",
+          "pipeline_override": {
+            "UserSetSliderValueAccessories": {
+              "enabled": true,
+              "expected": "^1$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x2",
+          "pipeline_override": {
+            "UserSetSliderValueAccessories": {
+              "enabled": true,
+              "expected": "^2$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x3",
+          "pipeline_override": {
+            "UserSetSliderValueAccessories": {
+              "enabled": true,
+              "expected": "^3$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x4",
+          "pipeline_override": {
+            "UserSetSliderValueAccessories": {
+              "enabled": true,
+              "expected": "^4$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x5",
+          "pipeline_override": {
+            "UserSetSliderValueAccessories": {
+              "enabled": true,
+              "expected": "^5$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x6",
+          "pipeline_override": {
+            "UserSetSliderValueAccessories": {
+              "enabled": true,
+              "expected": "^6$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x7",
+          "pipeline_override": {
+            "UserSetSliderValueAccessories": {
+              "enabled": true,
+              "expected": "^7$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x8",
+          "pipeline_override": {
+            "UserSetSliderValueAccessories": {
+              "enabled": true,
+              "expected": "^8$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x9",
+          "pipeline_override": {
+            "UserSetSliderValueAccessories": {
+              "enabled": true,
+              "expected": "^9$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x10",
+          "pipeline_override": {
+            "UserSetSliderValueAccessories": {
+              "enabled": true,
+              "expected": "^10$"
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "All(耗尽体力)",
+          "label": "$All(耗尽体力)",
+          "pipeline_override": {
+            "UserSetSliderValueAccessories": {
+              "enabled": false
+            },
+            "exitAutoSweepBattleTask": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "配件效果": {
+      "label": "$配件效果",
+      "cases": [
+        {
+          "name": "异位打击",
+          "label": "$异位打击",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": "^异位打击$"
+            }
+          }
+        },
+        {
+          "name": "制胜追进",
+          "label": "$制胜追进",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": "^制胜追进$"
+            }
+          }
+        },
+        {
+          "name": "双重对策",
+          "label": "$双重对策",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": "^双重对策$"
+            }
+          }
+        },
+        {
+          "name": "异位提振",
+          "label": "$异位提振",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": "^异位提振$"
+            }
+          }
+        },
+        {
+          "name": "应急修复",
+          "label": "$应急修复",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": "^应急修复$"
+            }
+          }
+        },
+        {
+          "name": "减伤支援",
+          "label": "$减伤支援",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": "^减伤支援$"
+            }
+          }
+        },
+        {
+          "name": "实弹增幅",
+          "label": "$实弹增幅",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": "^实弹增幅$"
+            }
+          }
+        },
+        {
+          "name": "灼热增幅",
+          "label": "$灼热增幅",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": "^灼热增幅$"
+            }
+          }
+        },
+        {
+          "name": "冰点增幅",
+          "label": "$冰点增幅",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": "^冰点增幅$"
+            }
+          }
+        },
+        {
+          "name": "强蚀增幅",
+          "label": "$强蚀增幅",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": "^强蚀增幅$"
+            }
+          }
+        },
+        {
+          "name": "电场增幅",
+          "label": "$电场增幅",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": "^电场增幅$"
+            }
+          }
+        },
+        {
+          "name": "激流增幅",
+          "label": "$激流增幅",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": "^激流增幅$"
+            }
+          }
+        },
+        {
+          "name": "战术演算",
+          "label": "$战术演算",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": "^战术演算$"
+            }
+          }
+        },
+        {
+          "name": "护盾守愈",
+          "label": "$护盾守愈",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": [
+                "^护盾守愈$",
+                "^护盾守"
+              ]
+            }
+          }
+        },
+        {
+          "name": "迫近强攻",
+          "label": "$迫近强攻",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": [
+                "^迫近强攻$",
+                "^迫近强"
+              ]
+            }
+          }
+        },
+        {
+          "name": "巅峰召唤",
+          "label": "$巅峰召唤",
+          "pipeline_override": {
+            "selectedEffectsCombination": {
+              "expected": [
+                "^巅峰召唤$",
+                "^巅峰召唤",
+                "峰召唤$"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "配件类型": {
+      "label": "$配件类型",
+      "cases": [
+        {
+          "name": "突击与霰弹枪",
+          "label": "$突击与霰弹枪",
+          "pipeline_override": {
+            "switchAccessoriesTag": {
+              "expected": "^突击"
+            }
+          }
+        },
+        {
+          "name": "冲锋枪与机枪",
+          "label": "$冲锋枪与机枪",
+          "pipeline_override": {
+            "switchAccessoriesTag": {
+              "expected": "^冲锋枪"
+            }
+          }
+        },
+        {
+          "name": "狙击枪与刀",
+          "label": "$狙击枪与刀",
+          "pipeline_override": {
+            "switchAccessoriesTag": {
+              "expected": "^狙击枪"
+            }
+          }
+        },
+        {
+          "name": "手枪",
+          "label": "$手枪",
+          "pipeline_override": {
+            "switchAccessoriesTag": {
+              "expected": "^手枪"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
