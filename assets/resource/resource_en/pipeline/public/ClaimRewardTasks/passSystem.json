@@ -1,0 +1,18 @@
+{
+    "findPurpleWeaponPackageReward": {
+        "recognition": "OCR",
+        "expected": "Standard Weapon Custom Gift Box"
+    },
+    "findGoldWeaponPackageReward": {
+        "recognition": "OCR",
+        "expected": "Journey Guardian Custom Gift Box"
+    },
+    "confirmWeaponPackageSelection": {
+        "recognition": "OCR",
+        "expected": [
+            "^Next$",
+            "^Open$",
+            "^Confirm$"
+        ]
+    }
+}
