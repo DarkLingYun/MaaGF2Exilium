@@ -138,6 +138,7 @@
         ],
         "action": "Click",
         "green_mask": true,
+        "post_wait_freezes": 800,
         "next": [
             "活动内每日任务结束"
         ]
