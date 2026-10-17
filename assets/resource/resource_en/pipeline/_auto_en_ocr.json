@@ -280,12 +280,6 @@
             "Node.Action.Starting": "Starting dispatch tasks"
         }
     },
-    "前往调度室": {
-        "expected": "Proceed"
-    },
-    "dispatchCenterEntered": {
-        "expected": "^Dispatch Assessment$"
-    },
     "sendDispatchNotification": {
         "focus": {
             "Node.Action.Starting": "<span style=\"color: red;\">Public Area Dispatch Center not fully dispatched — please handle manually</span>",
@@ -297,6 +291,9 @@
             "Claim",
             "Claim All"
         ]
+    },
+    "dispatchCenterSendAgain": {
+        "expected": "^Resend$"
     },
     "closeDispatchCenterDispatchCountRewardClaimResultPage": {
         "expected": "anywhere to exit"
@@ -320,14 +317,8 @@
             "Node.Action.Starting": "<span style=\"color: red;\">Use the official Loop Assistant to claim Intel Reserves</span>"
         }
     },
-    "enterResourceProductionPage": {
-        "expected": "Resource Production"
-    },
     "clickResourceProductionCollectionButton": {
         "expected": "^Collect$"
-    },
-    "调度收益任务结束": {
-        "expected": "Resource Production"
     },
     "进入神秘箱页面": {
         "expected": [
@@ -348,12 +339,6 @@
         "expected": [
             "Attempts remaining this week"
         ]
-    },
-    "收取十次-神秘箱": {
-        "expected": "Collect ten times"
-    },
-    "收取一次-神秘箱": {
-        "expected": "Collect once"
     },
     "开始首领挑战任务": {
         "focus": {
@@ -405,11 +390,11 @@
     "peakValueAssessmentPageEnteredForFirstTime": {
         "expected": "Periodic Returns"
     },
-    "进入常规峰值": {
-        "expected": "Standard Peak"
-    },
     "主动打开周期报酬-峰值推定": {
         "expected": "^Periodic Returns$"
+    },
+    "进入常规峰值": {
+        "expected": "Standard Peak"
     },
     "claimRewards": {
         "expected": [
@@ -924,11 +909,6 @@
             "^Next$"
         ]
     },
-    "进入活动页面-活动通用": {
-        "expected": [
-            "^Event$"
-        ]
-    },
     "进入艾莫号许愿池页面": {
         "expected": [
             "Proceed"
@@ -990,9 +970,6 @@
             "Proceed"
         ]
     },
-    "进入美味烹调区域": {
-        "expected": "Delicious Cuisine"
-    },
     "每天第一次免费美味烹调": {
         "expected": "each day is free"
     },
@@ -1032,6 +1009,9 @@
     "确认结果-茶歇一刻": {
         "expected": "Confirm"
     },
+    "已进入逸趣导算页面": {
+        "expected": "Recreation Point Tracker"
+    },
     "领取逸趣导算奖励": {
         "expected": "Claim All"
     },
@@ -1065,6 +1045,14 @@
         }
     },
     "确认任务完成或失败-通用战斗": {
+        "expected": "^Confirm$"
+    },
+    "缺员策略-通用战斗": {
+        "expected": [
+            "can be deployed"
+        ]
+    },
+    "确认缺员作战-通用战斗": {
         "expected": "^Confirm$"
     },
     "enterAutoSweepBattleTask": {
@@ -1126,17 +1114,40 @@
             "Crew Deck"
         ]
     },
+    "活动层加载中-活动层通用": {
+        "expected": [
+            "Travelling"
+        ]
+    },
+    "点击快捷前往-活动层通用": {
+        "expected": "Fast Travel"
+    },
+    "休憩大厅传送-活动层通用": {
+        "expected": "^Lounge$"
+    },
+    "已进入形象管理菜单-活动层通用": {
+        "expected": [
+            "Image Management"
+        ]
+    },
+    "确认当前形象为指挥官-活动层通用": {
+        "expected": [
+            "^Commander$"
+        ]
+    },
+    "点击指挥官形象-活动层通用": {
+        "expected": [
+            "^Commander$"
+        ]
+    },
+    "点击切换形象-活动层通用": {
+        "expected": [
+            "Confirm selection"
+        ]
+    },
     "退出活动层确认-活动层通用": {
         "expected": [
             "Confirm"
         ]
-    },
-    "缺员策略-通用战斗": {
-        "expected": [
-            "can be deployed"
-        ]
-    },
-    "确认缺员作战-通用战斗": {
-        "expected": "^Confirm$"
     }
 }
