@@ -6,7 +6,7 @@ from maa.toolkit import Toolkit
 # 注意要把实现的自定义识别、动作的代码import进来才会生效
 import community_daily_action
 import shop_exchange
-import scroll_more
+import scroll_end
 
 def main():
     Toolkit.init_option("./")

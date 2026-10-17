@@ -31,7 +31,19 @@
         "post_wait_freezes": 1000
     },
     "滑动活动列表-活动通用": {
-        "doc": "由调用方控制max_hit，此处统一管理操作内容",
+        "doc": "由调用方直接以[JumpBack]引用。列表画面不再变化即停止；roi避开左/右边缘的呼吸动画",
+        "recognition": "Custom",
+        "custom_recognition": "scroll_end",
+        "custom_recognition_param": {
+            "roi": [
+                60,
+                160,
+                285,
+                460
+            ],
+            "max_scroll": 6,
+            "probe_on_same": true
+        },
         "action": "Swipe",
         "begin": [
             111,
@@ -45,6 +57,16 @@
             162,
             13
         ],
-        "end_hold": 1000
+        "end_hold": 1000,
+        "post_wait_freezes": {
+            "time": 300,
+            "target": [
+                60,
+                160,
+                285,
+                460
+            ],
+            "timeout": 3000
+        }
     }
 }

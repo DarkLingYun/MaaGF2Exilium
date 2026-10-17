@@ -18,7 +18,7 @@
     "回到词条列表顶部-极限峰值": {
         "doc": "上滑让内容下移，直到画面不再变化=真的到顶了，再交给点选。比的是 roi 画面指纹，所以不需要知道一次滑多远、列表有多长。自引用排前面：命中=画面还在变就再滑一次，未命中=到顶 → 落到点选。post_wait_freezes 必须在滑动动画停下之后再采样指纹，否则惯性/回弹会污染「变没变」的判定。max_hit 是引擎侧按 task 重置的兜底，三个子群共用故按 3 倍留量。实测（离线 harness：真引擎 + 真实录制像素）：页面本来就在顶部时这一段 = 1 次（首次调用必命中，滑一下画面没变就收手），从底部 645px 回顶 = 3 次（2 次滑到位 + 1 次确认没变）",
         "recognition": "Custom",
-        "custom_recognition": "scroll_more",
+        "custom_recognition": "scroll_end",
         "custom_recognition_param": {
             "roi": [
                 40,
@@ -70,7 +70,7 @@
     "滑动激化词条列表-极限峰值": {
         "doc": "可见的未选 ◆2 都点完后往下翻一屏（手指从下往上滑）；画面不再变化=到底了，交给收尾。滑动距离仍小于列表可视高度，避免把没点过的行直接滑过去。优先级即顺序：先点新露出来的 → 画面还在变就再翻一屏 → 到底了（未命中）让位给收尾。实测：到底要 3 次（2 次滑到 645px 底 + 1 次确认没变），三个子群都是 3 次 → max_scroll=6 留一倍余量",
         "recognition": "Custom",
-        "custom_recognition": "scroll_more",
+        "custom_recognition": "scroll_end",
         "custom_recognition_param": {
             "roi": [
                 40,
