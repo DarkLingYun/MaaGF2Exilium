@@ -1,0 +1,143 @@
+name: Android APK packaging
+
+# Reused by pull-request/manual APK builds and the tag release workflow.
+on:
+  workflow_call:
+    inputs:
+      assemble:
+        required: true
+        type: string
+      version:
+        required: false
+        type: string
+        default: ""
+    secrets:
+      KEYSTORE_BASE64:
+        required: false
+      KEYSTORE_PASSWORD:
+        required: false
+      KEY_ALIAS:
+        required: false
+      KEY_PASSWORD:
+        required: false
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJSON(inputs.assemble == 'release' && '[{"label":"universal","abis":"arm64-v8a,x86_64"},{"label":"arm64-v8a","abis":"arm64-v8a"},{"label":"x86_64","abis":"x86_64"}]' || '[{"label":"arm64-v8a","abis":"arm64-v8a"}]') }}
+    env:
+      PI_PROFILE: ${{ github.workspace }}/Android/profile.yaml
+      ASSEMBLE: ${{ inputs.assemble }}
+      VERSION: ${{ inputs.version }}
+      ABIS: ${{ matrix.abis }}
+      APK_LABEL: ${{ matrix.label }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          submodules: recursive
+          persist-credentials: false
+
+      - name: Validate build and signing inputs
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          case "$ASSEMBLE" in
+            debug) ;;
+            release)
+              for key in KEYSTORE_BASE64 KEYSTORE_PASSWORD KEY_ALIAS KEY_PASSWORD; do
+                if [ -z "$(printenv "$key")" ]; then
+                  echo "::error::Signed release requires repository secret $key"
+                  exit 1
+                fi
+              done
+              ;;
+            *) echo "::error::assemble must be debug or release"; exit 1 ;;
+          esac
+
+      - uses: actions/setup-java@v6
+        with:
+          java-version: "25"
+          distribution: temurin
+      - uses: android-actions/setup-android@v4
+      - name: Install NDK and CMake
+        run: sdkmanager --install "ndk;29.0.13113456" "cmake;3.22.1"
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+      - name: Stage Android resources and OCR models
+        run: |
+          # Tag releases use the supplied version; other APKs use MaaFwApp's Git versioning.
+          if [ -n "$VERSION" ]; then
+            echo "BUILD_VERSION_NAME=${VERSION#v}" >> "$GITHUB_ENV"
+          fi
+          python Android/prepare.py --version "${VERSION:-$(git describe --tags --always)}" --repository "$GITHUB_REPOSITORY"
+      - name: Download and deploy MaaFramework
+        working-directory: Android/MaaFwApp
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          abi="$ABIS"
+          if [[ "$abi" == *,* ]]; then
+            abi=all
+          fi
+          python scripts/setup_maa_framework.py --abi "$abi"
+      - name: Configure Android build
+        working-directory: Android/MaaFwApp
+        run: |
+          printf 'sdk.dir=%s\npi.profile=../profile.yaml\nbuild.debugAbi=%s\nbuild.releaseAbi=%s\nbuild.ndkVersion=29.0.13113456\n' "$ANDROID_HOME" "$ABIS" "$ABIS" > local.properties
+      - name: Decode release keystore
+        if: inputs.assemble == 'release'
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+        run: |
+          python -c 'import base64, os, pathlib; p = pathlib.Path(os.environ["RUNNER_TEMP"]) / "maagf2exilium-release.jks"; p.write_bytes(base64.b64decode(os.environ["KEYSTORE_BASE64"], validate=True)); p.chmod(0o600)'
+      - name: Build APK
+        working-directory: Android/MaaFwApp
+        env:
+          KEYSTORE_PATH: ${{ inputs.assemble == 'release' && format('{0}/maagf2exilium-release.jks', runner.temp) || '' }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          chmod +x gradlew
+          if [ "$ASSEMBLE" = release ]; then
+            ./gradlew :app:assembleRelease
+          else
+            ./gradlew :app:assembleDebug
+          fi
+      - name: Name APK
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import re
+          from pathlib import Path
+          directory = Path("Android/MaaFwApp/app/build/outputs/apk") / os.environ["ASSEMBLE"]
+          apks = list(directory.glob("*.apk"))
+          if len(apks) != 1:
+              raise SystemExit(f"Expected one APK, found {len(apks)}")
+          metadata = json.loads((directory / "output-metadata.json").read_text())
+          version = re.sub(r"[^A-Za-z0-9._-]", "-", metadata["elements"][0]["versionName"])
+          suffix = "-debug" if os.environ["ASSEMBLE"] == "debug" else ""
+          apks[0].rename(directory / f"MaaGF2Exilium-android-{os.environ['APK_LABEL']}-{version}{suffix}.apk")
+          PY
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-${{ inputs.assemble }}-${{ matrix.label }}
+          path: Android/MaaFwApp/app/build/outputs/apk/${{ inputs.assemble }}/*.apk
+          if-no-files-found: error
+      - name: Remove release keystore
+        if: always() && inputs.assemble == 'release'
+        run: python -c 'import os, pathlib; (pathlib.Path(os.environ["RUNNER_TEMP"]) / "maagf2exilium-release.jks").unlink(missing_ok=True)'
