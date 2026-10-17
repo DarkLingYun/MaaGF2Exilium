@@ -7,7 +7,7 @@
         "next": [
             "[JumpBack]打开活动页-险境挖掘",
             "clickDangerousExcavationTab",
-            "[JumpBack]滑动活动列表-险境挖掘",
+            "[JumpBack]滑动活动列表-活动通用",
             "returnToHomePage"
         ]
     },
@@ -15,12 +15,6 @@
         "max_hit": 1,
         "next": [
             "打开活动页-活动通用"
-        ]
-    },
-    "滑动活动列表-险境挖掘": {
-        "max_hit": 2,
-        "next": [
-            "滑动活动列表-活动通用"
         ]
     },
     "clickDangerousExcavationTab": {
@@ -56,6 +50,7 @@
             176
         ],
         "action": "Click",
+        "post_wait_freezes": 800,
         "next": [
             "dangerousExcavationPageEntered",
             "enterDangerousExcavationPage"
