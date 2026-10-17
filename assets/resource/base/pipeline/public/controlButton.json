@@ -37,7 +37,8 @@
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/关闭按钮_gray.png",
-            "公用按钮组件/关闭按钮_black.png"
+            "公用按钮组件/关闭按钮_black.png",
+            "公用按钮组件/智能导航光屏关闭按钮_gray.png"
         ],
         "action": "Click",
         "green_mask": true,
