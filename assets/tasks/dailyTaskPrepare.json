@@ -1,0 +1,171 @@
+{
+  "task": [
+    {
+      "name": "日常任务前准备",
+      "label": "$日常任务前准备",
+      "entry": "PrepareDailyTasks",
+      "option": [
+        "领取情报补给体力(限时)",
+        "领取七日签到资源(限时)",
+        "领取邮件",
+        "使用完体力药水",
+        "商城免费每日补给箱购买",
+        "边界推进委托领取",
+        "领取班组补给箱"
+      ],
+      "description": "$领取邮件说明",
+      "default_check": true
+    }
+  ],
+  "option": {
+    "领取班组补给箱": {
+      "label": "$领取班组补给箱",
+      "type": "select",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "领取班组奖励": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "领取班组奖励": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "边界推进委托领取": {
+      "label": "$边界推进委托领取",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "边界推进委托领取": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "边界推进委托领取": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "商城免费每日补给箱购买": {
+      "label": "$商城免费每日补给箱购买",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "商城免费每日补给箱购买": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "商城免费每日补给箱购买": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "使用完体力药水": {
+      "label": "$使用完体力药水",
+      "default_case": "NO",
+      "cases": [
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "使用完接入密钥(体力药水)": {
+              "enabled": false
+            }
+          }
+        },
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "使用完接入密钥(体力药水)": {
+              "enabled": true
+            }
+          }
+        }
+      ]
+    },
+    "领取邮件": {
+      "label": "$领取邮件",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "领取邮件": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "领取邮件": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "领取七日签到资源(限时)": {
+      "label": "$领取七日签到资源(限时)",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "领取七日签到资源": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "领取七日签到资源": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "领取情报补给体力(限时)": {
+      "label": "$领取情报补给体力(限时)",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "领取情报补给": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "领取情报补给": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    }
+  }
+}

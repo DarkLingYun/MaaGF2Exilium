@@ -31,6 +31,28 @@
 - `timeLimitedTasks` 目录，存放具有时效性的任务入口JSON文件，例如：活动页面领取体力、限时活动奖励、版本活动关卡。被`assets\interface.json`文件调用 ，文件名和任务入口名规范同上。
 - `test` 目录，用于存放正在编写、未完成、或者测试的JSON文件。
 
+## ProjectInterface 拆分
+
+`assets/interface.json` 只保留项目元信息、`controller` / `resource` / `agent`、多语言文件和 `import` 列表；任务与选项按任务域拆到以下目录：
+
+```cmd
+assets
+  ├─interface.json
+  ├─tasks
+  │  ├─dailyTask.json
+  │  ├─TimeLimitedEvents.json
+  │  └─...
+  └─options
+     ├─TimeLimitedEventsModes.json
+     └─global.json
+```
+
+- `tasks/*.json`：存放 1~N 个相邻任务，以及这些任务独占的 `option`（task 与 option 放在同一文件，便于整体阅读）。
+- `options/*.json`：存放体积较大（如 `物资模式活动选择`）或全局共用的 `option`。
+- 合并规则：`task` 按 `import` 顺序追加；`option` 同名键以后导入者为准；`global_option` / `group` 去重追加。
+- 约束：task 名与 option 键名必须全局唯一；**不要把一个 option 的 `cases` 拆到多个文件**，同名 option 会被整体覆盖。
+- 新增任务时，在对应 `tasks/*.json` 中加入 `task`，并确认该文件已列入 `interface.json` 的 `import`。
+
 ## PC端使用的CheckKey相关信息
 
 [Maa教程对应地址](https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/3.1-%E4%BB%BB%E5%8A%A1%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%8D%8F%E8%AE%AE.md#clickkey)

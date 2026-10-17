@@ -1,0 +1,235 @@
+{
+  "task": [
+    {
+      "name": "整理仓库",
+      "label": "$整理仓库",
+      "entry": "organizeStoreroom",
+      "option": [
+        "拆解武器",
+        "拆解武器等级",
+        "拆解武器配件",
+        "拆解武器配件等级",
+        "拆解生长数据",
+        "拆解生长数据等级",
+        "开启道具箱",
+        "物资助力箱奖励类型"
+      ],
+      "default_check": true,
+      "description": "$常规设置过多说明"
+    }
+  ],
+  "option": {
+    "物资助力箱奖励类型": {
+      "label": "$物资助力箱奖励类型",
+      "cases": [
+        {
+          "name": "战场报告",
+          "label": "$战场报告",
+          "pipeline_override": {
+            "chooseSupplySupportBoxItem": {
+              "expected": "战场报告"
+            }
+          }
+        },
+        {
+          "name": "解析图纸",
+          "label": "$解析图纸",
+          "pipeline_override": {
+            "chooseSupplySupportBoxItem": {
+              "expected": "解析图纸"
+            }
+          }
+        },
+        {
+          "name": "增域存量条",
+          "label": "$增域存量条",
+          "pipeline_override": {
+            "chooseSupplySupportBoxItem": {
+              "expected": "增域存量条"
+            }
+          }
+        },
+        {
+          "name": "转录导体",
+          "label": "$转录导体",
+          "pipeline_override": {
+            "chooseSupplySupportBoxItem": {
+              "expected": "转录导体"
+            }
+          }
+        }
+      ]
+    },
+    "开启道具箱": {
+      "label": "$开启道具箱",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "itemBox": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "itemBox": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "拆解生长数据等级": {
+      "label": "$拆解生长数据等级",
+      "cases": [
+        {
+          "name": "工业级及以下",
+          "label": "$工业级及以下",
+          "pipeline_override": {
+            "chooseFlowerLevel": {
+              "expected": "工业级及以下"
+            }
+          }
+        },
+        {
+          "name": "军用级及以下",
+          "label": "$军用级及以下",
+          "pipeline_override": {
+            "chooseFlowerLevel": {
+              "expected": "军用级及以下"
+            }
+          }
+        },
+        {
+          "name": "精密级及以下",
+          "label": "$精密级及以下",
+          "pipeline_override": {
+            "chooseFlowerLevel": {
+              "expected": "精密级及以下"
+            }
+          }
+        }
+      ]
+    },
+    "拆解生长数据": {
+      "label": "$拆解生长数据",
+      "cases": [
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "flower": {
+              "enabled": false
+            }
+          }
+        },
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "flower": {
+              "enabled": true
+            }
+          }
+        }
+      ]
+    },
+    "拆解武器配件等级": {
+      "label": "$拆解武器配件等级",
+      "cases": [
+        {
+          "name": "工业级及以下未培养",
+          "label": "$工业级及以下未培养",
+          "pipeline_override": {
+            "chooseLevel": {
+              "expected": "工业级及以下未培养"
+            }
+          }
+        },
+        {
+          "name": "军用级及以下未培养",
+          "label": "$军用级及以下未培养",
+          "pipeline_override": {
+            "chooseLevel": {
+              "expected": "军用级及以下未培养"
+            }
+          }
+        },
+        {
+          "name": "精密级及以下未培养",
+          "label": "$精密级及以下未培养",
+          "pipeline_override": {
+            "chooseLevel": {
+              "expected": "精密级及以下未培养"
+            }
+          }
+        }
+      ]
+    },
+    "拆解武器配件": {
+      "label": "$拆解武器配件",
+      "cases": [
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "weaponAttachments": {
+              "enabled": false
+            }
+          }
+        },
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "weaponAttachments": {
+              "enabled": true
+            }
+          }
+        }
+      ]
+    },
+    "拆解武器等级": {
+      "label": "$拆解武器等级",
+      "cases": [
+        {
+          "name": "旧式未培养",
+          "label": "$旧式未培养",
+          "pipeline_override": {
+            "chooseWeaponLevel": {
+              "expected": "旧式未培养"
+            }
+          }
+        },
+        {
+          "name": "标准及以下未培养",
+          "label": "$标准及以下未培养",
+          "pipeline_override": {
+            "chooseWeaponLevel": {
+              "expected": "标准及以下未培养"
+            }
+          }
+        }
+      ]
+    },
+    "拆解武器": {
+      "label": "$拆解武器",
+      "cases": [
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "weapon": {
+              "enabled": false
+            }
+          }
+        },
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "weapon": {
+              "enabled": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}

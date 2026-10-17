@@ -1,0 +1,310 @@
+{
+  "task": [
+    {
+      "name": "活动",
+      "label": "$活动",
+      "entry": "活动",
+      "option": [
+        "七天签到限定十连",
+        "险境挖掘",
+        "预演",
+        "暗香赠礼",
+        "铁玫瑰赠礼",
+        "火玫瑰赠礼",
+        "艾莫号许愿池",
+        "模拟习练",
+        "格琳喵的委托",
+        "限时中型活动",
+        "活动巡录",
+        "闪耀星愿"
+      ],
+      "default_check": true,
+      "description": "$常规设置过多说明"
+    }
+  ],
+  "option": {
+    "闪耀星愿": {
+      "label": "$闪耀星愿",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始闪耀星愿任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始闪耀星愿任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "活动巡录": {
+      "label": "$活动巡录",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始活动巡录任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始活动巡录任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "限时中型活动": {
+      "label": "$限时中型活动",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始限时中型活动任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始限时中型活动任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "格琳喵的委托": {
+      "label": "$格琳喵的委托",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始格琳喵的委托任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始格琳喵的委托任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "模拟习练": {
+      "label": "$模拟习练",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始模拟习练任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始模拟习练任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "艾莫号许愿池": {
+      "label": "$艾莫号许愿池",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始艾莫号许愿池任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始艾莫号许愿池任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "火玫瑰赠礼": {
+      "label": "$火玫瑰赠礼",
+      "cases": [
+        {
+          "name": "序六",
+          "label": "$序六",
+          "pipeline_override": {
+            "选择火玫瑰赠礼奖励道具": {
+              "expected": "序六"
+            }
+          }
+        },
+        {
+          "name": "序五",
+          "label": "$序五",
+          "pipeline_override": {
+            "选择火玫瑰赠礼奖励道具": {
+              "expected": "序五"
+            }
+          }
+        },
+        {
+          "name": "序四",
+          "label": "$序四",
+          "pipeline_override": {
+            "选择火玫瑰赠礼奖励道具": {
+              "expected": "序四"
+            }
+          }
+        },
+        {
+          "name": "序三",
+          "label": "$序三",
+          "pipeline_override": {
+            "选择火玫瑰赠礼奖励道具": {
+              "expected": "序三"
+            }
+          }
+        }
+      ]
+    },
+    "铁玫瑰赠礼": {
+      "label": "$铁玫瑰赠礼",
+      "cases": [
+        {
+          "name": "战场报告",
+          "label": "$战场报告",
+          "pipeline_override": {
+            "选择铁玫瑰赠礼奖励道具": {
+              "expected": "战场报告"
+            }
+          }
+        },
+        {
+          "name": "解析图纸",
+          "label": "$解析图纸",
+          "pipeline_override": {
+            "选择铁玫瑰赠礼奖励道具": {
+              "expected": "解析图纸"
+            }
+          }
+        },
+        {
+          "name": "萨狄斯金",
+          "label": "$萨狄斯金",
+          "pipeline_override": {
+            "选择铁玫瑰赠礼奖励道具": {
+              "expected": "萨狄斯金"
+            }
+          }
+        }
+      ]
+    },
+    "暗香赠礼": {
+      "label": "$暗香赠礼",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始暗香赠礼任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始暗香赠礼任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "预演": {
+      "label": "$预演",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始预演任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始预演任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "险境挖掘": {
+      "label": "$险境挖掘",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始险境挖掘任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始险境挖掘任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "七天签到限定十连": {
+      "label": "$七天签到限定十连",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始七天签到限定十连任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始七天签到限定十连任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    }
+  }
+}

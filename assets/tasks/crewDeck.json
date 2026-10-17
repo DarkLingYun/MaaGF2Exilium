@@ -1,0 +1,95 @@
+{
+  "task": [
+    {
+      "name": "活动层",
+      "label": "$活动层",
+      "entry": "开始活动层任务",
+      "option": [
+        "美味烹调",
+        "茶歇一刻",
+        "饮品加成",
+        "领取逸趣导算进度奖励"
+      ],
+      "default_check": true
+    }
+  ],
+  "option": {
+    "领取逸趣导算进度奖励": {
+      "label": "$领取逸趣导算进度奖励",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始逸趣导算任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始逸趣导算任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "饮品加成": {
+      "label": "$饮品加成",
+      "cases": [
+        {
+          "name": "星标饮品",
+          "label": "$星标饮品",
+          "pipeline_override": {
+            "选择饮品-茶歇一刻": {
+              "template": "活动层/茶歇一刻-星标.png"
+            }
+          }
+        }
+      ]
+    },
+    "茶歇一刻": {
+      "label": "$茶歇一刻",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始茶歇一刻任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始茶歇一刻任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "美味烹调": {
+      "label": "$美味烹调",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始美味烹调任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始美味烹调任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    }
+  }
+}
