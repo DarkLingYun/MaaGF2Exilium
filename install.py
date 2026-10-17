@@ -40,6 +40,35 @@ def install_deps():
     )
 
 
+def copy_interface_imports(interface, source_root: Path, target_root: Path, seen=None):
+    """复制 PI `import` 引用的配置文件，保持相对路径不变。
+
+    import 路径相对于声明它的 interface 文件所在目录；因此递归时
+    source_root / target_root 会切换到被导入文件所在的目录。
+    """
+    seen = seen if seen is not None else set()
+    for import_path in interface.get("import", []) or []:
+        rel = Path(import_path)
+        if rel.is_absolute() or ".." in rel.parts:
+            raise ValueError(f"Invalid interface import path: {import_path}")
+        src = source_root / rel
+        if not src.is_file():
+            raise FileNotFoundError(
+                f"interface.json imports missing file: {import_path} "
+                f"(resolved to {src})"
+            )
+        dst = target_root / rel
+        dst.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(src, dst)
+
+        resolved = src.resolve()
+        if resolved in seen:
+            continue
+        seen.add(resolved)
+        imported = json.loads(src.read_text(encoding="utf-8"))
+        copy_interface_imports(imported, src.parent, dst.parent, seen)
+
+
 def install_resource():
     # 手动清理整个安装目录，防止旧文件残留，节点变化导致的冲突
     if install_path.exists():
@@ -63,6 +92,10 @@ def install_resource():
 
     with open(install_path / "interface.json", "r", encoding="utf-8") as f:
         interface = json.load(f)
+
+    # 复制 interface.json 通过 import 引入的 task / option / preset 片段，
+    # 保持相对路径，否则发行包里会只剩一个空的 task 列表。
+    copy_interface_imports(interface, working_dir / "assets", install_path)
 
     # 复制 ProjectInterface V2 的多语言词条文件（interface.json 中 $key 显示字段依赖它们）
     # Copy the ProjectInterface V2 language files that interface.json's $key
