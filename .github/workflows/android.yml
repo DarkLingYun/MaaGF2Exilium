@@ -1,0 +1,47 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - "Android/**"
+      - "assets/**"
+      - "agent/**"
+      - "pyproject.toml"
+      - "requirements.txt"
+      - "imgs/图标2.png"
+      - "LICENSE"
+      - ".gitmodules"
+      - ".github/workflows/android*.yml"
+  pull_request:
+    paths:
+      - "Android/**"
+      - "assets/**"
+      - "agent/**"
+      - "pyproject.toml"
+      - "requirements.txt"
+      - "imgs/图标2.png"
+      - "LICENSE"
+      - ".gitmodules"
+      - ".github/workflows/android*.yml"
+  workflow_dispatch:
+    inputs:
+      assemble:
+        description: "APK build type (release requires signing secrets; artifacts only)"
+        type: choice
+        options: [debug, release]
+        default: debug
+
+permissions:
+  contents: read
+
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-android:
+    uses: ./.github/workflows/android-build.yml
+    with:
+      assemble: ${{ github.event_name == 'workflow_dispatch' && inputs.assemble || 'debug' }}
+    secrets: inherit

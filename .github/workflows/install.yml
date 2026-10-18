@@ -8,6 +8,7 @@ on:
       - ".github/workflows/install.yml"
       - "assets/**"
       - "**.py"
+      - "pyproject.toml"
   pull_request:
     branches:
       - "**"
@@ -15,6 +16,7 @@ on:
       - ".github/workflows/install.yml"
       - "assets/**"
       - "**.py"
+      - "pyproject.toml"
   workflow_dispatch:
 
 jobs:
@@ -133,7 +135,12 @@ jobs:
           if [ "${{ matrix.arch }}" = "x86_64" ]; then
             echo "Python version:"
             deps/python/python.exe --version
-            deps/python/python.exe -m pip install --no-cache-dir maafw==5.12.3 maaagentbinary
+            deps/python/python.exe - <<'PY'
+          import pathlib, subprocess, sys, tomllib
+          project = tomllib.loads(pathlib.Path("pyproject.toml").read_text(encoding="utf-8"))
+          subprocess.run([sys.executable, "-m", "pip", "install", "--no-cache-dir",
+                          "maafw==5.12.3", "maaagentbinary", *project["project"]["dependencies"]], check=True)
+          PY
             echo "maafw installed into embedded Python."
           else
             echo "Skipping pip install (cross-architecture, will install on device)."
@@ -200,23 +207,48 @@ jobs:
           name: MaaGF2ExiliumGUI-${{ matrix.os_name }}-${{ matrix.arch }}
           path: "install"
         
+  android:
+    if: needs.meta.outputs.is_release == 'true'
+    needs: meta
+    uses: ./.github/workflows/android-build.yml
+    with:
+      assemble: release
+      version: ${{ needs.meta.outputs.tag }}
+    secrets: inherit
+
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, build]
+    needs: [meta, update, build, android]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
     steps:
       - uses: actions/download-artifact@v4
         with:
+          pattern: MaaGF2ExiliumGUI-*
           path: assets
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: update
+          path: assets/update
 
       - run: |
           cd assets
           for f in *; do
             (cd "$f" && 7z a -tzip ../"$f-${{ needs.meta.outputs.tag }}.zip" .)
           done
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: android-release-*
+          merge-multiple: true
+          path: android-apks
       - uses: softprops/action-gh-release@v2
         with:
-          files: assets/*
+          files: |
+            assets/*.zip
+            android-apks/*.apk
           tag_name: ${{ needs.meta.outputs.tag }}
           append_body: true
           body: |
