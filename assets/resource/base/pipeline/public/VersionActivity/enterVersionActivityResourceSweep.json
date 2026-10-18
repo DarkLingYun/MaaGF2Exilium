@@ -14,7 +14,7 @@
             1280,
             643
         ],
-        "post_delay": 2000,
+        "post_wait_freezes": 2000,
         "next": [
             "selectResourceModeLevel",
             "enterVersionActivityResourceSweep",
@@ -37,7 +37,7 @@
             1,
             1
         ],
-        "post_wait_freezes": 1000
+        "end_hold": 1000
     },
     "resourceModeSweepTimesInsufficient": {
         "doc": "物资模式扫荡次数不足",
@@ -73,7 +73,7 @@
         ],
         "action": "Click",
         "order_by": "Score",
-        "post_delay": 2000,
+        "post_wait_freezes": 2000,
         "next": [
             "HomePage",
             "enterVersionActivityItemExchange",
