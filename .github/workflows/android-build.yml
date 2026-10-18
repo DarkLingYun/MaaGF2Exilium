@@ -75,6 +75,8 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.13"
+      - name: Install Android dependency resolver
+        run: python -m pip install "uv==0.12.16"
       - name: Stage Android resources and OCR models
         run: |
           # Tag releases use the supplied version; other APKs use MaaFwApp's Git versioning.
@@ -82,16 +84,10 @@ jobs:
             echo "BUILD_VERSION_NAME=${VERSION#v}" >> "$GITHUB_ENV"
           fi
           python Android/prepare.py --version "${VERSION:-$(git describe --tags --always)}" --repository "$GITHUB_REPOSITORY"
-      - name: Download and deploy MaaFramework
-        working-directory: Android/MaaFwApp
+      - name: Build matching MaaFramework and Python agent runtime
         env:
           GITHUB_TOKEN: ${{ github.token }}
-        run: |
-          abi="$ABIS"
-          if [[ "$abi" == *,* ]]; then
-            abi=all
-          fi
-          python scripts/setup_maa_framework.py --abi "$abi"
+        run: python Android/build_runtime.py --abis "$ABIS"
       - name: Configure Android build
         working-directory: Android/MaaFwApp
         run: |

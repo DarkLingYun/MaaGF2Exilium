@@ -28,9 +28,11 @@ def write_json(path, value):
 
 
 def android_interface(interface, version, repository):
-    # main.py has no registered callbacks. The community task refers to a
-    # missing CommunityDailyAction, so it cannot run on Android either.
-    interface.pop("agent", None)
+    # The Android profile launches this same entry point using its bundled Python.
+    agent = interface.get("agent")
+    if (not isinstance(agent, dict) or not agent.get("child_exec")
+            or agent.get("child_args") != ["-u", "{PROJECT_DIR}/agent/main.py"]):
+        raise ValueError("Android profile requires a single Python agent at agent/main.py")
     interface.pop("mirrorchyan_rid", None)  # Desktop resource updates are not APK updates.
     interface["controller"] = [item for item in interface["controller"] if item["type"] == "Adb"]
     if not interface["controller"]:
@@ -54,7 +56,7 @@ def android_interface(interface, version, repository):
     return interface
 
 
-def validate_pipelines(resource):
+def exclude_community_task(resource):
     for path in resource.rglob("*.json"):
         if "pipeline" not in path.parts:
             continue
@@ -66,14 +68,6 @@ def validate_pipelines(resource):
             else:
                 path.unlink()
                 continue
-        for name, node in nodes.items():
-            if not isinstance(node, dict):
-                continue
-            for key in ("action", "recognition"):
-                value = node.get(key)
-                kind = value.get("type") if isinstance(value, dict) else value
-                if kind == "Custom":
-                    raise ValueError(f"{path}: {name} needs an Android agent for custom {key}")
 
 
 def prepare(root=ROOT, version="v0.0.0-dev", repository="DarkLingYun/MaaGF2Exilium"):
@@ -101,7 +95,10 @@ def prepare(root=ROOT, version="v0.0.0-dev", repository="DarkLingYun/MaaGF2Exili
         if not (ocr / name).is_file():
             raise FileNotFoundError(f"Missing OCR model {ocr / name}; initialize submodules recursively")
     shutil.copytree(ocr, output / "resource" / "base" / "model" / "ocr", dirs_exist_ok=True)
-    validate_pipelines(output / "resource")
+    exclude_community_task(output / "resource")
+    if not (root / "agent" / "main.py").is_file():
+        raise FileNotFoundError("Missing Python agent entry point: agent/main.py")
+    shutil.copytree(root / "agent", output / "agent", ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
     for language, filename in interface.get("languages", {}).items():
         translations = read_json(root / "assets" / filename)
         if language == "zh_cn":

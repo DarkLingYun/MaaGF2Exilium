@@ -459,5 +459,6 @@ mermaid.mmd
 
 # Generated Android resources and signing material
 /Android/assets/
+/Android/agent-dist/
 *.jks
 *.keystore

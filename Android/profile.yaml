@@ -5,7 +5,21 @@ include:
   - interface_zh.json
   - interface_en.json
   - resource/**
+  - agent/**
   - LICENSE
+
+# build_runtime.py builds only the APK's selected ABIs in agent-dist/.
+agent:
+  sourceDir: agent-dist
+  runtimes:
+    - location: bundle
+      executable: bin/python3
+      args: [-u, agent/main.py]
+      env:
+        PYTHONHOME: "{bundle}/prefix"
+        PYTHONPATH: "{bundle}/site-packages/pure.zip:{bundle}/site-packages"
+        LD_LIBRARY_PATH: "{bundle}/prefix/lib:{bundle}/site-packages/chaquopy/lib:{nativeLibs}"
+        MAAFW_BINARY_PATH: "{nativeLibs}"
 
 app:
   id: maagf2exilium

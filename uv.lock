@@ -401,20 +401,28 @@ name = "maagf2exilium"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "black" },
-    { name = "maadebugger" },
     { name = "maafw" },
     { name = "requests" },
     { name = "tqdm" },
 ]
 
-[package.metadata]
-requires-dist = [
+[package.dev-dependencies]
+dev = [
     { name = "black" },
     { name = "maadebugger" },
+]
+
+[package.metadata]
+requires-dist = [
     { name = "maafw" },
     { name = "requests" },
     { name = "tqdm" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "black" },
+    { name = "maadebugger" },
 ]
 
 [[package]]

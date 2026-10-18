@@ -8,6 +8,9 @@ on:
       - ".github/workflows/install.yml"
       - "assets/**"
       - "**.py"
+      - "pyproject.toml"
+      - "requirements.txt"
+      - "uv.lock"
   pull_request:
     branches:
       - "**"
@@ -15,6 +18,9 @@ on:
       - ".github/workflows/install.yml"
       - "assets/**"
       - "**.py"
+      - "pyproject.toml"
+      - "requirements.txt"
+      - "uv.lock"
   workflow_dispatch:
 
 jobs:
@@ -133,7 +139,12 @@ jobs:
           if [ "${{ matrix.arch }}" = "x86_64" ]; then
             echo "Python version:"
             deps/python/python.exe --version
-            deps/python/python.exe -m pip install --no-cache-dir maafw==5.12.3 maaagentbinary
+            deps/python/python.exe - <<'PY'
+          import pathlib, subprocess, sys, tomllib
+          project = tomllib.loads(pathlib.Path("pyproject.toml").read_text(encoding="utf-8"))
+          subprocess.run([sys.executable, "-m", "pip", "install", "--no-cache-dir",
+                          "maafw==5.12.3", "maaagentbinary", *project["project"]["dependencies"]], check=True)
+          PY
             echo "maafw installed into embedded Python."
           else
             echo "Skipping pip install (cross-architecture, will install on device)."

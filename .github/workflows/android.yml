@@ -6,6 +6,10 @@ on:
     paths:
       - "Android/**"
       - "assets/**"
+      - "agent/**"
+      - "pyproject.toml"
+      - "requirements.txt"
+      - "uv.lock"
       - "imgs/图标2.png"
       - "LICENSE"
       - ".gitmodules"
@@ -14,6 +18,10 @@ on:
     paths:
       - "Android/**"
       - "assets/**"
+      - "agent/**"
+      - "pyproject.toml"
+      - "requirements.txt"
+      - "uv.lock"
       - "imgs/图标2.png"
       - "LICENSE"
       - ".gitmodules"

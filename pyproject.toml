@@ -8,10 +8,19 @@ readme = "README.md"
 # vbuild 使用了 pkgutil.find_loader()，该 API 在 Python 3.12+ 中已被移除
 # 因此必须限制 Python 版本为 3.11.x
 requires-python = ">=3.11,<3.12"
+# Agent 运行依赖：桌面打包与 Android 共用，新增节点依赖请在这里声明。
 dependencies = [
-    "black",
-    "maadebugger",
     "maafw",
     "requests",
     "tqdm",
 ]
+
+[dependency-groups]
+# uv sync 默认包含 dev；更新开发环境清单：uv pip compile pyproject.toml --group dev --python 3.11 -o requirements.txt
+dev = ["black", "maadebugger"]
+
+[tool.maagf2exilium.android]
+# Android 优先沿用 requirements.txt 的版本，在共享依赖允许范围内选择可用 wheel。
+# 只有经过验证的平台例外才写这里，例如 overrides = ["pillow==11.0.0"]。
+# 不允许覆盖内核提供的 maafw / numpy / strenum；无需重复声明普通依赖。
+overrides = []
