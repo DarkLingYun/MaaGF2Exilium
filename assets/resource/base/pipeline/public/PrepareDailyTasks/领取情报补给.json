@@ -42,6 +42,7 @@
         "expected": [
             "^领取$"
         ],
-        "action": "Click"
+        "action": "Click",
+        "post_wait_freezes": 800
     }
 }

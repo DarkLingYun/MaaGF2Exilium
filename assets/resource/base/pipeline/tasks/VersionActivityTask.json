@@ -10,7 +10,6 @@
         "doc": "正式进入版本活动任务，先验证是否在首页，然后判断是否存在活动标签，不存在就识别主页结束任务",
         "recognition": "OCR",
         "expected": "^战役推进$",
-        "post_wait_freezes": 100,
         "next": [
             "clickVersionActivityTagButton",
             "版本活动滑动选择-重置"
@@ -49,9 +48,18 @@
     },
     "版本活动滑动选择": {
         "doc": "多个活动存在，需滑动选择",
-        "recognition": "DirectHit",
+        "recognition": "Custom",
+        "custom_recognition": "scroll_end",
+        "custom_recognition_param": {
+            "roi": [
+                2,
+                74,
+                201,
+                346
+            ],
+            "max_scroll": 2
+        },
         "action": "Swipe",
-        "max_hit": 2,
         "begin": [
             71,
             90,
@@ -64,15 +72,7 @@
             175,
             74
         ],
-        "post_wait_freezes": {
-            "time": 600,
-            "target": [
-                2,
-                74,
-                201,
-                346
-            ]
-        }
+        "end_hold": 1000
     },
     "clickVersionActivityTagButton": {
         "doc": "点击版本活动标签按钮,版本更新后更改识别字段",
@@ -83,69 +83,12 @@
             259,
             414
         ],
-        "expected": [
-            "信号波重度依赖",
-            "信号波",
-            "重度依赖",
-            "信号",
-            "依赖"
-        ],
+        "expected": "^$",
         "action": "Click",
         "post_wait_freezes": 5000,
         "next": [
-            "开始活动内每日任务",
-            "switchVersionActivityChapter",
-            "enterVersionActivityResourceSweep",
-            "enterVersionActivityItemExchange",
-            "returnToHomePage"
-        ]
-    },
-    "开始活动内每日任务": {
-        "enabled": false,
-        "recognition": "OCR",
-        "expected": "^每日留言$",
-        "action": "Click",
-        "next": [
-            "[JumpBack]点击空白处关闭-通用",
-            "[JumpBack]领取活动内每日任务奖励",
-            "[JumpBack]领取活动内每日任务积分累计奖励",
-            "退出活动内每日任务界面"
-        ]
-    },
-    "领取活动内每日任务积分累计奖励": {
-        "recognition": "TemplateMatch",
-        "template": "公用按钮组件/提醒.png",
-        "action": "Click",
-        "roi": [
-            0,
-            540,
-            1280,
-            180
-        ],
-        "green_mask": true,
-        "order_by": "Score"
-    },
-    "领取活动内每日任务奖励": {
-        "recognition": "OCR",
-        "expected": "^领取$",
-        "action": "Click"
-    },
-    "退出活动内每日任务界面": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/返回上一页_gray_v2.png",
-            "公用按钮组件/返回上一页_black_v2.png"
-        ],
-        "action": "Click",
-        "green_mask": true,
-        "post_wait_freezes": 800,
-        "next": [
-            "活动内每日任务结束"
-        ]
-    },
-    "活动内每日任务结束": {
-        "next": [
-            "switchVersionActivityChapter",
+            "[JumpBack]开始活动内每日任务",
+            "[JumpBack]switchVersionActivityChapter",
             "enterVersionActivityResourceSweep",
             "enterVersionActivityItemExchange",
             "returnToHomePage"
@@ -155,16 +98,9 @@
         "doc": "切换版本活动章节(大型活动), 默认false",
         "enabled": false,
         "recognition": "OCR",
-        "expected": "^错位.*上篇$",
-        "post_wait_freezes": {
-            "time": 800,
-            "target": true
-        },
-        "action": "Click",
-        "next": [
-            "enterVersionActivityResourceSweep",
-            "enterVersionActivityItemExchange",
-            "returnToHomePage"
-        ]
+        "expected": "^$",
+        "max_hit": 1,
+        "post_wait_freezes": 800,
+        "action": "Click"
     }
 }
