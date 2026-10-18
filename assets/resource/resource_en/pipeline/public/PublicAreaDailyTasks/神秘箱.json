@@ -1,0 +1,15 @@
+{
+    // EN overrides for the Mystery Box (神秘箱). After tapping Collect, the page stays unchanged
+    // for a moment before the pull animation starts. The next check saw the unchanged page, went
+    // round again, then met the animation, found no coin button and ended after one 10-pull.
+    // Pause after the tap so the animation/results popup is up before the next check; the
+    // existing [JumpBack] close/skip nodes then clear it and the loop continues.
+    "收取十次-神秘箱": {
+        "expected": "Collect ten times",
+        "post_delay": 2000
+    },
+    "收取一次-神秘箱": {
+        "expected": "Collect once",
+        "post_delay": 2000
+    }
+}

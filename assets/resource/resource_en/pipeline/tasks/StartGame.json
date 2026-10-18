@@ -2,19 +2,43 @@
     "StartGame_HomePage_Check": {
         "expected": "Campaign",
         "next": [
-            "StartGame_EnterRefittingRoom"
+            "StartGame_进入整备室"
         ]
     },
-    "StartGame_EnterRefittingRoom": {
-        "doc": "After entering the game it may still be loading (shows a new-player-like home screen); entering the Refitting Room and backing out recovers it. New EN node (English key per issue #334); referenced only from StartGame_HomePage_Check.",
-        "recognition": "OCR",
+    "StartGame_进入整备室": {
+        "doc": "EN/US server: after leaving the Refitting Room, wait for the home screen before handing back. Otherwise the caller's next check runs mid-transition, falls through to StartGame, and the Refitting Room trip repeats (seen 3x from returnToHomePage).",
         "expected": "Refitting Room",
-        "action": "Click",
         "next": [
             "[JumpBack]StartGame_loading",
-            "StartGame_EnterRefittingRoom",
-            "clickBackButton"
+            "StartGame_进入整备室",
+            "StartGame-LeaveRefittingRoom"
         ]
+    },
+    "StartGame-LeaveRefittingRoom": {
+        "doc": "EN-only: same Back button as clickBackButton (only present once inside the room), then retry until the home screen's 'Campaign' is visible again.",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "green_mask": true,
+        "order_by": "Score",
+        "threshold": 0.8,
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": true
+        },
+        "next": [
+            "StartGame-RefittingRoomLeft",
+            "StartGame-LeaveRefittingRoom"
+        ]
+    },
+    "StartGame-RefittingRoomLeft": {
+        "doc": "EN-only: home screen is back (top-right 'Campaign').",
+        "recognition": "OCR",
+        "expected": "Campaign",
+        "roi": [900, 40, 380, 120]
     },
     "StartGame_retryLogin": {
         "doc": "外服用户登录可能需要重试/确定用户协议 (EN: Retry / Confirm agreement)",

@@ -1,10 +1,33 @@
 {
+    "进入美味烹调区域": {
+        "doc": "EN override: same as base, but check 已选择常规菜品 (Standard Dishes tab already open) BEFORE the tab click, because the EN 选择常规菜品 below matches on any cooking tab and would otherwise loop.",
+        "expected": "Delicious Cuisine",
+        "next": [
+            "进入美味烹调区域",
+            "已选择常规菜品",
+            "[JumpBack]选择常规菜品"
+        ]
+    },
     "选择常规菜品": {
-        "doc": "EN override: the zh icon-template (常规菜品.png) doesn't match the EN client's dish cards (~0.56). Instead detect the 'Select Dish' screen and click the first dish at a fixed position (a dish must be selected before Next). Coords in 1280x720 reference.",
+        "doc": "EN override: the zh unselected-tab icon (常规菜品.png) doesn't match the EN client (~0.56). The cooking screen reopens on whichever tab was used last (Experimental Cooking / Culinary Creations / Standard Dishes), so detect any of them by text and tap the Standard Dishes tab (3rd icon on the left). 已选择常规菜品 (selected-tab icon) matches the EN client as-is. Coords in 1280x720 reference.",
         "recognition": "OCR",
-        "expected": "Select Dish",
+        "expected": [
+            "Select Dish",
+            "Experimental Cooking"
+        ],
+        "roi": [
+            140,
+            35,
+            600,
+            105
+        ],
         "action": "Click",
-        "target": [152, 128, 80, 112]
+        "target": [
+            50,
+            287,
+            55,
+            87
+        ]
     },
     "跳过动画-美味烹调": {
         "doc": "EN override: skip the cooking cutscene. zh OCR can't read the white 'Skip' button, so template-match it (image cropped from the EN client) and click. roi = top-right corner.",

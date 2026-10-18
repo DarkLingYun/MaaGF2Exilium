@@ -1,0 +1,40 @@
+{
+    // EN overrides for the Dispatch Room (调度室) flow. Verified against EN client captures
+    // run through MaaFramework OCR (1280x720).
+    "进入委托页面-调度室": {
+        "doc": "EN: home-screen bottom bar. 'Commissions' can OCR as one token with its neighbour ('CommissionsPlatoon', see PlatoonTasks.json), so match unanchored inside an ROI that covers only the Commissions icon + label.",
+        "expected": "Commissions",
+        "roi": [784, 625, 100, 62]
+    },
+    "前往调度室": {
+        "doc": "EN: the room takes over a second to open. Without a pause the retry saw the old 'Proceed' again and tapped (150,590) just as the room appeared, which opens the Weekly Dispatch Earnings popup. Wait after the tap, check 'entered' before retrying, and close that popup if it opened anyway.",
+        "expected": "Proceed",
+        "post_delay": 2000,
+        "next": [
+            "dispatchCenterEntered",
+            "DispatchRoom-CloseWeeklyEarnings",
+            "前往调度室"
+        ]
+    },
+    "DispatchRoom-CloseWeeklyEarnings": {
+        "doc": "EN-only: close the Weekly Dispatch Earnings popup (X at top right) if a stray tap opened it.",
+        "recognition": "OCR",
+        "expected": "^Weekly Dispatch Earnings$",
+        "roi": [300, 80, 680, 80],
+        "action": "Click",
+        "target": [995, 98, 50, 45],
+        "post_wait_freezes": 500,
+        "next": [
+            "dispatchCenterEntered",
+            "DispatchRoom-CloseWeeklyEarnings"
+        ]
+    },
+    "dispatchCenterEntered": {
+        "doc": "EN: the 'Dispatch Assessment' button label wraps onto two lines ('Dispatch' / 'Assessment'), so '^Dispatch Assessment$' never matches. Confirm the room by its single-line bottom-bar buttons instead.",
+        "expected": [
+            "^Dispatch Income$",
+            "^Dispatch Shop$"
+        ],
+        "roi": [450, 600, 830, 90]
+    }
+}
