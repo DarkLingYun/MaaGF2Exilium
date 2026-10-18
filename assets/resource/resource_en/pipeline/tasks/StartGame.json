@@ -1,8 +1,12 @@
 {
     "StartGame_HomePage_Check": {
+        "doc": "EN: home screen's top-right 'Campaign' only (the Campaign screen has a 'Campaign' tab too). A daily login reward ('Items Obtained', 'Click anywhere to exit') or an announcement can pop up right after the home screen shows, covering the Refitting Room button; close it instead of timing out.",
         "expected": "Campaign",
+        "roi": [880, 40, 400, 120],
         "next": [
-            "StartGame_进入整备室"
+            "StartGame_进入整备室",
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]clickCloseWindowButton"
         ]
     },
     "StartGame_进入整备室": {
@@ -38,7 +42,7 @@
         "doc": "EN-only: home screen is back (top-right 'Campaign').",
         "recognition": "OCR",
         "expected": "Campaign",
-        "roi": [900, 40, 380, 120]
+        "roi": [880, 40, 400, 120]
     },
     "StartGame_retryLogin": {
         "doc": "外服用户登录可能需要重试/确定用户协议 (EN: Retry / Confirm agreement)",
