@@ -81,13 +81,13 @@
     "tasks/neuralSurvey.json",
     "tasks/loopAssistant.json",
     "tasks/combatSimulations.json",
-    "tasks/TimeLimitedEvents.json",
+    "tasks/timeLimitedEvents.json",
     "tasks/shopExchange.json",
     "tasks/storeroom.json",
     "tasks/claimDailyRewards.json",
     "tasks/events.json",
     "tasks/misc.json",
-    "options/TimeLimitedEventsModes.json",
+    "options/timeLimitedEventsModes.json",
     "options/global.json"
   ],
   "languages": {
