@@ -9,6 +9,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 AGENT_ENTRY = "agent/main.py"
+OCR_MODEL = "small"  # The medium model makes OCR take tens of seconds on phones.
 
 
 def read_json(path):
@@ -110,7 +111,7 @@ def prepare(root=ROOT, version="v0.0.0-dev", repository="DarkLingYun/MaaGF2Exili
             if relative not in copied:
                 shutil.copytree(root / "assets" / relative, output / relative, dirs_exist_ok=True)
                 copied.add(relative)
-    ocr = root / "assets" / "MaaCommonAssets" / "OCR" / "ppocr_v6" / "medium"
+    ocr = root / "assets" / "MaaCommonAssets" / "OCR" / "ppocr_v6" / OCR_MODEL
     for name in ("det.onnx", "rec.onnx", "keys.txt"):
         if not (ocr / name).is_file():
             raise FileNotFoundError(f"Missing OCR model {ocr / name}; initialize submodules recursively")
