@@ -4,6 +4,8 @@ include:
   - interface.json
   - interface_zh.json
   - interface_en.json
+  - tasks/**
+  - options/**
   - resource/**
   - agent/**
   - LICENSE

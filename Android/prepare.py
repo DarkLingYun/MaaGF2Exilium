@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-UNAVAILABLE_ENTRY = "CommunityDailyHelper"
+AGENT_ENTRY = "agent/main.py"
 
 
 def read_json(path):
@@ -27,11 +27,22 @@ def write_json(path, value):
     path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def agent_entry(argument):
+    """Normalize the agent path: desktop uses {PROJECT_DIR}/agent/main.py, MXU uses ./agent/main.py."""
+    if not isinstance(argument, str):
+        return None
+    return argument.replace("\\", "/").removeprefix("{PROJECT_DIR}/").removeprefix("./")
+
+
 def android_interface(interface, version, repository):
     # The Android profile launches this same entry point using its bundled Python.
+    # The profile supplies its own executable and args, so only the relative entry
+    # path matters here.
     agent = interface.get("agent")
+    arguments = agent.get("child_args") if isinstance(agent, dict) else None
     if (not isinstance(agent, dict) or not agent.get("child_exec")
-            or agent.get("child_args") != ["-u", "{PROJECT_DIR}/agent/main.py"]):
+            or not isinstance(arguments, list) or len(arguments) != 2
+            or arguments[0] != "-u" or agent_entry(arguments[1]) != AGENT_ENTRY):
         raise ValueError("Android profile requires a single Python agent at agent/main.py")
     interface.pop("mirrorchyan_rid", None)  # Desktop resource updates are not APK updates.
     interface["controller"] = [item for item in interface["controller"] if item["type"] == "Adb"]
@@ -49,25 +60,34 @@ def android_interface(interface, version, repository):
             path.replace("\\", "/").removeprefix("{PROJECT_DIR}/")
             for path in resource["path"]
         ]
-    interface["task"] = [item for item in interface["task"] if item["entry"] != UNAVAILABLE_ENTRY]
     interface["version"] = version
     interface["github"] = f"https://github.com/{repository}"
     interface["url"] = interface["github"]
     return interface
 
 
-def exclude_community_task(resource):
-    for path in resource.rglob("*.json"):
-        if "pipeline" not in path.parts:
+def copy_interface_imports(interface, source_root, target_root, seen=None):
+    """Copy PI `import` fragments into the staged interface, keeping relative paths.
+
+    MaaFwApp resolves imports against the PI root, so an APK built from a split
+    interface must contain the same task/option fragments as the desktop one.
+    """
+    seen = set() if seen is None else seen
+    for import_path in interface.get("import", []) or []:
+        relative = Path(import_path)
+        if relative.is_absolute() or ".." in relative.parts or not relative.parts:
+            raise ValueError(f"Invalid interface import path: {import_path}")
+        source = source_root / relative
+        if not source.is_file():
+            raise FileNotFoundError(f"interface.json imports missing file: {import_path}")
+        destination = target_root / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination)
+        resolved = source.resolve()
+        if resolved in seen:
             continue
-        nodes = read_json(path)
-        removed = nodes.pop(UNAVAILABLE_ENTRY, None)
-        if removed is not None:
-            if nodes:
-                write_json(path, nodes)
-            else:
-                path.unlink()
-                continue
+        seen.add(resolved)
+        copy_interface_imports(read_json(source), source.parent, destination.parent, seen)
 
 
 def prepare(root=ROOT, version="v0.0.0-dev", repository="DarkLingYun/MaaGF2Exilium"):
@@ -95,7 +115,6 @@ def prepare(root=ROOT, version="v0.0.0-dev", repository="DarkLingYun/MaaGF2Exili
         if not (ocr / name).is_file():
             raise FileNotFoundError(f"Missing OCR model {ocr / name}; initialize submodules recursively")
     shutil.copytree(ocr, output / "resource" / "base" / "model" / "ocr", dirs_exist_ok=True)
-    exclude_community_task(output / "resource")
     if not (root / "agent" / "main.py").is_file():
         raise FileNotFoundError("Missing Python agent entry point: agent/main.py")
     shutil.copytree(root / "agent", output / "agent", ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
@@ -111,8 +130,8 @@ def prepare(root=ROOT, version="v0.0.0-dev", repository="DarkLingYun/MaaGF2Exili
         write_json(output / filename, translations)
     shutil.copy2(root / "LICENSE", output / "LICENSE")
     write_json(output / "interface.json", interface)
+    copy_interface_imports(interface, root / "assets", output)
     print(f"Android resources staged at {output}")
-    print("Community daily operations excluded: CommunityDailyAction is not implemented in MaaGF2Exilium.")
     return output
 
 
