@@ -16,9 +16,9 @@
             "[JumpBack]StartGame_retryLogin",
             "StartGame_notLoginIn",
             "[JumpBack]StartGame_clickStart",
+            "[JumpBack]StartGame_restartGF2Game",
             "[JumpBack]StartGame_downloadResource",
             "[JumpBack]StartGame_unzipResources",
-            "[JumpBack]StartGame_restartGF2Game",
             "[JumpBack]openGF2GameApp"
         ]
     },

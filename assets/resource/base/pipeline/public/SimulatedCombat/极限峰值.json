@@ -2,7 +2,7 @@
     "开始极限峰值任务": {
         "max_hit": 1,
         "focus": {
-            "Node.Action.Starting": "开始极限峰值任务（仅进行0级战斗，请自行处理18级战斗）"
+            "Node.Action.Starting": "开始极限峰值任务（战斗难度见「极限峰值」设置）"
         },
         "next": [
             "[JumpBack]打开模拟作战页-极限峰值",
@@ -41,6 +41,7 @@
             "极限峰值"
         ],
         "action": "Click",
+        "post_wait_freezes": 800,
         "next": [
             "已进入极限峰值标签页-极限峰值",
             "未进入极限峰值标签页-极限峰值"
@@ -51,71 +52,30 @@
         "expected": [
             "激化阶群"
         ],
-        "action": "Click",
         "next": [
             "进入子群1-极限峰值"
         ]
     },
     "未进入极限峰值标签页-极限峰值": {
+        "doc": "本周没有极限峰值（标签页进不去）——直接收尾",
         "next": [
             "极限峰值任务完成"
         ]
     },
     "进入子群1-极限峰值": {
+        "doc": "子群1/2/3 三个入口共用后面那份正文：点进子群 → [JumpBack] 跑正文 → 正文链尾（返回标签页）没有 next，于是回到本节点、next 从头重扫。此时已经回到标签页，门控「敌方单位」不再命中，就自然落到「进入子群2」接力。post_wait_freezes 必须等切页动画停下，否则重扫时拿的还是子群详情页的残留画面、门控会再次命中。",
         "recognition": "OCR",
         "expected": [
             "子群1"
         ],
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": true
+        },
         "next": [
-            "已进入子群1-极限峰值",
-            "进入子群1-极限峰值"
-        ]
-    },
-    "已进入子群1-极限峰值": {
-        "recognition": "OCR",
-        "expected": [
-            "敌方单位"
-        ],
-        "next": [
-            "子群1已完成-极限峰值",
-            "子群1未完成-极限峰值"
-        ]
-    },
-    "子群1已完成-极限峰值": {
-        "recognition": "TemplateMatch",
-        "template": "其他/子群已完成.png",
-        "threshold": 0.95,
-        "next": [
-            "子群1后返回极限峰值标签页-极限峰值"
-        ]
-    },
-    "子群1后返回极限峰值标签页-极限峰值": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/返回上一页_gray_v2.png",
-            "公用按钮组件/返回上一页_black_v2.png"
-        ],
-        "action": "Click",
-        "green_mask": true,
-        "next": [
+            "[JumpBack]已进入子群-极限峰值",
             "进入子群2-极限峰值"
-        ]
-    },
-    "子群1未完成-极限峰值": {
-        "next": [
-            "开始作战-子群1-极限峰值"
-        ]
-    },
-    "开始作战-子群1-极限峰值": {
-        "recognition": "OCR",
-        "expected": [
-            "开始作战"
-        ],
-        "action": "Click",
-        "next": [
-            "[JumpBack]通用战斗任务开始",
-            "子群1后返回极限峰值标签页-极限峰值"
         ]
     },
     "进入子群2-极限峰值": {
@@ -124,55 +84,13 @@
             "子群2"
         ],
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": true
+        },
         "next": [
-            "已进入子群2-极限峰值",
-            "进入子群2-极限峰值"
-        ]
-    },
-    "已进入子群2-极限峰值": {
-        "recognition": "OCR",
-        "expected": [
-            "敌方单位"
-        ],
-        "next": [
-            "子群2已完成-极限峰值",
-            "子群2未完成-极限峰值"
-        ]
-    },
-    "子群2已完成-极限峰值": {
-        "recognition": "TemplateMatch",
-        "template": "其他/子群已完成.png",
-        "threshold": 0.95,
-        "next": [
-            "子群2后返回极限峰值标签页-极限峰值"
-        ]
-    },
-    "子群2后返回极限峰值标签页-极限峰值": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/返回上一页_gray_v2.png",
-            "公用按钮组件/返回上一页_black_v2.png"
-        ],
-        "action": "Click",
-        "green_mask": true,
-        "next": [
+            "[JumpBack]已进入子群-极限峰值",
             "进入子群3-极限峰值"
-        ]
-    },
-    "子群2未完成-极限峰值": {
-        "next": [
-            "开始作战-子群2-极限峰值"
-        ]
-    },
-    "开始作战-子群2-极限峰值": {
-        "recognition": "OCR",
-        "expected": [
-            "开始作战"
-        ],
-        "action": "Click",
-        "next": [
-            "[JumpBack]通用战斗任务开始",
-            "子群2后返回极限峰值标签页-极限峰值"
         ]
     },
     "进入子群3-极限峰值": {
@@ -181,47 +99,43 @@
             "子群3"
         ],
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 500,
+            "target": true
+        },
         "next": [
-            "已进入子群3-极限峰值",
-            "进入子群3-极限峰值"
+            "[JumpBack]已进入子群-极限峰值",
+            "极限峰值任务完成"
         ]
     },
-    "已进入子群3-极限峰值": {
+    "已进入子群-极限峰值": {
+        "doc": "正文的门控：只有真进了子群详情页（看得见「敌方单位」）才成立。它同时是 [JumpBack] 的安全阀——回到标签页后本节点不命中，父节点才会落到下一个子群。",
         "recognition": "OCR",
         "expected": [
             "敌方单位"
         ],
         "next": [
-            "子群3已完成-极限峰值",
-            "子群3未完成-极限峰值"
+            "子群已完成-极限峰值",
+            "子群未完成-极限峰值"
         ]
     },
-    "子群3已完成-极限峰值": {
+    "子群已完成-极限峰值": {
+        "doc": "本子群已领过奖（详情页有打勾）——只返回，不再多打一场",
         "recognition": "TemplateMatch",
         "template": "其他/子群已完成.png",
         "threshold": 0.95,
         "next": [
-            "子群3后返回极限峰值标签页-极限峰值"
+            "子群返回标签页-极限峰值"
         ]
     },
-    "子群3后返回极限峰值标签页-极限峰值": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/返回上一页_gray_v2.png",
-            "公用按钮组件/返回上一页_black_v2.png"
-        ],
-        "action": "Click",
-        "green_mask": true,
+    "子群未完成-极限峰值": {
+        "doc": "激化词条那一串由「极限峰值」选项决定要不要跑（见 interface.json）：20级=选满中间档、0级=整段跳过。它自带门控，全选过之后不命中，回跳回来直接落到开始作战。",
         "next": [
-            "极限峰值任务完成"
+            "[JumpBack]设置激化词条-极限峰值",
+            "开始作战-极限峰值"
         ]
     },
-    "子群3未完成-极限峰值": {
-        "next": [
-            "开始作战-子群3-极限峰值"
-        ]
-    },
-    "开始作战-子群3-极限峰值": {
+    "开始作战-极限峰值": {
         "recognition": "OCR",
         "expected": [
             "开始作战"
@@ -229,15 +143,28 @@
         "action": "Click",
         "next": [
             "[JumpBack]通用战斗任务开始",
-            "子群3后返回极限峰值标签页-极限峰值"
+            "子群返回标签页-极限峰值"
         ]
+    },
+    "子群返回标签页-极限峰值": {
+        "doc": "正文链尾：故意不写 next。跑完这里就回跳给对应的「进入子群N」，由它接着决定去下一个子群还是收尾。post_wait_freezes 等切页动画停下再回跳，否则父节点拿残留画面判定、门控再次命中 → 刚打完又进本。",
+        "recognition": "TemplateMatch",
+        "template": [
+            "公用按钮组件/返回上一页_gray_v2.png",
+            "公用按钮组件/返回上一页_black_v2.png"
+        ],
+        "action": "Click",
+        "green_mask": true,
+        "post_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.8
+        }
     },
     "极限峰值任务完成": {
         "next": [
             "clickBackButton"
         ]
     },
-    // 本节点内的 interrupt
     "发现新周期-极限峰值": {
         "recognition": "OCR",
         "expected": "新周期开启",
