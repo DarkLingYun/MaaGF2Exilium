@@ -15,38 +15,26 @@
     },
     "enterShop": {
         "recognition": "OCR",
-        "expected": "商城",
+        "expected": "^商城$",
+        "replace": [
+            "商城•",
+            "商城"
+        ],
+        "max_hit": 3,
         "action": "Click",
+        "focus": {
+            "Node.Action.Starting": "免费每日补给箱购买"
+        },
         "next": [
-            "inShop",
+            "clickQualitySelection",
             "enterShop"
         ]
     },
-    "inShop": {
+    "clickQualitySelection": {
         "recognition": "OCR",
-        "expected": [
-            "精品推荐",
-            "品质甄选"
-        ],
-        "next": [
-            "enterQualitySelection"
-        ]
-    },
-    "enterQualitySelection": {
-        "recognition": "OCR",
-        "expected": "品质甄选",
+        "expected": "^品质甄选$",
         "action": "Click",
-        "next": [
-            "inQualitySelection",
-            "enterQualitySelection"
-        ]
-    },
-    "inQualitySelection": {
-        "recognition": "OCR",
-        "expected": [
-            "臻品礼包",
-            "周期礼包"
-        ],
+        "post_wait_freezes": 200,
         "next": [
             "clickTimeLimitedGiftPackage"
         ]
@@ -54,8 +42,8 @@
     "clickTimeLimitedGiftPackage": {
         "recognition": "OCR",
         "expected": [
-            "限时礼包",
-            "臻品礼包"
+            "^限时礼包$",
+            "^臻品礼包$"
         ],
         "roi": [
             0,
@@ -64,10 +52,13 @@
             150
         ],
         "action": "Click",
-        "post_wait_freezes": 2000,
+        "post_wait_freezes": 1200,
         "next": [
             "TimeLimitedGiftPackagePageSwipe"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Succeeded": "已进入每周礼包页"
+        }
     },
     "TimeLimitedGiftPackagePageSwipe": {
         "doc": "从下向上滑动",
@@ -85,7 +76,7 @@
             1,
             1
         ],
-        "end_hold": 1000,
+        "post_wait_freezes": 1000,
         "next": [
             "clickWeekSupplyBox",
             "clickPermanentGiftPackage"
@@ -93,23 +84,23 @@
     },
     "clickWeekSupplyBox": {
         "doc": "点击每周补给箱",
-        "recognition": "OCR",
-        "expected": [
-            "周周乐补给箱",
-            "免费"
+        "recognition": "TemplateMatch",
+        "template": [
+            "每日免费礼包/每周补给箱.png"
         ],
+        "green_mask": true,
+        "threshold": 0.87,
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 200,
         "next": [
-            "confirmWeekSupplyBoxPurchase",
-            "clickWeekSupplyBox"
+            "confirmWeekSupplyBoxPurchase"
         ]
     },
     "confirmWeekSupplyBoxPurchase": {
         "recognition": "OCR",
-        "expected": "购买",
+        "expected": "^(购买|确认)$",
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 200,
         "next": [
             "closeWeekSupplyBoxPurchaseResultPage"
         ]
@@ -118,6 +109,7 @@
         "recognition": "OCR",
         "expected": "点击",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "closeWeekSupplyBoxPurchaseResultPage",
             "clickPermanentGiftPackage"
@@ -125,7 +117,7 @@
     },
     "clickPermanentGiftPackage": {
         "recognition": "OCR",
-        "expected": "周期礼包",
+        "expected": "^周期礼包$",
         "roi": [
             0,
             0,
@@ -133,7 +125,7 @@
             150
         ],
         "action": "Click",
-        "post_wait_freezes": 2000,
+        "post_delay": 1500,
         "next": [
             "clickDailySupplyBox",
             "exitGameStore"
@@ -145,27 +137,25 @@
     "clickDailySupplyBox": {
         "doc": "点击每日补给箱",
         "recognition": "OCR",
-        "expected": [
-            "每日补给箱",
-            "免费"
-        ],
+        "expected": "^每日补给箱$",
         "roi": [
             0,
             0,
             500,
             400
         ],
+        "threshold": 0.87,
         "action": "Click",
-        "post_wait_freezes": 500,
+        "post_wait_freezes": 200,
         "next": [
             "confirmSupplyBoxPurchase"
         ]
     },
     "confirmSupplyBoxPurchase": {
         "recognition": "OCR",
-        "expected": "购买",
+        "expected": "^(购买|确认)$",
         "action": "Click",
-        "post_wait_freezes": 1000,
+        "post_wait_freezes": 200,
         "next": [
             "closeSupplyBoxPurchaseResultPage"
         ]
@@ -174,7 +164,7 @@
         "recognition": "OCR",
         "expected": "点击",
         "action": "Click",
-        "post_wait_freezes": 800,
+        "post_delay": 1500,
         "next": [
             "closeSupplyBoxPurchaseResultPage",
             "checkDailyPaidGift",
@@ -190,6 +180,7 @@
             350,
             164
         ],
+        "post_delay": 1000,
         "next": [
             "closeDailyPaidGiftPage"
         ]

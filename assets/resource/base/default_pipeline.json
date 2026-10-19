@@ -1,6 +1,6 @@
 {
     "Default": {
-        "max_hit": 50
+        "post_wait_freezes": 500
     },
     "OCR": {
         "recognition": "OCR",
