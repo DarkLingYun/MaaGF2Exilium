@@ -109,6 +109,7 @@
         "美味烹调",
         "茶歇一刻",
         "饮品加成",
+        "茶歇一刻对话",
         "领取逸趣导算进度奖励"
       ],
       "default_check": true
@@ -947,6 +948,7 @@
     },
     "饮品加成": {
       "label": "$饮品加成",
+      "description": "$饮品加成说明",
       "cases": [
         {
           "name": "星标饮品",
@@ -954,6 +956,72 @@
           "pipeline_override": {
             "选择饮品-茶歇一刻": {
               "template": "活动层/茶歇一刻-星标.png"
+            }
+          }
+        },
+        {
+          "name": "今日特饮",
+          "label": "$今日特饮",
+          "pipeline_override": {
+            "TeaTime-ScrollToSpecial": {
+              "enabled": true
+            },
+            "TeaTime-SelectSpecialDrink": {
+              "enabled": true
+            },
+            "TeaTime-SpecialSelected": {
+              "enabled": true
+            },
+            "TeaTime-SpecialNotAvailable": {
+              "enabled": true
+            }
+          }
+        }
+      ]
+    },
+    "茶歇一刻对话": {
+      "label": "$茶歇一刻对话",
+      "description": "$茶歇一刻对话说明",
+      "cases": [
+        {
+          "name": "跳过对话",
+          "label": "$跳过对话",
+          "pipeline_override": {
+            "跳过动画-茶歇一刻": {
+              "enabled": true
+            },
+            "TeaTime-TurnOnAuto": {
+              "enabled": false
+            },
+            "TeaTime-WaitForTopics": {
+              "enabled": false
+            },
+            "TeaTime-PickUnreadTopic": {
+              "enabled": false
+            },
+            "TeaTime-PickAnyTopic": {
+              "enabled": false
+            }
+          }
+        },
+        {
+          "name": "选择未读话题",
+          "label": "$选择未读话题",
+          "pipeline_override": {
+            "跳过动画-茶歇一刻": {
+              "enabled": false
+            },
+            "TeaTime-TurnOnAuto": {
+              "enabled": true
+            },
+            "TeaTime-WaitForTopics": {
+              "enabled": true
+            },
+            "TeaTime-PickUnreadTopic": {
+              "enabled": true
+            },
+            "TeaTime-PickAnyTopic": {
+              "enabled": true
             }
           }
         }

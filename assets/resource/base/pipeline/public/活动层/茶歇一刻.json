@@ -100,6 +100,7 @@
         "post_wait_freezes": 1000,
         "next": [
             "今日已饮用-茶歇一刻",
+            "TeaTime-ScrollToSpecial",
             "选择饮品-茶歇一刻",
             "返回活动层-活动层通用"
         ]
@@ -121,6 +122,127 @@
             "制作饮品-茶歇一刻"
         ]
     },
+    "TeaTime-ScrollToSpecial": {
+        "doc": "Today's Special drink mode: the week's special sits in the 'Today's Special' section below the classic drinks, and the grid only scrolls by swiping inside it. Swipe once, wait for the grid to stop, then look for the special card.",
+        "enabled": false,
+        "max_hit": 1,
+        "action": "Swipe",
+        "begin": [
+            200,
+            550,
+            1,
+            1
+        ],
+        "end": [
+            200,
+            200,
+            1,
+            1
+        ],
+        "duration": 800,
+        "post_wait_freezes": {
+            "time": 800,
+            "target": [
+                35,
+                70,
+                345,
+                620
+            ]
+        },
+        "next": [
+            "TeaTime-SelectSpecialDrink",
+            "TeaTime-SpecialNotAvailable"
+        ]
+    },
+    "TeaTime-SelectSpecialDrink": {
+        "doc": "The week's special is the only card with a yellow background (a locked one is dark with a lock). count is high enough that the sliver showing before the swipe, star badges and tea colours don't match; the whole card is about 6000-8000 pixels.",
+        "enabled": false,
+        "max_hit": 3,
+        "recognition": "ColorMatch",
+        "roi": [
+            35,
+            70,
+            345,
+            620
+        ],
+        "lower": [
+            200,
+            165,
+            105
+        ],
+        "upper": [
+            250,
+            225,
+            185
+        ],
+        "count": 4000,
+        "connected": true,
+        "action": "Click",
+        "post_delay": 800,
+        "next": [
+            "TeaTime-SpecialSelected",
+            "TeaTime-SelectSpecialDrink",
+            "TeaTime-SpecialNotAvailable"
+        ]
+    },
+    "TeaTime-SpecialSelected": {
+        "doc": "Make sure the tap selected the special: a selected card gets an orange outline. Only the strip just left of the card is checked, because every special card has an orange band along its bottom. A tap while the grid still moves selects nothing, and Make would then brew the previously selected drink.",
+        "enabled": false,
+        "recognition": "ColorMatch",
+        "roi": "TeaTime-SelectSpecialDrink",
+        "roi_offset": [
+            -8,
+            0,
+            -96,
+            0
+        ],
+        "lower": [
+            190,
+            70,
+            0
+        ],
+        "upper": [
+            255,
+            140,
+            80
+        ],
+        "count": 60,
+        "next": [
+            "制作饮品-茶歇一刻"
+        ]
+    },
+    "TeaTime-SpecialNotAvailable": {
+        "doc": "No unlocked special (or it couldn't be selected): swipe the grid back up until a starred drink shows, then brew it as usual. One swipe may not reach the top, so it repeats up to 3 times.",
+        "enabled": false,
+        "max_hit": 3,
+        "action": "Swipe",
+        "begin": [
+            200,
+            150,
+            1,
+            1
+        ],
+        "end": [
+            200,
+            680,
+            1,
+            1
+        ],
+        "duration": 500,
+        "post_wait_freezes": {
+            "time": 800,
+            "target": [
+                35,
+                70,
+                345,
+                620
+            ]
+        },
+        "next": [
+            "选择饮品-茶歇一刻",
+            "TeaTime-SpecialNotAvailable"
+        ]
+    },
     "制作饮品-茶歇一刻": {
         "recognition": "OCR",
         "expected": "^制作$",
@@ -137,8 +259,14 @@
         "index": -1,
         "action": "Click",
         "post_wait_freezes": 1000,
+        "timeout": 60000,
         "next": [
             "确认结果-茶歇一刻",
+            "TeaTime-PickSpecialTopic",
+            "TeaTime-PickUnreadTopic",
+            "TeaTime-PickAnyTopic",
+            "TeaTime-TurnOnAuto",
+            "TeaTime-WaitForTopics",
             "跳过动画-茶歇一刻"
         ]
     },
@@ -171,6 +299,1053 @@
         "next": [
             "确认结果-茶歇一刻",
             "返回活动层-活动层通用"
+        ]
+    },
+    "TeaTime-TurnOnAuto": {
+        "doc": "Topic mode: the dialogue's Auto toggle is white while off (yellow while on) and Skip is always white. Both white = dialogue playing with Auto off, so tap Auto. Colour only, no text, so it works for every weekly host and should work on the CN client too: the counts are low enough for the icons alone (Auto icon ~54 yellow / ~150 white px, Skip icon ~160 white px on the EN client), and the ROIs are wide in case shorter CN labels shift the icons.",
+        "enabled": false,
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "ColorMatch",
+                "roi": [
+                    1140,
+                    20,
+                    130,
+                    40
+                ],
+                "count": 100,
+                "lower": [
+                    215,
+                    215,
+                    215
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ]
+            },
+            {
+                "recognition": "ColorMatch",
+                "roi": [
+                    1000,
+                    20,
+                    140,
+                    40
+                ],
+                "count": 100,
+                "lower": [
+                    215,
+                    215,
+                    215
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ]
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 800,
+        "next": [
+            "TeaTime-PickSpecialTopic",
+            "TeaTime-PickUnreadTopic",
+            "TeaTime-PickAnyTopic",
+            "TeaTime-WaitForTopics",
+            "TeaTime-TurnOnAuto"
+        ]
+    },
+    "TeaTime-WaitForTopics": {
+        "doc": "Topic mode: Auto is on (yellow) and Skip is showing, so the dialogue is still playing. Wait for the topic choices.",
+        "enabled": false,
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "ColorMatch",
+                "roi": [
+                    1140,
+                    20,
+                    130,
+                    40
+                ],
+                "count": 100,
+                "lower": [
+                    215,
+                    215,
+                    215
+                ],
+                "upper": [
+                    255,
+                    255,
+                    255
+                ]
+            },
+            {
+                "recognition": "ColorMatch",
+                "roi": [
+                    1000,
+                    20,
+                    140,
+                    40
+                ],
+                "lower": [
+                    170,
+                    120,
+                    60
+                ],
+                "upper": [
+                    230,
+                    185,
+                    130
+                ],
+                "count": 40
+            }
+        ],
+        "post_delay": 1000,
+        "next": [
+            "TeaTime-PickSpecialTopic",
+            "TeaTime-PickUnreadTopic",
+            "TeaTime-PickAnyTopic",
+            "TeaTime-TurnOnAuto",
+            "TeaTime-WaitForTopics"
+        ]
+    },
+    "TeaTime-PickSpecialTopic": {
+        "doc": "Topic mode: the 6th topic only appears after drinking the week's Today's Special, and its speech icon is orange instead of dark (seen in the bottom-right slot). Pick it first when it is unread, since it can't be read on other days. Read pills fade, which takes the icon out of this colour range.",
+        "enabled": false,
+        "pre_wait_freezes": {
+            "time": 500,
+            "target": [
+                50,
+                195,
+                410,
+                320
+            ]
+        },
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            160,
+                            215,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            108,
+                            210,
+                            42,
+                            40
+                        ],
+                        "lower": [
+                            150,
+                            70,
+                            20
+                        ],
+                        "upper": [
+                            235,
+                            150,
+                            110
+                        ],
+                        "count": 200,
+                        "connected": true
+                    }
+                ],
+                "box_index": 1
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            115,
+                            336,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            63,
+                            331,
+                            42,
+                            40
+                        ],
+                        "lower": [
+                            150,
+                            70,
+                            20
+                        ],
+                        "upper": [
+                            235,
+                            150,
+                            110
+                        ],
+                        "count": 200,
+                        "connected": true
+                    }
+                ],
+                "box_index": 1
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            168,
+                            460,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            116,
+                            455,
+                            42,
+                            40
+                        ],
+                        "lower": [
+                            150,
+                            70,
+                            20
+                        ],
+                        "upper": [
+                            235,
+                            150,
+                            110
+                        ],
+                        "count": 200,
+                        "connected": true
+                    }
+                ],
+                "box_index": 1
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            900,
+                            215,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            848,
+                            210,
+                            42,
+                            40
+                        ],
+                        "lower": [
+                            150,
+                            70,
+                            20
+                        ],
+                        "upper": [
+                            235,
+                            150,
+                            110
+                        ],
+                        "count": 200,
+                        "connected": true
+                    }
+                ],
+                "box_index": 1
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            948,
+                            336,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            896,
+                            331,
+                            42,
+                            40
+                        ],
+                        "lower": [
+                            150,
+                            70,
+                            20
+                        ],
+                        "upper": [
+                            235,
+                            150,
+                            110
+                        ],
+                        "count": 200,
+                        "connected": true
+                    }
+                ],
+                "box_index": 1
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            893,
+                            460,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            841,
+                            455,
+                            42,
+                            40
+                        ],
+                        "lower": [
+                            150,
+                            70,
+                            20
+                        ],
+                        "upper": [
+                            235,
+                            150,
+                            110
+                        ],
+                        "count": 200,
+                        "connected": true
+                    }
+                ],
+                "box_index": 1
+            }
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "TeaTime-WaitForEnd"
+        ]
+    },
+    "TeaTime-PickUnreadTopic": {
+        "doc": "Topic mode: one topic per day. Up to 6 topic pills sit in fixed slots (3 left, 3 mirrored right). Unread = white pill with a dark speech icon; read pills are faded with a green check. Tap the first unread one. Text is never used: it changes with the weekly host.",
+        "enabled": false,
+        "pre_wait_freezes": {
+            "time": 500,
+            "target": [
+                50,
+                195,
+                410,
+                320
+            ]
+        },
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            160,
+                            215,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            108,
+                            210,
+                            42,
+                            40
+                        ],
+                        "lower": [
+                            55,
+                            50,
+                            45
+                        ],
+                        "upper": [
+                            105,
+                            100,
+                            95
+                        ],
+                        "count": 200,
+                        "connected": true
+                    }
+                ],
+                "box_index": 1
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            115,
+                            336,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            63,
+                            331,
+                            42,
+                            40
+                        ],
+                        "lower": [
+                            55,
+                            50,
+                            45
+                        ],
+                        "upper": [
+                            105,
+                            100,
+                            95
+                        ],
+                        "count": 200,
+                        "connected": true
+                    }
+                ],
+                "box_index": 1
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            168,
+                            460,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            116,
+                            455,
+                            42,
+                            40
+                        ],
+                        "lower": [
+                            55,
+                            50,
+                            45
+                        ],
+                        "upper": [
+                            105,
+                            100,
+                            95
+                        ],
+                        "count": 200,
+                        "connected": true
+                    }
+                ],
+                "box_index": 1
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            900,
+                            215,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            848,
+                            210,
+                            42,
+                            40
+                        ],
+                        "lower": [
+                            55,
+                            50,
+                            45
+                        ],
+                        "upper": [
+                            105,
+                            100,
+                            95
+                        ],
+                        "count": 200,
+                        "connected": true
+                    }
+                ],
+                "box_index": 1
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            948,
+                            336,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            896,
+                            331,
+                            42,
+                            40
+                        ],
+                        "lower": [
+                            55,
+                            50,
+                            45
+                        ],
+                        "upper": [
+                            105,
+                            100,
+                            95
+                        ],
+                        "count": 200,
+                        "connected": true
+                    }
+                ],
+                "box_index": 1
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            893,
+                            460,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            841,
+                            455,
+                            42,
+                            40
+                        ],
+                        "lower": [
+                            55,
+                            50,
+                            45
+                        ],
+                        "upper": [
+                            105,
+                            100,
+                            95
+                        ],
+                        "count": 200,
+                        "connected": true
+                    }
+                ],
+                "box_index": 1
+            }
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "TeaTime-WaitForEnd"
+        ]
+    },
+    "TeaTime-PickAnyTopic": {
+        "doc": "Topic mode: every shown topic is already read (green check), so pick the first one anyway rather than lose the day.",
+        "enabled": false,
+        "pre_wait_freezes": {
+            "time": 500,
+            "target": [
+                50,
+                195,
+                410,
+                320
+            ]
+        },
+        "recognition": "Or",
+        "any_of": [
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            160,
+                            215,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            390,
+                            213,
+                            50,
+                            34
+                        ],
+                        "lower": [
+                            90,
+                            160,
+                            110
+                        ],
+                        "upper": [
+                            165,
+                            225,
+                            175
+                        ],
+                        "count": 150,
+                        "connected": true
+                    }
+                ],
+                "box_index": 0
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            115,
+                            336,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            345,
+                            334,
+                            50,
+                            34
+                        ],
+                        "lower": [
+                            90,
+                            160,
+                            110
+                        ],
+                        "upper": [
+                            165,
+                            225,
+                            175
+                        ],
+                        "count": 150,
+                        "connected": true
+                    }
+                ],
+                "box_index": 0
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            168,
+                            460,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            398,
+                            458,
+                            50,
+                            34
+                        ],
+                        "lower": [
+                            90,
+                            160,
+                            110
+                        ],
+                        "upper": [
+                            165,
+                            225,
+                            175
+                        ],
+                        "count": 150,
+                        "connected": true
+                    }
+                ],
+                "box_index": 0
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            900,
+                            215,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            1130,
+                            213,
+                            50,
+                            34
+                        ],
+                        "lower": [
+                            90,
+                            160,
+                            110
+                        ],
+                        "upper": [
+                            165,
+                            225,
+                            175
+                        ],
+                        "count": 150,
+                        "connected": true
+                    }
+                ],
+                "box_index": 0
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            948,
+                            336,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            1178,
+                            334,
+                            50,
+                            34
+                        ],
+                        "lower": [
+                            90,
+                            160,
+                            110
+                        ],
+                        "upper": [
+                            165,
+                            225,
+                            175
+                        ],
+                        "count": 150,
+                        "connected": true
+                    }
+                ],
+                "box_index": 0
+            },
+            {
+                "recognition": "And",
+                "all_of": [
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            893,
+                            460,
+                            240,
+                            30
+                        ],
+                        "lower": [
+                            200,
+                            200,
+                            200
+                        ],
+                        "upper": [
+                            255,
+                            255,
+                            255
+                        ],
+                        "count": 3000
+                    },
+                    {
+                        "recognition": "ColorMatch",
+                        "roi": [
+                            1123,
+                            458,
+                            50,
+                            34
+                        ],
+                        "lower": [
+                            90,
+                            160,
+                            110
+                        ],
+                        "upper": [
+                            165,
+                            225,
+                            175
+                        ],
+                        "count": 150,
+                        "connected": true
+                    }
+                ],
+                "box_index": 0
+            }
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "TeaTime-WaitForEnd"
+        ]
+    },
+    "TeaTime-WaitForEnd": {
+        "doc": "Topic mode: a topic was picked; let Auto play the rest of the conversation.",
+        "recognition": "ColorMatch",
+        "roi": [
+            1140,
+            20,
+            130,
+            40
+        ],
+        "count": 100,
+        "lower": [
+            215,
+            215,
+            215
+        ],
+        "upper": [
+            255,
+            255,
+            255
+        ],
+        "post_delay": 1000,
+        "next": [
+            "确认结果-茶歇一刻",
+            "TeaTime-WaitForEnd"
         ]
     }
 }
