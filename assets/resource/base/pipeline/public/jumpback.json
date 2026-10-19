@@ -8,7 +8,10 @@
             "点击屏幕任意位置继续"
         ],
         "action": "Click",
-        "post_wait_freezes": 800
+        "post_wait_freezes": {
+            "time": 500,
+            "target": true
+        }
     },
     "跳过动画-通用": {
         "recognition": "OCR",
