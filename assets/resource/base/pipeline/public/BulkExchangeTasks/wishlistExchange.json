@@ -1,0 +1,391 @@
+{
+    "心愿单兑换-入口": {
+        "doc": "心愿单一键购买模式入口：前往商城心愿单页，依次处理侧栏中带数字提示的商店",
+        "next": [
+            "心愿单兑换-已进入心愿单",
+            "[JumpBack]心愿单兑换-商城点击心愿单",
+            "[JumpBack]clickCloseWindowButton",
+            "[JumpBack]心愿单兑换-当前在首页",
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]clickBackButton",
+            "[JumpBack]returnToHomePage"
+        ]
+    },
+    "心愿单兑换-当前在首页": {
+        "recognition": "OCR",
+        "expected": "战役推进",
+        "next": [
+            "心愿单兑换-首页进入商城"
+        ]
+    },
+    "心愿单兑换-首页进入商城": {
+        "recognition": "OCR",
+        "expected": "^商城$",
+        "replace": [
+            [
+                "商城•",
+                "商城"
+            ]
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "心愿单兑换-商城点击心愿单",
+            "心愿单兑换-首页进入商城"
+        ]
+    },
+    "心愿单兑换-商城点击心愿单": {
+        "doc": "商城左下角心愿单按钮；进入后同一位置变为“前往商店”，只点一次避免来回切换",
+        "recognition": "OCR",
+        "expected": "^心愿单$",
+        "roi": [
+            60,
+            640,
+            180,
+            70
+        ],
+        "action": "Click",
+        "post_delay": 1500,
+        "post_wait_freezes": 1000
+    },
+    "心愿单兑换-已进入心愿单": {
+        "doc": "确认已到达心愿单页面",
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "^前往商店$",
+                "roi": [
+                    60,
+                    640,
+                    180,
+                    70
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "一键购买",
+                "roi": [
+                    920,
+                    630,
+                    320,
+                    70
+                ]
+            }
+        ],
+        "next": [
+            "心愿单兑换-侧栏回顶"
+        ]
+    },
+    "心愿单兑换-侧栏回顶": {
+        "doc": "侧栏先滑回顶部，保证从家具商店开始检查",
+        "action": "Swipe",
+        "begin": [
+            120,
+            200
+        ],
+        "end": [
+            120,
+            560
+        ],
+        "duration": 1000,
+        "post_delay": 1000,
+        "next": [
+            "心愿单兑换-遍历商店"
+        ]
+    },
+    "心愿单兑换-遍历商店": {
+        "doc": "按侧栏顺序检查各商店，有数字提示才购买，否则跳过；每个商店最多处理一次",
+        "next": [
+            "[JumpBack]心愿单兑换-家具商店",
+            "[JumpBack]心愿单兑换-班组商店",
+            "[JumpBack]心愿单兑换-调度商店",
+            "[JumpBack]心愿单兑换-讯段交易",
+            "[JumpBack]心愿单兑换-心智统合",
+            "[JumpBack]心愿单兑换-人形堆栈",
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]心愿单兑换-侧栏下滑",
+            "returnToHomePage"
+        ]
+    },
+    "心愿单兑换-家具商店": {
+        "doc": "侧栏中家具商店右侧有数字提示时点击进入",
+        "max_hit": 1,
+        "recognition": "And",
+        "all_of": [
+            {
+                "sub_name": "商店名",
+                "recognition": "OCR",
+                "expected": "^家具商店$",
+                "roi": [
+                    40,
+                    90,
+                    200,
+                    540
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "^\\d+$",
+                "roi": "商店名",
+                "roi_offset": [
+                    100,
+                    -6,
+                    -40,
+                    12
+                ]
+            }
+        ],
+        "box_index": 0,
+        "action": "Click",
+        "next": [
+            "心愿单兑换-一键购买"
+        ]
+    },
+    "心愿单兑换-班组商店": {
+        "max_hit": 1,
+        "recognition": "And",
+        "all_of": [
+            {
+                "sub_name": "商店名",
+                "recognition": "OCR",
+                "expected": "^班组商店$",
+                "roi": [
+                    40,
+                    90,
+                    200,
+                    540
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "^\\d+$",
+                "roi": "商店名",
+                "roi_offset": [
+                    100,
+                    -6,
+                    -40,
+                    12
+                ]
+            }
+        ],
+        "box_index": 0,
+        "action": "Click",
+        "next": [
+            "心愿单兑换-一键购买"
+        ]
+    },
+    "心愿单兑换-调度商店": {
+        "max_hit": 1,
+        "recognition": "And",
+        "all_of": [
+            {
+                "sub_name": "商店名",
+                "recognition": "OCR",
+                "expected": "^调度商店$",
+                "roi": [
+                    40,
+                    90,
+                    200,
+                    540
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "^\\d+$",
+                "roi": "商店名",
+                "roi_offset": [
+                    100,
+                    -6,
+                    -40,
+                    12
+                ]
+            }
+        ],
+        "box_index": 0,
+        "action": "Click",
+        "next": [
+            "心愿单兑换-一键购买"
+        ]
+    },
+    "心愿单兑换-讯段交易": {
+        "max_hit": 1,
+        "recognition": "And",
+        "all_of": [
+            {
+                "sub_name": "商店名",
+                "recognition": "OCR",
+                "expected": "^讯段交易$",
+                "roi": [
+                    40,
+                    90,
+                    200,
+                    540
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "^\\d+$",
+                "roi": "商店名",
+                "roi_offset": [
+                    100,
+                    -6,
+                    -40,
+                    12
+                ]
+            }
+        ],
+        "box_index": 0,
+        "action": "Click",
+        "next": [
+            "心愿单兑换-一键购买"
+        ]
+    },
+    "心愿单兑换-心智统合": {
+        "max_hit": 1,
+        "recognition": "And",
+        "all_of": [
+            {
+                "sub_name": "商店名",
+                "recognition": "OCR",
+                "expected": "^心智统合$",
+                "roi": [
+                    40,
+                    90,
+                    200,
+                    540
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "^\\d+$",
+                "roi": "商店名",
+                "roi_offset": [
+                    100,
+                    -6,
+                    -40,
+                    12
+                ]
+            }
+        ],
+        "box_index": 0,
+        "action": "Click",
+        "next": [
+            "心愿单兑换-一键购买"
+        ]
+    },
+    "心愿单兑换-人形堆栈": {
+        "max_hit": 1,
+        "recognition": "And",
+        "all_of": [
+            {
+                "sub_name": "商店名",
+                "recognition": "OCR",
+                "expected": "^人形堆栈$",
+                "roi": [
+                    40,
+                    90,
+                    200,
+                    540
+                ]
+            },
+            {
+                "recognition": "OCR",
+                "expected": "^\\d+$",
+                "roi": "商店名",
+                "roi_offset": [
+                    100,
+                    -6,
+                    -40,
+                    12
+                ]
+            }
+        ],
+        "box_index": 0,
+        "action": "Click",
+        "next": [
+            "心愿单兑换-一键购买"
+        ]
+    },
+    "心愿单兑换-侧栏下滑": {
+        "doc": "侧栏底部的商店需要下滑才能看到，只滑一次",
+        "max_hit": 1,
+        "recognition": "OCR",
+        "expected": "^前往商店$",
+        "roi": [
+            60,
+            640,
+            180,
+            70
+        ],
+        "action": "Swipe",
+        "begin": [
+            120,
+            540
+        ],
+        "end": [
+            120,
+            200
+        ],
+        "duration": 1000,
+        "post_delay": 1000
+    },
+    "心愿单兑换-一键购买": {
+        "doc": "点击一键购买，等待“购买内容”确认框弹出（约需5秒）；超时未弹出则视为无可购买商品",
+        "recognition": "OCR",
+        "expected": "一键购买",
+        "roi": [
+            920,
+            630,
+            320,
+            70
+        ],
+        "action": "Click",
+        "next": [
+            "心愿单兑换-确认购买"
+        ],
+        "post_delay": 1000,
+        "timeout": 10000,
+        "on_error": [
+            "心愿单兑换-购买完成"
+        ]
+    },
+    "心愿单兑换-确认购买": {
+        "doc": "“购买内容-确认购买以下商品”弹窗，点击弹窗内的购买按钮",
+        "recognition": "And",
+        "all_of": [
+            {
+                "recognition": "OCR",
+                "expected": "确认购买以下商品"
+            },
+            {
+                "recognition": "OCR",
+                "expected": "^购买$",
+                "roi": [
+                    640,
+                    520,
+                    560,
+                    120
+                ]
+            }
+        ],
+        "box_index": 1,
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "心愿单兑换-购买完成"
+        ]
+    },
+    "心愿单兑换-购买完成": {
+        "doc": "回到心愿单页面（侧栏商店名完整可见，说明没有弹窗遮挡），结束当前商店的处理并回到遍历节点",
+        "recognition": "OCR",
+        "expected": "^(家具商店|班组商店|调度商店|讯段交易|心智统合|人形堆栈)$",
+        "roi": [
+            40,
+            90,
+            200,
+            540
+        ]
+    }
+}

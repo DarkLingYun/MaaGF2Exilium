@@ -5,6 +5,7 @@
       "label": "$易物所商店兑换",
       "entry": "BulkExchange",
       "option": [
+        "易物所兑换方式",
         "班组商店兑换",
         "班组商店兑换项目",
         "调度商店兑换",
@@ -18,6 +19,29 @@
     }
   ],
   "option": {
+    "易物所兑换方式": {
+      "label": "$易物所兑换方式",
+      "description": "$易物所兑换方式说明",
+      "default_case": "逐个商店兑换",
+      "cases": [
+        {
+          "name": "逐个商店兑换",
+          "label": "$逐个商店兑换",
+          "pipeline_override": {}
+        },
+        {
+          "name": "心愿单一键购买",
+          "label": "$心愿单一键购买",
+          "pipeline_override": {
+            "BulkExchange": {
+              "next": [
+                "心愿单兑换-入口"
+              ]
+            }
+          }
+        }
+      ]
+    },
     "家具商店兑换项目": {
       "label": "$家具商店兑换项目",
       "cases": [
