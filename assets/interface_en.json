@@ -197,5 +197,9 @@
   "异维探渊": "Dimensional Abyss",
   "难度": "Difficulty",
   "通用战斗允许缺员开始": "Allow combat with empty slots",
-  "通用战斗缺员开始说明": "Applies to all shared combat modes. Off by default, preserving original cancellation and deployment. When enabled, confirms the recognized incomplete-party warning without filling remaining slots. An empty party still uses the original initial deployment; this option does not fix deployment-slot color recognition."
+  "通用战斗缺员开始说明": "Applies to all shared combat modes. Off by default, preserving original cancellation and deployment. When enabled, confirms the recognized incomplete-party warning without filling remaining slots. An empty party still uses the original initial deployment; this option does not fix deployment-slot color recognition.",
+  "易物所兑换方式": "Exchange Mode",
+  "易物所兑换方式说明": "Per shop: exchange shop by shop using the options below.\nWishlist one-click buy: open the Wishlist, and for every shop whose sidebar entry shows a number badge press One-click Buy; shops without a badge are skipped. The per-shop options below are ignored in this mode.",
+  "逐个商店兑换": "Per shop (Platoon/Dispatch/...)",
+  "心愿单一键购买": "Wishlist one-click buy"
 }
