@@ -14,5 +14,49 @@
             "[JumpBack]开始闪耀星愿任务",
             "returnToHomePage"
         ]
+    },
+    "打开活动页-活动通用": {
+        "doc": "由调用方控制max_hit，此处统一管理操作内容。前往活动页max_hit应为1，即只执行一次",
+        "next": [
+            "进入活动页面-活动通用",
+            "[JumpBack]returnToHomePage"
+        ]
+    },
+    "进入活动页面-活动通用": {
+        "recognition": "OCR",
+        "expected": [
+            "^活动$"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 1000
+    },
+    "滑动活动列表-活动通用": {
+        "doc": "由调用方直接以[JumpBack]引用。列表画面不再变化即停止；roi避开左/右边缘的呼吸动画",
+        "recognition": "Custom",
+        "custom_recognition": "scroll_end",
+        "custom_recognition_param": {
+            "roi": [
+                60,
+                160,
+                285,
+                460
+            ],
+            "max_scroll": 6,
+            "probe_on_same": true
+        },
+        "action": "Swipe",
+        "begin": [
+            111,
+            608,
+            167,
+            10
+        ],
+        "end": [
+            119,
+            187,
+            162,
+            13
+        ],
+        "end_hold": 1000
     }
 }

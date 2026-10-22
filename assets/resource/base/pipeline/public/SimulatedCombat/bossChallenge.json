@@ -7,21 +7,14 @@
         "next": [
             "[JumpBack]打开模拟作战页-首领挑战",
             "clickEnterBossFightPage",
-            "[JumpBack]滑动模拟作战列表-首领挑战",
+            "[JumpBack]滑动模拟作战列表-模拟作战通用",
             "未进行首领挑战任务"
         ]
     },
     "打开模拟作战页-首领挑战": {
         "max_hit": 1,
         "next": [
-            "已进入模拟作战页面-模拟作战通用",
             "打开模拟作战页-模拟作战通用"
-        ]
-    },
-    "滑动模拟作战列表-首领挑战": {
-        "max_hit": 2,
-        "next": [
-            "滑动模拟作战列表-模拟作战通用"
         ]
     },
     "clickEnterBossFightPage": {

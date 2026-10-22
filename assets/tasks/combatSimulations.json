@@ -1,0 +1,121 @@
+{
+  "task": [
+    {
+      "name": "模拟作战日常",
+      "label": "$模拟作战日常",
+      "entry": "CombatSimulations",
+      "option": [
+        "首领挑战自律",
+        "自动实兵演习",
+        "自动领取峰值推定奖励",
+        "极限峰值"
+      ],
+      "default_check": true,
+      "description": "$常规设置过多说明"
+    }
+  ],
+  "option": {
+    "极限峰值": {
+      "label": "$极限峰值",
+      "default_case": "20级",
+      "cases": [
+        {
+          "name": "20级",
+          "label": "$极限峰值-20级满奖励",
+          "pipeline_override": {
+            "开始极限峰值任务": {
+              "enabled": true
+            },
+            "设置激化词条-极限峰值": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "0级",
+          "label": "$极限峰值-0级战斗",
+          "pipeline_override": {
+            "开始极限峰值任务": {
+              "enabled": true
+            },
+            "设置激化词条-极限峰值": {
+              "enabled": false
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "label": "$极限峰值-关闭",
+          "pipeline_override": {
+            "开始极限峰值任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "自动领取峰值推定奖励": {
+      "label": "$自动领取峰值推定奖励",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始峰值推定任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始峰值推定任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "自动实兵演习": {
+      "label": "$自动实兵演习",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始实兵演习任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始实兵演习任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "首领挑战自律": {
+      "label": "$首领挑战自律",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始首领挑战任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始首领挑战任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    }
+  }
+}

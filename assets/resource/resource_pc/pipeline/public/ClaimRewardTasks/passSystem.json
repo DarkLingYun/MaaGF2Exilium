@@ -1,0 +1,40 @@
+{
+    "scrollStandardWeaponList": {
+        "custom_recognition_param": {
+            "roi": [
+                272,
+                246,
+                733,
+                205
+            ],
+            "max_scroll": 3
+        },
+        "begin": [
+            638,
+            420
+        ],
+        "end": [
+            638,
+            260
+        ]
+    },
+    "scrollVoyageWeaponList": {
+        "custom_recognition_param": {
+            "roi": [
+                272,
+                246,
+                733,
+                205
+            ],
+            "max_scroll": 3
+        },
+        "begin": [
+            638,
+            420
+        ],
+        "end": [
+            638,
+            260
+        ]
+    }
+}

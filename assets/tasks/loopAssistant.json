@@ -1,0 +1,10 @@
+{
+  "task": [
+    {
+      "name": "循环助手",
+      "label": "$循环助手",
+      "entry": "开始循环助手任务",
+      "default_check": true
+    }
+  ]
+}

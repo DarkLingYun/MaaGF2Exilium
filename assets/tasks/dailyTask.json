@@ -1,0 +1,37 @@
+{
+  "task": [
+    {
+      "name": "公共区日常",
+      "label": "$公共区日常",
+      "description": "$公共区日常说明",
+      "entry": "PublicAreaDailyTasks",
+      "option": [
+        "收取神秘箱（需自备硬币）"
+      ],
+      "default_check": true
+    }
+  ],
+  "option": {
+    "收取神秘箱（需自备硬币）": {
+      "label": "$收取神秘箱（需自备硬币）",
+      "cases": [
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "DispatchCenter-mysteryBox": {
+              "enabled": false
+            }
+          }
+        },
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "DispatchCenter-mysteryBox": {
+              "enabled": true
+            }
+          }
+        }
+      ]
+    }
+  }
+}
