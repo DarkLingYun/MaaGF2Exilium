@@ -1,84 +1,98 @@
 {
-    "enterSchedulingGainsAction": {
+    "DispatchCenter-enterDispatchIncome": {
         "doc": "进入调度收益",
-        "recognition": "OCR",
-        "expected": "调度收益",
-        "roi": [
-            718,
-            612,
-            257,
-            62
-        ],
-        "action": "Click",
-        "post_wait_freezes": {
-            "time": 500,
-            "target": [
-                0,
-                500,
-                1280,
-                220
-            ]
-        },
-        "focus": {
-            "Node.Action.Starting": "<span style=\"color: red;\">请使用官方循环助手领取情报储备</span>"
-        },
+        "max_hit": 1,
         "next": [
-            "enterResourceProductionPage"
+            "DispatchCenter-inDispatchIncome",
+            "[JumpBack]DispatchCenter-enterDispatchIncomePage"
         ]
     },
-    "enterResourceProductionPage": {
+    "DispatchCenter-enterDispatchIncomePage": {
+        "doc": "进入调度收益页面",
+        "recognition": "OCR",
+        "expected": "调度收益",
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 800,
+            "target": [
+                0,
+                0,
+                230,
+                75
+            ]
+        }
+    },
+    "DispatchCenter-inDispatchIncome": {
+        "doc": "已进入调度收益页面",
+        "recognition": "OCR",
+        "expected": [
+            "情报储备",
+            "资源转化"
+        ],
+        "post_wait_freezes": {
+            "time": 800,
+            "target": [
+                0,
+                0,
+                230,
+                75
+            ]
+        }
+    },
+    "DispatchCenter-IntelligenceStorage": {
+        "doc": "领取情报储备任务",
+        "max_hit": 1,
+        "next": [
+            "DispatchCenter-enterIntelligenceStoragePage"
+        ]
+    },
+    "DispatchCenter-enterIntelligenceStoragePage": {
+        "doc": "进入情报储备页面",
+        "recognition": "OCR",
+        "expected": "情报储备",
+        "action": "Click",
+        "next": [
+            "DispatchCenter-withdrawIntelligenceStorage",
+            "DispatchCenter-enterIntelligenceStoragePage"
+        ]
+    },
+    "DispatchCenter-withdrawIntelligenceStorage": {
+        "doc": "领取情报储备",
+        "recognition": "OCR",
+        "expected": "取出",
+        "action": "Click",
+        "post_wait_freezes": 1200,
+        "next": [
+            "DispatchCenter-inDispatchIncome",
+            "[JumpBack]点击空白处关闭-通用"
+        ]
+    },
+    "DispatchCenter-ResourceProduction": {
+        "doc": "领取资源生产任务",
+        "max_hit": 1,
+        "next": [
+            "DispatchCenter-enterResourceProductionPage"
+        ]
+    },
+    "DispatchCenter-enterResourceProductionPage": {
         "doc": "进入资源生产页",
         "recognition": "OCR",
         "expected": "资源生产",
         "action": "Click",
-        "post_wait_freezes": {
-            "time": 500,
-            "target": [
-                0,
-                500,
-                1280,
-                220
-            ]
-        },
         "next": [
-            "clickResourceProductionCollectionButton"
+            "DispatchCenter-collectResourceProduction",
+            "DispatchCenter-enterResourceProductionPage"
         ]
     },
-    "clickResourceProductionCollectionButton": {
+    "DispatchCenter-collectResourceProduction": {
         "doc": "点击资源生产收取按钮",
         "recognition": "OCR",
         "expected": "^收取$",
         "action": "Click",
-        "post_wait_freezes": {
-            "time": 500,
-            "target": [
-                0,
-                500,
-                1280,
-                220
-            ]
-        },
+        "post_wait_freezes": 1200,
         "next": [
-            "调度收益任务结束",
+            "DispatchCenter-inDispatchIncome",
             "[JumpBack]点击空白处关闭-通用"
-        ]
-    },
-    "调度收益任务结束": {
-        "recognition": "OCR",
-        "expected": "资源生产",
-        "post_wait_freezes": {
-            "time": 500,
-            "target": [
-                0,
-                500,
-                1280,
-                220
-            ]
-        },
-        "next": [
-            "开始神秘箱任务",
-            "[JumpBack]点击空白处关闭-通用",
-            "returnToHomePage"
         ]
     }
 }

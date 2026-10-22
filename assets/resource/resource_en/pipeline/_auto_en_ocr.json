@@ -311,16 +311,16 @@
             "Pose"
         ]
     },
-    "enterSchedulingGainsAction": {
-        "expected": "Dispatch Income",
-        "focus": {
-            "Node.Action.Starting": "<span style=\"color: red;\">Use the official Loop Assistant to claim Intel Reserves</span>"
-        }
+    "DispatchCenter-enterIntelligenceStoragePage": {
+        "expected": "Intelligence"
     },
-    "clickResourceProductionCollectionButton": {
+    "DispatchCenter-withdrawIntelligenceStorage": {
+        "expected": "Withdraw"
+    },
+    "DispatchCenter-collectResourceProduction": {
         "expected": "^Collect$"
     },
-    "进入神秘箱页面": {
+    "DispatchCenter-enterMysteryBoxPage": {
         "expected": [
             "Mystery Box"
         ]

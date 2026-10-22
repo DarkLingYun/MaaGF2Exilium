@@ -6,9 +6,6 @@
       "description": "$公共区日常说明",
       "entry": "PublicAreaDailyTasks",
       "option": [
-        "访问休息室",
-        "调度室派遣任务",
-        "调度收益领取",
         "收取神秘箱（需自备硬币）"
       ],
       "default_check": true
@@ -21,7 +18,7 @@
         {
           "name": "NO",
           "pipeline_override": {
-            "开始神秘箱任务": {
+            "DispatchCenter-mysteryBox": {
               "enabled": false
             }
           }
@@ -29,71 +26,8 @@
         {
           "name": "YES",
           "pipeline_override": {
-            "开始神秘箱任务": {
+            "DispatchCenter-mysteryBox": {
               "enabled": true
-            }
-          }
-        }
-      ]
-    },
-    "调度收益领取": {
-      "label": "$调度收益领取",
-      "cases": [
-        {
-          "name": "YES",
-          "pipeline_override": {
-            "enterSchedulingGainsAction": {
-              "enabled": true
-            }
-          }
-        },
-        {
-          "name": "NO",
-          "pipeline_override": {
-            "enterSchedulingGainsAction": {
-              "enabled": false
-            }
-          }
-        }
-      ]
-    },
-    "调度室派遣任务": {
-      "label": "$调度室派遣任务",
-      "cases": [
-        {
-          "name": "YES",
-          "pipeline_override": {
-            "enterDispatchCenterAction": {
-              "enabled": true
-            }
-          }
-        },
-        {
-          "name": "NO",
-          "pipeline_override": {
-            "enterDispatchCenterAction": {
-              "enabled": false
-            }
-          }
-        }
-      ]
-    },
-    "访问休息室": {
-      "label": "$访问休息室",
-      "cases": [
-        {
-          "name": "YES",
-          "pipeline_override": {
-            "enterLoungeAction": {
-              "enabled": true
-            }
-          }
-        },
-        {
-          "name": "NO",
-          "pipeline_override": {
-            "enterLoungeAction": {
-              "enabled": false
             }
           }
         }

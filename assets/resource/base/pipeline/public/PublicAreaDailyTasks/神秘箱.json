@@ -1,26 +1,36 @@
 {
-    "开始神秘箱任务": {
+    "DispatchCenter-mysteryBox": {
+        "doc": "神秘箱任务",
+        "max_hit": 1,
         "next": [
-            "进入神秘箱页面",
-            "[JumpBack]点击空白处关闭-通用"
+            "DispatchCenter-enterMysteryBoxPage"
         ]
     },
-    "进入神秘箱页面": {
+    "DispatchCenter-enterMysteryBoxPage": {
         "recognition": "OCR",
-        "expected": [
-            "神秘箱"
-        ],
+        "expected": "神秘箱",
         "action": "Click",
         "post_wait_freezes": {
-            "time": 500,
+            "time": 800,
             "target": [
                 0,
-                500,
-                1280,
-                220
+                0,
+                230,
+                75
             ]
         },
-        "timeout": 60000,
+        "next": [
+            "DispatchCenter-inMysteryBox",
+            "DispatchCenter-enterMysteryBoxPage"
+        ]
+    },
+    "DispatchCenter-inMysteryBox": {
+        "recognition": "OCR",
+        "expected": [
+            "收取详情",
+            "收取一次",
+            "收取十次"
+        ],
         "next": [
             "无剩余次数-神秘箱",
             "有个位数剩余次数-神秘箱",
@@ -138,7 +148,7 @@
             ]
         },
         "next": [
-            "进入神秘箱页面",
+            "DispatchCenter-inMysteryBox",
             "[JumpBack]点击空白处关闭-通用",
             "[JumpBack]跳过动画-通用"
         ]
@@ -157,7 +167,7 @@
             ]
         },
         "next": [
-            "进入神秘箱页面",
+            "DispatchCenter-inMysteryBox",
             "[JumpBack]点击空白处关闭-通用",
             "[JumpBack]跳过动画-通用"
         ]

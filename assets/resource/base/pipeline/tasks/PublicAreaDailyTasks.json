@@ -1,9 +1,15 @@
 {
     "PublicAreaDailyTasks": {
-        "doc": "公共区日常",
+        "doc": "公共区日常，注意进入页面的顺序来设置任务",
         "next": [
             "[JumpBack]enterLoungeAction",
-            "[JumpBack]enterDispatchCenterAction",
+            "[JumpBack]DispatchCenter-enterDispatchCenter",
+            "[JumpBack]DispatchCenter-dailyDispatch",
+            "[JumpBack]DispatchCenter-dispatchCountReward",
+            "[JumpBack]DispatchCenter-enterDispatchIncome",
+            "[JumpBack]DispatchCenter-IntelligenceStorage",
+            "[JumpBack]DispatchCenter-ResourceProduction",
+            "[JumpBack]DispatchCenter-mysteryBox",
             "returnToHomePage"
         ]
     }

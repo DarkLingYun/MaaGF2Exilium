@@ -36,6 +36,7 @@
             "姿态",
             "休息室"
         ],
+        "post_delay": 800,
         "next": [
             "[JumpBack]loungeBackPage",
             "[JumpBack]loungeBackPageNotFound",
