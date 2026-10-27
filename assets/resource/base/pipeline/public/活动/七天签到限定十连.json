@@ -33,6 +33,7 @@
             "活动/七天签到活动/七天签到活动_dark.png"
         ],
         "green_mask": true,
+        "post_wait_freezes": 1200,
         "next": [
             "今日已领-七天签到限定十连",
             "领取奖励-七天签到限定十连",
