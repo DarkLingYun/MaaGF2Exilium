@@ -101,6 +101,7 @@
         "next": [
             "今日已饮用-茶歇一刻",
             "选择饮品-茶歇一刻",
+            "滑动饮品列表-茶歇一刻",
             "返回活动层-活动层通用"
         ]
     },
@@ -112,13 +113,62 @@
         ]
     },
     "选择饮品-茶歇一刻": {
+        "doc": "roi只覆盖左侧饮品卡牌区，避开右侧动态背景和底部居中的收藏星标按钮",
         "recognition": "TemplateMatch",
         "template": "活动层/茶歇一刻-星标.png",
+        "roi": [
+            30,
+            75,
+            370,
+            545
+        ],
         "action": "Click",
         "order_by": "Score",
         "post_wait_freezes": 1000,
         "next": [
             "制作饮品-茶歇一刻"
+        ]
+    },
+    "滑动饮品列表-茶歇一刻": {
+        "doc": "星标不在当前屏时下滑查找；roi避开右侧动态背景，画面不再变化即到底",
+        "recognition": "Custom",
+        "custom_recognition": "scroll_end",
+        "custom_recognition_param": {
+            "roi": [
+                30,
+                100,
+                280,
+                460
+            ],
+            "max_scroll": 15,
+            "probe_on_same": true
+        },
+        "action": "Swipe",
+        "begin": [
+            175,
+            550
+        ],
+        "end": [
+            175,
+            260
+        ],
+        "duration": 600,
+        "end_hold": 400,
+        "post_wait_freezes": {
+            "time": 300,
+            "target": [
+                30,
+                100,
+                280,
+                460
+            ],
+            "timeout": 3000
+        },
+        "max_hit": 24,
+        "next": [
+            "选择饮品-茶歇一刻",
+            "滑动饮品列表-茶歇一刻",
+            "返回活动层-活动层通用"
         ]
     },
     "制作饮品-茶歇一刻": {

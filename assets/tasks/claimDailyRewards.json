@@ -1,0 +1,401 @@
+{
+  "task": [
+    {
+      "name": "领取奖励",
+      "label": "$领取奖励",
+      "entry": "ClaimRewardTasks",
+      "option": [
+        "每日订单",
+        "远航巡录",
+        "助战",
+        "动态招募祝福",
+        "标准武器自选礼箱",
+        "远行守护自选礼箱"
+      ],
+      "default_check": true,
+      "description": "$常规设置过多说明"
+    }
+  ],
+  "option": {
+    "远行守护自选礼箱": {
+      "label": "$远行守护自选礼箱",
+      "description": "$远行守护自选礼箱说明",
+      "default_case": "不领取（手动处理）",
+      "cases": [
+        {
+          "name": "不领取（手动处理）",
+          "label": "$不领取（手动处理）",
+          "pipeline_override": {
+            "scrollVoyageWeaponList": {
+              "enabled": false
+            }
+          }
+        },
+        {
+          "name": "阿尔克纳",
+          "label": "$阿尔克纳",
+          "pipeline_override": {
+            "selectVoyageWeapon": {
+              "expected": [
+                "^阿尔克纳$",
+                "^Arcana$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "绝密手稿",
+          "label": "$绝密手稿",
+          "pipeline_override": {
+            "selectVoyageWeapon": {
+              "expected": [
+                "^绝密手稿$",
+                "^Classified"
+              ]
+            }
+          }
+        },
+        {
+          "name": "盖尔诺",
+          "label": "$盖尔诺",
+          "pipeline_override": {
+            "selectVoyageWeapon": {
+              "expected": [
+                "^盖尔诺$",
+                "^Guerno$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "王冠鹿角兔",
+          "label": "$王冠鹿角兔",
+          "pipeline_override": {
+            "selectVoyageWeapon": {
+              "expected": [
+                "^王冠鹿[角鱼]兔$",
+                "^Crowned"
+              ]
+            }
+          }
+        },
+        {
+          "name": "妙尔尼尔",
+          "label": "$妙尔尼尔",
+          "pipeline_override": {
+            "selectVoyageWeapon": {
+              "expected": [
+                "^妙尔尼尔$",
+                "^Mj[öo]lnir$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "远行游鸽",
+          "label": "$远行游鸽",
+          "pipeline_override": {
+            "selectVoyageWeapon": {
+              "expected": [
+                "^远行游鸽$",
+                "^Expeditionary"
+              ]
+            }
+          }
+        },
+        {
+          "name": "喧闹恶灵",
+          "label": "$喧闹恶灵",
+          "pipeline_override": {
+            "selectVoyageWeapon": {
+              "expected": [
+                "^喧闹恶[灵鬼]$",
+                "^Papa[-－—]Figo$"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "标准武器自选礼箱": {
+      "label": "$标准武器自选礼箱",
+      "description": "$标准武器自选礼箱说明",
+      "default_case": "不领取（手动处理）",
+      "cases": [
+        {
+          "name": "不领取（手动处理）",
+          "label": "$不领取（手动处理）",
+          "pipeline_override": {
+            "scrollStandardWeaponList": {
+              "enabled": false
+            }
+          }
+        },
+        {
+          "name": "野兔",
+          "label": "$野兔",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^野兔$",
+                "^Hare$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "复仇女神",
+          "label": "$复仇女神",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^复仇女神$",
+                "^\\.50\\s*Nemesis$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "格洛利娅",
+          "label": "$格洛利娅",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^格洛利[娅亚]$",
+                "^OTs[-－—]14$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "金牛座曲线",
+          "label": "$金牛座曲线",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^金牛座曲线$",
+                "^\\.380\\s*Curva$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "罗宾逊先进步枪",
+          "label": "$罗宾逊先进步枪",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^罗宾逊先进步枪$",
+                "^Robinson"
+              ]
+            }
+          }
+        },
+        {
+          "name": "黑科赫7",
+          "label": "$黑科赫7",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^黑科赫7$",
+                "^MP7H1$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "莫洛12",
+          "label": "$莫洛12",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^莫洛12$",
+                "^Vepr[-－—]12$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "佩切涅",
+          "label": "$佩切涅",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^佩切涅$",
+                "^Pecheneg[-－—]SP$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "卡拉什-阿尔法",
+          "label": "$卡拉什-阿尔法",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^卡拉什[-－—]阿尔法$",
+                "^Model\\s*Alpha$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "一九一式",
+          "label": "$一九一式",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^一九一式$",
+                "^QBZ[-－—]191$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "特殊用途自动型霰弹枪",
+          "label": "$特殊用途自动型霰弹枪",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^特殊用途自动型.*$",
+                "^Sportivo$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "纳甘左轮",
+          "label": "$纳甘左轮",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^纳甘左轮$",
+                "^Nagant\\s*M1895$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "莫辛-纳甘",
+          "label": "$莫辛-纳甘",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^莫辛[-－—]?纳甘$",
+                "^Three[-－—]Line\\s*Rifle$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "斯捷奇金",
+          "label": "$斯捷奇金",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^斯捷奇金$",
+                "^Stechkin$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "加利尔轻机枪",
+          "label": "$加利尔轻机枪",
+          "pipeline_override": {
+            "selectStandardWeapon": {
+              "expected": [
+                "^加利尔轻机枪$",
+                "^Model\\s*ARM$"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "动态招募祝福": {
+      "label": "$动态招募祝福",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始动态招募祝福任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始动态招募祝福任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "助战": {
+      "label": "$助战",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始助战奖励领取": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始助战奖励领取": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "远航巡录": {
+      "label": "$远航巡录",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始巡录任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始巡录任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "每日订单": {
+      "label": "$每日订单",
+      "cases": [
+        {
+          "name": "YES",
+          "pipeline_override": {
+            "开始委托领取任务": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "NO",
+          "pipeline_override": {
+            "开始委托领取任务": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    }
+  }
+}

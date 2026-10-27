@@ -1,0 +1,10 @@
+{
+  "task": [
+    {
+      "name": "社区每日操作",
+      "label": "$社区每日操作",
+      "entry": "CommunityDailyHelper",
+      "default_check": false
+    }
+  ]
+}

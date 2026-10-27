@@ -441,6 +441,7 @@ enc_temp_folder/*
 
 # Build
 deps
+MXU
 build
 install
 MFA

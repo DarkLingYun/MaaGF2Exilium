@@ -1,20 +1,17 @@
 {
-    "enterDispatchCenterAction": {
+    "DispatchCenter-enterDispatchCenter": {
+        "doc": "进入调度室",
         "max_hit": 1,
-        "focus": {
-            "Node.Action.Starting": "开始派遣任务"
-        },
         "next": [
-            "进入委托页面-调度室"
+            "DispatchCenter-inDispatchCenter",
+            "[JumpBack]DispatchCenter-enterCommissionPage",
+            "[JumpBack]returnToHomePage"
         ]
     },
-    "进入委托页面-调度室": {
+    "DispatchCenter-enterCommissionPage": {
+        "doc": "调度室-进入委托页面",
         "recognition": "OCR",
         "expected": "^委托$",
-        "replace": [
-            "委托、",
-            "委托"
-        ],
         "roi": [
             370,
             582,
@@ -22,13 +19,25 @@
             137
         ],
         "action": "Click",
-        "post_delay": 1000,
+        "post_delay": 800,
         "next": [
-            "前往调度室",
-            "进入委托页面-调度室"
+            "DispatchCenter-confirmEntrustedClaimPage",
+            "DispatchCenter-enterCommissionPage"
         ]
     },
-    "前往调度室": {
+    "DispatchCenter-confirmEntrustedClaimPage": {
+        "recognition": "OCR",
+        "expected": [
+            "每日订单",
+            "周期订单",
+            "危途见证",
+            "征程丰碑"
+        ],
+        "next": [
+            "DispatchCenter-Proceed"
+        ]
+    },
+    "DispatchCenter-Proceed": {
         "doc": "点击前往调度室，需选择左边的按钮，否则会点到右边任务的前往",
         "recognition": "OCR",
         "expected": "前往",
@@ -39,53 +48,36 @@
             327,
             335
         ],
-        "post_wait_freezes": {
-            // 调度室背景在动，只识别部分区域
-            "time": 1000,
-            "target": true
-        },
         "order_by": "Horizontal",
         "next": [
-            "前往调度室",
-            "dispatchCenterEntered"
+            "DispatchCenter-Proceed",
+            "DispatchCenter-inDispatchCenter"
         ]
     },
-    "dispatchCenterEntered": {
+    "DispatchCenter-inDispatchCenter": {
         "doc": "已进入调度室",
         "recognition": "OCR",
         "expected": "^调度考核$",
         "post_wait_freezes": {
-            "time": 1000,
+            "time": 800,
             "target": [
                 0,
-                500,
-                1280,
-                220
-            ]
-        },
-        "post_delay": 1000, // 有少量用户在这里老不行，我没招了
-        "next": [
-            "rewardGet",
-            "noRewardGet"
-        ]
-    },
-    "noRewardGet": {
-        "doc": "没有可领取的奖励",
-        "post_wait_freezes": {
-            "time": 1000,
-            "target": [
                 0,
-                500,
-                1280,
-                220
+                230,
+                75
             ]
-        },
+        }
+    },
+    "DispatchCenter-dailyDispatch": {
+        "doc": "处理每日派遣",
+        "max_hit": 1,
         "next": [
-            "dispatchProgressing",
-            "sendDispatchNotification"
+            "DispatchCenter-dispatchFinishReward",
+            "DispatchCenter-dispatchProgressing",
+            "DispatchCenter-sendDispatchNotification"
         ]
     },
-    "dispatchProgressing": {
+    "DispatchCenter-dispatchProgressing": {
         "doc": "派遣进行中",
         "recognition": "OCR",
         "expected": [
@@ -96,45 +88,17 @@
             532,
             171,
             43
-        ],
-        "post_wait_freezes": {
-            "time": 1000,
-            "target": [
-                0,
-                500,
-                1280,
-                220
-            ]
-        },
-        "next": [
-            "claimDispatchCenterDispatchCountReward",
-            "enterSchedulingGainsAction",
-            "returnToHomePage"
         ]
     },
-    "sendDispatchNotification": {
+    "DispatchCenter-sendDispatchNotification": {
         "doc": "发送手动处理派遣的通知",
-        "next": [
-            "claimDispatchCenterDispatchCountReward",
-            "enterSchedulingGainsAction",
-            "returnToHomePage"
-        ],
-        "post_wait_freezes": {
-            "time": 1000,
-            "target": [
-                0,
-                500,
-                1280,
-                220
-            ]
-        },
         "focus": {
             "Node.Action.Starting": "<span style=\"color: red;\">公共区调度室未完全派遣，请手动处理</span>",
             "toast": "公共区调度室未完全派遣，请手动处理"
         }
     },
-    "rewardGet": {
-        "doc": "领取调度室奖励",
+    "DispatchCenter-dispatchFinishReward": {
+        "doc": "领取派遣完成奖励",
         "recognition": "OCR",
         "expected": [
             "领取",
@@ -142,21 +106,13 @@
             "键领取"
         ],
         "action": "Click",
-        "post_wait_freezes": {
-            "time": 1000,
-            "target": [
-                0,
-                500,
-                1280,
-                220
-            ]
-        },
+        "post_delay": 500,
         "next": [
-            "dispatchCenterSendAgain",
-            "rewardGet"
+            "DispatchCenter-dispatchAgain",
+            "DispatchCenter-dispatchFinishReward"
         ]
     },
-    "dispatchCenterSendAgain": {
+    "DispatchCenter-dispatchAgain": {
         "recognition": "OCR",
         "expected": "再次派遣",
         "action": "Click",
@@ -164,19 +120,25 @@
             "time": 1000,
             "target": [
                 0,
-                500,
-                1280,
-                220
+                0,
+                230,
+                75
             ]
         },
         "next": [
-            "dispatchCenterSendAgain",
-            "claimDispatchCenterDispatchCountReward",
-            "enterSchedulingGainsAction",
-            "returnToHomePage"
+            "DispatchCenter-dispatchAgain",
+            "DispatchCenter-inDispatchCenter"
         ]
     },
-    "claimDispatchCenterDispatchCountReward": {
+    "DispatchCenter-dispatchCountReward": {
+        "doc": "领取调度室派遣次数奖励",
+        "max_hit": 1,
+        "next": [
+            "DispatchCenter-claimDispatchCountReward",
+            "DispatchCenter-inDispatchCenter"
+        ]
+    },
+    "DispatchCenter-claimDispatchCountReward": {
         "recognition": "TemplateMatch",
         "template": "公用按钮组件/提醒.png",
         "roi": [
@@ -199,32 +161,14 @@
             "time": 1000,
             "target": [
                 0,
-                500,
-                1280,
-                220
-            ]
-        },
-        "next": [
-            "closeDispatchCenterDispatchCountRewardClaimResultPage"
-        ]
-    },
-    "closeDispatchCenterDispatchCountRewardClaimResultPage": {
-        "recognition": "OCR",
-        "expected": "空白",
-        "action": "Click",
-        "post_wait_freezes": {
-            "time": 1000,
-            "target": [
                 0,
-                500,
-                1280,
-                220
+                230,
+                75
             ]
         },
         "next": [
-            "closeDispatchCenterDispatchCountRewardClaimResultPage",
-            "enterSchedulingGainsAction",
-            "returnToHomePage"
+            "[JumpBack]点击空白处关闭-通用",
+            "DispatchCenter-inDispatchCenter"
         ]
     }
 }

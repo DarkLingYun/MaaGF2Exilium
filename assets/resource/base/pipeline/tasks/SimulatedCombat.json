@@ -7,5 +7,67 @@
             "[JumpBack]开始极限峰值任务",
             "returnToHomePage"
         ]
+    },
+    "打开模拟作战页-模拟作战通用": {
+        "next": [
+            "已进入模拟作战页面-模拟作战通用",
+            "[JumpBack]进入模拟作战页面-模拟作战通用",
+            "[JumpBack]打开战役推进-模拟作战通用",
+            "[JumpBack]returnToHomePage"
+        ]
+    },
+    "已进入模拟作战页面-模拟作战通用": {
+        "recognition": "OCR",
+        "expected": [
+            "心智勘探",
+            "首领挑战",
+            "实兵演习",
+            "峰值推定",
+            "扩编实练"
+        ]
+    },
+    "打开战役推进-模拟作战通用": {
+        "recognition": "OCR",
+        "expected": [
+            "^战役推进$"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 800
+    },
+    "进入模拟作战页面-模拟作战通用": {
+        "recognition": "OCR",
+        "expected": [
+            "^模拟作战$"
+        ],
+        "action": "Click",
+        "post_wait_freezes": 800
+    },
+    "滑动模拟作战列表-模拟作战通用": {
+        "recognition": "Custom",
+        "custom_recognition": "scroll_end",
+        "custom_recognition_param": {
+            "roi": [
+                57,
+                184,
+                401,
+                370
+            ],
+            "max_scroll": 2,
+            "probe_on_same": true
+        },
+        "action": "Swipe",
+        "begin": [
+            1144,
+            625,
+            10,
+            10
+        ],
+        "end": [
+            100,
+            625,
+            10,
+            10
+        ],
+        "end_hold": 1000
     }
 }

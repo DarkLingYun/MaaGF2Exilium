@@ -25,7 +25,11 @@ def check(dirs: List[Path]) -> bool:
 
 
 def load_resource_paths(interface_path: Path, project_dir: Path) -> List[dict]:
-    """从 interface.json 加载 resource 配置"""
+    """从 interface.json 加载 resource 配置
+
+    按 PI V2 协议，resource.path 中的相对路径是相对于 interface.json
+    所在目录解析的（project_dir 即该目录）。绝对路径原样使用。
+    """
     with open(interface_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -35,9 +39,8 @@ def load_resource_paths(interface_path: Path, project_dir: Path) -> List[dict]:
     for res in resources:
         name = res.get("name", "Unknown")
         paths = res.get("path", [])
-        # 替换 {PROJECT_DIR} 为实际路径
         resolved_paths = [
-            Path(p.replace("{PROJECT_DIR}", str(project_dir))) for p in paths
+            Path(p) if Path(p).is_absolute() else project_dir / p for p in paths
         ]
         result.append({"name": name, "paths": resolved_paths})
 

@@ -56,28 +56,30 @@ def get_platform_and_arch():
     return platform_name, arch_name
 
 
-def get_maa_framework_names(platform_name, arch_name):
+def get_release_names(platform_name, arch_name):
     """
-    获取 MaaFramework 的平台和架构名称
-    MaaFramework 使用 macos/x86_64/aarch64 格式
+    获取 GitHub Release 产物使用的平台和架构名称
+
+    MaaFramework 和 MXU 的产物命名是同一套：macos/x86_64/aarch64
+    （对照 MFAAvalonia 的 osx/x64/arm64 —— 那套已经不用了）
     """
-    # MaaFramework 平台映射
-    maa_platform_mapping = {
+    # 平台映射
+    release_platform_mapping = {
         "win": "win",
-        "osx": "macos",  # MaaFramework 使用 macos 而不是 osx
+        "osx": "macos",  # 产物用 macos 而不是 osx
         "linux": "linux",
     }
 
-    # MaaFramework 架构映射
-    maa_arch_mapping = {
-        "x64": "x86_64",  # MaaFramework 使用 x86_64 而不是 x64
-        "arm64": "aarch64",  # MaaFramework 使用 aarch64 而不是 arm64
+    # 架构映射
+    release_arch_mapping = {
+        "x64": "x86_64",  # 产物用 x86_64 而不是 x64
+        "arm64": "aarch64",  # 产物用 aarch64 而不是 arm64
     }
 
-    maa_platform = maa_platform_mapping.get(platform_name, platform_name)
-    maa_arch = maa_arch_mapping.get(arch_name, arch_name)
+    release_platform = release_platform_mapping.get(platform_name, platform_name)
+    release_arch = release_arch_mapping.get(arch_name, arch_name)
 
-    return maa_platform, maa_arch
+    return release_platform, release_arch
 
 
 def extract_archive(file_path, output_path):
@@ -153,11 +155,11 @@ def download_maa_framework(platform_name, arch_name, output_path="deps"):
         response.raise_for_status()
         release_data = response.json()
 
-        # 获取 MaaFramework 特定的平台和架构名称
-        maa_platform, maa_arch = get_maa_framework_names(platform_name, arch_name)
+        # 获取 Release 产物使用的平台和架构名称
+        release_platform, release_arch = get_release_names(platform_name, arch_name)
 
         # 构建平台特定的文件名模式 (格式: MAA-{platform}-{arch}-v{version}.zip)
-        pattern = f"-{maa_platform}-{maa_arch}-"
+        pattern = f"-{release_platform}-{release_arch}-"
 
         matching_assets = [
             asset
@@ -175,7 +177,7 @@ def download_maa_framework(platform_name, arch_name, output_path="deps"):
                 if asset["name"].startswith("MAA-")
             ]
             raise Exception(
-                f"No matching MaaFramework assets found for platform: {maa_platform}-{maa_arch}. "
+                f"No matching MaaFramework assets found for platform: {release_platform}-{release_arch}. "
                 f"Available assets: {', '.join(available_assets)}"
             )
 
@@ -211,9 +213,9 @@ def download_maa_framework(platform_name, arch_name, output_path="deps"):
         print(f"Error: {e}")
 
 
-def download_mfa_avalonia(platform_name, arch_name, output_path="MFA"):
+def download_mxu(platform_name, arch_name, output_path="MXU"):
     """
-    下载 MFAAvalonia的最新版本（跨平台Avalonia版本）
+    下载 MXU 的最新版本（Tauri 跨平台版本）
 
     参数:
     platform_name: 平台名称 (win, osx, linux)
@@ -229,7 +231,7 @@ def download_mfa_avalonia(platform_name, arch_name, output_path="MFA"):
     os.makedirs(output_path, exist_ok=True)
 
     # GitHub API 地址
-    api_url = "https://api.github.com/repos/SweetSmellFox/MFAAvalonia/releases/latest"
+    api_url = "https://api.github.com/repos/MistEO/MXU/releases/latest"
 
     try:
         # 获取最新版本信息
@@ -237,13 +239,16 @@ def download_mfa_avalonia(platform_name, arch_name, output_path="MFA"):
         response.raise_for_status()
         release_data = response.json()
 
-        # 构建平台特定的文件名模式 (匹配格式: MFAAvalonia-v1.6.5-osx-x64.tar.gz)
-        pattern = f"-{platform_name}-{arch_name}"
+        # 获取 Release 产物使用的平台和架构名称
+        release_platform, release_arch = get_release_names(platform_name, arch_name)
+
+        # 构建平台特定的文件名模式 (匹配格式: MXU-win-x86_64-v2.6.1.zip)
+        pattern = f"-{release_platform}-{release_arch}-"
 
         matching_assets = [
             asset
             for asset in release_data["assets"]
-            if asset["name"].startswith("MFAAvalonia-")
+            if asset["name"].startswith("MXU-")
             and pattern in asset["name"]
             and (asset["name"].endswith(".tar.gz") or asset["name"].endswith(".zip"))
         ]
@@ -253,10 +258,10 @@ def download_mfa_avalonia(platform_name, arch_name, output_path="MFA"):
             available_assets = [
                 asset["name"]
                 for asset in release_data["assets"]
-                if asset["name"].startswith("MFAAvalonia-")
+                if asset["name"].startswith("MXU-")
             ]
             raise Exception(
-                f"No matching MFAAvalonia assets found for platform: {platform_name}-{arch_name}. "
+                f"No matching MXU assets found for platform: {release_platform}-{release_arch}. "
                 f"Available assets: {', '.join(available_assets)}"
             )
 
@@ -298,13 +303,13 @@ if __name__ == "__main__":
     print(f"检测到平台: {platform_name}, 架构: {arch_name}")
 
     # 检查是否支持该平台和架构组合
+    # 注意：MXU 没有 linux-aarch64 产物，所以这里不能放行
     supported_combinations = [
         ("win", "x64"),
         ("win", "arm64"),
         ("osx", "x64"),
         ("osx", "arm64"),
         ("linux", "x64"),
-        ("linux", "arm64"),
     ]
 
     if (platform_name, arch_name) not in supported_combinations:
@@ -319,9 +324,9 @@ if __name__ == "__main__":
         print("下载 MaaFramework...")
         download_maa_framework(platform_name, arch_name)
 
-        # 下载 MFAAvalonia
-        print("下载 MFAAvalonia...")
-        download_mfa_avalonia(platform_name, arch_name)
+        # 下载 MXU
+        print("下载 MXU...")
+        download_mxu(platform_name, arch_name)
 
         print("下载完成！")
     except Exception as e:

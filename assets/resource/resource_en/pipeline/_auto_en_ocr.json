@@ -311,16 +311,16 @@
             "Pose"
         ]
     },
-    "enterSchedulingGainsAction": {
-        "expected": "Dispatch Income",
-        "focus": {
-            "Node.Action.Starting": "<span style=\"color: red;\">Use the official Loop Assistant to claim Intel Reserves</span>"
-        }
+    "DispatchCenter-enterIntelligenceStoragePage": {
+        "expected": "Intelligence"
     },
-    "clickResourceProductionCollectionButton": {
+    "DispatchCenter-withdrawIntelligenceStorage": {
+        "expected": "Withdraw"
+    },
+    "DispatchCenter-collectResourceProduction": {
         "expected": "^Collect$"
     },
-    "进入神秘箱页面": {
+    "DispatchCenter-enterMysteryBoxPage": {
         "expected": [
             "Mystery Box"
         ]
@@ -410,7 +410,7 @@
     },
     "开始极限峰值任务": {
         "focus": {
-            "Node.Action.Starting": "Starting Extreme Peak task (Lv.0 battles only — handle Lv.18 battles yourself)"
+            "Node.Action.Starting": "Starting Extreme Peak task (difficulty is set by the \"Extreme Peak\" option)"
         }
     },
     "进入峰值推定-极限峰值": {
@@ -431,29 +431,9 @@
             "Horde 1"
         ]
     },
-    "已进入子群1-极限峰值": {
-        "expected": [
-            "Enemy Units"
-        ]
-    },
-    "开始作战-子群1-极限峰值": {
-        "expected": [
-            "Start Combat"
-        ]
-    },
     "进入子群2-极限峰值": {
         "expected": [
             "Horde 2"
-        ]
-    },
-    "已进入子群2-极限峰值": {
-        "expected": [
-            "Enemy Units"
-        ]
-    },
-    "开始作战-子群2-极限峰值": {
-        "expected": [
-            "Start Combat"
         ]
     },
     "进入子群3-极限峰值": {
@@ -461,12 +441,12 @@
             "Horde 3"
         ]
     },
-    "已进入子群3-极限峰值": {
+    "已进入子群-极限峰值": {
         "expected": [
             "Enemy Units"
         ]
     },
-    "开始作战-子群3-极限峰值": {
+    "开始作战-极限峰值": {
         "expected": [
             "Start Combat"
         ]

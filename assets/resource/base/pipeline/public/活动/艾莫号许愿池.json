@@ -5,7 +5,7 @@
         "next": [
             "[JumpBack]打开活动页-艾莫号许愿池",
             "点击艾莫号许愿池标签页",
-            "[JumpBack]滑动活动列表-艾莫号许愿池",
+            "[JumpBack]滑动活动列表-活动通用",
             "returnToHomePage"
         ]
     },
@@ -13,12 +13,6 @@
         "max_hit": 1,
         "next": [
             "打开活动页-活动通用"
-        ]
-    },
-    "滑动活动列表-艾莫号许愿池": {
-        "max_hit": 2,
-        "next": [
-            "滑动活动列表-活动通用"
         ]
     },
     "点击艾莫号许愿池标签页": {
@@ -37,25 +31,23 @@
             "前往"
         ],
         "action": "Click",
+        "post_wait_freezes": 800,
         "next": [
             "已进入艾莫号许愿池页面"
         ]
     },
     "已进入艾莫号许愿池页面": {
-        "next": [
-            "发现艾莫号许愿池提醒",
-            "返回活动页面-艾莫号许愿池"
-        ]
-    },
-    "返回活动页面-艾莫号许愿池": {
-        "recognition": "TemplateMatch",
-        "template": [
-            "公用按钮组件/返回上一页_black_v2.png",
-            "公用按钮组件/返回上一页_gray_v2.png"
+        "recognition": "OCR",
+        "expected": [
+            "查看任务",
+            "领取奖励",
+            "完成愿望后可领取",
+            "后解锁$"
         ],
-        "green_mask": true,
-        "action": "Click",
         "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]领取奖励-艾莫号许愿池",
+            "[JumpBack]发现艾莫号许愿池提醒",
             "returnToHomePage"
         ]
     },
@@ -64,10 +56,7 @@
         "template": "活动/艾莫号许愿池提醒.png",
         "action": "Click",
         "green_mask": true,
-        "next": [
-            "领取奖励-艾莫号许愿池",
-            "返回活动页面-艾莫号许愿池"
-        ]
+        "post_wait_freezes": 800
     },
     "领取奖励-艾莫号许愿池": {
         "recognition": "OCR",
@@ -75,18 +64,6 @@
             "领取奖励"
         ],
         "action": "Click",
-        "next": [
-            "关闭领取结果-艾莫号许愿池"
-        ]
-    },
-    "关闭领取结果-艾莫号许愿池": {
-        "recognition": "OCR",
-        "expected": [
-            "点击空白处关闭"
-        ],
-        "action": "Click",
-        "next": [
-            "已进入艾莫号许愿池页面"
-        ]
+        "post_wait_freezes": 800
     }
 }

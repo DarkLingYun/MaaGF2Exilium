@@ -1,0 +1,212 @@
+{
+  "task": [
+    {
+      "name": "心智勘测",
+      "label": "$心智勘测",
+      "entry": "MindSurveyTask",
+      "option": [
+        "转录序体：",
+        "勘测次数："
+      ],
+      "description": "$心智勘测说明"
+    }
+  ],
+  "option": {
+    "勘测次数：": {
+      "label": "$勘测次数：",
+      "cases": [
+        {
+          "name": "x1",
+          "pipeline_override": {
+            "userSetMindSurveyCount": {
+              "enabled": true,
+              "expected": "^1$"
+            },
+            "exitMindSurveyTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x2",
+          "pipeline_override": {
+            "userSetMindSurveyCount": {
+              "enabled": true,
+              "expected": "^2$"
+            },
+            "exitMindSurveyTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x3",
+          "pipeline_override": {
+            "userSetMindSurveyCount": {
+              "enabled": true,
+              "expected": "^3$"
+            },
+            "exitMindSurveyTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x4",
+          "pipeline_override": {
+            "userSetMindSurveyCount": {
+              "enabled": true,
+              "expected": "^4$"
+            },
+            "exitMindSurveyTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x5",
+          "pipeline_override": {
+            "userSetMindSurveyCount": {
+              "enabled": true,
+              "expected": "^5$"
+            },
+            "exitMindSurveyTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x6",
+          "pipeline_override": {
+            "userSetMindSurveyCount": {
+              "enabled": true,
+              "expected": "^6$"
+            },
+            "exitMindSurveyTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x7",
+          "pipeline_override": {
+            "userSetMindSurveyCount": {
+              "enabled": true,
+              "expected": "^7$"
+            },
+            "exitMindSurveyTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x8",
+          "pipeline_override": {
+            "userSetMindSurveyCount": {
+              "enabled": true,
+              "expected": "^8$"
+            },
+            "exitMindSurveyTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x9",
+          "pipeline_override": {
+            "userSetMindSurveyCount": {
+              "enabled": true,
+              "expected": "^9$"
+            },
+            "exitMindSurveyTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "x10",
+          "pipeline_override": {
+            "userSetMindSurveyCount": {
+              "enabled": true,
+              "expected": "^10$"
+            },
+            "exitMindSurveyTask": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "All(耗尽体力)",
+          "label": "$All(耗尽体力)",
+          "pipeline_override": {
+            "userSetMindSurveyCount": {
+              "enabled": false
+            },
+            "exitMindSurveyTask": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "转录序体：": {
+      "label": "$转录序体：",
+      "cases": [
+        {
+          "name": "序六",
+          "label": "$序六",
+          "pipeline_override": {
+            "selectMindSurveyMaterialType": {
+              "template": "心智勘测/06星点光芒闪耀时.png"
+            }
+          }
+        },
+        {
+          "name": "序五",
+          "label": "$序五",
+          "pipeline_override": {
+            "selectMindSurveyMaterialType": {
+              "template": "心智勘测/05乘于裙摆之上.png"
+            }
+          }
+        },
+        {
+          "name": "序四",
+          "label": "$序四",
+          "pipeline_override": {
+            "selectMindSurveyMaterialType": {
+              "template": "心智勘测/04最后的命令.png"
+            }
+          }
+        },
+        {
+          "name": "序三",
+          "label": "$序三",
+          "pipeline_override": {
+            "selectMindSurveyMaterialType": {
+              "template": "心智勘测/03限时替身.png"
+            }
+          }
+        },
+        {
+          "name": "序二",
+          "label": "$序二",
+          "pipeline_override": {
+            "selectMindSurveyMaterialType": {
+              "template": "心智勘测/02流浪的人.png"
+            }
+          }
+        },
+        {
+          "name": "序一",
+          "label": "$序一",
+          "pipeline_override": {
+            "selectMindSurveyMaterialType": {
+              "template": "心智勘测/01守望者.png"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

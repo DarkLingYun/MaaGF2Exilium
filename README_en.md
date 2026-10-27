@@ -206,7 +206,7 @@ See the [docs](docs/en/FAQ.md).
     * [x] Supports full auto
   * [x] Auto live drill
   * [x] Auto-claim peak-estimation regular rewards
-  * [x] Auto-run Lv.0 extreme peak
+  * [x] Auto-run extreme peak (all 3 hordes in order; Lv.20 for full rewards / Lv.0 without modifiers / off)
   * [x] Fully auto wargame (stops after claiming all participation rewards)
 * [x] Squad dailies
   * [x] Claim supplies
