@@ -127,24 +127,42 @@
         "recognition": "OCR",
         "expected": "^自律准备$",
         "next": [
+            "EventDaily-Row1-SweepNext",
             "EventDaily-Row1-SweepConfirm"
         ]
     },
     "EventDaily-Row1-SweepConfirm": {
-        "doc": "确认自律",
+        "doc": "确认自律(普通关卡在 y≈570, 定向精研第二步在 y≈627)",
         "recognition": "OCR",
         "expected": "^确认$",
         "roi": [
             660,
             535,
             310,
-            75
+            130
         ],
         "action": "Click",
         "post_delay": 1000,
         "next": [
             "EventDaily-Row1-SweepResult",
             "EventDaily-Row1-SweepPrep"
+        ]
+    },
+    "EventDaily-Row1-SweepNext": {
+        "doc": "定向精研的自律准备分两步: 第一步选择套装效果(保留上次选择), 点「下一步」再确认",
+        "recognition": "OCR",
+        "expected": "^下一步$",
+        "roi": [
+            645,
+            530,
+            332,
+            146
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "EventDaily-Row1-SweepConfirm",
+            "EventDaily-Row1-SweepNext"
         ]
     },
     "EventDaily-Row1-SweepResult": {
@@ -276,24 +294,42 @@
         "recognition": "OCR",
         "expected": "^自律准备$",
         "next": [
+            "EventDaily-Row2-SweepNext",
             "EventDaily-Row2-SweepConfirm"
         ]
     },
     "EventDaily-Row2-SweepConfirm": {
-        "doc": "确认自律",
+        "doc": "确认自律(普通关卡在 y≈570, 定向精研第二步在 y≈627)",
         "recognition": "OCR",
         "expected": "^确认$",
         "roi": [
             660,
             535,
             310,
-            75
+            130
         ],
         "action": "Click",
         "post_delay": 1000,
         "next": [
             "EventDaily-Row2-SweepResult",
             "EventDaily-Row2-SweepPrep"
+        ]
+    },
+    "EventDaily-Row2-SweepNext": {
+        "doc": "定向精研的自律准备分两步: 第一步选择套装效果(保留上次选择), 点「下一步」再确认",
+        "recognition": "OCR",
+        "expected": "^下一步$",
+        "roi": [
+            645,
+            530,
+            332,
+            146
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "EventDaily-Row2-SweepConfirm",
+            "EventDaily-Row2-SweepNext"
         ]
     },
     "EventDaily-Row2-SweepResult": {
@@ -424,24 +460,42 @@
         "recognition": "OCR",
         "expected": "^自律准备$",
         "next": [
+            "EventDaily-Row3-SweepNext",
             "EventDaily-Row3-SweepConfirm"
         ]
     },
     "EventDaily-Row3-SweepConfirm": {
-        "doc": "确认自律",
+        "doc": "确认自律(普通关卡在 y≈570, 定向精研第二步在 y≈627)",
         "recognition": "OCR",
         "expected": "^确认$",
         "roi": [
             660,
             535,
             310,
-            75
+            130
         ],
         "action": "Click",
         "post_delay": 1000,
         "next": [
             "EventDaily-Row3-SweepResult",
             "EventDaily-Row3-SweepPrep"
+        ]
+    },
+    "EventDaily-Row3-SweepNext": {
+        "doc": "定向精研的自律准备分两步: 第一步选择套装效果(保留上次选择), 点「下一步」再确认",
+        "recognition": "OCR",
+        "expected": "^下一步$",
+        "roi": [
+            645,
+            530,
+            332,
+            146
+        ],
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "EventDaily-Row3-SweepConfirm",
+            "EventDaily-Row3-SweepNext"
         ]
     },
     "EventDaily-Row3-SweepResult": {
@@ -477,7 +531,7 @@
         ]
     },
     "EventDaily-NoStamina": {
-        "doc": "点击自律后不是自律准备而是带「取消」的弹窗 = 体力不足(情报拼图补充): 取消, 不购买体力。同心智勘测 cancelStaminaReplenishmentForMindSurvey",
+        "doc": "点击自律后不是自律准备而是带「取消」的弹窗: 体力不足(情报拼图补充)或配件存储上限(清理库存)。取消并结束, 不购买体力。同心智勘测 cancelStaminaReplenishmentForMindSurvey",
         "recognition": "OCR",
         "expected": "取消",
         "roi": [

@@ -5,6 +5,16 @@
         "recognition": "OCR",
         "expected": "^每日留言$",
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 1000,
+            "target": [
+                40,
+                235,
+                820,
+                350
+            ],
+            "timeout": 10000
+        },
         "next": [
             "[JumpBack]点击空白处关闭-通用",
             "[JumpBack]EventDaily-Start",
