@@ -538,6 +538,11 @@
     "confirmResourceAutoSweepPreparation": {
         "expected": "Auto Mode Preparation"
     },
+    "VersionActivity-SweepNoTickets": {
+        "focus": {
+            "Node.Action.Starting": "Insufficient sweep tickets"
+        }
+    },
     "startResourceLevelSweep": {
         "expected": "^Confirm$"
     },

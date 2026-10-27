@@ -132,7 +132,44 @@
         "expected": "^自律准备$",
         "action": "DoNothing",
         "next": [
+            "VersionActivity-SweepNoTickets",
             "setMaxResourceLevelSweepTimes"
+        ]
+    },
+    "VersionActivity-SweepNoTickets": {
+        "doc": "自律准备中「消耗」数字为红色 = 扫荡券不足: 点取消并退出。卡片滑入时 resourceModeSweepTimesInsufficient 可能来不及识别, 这里在对话框内再确认一次, 否则确认无效会卡住",
+        "recognition": "ColorMatch",
+        "roi": [
+            540,
+            425,
+            220,
+            45
+        ],
+        "method": 40,
+        "upper": [
+            12,
+            255,
+            255
+        ],
+        "lower": [
+            0,
+            120,
+            150
+        ],
+        "count": 30,
+        "action": "Click",
+        "target": [
+            322,
+            545,
+            290,
+            52
+        ],
+        "post_delay": 1000,
+        "focus": {
+            "Node.Action.Starting": "扫荡券不足"
+        },
+        "next": [
+            "exitVersionActivityResourceSweep"
         ]
     },
     "setMaxResourceLevelSweepTimes": {
