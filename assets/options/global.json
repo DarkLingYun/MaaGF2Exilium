@@ -1,15 +1,75 @@
 {
   "option": {
-    "通用战斗允许缺员开始": {
-      "label": "$通用战斗允许缺员开始",
-      "description": "$通用战斗缺员开始说明",
-      "default_case": "NO",
+    "服务器选择": {
+      "label": "$服务器选择",
+      "description": "$服务器选择说明",
       "cases": [
         {
-          "name": "NO"
+          "name": "官服",
+          "label": "$官服",
+          "pipeline_override": {
+            "openGF2GameApp": {
+              "package": "com.Sunborn.SnqxExilium/.ExiliumMainActivity"
+            },
+            "StopGame": {
+              "package": "com.Sunborn.SnqxExilium"
+            }
+          }
         },
         {
-          "name": "YES",
+          "name": "B 服",
+          "label": "$B 服",
+          "pipeline_override": {
+            "openGF2GameApp": {
+              "package": "com.Sunborn.SnqxExilium.bilibili/.ExiliumMainActivity"
+            },
+            "StopGame": {
+              "package": "com.Sunborn.SnqxExilium.bilibili"
+            }
+          }
+        },
+        {
+          "name": "美服(dark winter)",
+          "label": "$美服(dark winter)",
+          "pipeline_override": {
+            "openGF2GameApp": {
+              "package": "com.Sunborn.SnqxExilium.Glo/.ExiliumMainActivity"
+            },
+            "StartGame_HomePage_Check": {
+              "next": [
+                "StartGame_进入整备室"
+              ]
+            },
+            "StopGame": {
+              "package": "com.Sunborn.SnqxExilium.Glo"
+            }
+          }
+        },
+        {
+          "name": "国际服(haoplay)",
+          "label": "$国际服(haoplay)",
+          "pipeline_override": {
+            "openGF2GameApp": {
+              "package": "com.haoplay.game.and.exilium/.ExiliumMainActivity"
+            },
+            "StopGame": {
+              "package": "com.haoplay.game.and.exilium"
+            }
+          }
+        }
+      ]
+    },
+    "通用战斗允许缺员开始": {
+      "type": "switch",
+      "label": "$通用战斗允许缺员开始",
+      "description": "$通用战斗缺员开始说明",
+      "default_case": "No",
+      "cases": [
+        {
+          "name": "No"
+        },
+        {
+          "name": "Yes",
           "pipeline_override": {
             "缺员策略-通用战斗": {
               "enabled": true

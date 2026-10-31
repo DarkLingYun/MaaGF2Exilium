@@ -16,6 +16,8 @@
         "格琳喵的委托",
         "限时中型活动",
         "活动巡录",
+        "标准武器自选礼箱",
+        "远行守护自选礼箱",
         "闪耀星愿"
       ],
       "default_check": true,
@@ -24,10 +26,11 @@
   ],
   "option": {
     "闪耀星愿": {
+      "type": "switch",
       "label": "$闪耀星愿",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始闪耀星愿任务": {
               "enabled": true
@@ -35,7 +38,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始闪耀星愿任务": {
               "enabled": false
@@ -45,10 +48,11 @@
       ]
     },
     "活动巡录": {
+      "type": "switch",
       "label": "$活动巡录",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始活动巡录任务": {
               "enabled": true
@@ -56,7 +60,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始活动巡录任务": {
               "enabled": false
@@ -66,10 +70,11 @@
       ]
     },
     "限时中型活动": {
+      "type": "switch",
       "label": "$限时中型活动",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始限时中型活动任务": {
               "enabled": true
@@ -77,7 +82,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始限时中型活动任务": {
               "enabled": false
@@ -87,10 +92,11 @@
       ]
     },
     "格琳喵的委托": {
+      "type": "switch",
       "label": "$格琳喵的委托",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始格琳喵的委托任务": {
               "enabled": true
@@ -98,7 +104,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始格琳喵的委托任务": {
               "enabled": false
@@ -108,10 +114,11 @@
       ]
     },
     "模拟习练": {
+      "type": "switch",
       "label": "$模拟习练",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始模拟习练任务": {
               "enabled": true
@@ -119,7 +126,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始模拟习练任务": {
               "enabled": false
@@ -129,10 +136,11 @@
       ]
     },
     "艾莫号许愿池": {
+      "type": "switch",
       "label": "$艾莫号许愿池",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始艾莫号许愿池任务": {
               "enabled": true
@@ -140,7 +148,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始艾莫号许愿池任务": {
               "enabled": false
@@ -223,10 +231,11 @@
       ]
     },
     "暗香赠礼": {
+      "type": "switch",
       "label": "$暗香赠礼",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始暗香赠礼任务": {
               "enabled": true
@@ -234,7 +243,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始暗香赠礼任务": {
               "enabled": false
@@ -244,10 +253,11 @@
       ]
     },
     "预演": {
+      "type": "switch",
       "label": "$预演",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始预演任务": {
               "enabled": true
@@ -255,7 +265,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始预演任务": {
               "enabled": false
@@ -265,10 +275,11 @@
       ]
     },
     "险境挖掘": {
+      "type": "switch",
       "label": "$险境挖掘",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始险境挖掘任务": {
               "enabled": true
@@ -276,7 +287,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始险境挖掘任务": {
               "enabled": false
@@ -286,10 +297,11 @@
       ]
     },
     "七天签到限定十连": {
+      "type": "switch",
       "label": "$七天签到限定十连",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始七天签到限定十连任务": {
               "enabled": true
@@ -297,7 +309,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始七天签到限定十连任务": {
               "enabled": false

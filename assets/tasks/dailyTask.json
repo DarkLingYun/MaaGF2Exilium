@@ -13,10 +13,11 @@
   ],
   "option": {
     "收取神秘箱（需自备硬币）": {
+      "type": "switch",
       "label": "$收取神秘箱（需自备硬币）",
       "cases": [
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "DispatchCenter-mysteryBox": {
               "enabled": false
@@ -24,7 +25,7 @@
           }
         },
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "DispatchCenter-mysteryBox": {
               "enabled": true

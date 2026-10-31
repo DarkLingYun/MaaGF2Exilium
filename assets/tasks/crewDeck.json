@@ -15,10 +15,11 @@
   ],
   "option": {
     "领取逸趣导算进度奖励": {
+      "type": "switch",
       "label": "$领取逸趣导算进度奖励",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始逸趣导算任务": {
               "enabled": true
@@ -26,7 +27,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始逸趣导算任务": {
               "enabled": false
@@ -50,10 +51,11 @@
       ]
     },
     "茶歇一刻": {
+      "type": "switch",
       "label": "$茶歇一刻",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始茶歇一刻任务": {
               "enabled": true
@@ -61,7 +63,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始茶歇一刻任务": {
               "enabled": false
@@ -71,10 +73,11 @@
       ]
     },
     "美味烹调": {
+      "type": "switch",
       "label": "$美味烹调",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始美味烹调任务": {
               "enabled": true
@@ -82,7 +85,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始美味烹调任务": {
               "enabled": false

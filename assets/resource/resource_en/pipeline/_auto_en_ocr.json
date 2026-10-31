@@ -20,54 +20,6 @@
     "scrollablePopupConfirmAccessories": {
         "expected": "Confirm"
     },
-    "BossChallengeExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "BossChallengeSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "BossChallengeConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
-    },
-    "generalExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "generalSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "generalConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
-    },
-    "clickdispatchCenterExchangeTaskButton": {
-        "expected": "^Dispatch Shop$"
-    },
-    "dispatchCenterExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "dispatchCenterSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "dispatchCenterConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
-    },
-    "homeStoreExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "homeStoreSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "homeStoreConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
-    },
-    "PlatoonExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "PlatoonSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "PlatoonConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
-    },
     "oneKeyClaimCommissionReward": {
         "expected": "Claim All"
     },
@@ -874,20 +826,6 @@
     },
     "巡录付费解锁-领取奖励确认-活动巡录": {
         "expected": "^Confirm$"
-    },
-    "武器自选箱-活动巡录": {
-        "focus": {
-            "Node.Action.Starting": "<span style=\"color: red;\">Weapon selector chest found — please handle manually</span>",
-            "toast": "Weapon selector chest found — please handle manually"
-        }
-    },
-    "拂晓之光、破晓天光补给包-活动巡录": {
-        "expected": "Collapse Piece"
-    },
-    "选择下一个补给包-活动巡录": {
-        "expected": [
-            "^Next$"
-        ]
     },
     "进入艾莫号许愿池页面": {
         "expected": [

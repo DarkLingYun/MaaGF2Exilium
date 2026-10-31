@@ -47,7 +47,6 @@
         "action": "Click"
     },
     "选择任务页-活动巡录": {
-        "recognition": "DirectHit",
         "action": "Click",
         "target": [
             631,
@@ -58,7 +57,6 @@
     },
     "进入任务页-活动巡录": {
         "recognition": "OCR",
-        "action": "DoNothing",
         "expected": [
             "每日行动",
             "每周行动",
@@ -105,9 +103,11 @@
         "recognition": "OCR",
         "expected": "键领取$",
         "action": "Click",
+        "post_wait_freezes": 800,
         "next": [
             "巡录付费解锁提示-活动巡录",
-            "选择奖励-活动巡录"
+            "choosePackage",
+            "closePassClaimResultPage"
         ]
     },
     "巡录付费解锁提示-活动巡录": {
@@ -115,7 +115,8 @@
         "expected": "解锁.*?后",
         "next": [
             "[JumpBack]巡录付费解锁-领取奖励确认-活动巡录",
-            "选择奖励-活动巡录"
+            "choosePackage",
+            "closePassClaimResultPage"
         ]
     },
     "巡录付费解锁-领取奖励确认-活动巡录": {
@@ -123,50 +124,5 @@
         "expected": "^确认$",
         "action": "Click",
         "post_wait_freezes": 1500
-    },
-    "选择奖励-活动巡录": {
-        "next": [
-            "武器自选箱-活动巡录",
-            "拂晓之光、破晓天光补给包-活动巡录",
-            "[JumpBack]点击空白处关闭-通用",
-            "空节点-活动巡录"
-        ]
-    },
-    "武器自选箱-活动巡录": {
-        "doc": "发现武器自选礼箱，触发通知",
-        "recognition": "OCR",
-        "expected": [
-            "标准武器自选礼箱",
-            "远行守护自选礼箱"
-        ],
-        "focus": {
-            "Node.Action.Starting": "<span style=\"color: red;\">发现武器自选礼箱，请手动处理</span>",
-            "toast": "发现武器自选礼箱，请手动处理"
-        }
-    },
-    "空节点-活动巡录": {
-        "action": "DoNothing"
-    },
-    "拂晓之光、破晓天光补给包-活动巡录": {
-        "recognition": "OCR",
-        "expected": "晶条",
-        "action": "Click",
-        "post_wait_freezes": 800,
-        "next": [
-            "选择下一个补给包-活动巡录"
-        ]
-    },
-    "选择下一个补给包-活动巡录": {
-        "recognition": "OCR",
-        "expected": [
-            "^开启$",
-            "^下.?$",
-            "^下一个$"
-        ],
-        "action": "Click",
-        "post_wait_freezes": 2000,
-        "next": [
-            "选择奖励-活动巡录"
-        ]
     }
 }
