@@ -107,14 +107,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -205,14 +197,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -273,14 +257,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
@@ -351,14 +327,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
@@ -458,14 +426,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -556,14 +516,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -625,14 +577,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
@@ -704,14 +648,6 @@
               ],
               "action": "Click"
             },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
-            },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
               "enabled": true,
@@ -782,14 +718,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
@@ -888,14 +816,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -985,14 +905,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -1054,14 +966,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
@@ -1131,14 +1035,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
@@ -1217,14 +1113,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -1281,14 +1169,6 @@
                 269,
                 424,
                 163
-              ]
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
               ]
             }
           }
@@ -1347,14 +1227,6 @@
                 424,
                 163
               ]
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -1393,14 +1265,6 @@
                 296,
                 235,
                 93
-              ]
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
               ]
             }
           }

@@ -48,8 +48,47 @@
             "[JumpBack]点击空白处关闭-通用",
             "[JumpBack]领取奖励-艾莫号许愿池",
             "[JumpBack]发现艾莫号许愿池提醒",
+            "[JumpBack]ElmoWishingWell-ScrollDollList",
             "returnToHomePage"
         ]
+    },
+    "ElmoWishingWell-ScrollDollList": {
+        "doc": "上滑左侧角色列表直到全部角色露出。列表按整行吸附，每次滑动只前进一行；全屏有细微动效噪声，故 same_tolerance 放宽到 0.05（实测噪声约 2.5%，真实滚动约 17% 以上）",
+        "recognition": "Custom",
+        "custom_recognition": "scroll_end",
+        "custom_recognition_param": {
+            "roi": [
+                45,
+                105,
+                255,
+                520
+            ],
+            "max_scroll": 8,
+            "same_tolerance": 0.05
+        },
+        "action": "Swipe",
+        "begin": [
+            150,
+            600,
+            60,
+            20
+        ],
+        "end": [
+            150,
+            250,
+            60,
+            20
+        ],
+        "duration": 600,
+        "post_wait_freezes": {
+            "time": 300,
+            "target": [
+                45,
+                105,
+                255,
+                520
+            ]
+        }
     },
     "发现艾莫号许愿池提醒": {
         "recognition": "TemplateMatch",
