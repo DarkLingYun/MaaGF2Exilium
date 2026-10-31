@@ -1,0 +1,111 @@
+{
+    // 心愿单购买的 EN 覆盖。
+    //
+    // 为什么是手写文件而不是 _auto_en_ocr.json：后者由脚本生成，且生成器会跳过
+    // 手写文件里已定义的节点，所以放这里不会被下次重新生成冲掉（同 reputationExchange.json）。
+    //
+    // 这里只改 expected / doc，roi / template / action / next 全部从 base 继承。
+    // 商店名在 EN 客户端里是两行（"Furniture" / "Shop"），OCR 每行一个框，
+    // 所以取第一行即可 —— 左侧栏里这几个首行词互不重复。
+    // 「点击空白处关闭-通用」的 EN 文案由 _auto_en_ocr.json 统一覆盖，这里不用管。
+
+    "WishlistPurchase": {
+        "doc": "Wishlist purchase: buy out every purchasable wishlisted item store by store, then return home"
+    },
+    "WishlistPurchase-PrepareWishlist": {
+        "doc": "Open the Wishlist: make sure we are home, open Shop, tap Wishlist, drag the store column back to the top"
+    },
+    "WishlistPurchase-GoHome": {
+        "doc": "Return to the home screen"
+    },
+    "WishlistPurchase-EnterShop": {
+        "doc": "Tap Shop on the home screen",
+        "expected": "^Shop$"
+    },
+    "WishlistPurchase-EnterWishlist": {
+        "doc": "Tap Wishlist at the bottom left of the Shop screen",
+        "expected": "Wishlist"
+    },
+    "WishlistPurchase-VerifyStoreList": {
+        "doc": "Confirm the left store column is rendered: any store name is enough (both ends of the column fade out, so the first one is unreadable once the user has scrolled)",
+        "expected": "^(Furniture|Platoon|Dispatch|Battlelog|Neural|Growth)$"
+    },
+    "WishlistPurchase-ResetStoreList": {
+        "doc": "Drag the left store column back to the top"
+    },
+    "WishlistPurchase-PurchaseFurnitureShop": {
+        "doc": "Buy out Furniture Shop"
+    },
+    "WishlistPurchase-OpenFurnitureShop": {
+        "doc": "Tap Furniture Shop in the left store column",
+        "expected": "Furniture"
+    },
+    "WishlistPurchase-VerifyFurnitureShop": {
+        "doc": "Confirm the Furniture Shop page: currency icon at the top right (threshold 0.8: measured 1.0 in-store, 0.63 cross-store)"
+    },
+    "WishlistPurchase-PurchasePlatoonShop": {
+        "doc": "Buy out Platoon Shop"
+    },
+    "WishlistPurchase-OpenPlatoonShop": {
+        "doc": "Tap Platoon Shop in the left store column",
+        "expected": "Platoon"
+    },
+    "WishlistPurchase-VerifyPlatoonShop": {
+        "doc": "Confirm the Platoon Shop page: currency icon at the top right"
+    },
+    "WishlistPurchase-PurchaseDispatchShop": {
+        "doc": "Buy out Dispatch Shop"
+    },
+    "WishlistPurchase-OpenDispatchShop": {
+        "doc": "Tap Dispatch Shop in the left store column",
+        "expected": "Dispatch"
+    },
+    "WishlistPurchase-VerifyDispatchShop": {
+        "doc": "Confirm the Dispatch Shop page: currency icon at the top right"
+    },
+    "WishlistPurchase-PurchaseBattlelogTrading": {
+        "doc": "Buy out Battlelog Trading"
+    },
+    "WishlistPurchase-OpenBattlelogTrading": {
+        "doc": "Tap Battlelog Trading in the left store column",
+        "expected": "Battlelog"
+    },
+    "WishlistPurchase-VerifyBattlelogTrading": {
+        "doc": "Confirm the Battlelog Trading page: currency icon at the top right"
+    },
+    "WishlistPurchase-PurchaseNeuralIntegration": {
+        "doc": "Buy out Neural Integration"
+    },
+    "WishlistPurchase-OpenNeuralIntegration": {
+        "doc": "Tap Neural Integration in the left store column",
+        "expected": "Neural"
+    },
+    "WishlistPurchase-VerifyNeuralIntegration": {
+        "doc": "Confirm the Neural Integration page: currency icon at the top right"
+    },
+    "WishlistPurchase-PurchaseGrowth": {
+        "doc": "Buy out Growth"
+    },
+    "WishlistPurchase-ScrollStoreList": {
+        "doc": "Scroll the left store column up so the last store, Growth, becomes readable"
+    },
+    "WishlistPurchase-OpenGrowth": {
+        "doc": "Tap Growth in the left store column",
+        "expected": "Growth"
+    },
+    "WishlistPurchase-VerifyGrowth": {
+        "doc": "Confirm the Growth page: currency icon at the top right"
+    },
+    "WishlistPurchase-ClickPurchaseAll": {
+        "doc": "Tap Purchase All at the bottom of the current store",
+        "expected": "Purchase All"
+    },
+    "WishlistPurchase-ConfirmPurchase": {
+        "doc": "Tap Purchase(s) in the Purchase Details dialog",
+        "expected": "^Purchase"
+    },
+    "WishlistPurchase-NothingToBuy": {
+        "doc": "This store has nothing purchasable on the wishlist (no Purchase All button at the bottom)",
+        "expected": "Purchase All"
+    }
+}

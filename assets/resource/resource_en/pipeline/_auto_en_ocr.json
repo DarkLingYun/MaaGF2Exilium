@@ -20,54 +20,6 @@
     "scrollablePopupConfirmAccessories": {
         "expected": "Confirm"
     },
-    "BossChallengeExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "BossChallengeSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "BossChallengeConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
-    },
-    "generalExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "generalSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "generalConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
-    },
-    "clickdispatchCenterExchangeTaskButton": {
-        "expected": "^Dispatch Shop$"
-    },
-    "dispatchCenterExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "dispatchCenterSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "dispatchCenterConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
-    },
-    "homeStoreExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "homeStoreSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "homeStoreConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
-    },
-    "PlatoonExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "PlatoonSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "PlatoonConfirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
-    },
     "oneKeyClaimCommissionReward": {
         "expected": "Claim All"
     },

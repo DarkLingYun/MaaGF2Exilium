@@ -24,10 +24,11 @@
   ],
   "option": {
     "物资商品兑换": {
+      "type": "switch",
       "label": "$物资商品兑换",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "enterVersionActivityItemExchange": {
               "enabled": true
@@ -35,7 +36,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "enterVersionActivityItemExchange": {
               "enabled": false
@@ -45,10 +46,11 @@
       ]
     },
     "物资商品兑换2（美服/国际服）": {
+      "type": "switch",
       "label": "$物资商品兑换2（美服/国际服）",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "enterVersionActivityItemExchange": {
               "enabled": true
@@ -56,7 +58,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "enterVersionActivityItemExchange": {
               "enabled": false

@@ -314,10 +314,11 @@
       ]
     },
     "动态招募祝福": {
+      "type": "switch",
       "label": "$动态招募祝福",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始动态招募祝福任务": {
               "enabled": true
@@ -325,7 +326,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始动态招募祝福任务": {
               "enabled": false
@@ -335,10 +336,11 @@
       ]
     },
     "助战": {
+      "type": "switch",
       "label": "$助战",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始助战奖励领取": {
               "enabled": true
@@ -346,7 +348,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始助战奖励领取": {
               "enabled": false
@@ -356,10 +358,11 @@
       ]
     },
     "远航巡录": {
+      "type": "switch",
       "label": "$远航巡录",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始巡录任务": {
               "enabled": true
@@ -367,7 +370,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始巡录任务": {
               "enabled": false
@@ -377,10 +380,11 @@
       ]
     },
     "每日订单": {
+      "type": "switch",
       "label": "$每日订单",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始委托领取任务": {
               "enabled": true
@@ -388,7 +392,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始委托领取任务": {
               "enabled": false

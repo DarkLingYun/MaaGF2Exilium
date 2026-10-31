@@ -1,0 +1,410 @@
+{
+    "WishlistPurchase": {
+        "doc": "心愿单购买：按固定顺序买空 6 家商店心愿单里的可购商品，最后回首页",
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "[JumpBack]WishlistPurchase-PrepareWishlist",
+            "[JumpBack]WishlistPurchase-PurchaseFurnitureShop",
+            "[JumpBack]WishlistPurchase-PurchasePlatoonShop",
+            "[JumpBack]WishlistPurchase-PurchaseDispatchShop",
+            "[JumpBack]WishlistPurchase-PurchaseBattlelogTrading",
+            "[JumpBack]WishlistPurchase-PurchaseNeuralIntegration",
+            "[JumpBack]WishlistPurchase-PurchaseGrowth",
+            "returnToHomePage"
+        ]
+    },
+    "WishlistPurchase-PrepareWishlist": {
+        "doc": "进入心愿单：确保在首页，打开商城并点开心愿单，把左侧店铺列拖回顶部",
+        "max_hit": 1,
+        "next": [
+            "[JumpBack]WishlistPurchase-GoHome",
+            "WishlistPurchase-EnterShop"
+        ]
+    },
+    "WishlistPurchase-GoHome": {
+        "doc": "回到游戏首页",
+        "max_hit": 1,
+        "next": [
+            "returnToHomePage"
+        ]
+    },
+    "WishlistPurchase-EnterShop": {
+        "doc": "点击首页的「商城」。重复点会点到商城页的商品位，所以点完等这块区域停稳",
+        "recognition": "OCR",
+        "expected": "^商城$",
+        "replace": [
+            "商城•",
+            "商城"
+        ],
+        "action": "Click",
+        "max_hit": 3,
+        "post_wait_freezes": 400,
+        "next": [
+            "WishlistPurchase-EnterWishlist",
+            "WishlistPurchase-EnterShop"
+        ]
+    },
+    "WishlistPurchase-EnterWishlist": {
+        "doc": "点击商城左下角的「心愿单」",
+        "recognition": "OCR",
+        "expected": "心愿单",
+        "roi": [
+            20,
+            630,
+            260,
+            80
+        ],
+        "action": "Click",
+        "max_hit": 3,
+        "next": [
+            "WishlistPurchase-VerifyStoreList"
+        ]
+    },
+    "WishlistPurchase-VerifyStoreList": {
+        "doc": "确认心愿单左侧店铺列已渲染：任一家店名能读到即可（列表两端有渐隐，用户滚过列表后第一家会读不出来）",
+        "recognition": "OCR",
+        "expected": "^(家具商店|班组商店|调度商店|讯段交易|心智统合|人形堆栈)$",
+        "roi": [
+            0,
+            60,
+            240,
+            650
+        ],
+        "next": [
+            "WishlistPurchase-ResetStoreList"
+        ]
+    },
+    "WishlistPurchase-ResetStoreList": {
+        "doc": "把心愿单左侧店铺列拖回顶部",
+        "action": "Swipe",
+        "begin": [
+            120,
+            250,
+            1,
+            1
+        ],
+        "end": [
+            120,
+            600,
+            1,
+            1
+        ],
+        "post_wait_freezes": {
+            "time": 300,
+            "target": [
+                0,
+                60,
+                240,
+                650
+            ]
+        }
+    },
+    "WishlistPurchase-PurchaseFurnitureShop": {
+        "doc": "买空家具商店",
+        "max_hit": 1,
+        "next": [
+            "WishlistPurchase-OpenFurnitureShop"
+        ]
+    },
+    "WishlistPurchase-OpenFurnitureShop": {
+        "doc": "点心愿单左侧栏的「家具商店」",
+        "recognition": "OCR",
+        "expected": "家具商店",
+        "roi": [
+            0,
+            60,
+            240,
+            650
+        ],
+        "action": "Click",
+        "max_hit": 3,
+        "next": [
+            "WishlistPurchase-VerifyFurnitureShop",
+            "WishlistPurchase-OpenFurnitureShop"
+        ]
+    },
+    "WishlistPurchase-VerifyFurnitureShop": {
+        "doc": "确认当前是家具商店页面：右上角代币图标，阈值 0.8（实测本店 1.0、跨店最高 0.63）",
+        "recognition": "TemplateMatch",
+        "template": "WishlistPurchase/currency_furniture.png",
+        "roi": [
+            1080,
+            10,
+            200,
+            60
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing",
+        "next": [
+            "WishlistPurchase-ClickPurchaseAll",
+            "WishlistPurchase-NothingToBuy"
+        ]
+    },
+    "WishlistPurchase-PurchasePlatoonShop": {
+        "doc": "买空班组商店",
+        "max_hit": 1,
+        "next": [
+            "WishlistPurchase-OpenPlatoonShop"
+        ]
+    },
+    "WishlistPurchase-OpenPlatoonShop": {
+        "doc": "点心愿单左侧栏的「班组商店」",
+        "recognition": "OCR",
+        "expected": "班组商店",
+        "roi": [
+            0,
+            60,
+            240,
+            650
+        ],
+        "action": "Click",
+        "max_hit": 3,
+        "next": [
+            "WishlistPurchase-VerifyPlatoonShop",
+            "WishlistPurchase-OpenPlatoonShop"
+        ]
+    },
+    "WishlistPurchase-VerifyPlatoonShop": {
+        "doc": "确认当前是班组商店页面：右上角代币图标",
+        "recognition": "TemplateMatch",
+        "template": "WishlistPurchase/currency_platoon.png",
+        "roi": [
+            1080,
+            10,
+            200,
+            60
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing",
+        "next": [
+            "WishlistPurchase-ClickPurchaseAll",
+            "WishlistPurchase-NothingToBuy"
+        ]
+    },
+    "WishlistPurchase-PurchaseDispatchShop": {
+        "doc": "买空调度商店",
+        "max_hit": 1,
+        "next": [
+            "WishlistPurchase-OpenDispatchShop"
+        ]
+    },
+    "WishlistPurchase-OpenDispatchShop": {
+        "doc": "点心愿单左侧栏的「调度商店」",
+        "recognition": "OCR",
+        "expected": "调度商店",
+        "roi": [
+            0,
+            60,
+            240,
+            650
+        ],
+        "action": "Click",
+        "max_hit": 3,
+        "next": [
+            "WishlistPurchase-VerifyDispatchShop",
+            "WishlistPurchase-OpenDispatchShop"
+        ]
+    },
+    "WishlistPurchase-VerifyDispatchShop": {
+        "doc": "确认当前是调度商店页面：右上角代币图标",
+        "recognition": "TemplateMatch",
+        "template": "WishlistPurchase/currency_dispatch.png",
+        "roi": [
+            1080,
+            10,
+            200,
+            60
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing",
+        "next": [
+            "WishlistPurchase-ClickPurchaseAll",
+            "WishlistPurchase-NothingToBuy"
+        ]
+    },
+    "WishlistPurchase-PurchaseBattlelogTrading": {
+        "doc": "买空讯段交易",
+        "max_hit": 1,
+        "next": [
+            "WishlistPurchase-OpenBattlelogTrading"
+        ]
+    },
+    "WishlistPurchase-OpenBattlelogTrading": {
+        "doc": "点心愿单左侧栏的「讯段交易」",
+        "recognition": "OCR",
+        "expected": "讯段交易",
+        "roi": [
+            0,
+            60,
+            240,
+            650
+        ],
+        "action": "Click",
+        "max_hit": 3,
+        "next": [
+            "WishlistPurchase-VerifyBattlelogTrading",
+            "WishlistPurchase-OpenBattlelogTrading"
+        ]
+    },
+    "WishlistPurchase-VerifyBattlelogTrading": {
+        "doc": "确认当前是讯段交易页面：右上角代币图标",
+        "recognition": "TemplateMatch",
+        "template": "WishlistPurchase/currency_battlelog.png",
+        "roi": [
+            1080,
+            10,
+            200,
+            60
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing",
+        "next": [
+            "WishlistPurchase-ClickPurchaseAll",
+            "WishlistPurchase-NothingToBuy"
+        ]
+    },
+    "WishlistPurchase-PurchaseNeuralIntegration": {
+        "doc": "买空心智统合",
+        "max_hit": 1,
+        "next": [
+            "WishlistPurchase-OpenNeuralIntegration"
+        ]
+    },
+    "WishlistPurchase-OpenNeuralIntegration": {
+        "doc": "点心愿单左侧栏的「心智统合」",
+        "recognition": "OCR",
+        "expected": "心智统合",
+        "roi": [
+            0,
+            60,
+            240,
+            650
+        ],
+        "action": "Click",
+        "max_hit": 3,
+        "next": [
+            "WishlistPurchase-VerifyNeuralIntegration",
+            "WishlistPurchase-OpenNeuralIntegration"
+        ]
+    },
+    "WishlistPurchase-VerifyNeuralIntegration": {
+        "doc": "确认当前是心智统合页面：右上角代币图标",
+        "recognition": "TemplateMatch",
+        "template": "WishlistPurchase/currency_neural.png",
+        "roi": [
+            1080,
+            10,
+            200,
+            60
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing",
+        "next": [
+            "WishlistPurchase-ClickPurchaseAll",
+            "WishlistPurchase-NothingToBuy"
+        ]
+    },
+    "WishlistPurchase-PurchaseGrowth": {
+        "doc": "买空人形堆栈",
+        "max_hit": 1,
+        "next": [
+            "WishlistPurchase-ScrollStoreList"
+        ]
+    },
+    "WishlistPurchase-ScrollStoreList": {
+        "doc": "把左侧店铺列上滑，露出最底部的「人形堆栈」",
+        "action": "Swipe",
+        "begin": [
+            120,
+            480,
+            1,
+            1
+        ],
+        "end": [
+            120,
+            300,
+            1,
+            1
+        ],
+        "post_wait_freezes": {
+            "time": 300,
+            "target": [
+                0,
+                60,
+                240,
+                650
+            ]
+        },
+        "next": [
+            "WishlistPurchase-OpenGrowth"
+        ]
+    },
+    "WishlistPurchase-OpenGrowth": {
+        "doc": "点心愿单左侧栏的「人形堆栈」",
+        "recognition": "OCR",
+        "expected": "人形堆栈",
+        "roi": [
+            0,
+            60,
+            240,
+            650
+        ],
+        "action": "Click",
+        "max_hit": 3,
+        "next": [
+            "WishlistPurchase-VerifyGrowth",
+            "WishlistPurchase-OpenGrowth"
+        ]
+    },
+    "WishlistPurchase-VerifyGrowth": {
+        "doc": "确认当前是人形堆栈页面：右上角代币图标",
+        "recognition": "TemplateMatch",
+        "template": "WishlistPurchase/currency_growth.png",
+        "roi": [
+            1080,
+            10,
+            200,
+            60
+        ],
+        "threshold": 0.8,
+        "action": "DoNothing",
+        "next": [
+            "WishlistPurchase-ClickPurchaseAll",
+            "WishlistPurchase-NothingToBuy"
+        ]
+    },
+    "WishlistPurchase-ClickPurchaseAll": {
+        "doc": "点击当前商店底部的「一键购买」",
+        "recognition": "OCR",
+        "expected": "一键购买",
+        "roi": [
+            930,
+            635,
+            300,
+            50
+        ],
+        "action": "Click",
+        "next": [
+            "WishlistPurchase-ConfirmPurchase"
+        ]
+    },
+    "WishlistPurchase-ConfirmPurchase": {
+        "doc": "在「购买内容」确认框里点「购买」。成交后这块区域会换成结果页，点完等它停稳",
+        "recognition": "OCR",
+        "expected": "^购买$",
+        "roi": [
+            800,
+            540,
+            300,
+            70
+        ],
+        "action": "Click",
+        "post_wait_freezes": 400
+    },
+    "WishlistPurchase-NothingToBuy": {
+        "doc": "当前商店没有可买的心愿商品（底部没有「一键购买」按钮）",
+        "recognition": "OCR",
+        "expected": "一键购买",
+        "inverse": true
+    }
+}

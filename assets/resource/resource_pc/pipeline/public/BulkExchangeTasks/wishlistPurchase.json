@@ -1,0 +1,11 @@
+{
+    "WishlistPurchase-ConfirmPurchase": {
+        "doc": "在「购买内容」确认框中点击购买（PC 端按钮比模拟器靠上，roi 需单独调整）",
+        "roi": [
+            840,
+            495,
+            180,
+            60
+        ]
+    }
+}

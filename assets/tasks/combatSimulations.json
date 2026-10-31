@@ -55,10 +55,11 @@
       ]
     },
     "自动领取峰值推定奖励": {
+      "type": "switch",
       "label": "$自动领取峰值推定奖励",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始峰值推定任务": {
               "enabled": true
@@ -66,7 +67,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始峰值推定任务": {
               "enabled": false
@@ -76,10 +77,11 @@
       ]
     },
     "自动实兵演习": {
+      "type": "switch",
       "label": "$自动实兵演习",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始实兵演习任务": {
               "enabled": true
@@ -87,7 +89,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始实兵演习任务": {
               "enabled": false
@@ -97,10 +99,11 @@
       ]
     },
     "首领挑战自律": {
+      "type": "switch",
       "label": "$首领挑战自律",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始首领挑战任务": {
               "enabled": true
@@ -108,7 +111,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始首领挑战任务": {
               "enabled": false
