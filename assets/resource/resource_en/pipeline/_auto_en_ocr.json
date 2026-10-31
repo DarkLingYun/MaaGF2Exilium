@@ -888,6 +888,11 @@
             "Proceed"
         ]
     },
+    "trialGoButtonStillVisible": {
+        "expected": [
+            "Proceed"
+        ]
+    },
     "每天第一次免费美味烹调": {
         "expected": "each day is free"
     },
