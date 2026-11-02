@@ -20,6 +20,12 @@
     "scrollablePopupConfirmAccessories": {
         "expected": "Confirm"
     },
+    "confirmEntrustedClaimPage": {
+        "expected": [
+            "Journey Witness",
+            "Journey Milestone"
+        ]
+    },
     "oneKeyClaimCommissionReward": {
         "expected": "Claim All"
     },
@@ -52,7 +58,7 @@
     },
     "claimDailyPassReward": {
         "expected": [
-            "Claim All$"
+            "Claim All"
         ]
     },
     "switchToPassLevelRewardPage": {
@@ -186,25 +192,15 @@
         "expected": "anywhere to exit"
     },
     "enterShop": {
-        "expected": "^Shop$",
-        "focus": {
-            "Node.Action.Starting": "Buy Free Daily Supply Box"
-        }
-    },
-    "clickQualitySelection": {
-        "expected": "^(Quality Selection|Quality)$"
-    },
-    "confirmWeekSupplyBoxPurchase": {
-        "expected": "Purchase|Confirm"
+        "expected": "^Shop$"
     },
     "closeWeekSupplyBoxPurchaseResultPage": {
         "expected": "anywhere"
     },
     "clickDailySupplyBox": {
-        "expected": "^Daily Supply Box$"
-    },
-    "confirmSupplyBoxPurchase": {
-        "expected": "Purchase|Confirm"
+        "expected": [
+            "Daily Supply Box"
+        ]
     },
     "closeSupplyBoxPurchaseResultPage": {
         "expected": "anywhere"
@@ -227,28 +223,26 @@
             "^Claim$"
         ]
     },
-    "enterDispatchCenterAction": {
-        "focus": {
-            "Node.Action.Starting": "Starting dispatch tasks"
-        }
+    "DispatchCenter-confirmEntrustedClaimPage": {
+        "expected": [
+            "Journey Witness",
+            "Journey Milestone"
+        ]
     },
-    "sendDispatchNotification": {
+    "DispatchCenter-sendDispatchNotification": {
         "focus": {
             "Node.Action.Starting": "<span style=\"color: red;\">Public Area Dispatch Center not fully dispatched — please handle manually</span>",
             "toast": "Public Area Dispatch Center not fully dispatched — please handle manually"
         }
     },
-    "rewardGet": {
+    "DispatchCenter-dispatchFinishReward": {
         "expected": [
             "Claim",
             "Claim All"
         ]
     },
-    "dispatchCenterSendAgain": {
+    "DispatchCenter-dispatchAgain": {
         "expected": "^Resend$"
-    },
-    "closeDispatchCenterDispatchCountRewardClaimResultPage": {
-        "expected": "anywhere to exit"
     },
     "enterLoungeAction": {
         "focus": {
@@ -263,18 +257,19 @@
             "Pose"
         ]
     },
-    "DispatchCenter-enterIntelligenceStoragePage": {
-        "expected": "Intelligence"
-    },
-    "DispatchCenter-withdrawIntelligenceStorage": {
-        "expected": "Withdraw"
+    "DispatchCenter-enterResourceProductionPage": {
+        "expected": "Resource Production"
     },
     "DispatchCenter-collectResourceProduction": {
         "expected": "^Collect$"
     },
     "DispatchCenter-enterMysteryBoxPage": {
+        "expected": "Mystery Box"
+    },
+    "DispatchCenter-inMysteryBox": {
         "expected": [
-            "Mystery Box"
+            "Collect once",
+            "Collect ten times"
         ]
     },
     "无剩余次数-神秘箱": {
@@ -322,7 +317,8 @@
     },
     "combatExerciseWeeklySettlement": {
         "expected": [
-            "anywhere to exit"
+            "anywhere to exit",
+            "anywhere on the screen to continue"
         ]
     },
     "已打开周期奖励-实兵演习": {
@@ -362,7 +358,7 @@
     },
     "开始极限峰值任务": {
         "focus": {
-            "Node.Action.Starting": "Starting Extreme Peak task (difficulty is set by the \"Extreme Peak\" option)"
+            "Node.Action.Starting": "Starting Extreme Peak task (battle difficulty: see the Extreme Peak setting)"
         }
     },
     "进入峰值推定-极限峰值": {
@@ -409,20 +405,26 @@
     "关闭周期报酬奖励领取结果页-极限峰值": {
         "expected": "anywhere to exit"
     },
-    "打开战役推进-模拟作战通用": {
-        "expected": [
-            "^Campaign$"
-        ]
-    },
-    "进入模拟作战页面-模拟作战通用": {
-        "expected": [
-            "^Combat Simulations$"
-        ]
-    },
     "selectExchangeItem": {
         "expected": [
+            "Module",
+            "Specification",
+            "Index",
+            "Universal",
+            "Chain Key",
+            "Chip",
             "Collapse Piece",
+            "Permission",
+            "Common Key",
+            "Info Core",
+            "Gift",
+            "Data",
             "Skin",
+            "Special",
+            "Memory Stick",
+            "Transcription",
+            "Box",
+            "Gold",
             "Analysis Blueprint",
             "Combat Report"
         ]
@@ -431,7 +433,16 @@
         "expected": "Max|MAX"
     },
     "confirmPurchaseItem": {
-        "expected": "Purchase|Confirm"
+        "expected": "^(Purchase|Confirm)$"
+    },
+    "closeItemPurchaseResultPage": {
+        "expected": "anywhere to exit"
+    },
+    "enterVersionActivityResourceSweep": {
+        "expected": [
+            "^Supply$",
+            "^Supply$"
+        ]
     },
     "resourceModeSweepTimesInsufficient": {
         "focus": {
@@ -452,9 +463,16 @@
     "startResourceLevelSweep": {
         "expected": "^Confirm$"
     },
+    "closeResourceLevelSweepResultPage": {
+        "expected": "anywhere to exit"
+    },
+    "领取活动内每日任务奖励": {
+        "expected": "^Claim$"
+    },
     "点击空白处关闭-通用": {
         "expected": [
-            "anywhere to exit"
+            "anywhere to exit",
+            "anywhere on the screen to continue"
         ]
     },
     "跳过动画-通用": {
@@ -495,8 +513,10 @@
     "有物品可拆解-生长数据": {
         "expected": "Joint Selection"
     },
-    "closeFlowerResultByClickingBlank": {
-        "expected": "anywhere to exit"
+    "disassemblyFlower": {
+        "expected": [
+            "Dismantle"
+        ]
     },
     "flowerResultClosed": {
         "expected": "Please select items to disassemble"
@@ -652,6 +672,11 @@
             "Confirm"
         ]
     },
+    "点击-遗珍回收作战": {
+        "expected": [
+            "^Proceed$"
+        ]
+    },
     "确认离开-遗珍回收作战": {
         "expected": [
             "^Confirm$"
@@ -677,45 +702,6 @@
     "作战开始-遗珍回收准备": {
         "expected": [
             "Combat Start"
-        ]
-    },
-    "确认进入委托页面-循环助手": {
-        "expected": [
-            "Daily Activity"
-        ]
-    },
-    "进入循环助手页面": {
-        "focus": {
-            "Node.Action.Succeeded": "Click Auto Loop"
-        }
-    },
-    "退出循环任务排序": {
-        "expected": [
-            "Confirm order"
-        ]
-    },
-    "开始执行循环任务": {
-        "expected": [
-            "Start Loop"
-        ],
-        "focus": {
-            "Node.Action.Succeeded": "Clicked Start Loop"
-        }
-    },
-    "确认执行循环任务": {
-        "expected": [
-            "Confirm"
-        ]
-    },
-    "循环进行中": {
-        "focus": {
-            "Node.Action.Failed": "Undetected loop in progress — checking whether it has ended",
-            "Node.Action.Succeeded": "Loop in progress..."
-        }
-    },
-    "确认循环结束": {
-        "expected": [
-            "Confirm"
         ]
     },
     "今日已领-七天签到限定十连": {
@@ -830,11 +816,6 @@
     "进入艾莫号许愿池页面": {
         "expected": [
             "Proceed"
-        ]
-    },
-    "关闭领取结果-艾莫号许愿池": {
-        "expected": [
-            "anywhere to exit"
         ]
     },
     "进入闪耀星愿页面": {
@@ -965,6 +946,11 @@
     "确认任务完成或失败-通用战斗": {
         "expected": "^Confirm$"
     },
+    "实兵演习等级晋级-通用战斗": {
+        "expected": [
+            "anywhere on the screen to continue"
+        ]
+    },
     "缺员策略-通用战斗": {
         "expected": [
             "can be deployed"
@@ -994,20 +980,27 @@
     "AutoSweepBattleSupplyOperationPrepare": {
         "expected": "Auto Mode Preparation"
     },
-    "易物所兑换通用-当前在首页": {
-        "expected": "Campaign"
-    },
-    "易物所兑换通用-首页进入易物所": {
-        "expected": "^Shop$"
-    },
-    "易物所兑换通用-点击进入易物所": {
-        "expected": "Trading Post"
-    },
     "enterMindSurveyTask": {
-        "expected": "^Campaign$"
+        "expected": "^Campaign"
     },
     "ClickToEnterMindSurveySimulatedCombatPage": {
         "expected": "^Combat Simulations$"
+    },
+    "已进入模拟作战页面-模拟作战通用": {
+        "expected": [
+            "Combat Exercise",
+            "Peak Value Assessment"
+        ]
+    },
+    "打开战役推进-模拟作战通用": {
+        "expected": [
+            "^Campaign"
+        ]
+    },
+    "进入模拟作战页面-模拟作战通用": {
+        "expected": [
+            "^Combat Simulations$"
+        ]
     },
     "StartGame_clickStart": {
         "expected": [
@@ -1019,13 +1012,58 @@
         "expected": "Confirm"
     },
     "enterVersionActivityTask": {
-        "expected": "^Campaign$"
-    },
-    "领取活动内每日任务奖励": {
-        "expected": "^Claim$"
+        "expected": "^Campaign"
     },
     "storeroomEntered": {
         "expected": "Resource"
+    },
+    "进入委托页面-循环助手": {
+        "expected": [
+            "^Commissions$",
+            "Commissions"
+        ]
+    },
+    "确认进入委托页面-循环助手": {
+        "expected": [
+            "Daily Activity"
+        ]
+    },
+    "进入循环助手页面": {
+        "expected": [
+            "Loop Assistant"
+        ],
+        "focus": {
+            "Node.Action.Succeeded": "Click Auto Loop"
+        }
+    },
+    "退出循环任务排序": {
+        "expected": [
+            "Confirm order"
+        ]
+    },
+    "开始执行循环任务": {
+        "expected": [
+            "Start Loop"
+        ],
+        "focus": {
+            "Node.Action.Succeeded": "Clicked Start Loop"
+        }
+    },
+    "确认执行循环任务": {
+        "expected": [
+            "Confirm"
+        ]
+    },
+    "循环进行中": {
+        "focus": {
+            "Node.Action.Failed": "Undetected loop in progress — checking whether it has ended",
+            "Node.Action.Succeeded": "Loop in progress..."
+        }
+    },
+    "确认循环结束": {
+        "expected": [
+            "Confirm"
+        ]
     },
     "首页进入活动层-活动层通用": {
         "expected": [
