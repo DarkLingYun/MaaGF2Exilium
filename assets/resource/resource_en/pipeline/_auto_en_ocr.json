@@ -194,12 +194,19 @@
     "enterShop": {
         "expected": "^Shop$"
     },
+    "clickWeekSupplyBox": {
+        "expected": [
+            "Weekly Joy Supply Box",
+            "^Free$"
+        ]
+    },
     "closeWeekSupplyBoxPurchaseResultPage": {
         "expected": "anywhere"
     },
     "clickDailySupplyBox": {
         "expected": [
-            "Daily Supply Box"
+            "Daily Supply Box",
+            "^Free$"
         ]
     },
     "closeSupplyBoxPurchaseResultPage": {
