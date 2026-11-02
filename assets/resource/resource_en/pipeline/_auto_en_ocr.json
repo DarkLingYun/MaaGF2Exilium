@@ -257,9 +257,6 @@
             "Pose"
         ]
     },
-    "DispatchCenter-enterResourceProductionPage": {
-        "expected": "Resource Production"
-    },
     "DispatchCenter-collectResourceProduction": {
         "expected": "^Collect$"
     },

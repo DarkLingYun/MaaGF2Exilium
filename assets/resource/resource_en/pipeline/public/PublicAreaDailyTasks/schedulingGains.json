@@ -4,7 +4,17 @@
     // single-line hit elsewhere is 'Current production' (lower case). Match the tab's
     // second line inside an ROI covering only that tab ('Resource Conversion' sits below it).
     "DispatchCenter-enterDispatchIncomePage": {
+        "doc": "EN: the 'Dispatch Income' button in the Dispatch Room's bottom bar. (#358 renamed these nodes and the tab ROI below ended up here, so the button was never found.)",
         "expected": "^Dispatch Income$",
+        "roi": [
+            700,
+            610,
+            290,
+            70
+        ]
+    },
+    "DispatchCenter-inDispatchIncome": {
+        "expected": "^Production$",
         "roi": [
             40,
             180,
@@ -12,7 +22,21 @@
             70
         ]
     },
-    "DispatchCenter-inDispatchIncome": {
+    "DispatchCenter-enterIntelligenceStoragePage": {
+        "doc": "EN: left tab 'Intelligence' / 'Storage' (wraps). Match its first line inside the tab's ROI.",
+        "expected": "^Intelligence$",
+        "roi": [
+            40,
+            90,
+            240,
+            70
+        ]
+    },
+    "DispatchCenter-withdrawIntelligenceStorage": {
+        "expected": "^Withdraw$"
+    },
+    "DispatchCenter-enterResourceProductionPage": {
+        "doc": "EN: left tab 'Resource' / 'Production' (wraps, and 'Resource' also starts the Resource Conversion tab). Match the second line inside this tab's ROI.",
         "expected": "^Production$",
         "roi": [
             40,
