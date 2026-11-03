@@ -1058,12 +1058,6 @@
             "Confirm"
         ]
     },
-    "循环进行中": {
-        "focus": {
-            "Node.Action.Failed": "Undetected loop in progress — checking whether it has ended",
-            "Node.Action.Succeeded": "Loop in progress..."
-        }
-    },
     "确认循环结束": {
         "expected": [
             "Confirm"
