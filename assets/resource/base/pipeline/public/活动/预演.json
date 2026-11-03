@@ -75,8 +75,19 @@
             "前往"
         ],
         "action": "Click",
+        "post_delay": 2000,
         "next": [
             "[JumpBack]通用战斗任务开始",
+            "trialGoButtonStillVisible"
+        ]
+    },
+    "trialGoButtonStillVisible": {
+        "doc": "点击前往后仍停留在预演列表（点击未生效）才返回主页；黑屏/过渡帧时继续等待资源加载",
+        "recognition": "OCR",
+        "expected": [
+            "前往"
+        ],
+        "next": [
             "returnToHomePage"
         ]
     }
