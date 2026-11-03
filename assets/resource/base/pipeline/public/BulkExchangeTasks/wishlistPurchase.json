@@ -136,6 +136,7 @@
         "threshold": 0.8,
         "action": "DoNothing",
         "next": [
+            "WishlistPurchase-CannotExchange",
             "WishlistPurchase-ClickPurchaseAll",
             "WishlistPurchase-NothingToBuy"
         ]
@@ -177,6 +178,7 @@
         "threshold": 0.8,
         "action": "DoNothing",
         "next": [
+            "WishlistPurchase-CannotExchange",
             "WishlistPurchase-ClickPurchaseAll",
             "WishlistPurchase-NothingToBuy"
         ]
@@ -218,6 +220,7 @@
         "threshold": 0.8,
         "action": "DoNothing",
         "next": [
+            "WishlistPurchase-CannotExchange",
             "WishlistPurchase-ClickPurchaseAll",
             "WishlistPurchase-NothingToBuy"
         ]
@@ -259,6 +262,7 @@
         "threshold": 0.8,
         "action": "DoNothing",
         "next": [
+            "WishlistPurchase-CannotExchange",
             "WishlistPurchase-ClickPurchaseAll",
             "WishlistPurchase-NothingToBuy"
         ]
@@ -300,6 +304,7 @@
         "threshold": 0.8,
         "action": "DoNothing",
         "next": [
+            "WishlistPurchase-CannotExchange",
             "WishlistPurchase-ClickPurchaseAll",
             "WishlistPurchase-NothingToBuy"
         ]
@@ -369,6 +374,7 @@
         "threshold": 0.8,
         "action": "DoNothing",
         "next": [
+            "WishlistPurchase-CannotExchange",
             "WishlistPurchase-ClickPurchaseAll",
             "WishlistPurchase-NothingToBuy"
         ]
@@ -385,7 +391,22 @@
         ],
         "action": "Click",
         "next": [
+            "WishlistPurchase-QuantityIsZero",
             "WishlistPurchase-ConfirmPurchase"
+        ]
+    },
+    "WishlistPurchase-QuantityIsZero": {
+        "doc": "识别到一键购买但数量为0，说明该商品不可兑换，跳过",
+        "recognition": "OCR",
+        "expected": "^0$",
+        "focus": {
+            "Node.Action.Succeeded": "<span style=\"color: red;\">未勾选兑换商品，跳过</span>"
+        },
+        "roi": [
+            711,
+            636,
+            206,
+            49
         ]
     },
     "WishlistPurchase-ConfirmPurchase": {
@@ -399,12 +420,32 @@
             70
         ],
         "action": "Click",
-        "post_wait_freezes": 400
+        "post_wait_freezes": 600
     },
     "WishlistPurchase-NothingToBuy": {
         "doc": "当前商店没有可买的心愿商品（底部没有「一键购买」按钮）",
         "recognition": "OCR",
         "expected": "一键购买",
         "inverse": true
+    },
+    "WishlistPurchase-CannotExchange": {
+        "doc": "可兑换，但代币数量不足",
+        "roi": [
+            711,
+            636,
+            206,
+            49
+        ],
+        "upper": [
+            255,
+            129,
+            113
+        ],
+        "lower": [
+            200,
+            95,
+            64
+        ],
+        "recognition": "ColorMatch"
     }
 }
