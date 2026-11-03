@@ -14,9 +14,8 @@
     // FIX: match the distinctive first word UNANCHORED. "Treasured"/"Regular"
     // are each unique within the tab bar, and sit on the first (upper) line so
     // they stay inside the base tab-bar roi even when the label wraps.
-    // #358 added explicit shop/page checks. The shop's left menu wraps every label
-    // onto two lines ('Premium' / 'Selections', 'Quality' / 'Selection'), so match the
-    // first line inside the menu column.
+    // The shop's left menu wraps every label onto two lines ('Premium' / 'Selections',
+    // 'Quality' / 'Selection'), so match the first line inside the menu column.
     "inShop": {
         "expected": [
             "^Premium$",
