@@ -1,0 +1,12 @@
+{
+    "enterCommissionToClaimTask": {
+        "doc": "EN: home-screen bottom bar. 'Commissions' can OCR as one token with its neighbour ('Commissions Platoon'), so match unanchored inside an ROI that covers only the Commissions icon + label (same ROI as DispatchCenter-enterCommissionPage).",
+        "expected": "Commissions",
+        "roi": [
+            784,
+            625,
+            100,
+            62
+        ]
+    }
+}
