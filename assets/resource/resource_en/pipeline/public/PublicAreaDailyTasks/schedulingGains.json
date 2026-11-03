@@ -4,8 +4,8 @@
     // single-line hit elsewhere is 'Current production' (lower case). Match the tab's
     // second line inside an ROI covering only that tab ('Resource Conversion' sits below it).
     "DispatchCenter-enterDispatchIncomePage": {
-        "doc": "EN: the 'Dispatch Income' button in the Dispatch Room's bottom bar.",
-        "expected": "^Dispatch Income$",
+        "doc": "EN: the 'Dispatch Income' button in the Dispatch Room's bottom bar. Its label can wrap ('Dispatch' / 'Income') when the reward icons sit beside it, so match either form.",
+        "expected": "^(Dispatch )?Income$",
         "roi": [
             700,
             610,
