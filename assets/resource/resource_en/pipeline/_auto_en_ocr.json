@@ -918,7 +918,12 @@
         "expected": "Confirm"
     },
     "已进入逸趣导算页面": {
-        "expected": "Recreation Point"
+        "expected": [
+            "Recreation Point",
+            "Events",
+            "Cleanliness",
+            "Plant"
+        ]
     },
     "领取逸趣导算奖励": {
         "expected": "Claim All"
@@ -1107,6 +1112,123 @@
     "退出活动层确认-活动层通用": {
         "expected": [
             "Confirm"
+        ]
+    },
+    "RecreationPoint-SelectEventsTab": {
+        "expected": [
+            "^Recreation Events$",
+            "^Recreation$",
+            "^Events$"
+        ]
+    },
+    "RecreationPoint-ConfirmEventsTab": {
+        "expected": [
+            "Recreation Point Progress",
+            "Recreation Point-Increasing",
+            "Today's Recreation Points"
+        ]
+    },
+    "Planting-SelectPlantTab": {
+        "expected": [
+            "^Plant$"
+        ]
+    },
+    "Planting-ConfirmPlantTab": {
+        "expected": [
+            "No flowers available"
+        ]
+    },
+    "Planting-AlreadyPlanted": {
+        "expected": [
+            "Flower Bloom Points"
+        ]
+    },
+    "Planting-FlowerSame": {
+        "expected": [
+            "^Tricolored Pansy$"
+        ]
+    },
+    "Planting-FlowerDiffers": {
+        "expected": [
+            "^Tricolored Pansy$"
+        ]
+    },
+    "Planting-WateringNeeded": {
+        "expected": [
+            "No watering today"
+        ]
+    },
+    "Planting-AlreadyWatered": {
+        "expected": [
+            "No watering today"
+        ]
+    },
+    "Planting-EnterCultivationToWater": {
+        "expected": [
+            "^Proceed$"
+        ]
+    },
+    "Planting-EnterCultivationToReplant": {
+        "expected": [
+            "^Proceed$"
+        ]
+    },
+    "Planting-OpenUprootDialog": {
+        "expected": [
+            "^Invite Doll$"
+        ]
+    },
+    "Planting-ConfirmUprootDialog": {
+        "expected": [
+            "Are you sure you want to remove"
+        ]
+    },
+    "Planting-ClickConfirmUproot": {
+        "expected": [
+            "^Confirm$"
+        ]
+    },
+    "Planting-ClickProceed": {
+        "expected": [
+            "^Proceed$"
+        ]
+    },
+    "Planting-SelectSeed": {
+        "expected": [
+            "^Tricolored Pansy$"
+        ]
+    },
+    "已进入栽培页面": {
+        "expected": [
+            "select seeds to sow"
+        ]
+    },
+    "Planting-ConfirmSow": {
+        "expected": [
+            "^Confirm$"
+        ]
+    },
+    "已进入培养页面": {
+        "expected": [
+            "Days Planted",
+            "Growth Stage"
+        ]
+    },
+    "Planting-ClickWater": {
+        "expected": [
+            "^Water$"
+        ]
+    },
+    "Planting-WaterFinished": {
+        "expected": [
+            "Days Planted",
+            "Growth Stage"
+        ]
+    },
+    "点击艾莫号许愿池标签页": {
+        "expected": [
+            "Leisure Days",
+            "Leisure"
         ]
     }
 }

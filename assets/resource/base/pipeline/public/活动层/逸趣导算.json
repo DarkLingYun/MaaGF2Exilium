@@ -6,23 +6,65 @@
         ]
     },
     "进入逸趣导算页面": {
+        "doc": "确保逸趣导算面板已打开",
+        "next": [
+            "已进入逸趣导算页面",
+            "RecreationPoint-OpenPanel"
+        ]
+    },
+    "RecreationPoint-OpenPanel": {
+        "doc": "点击活动层里的「逸趣导算」进入面板",
         "recognition": "TemplateMatch",
         "template": "活动层/逸趣导算.png",
         "green_mask": true,
-        "action": "Click",
         "order_by": "Score",
+        "action": "Click",
         "post_wait_freezes": 1000,
         "next": [
             "已进入逸趣导算页面",
-            "进入逸趣导算页面"
+            "RecreationPoint-OpenPanel"
         ]
     },
     "已进入逸趣导算页面": {
+        "doc": "逸趣导算面板已打开：任一个页签标题可见即可（面板会记住上次所在的页签）",
         "recognition": "OCR",
-        "expected": "逸趣",
+        "expected": [
+            "逸趣事件",
+            "宜居值",
+            "栽培"
+        ],
         "next": [
-            "领取逸趣导算奖励",
-            "返回活动层-活动层通用"
+            "RecreationPoint-SelectEventsTab"
+        ]
+    },
+    "RecreationPoint-SelectEventsTab": {
+        "doc": "点击逸趣导算面板顶部的「逸趣事件」页签",
+        "recognition": "OCR",
+        "expected": [
+            "^逸趣事件$"
+        ],
+        "roi": [
+            50,
+            40,
+            520,
+            90
+        ],
+        "action": "Click",
+        "post_wait_freezes": 800,
+        "next": [
+            "RecreationPoint-ConfirmEventsTab",
+            "RecreationPoint-SelectEventsTab"
+        ]
+    },
+    "RecreationPoint-ConfirmEventsTab": {
+        "doc": "确认逸趣事件页签已打开（左侧进度卡或右侧事件列表标题）",
+        "recognition": "OCR",
+        "expected": [
+            "逸趣值提升事件",
+            "逸趣导算进度"
+        ],
+        "next": [
+            "领取逸趣导算奖励"
         ]
     },
     "领取逸趣导算奖励": {
