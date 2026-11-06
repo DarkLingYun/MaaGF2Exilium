@@ -14,6 +14,33 @@
     // FIX: match the distinctive first word UNANCHORED. "Treasured"/"Regular"
     // are each unique within the tab bar, and sit on the first (upper) line so
     // they stay inside the base tab-bar roi even when the label wraps.
+    // The shop's left menu wraps every label onto two lines ('Premium' / 'Selections',
+    // 'Quality' / 'Selection'), so match the first line inside the menu column.
+    "inShop": {
+        "expected": [
+            "^Premium$",
+            "^Quality$"
+        ],
+        "roi": [40, 100, 220, 440]
+    },
+    "enterQualitySelection": {
+        "expected": "^Quality$",
+        "roi": [40, 100, 220, 440]
+    },
+    "inQualitySelection": {
+        "expected": [
+            "Treasured",
+            "Regular"
+        ]
+    },
+    // Purchase dialogs for the free boxes. Base now expects a bare 购买, but an
+    // unanchored "Purchase" would also hit every card's "Purchase Limit: 1" label.
+    "confirmWeekSupplyBoxPurchase": {
+        "expected": "^(Purchase|Confirm)$"
+    },
+    "confirmSupplyBoxPurchase": {
+        "expected": "^(Purchase|Confirm)$"
+    },
     "clickTimeLimitedGiftPackage": {
         "recognition": "OCR",
         "expected": "Treasured",
