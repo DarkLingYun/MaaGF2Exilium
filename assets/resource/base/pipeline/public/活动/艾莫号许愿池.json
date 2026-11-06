@@ -19,7 +19,8 @@
         "recognition": "OCR",
         "action": "Click",
         "expected": [
-            "艾莫号许愿池"
+            "艾莫号许愿池",
+            "慢品时光"
         ],
         "next": [
             "进入艾莫号许愿池页面"

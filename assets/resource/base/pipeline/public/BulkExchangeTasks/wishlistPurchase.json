@@ -2,7 +2,6 @@
     "WishlistPurchase": {
         "doc": "心愿单购买：按固定顺序买空 6 家商店心愿单里的可购商品，最后回首页",
         "next": [
-            "[JumpBack]点击空白处关闭-通用",
             "[JumpBack]WishlistPurchase-PrepareWishlist",
             "[JumpBack]WishlistPurchase-PurchaseFurnitureShop",
             "[JumpBack]WishlistPurchase-PurchasePlatoonShop",
@@ -133,8 +132,6 @@
             200,
             60
         ],
-        "threshold": 0.8,
-        "action": "DoNothing",
         "next": [
             "WishlistPurchase-CannotExchange",
             "WishlistPurchase-ClickPurchaseAll",
@@ -175,8 +172,6 @@
             200,
             60
         ],
-        "threshold": 0.8,
-        "action": "DoNothing",
         "next": [
             "WishlistPurchase-CannotExchange",
             "WishlistPurchase-ClickPurchaseAll",
@@ -217,8 +212,6 @@
             200,
             60
         ],
-        "threshold": 0.8,
-        "action": "DoNothing",
         "next": [
             "WishlistPurchase-CannotExchange",
             "WishlistPurchase-ClickPurchaseAll",
@@ -259,8 +252,6 @@
             200,
             60
         ],
-        "threshold": 0.8,
-        "action": "DoNothing",
         "next": [
             "WishlistPurchase-CannotExchange",
             "WishlistPurchase-ClickPurchaseAll",
@@ -301,8 +292,6 @@
             200,
             60
         ],
-        "threshold": 0.8,
-        "action": "DoNothing",
         "next": [
             "WishlistPurchase-CannotExchange",
             "WishlistPurchase-ClickPurchaseAll",
@@ -371,8 +360,6 @@
             200,
             60
         ],
-        "threshold": 0.8,
-        "action": "DoNothing",
         "next": [
             "WishlistPurchase-CannotExchange",
             "WishlistPurchase-ClickPurchaseAll",
@@ -390,9 +377,11 @@
             50
         ],
         "action": "Click",
+        "post_wait_freezes": 1200,
         "next": [
             "WishlistPurchase-QuantityIsZero",
-            "WishlistPurchase-ConfirmPurchase"
+            "WishlistPurchase-ConfirmPurchase",
+            "WishlistPurchase-ClickPurchaseAll"
         ]
     },
     "WishlistPurchase-QuantityIsZero": {
@@ -420,7 +409,11 @@
             70
         ],
         "action": "Click",
-        "post_wait_freezes": 600
+        "post_wait_freezes": 2000,
+        "next": [
+            "点击空白处关闭-通用",
+            "WishlistPurchase-ConfirmPurchase"
+        ]
     },
     "WishlistPurchase-NothingToBuy": {
         "doc": "当前商店没有可买的心愿商品（底部没有「一键购买」按钮）",

@@ -6,13 +6,9 @@
       "entry": "organizeStoreroom",
       "option": [
         "拆解武器",
-        "拆解武器等级",
         "拆解武器配件",
-        "拆解武器配件等级",
         "拆解生长数据",
-        "拆解生长数据等级",
-        "开启道具箱",
-        "物资助力箱奖励类型"
+        "开启道具箱"
       ],
       "default_check": true,
       "description": "$常规设置过多说明"
@@ -66,6 +62,9 @@
       "cases": [
         {
           "name": "Yes",
+          "option": [
+            "物资助力箱奖励类型"
+          ],
           "pipeline_override": {
             "itemBox": {
               "enabled": true
@@ -128,6 +127,9 @@
         },
         {
           "name": "Yes",
+          "option": [
+            "拆解生长数据等级"
+          ],
           "pipeline_override": {
             "flower": {
               "enabled": true
@@ -182,6 +184,9 @@
         },
         {
           "name": "Yes",
+          "option": [
+            "拆解武器配件等级"
+          ],
           "pipeline_override": {
             "weaponAttachments": {
               "enabled": true
@@ -227,6 +232,9 @@
         },
         {
           "name": "Yes",
+          "option": [
+            "拆解武器等级"
+          ],
           "pipeline_override": {
             "weapon": {
               "enabled": true

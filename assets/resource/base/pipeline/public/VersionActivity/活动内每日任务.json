@@ -5,6 +5,7 @@
         "recognition": "OCR",
         "expected": "^每日留言$",
         "action": "Click",
+        "post_wait_freezes": 1200,
         "next": [
             "[JumpBack]点击空白处关闭-通用",
             "[JumpBack]领取活动内每日任务奖励",

@@ -1,57 +1,292 @@
 {
     "已解锁茶歇一刻": {
         "next": [
-            "走向茶歇一刻-step1-完成",
-            "[JumpBack]走向茶歇一刻-step1"
+            "TeaBreak-TurnCoarse"
         ]
     },
-    "走向茶歇一刻-step1": {
-        "doc": "向左走，越过吧台玻璃围栏",
-        "action": "LongPressKey",
-        "key": 65,
-        "duration": 300
+    "TeaBreak-TurnCoarse": {
+        "doc": "粗调转向：杯子图标还没进入画面右侧就从下一项开始，进入右带后转细调。roi 左边界 840 意味着图标必须完整落在 840 右侧（中心 x >= 870）才命中",
+        "next": [
+            "TeaBreak-AtFineBand",
+            "TeaBreak-TurnCoarseOnce"
+        ]
     },
-    "走向茶歇一刻-step1-完成": {
-        "recognition": "FeatureMatch",
-        "template": "活动层/茶歇一刻-吧台定位图.png",
+    "TeaBreak-AtFineBand": {
+        "doc": "杯子图标完整落在 roi 内即认为接近目标朝向。模板用活动层/茶歇一刻-环/ 下的多尺度模板（文件名即像素宽）",
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动层/茶歇一刻-环/54.png",
+            "活动层/茶歇一刻-环/57.png",
+            "活动层/茶歇一刻-环/60.png",
+            "活动层/茶歇一刻-环/63.png",
+            "活动层/茶歇一刻-环/66.png",
+            "活动层/茶歇一刻-环/69.png",
+            "活动层/茶歇一刻-环/72.png"
+        ],
         "green_mask": true,
         "roi": [
-            862,
-            112,
-            415,
-            304
+            840,
+            80,
+            440,
+            420
         ],
         "next": [
-            "走向茶歇一刻-step2-完成",
-            "[JumpBack]走向茶歇一刻-step2"
+            "TeaBreak-TurnFine"
         ]
     },
-    "走向茶歇一刻-step2": {
-        "doc": "向前走，上台阶",
+    "TeaBreak-TurnCoarseOnce": {
+        "doc": "左方向键按 250ms（200~300ms 小步，人物不会一步冲过头，也留出识别时间）",
+        "action": "LongPressKey",
+        "key": 37,
+        "duration": 250,
+        "max_hit": 8,
+        "next": [
+            "TeaBreak-TurnCoarse"
+        ]
+    },
+    "TeaBreak-TurnFine": {
+        "doc": "细调转向：杯子中心 x >= 950（roi 左边界 920 + 图标半宽）就该停了。10 次 120ms 盲转用完还没对齐就直接上台阶——上台阶后的 BarAlign 会重新用吧台图标闭环，比起直接失败更划算",
+        "next": [
+            "TeaBreak-Aligned",
+            "TeaBreak-TurnFineOnce",
+            "TeaBreak-Climb"
+        ]
+    },
+    "TeaBreak-Aligned": {
+        "doc": "朝向对齐：杯子图标完全进入 roi 左边界 920 之后。此时位置与旧版闭环停车点（cx >= 950）一致",
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动层/茶歇一刻-环/54.png",
+            "活动层/茶歇一刻-环/57.png",
+            "活动层/茶歇一刻-环/60.png",
+            "活动层/茶歇一刻-环/63.png",
+            "活动层/茶歇一刻-环/66.png",
+            "活动层/茶歇一刻-环/69.png",
+            "活动层/茶歇一刻-环/72.png"
+        ],
+        "green_mask": true,
+        "roi": [
+            920,
+            80,
+            360,
+            420
+        ],
+        "next": [
+            "TeaBreak-Climb"
+        ]
+    },
+    "TeaBreak-TurnFineOnce": {
+        "doc": "细调左转 120ms，靠近目标时只走一小步",
+        "action": "LongPressKey",
+        "key": 37,
+        "duration": 120,
+        "max_hit": 10,
+        "next": [
+            "TeaBreak-TurnFine"
+        ]
+    },
+    "TeaBreak-Climb": {
+        "doc": "上台阶：W 小步走 3 次（不同身高角色需要的步数不同，没走到位的由 TeaBreak-Recover 兜底）",
         "action": "LongPressKey",
         "key": 87,
-        "duration": 300
-    },
-    "走向茶歇一刻-step2-完成": {
-        "recognition": "FeatureMatch",
-        "template": "活动层/茶歇一刻-吧台定位图.png",
-        "green_mask": true,
-        "roi": [
-            1080,
-            112,
-            200,
-            304
-        ],
+        "duration": 250,
+        "max_hit": 3,
         "next": [
-            "进入茶歇一刻区域",
-            "[JumpBack]走向茶歇一刻-step3"
+            "TeaBreak-Climb",
+            "TeaBreak-BarAlign"
         ]
     },
-    "走向茶歇一刻-step3": {
-        "doc": "向右走，前往吧台",
+    "TeaBreak-BarAlign": {
+        "doc": "上完台阶后用吧台茶杯图标闭环对准朝向：左转图标在屏幕上右移、右转图标左移。只保留 250ms 步长（120ms 有加速段，实际只转 30~70px，收敛太慢）。三段 roi 互相重叠、没有空档：中线带覆盖中心约 430~890（与历史成功落点 457~846 对齐），两侧各 250ms 转一步即可落回带内，所以最多两轮就收敛",
+        "next": [
+            "TeaBreak-BarCentered",
+            "TeaBreak-BarFarRight",
+            "TeaBreak-BarFarLeft",
+            "TeaBreak-BarNudge"
+        ]
+    },
+    "TeaBreak-BarCentered": {
+        "doc": "茶杯图标落在中线容差带内（按图标左边 x 落在 400~920 算，折合中心约 430~890）。历史成功落点 457~846，取宽一点避免 250ms 步长在两段空档间来回跳。模板用活动层/茶歇一刻-吧台/ 下从生产视角裁的杯子阶梯（54~99），阈值 0.8：实测真命中 ≥0.90、贴边被裁掉一半 ≈0.75、MENU 图标和杂项 ≤0.60",
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动层/茶歇一刻-吧台/杯54.png",
+            "活动层/茶歇一刻-吧台/杯57.png",
+            "活动层/茶歇一刻-吧台/杯60.png",
+            "活动层/茶歇一刻-吧台/杯63.png",
+            "活动层/茶歇一刻-吧台/杯66.png",
+            "活动层/茶歇一刻-吧台/杯69.png",
+            "活动层/茶歇一刻-吧台/杯72.png",
+            "活动层/茶歇一刻-吧台/杯75.png",
+            "活动层/茶歇一刻-吧台/杯78.png",
+            "活动层/茶歇一刻-吧台/杯81.png",
+            "活动层/茶歇一刻-吧台/杯84.png",
+            "活动层/茶歇一刻-吧台/杯87.png",
+            "活动层/茶歇一刻-吧台/杯90.png",
+            "活动层/茶歇一刻-吧台/杯93.png",
+            "活动层/茶歇一刻-吧台/杯96.png",
+            "活动层/茶歇一刻-吧台/杯99.png"
+        ],
+        "green_mask": true,
+        "roi": [
+            400,
+            80,
+            520,
+            220
+        ],
+        "next": [
+            "TeaBreak-Walk"
+        ]
+    },
+    "TeaBreak-BarFarLeft": {
+        "doc": "图标明显偏左（中心约 470 以左）：左方向键 250ms，图标右移约 244px 回带。roi 右边界 520 与中线带左边界有重叠，不留空档",
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动层/茶歇一刻-吧台/杯54.png",
+            "活动层/茶歇一刻-吧台/杯57.png",
+            "活动层/茶歇一刻-吧台/杯60.png",
+            "活动层/茶歇一刻-吧台/杯63.png",
+            "活动层/茶歇一刻-吧台/杯66.png",
+            "活动层/茶歇一刻-吧台/杯69.png",
+            "活动层/茶歇一刻-吧台/杯72.png",
+            "活动层/茶歇一刻-吧台/杯75.png",
+            "活动层/茶歇一刻-吧台/杯78.png",
+            "活动层/茶歇一刻-吧台/杯81.png",
+            "活动层/茶歇一刻-吧台/杯84.png",
+            "活动层/茶歇一刻-吧台/杯87.png",
+            "活动层/茶歇一刻-吧台/杯90.png",
+            "活动层/茶歇一刻-吧台/杯93.png",
+            "活动层/茶歇一刻-吧台/杯96.png",
+            "活动层/茶歇一刻-吧台/杯99.png"
+        ],
+        "green_mask": true,
+        "roi": [
+            0,
+            80,
+            520,
+            220
+        ],
         "action": "LongPressKey",
-        "key": 68,
-        "duration": 300
+        "key": 37,
+        "duration": 250,
+        "max_hit": 6,
+        "next": [
+            "TeaBreak-BarAlign"
+        ]
+    },
+    "TeaBreak-BarFarRight": {
+        "doc": "图标明显偏右（中心约 850 以右）：右方向键 250ms，图标左移约 244px 回带。roi 左边界 800 与中线带右边界有重叠，不留空档",
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动层/茶歇一刻-吧台/杯54.png",
+            "活动层/茶歇一刻-吧台/杯57.png",
+            "活动层/茶歇一刻-吧台/杯60.png",
+            "活动层/茶歇一刻-吧台/杯63.png",
+            "活动层/茶歇一刻-吧台/杯66.png",
+            "活动层/茶歇一刻-吧台/杯69.png",
+            "活动层/茶歇一刻-吧台/杯72.png",
+            "活动层/茶歇一刻-吧台/杯75.png",
+            "活动层/茶歇一刻-吧台/杯78.png",
+            "活动层/茶歇一刻-吧台/杯81.png",
+            "活动层/茶歇一刻-吧台/杯84.png",
+            "活动层/茶歇一刻-吧台/杯87.png",
+            "活动层/茶歇一刻-吧台/杯90.png",
+            "活动层/茶歇一刻-吧台/杯93.png",
+            "活动层/茶歇一刻-吧台/杯96.png",
+            "活动层/茶歇一刻-吧台/杯99.png"
+        ],
+        "green_mask": true,
+        "roi": [
+            800,
+            80,
+            480,
+            220
+        ],
+        "action": "LongPressKey",
+        "key": 39,
+        "duration": 250,
+        "max_hit": 6,
+        "next": [
+            "TeaBreak-BarAlign"
+        ]
+    },
+    "TeaBreak-BarNudge": {
+        "doc": "兜底：图标在画面外或贴着右边缘被裁掉（阈值 0.8 匹配不上，实测只露一半 ≈0.75）时右转 250ms 再找，最多 6 次",
+        "action": "LongPressKey",
+        "key": 39,
+        "duration": 250,
+        "max_hit": 6,
+        "next": [
+            "TeaBreak-BarAlign"
+        ]
+    },
+    "TeaBreak-Walk": {
+        "doc": "先看交互提示：出现了就按 F 进入；没有就再走一小步；4 步走完还没有，就去兜底重试",
+        "next": [
+            "进入茶歇一刻区域",
+            "TeaBreak-Step",
+            "TeaBreak-RecoverLeft"
+        ]
+    },
+    "TeaBreak-Step": {
+        "doc": "W 小步前进 250ms，走一步就回头重新识别提示",
+        "action": "LongPressKey",
+        "key": 87,
+        "duration": 250,
+        "max_hit": 4,
+        "next": [
+            "TeaBreak-Walk"
+        ]
+    },
+    "TeaBreak-RecoverLeft": {
+        "doc": "兜底重试第一步：左转 3 次回正（离开吧台/栏杆的阻挡）",
+        "action": "LongPressKey",
+        "key": 37,
+        "duration": 250,
+        "max_hit": 3,
+        "next": [
+            "TeaBreak-RecoverLeft",
+            "TeaBreak-RecoverStep"
+        ]
+    },
+    "TeaBreak-RecoverStep": {
+        "doc": "兜底重试第二步：补上 W，走完身高差出来的那一级台阶",
+        "action": "LongPressKey",
+        "key": 87,
+        "duration": 250,
+        "max_hit": 1,
+        "next": [
+            "TeaBreak-RecoverStep",
+            "TeaBreak-RecoverRight"
+        ]
+    },
+    "TeaBreak-RecoverRight": {
+        "doc": "兜底重试第三步：右转 3 次重新对准吧台，然后继续小步前进找提示",
+        "action": "LongPressKey",
+        "key": 39,
+        "duration": 250,
+        "max_hit": 3,
+        "next": [
+            "TeaBreak-RecoverRight",
+            "TeaBreak-WalkRetry"
+        ]
+    },
+    "TeaBreak-WalkRetry": {
+        "doc": "重试后多走几步再找提示；仍然找不到就返回活动层，避免卡在原地",
+        "next": [
+            "进入茶歇一刻区域",
+            "TeaBreak-StepRetry",
+            "返回活动层-活动层通用"
+        ]
+    },
+    "TeaBreak-StepRetry": {
+        "doc": "重试阶段的小步前进，预算放宽到 8 步",
+        "action": "LongPressKey",
+        "key": 87,
+        "duration": 250,
+        "max_hit": 8,
+        "next": [
+            "TeaBreak-WalkRetry"
+        ]
     },
     "进入茶歇一刻区域": {
         "doc": "按 F 进入茶歇一刻",
