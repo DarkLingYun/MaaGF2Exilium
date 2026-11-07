@@ -4,6 +4,72 @@
       "label": "$物资模式活动选择",
       "cases": [
         {
+          "name": "热寂悖论(破坏者)",
+          "pipeline_override": {
+            "clickVersionActivityTagButton": {
+              "expected": [
+                "热寂悖论",
+                "寂悖论",
+                "热寂悖",
+                "寂悖"
+              ]
+            },
+            "enterVersionActivityItemExchange": {
+              "expected": [
+                "军备车间",
+                "车间"
+              ],
+              "roi": [
+                107,
+                607,
+                238,
+                76
+              ]
+            },
+            "selectResourceModeLevel": {
+              "doc": "选择物资模式关卡",
+              "recognition": "Or",
+              "any_of": [
+                {
+                  "recognition": "OCR",
+                  "expected": [
+                    "^.*5$",
+                    "5$",
+                    "-5",
+                    "5"
+                  ],
+                  "roi": [
+                    572,
+                    269,
+                    424,
+                    163
+                  ]
+                },
+                {
+                  "recognition": "TemplateMatch",
+                  "template": "版本活动/金翅雀与橄榄枝.png",
+                  "roi": [
+                    666,
+                    296,
+                    235,
+                    93
+                  ]
+                }
+              ],
+              "action": "Click"
+            },
+            "开始活动内每日任务": {
+              "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
+              "enabled": true,
+              "expected": [
+                "^取证日程$",
+                "日程$",
+                "^取证"
+              ]
+            }
+          }
+        },
+        {
           "name": "静默突触·转篇(针)",
           "label": "$静默突触·转篇(针)",
           "pipeline_override": {
@@ -107,14 +173,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -205,14 +263,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -273,14 +323,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
@@ -351,14 +393,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
@@ -458,14 +492,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -556,14 +582,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -625,14 +643,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
@@ -704,14 +714,6 @@
               ],
               "action": "Click"
             },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
-            },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
               "enabled": true,
@@ -782,14 +784,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
@@ -888,14 +882,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -985,14 +971,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -1054,14 +1032,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
@@ -1131,14 +1101,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             },
             "开始活动内每日任务": {
               "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
@@ -1217,14 +1179,6 @@
                 }
               ],
               "action": "Click"
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -1281,14 +1235,6 @@
                 269,
                 424,
                 163
-              ]
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
               ]
             }
           }
@@ -1347,14 +1293,6 @@
                 424,
                 163
               ]
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
-              ]
             }
           }
         },
@@ -1393,14 +1331,6 @@
                 296,
                 235,
                 93
-              ]
-            },
-            "exitVersionActivityResourceSweep": {
-              "roi": [
-                0,
-                0,
-                185,
-                90
               ]
             }
           }

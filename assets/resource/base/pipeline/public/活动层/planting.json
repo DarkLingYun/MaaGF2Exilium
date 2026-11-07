@@ -1,0 +1,276 @@
+{
+    "Planting-Start": {
+        "doc": "浇花：打开逸趣导算的「栽培」页签",
+        "max_hit": 1,
+        "next": [
+            "Planting-SelectPlantTab",
+            "Planting-OpenRecreationPanel"
+        ]
+    },
+    "Planting-OpenRecreationPanel": {
+        "doc": "点击活动层里的「逸趣导算」进入面板",
+        "recognition": "TemplateMatch",
+        "template": "活动层/逸趣导算.png",
+        "green_mask": true,
+        "order_by": "Score",
+        "action": "Click",
+        "post_wait_freezes": 1000,
+        "next": [
+            "Planting-SelectPlantTab",
+            "Planting-OpenRecreationPanel"
+        ]
+    },
+    "Planting-SelectPlantTab": {
+        "doc": "点击逸趣导算面板顶部的「栽培」页签",
+        "recognition": "OCR",
+        "expected": [
+            "^栽培$"
+        ],
+        "roi": [
+            50,
+            40,
+            520,
+            90
+        ],
+        "action": "Click",
+        "post_wait_freezes": 800,
+        "next": [
+            "Planting-ConfirmPlantTab",
+            "Planting-AlreadyPlanted",
+            "Planting-SelectPlantTab"
+        ]
+    },
+    "Planting-ConfirmPlantTab": {
+        "doc": "确认栽培页签已打开：未种植时页面中间有「当前未种植花朵」提示",
+        "recognition": "OCR",
+        "expected": [
+            "当前未种植花朵",
+            "未种植花朵"
+        ],
+        "next": [
+            "Planting-ClickProceed"
+        ]
+    },
+    "Planting-AlreadyPlanted": {
+        "doc": "栽培页已有花：左侧卡片显示「花朵盛放值」；接下来比对花名与所选种子",
+        "recognition": "OCR",
+        "expected": [
+            "花朵盛放值"
+        ],
+        "next": [
+            "Planting-FlowerSame",
+            "Planting-FlowerDiffers"
+        ]
+    },
+    "Planting-FlowerSame": {
+        "doc": "栽培页显示的正是所选种子种出的花",
+        "recognition": "OCR",
+        "expected": [
+            "^三色堇$"
+        ],
+        "next": [
+            "Planting-WateringNeeded",
+            "Planting-AlreadyWatered"
+        ]
+    },
+    "Planting-FlowerDiffers": {
+        "doc": "栽培页显示的花与所选种子不同",
+        "recognition": "OCR",
+        "expected": [
+            "^三色堇$"
+        ],
+        "inverse": true,
+        "next": [
+            "Planting-Replant",
+            "Planting-WateringNeeded",
+            "Planting-AlreadyWatered"
+        ]
+    },
+    "Planting-Replant": {
+        "doc": "允许铲除重种：先进入培养页面铲除，再重新播种所选种子；默认关闭，由任务选项开启",
+        "enabled": false,
+        "next": [
+            "Planting-EnterCultivationToReplant"
+        ]
+    },
+    "Planting-WateringNeeded": {
+        "doc": "栽培页显示今日未浇水，进入培养页面浇灌",
+        "recognition": "OCR",
+        "expected": [
+            "今日未浇水"
+        ],
+        "next": [
+            "Planting-EnterCultivationToWater"
+        ]
+    },
+    "Planting-AlreadyWatered": {
+        "doc": "今日已浇过水：先点面板右上角 X 收起逸趣导算，再确认回到活动层；X 没命中时退回通用返回",
+        "recognition": "OCR",
+        "expected": [
+            "今日未浇水"
+        ],
+        "inverse": true,
+        "next": [
+            "clickCloseWindowButton",
+            "返回活动层-活动层通用"
+        ]
+    },
+    "Planting-EnterCultivationToWater": {
+        "doc": "点击栽培页右下角的「前往」进入培养页面",
+        "recognition": "OCR",
+        "expected": [
+            "^前往$"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]活动层加载中-活动层通用",
+            "Planting-ClickWater",
+            "Planting-EnterCultivationToWater"
+        ]
+    },
+    "Planting-EnterCultivationToReplant": {
+        "doc": "点击栽培页右下角的「前往」进入培养页面，准备铲除",
+        "recognition": "OCR",
+        "expected": [
+            "^前往$"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]活动层加载中-活动层通用",
+            "Planting-OpenUprootDialog",
+            "Planting-EnterCultivationToReplant"
+        ]
+    },
+    "Planting-OpenUprootDialog": {
+        "doc": "点培养页面右下角「邀请人形」左侧的铲除按钮；按钮是纯图标，按识别框相对偏移点圆形按钮本体",
+        "recognition": "OCR",
+        "expected": [
+            "^邀请人形$"
+        ],
+        "action": "Click",
+        "target": true,
+        "target_offset": [
+            -155,
+            13,
+            0,
+            0
+        ],
+        "post_wait_freezes": 800,
+        "next": [
+            "Planting-ConfirmUprootDialog",
+            "Planting-OpenUprootDialog"
+        ]
+    },
+    "Planting-ConfirmUprootDialog": {
+        "doc": "铲除确认框已弹出",
+        "recognition": "OCR",
+        "expected": [
+            "是否确认铲除"
+        ],
+        "next": [
+            "Planting-ClickConfirmUproot"
+        ]
+    },
+    "Planting-ClickConfirmUproot": {
+        "doc": "点提示框里的「确认」铲除；铲除动画结束后落到种子选择页",
+        "recognition": "OCR",
+        "expected": [
+            "^确认$"
+        ],
+        "action": "Click",
+        "next": [
+            "已进入栽培页面",
+            "Planting-ClickConfirmUproot"
+        ]
+    },
+    "Planting-ClickProceed": {
+        "doc": "点击栽培页右下角的「前往」",
+        "recognition": "OCR",
+        "expected": [
+            "^前往$"
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]活动层加载中-活动层通用",
+            "已进入栽培页面",
+            "Planting-ClickProceed"
+        ]
+    },
+    "已进入栽培页面": {
+        "doc": "种子选择页已打开（右上角标题「请选择一个种子进行播种」）",
+        "recognition": "OCR",
+        "expected": [
+            "请选择一个种子进行播种"
+        ],
+        "next": [
+            "Planting-SelectSeed"
+        ]
+    },
+    "Planting-SelectSeed": {
+        "doc": "点击要播种的种子，种子由任务选项决定",
+        "recognition": "OCR",
+        "expected": [
+            "^三色堇$"
+        ],
+        "action": "Click",
+        "next": [
+            "Planting-ConfirmSow"
+        ]
+    },
+    "Planting-ConfirmSow": {
+        "doc": "点击种子页底部的「确认」播种；播种动画结束前两个候选都不会命中，等培养页面出现再继续",
+        "recognition": "OCR",
+        "expected": [
+            "^确认$"
+        ],
+        "action": "Click",
+        "next": [
+            "已进入培养页面",
+            "Planting-ConfirmSow"
+        ]
+    },
+    "已进入培养页面": {
+        "doc": "培养页面已打开（右侧信息栏出现「栽培天数」/「生长阶段」）；刚播种/铲除后的动画要播完，按钮才能点",
+        "recognition": "OCR",
+        "expected": [
+            "栽培天数",
+            "生长阶段"
+        ],
+        "post_delay": 800,
+        "next": [
+            "Planting-ClickWater"
+        ]
+    },
+    "Planting-ClickWater": {
+        "doc": "点击培养页面的「浇灌」；按钮文字下方是次数，圆形按钮在文字上方，按偏移点按钮本体",
+        "recognition": "OCR",
+        "expected": [
+            "^浇灌$"
+        ],
+        "action": "Click",
+        "target": true,
+        "target_offset": [
+            0,
+            -45,
+            0,
+            0
+        ],
+        "post_wait_freezes": 1000,
+        "next": [
+            "[JumpBack]点击空白处关闭-通用",
+            "Planting-WaterFinished"
+        ]
+    },
+    "Planting-WaterFinished": {
+        "doc": "浇灌动画约 5 秒，期间整屏被盖住，「栽培天数」不出现；等奖励弹窗关掉、回到培养页面再返回活动层（不能直接写返回活动层，那是 DirectHit，会打断动画）",
+        "recognition": "OCR",
+        "expected": [
+            "栽培天数",
+            "生长阶段"
+        ],
+        "timeout": 30000,
+        "next": [
+            "返回活动层-活动层通用"
+        ]
+    }
+}

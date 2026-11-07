@@ -219,6 +219,27 @@ jobs:
       contents: write
       actions: write
     steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          path: repo
+
+      - name: Build release body
+        id: body
+        shell: bash
+        run: |
+          cd repo
+          MIRROR="[已有 Mirror酱 CDK? 前往Mirror酱高速下载](https://mirrorchyan.com/zh/projects?rid=MaaGF2Exilium)"
+          TAG_MSG=$(git tag -l --format='%(contents)' ${{ needs.meta.outputs.tag }})
+          if [ -z "$TAG_MSG" ]; then
+            BODY="$MIRROR"
+          else
+            BODY="$TAG_MSG"$'\n\n'"$MIRROR"
+          fi
+          echo "body<<EOF" >> $GITHUB_OUTPUT
+          echo "$BODY" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
       - uses: actions/download-artifact@v4
         with:
           pattern: MaaGF2ExiliumGUI-*
@@ -231,8 +252,8 @@ jobs:
 
       - run: |
           cd assets
-          for f in *; do
-            (cd "$f" && 7z a -tzip ../"$f-${{ needs.meta.outputs.tag }}.zip" .)
+          for f in MaaGF2ExiliumGUI-* update; do
+            [ -d "$f" ] && (cd "$f" && 7z a -tzip ../"$f-${{ needs.meta.outputs.tag }}.zip" .)
           done
       - uses: actions/download-artifact@v4
         with:
@@ -245,9 +266,7 @@ jobs:
             assets/*.zip
             android-apks/*.apk
           tag_name: ${{ needs.meta.outputs.tag }}
-          append_body: true
-          body: |
-            [已有 Mirror酱 CDK? 前往Mirror酱高速下载](https://mirrorchyan.com/zh/projects?rid=MaaGF2Exilium)
+          body: ${{ steps.body.outputs.body }}
 
       - name: Trigger MirrorChyanUploading
         run: |

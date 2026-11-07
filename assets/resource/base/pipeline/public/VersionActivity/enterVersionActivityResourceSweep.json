@@ -69,6 +69,7 @@
         "recognition": "TemplateMatch",
         "template": [
             "公用按钮组件/返回上一页_black.png",
+            "公用按钮组件/返回上一页_black_1.png",
             "公用按钮组件/返回上一页_gray.png"
         ],
         "action": "Click",

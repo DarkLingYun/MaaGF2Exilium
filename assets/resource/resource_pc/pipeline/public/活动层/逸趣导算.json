@@ -1,8 +1,53 @@
 {
-    "进入逸趣导算页面": {
-        "doc": "按 F2 进入逸趣导算",
+    "RecreationPoint-OpenPanel": {
+        "doc": "按 F2 进入逸趣导算；只按一次，靠下一页确认面板已打开（DirectHit 没有识别框，wait_freezes 用不了）",
         "recognition": "DirectHit",
         "action": "ClickKey",
-        "key": 113
+        "key": 113,
+        "post_delay": 1000,
+        "next": [
+            "已进入逸趣导算页面"
+        ]
+    },
+    "Planting-OpenRecreationPanel": {
+        "doc": "活动层按 F2 进入逸趣导算；只按一次，面板打开动画期间不再重复按（再按会把面板关掉）",
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 113,
+        "post_delay": 1000,
+        "next": [
+            "Planting-SelectPlantTab"
+        ]
+    },
+    "RecreationPoint-SelectEventsTab": {
+        "doc": "PC 端逸趣导算面板位置比模拟器低，页签行 roi 按 PC 坐标",
+        "roi": [
+            170,
+            90,
+            470,
+            120
+        ]
+    },
+    "Planting-SelectPlantTab": {
+        "doc": "PC 端逸趣导算面板位置比模拟器低，页签行 roi 按 PC 坐标",
+        "roi": [
+            170,
+            90,
+            470,
+            120
+        ]
+    },
+    "Planting-ClosePanel": {
+        "doc": "PC 端按 Esc 收起逸趣导算面板；面板右上角 X 是另一套贴图，clickCloseWindowButton 匹配不上。DirectHit 恒命中，按完即结束本子任务",
+        "recognition": "DirectHit",
+        "action": "ClickKey",
+        "key": 27,
+        "post_delay": 800
+    },
+    "Planting-AlreadyWatered": {
+        "doc": "今日已浇过水：先按 Esc 收起面板再结束；PC 上 返回活动层-活动层通用 在面板打开时也能命中（左上角按钮没被挡住），不会帮你关面板",
+        "next": [
+            "Planting-ClosePanel"
+        ]
     }
 }

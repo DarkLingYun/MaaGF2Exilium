@@ -22,6 +22,7 @@
         "recognition": "OCR",
         "expected": "峰值推定",
         "action": "Click",
+        "post_wait_freezes": 1200,
         "next": [
             "[JumpBack]发现新周期-极限峰值",
             "[JumpBack]发现周期报酬-极限峰值",
@@ -134,6 +135,7 @@
             "开始作战"
         ],
         "action": "Click",
+        "post_delay": 5000,
         "next": [
             "[JumpBack]通用战斗任务开始",
             "子群返回标签页-极限峰值"

@@ -20,10 +20,10 @@
   "option": {
     "领取班组补给箱": {
       "label": "$领取班组补给箱",
-      "type": "select",
+      "type": "switch",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "领取班组奖励": {
               "enabled": true
@@ -31,7 +31,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "领取班组奖励": {
               "enabled": false
@@ -41,10 +41,11 @@
       ]
     },
     "边界推进委托领取": {
+      "type": "switch",
       "label": "$边界推进委托领取",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "边界推进委托领取": {
               "enabled": true
@@ -52,7 +53,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "边界推进委托领取": {
               "enabled": false
@@ -62,10 +63,11 @@
       ]
     },
     "商城免费每日补给箱购买": {
+      "type": "switch",
       "label": "$商城免费每日补给箱购买",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "商城免费每日补给箱购买": {
               "enabled": true
@@ -73,7 +75,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "商城免费每日补给箱购买": {
               "enabled": false
@@ -83,11 +85,12 @@
       ]
     },
     "使用完体力药水": {
+      "type": "switch",
       "label": "$使用完体力药水",
-      "default_case": "NO",
+      "default_case": "No",
       "cases": [
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "使用完接入密钥(体力药水)": {
               "enabled": false
@@ -95,7 +98,7 @@
           }
         },
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "使用完接入密钥(体力药水)": {
               "enabled": true
@@ -105,10 +108,11 @@
       ]
     },
     "领取邮件": {
+      "type": "switch",
       "label": "$领取邮件",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "领取邮件": {
               "enabled": true
@@ -116,7 +120,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "领取邮件": {
               "enabled": false
@@ -126,10 +130,11 @@
       ]
     },
     "领取七日签到资源(限时)": {
+      "type": "switch",
       "label": "$领取七日签到资源(限时)",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "领取七日签到资源": {
               "enabled": true
@@ -137,7 +142,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "领取七日签到资源": {
               "enabled": false
@@ -147,10 +152,11 @@
       ]
     },
     "领取情报补给体力(限时)": {
+      "type": "switch",
       "label": "$领取情报补给体力(限时)",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "领取情报补给": {
               "enabled": true
@@ -158,7 +164,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "领取情报补给": {
               "enabled": false

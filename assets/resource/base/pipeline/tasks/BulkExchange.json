@@ -1,85 +1,8 @@
 {
     "BulkExchange": {
-        "doc": "批量兑换",
+        "doc": "易物所商店兑换（仅心愿单购买）",
         "next": [
-            "enterBulkExchangeTaskPage",
-            "[JumpBack]易物所兑换通用-前往易物所"
-        ]
-    },
-    "enterBulkExchangeTaskPage": {
-        "doc": "进入批量兑换任务页面",
-        "recognition": "OCR",
-        "expected": "班组商店",
-        "next": [
-            "[JumpBack]enterPlatoonExchangeTask",
-            "[JumpBack]enterdispatchCenterExchangeTask",
-            "[JumpBack]enterBossChallengeExchangeTask",
-            "[JumpBack]enterHomeStoreExchangeTask",
-            "returnToHomePage"
-        ]
-    },
-    "易物所兑换通用-前往易物所": {
-        "next": [
-            "易物所兑换通用-已进入易物所",
-            "[JumpBack]clickCloseWindowButton",
-            "[JumpBack]易物所兑换通用-当前在首页",
-            "[JumpBack]点击空白处关闭-通用",
-            "[JumpBack]clickBackButton",
-            "[JumpBack]returnToHomePage"
-        ]
-    },
-    "易物所兑换通用-当前在首页": {
-        "recognition": "OCR",
-        "expected": "战役推进",
-        "next": [
-            "易物所兑换通用-首页进入易物所"
-        ]
-    },
-    "易物所兑换通用-首页进入易物所": {
-        "recognition": "OCR",
-        "expected": "^商城$",
-        "replace": [
-            "商城•",
-            "商城"
-        ],
-        "action": "Click",
-        "next": [
-            "易物所兑换通用-进入批量兑换任务页面底部滑动",
-            "易物所兑换通用-首页进入易物所"
-        ]
-    },
-    "易物所兑换通用-进入批量兑换任务页面底部滑动": {
-        "recognition": "OCR",
-        "expected": "个性",
-        "action": "Swipe",
-        "begin": [
-            109,
-            496,
-            1,
-            1
-        ],
-        "end": [
-            109,
-            416,
-            1,
-            1
-        ],
-        "post_delay": 1000,
-        "next": [
-            "易物所兑换通用-已进入易物所",
-            "[JumpBack]易物所兑换通用-点击进入易物所"
-        ]
-    },
-    "易物所兑换通用-点击进入易物所": {
-        "recognition": "OCR",
-        "expected": "易物所",
-        "action": "Click"
-    },
-    "易物所兑换通用-已进入易物所": {
-        "doc": "确认已到达易物所页面",
-        "recognition": "OCR",
-        "expected": [
-            "班组商店"
+            "WishlistPurchase"
         ]
     }
 }
