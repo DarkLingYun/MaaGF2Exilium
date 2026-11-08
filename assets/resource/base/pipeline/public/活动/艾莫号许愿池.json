@@ -82,7 +82,7 @@
         ],
         "duration": 600,
         "post_wait_freezes": {
-            "time": 300,
+            "time": 800,
             "target": [
                 45,
                 105,
