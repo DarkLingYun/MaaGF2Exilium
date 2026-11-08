@@ -94,7 +94,20 @@
     "zh_cn": "interface_zh.json",
     "en_us": "interface_en.json"
   },
+  "setting": [
+    {
+      "name": "global",
+      "label": "$全局设置",
+      "description": "$全局设置说明",
+      "option": [
+        "服务器选择",
+        "通用战斗允许缺员开始"
+      ],
+      "default_expand": true
+    }
+  ],
   "global_option": [
+    "服务器选择",
     "通用战斗允许缺员开始"
   ]
 }

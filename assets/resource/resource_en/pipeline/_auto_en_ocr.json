@@ -20,68 +20,11 @@
     "scrollablePopupConfirmAccessories": {
         "expected": "Confirm"
     },
-    "BossChallengeExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "BossChallengeSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "BossChallengeConfirmPurchaseItem": {
-        "expected": "^(Purchase|Confirm)$"
-    },
-    "BossChallengeCloseItemPurchaseResultPage": {
-        "expected": "anywhere to exit"
-    },
-    "generalExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "generalSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "generalConfirmPurchaseItem": {
-        "expected": "^(Purchase|Confirm)$"
-    },
-    "generalCloseItemPurchaseResultPage": {
-        "expected": "anywhere to exit"
-    },
-    "clickdispatchCenterExchangeTaskButton": {
-        "expected": "^Dispatch Shop$"
-    },
-    "dispatchCenterExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "dispatchCenterSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "dispatchCenterConfirmPurchaseItem": {
-        "expected": "^(Purchase|Confirm)$"
-    },
-    "dispatchCenterCloseItemPurchaseResultPage": {
-        "expected": "anywhere to exit"
-    },
-    "homeStoreExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "homeStoreSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "homeStoreConfirmPurchaseItem": {
-        "expected": "^(Purchase|Confirm)$"
-    },
-    "homeStoreCloseItemPurchaseResultPage": {
-        "expected": "anywhere to exit"
-    },
-    "PlatoonExitItemExchange": {
-        "expected": "Cancel"
-    },
-    "PlatoonSelectExchangeItemQuantity": {
-        "expected": "Max|MAX"
-    },
-    "PlatoonConfirmPurchaseItem": {
-        "expected": "^(Purchase|Confirm)$"
-    },
-    "PlatoonCloseItemPurchaseResultPage": {
-        "expected": "anywhere to exit"
+    "confirmEntrustedClaimPage": {
+        "expected": [
+            "Journey Witness",
+            "Journey Milestone"
+        ]
     },
     "oneKeyClaimCommissionReward": {
         "expected": "Claim All"
@@ -115,7 +58,7 @@
     },
     "claimDailyPassReward": {
         "expected": [
-            "Claim All$"
+            "Claim All"
         ]
     },
     "switchToPassLevelRewardPage": {
@@ -249,25 +192,22 @@
         "expected": "anywhere to exit"
     },
     "enterShop": {
-        "expected": "^Shop$",
-        "focus": {
-            "Node.Action.Starting": "Buy Free Daily Supply Box"
-        }
+        "expected": "^Shop$"
     },
-    "clickQualitySelection": {
-        "expected": "^(Quality Selection|Quality)$"
-    },
-    "confirmWeekSupplyBoxPurchase": {
-        "expected": "^(Purchase|Confirm)$"
+    "clickWeekSupplyBox": {
+        "expected": [
+            "Weekly Joy Supply Box",
+            "^Free$"
+        ]
     },
     "closeWeekSupplyBoxPurchaseResultPage": {
         "expected": "anywhere"
     },
     "clickDailySupplyBox": {
-        "expected": "^Daily Supply Box$"
-    },
-    "confirmSupplyBoxPurchase": {
-        "expected": "^(Purchase|Confirm)$"
+        "expected": [
+            "Daily Supply Box",
+            "^Free$"
+        ]
     },
     "closeSupplyBoxPurchaseResultPage": {
         "expected": "anywhere"
@@ -290,28 +230,26 @@
             "^Claim$"
         ]
     },
-    "enterDispatchCenterAction": {
-        "focus": {
-            "Node.Action.Starting": "Starting dispatch tasks"
-        }
+    "DispatchCenter-confirmEntrustedClaimPage": {
+        "expected": [
+            "Journey Witness",
+            "Journey Milestone"
+        ]
     },
-    "sendDispatchNotification": {
+    "DispatchCenter-sendDispatchNotification": {
         "focus": {
             "Node.Action.Starting": "<span style=\"color: red;\">Public Area Dispatch Center not fully dispatched — please handle manually</span>",
             "toast": "Public Area Dispatch Center not fully dispatched — please handle manually"
         }
     },
-    "rewardGet": {
+    "DispatchCenter-dispatchFinishReward": {
         "expected": [
             "Claim",
             "Claim All"
         ]
     },
-    "dispatchCenterSendAgain": {
+    "DispatchCenter-dispatchAgain": {
         "expected": "^Resend$"
-    },
-    "closeDispatchCenterDispatchCountRewardClaimResultPage": {
-        "expected": "anywhere to exit"
     },
     "enterLoungeAction": {
         "focus": {
@@ -326,18 +264,16 @@
             "Pose"
         ]
     },
-    "DispatchCenter-enterIntelligenceStoragePage": {
-        "expected": "Intelligence"
-    },
-    "DispatchCenter-withdrawIntelligenceStorage": {
-        "expected": "Withdraw"
-    },
     "DispatchCenter-collectResourceProduction": {
         "expected": "^Collect$"
     },
     "DispatchCenter-enterMysteryBoxPage": {
+        "expected": "Mystery Box"
+    },
+    "DispatchCenter-inMysteryBox": {
         "expected": [
-            "Mystery Box"
+            "Collect once",
+            "Collect ten times"
         ]
     },
     "无剩余次数-神秘箱": {
@@ -426,7 +362,7 @@
     },
     "开始极限峰值任务": {
         "focus": {
-            "Node.Action.Starting": "Starting Extreme Peak task (difficulty is set by the \"Extreme Peak\" option)"
+            "Node.Action.Starting": "Starting Extreme Peak task (battle difficulty: see the Extreme Peak setting)"
         }
     },
     "进入峰值推定-极限峰值": {
@@ -472,16 +408,6 @@
     },
     "关闭周期报酬奖励领取结果页-极限峰值": {
         "expected": "anywhere to exit"
-    },
-    "打开战役推进-模拟作战通用": {
-        "expected": [
-            "^Campaign"
-        ]
-    },
-    "进入模拟作战页面-模拟作战通用": {
-        "expected": [
-            "^Combat Simulations$"
-        ]
     },
     "selectExchangeItem": {
         "expected": [
@@ -538,73 +464,14 @@
     "confirmResourceAutoSweepPreparation": {
         "expected": "Auto Mode Preparation"
     },
-    "VersionActivity-SweepNoTickets": {
-        "focus": {
-            "Node.Action.Starting": "Insufficient sweep tickets"
-        }
-    },
     "startResourceLevelSweep": {
         "expected": "^Confirm$"
     },
     "closeResourceLevelSweepResultPage": {
         "expected": "anywhere to exit"
     },
-    "EventDaily-Row1-Proceed": {
-        "expected": "^Proceed$"
-    },
-    "EventDaily-Row1-Sweep": {
-        "expected": "^Auto$"
-    },
-    "EventDaily-Row1-SweepPrep": {
-        "expected": "Auto Mode Preparation"
-    },
-    "EventDaily-Row1-SweepConfirm": {
-        "expected": "^Confirm$"
-    },
-    "EventDaily-Row1-SweepNext": {
-        "expected": "^Next$"
-    },
-    "EventDaily-Row1-SweepResult": {
-        "expected": "anywhere to exit"
-    },
-    "EventDaily-Row2-Proceed": {
-        "expected": "^Proceed$"
-    },
-    "EventDaily-Row2-Sweep": {
-        "expected": "^Auto$"
-    },
-    "EventDaily-Row2-SweepPrep": {
-        "expected": "Auto Mode Preparation"
-    },
-    "EventDaily-Row2-SweepConfirm": {
-        "expected": "^Confirm$"
-    },
-    "EventDaily-Row2-SweepNext": {
-        "expected": "^Next$"
-    },
-    "EventDaily-Row2-SweepResult": {
-        "expected": "anywhere to exit"
-    },
-    "EventDaily-Row3-Proceed": {
-        "expected": "^Proceed$"
-    },
-    "EventDaily-Row3-Sweep": {
-        "expected": "^Auto$"
-    },
-    "EventDaily-Row3-SweepPrep": {
-        "expected": "Auto Mode Preparation"
-    },
-    "EventDaily-Row3-SweepConfirm": {
-        "expected": "^Confirm$"
-    },
-    "EventDaily-Row3-SweepNext": {
-        "expected": "^Next$"
-    },
-    "EventDaily-Row3-SweepResult": {
-        "expected": "anywhere to exit"
-    },
-    "EventDaily-NoStamina": {
-        "expected": "Cancel"
+    "领取活动内每日任务奖励": {
+        "expected": "^Claim$"
     },
     "点击空白处关闭-通用": {
         "expected": [
@@ -650,8 +517,10 @@
     "有物品可拆解-生长数据": {
         "expected": "Joint Selection"
     },
-    "closeFlowerResultByClickingBlank": {
-        "expected": "anywhere to exit"
+    "disassemblyFlower": {
+        "expected": [
+            "Dismantle"
+        ]
     },
     "flowerResultClosed": {
         "expected": "Please select items to disassemble"
@@ -839,48 +708,6 @@
             "Combat Start"
         ]
     },
-    "确认进入委托页面-循环助手": {
-        "expected": [
-            "Daily Activity"
-        ]
-    },
-    "进入循环助手页面": {
-        "expected": [
-            "Loop Assistant"
-        ],
-        "focus": {
-            "Node.Action.Succeeded": "Click Auto Loop"
-        }
-    },
-    "退出循环任务排序": {
-        "expected": [
-            "Confirm order"
-        ]
-    },
-    "开始执行循环任务": {
-        "expected": [
-            "Start Loop"
-        ],
-        "focus": {
-            "Node.Action.Succeeded": "Clicked Start Loop"
-        }
-    },
-    "确认执行循环任务": {
-        "expected": [
-            "Confirm"
-        ]
-    },
-    "循环进行中": {
-        "focus": {
-            "Node.Action.Failed": "Undetected loop in progress — checking whether it has ended",
-            "Node.Action.Succeeded": "Loop in progress..."
-        }
-    },
-    "确认循环结束": {
-        "expected": [
-            "Confirm"
-        ]
-    },
     "今日已领-七天签到限定十连": {
         "expected": [
             "Claim Tomorrow"
@@ -990,28 +817,9 @@
     "巡录付费解锁-领取奖励确认-活动巡录": {
         "expected": "^Confirm$"
     },
-    "武器自选箱-活动巡录": {
-        "focus": {
-            "Node.Action.Starting": "<span style=\"color: red;\">Weapon selector chest found — please handle manually</span>",
-            "toast": "Weapon selector chest found — please handle manually"
-        }
-    },
-    "拂晓之光、破晓天光补给包-活动巡录": {
-        "expected": "Collapse Piece"
-    },
-    "选择下一个补给包-活动巡录": {
-        "expected": [
-            "^Next$"
-        ]
-    },
     "进入艾莫号许愿池页面": {
         "expected": [
             "Proceed"
-        ]
-    },
-    "关闭领取结果-艾莫号许愿池": {
-        "expected": [
-            "anywhere to exit"
         ]
     },
     "进入闪耀星愿页面": {
@@ -1065,6 +873,11 @@
             "Proceed"
         ]
     },
+    "trialGoButtonStillVisible": {
+        "expected": [
+            "Proceed"
+        ]
+    },
     "每天第一次免费美味烹调": {
         "expected": "each day is free"
     },
@@ -1105,7 +918,12 @@
         "expected": "Confirm"
     },
     "已进入逸趣导算页面": {
-        "expected": "Recreation Point Tracker"
+        "expected": [
+            "Recreation Point",
+            "Events",
+            "Cleanliness",
+            "Plant"
+        ]
     },
     "领取逸趣导算奖励": {
         "expected": "Claim All"
@@ -1176,20 +994,27 @@
     "AutoSweepBattleSupplyOperationPrepare": {
         "expected": "Auto Mode Preparation"
     },
-    "易物所兑换通用-当前在首页": {
-        "expected": "Campaign"
-    },
-    "易物所兑换通用-首页进入易物所": {
-        "expected": "^Shop$"
-    },
-    "易物所兑换通用-点击进入易物所": {
-        "expected": "Trading Post"
-    },
     "enterMindSurveyTask": {
         "expected": "^Campaign"
     },
     "ClickToEnterMindSurveySimulatedCombatPage": {
         "expected": "^Combat Simulations$"
+    },
+    "已进入模拟作战页面-模拟作战通用": {
+        "expected": [
+            "Combat Exercise",
+            "Peak Value Assessment"
+        ]
+    },
+    "打开战役推进-模拟作战通用": {
+        "expected": [
+            "^Campaign"
+        ]
+    },
+    "进入模拟作战页面-模拟作战通用": {
+        "expected": [
+            "^Combat Simulations$"
+        ]
     },
     "StartGame_clickStart": {
         "expected": [
@@ -1203,11 +1028,50 @@
     "enterVersionActivityTask": {
         "expected": "^Campaign"
     },
-    "领取活动内每日任务奖励": {
-        "expected": "^Claim$"
-    },
     "storeroomEntered": {
         "expected": "Resource"
+    },
+    "进入委托页面-循环助手": {
+        "expected": [
+            "^Commissions$",
+            "Commissions"
+        ]
+    },
+    "确认进入委托页面-循环助手": {
+        "expected": [
+            "Daily Activity"
+        ]
+    },
+    "进入循环助手页面": {
+        "expected": [
+            "Loop Assistant"
+        ],
+        "focus": {
+            "Node.Action.Succeeded": "Click Auto Loop"
+        }
+    },
+    "退出循环任务排序": {
+        "expected": [
+            "Confirm order"
+        ]
+    },
+    "开始执行循环任务": {
+        "expected": [
+            "Start Loop"
+        ],
+        "focus": {
+            "Node.Action.Succeeded": "Clicked Start Loop"
+        }
+    },
+    "确认执行循环任务": {
+        "expected": [
+            "Confirm"
+        ]
+    },
+    "确认循环结束": {
+        "expected": [
+            "Confirm"
+        ]
     },
     "首页进入活动层-活动层通用": {
         "expected": [
@@ -1249,5 +1113,184 @@
         "expected": [
             "Confirm"
         ]
+    },
+    "RecreationPoint-SelectEventsTab": {
+        "expected": [
+            "^Recreation Events$",
+            "^Recreation$",
+            "^Events$"
+        ]
+    },
+    "RecreationPoint-ConfirmEventsTab": {
+        "expected": [
+            "Recreation Point Progress",
+            "Recreation Point-Increasing",
+            "Today's Recreation Points"
+        ]
+    },
+    "Planting-SelectPlantTab": {
+        "expected": [
+            "^Plant$"
+        ]
+    },
+    "Planting-ConfirmPlantTab": {
+        "expected": [
+            "No flowers available"
+        ]
+    },
+    "Planting-AlreadyPlanted": {
+        "expected": [
+            "Flower Bloom Points"
+        ]
+    },
+    "Planting-FlowerSame": {
+        "expected": [
+            "^Tricolored Pansy$"
+        ]
+    },
+    "Planting-FlowerDiffers": {
+        "expected": [
+            "^Tricolored Pansy$"
+        ]
+    },
+    "Planting-WateringNeeded": {
+        "expected": [
+            "No watering today"
+        ]
+    },
+    "Planting-AlreadyWatered": {
+        "expected": [
+            "No watering today"
+        ]
+    },
+    "Planting-EnterCultivationToWater": {
+        "expected": [
+            "^Proceed$"
+        ]
+    },
+    "Planting-EnterCultivationToReplant": {
+        "expected": [
+            "^Proceed$"
+        ]
+    },
+    "Planting-OpenUprootDialog": {
+        "expected": [
+            "^Invite Doll$"
+        ]
+    },
+    "Planting-ConfirmUprootDialog": {
+        "expected": [
+            "Are you sure you want to remove"
+        ]
+    },
+    "Planting-ClickConfirmUproot": {
+        "expected": [
+            "^Confirm$"
+        ]
+    },
+    "Planting-ClickProceed": {
+        "expected": [
+            "^Proceed$"
+        ]
+    },
+    "Planting-SelectSeed": {
+        "expected": [
+            "^Tricolored Pansy$"
+        ]
+    },
+    "已进入栽培页面": {
+        "expected": [
+            "select seeds to sow"
+        ]
+    },
+    "Planting-ConfirmSow": {
+        "expected": [
+            "^Confirm$"
+        ]
+    },
+    "已进入培养页面": {
+        "expected": [
+            "Days Planted",
+            "Growth Stage"
+        ]
+    },
+    "Planting-ClickWater": {
+        "expected": [
+            "^Water$"
+        ]
+    },
+    "Planting-WaterFinished": {
+        "expected": [
+            "Days Planted",
+            "Growth Stage"
+        ]
+    },
+    "点击艾莫号许愿池标签页": {
+        "expected": [
+            "Leisure Days",
+            "Leisure"
+        ]
+    },
+    "VersionActivity-SweepNoTickets": {
+        "focus": {
+            "Node.Action.Starting": "Insufficient sweep tickets"
+        }
+    },
+    "EventDaily-Row1-Proceed": {
+        "expected": "^Proceed$"
+    },
+    "EventDaily-Row1-Sweep": {
+        "expected": "^Auto$"
+    },
+    "EventDaily-Row1-SweepPrep": {
+        "expected": "Auto Mode Preparation"
+    },
+    "EventDaily-Row1-SweepConfirm": {
+        "expected": "^Confirm$"
+    },
+    "EventDaily-Row1-SweepNext": {
+        "expected": "^Next$"
+    },
+    "EventDaily-Row1-SweepResult": {
+        "expected": "anywhere to exit"
+    },
+    "EventDaily-Row2-Proceed": {
+        "expected": "^Proceed$"
+    },
+    "EventDaily-Row2-Sweep": {
+        "expected": "^Auto$"
+    },
+    "EventDaily-Row2-SweepPrep": {
+        "expected": "Auto Mode Preparation"
+    },
+    "EventDaily-Row2-SweepConfirm": {
+        "expected": "^Confirm$"
+    },
+    "EventDaily-Row2-SweepNext": {
+        "expected": "^Next$"
+    },
+    "EventDaily-Row2-SweepResult": {
+        "expected": "anywhere to exit"
+    },
+    "EventDaily-Row3-Proceed": {
+        "expected": "^Proceed$"
+    },
+    "EventDaily-Row3-Sweep": {
+        "expected": "^Auto$"
+    },
+    "EventDaily-Row3-SweepPrep": {
+        "expected": "Auto Mode Preparation"
+    },
+    "EventDaily-Row3-SweepConfirm": {
+        "expected": "^Confirm$"
+    },
+    "EventDaily-Row3-SweepNext": {
+        "expected": "^Next$"
+    },
+    "EventDaily-Row3-SweepResult": {
+        "expected": "anywhere to exit"
+    },
+    "EventDaily-NoStamina": {
+        "expected": "Cancel"
     }
 }

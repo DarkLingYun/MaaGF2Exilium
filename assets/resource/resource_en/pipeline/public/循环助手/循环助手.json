@@ -5,6 +5,26 @@
     // three LoopHelper-* nodes are new (English keys, category-prefixed per the
     // upstream request in issue #334) and are referenced only from here.
 
+    // Base matches an image of the zh label "循环进行中——", which never matches the
+    // EN client's "Looping in progress..." bar, so the running loop was never seen.
+    // Read the label with OCR instead. The EN bar is wider than the zh one.
+    "循环进行中": {
+        "recognition": "OCR",
+        "expected": [
+            "Looping in progress"
+        ],
+        "roi": [
+            360,
+            610,
+            560,
+            110
+        ],
+        "focus": {
+            "Node.Action.Failed": "Undetected loop in progress — checking whether it has ended",
+            "Node.Action.Succeeded": "Loop in progress..."
+        }
+    },
+
     // Base just did next:["确认循环结束"]. The emulator can get STUCK on the
     // confirm dialog (a tap won't dismiss it), so retry the confirm click, and
     // if that fails, restart the game to recover. Retry/self-loop structure

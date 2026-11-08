@@ -6,13 +6,9 @@
       "entry": "organizeStoreroom",
       "option": [
         "拆解武器",
-        "拆解武器等级",
         "拆解武器配件",
-        "拆解武器配件等级",
         "拆解生长数据",
-        "拆解生长数据等级",
-        "开启道具箱",
-        "物资助力箱奖励类型"
+        "开启道具箱"
       ],
       "default_check": true,
       "description": "$常规设置过多说明"
@@ -61,10 +57,14 @@
       ]
     },
     "开启道具箱": {
+      "type": "switch",
       "label": "$开启道具箱",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
+          "option": [
+            "物资助力箱奖励类型"
+          ],
           "pipeline_override": {
             "itemBox": {
               "enabled": true
@@ -72,7 +72,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "itemBox": {
               "enabled": false
@@ -114,10 +114,11 @@
       ]
     },
     "拆解生长数据": {
+      "type": "switch",
       "label": "$拆解生长数据",
       "cases": [
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "flower": {
               "enabled": false
@@ -125,7 +126,10 @@
           }
         },
         {
-          "name": "YES",
+          "name": "Yes",
+          "option": [
+            "拆解生长数据等级"
+          ],
           "pipeline_override": {
             "flower": {
               "enabled": true
@@ -167,10 +171,11 @@
       ]
     },
     "拆解武器配件": {
+      "type": "switch",
       "label": "$拆解武器配件",
       "cases": [
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "weaponAttachments": {
               "enabled": false
@@ -178,7 +183,10 @@
           }
         },
         {
-          "name": "YES",
+          "name": "Yes",
+          "option": [
+            "拆解武器配件等级"
+          ],
           "pipeline_override": {
             "weaponAttachments": {
               "enabled": true
@@ -211,10 +219,11 @@
       ]
     },
     "拆解武器": {
+      "type": "switch",
       "label": "$拆解武器",
       "cases": [
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "weapon": {
               "enabled": false
@@ -222,7 +231,10 @@
           }
         },
         {
-          "name": "YES",
+          "name": "Yes",
+          "option": [
+            "拆解武器等级"
+          ],
           "pipeline_override": {
             "weapon": {
               "enabled": true

@@ -7,18 +7,169 @@
       "option": [
         "美味烹调",
         "茶歇一刻",
-        "饮品加成",
-        "领取逸趣导算进度奖励"
+        "领取逸趣导算进度奖励",
+        "浇花"
       ],
       "default_check": true
     }
   ],
   "option": {
+    "浇花": {
+      "type": "switch",
+      "label": "$浇花",
+      "cases": [
+        {
+          "name": "Yes",
+          "option": [
+            "种子选择",
+            "允许铲除重种"
+          ],
+          "pipeline_override": {
+            "Planting-Start": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "No",
+          "pipeline_override": {
+            "Planting-Start": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
+    "种子选择": {
+      "label": "$种子选择",
+      "cases": [
+        {
+          "name": "TricoloredPansy",
+          "label": "$三色堇",
+          "pipeline_override": {
+            "Planting-SelectSeed": {
+              "expected": [
+                "^三色堇$",
+                "^Tricolored Pansy$"
+              ]
+            },
+            "Planting-FlowerSame": {
+              "expected": [
+                "^三色堇$",
+                "^Tricolored Pansy$"
+              ]
+            },
+            "Planting-FlowerDiffers": {
+              "expected": [
+                "^三色堇$",
+                "^Tricolored Pansy$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "CobaltBeauty",
+          "label": "$幽蓝美人",
+          "pipeline_override": {
+            "Planting-SelectSeed": {
+              "expected": [
+                "^幽蓝美人$",
+                "^Cobalt Beauty$"
+              ]
+            },
+            "Planting-FlowerSame": {
+              "expected": [
+                "^幽蓝美人$",
+                "^Cobalt Beauty$"
+              ]
+            },
+            "Planting-FlowerDiffers": {
+              "expected": [
+                "^幽蓝美人$",
+                "^Cobalt Beauty$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Hydrangea",
+          "label": "$紫阳花",
+          "pipeline_override": {
+            "Planting-SelectSeed": {
+              "expected": [
+                "^紫阳花$",
+                "^Hydrangea$"
+              ]
+            },
+            "Planting-FlowerSame": {
+              "expected": [
+                "^紫阳花$",
+                "^Hydrangea$"
+              ]
+            },
+            "Planting-FlowerDiffers": {
+              "expected": [
+                "^紫阳花$",
+                "^Hydrangea$"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Tomato",
+          "label": "$番茄",
+          "pipeline_override": {
+            "Planting-SelectSeed": {
+              "expected": [
+                "^番茄$",
+                "^Tomato$"
+              ]
+            },
+            "Planting-FlowerSame": {
+              "expected": [
+                "^番茄$",
+                "^Tomato$"
+              ]
+            },
+            "Planting-FlowerDiffers": {
+              "expected": [
+                "^番茄$",
+                "^Tomato$"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "允许铲除重种": {
+      "type": "switch",
+      "label": "$允许铲除重种",
+      "default_case": "No",
+      "cases": [
+        {
+          "name": "Yes",
+          "pipeline_override": {
+            "Planting-Replant": {
+              "enabled": true
+            }
+          }
+        },
+        {
+          "name": "No",
+          "pipeline_override": {
+            "Planting-Replant": {
+              "enabled": false
+            }
+          }
+        }
+      ]
+    },
     "领取逸趣导算进度奖励": {
+      "type": "switch",
       "label": "$领取逸趣导算进度奖励",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始逸趣导算任务": {
               "enabled": true
@@ -26,7 +177,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始逸趣导算任务": {
               "enabled": false
@@ -50,10 +201,14 @@
       ]
     },
     "茶歇一刻": {
+      "type": "switch",
       "label": "$茶歇一刻",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
+          "option": [
+            "饮品加成"
+          ],
           "pipeline_override": {
             "开始茶歇一刻任务": {
               "enabled": true
@@ -61,7 +216,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始茶歇一刻任务": {
               "enabled": false
@@ -71,10 +226,11 @@
       ]
     },
     "美味烹调": {
+      "type": "switch",
       "label": "$美味烹调",
       "cases": [
         {
-          "name": "YES",
+          "name": "Yes",
           "pipeline_override": {
             "开始美味烹调任务": {
               "enabled": true
@@ -82,7 +238,7 @@
           }
         },
         {
-          "name": "NO",
+          "name": "No",
           "pipeline_override": {
             "开始美味烹调任务": {
               "enabled": false
