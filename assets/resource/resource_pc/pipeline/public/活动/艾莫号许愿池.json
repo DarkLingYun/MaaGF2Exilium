@@ -1,5 +1,5 @@
 {
-    "AimoWishingPool-ScrollDollList": {
+    "ElmoWishingWell-ScrollDollList": {
         "doc": "上滑左侧角色列表直到全部角色露出（PC端）。列表背景有细颗粒动效，相邻帧差异采样点占比实测最高约3.7%，same_tolerance 放宽到 0.06；真实滚动一屏约30%以上",
         "custom_recognition_param": {
             "roi": [
@@ -24,7 +24,7 @@
             20
         ],
         "post_wait_freezes": {
-            "time": 300,
+            "time": 800,
             "target": [
                 40,
                 85,

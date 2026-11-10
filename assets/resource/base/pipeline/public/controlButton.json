@@ -28,10 +28,7 @@
         "green_mask": true,
         "order_by": "Score",
         "threshold": 0.8,
-        "post_wait_freezes": {
-            "time": 500,
-            "target": true
-        }
+        "post_wait_freezes": 800
     },
     "clickCloseWindowButton": {
         "recognition": "TemplateMatch",
@@ -44,10 +41,7 @@
         "green_mask": true,
         "order_by": "Score",
         "threshold": 0.8,
-        "post_wait_freezes": {
-            "time": 500,
-            "target": true
-        }
+        "post_wait_freezes": 800
     },
     "clickBackButton": {
         "recognition": "TemplateMatch",
@@ -59,10 +53,7 @@
         "green_mask": true,
         "order_by": "Score",
         "threshold": 0.8,
-        "post_wait_freezes": {
-            "time": 500,
-            "target": true
-        }
+        "post_wait_freezes": 800
     },
     "announcementClosed": {
         "recognition": "TemplateMatch",
@@ -81,10 +72,7 @@
         "green_mask": true,
         "order_by": "Score",
         "threshold": 0.8,
-        "post_wait_freezes": {
-            "time": 500,
-            "target": true
-        }
+        "post_wait_freezes": 800
     },
     "HomePage": {
         "recognition": "OCR",

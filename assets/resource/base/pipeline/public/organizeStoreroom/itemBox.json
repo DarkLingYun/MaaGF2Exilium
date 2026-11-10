@@ -65,6 +65,7 @@
         "recognition": "OCR",
         "expected": "使用",
         "action": "Click",
+        "post_wait_freezes": 1200,
         "next": [
             "chooseSupplySupportBoxItem",
             "useSupplySupportBoxItem"
