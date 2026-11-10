@@ -1028,6 +1028,12 @@
     "enterVersionActivityTask": {
         "expected": "^Campaign"
     },
+    "organizeStoreroom": {
+        "expected": "Campaign"
+    },
+    "enterStoreroom": {
+        "expected": "Storeroom"
+    },
     "storeroomEntered": {
         "expected": "Resource"
     },
