@@ -1236,5 +1236,10 @@
             "Leisure Days",
             "Leisure"
         ]
+    },
+    "VersionActivity-SweepNoTickets": {
+        "focus": {
+            "Node.Action.Starting": "Insufficient sweep tickets"
+        }
     }
 }
