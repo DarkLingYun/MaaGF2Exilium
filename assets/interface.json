@@ -12,8 +12,8 @@
       "description": "$占用鼠标，兼容性最好",
       "type": "Win32",
       "win32": {
-        "class_regex": ".*",
-        "window_regex": "^(?!.*自动化助手).*(?:少女前线.*追放|EXILIUM|GF2_Exilium).*$",
+        "class_regex": "^UnityWndClass$",
+        "window_regex": "^.*(?:少女前线.*追放|EXILIUM|GF2_Exilium).*$",
         "screencap": "Foreground",
         "mouse": "Seize",
         "keyboard": "Seize"
@@ -25,8 +25,8 @@
       "description": "$不抢占鼠标，窗口会短暂闪烁",
       "type": "Win32",
       "win32": {
-        "class_regex": ".*",
-        "window_regex": "^(?!.*自动化助手).*(?:少女前线.*追放|EXILIUM|GF2_Exilium).*$",
+        "class_regex": "^UnityWndClass$",
+        "window_regex": "^.*(?:少女前线.*追放|EXILIUM|GF2_Exilium).*$",
         "screencap": "Background",
         "mouse": "PostMessageWithWindowPos",
         "keyboard": "PostMessageWithWindowPos"
@@ -43,6 +43,7 @@
   "resource": [
     {
       "name": "中文资源(模拟器)",
+      "controller": ["安卓端"],
       "label": "$中文资源(模拟器)",
       "path": [
         "resource/base"
@@ -50,6 +51,7 @@
     },
     {
       "name": "英语资源(模拟器)",
+      "controller": ["安卓端"],
       "label": "$英语资源(模拟器)",
       "path": [
         "resource/base",
@@ -58,6 +60,7 @@
     },
     {
       "name": "中文资源(PC端)",
+      "controller": ["桌面端-前台", "桌面端-后台"],
       "label": "$中文资源(PC端)",
       "path": [
         "resource/base",
