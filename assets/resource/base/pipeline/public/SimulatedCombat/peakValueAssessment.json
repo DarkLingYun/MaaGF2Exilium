@@ -23,10 +23,7 @@
         "recognition": "OCR",
         "expected": "峰值推定",
         "action": "Click",
-        "post_wait_freezes": {
-            "time": 1000,
-            "threshold": 0.8
-        },
+        "post_wait_freezes": 3000,
         "next": [
             "peakValueAssessmentPageEnteredForFirstTime",
             "发现新周期-极限峰值（峰值推定界面）",
