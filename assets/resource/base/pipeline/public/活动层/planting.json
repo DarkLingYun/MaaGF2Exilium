@@ -104,14 +104,14 @@
         ]
     },
     "Planting-AlreadyWatered": {
-        "doc": "今日已浇过水：先点面板右上角 X 收起逸趣导算，再确认回到活动层；X 没命中时退回通用返回",
+        "doc": "今日已浇过水：先点面板右上角 X 收起逸趣导算，再确认回到活动层；X 没命中时退回返回活动层",
         "recognition": "OCR",
         "expected": [
             "今日未浇水"
         ],
         "inverse": true,
         "next": [
-            "clickCloseWindowButton",
+            "[JumpBack]关闭活动层窗口-活动层通用",
             "返回活动层-活动层通用"
         ]
     },
