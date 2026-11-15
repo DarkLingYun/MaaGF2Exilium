@@ -207,15 +207,48 @@
         ],
         "action": "Click"
     },
+    "关闭活动层窗口-活动层通用": {
+        "doc": "点击活动层 2D 面板/确认框右上角的 X；面板渲染有差异，按三档面板图和确认框图分别匹配",
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动层/活动层-关闭按钮-逸趣导算.png",
+            "活动层/活动层-关闭按钮-栽培.png",
+            "活动层/活动层-关闭按钮-形象管理.png",
+            "活动层/活动层-关闭按钮-确认框.png"
+        ],
+        "green_mask": true,
+        "order_by": "Score",
+        "action": "Click",
+        "post_wait_freezes": 800
+    },
+    "返回上一级菜单-活动层通用": {
+        "doc": "点击活动层 2D 页面左上角的 <；roi 限定左上角，避免和页面内其他箭头混淆",
+        "recognition": "TemplateMatch",
+        "template": [
+            "活动层/活动层-返回按钮-深色.png",
+            "活动层/活动层-返回按钮-浅色.png"
+        ],
+        "roi": [
+            0,
+            0,
+            320,
+            140
+        ],
+        "green_mask": true,
+        "order_by": "Score",
+        "action": "Click",
+        "post_wait_freezes": 800
+    },
     "退出形象管理-活动层通用": {
         "next": [
-            "[JumpBack]clickCloseWindowButton",
+            "[JumpBack]关闭活动层窗口-活动层通用",
             "已进入活动层-活动层通用"
         ]
     },
     "返回活动层-活动层通用": {
         "next": [
-            "[JumpBack]clickBackButton",
+            "[JumpBack]关闭活动层窗口-活动层通用",
+            "[JumpBack]返回上一级菜单-活动层通用",
             "[JumpBack]活动层等级提升-活动层通用",
             "进入活动层-活动层通用"
         ]
