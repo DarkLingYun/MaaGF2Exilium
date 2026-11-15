@@ -29,6 +29,11 @@ PLATFORMS = {"arm64-v8a": "aarch64-linux-android", "x86_64": "x86_64-linux-andro
 # Chaquopy release numbers are independent of CPython versions (same mapping as M9A).
 CHAQUOPY_INDEXES = {"3.13": "https://chaquo.com/pypi-13.1/"}
 
+# 将 MaaFramework 固定到 Aliothmoon/MaaAgentCoreAndroid 已发布对应 agent core 的版本。
+# MaaFramework 发版总是先于 agent core，若这里追 latest，会在两者未对齐的窗口期
+# 让 APK 构建下载 404 直接失败。升级时两者一起 bump。
+MAAFW_TAG = "v5.16.0"
+
 
 def validate_core(bundle, abi, python_version, framework_version):
     manifest = json.loads((bundle / "agent-core.json").read_text(encoding="utf-8"))
@@ -124,11 +129,12 @@ def build_runtime(abis, root=ROOT):
     if output.exists():
         shutil.rmtree(output)
 
-    # Resolve latest once; force deployment because the downloader's fast path
-    # compares file sizes, which cannot distinguish equal-sized library versions.
+    # 框架固定到 MAAFW_TAG；强制铺开，因为下载器的快速路径只比文件大小，
+    # 无法区分体积相同的不同版本库文件。
     subprocess.run([
         sys.executable, str(frontend / "scripts" / "setup_maa_framework.py"),
         "--force",
+        "--tag", MAAFW_TAG,
         "--abi", "all" if len(abis) == 2 else abis[0],
     ], cwd=frontend, check=True)
     version = (frontend / ".maafwversion").read_text(encoding="utf-8").strip().removeprefix("v")
