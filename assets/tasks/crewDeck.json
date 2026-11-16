@@ -3,7 +3,7 @@
     {
       "name": "活动层",
       "label": "$活动层",
-      "entry": "开始活动层任务",
+      "entry": "ResolutionCheck_开始活动层任务",
       "option": [
         "美味烹调",
         "茶歇一刻",

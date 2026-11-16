@@ -1,0 +1,12 @@
+{
+  "CheckPCResolution": {
+    "doc": "同步校验实际截图尺寸；本任务不进行游戏操作。",
+    "recognition": "DirectHit",
+    "action": "Custom",
+    "custom_action": "CheckPCResolution",
+    "on_error": [],
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": []
+  }
+}

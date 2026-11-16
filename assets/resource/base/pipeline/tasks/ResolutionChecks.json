@@ -1,0 +1,178 @@
+{
+  "ResolutionCheck_ClaimRewardTasks": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "ClaimRewardTasks"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_CombatSimulations": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "CombatSimulations"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_开始活动层任务": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "开始活动层任务"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_PublicAreaDailyTasks": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "PublicAreaDailyTasks"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_PrepareDailyTasks": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "PrepareDailyTasks"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_活动": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "活动"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_开始循环助手任务": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "开始循环助手任务"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_StopGame": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "StopGame"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_ClickAssistant": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "ClickAssistant"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_开始小游戏": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "开始小游戏"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_MindSurveyTask": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "MindSurveyTask"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_BulkExchange": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "BulkExchange"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_StartGame": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "StartGame"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_organizeStoreroom": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "organizeStoreroom"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_AutoSweepBattle": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "AutoSweepBattle"
+    ],
+    "on_error": []
+  },
+  "ResolutionCheck_VersionActivityTask": {
+    "doc": "模拟器保持原流程；PC 资源将此入口覆盖为同步分辨率校验。",
+    "recognition": "DirectHit",
+    "action": "DoNothing",
+    "pre_delay": 0,
+    "post_delay": 0,
+    "next": [
+      "VersionActivityTask"
+    ],
+    "on_error": []
+  }
+}

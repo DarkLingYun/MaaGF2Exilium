@@ -3,7 +3,7 @@
     {
       "name": "领取奖励",
       "label": "$领取奖励",
-      "entry": "ClaimRewardTasks",
+      "entry": "ResolutionCheck_ClaimRewardTasks",
       "option": [
         "每日订单",
         "远航巡录",

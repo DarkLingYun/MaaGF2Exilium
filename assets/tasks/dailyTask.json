@@ -4,7 +4,7 @@
       "name": "公共区日常",
       "label": "$公共区日常",
       "description": "$公共区日常说明",
-      "entry": "PublicAreaDailyTasks",
+      "entry": "ResolutionCheck_PublicAreaDailyTasks",
       "option": [
         "收取神秘箱（需自备硬币）"
       ],

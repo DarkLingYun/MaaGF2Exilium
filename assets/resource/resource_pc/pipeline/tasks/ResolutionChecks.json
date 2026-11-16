@@ -1,0 +1,66 @@
+{
+  "ResolutionCheck_ClaimRewardTasks": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_CombatSimulations": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_开始活动层任务": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_PublicAreaDailyTasks": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_PrepareDailyTasks": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_活动": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_开始循环助手任务": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_StopGame": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_ClickAssistant": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_开始小游戏": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_MindSurveyTask": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_BulkExchange": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_StartGame": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_organizeStoreroom": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_AutoSweepBattle": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  },
+  "ResolutionCheck_VersionActivityTask": {
+    "action": "Custom",
+    "custom_action": "CheckPCResolution"
+  }
+}

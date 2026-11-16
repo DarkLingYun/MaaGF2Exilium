@@ -3,7 +3,7 @@
     {
       "name": "心智勘测",
       "label": "$心智勘测",
-      "entry": "MindSurveyTask",
+      "entry": "ResolutionCheck_MindSurveyTask",
       "option": [
         "转录序体：",
         "勘测次数："

@@ -3,7 +3,7 @@
     {
       "name": "整理仓库",
       "label": "$整理仓库",
-      "entry": "organizeStoreroom",
+      "entry": "ResolutionCheck_organizeStoreroom",
       "option": [
         "拆解武器",
         "拆解武器配件",
