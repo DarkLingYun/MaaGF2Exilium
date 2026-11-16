@@ -1,9 +1,17 @@
 {
   "task": [
     {
+      "name": "检查PC分辨率",
+      "label": "$检查PC分辨率",
+      "entry": "CheckPCResolution",
+      "description": "$检查PC分辨率说明",
+      "controller": ["桌面端-前台", "桌面端-后台"],
+      "default_check": false
+    },
+    {
       "name": "启动少女前线2",
       "label": "$启动少女前线2",
-      "entry": "StartGame",
+      "entry": "ResolutionCheck_StartGame",
       "description": "$启动少女前线2说明",
       "default_check": true
     }

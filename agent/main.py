@@ -7,6 +7,7 @@ from maa.toolkit import Toolkit
 import community_daily_action
 import shop_exchange
 import scroll_end
+from resolution_check import PCResolutionCheck
 
 def main():
     Toolkit.init_option("./")
@@ -18,6 +19,7 @@ def main():
         
     socket_id = sys.argv[-1]
 
+    AgentServer.register_custom_action("CheckPCResolution", PCResolutionCheck())
     AgentServer.start_up(socket_id)
     AgentServer.join()
     AgentServer.shut_down()

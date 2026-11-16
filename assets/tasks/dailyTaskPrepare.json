@@ -3,7 +3,7 @@
     {
       "name": "日常任务前准备",
       "label": "$日常任务前准备",
-      "entry": "PrepareDailyTasks",
+      "entry": "ResolutionCheck_PrepareDailyTasks",
       "option": [
         "领取情报补给体力(限时)",
         "领取七日签到资源(限时)",

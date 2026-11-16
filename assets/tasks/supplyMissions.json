@@ -3,7 +3,7 @@
     {
       "name": "补给作战",
       "label": "$补给作战",
-      "entry": "AutoSweepBattle",
+      "entry": "ResolutionCheck_AutoSweepBattle",
       "option": [
         "作战类型"
       ]

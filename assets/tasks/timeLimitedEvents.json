@@ -3,7 +3,7 @@
     {
       "name": "版本活动日常",
       "label": "$版本活动日常",
-      "entry": "VersionActivityTask",
+      "entry": "ResolutionCheck_VersionActivityTask",
       "option": [
         "物资模式活动选择",
         "物资商品兑换"
