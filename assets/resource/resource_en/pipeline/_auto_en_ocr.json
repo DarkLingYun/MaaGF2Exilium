@@ -1022,6 +1022,12 @@
     "enterVersionActivityTask": {
         "expected": "^Campaign"
     },
+    "organizeStoreroom": {
+        "expected": "Campaign"
+    },
+    "enterStoreroom": {
+        "expected": "Storeroom"
+    },
     "storeroomEntered": {
         "expected": "Resource"
     },
@@ -1224,5 +1230,10 @@
             "Leisure Days",
             "Leisure"
         ]
+    },
+    "VersionActivity-SweepNoTickets": {
+        "focus": {
+            "Node.Action.Starting": "Insufficient sweep tickets"
+        }
     }
 }

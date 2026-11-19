@@ -37,7 +37,9 @@
             },
             "StartGame_HomePage_Check": {
               "next": [
-                "StartGame_进入整备室"
+                "StartGame_进入整备室",
+                "[JumpBack]点击空白处关闭-通用",
+                "[JumpBack]clickCloseWindowButton"
               ]
             },
             "StopGame": {

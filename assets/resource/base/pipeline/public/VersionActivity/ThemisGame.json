@@ -1,0 +1,44 @@
+{
+    "VersionActivity-ThemisGame-Banner": {
+        "doc": "忒弥斯棋局(维尔德) 首页活动标签。由 interface.json 活动选择项通过 Or/any_of 引用, 资源包可按语言覆盖 expected",
+        "recognition": "OCR",
+        "roi": [
+            33,
+            37,
+            259,
+            414
+        ],
+        "expected": [
+            "忒弥斯棋局",
+            "斯棋局",
+            "棋局",
+            "忒弥斯",
+            "弥斯棋",
+            "忒弥"
+        ]
+    },
+    "VersionActivity-ThemisGame-Notice": {
+        "doc": "忒弥斯棋局 活动内每日任务入口(前期搜查)",
+        "recognition": "OCR",
+        "expected": [
+            "^前期搜查$",
+            "搜查$",
+            "^前期"
+        ]
+    },
+    "VersionActivity-ThemisGame-Shop": {
+        "doc": "忒弥斯棋局 活动商店入口(红茶馆)",
+        "recognition": "OCR",
+        "roi": [
+            107,
+            607,
+            238,
+            76
+        ],
+        "expected": [
+            "红茶馆",
+            "茶馆",
+            "红茶"
+        ]
+    }
+}

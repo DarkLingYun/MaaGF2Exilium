@@ -53,11 +53,25 @@
         ]
     },
     "switchToPassLevelRewardPage": {
-        "doc": "切换到远航巡逻",
+        "doc": "切换到远航巡录奖励页",
         "recognition": "OCR",
         "expected": "^远航巡录$",
         "action": "Click",
-        "post_wait_freezes": 800,
+        "post_wait_freezes": 1000,
+        "max_hit": 3,
+        "next": [
+            "confirmPassRewardPage",
+            "switchToPassLevelRewardPage",
+            "exitPassSystemPage"
+        ]
+    },
+    "confirmPassRewardPage": {
+        "doc": "确认标签页已切到远航巡录奖励页；大奖预览/解锁后立即领取只在奖励页出现，沿途行动页没有",
+        "recognition": "OCR",
+        "expected": [
+            "大奖预览",
+            "解锁后立即领取"
+        ],
         "next": [
             "claimPassLevelReward",
             "exitPassSystemPage"

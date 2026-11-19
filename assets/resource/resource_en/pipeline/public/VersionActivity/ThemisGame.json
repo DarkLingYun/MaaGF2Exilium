@@ -1,0 +1,15 @@
+{
+    "VersionActivity-ThemisGame-Banner": {
+        "doc": "EN: home banner 'Themis' Game' (OCR can drop the space: \"Themis'Game\").",
+        "expected": ["Themis"]
+    },
+    "VersionActivity-ThemisGame-Notice": {
+        "doc": "EN: 'Preliminary Search' on the event hub wraps ('Preliminary' / 'Search'); match the first line. Hub ROI so 'Commission Settlement' below it isn't matched.",
+        "expected": ["^Preliminary$", "Preliminary Search"],
+        "roi": [100, 420, 360, 110]
+    },
+    "VersionActivity-ThemisGame-Shop": {
+        "doc": "EN: 'Tearoom'.",
+        "expected": ["Tearoom"]
+    }
+}

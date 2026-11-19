@@ -25,7 +25,9 @@
         }
     },
     "HomePage": {
+        "doc": "EN: ROI = the home screen's top-right 'Campaign' title. Unbounded, it also matched the Campaign page's own 'Campaign' tab, so returnToHomePage stopped there.",
         "expected": "Campaign",
+        "roi": [880, 40, 400, 120],
         "pre_wait_freezes": {
             "time": 1000,
             "target": [

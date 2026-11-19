@@ -1,4 +1,11 @@
 {
+    "confirmPassRewardPage": {
+        "recognition": "OCR",
+        "expected": [
+            "Grand Prize Preview",
+            "Obtain upon unlocking"
+        ]
+    },
     "findPurpleWeaponPackageReward": {
         "recognition": "OCR",
         "expected": "Standard Weapon Custom Gift Box"

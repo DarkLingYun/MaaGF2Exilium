@@ -140,6 +140,7 @@
             67
         ],
         "action": "Click",
+        "post_wait_freezes": 3000,
         "next": [
             "flower",
             "itemBox",

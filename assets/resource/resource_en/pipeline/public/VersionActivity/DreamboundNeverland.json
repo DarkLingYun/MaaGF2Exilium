@@ -1,0 +1,15 @@
+{
+    "VersionActivity-DreamboundNeverland-Banner": {
+        "doc": "EN: home banner 'Dreambound Neverland' wraps onto two lines ('Dreambound' / 'Neverland').",
+        "expected": ["Dreambound", "Neverland"]
+    },
+    "VersionActivity-DreamboundNeverland-Notice": {
+        "doc": "EN: 'Brilliant Ferry' on the event hub. Hub ROI so the notice page's own title isn't re-clicked.",
+        "expected": ["^Brilliant Ferry$", "Brilliant Ferry"],
+        "roi": [100, 420, 360, 110]
+    },
+    "VersionActivity-DreamboundNeverland-Shop": {
+        "doc": "EN: 'Tranquil Wave Coffer' wraps; match the first line.",
+        "expected": ["Tranquil Wave"]
+    }
+}

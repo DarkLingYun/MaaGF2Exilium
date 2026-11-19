@@ -1,0 +1,44 @@
+{
+    "VersionActivity-DreamboundNeverland-Banner": {
+        "doc": "梦中的永无岛(芙玲) 首页活动标签。由 interface.json 活动选择项通过 Or/any_of 引用, 资源包可按语言覆盖 expected",
+        "recognition": "OCR",
+        "roi": [
+            33,
+            37,
+            259,
+            414
+        ],
+        "expected": [
+            "梦中的永无岛",
+            "永无岛",
+            "梦中的",
+            "梦中",
+            "中的",
+            "中的永无"
+        ]
+    },
+    "VersionActivity-DreamboundNeverland-Notice": {
+        "doc": "梦中的永无岛 活动内每日任务入口(明灯渡口)",
+        "recognition": "OCR",
+        "expected": [
+            "^明灯渡口$",
+            "渡口$",
+            "^明灯"
+        ]
+    },
+    "VersionActivity-DreamboundNeverland-Shop": {
+        "doc": "梦中的永无岛 活动商店入口(静浪宝匣)",
+        "recognition": "OCR",
+        "roi": [
+            107,
+            607,
+            238,
+            76
+        ],
+        "expected": [
+            "静浪宝匣",
+            "宝匣",
+            "静浪"
+        ]
+    }
+}
