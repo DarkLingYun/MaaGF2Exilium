@@ -205,6 +205,9 @@
             "TeaTime-ScrollToSpecial": {
               "enabled": true
             },
+            "TeaTime-SpecialHeader": {
+              "enabled": true
+            },
             "TeaTime-SelectSpecialDrink": {
               "enabled": true
             },

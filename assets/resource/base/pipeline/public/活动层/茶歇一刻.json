@@ -200,20 +200,39 @@
             ]
         },
         "next": [
+            "TeaTime-SpecialHeader",
+            "TeaTime-SpecialNotAvailable"
+        ]
+    },
+    "TeaTime-SpecialHeader": {
+        "doc": "The 当期特饮 (Today's Special) section header. The week's special is always the first card right below it, so the card checks are placed relative to this header instead of searching the whole grid.",
+        "enabled": false,
+        "recognition": "OCR",
+        "expected": [
+            "当期特饮"
+        ],
+        "roi": [
+            35,
+            40,
+            345,
+            640
+        ],
+        "next": [
             "TeaTime-SelectSpecialDrink",
             "TeaTime-SpecialNotAvailable"
         ]
     },
     "TeaTime-SelectSpecialDrink": {
-        "doc": "The week's special is the only card with a yellow background (a locked one is dark with a lock). count is high enough that the sliver showing before the swipe, star badges and tea colours don't match; the whole card is about 6000-8000 pixels.",
+        "doc": "The first card below the header, if it has the special's yellow background (a locked special is dark with a lock). Yellow pixels are counted across the whole card (connected false), because the drink art can split the background into separate pieces (e.g. 2400 + 1800 pixels). The box is then the whole card, which TeaTime-SpecialSelected uses. The roi spans only the first column and about one card's height below the header; other cards are cream or white, not yellow.",
         "enabled": false,
         "max_hit": 3,
         "recognition": "ColorMatch",
-        "roi": [
-            35,
-            70,
-            345,
-            620
+        "roi": "TeaTime-SpecialHeader",
+        "roi_offset": [
+            -10,
+            20,
+            30,
+            136
         ],
         "lower": [
             200,
@@ -225,8 +244,8 @@
             225,
             185
         ],
-        "count": 4000,
-        "connected": true,
+        "count": 3000,
+        "connected": false,
         "action": "Click",
         "post_delay": 800,
         "next": [

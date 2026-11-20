@@ -12,5 +12,11 @@
             200,
             600
         ]
+    },
+    "TeaTime-SpecialHeader": {
+        "doc": "EN override: the header wraps ('Today's' / 'Special'). After the grid is scrolled, only the second line may be in view, so anchor on 'Special'. Its box is about as tall as the CN one-line header, so the card offsets in base fit both.",
+        "expected": [
+            "^Special$"
+        ]
     }
 }
