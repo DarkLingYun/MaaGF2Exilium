@@ -111,6 +111,14 @@
         "template": [
             "仓库/拆解按钮.png"
         ],
+        "roi": [
+            860,
+            620,
+            400,
+            120
+        ],
+        "green_mask": true,
+        "order_by": "Score",
         "action": "Click",
         "post_wait_freezes": 2000,
         "next": [
