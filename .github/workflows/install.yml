@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - "v*"
+    branches:
+      - "dev"
     paths:
       - ".github/workflows/install.yml"
       - "assets/**"
@@ -19,6 +21,11 @@ on:
       - "pyproject.toml"
   workflow_dispatch:
 
+# 同一分支连续推送时只保留最后一次构建；tag 发版构建与手动触发永不取消。
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || (github.event_name == 'push' && github.ref_type == 'branch') }}
+
 jobs:
   meta:
     runs-on: ubuntu-latest
@@ -33,24 +40,39 @@ jobs:
             # 直接从 github.ref 提取 tag 名称
             tag=${GITHUB_REF#refs/tags/}
           else
-            tag=$(git describe --tags --match "v*" HEAD || true)
-            if [[ $tag != v* ]]; then
-              tag=$(curl -sX GET "https://api.github.com/repos/${{ github.repository }}/releases/latest" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | awk '/tag_name/{print $4}' FS='["]')
-              if [[ $tag != v* ]]; then
-                tag="v0.0.0"
-              fi
-              tag=$(date "+$tag-%y%m%d-$(git rev-parse --short HEAD)")
+            # 最近的 tag 可能是 v2.8.4，也可能是 v2.8.5-beta.2；
+            # 只取 core 再拼 -ci.，避免 dev 构建继承 beta 前缀而被 MXU 当成官方 beta。
+            base=$(git describe --tags --abbrev=0 --match "v*" HEAD 2>/dev/null || true)
+            core=$(echo "$base" | grep -oE '^v[0-9]+\.[0-9]+\.[0-9]+' || true)
+            if [ -z "$core" ]; then
+              base=$(curl -sX GET "https://api.github.com/repos/${{ github.repository }}/releases/latest" --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' | awk '/tag_name/{print $4}' FS='["]')
+              core=$(echo "$base" | grep -oE '^v[0-9]+\.[0-9]+\.[0-9]+' || true)
             fi
-            prefix=${tag%-*-*}
-            suffix=${tag#$prefix-}
-            tag="$prefix-ci.$suffix"
+            [ -n "$core" ] || core="v0.0.0"
+            tag="$core-ci.$(date +%y%m%d)-$(git rev-parse --short HEAD)"
+          fi
+
+          # 只有严格的 vX.Y.Z 视为稳定版；beta/rc/dev 以及拼写错误一律按预发布处理。
+          is_prerelease=true
+          if [[ $tag =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            is_prerelease=false
           fi
 
           echo tag=$tag | tee -a $GITHUB_OUTPUT
           echo is_release=$is_release | tee -a $GITHUB_OUTPUT
+          echo is_prerelease=$is_prerelease | tee -a $GITHUB_OUTPUT
+
+          {
+            echo "### Build version"
+            echo ""
+            echo "- tag: \`$tag\`"
+            echo "- is_release: \`$is_release\`"
+            echo "- is_prerelease: \`$is_prerelease\`"
+          } >> "$GITHUB_STEP_SUMMARY"
     outputs:
       tag: ${{ steps.set_tag.outputs.tag }}
       is_release: ${{ steps.set_tag.outputs.is_release }}
+      is_prerelease: ${{ steps.set_tag.outputs.is_prerelease }}
 
   update:
     needs: meta
@@ -179,9 +201,8 @@ jobs:
         shell: bash
         run: |
           python ./install.py ${{ needs.meta.outputs.tag }}
-          # 这里不再用 --arg version 覆盖 version 字段：install.py 的 to_mxu_version()
-          # 会给它打上 -mxu 后缀，把 MXU 构建标记成 MXU 认定中的「非正式版本」以跳过
-          # MirrorChyan 更新检查，在此覆盖等于把它抹掉。
+          # version 原样写入产物：beta/rc tag 会被 MXU 视为可更新的测试版；
+          # dev 分支的 -ci. 版本会被 MXU 当成调试版本，跳过更新检查。
           if [ "${{ matrix.os_name }}" = "win" ]; then
             jq --arg url "https://github.com/DarkLingYun/MaaGF2Exilium" '. + {"url": $url}' ./install/interface.json > ./install/interface.json.tmp && mv ./install/interface.json.tmp ./install/interface.json
           fi
@@ -267,10 +288,12 @@ jobs:
             android-apks/*.apk
           tag_name: ${{ needs.meta.outputs.tag }}
           body: ${{ steps.body.outputs.body }}
+          prerelease: ${{ needs.meta.outputs.is_prerelease == 'true' }}
+          make_latest: ${{ needs.meta.outputs.is_prerelease == 'true' && 'false' || 'true' }}
 
       - name: Trigger MirrorChyanUploading
         run: |
-          gh workflow run --repo $GITHUB_REPOSITORY mirrorchyan
-          gh workflow run --repo $GITHUB_REPOSITORY mirrorchyan_release_note
+          gh workflow run --repo $GITHUB_REPOSITORY mirrorchyan -f tag=${{ needs.meta.outputs.tag }}
+          gh workflow run --repo $GITHUB_REPOSITORY mirrorchyan_release_note -f tag=${{ needs.meta.outputs.tag }}
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
