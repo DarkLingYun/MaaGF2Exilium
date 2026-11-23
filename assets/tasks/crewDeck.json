@@ -287,6 +287,9 @@
             "TeaTime-WaitForTopics": {
               "enabled": false
             },
+            "TeaTime-PickSpecialTopic": {
+              "enabled": false
+            },
             "TeaTime-PickUnreadTopic": {
               "enabled": false
             },
@@ -306,6 +309,9 @@
               "enabled": true
             },
             "TeaTime-WaitForTopics": {
+              "enabled": true
+            },
+            "TeaTime-PickSpecialTopic": {
               "enabled": true
             },
             "TeaTime-PickUnreadTopic": {
