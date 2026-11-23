@@ -2,6 +2,11 @@ name: mirrorchyan
 
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "要上传的 Release tag"
+        required: true
+        type: string
 
 jobs:
   mirrorchyan:
@@ -19,6 +24,7 @@ jobs:
           filetype: latest-release
           filename: "MaaGF2ExiliumGUI-${{ matrix.os }}-${{ matrix.arch }}-*.zip"
           mirrorchyan_rid: MaaGF2Exilium
+          tag: ${{ inputs.tag }}
 
           owner: DarkLingYun
           repo: MaaGF2Exilium
@@ -39,6 +45,7 @@ jobs:
           pick_files: '["resource", "interface.json", "interface_zh.json", "interface_en.json"]'
           exclude_files: '["*model/ocr/**"]'
           mirrorchyan_rid: MaaGF2Exilium
+          tag: ${{ inputs.tag }}
 
           owner: DarkLingYun
           repo: MaaGF2Exilium

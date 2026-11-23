@@ -2,6 +2,11 @@ name: mirrorchyan_release_note
 
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: "要同步发布说明的 Release tag（留空则用最新 Release）"
+        required: false
+        type: string
   release:
     types: [edited]
 
@@ -15,6 +20,7 @@ jobs:
         uses: MirrorChyan/release-note-action@v1
         with:
           mirrorchyan_rid: MaaGF2Exilium
+          version_name: ${{ inputs.tag || github.event.release.tag_name }}
 
           upload_token: ${{ secrets.MirrorChyanUploadToken }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
