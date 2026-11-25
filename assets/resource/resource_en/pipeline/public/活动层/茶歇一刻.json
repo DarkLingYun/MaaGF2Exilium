@@ -1,0 +1,22 @@
+{
+    "确认进入茶歇一刻": {
+        "doc": "EN override: the EN client wraps both section headers onto two lines ('Classic' / 'Drink', 'Today's' / 'Special'), so the zh two-word headers never match. Match the first line of either header in the left column.",
+        "recognition": "OCR",
+        "expected": [
+            "^Classic$",
+            "^Today.s$"
+        ],
+        "roi": [
+            30,
+            60,
+            200,
+            600
+        ]
+    },
+    "TeaTime-SpecialHeader": {
+        "doc": "EN override: the header wraps ('Today's' / 'Special'). After the grid is scrolled, only the second line may be in view, so anchor on 'Special'. Its box is about as tall as the CN one-line header, so the card offsets in base fit both.",
+        "expected": [
+            "^Special$"
+        ]
+    }
+}
