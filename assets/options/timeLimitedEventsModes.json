@@ -4,6 +4,72 @@
       "label": "$物资模式活动选择",
       "cases": [
         {
+          "name": "直播重连世界海(卡萝)",
+          "pipeline_override": {
+            "clickVersionActivityTagButton": {
+              "expected": [
+                "直播重连世界海",
+                "重连世界海",
+                "直播重连",
+                "重连世界"
+              ]
+            },
+            "enterVersionActivityItemExchange": {
+              "expected": [
+                "礼物打赏",
+                "物打赏"
+              ],
+              "roi": [
+                107,
+                607,
+                238,
+                76
+              ]
+            },
+            "selectResourceModeLevel": {
+              "doc": "选择物资模式关卡",
+              "recognition": "Or",
+              "any_of": [
+                {
+                  "recognition": "OCR",
+                  "expected": [
+                    "^.*5$",
+                    "5$",
+                    "-5",
+                    "5"
+                  ],
+                  "roi": [
+                    572,
+                    269,
+                    424,
+                    163
+                  ]
+                },
+                {
+                  "recognition": "TemplateMatch",
+                  "template": "版本活动/直播重连世界海.png",
+                  "roi": [
+                    666,
+                    296,
+                    235,
+                    93
+                  ]
+                }
+              ],
+              "action": "Click"
+            },
+            "开始活动内每日任务": {
+              "doc": "启动活动内每日任务,需要确认版本是否有这个活动",
+              "enabled": true,
+              "expected": [
+                "^开播推流$",
+                "推流$",
+                "^开播"
+              ]
+            }
+          }
+        },
+        {
           "name": "热寂悖论(破坏者)",
           "pipeline_override": {
             "clickVersionActivityTagButton": {
