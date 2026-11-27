@@ -3,7 +3,7 @@
     {
       "name": "易物所商店兑换",
       "label": "$易物所商店兑换",
-      "entry": "BulkExchange",
+      "entry": "ResolutionCheck_BulkExchange",
       "description": "$易物所商店兑换说明",
       "default_check": true
     }

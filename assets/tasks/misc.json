@@ -3,20 +3,20 @@
     {
       "name": "关闭游戏",
       "label": "$关闭游戏",
-      "entry": "StopGame",
+      "entry": "ResolutionCheck_StopGame",
       "default_check": false
     },
     {
       "name": "推图助手",
       "label": "$推图助手",
-      "entry": "ClickAssistant",
+      "entry": "ResolutionCheck_ClickAssistant",
       "default_check": false,
       "description": "$推图助手说明"
     },
     {
       "name": "小游戏",
       "label": "$小游戏",
-      "entry": "开始小游戏",
+      "entry": "ResolutionCheck_开始小游戏",
       "default_check": false,
       "option": [
         "小游戏类型选择"

@@ -32,6 +32,15 @@ If something is unclear, you want a feature added, you'd like to help develop, o
 2. Set the emulator to a `16:9` resolution. Typical 16:9 resolutions: `3840×2160 (4K)`, `2560×1440 (2K)`, `1920×1080 (1080p)`, `1280×720 (720p)`.
 3. After updating in-app, newly added features may not show up. If so, close the program, delete `config.json` in the program's `config` directory, then reopen it. You'll need to reconfigure some options.
 
+For the Chinese PC resource, use a 16:9 game resolution of at least `1280×720`,
+such as `1920×1080` or `2560×1440`. Screenshots are scaled to `1280×720` and input
+coordinates are mapped back by MaaFramework. Each PC game task checks a fresh
+capture before any game action and stops the queue with a visible diagnostic on
+failure. The optional **Check PC Resolution** task performs only this check.
+16:10, ultrawide and `1360/1366×768` are unsupported. Install the complete updated
+package, including the Agent. See [PC resolution checks (Chinese)](docs/PC分辨率校验.md)
+for limitations and troubleshooting. Emulator requirements remain unchanged.
+
 ## How to use
 
 0. Download the GUI release named `MaaGF2ExiliumGUI-win-x86_64-v0.x.x.zip` from [Releases](https://github.com/DarkLingYun/MaaGF2Exilium/releases).

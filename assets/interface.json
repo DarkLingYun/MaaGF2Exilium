@@ -11,6 +11,7 @@
       "label": "$桌面端-前台",
       "description": "$占用鼠标，兼容性最好",
       "type": "Win32",
+      "display_short_side": 720,
       "win32": {
         "class_regex": "^UnityWndClass$",
         "window_regex": "^.*(?:少女前线.*追放|EXILIUM|GF2_Exilium).*$",
@@ -24,6 +25,7 @@
       "label": "$桌面端-后台",
       "description": "$不抢占鼠标，窗口会短暂闪烁",
       "type": "Win32",
+      "display_short_side": 720,
       "win32": {
         "class_regex": "^UnityWndClass$",
         "window_regex": "^.*(?:少女前线.*追放|EXILIUM|GF2_Exilium).*$",

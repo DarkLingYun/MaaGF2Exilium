@@ -3,7 +3,7 @@
     {
       "name": "模拟作战日常",
       "label": "$模拟作战日常",
-      "entry": "CombatSimulations",
+      "entry": "ResolutionCheck_CombatSimulations",
       "option": [
         "首领挑战自律",
         "自动实兵演习",
